@@ -1,80 +1,75 @@
-## fix
+# unocss-preset-wxapp
 
-### * 选择器
+## Installation
 
-> 小程序不支持`*`选择器
+```sh
+npm i unocss-preset-wxapp unocss --save-dev # with npm
+yarn add unocss-preset-wxapp unocss -D # with yarn
+pnpm add unocss-preset-wxapp unocss -D # with pnpm
+```
 
-![image-20220625135411354](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202206251354402.png)
+## Usage
 
-> 将`*`改为`view`
+> uniapp by vue3
 
 ```js
-const wxPerfix = 'view'
+import { defineConfig } from 'vite'
+import uni from '@dcloudio/vite-plugin-uni'
+import Unocss from 'unocss/vite'
+import presetWxapp from 'unocss-preset-wxapp'
 
-export const preflights: Preflight[] = [
-  {
-    layer: 'preflights',
-    getCSS(ctx: PreflightContext<Theme>) {
-      if (ctx.theme.preflightBase)
-        return `${wxPerfix},::before,::after{${entriesToCss(Object.entries(ctx.theme.preflightBase))}}`
-    },
-  },
-]
+
+export default defineConfig({
+  plugins: [
+    uni(),
+    Unocss({
+      presets: [
+        presetWxapp(),
+      ],
+    }),
+  ],
+})
 ```
 
+##  How to use
 
+### width and height
 
----
+> 默认单位`rpx`，w-100 => w-100rpx
+>
+> 百分比`/`改为`_`，h-1/2 => h-1_2
 
-### size
+| class       | Properties       |
+| ----------- | ---------------- |
+| h-1_2       | height: 50%      |
+| w-1_3       | width: 33.33333% |
+| width-20    | width: 20rpx     |
+| width-50rpx | width: 50rpx     |
+| h-xs        | height: 180rpx   |
+| h-xl        | height: 340rpx   |
+| h-full      | height: 100%     |
+| h-half      | height: 50%      |
 
-> 去除`%`
-
-```
-h-1.000%
-h-1.001%
-h-1.010%
-h-1.100%
-```
-
-
-
-> `/`改为`_`
-
-```
-h-1/2 => h-1_2
-h-2/2 => h-2_2
-h-3/2 => h-3_2
-h-1/3 => h-1_3
-h-2/3 => h-2_3
-```
-
-
-
-> 去除`[]`
+> size预设
 
 ```
-max-h-[1px]
-h-[calc(1000px-4rem)]
-```
-
-
-
-> 去除`$var`
-
-```
-max-w-$var
-min-w-$var
-h-$var
-```
-
-
-
-> 默认单位为`rpx`
-
-```
-w-1 => w-1rpx
-w-100 => w-100rpx
+export const baseSize = {
+  'xs': '180rpx',
+  'sm': '220rpx',
+  'md': '260rpx',
+  'lg': '300rpx',
+  'xl': '340rpx',
+  '2xl': '390rpx',
+  '3xl': '440rpx',
+  '4xl': '490rpx',
+  '5xl': '540rpx',
+  '6xl': '590rpx',
+  '7xl': '640rpx',
+  '8xl': '690rpx',
+  '9xl': '740rpx',
+  'full': '100%',
+  'half': '50%',
+}
 ```
 
 

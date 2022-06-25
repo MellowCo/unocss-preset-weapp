@@ -1,22 +1,22 @@
 {
-  "name": "@unocss/preset-wxapp",
+  "name": "unocss-preset-wxapp",
   "version": "0.0.1",
-  "description": "The minimal preset for UnoCSS",
-  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "description": "the wxapp preset for UnoCss",
+  "author": "MellowCo",
   "license": "MIT",
-  "funding": "https://github.com/sponsors/antfu",
-  "homepage": "https://github.com/unocss/unocss/tree/main/packages/preset-mini#readme",
+  "homepage": "https://github.com/MellowCo/unocss-prest-weapp",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/unocss/unocss.git",
-    "directory": "packages/preset-mini"
+    "url": "git+https://github.com/MellowCo/unocss-prest-weapp.git"
   },
   "bugs": {
-    "url": "https://github.com/unocss/unocss/issues"
+    "url": "https://github.com/MellowCo/unocss-prest-weapp/issues"
   },
   "keywords": [
     "unocss",
-    "unocss-preset"
+    "unocss-preset",
+    "wxapp",
+    "uniapp"
   ],
   "sideEffects": false,
   "exports": {
