@@ -101,16 +101,15 @@ export function percent(str: string) {
 export function fraction(str: string) {
   if (str === 'full')
     return '100%'
-  const [left, right] = str.split('/')
+
+  // 小程序百分比 / 改为 _
+  const [left, right] = str.split('_')
   const num = parseFloat(left) / parseFloat(right)
   if (!Number.isNaN(num))
     return `${round(num * 100)}%`
 }
-
 const bracketTypeRe = /^\[(color|length|position):/i
 function bracketWithType(str: string, type?: string) {
-  console.log('[ str ] >', str, type)
-
   if (str && str.startsWith('[') && str.endsWith(']')) {
     let base: string | undefined
 
