@@ -57,6 +57,19 @@ export function rem(str: string) {
     return unit ? `${round(num)}${unit}` : `${round(num / 4)}rem`
 }
 
+// 小程序 rpx
+export function rpx(str: string) {
+  if (str.match(unitOnlyRE))
+    return `1${str}`
+  const match = str.match(numberWithUnitRE)
+  if (!match)
+    return
+  const [, n, unit] = match
+  const num = parseFloat(n)
+  if (!Number.isNaN(num))
+    return unit ? `${round(num)}${unit}` : `${num}rpx`
+}
+
 export function px(str: string) {
   if (str.match(unitOnlyRE))
     return `1${str}`
@@ -96,6 +109,8 @@ export function fraction(str: string) {
 
 const bracketTypeRe = /^\[(color|length|position):/i
 function bracketWithType(str: string, type?: string) {
+  console.log('[ str ] >', str, type)
+
   if (str && str.startsWith('[') && str.endsWith(']')) {
     let base: string | undefined
 

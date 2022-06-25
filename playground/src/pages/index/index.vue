@@ -1,6 +1,20 @@
+<script setup lang="ts">
+import Size from '../components/Size.vue'
+</script>
+
 <template>
-  <view class="w-1 h-2 p-3 m-4">
-    11111111111
+  <view>
+    <view class="w-1 h-2">
+      11111111111
+    </view>
+    <view>
+      size1
+    </view>
+    <Size />
   </view>
 </template>
 
+<style scoped>
+
+
+</style>

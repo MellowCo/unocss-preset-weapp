@@ -63,7 +63,7 @@
   "scripts": {
     "build": "unbuild",
     "stub": "unbuild --stub",
-    "test": "vtests",
+    "test": "vitest",
     "play": "npm -C playground run dev:mp-weixin"
   },
   "devDependencies": {

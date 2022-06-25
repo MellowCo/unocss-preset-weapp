@@ -16,8 +16,11 @@ function getPropName(minmax: string, hw: string) {
 type SizeProps = 'width' | 'height' | 'maxWidth' | 'maxHeight' | 'minWidth' | 'minHeight' | 'inlineSize' | 'blockSize' | 'maxInlineSize' | 'maxBlockSize' | 'minInlineSize' | 'minBlockSize'
 
 function getSizeValue(minmax: string, hw: string, theme: Theme, prop: string) {
-  const str = getPropName(minmax, hw).replace(/-(\w)/g, (_, p) => p.toUpperCase()) as SizeProps
+  const str = getPropName(minmax, hw)
+    .replace(/-(\w)/g, (_, p) => p.toUpperCase()) as SizeProps
+
   const v = theme[str]?.[prop]
+
   if (v != null)
     return v
 
@@ -28,17 +31,20 @@ function getSizeValue(minmax: string, hw: string, theme: Theme, prop: string) {
       return `${prop}-content`
   }
 
-  return h.bracket.cssvar.auto.fraction.rem(prop)
+  return h.bracket.cssvar.auto.fraction.rpx(prop)
 }
 
 export const sizes: Rule<Theme>[] = [
-  [/^(min-|max-)?([wh])-?(.+)$/, ([, m, w, s], { theme }) => ({ [getPropName(m, w)]: getSizeValue(m, w, theme, s) }),
+  [
+    /^(min-|max-)?([wh])-?(.+)$/,
+    ([, m, w, s], { theme }) => ({ [getPropName(m, w)]: getSizeValue(m, w, theme, s) }),
     {
       autocomplete: [
         '(w|h)-$width|height|maxWidth|maxHeight|minWidth|minHeight|inlineSize|blockSize|maxInlineSize|maxBlockSize|minInlineSize|minBlockSize',
         '(max|min)-(w|h)-$width|height|maxWidth|maxHeight|minWidth|minHeight|inlineSize|blockSize|maxInlineSize|maxBlockSize|minInlineSize|minBlockSize',
       ],
-    }],
+    },
+  ],
   [/^(min-|max-)?(block|inline)-(.+)$/, ([, m, w, s], { theme }) => ({ [getPropName(m, w)]: getSizeValue(m, w, theme, s) }),
     {
       autocomplete: [
