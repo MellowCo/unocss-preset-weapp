@@ -1,87 +1,26 @@
-# @unocss/preset-mini
+## fix
 
-The minimal preset for [UnoCSS](https://github.com/unocss/unocss).
+### * 选择器
 
-## Installation
+> 小程序不支持`*`选择器
 
-```bash
-npm i -D @unocss/preset-mini
+![image-20220625135411354](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202206251354402.png)
+
+> 将`*`改为`view`
+
+```js
+const wxPerfix = 'view'
+
+export const preflights: Preflight[] = [
+  {
+    layer: 'preflights',
+    getCSS(ctx: PreflightContext<Theme>) {
+      if (ctx.theme.preflightBase)
+        return `${wxPerfix},::before,::after{${entriesToCss(Object.entries(ctx.theme.preflightBase))}}`
+    },
+  },
+]
 ```
 
-```ts
-import presetMini from '@unocss/preset-mini'
 
-Unocss({
-  presets: [
-    presetMini(),
-  ],
-})
-```
 
-## Features
-
-### Dark Mode
-
-By default, this preset generates class based dark mode with `dark:` variant.
-
-```html
-<div class="dark:bg-red:10" />
-```
-
-will generate:
-
-```css
-.dark .dark\:bg-red\:10 {
-  background-color: rgba(248, 113, 113, 0.1);
-}
-```
-
-To opt-in media query based dark mode, you can use `@dark:` variant:
-
-```html
-<div class="@dark:bg-red:10" />
-```
-
-```css
-@media (prefers-color-scheme: dark) {
-  .\@dark\:bg-red\:10 {
-    background-color: rgba(248, 113, 113, 0.1);
-  }
-}
-```
-
-Or set globally with the config for `dark:` variant
-
-```ts
-presetMini({
-  dark: 'media'
-})
-```
-
-### CSS @layer
-
-[CSS's native @layer](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) is supported with variant `layer-xx:`
-
-```html
-<div class="layer-foo:p4" />
-<div class="layer-bar:m4" />
-```
-
-will generate:
-
-```css
-@layer foo {
-  .layer-foo\:p4 {
-    padding: 1rem;
-  }
-}
-@layer bar {
-  .layer-bar\:m4 {
-    margin: 1rem;
-  }
-}
-```
-
-## License
-
-MIT License &copy; 2021-PRESENT [Anthony Fu](https://github.com/antfu)
