@@ -337,6 +337,7 @@ export const colors: Theme['colors'] = {
 Object.values(colors).forEach((color) => {
   if (typeof color !== 'string') {
     color.DEFAULT = color.DEFAULT || color[400]
+
     Object.keys(color).forEach((key) => {
       const short = +key / 100
       if (short === Math.round(short))

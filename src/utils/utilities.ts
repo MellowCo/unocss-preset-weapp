@@ -23,10 +23,11 @@ export const directionSize = (propertyPrefix: string) => ([_, direction, size]: 
 /**
  * Obtain color from theme by camel-casing colors.
  */
-const getThemeColor = (theme: Theme, colors: string[]) =>
-  theme.colors?.[
+const getThemeColor = (theme: Theme, colors: string[]) => {
+  return theme.colors?.[
     colors.join('-').replace(/(-[a-z])/g, n => n.slice(1).toUpperCase())
   ]
+}
 
 /**
  * Parse color string into {@link ParsedColorValue} (if possible). Color value will first be matched to theme object before parsing.
@@ -35,7 +36,7 @@ const getThemeColor = (theme: Theme, colors: string[]) =>
  * @example Parseable strings:
  * 'red' // From theme, if 'red' is available
  * 'red-100' // From theme, plus scale
- * 'red-100/20' // From theme, plus scale/opacity
+ * 'red-100_20' // From theme, plus scale/opacity
  * '[rgb(100,2,3)]/[var(--op)]' // Bracket with rgb color and bracket with opacity
  *
  * @param {string} body - Color string to be parsed.
@@ -43,7 +44,9 @@ const getThemeColor = (theme: Theme, colors: string[]) =>
  * @return {ParsedColorValue|undefined}  {@link ParsedColorValue} object if string is parseable.
  */
 export const parseColor = (body: string, theme: Theme): ParsedColorValue | undefined => {
-  const split = body.split(/(?:\/|:)/)
+  // 百分比 / 改为 _
+  const split = body.split(/(?:\_|:)/)
+
   let main, opacity
   if (split[0] === '[color') {
     main = split.slice(0, 2).join(':')
@@ -119,7 +122,7 @@ export const parseColor = (body: string, theme: Theme): ParsedColorValue | undef
  * colorResolver('background-color', 'background')('', 'red-100')
  * return { '--un-background-opacity': '1', 'background-color': 'rgba(254,226,226,var(--un-background-opacity))' }
  *
- * @example Resolving 'red-100/20' from theme:
+ * @example Resolving 'red-100_20' from theme:
  * colorResolver('background-color', 'background')('', 'red-100/20')
  * return { 'background-color': 'rgba(204,251,241,0.22)' }
  *

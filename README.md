@@ -109,3 +109,21 @@ export const borderRadius = {
 }
 ```
 
+
+
+---
+
+### border-color
+
+| class                                                        | Properties                                                   |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| border-blue<br>border-blue                                   | --un-border-opacity:1; <br>border-color:rgba(96,165,250,var(--un-border-opacity)); |
+| border-red-100<br>border-red100<br>border-red1  <br>border-red-1 | --un-border-opacity:1;<br>border-color:rgba(254,226,226,var(--un-border-opacity)) |
+| border-b-blue                                                | --un-border-opacity:1;<br>--un-border-bottom-opacity:var(--un-border-opacity);<br>border-bottom-color:rgba(96,165,250,var(--un-border-bottom-opacity)); |
+| border-s-red-100                                             | --un-border-opacity:1;<br>--un-border-inline-start-opacity:var(--un-border-opacity);<br>border-inline-start-color:rgba(254,226,226,var(--un-border-inline-start-opacity)) |
+| border-opacity-20                                            | --un-border-opacity:0.2                                      |
+| border-y-op-30                                               | --un-border-top-opacity:0.3;<br>--un-border-bottom-opacity:0.3 |
+| border-s-opacity50                                           | --un-border-inline-start-opacity:0.5                         |
+| border-b-op40                                                | --un-border-bottom-opacity:0.4;                              |
+| border-black_10                                              | border-color:rgba(0,0,0,0.1)                                 |
+| border-green-100_20                                          | border-color:rgba(220,252,231,0.2)                           |
