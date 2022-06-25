@@ -18,7 +18,6 @@ import uni from '@dcloudio/vite-plugin-uni'
 import Unocss from 'unocss/vite'
 import presetWxapp from 'unocss-preset-wxapp'
 
-
 export default defineConfig({
   plugins: [
     uni(),
@@ -50,9 +49,9 @@ export default defineConfig({
 | h-full      | height: 100%     |
 | h-half      | height: 50%      |
 
-> size预设
+> 预设
 
-```
+```js
 export const baseSize = {
   'xs': '180rpx',
   'sm': '220rpx',
@@ -73,4 +72,40 @@ export const baseSize = {
 ```
 
 
+
+---
+
+### border
+
+| class            | Properties                                               |
+| ---------------- | -------------------------------------------------------- |
+| border-2         | border-width:2rpx;border-style:solid;                    |
+| b-2              | border-width:2rpx;border-style:solid;                    |
+| border-b         | border-bottom-width:1px;border-bottom-style:solid        |
+| border-t-2       | border-top-width:2rpx;border-top-style:solid             |
+| border-size-2    | border-width:2rpx                                        |
+| border-x-width-3 | border-left-width:3rpx;border-right-width:3rpx           |
+| border-t-size-2  | border-top-width:2rpx                                    |
+| border-dashed    | border-style:dashed                                      |
+| rounded-1_2      | border-radius:50%                                        |
+| rounded-t-sm     | border-top-left-radius:4rpx;border-top-right-radius:4rpx |
+| border-l-dashed  | border-left-style:dashed                                 |
+| rounded-rb-1_2   | border-bottom-right-radius:50%                           |
+| rounded-md       | border-radius:12rpx                                      |
+
+> 预设
+
+```js
+export const borderRadius = {
+  'DEFAULT': '8rpx',
+  'none': '0',
+  'sm': '4rpx',
+  'md': '12rpx',
+  'lg': '16rpx',
+  'xl': '24rpx',
+  '2xl': '32rpx',
+  '3xl': '48rpx',
+  'full': '9999px',
+}
+```
 

@@ -45,14 +45,14 @@ export const duration = {
 }
 
 export const borderRadius = {
-  'DEFAULT': '0.25rem',
-  'none': '0rem',
-  'sm': '0.125rem',
-  'md': '0.375rem',
-  'lg': '0.5rem',
-  'xl': '0.75rem',
-  '2xl': '1rem',
-  '3xl': '1.5rem',
+  'DEFAULT': '8rpx',
+  'none': '0',
+  'sm': '4rpx',
+  'md': '12rpx',
+  'lg': '16rpx',
+  'xl': '24rpx',
+  '2xl': '32rpx',
+  '3xl': '48rpx',
   'full': '9999px',
 }
 
