@@ -42,6 +42,48 @@ import 'uno.css'
 
 
 
+## 注意事项
+
+> 不支持`%`
+
+```
+h-1.000%
+h-1.001%
+h-1.010%
+h-1.100%
+```
+
+> 不支持`/`改为`_`
+
+```
+h-1/2 => h-1_2
+h-2/2 => h-2_2
+```
+
+> 不支持`[]`
+
+```
+max-h-[1px]
+h-[calc(1000px-4rem)]
+bg-[#153]/10
+```
+
+> 不支持`$var`
+
+```
+max-w-$var
+min-w-$var
+h-$var
+```
+
+> 不支持`:` 
+
+```
+bg-teal-300:50
+```
+
+
+
 ##  使用
 
 <a href="https://uno.antfu.me/">🧑‍💻 Interactive Docs <sup>Beta</sup></a>
@@ -143,3 +185,14 @@ export const borderRadius = {
 | color-blue   color-blue-400   c-blue | --un-text-opacity:1;color:rgba(96,165,250,var(--un-text-opacity)) |
 | text-red-100 text-red100 text-red1   | --un-text-opacity:1;color:rgba(254,226,226,var(--un-text-opacity)) |
 | text-red-100_20                      | color:rgba(254,226,226,0.2)                                  |
+
+
+
+### bg
+
+| class                            | Properties                                                   |
+| -------------------------------- | ------------------------------------------------------------ |
+| bg-hex-452233_40                 | background-color:rgba(69,34,51,0.4)                          |
+| bg-red-100   bg-red1   bg-red100 | --un-bg-opacity:1;background-color:rgba(254,226,226,var(--un-bg-opacity)) |
+| bg-teal-100_55                   | background-color:rgba(204,251,241,0.55)                      |
+| bg-opacity-45                    | --un-bg-opacity:0.45                                         |
