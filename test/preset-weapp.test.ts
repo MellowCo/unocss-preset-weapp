@@ -1,7 +1,7 @@
 /*
  * @Author: licl
  * @Date: 2022-06-25 13:30:37
- * @LastEditTime: 2022-06-25 20:54:21
+ * @LastEditTime: 2022-06-26 12:58:34
  * @LastEditors: licl
  * @Description:
  */
@@ -9,7 +9,7 @@ import { createGenerator } from '@unocss/core'
 import { describe, expect, test } from 'vitest'
 import presetMini from '../src/index'
 import { presetMiniTargets } from './assets/preset-mini-targets'
-import { border, borderColor, size } from './assets/weapp'
+import { align, border, borderColor, size } from './assets/weapp'
 
 const uno = createGenerator({
   presets: [
@@ -42,6 +42,12 @@ describe('preset-weapp', () => {
 
   test('borderColor', async () => {
     const code = borderColor.join(' ')
+    const { css } = await uno.generate(code)
+    expect(css).toMatchSnapshot()
+  })
+
+  test('align', async () => {
+    const code = align.join(' ')
     const { css } = await uno.generate(code)
     expect(css).toMatchSnapshot()
   })

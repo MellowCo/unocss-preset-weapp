@@ -2,6 +2,7 @@
 import Size from '../components/Size.vue'
 import Border from '../components/Border.vue'
 import BorderColor from '../components/BorderColor.vue'
+import Align from '../components/Align.vue'
 </script>
 
 <template>
@@ -9,10 +10,10 @@ import BorderColor from '../components/BorderColor.vue'
     <Size />
     <Border />
     <BorderColor />
+    <Align />
   </view>
 </template>
 
 <style scoped>
-
 
 </style>
