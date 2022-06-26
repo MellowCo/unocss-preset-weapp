@@ -16,7 +16,7 @@ const autoDirection = (c: string, theme: Theme, prop: string) => {
     case 'fr': return 'minmax(0,1fr)'
   }
 
-  return h.bracket.cssvar.auto.rem(prop)
+  return h.bracket.cssvar.auto.remToRpx(prop)
 }
 
 export const grids: Rule<Theme>[] = [

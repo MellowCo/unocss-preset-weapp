@@ -29,6 +29,11 @@ export default defineConfig({
       presets: [
         presetWxapp(),
       ],
+        shortcuts: [
+        {
+          'border-base': 'border border-gray-500_10',
+        },
+      ],
     }),
   ],
 })
@@ -43,6 +48,8 @@ import 'uno.css'
 
 
 ## 注意事项
+
+**小程序不支持使用反斜杠，冒号，方括号，$等作为类名**
 
 > 不支持`%`
 
@@ -85,8 +92,9 @@ bg-teal-300:50
 
 
 ##  使用
+[UnoCSS 文档](https://uno.antfu.me/)
 
-<a href="https://uno.antfu.me/">🧑‍💻 Interactive Docs <sup>Beta</sup></a>
+[Windi CSS文档](https://windicss.org/)
 
 > 默认单位`rpx`，w-100 => w-100rpx
 >

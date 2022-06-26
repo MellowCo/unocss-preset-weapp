@@ -93,7 +93,7 @@ export const transforms: Rule[] = [
 ]
 
 function handleTranslate([, d, b]: string[], { theme }: RuleContext<Theme>): CSSValues | undefined {
-  const v = theme.spacing?.[b] ?? h.bracket.cssvar.fraction.rem(b)
+  const v = theme.spacing?.[b] ?? h.bracket.cssvar.fraction.remToRpx(b)
   if (v != null) {
     return [
       ...xyzMap[d].map((i): [string, string] => [`--un-translate${i}`, v]),

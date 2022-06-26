@@ -49,6 +49,8 @@ view,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .border-rounded,
 .rounded{border-radius:8rpx;}
 .rounded-1_2{border-radius:50%;}
+.rounded-2{border-radius:16rpx;}
+.rounded-4{border-radius:32rpx;}
 .rounded-full{border-radius:9999px;}
 .rounded-md{border-radius:12rpx;}
 .rounded-none{border-radius:0;}
@@ -197,6 +199,54 @@ view,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .grid-rows-minmax-100px{grid-template-rows:repeat(auto-fill,minmax(100px,1fr));}
 .grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr));}
 .grid-rows-3{grid-template-rows:repeat(3,minmax(0,1fr));}"
+`;
+
+exports[`preset-weapp > position 1`] = `
+"/* layer: preflights */
+view,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-ring-offset-shadow:0 0 #0000;--un-ring-shadow:0 0 #0000;--un-shadow-inset:var(--un-empty,/*!*/ /*!*/);--un-shadow:0 0 #0000;--un-ring-inset:var(--un-empty,/*!*/ /*!*/);--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgba(147,197,253,0.5);}
+/* layer: default */
+.absolute{position:absolute;}
+.pos-fixed{position:fixed;}
+.position-sticky{position:sticky;}
+.relative{position:relative;}
+.static{position:static;}
+.order-first{order:-9999;}
+.order-none{order:0;}
+.justify-start{justify-content:flex-start;}
+.justify-center{justify-content:center;}
+.justify-items-end{justify-items:end;}
+.justify-self-stretch{justify-self:stretch;}
+.content-center{align-content:center;}
+.content-start{align-content:flex-start;}
+.items-end{align-items:flex-end;}
+.self-stretch{align-self:stretch;}
+.place-content-stretch{place-content:stretch;}
+.place-items-stretch{place-items:stretch;}
+.place-self-stretch{place-self:stretch;}
+.inset-0{inset:0rpx;}
+.inset-5{inset:40rpx;}
+.inset-none{inset:0;}
+.inset-x-5{left:40rpx;right:40rpx;}
+.inset-y-5{top:40rpx;bottom:40rpx;}
+.inset-b-5{bottom:40rpx;}
+.inset-e-5,
+.inset-ie-5{inset-inline-end:40rpx;}
+.inset-t-5{top:40rpx;}
+.inset-block-5{inset-block-start:40rpx;inset-block-end:40rpx;}
+.inset-inline-5{inset-inline-start:40rpx;inset-inline-end:40rpx;}
+.inset-bs-5{inset-block-start:40rpx;}
+.top-0{top:0rpx;}
+.float-left{float:left;}
+.float-none{float:none;}
+.clear-both{clear:both;}
+.clear-none{clear:none;}
+.z-0,
+.z0{z-index:0;}
+.z-1{z-index:1;}
+.z-100{z-index:100;}
+.z-auto{z-index:auto;}
+.box-border{box-sizing:border-box;}
+.box-content{box-sizing:content-box;}"
 `;
 
 exports[`preset-weapp > shadow 1`] = `
