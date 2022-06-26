@@ -314,3 +314,30 @@ padding: 0.5rem
 padding:16rpx
 ```
 
+### box-shadow
+
+> 预设
+
+```js
+export const boxShadow = {
+  'DEFAULT': ['var(--un-shadow-inset) 0 2rpx 6rpx 0 rgba(0,0,0,0.1)', 'var(--un-shadow-inset) 0 2rpx 4rpx -2rpx rgba(0,0,0,0.1)'],
+  'none': '0 0 #0000',
+  'sm': 'var(--un-shadow-inset) 0 2rpx 4rpx 0 rgba(0,0,0,0.05)',
+  'md': ['var(--un-shadow-inset) 0 8rpx 12rpx -2rpx rgba(0,0,0,0.1)', 'var(--un-shadow-inset) 0 4rpx 8rpx -4rpx rgba(0,0,0,0.1)'],
+  'lg': ['var(--un-shadow-inset) 0 20rpx 30rpx -6rpx rgba(0,0,0,0.1)', 'var(--un-shadow-inset) 0 8rpx 12rpx -8rpx rgba(0,0,0,0.1)'],
+  'xl': ['var(--un-shadow-inset) 0 40rpx 50rpx -10rpx rgba(0,0,0,0.1)', 'var(--un-shadow-inset) 0 16rpx 20rpx -12rpx rgba(0,0,0,0.1)'],
+  '2xl': 'var(--un-shadow-inset) 0 50rpx 100rpx -24rpx rgba(0,0,0,0.25)',
+  'inner': 'inset 0 4rpx 8rpx 0 rgba(0,0,0,0.05)',
+}
+```
+
+
+
+### flex gap
+
+| class          | Properties                              |
+| -------------- | --------------------------------------- |
+| flex-basis-1_2 | flex-basis:50%                          |
+| flex-basis-2   | flex-basis:16rpx                        |
+| gap-4          | grid-gap:32rpx;gap:32rpx                |
+| gap-x-2        | grid-column-gap:16rpx;column-gap:16rpx; |

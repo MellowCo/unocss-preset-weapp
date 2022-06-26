@@ -20,7 +20,7 @@ export const flex: Rule<Theme>[] = [
   [/^(?:flex-)?shrink-0$/, () => ({ 'flex-shrink': 0 })],
   [/^(?:flex-)?grow$/, () => ({ 'flex-grow': 1 })],
   [/^(?:flex-)?grow-0$/, () => ({ 'flex-grow': 0 })],
-  [/^(?:flex-)?basis-(.+)$/, ([, d], { theme }) => ({ 'flex-basis': theme.spacing?.[d] ?? h.bracket.cssvar.auto.fraction.rem(d) })],
+  [/^(?:flex-)?basis-(.+)$/, ([, d], { theme }) => ({ 'flex-basis': theme.spacing?.[d] ?? h.bracket.cssvar.auto.fraction.remToRpx(d) })],
 
   // directions
   ['flex-row', { 'flex-direction': 'row' }],
