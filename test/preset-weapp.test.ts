@@ -1,7 +1,7 @@
 /*
  * @Author: licl
  * @Date: 2022-06-25 13:30:37
- * @LastEditTime: 2022-06-26 15:17:07
+ * @LastEditTime: 2022-06-26 15:47:17
  * @LastEditors: licl
  * @Description:
  */
@@ -9,7 +9,7 @@ import { createGenerator } from '@unocss/core'
 import { describe, expect, test } from 'vitest'
 import presetMini from '../src/index'
 import { presetMiniTargets } from './assets/preset-mini-targets'
-import { align, bg, border, borderColor, color, size, spacing, typography } from './assets/weapp'
+import { align, bg, border, borderColor, color, shadow, size, spacing, typography } from './assets/weapp'
 
 const uno = createGenerator({
   presets: [
@@ -72,6 +72,12 @@ describe('preset-weapp', () => {
 
   test('spacing', async () => {
     const code = spacing.join(' ')
+    const { css } = await uno.generate(code)
+    expect(css).toMatchSnapshot()
+  })
+
+  test('shadow', async () => {
+    const code = shadow.join(' ')
     const { css } = await uno.generate(code)
     expect(css).toMatchSnapshot()
   })

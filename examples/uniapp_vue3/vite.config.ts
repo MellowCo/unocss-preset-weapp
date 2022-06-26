@@ -11,6 +11,11 @@ export default defineConfig({
       presets: [
         presetWxapp(),
       ],
+      shortcuts: [
+        {
+          'border-base': 'border border-gray-500_10',
+        },
+      ],
     }),
   ],
 })

@@ -7,10 +7,11 @@ import Color from '../components/Color.vue'
 import Bg from '../components/Bg.vue'
 import Typography from '../components/Typography.vue'
 import Spacing from '../components/Spacing.vue'
+import BoxShadow from '../components/BoxShadow.vue'
 </script>
 
 <template>
-  <view class="p-5 bg-red/10 text-justify line-through truncate whitespace-nowrap lowercase">
+  <view class="p-5 bg-red/10 text-justify line-through truncate whitespace-nowrap lowercase divide-y">
     <Size />
     <Border />
     <BorderColor />
@@ -18,6 +19,10 @@ import Spacing from '../components/Spacing.vue'
     <Color />
     <Bg />
     <Typography />
-    <Spacing />
+    <view class="border-base">
+      <Spacing />
+    </view>
+
+    <BoxShadow />
   </view>
 </template>
