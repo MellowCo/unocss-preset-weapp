@@ -201,6 +201,46 @@ view,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .min-w-screen-lg{min-width:1024px;}"
 `;
 
+exports[`preset-weapp > spacing 1`] = `
+"/* layer: preflights */
+view,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-ring-offset-shadow:0 0 #0000;--un-ring-shadow:0 0 #0000;--un-shadow-inset:var(--un-empty,/*!*/ /*!*/);--un-shadow:0 0 #0000;--un-ring-inset:var(--un-empty,/*!*/ /*!*/);--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgba(147,197,253,0.5);}
+/* layer: default */
+.p-2,
+.p2{padding:16rpx;}
+.p-none{padding:0;}
+.pa{padding:auto;}
+.p-xy,
+.pxy{padding:32rpx;}
+.p-x,
+.px{padding-left:32rpx;padding-right:32rpx;}
+.p-t-2,
+.pt-2,
+.pt2{padding-top:16rpx;}
+.pb{padding-bottom:32rpx;}
+.pl-10px{padding-left:10px;}
+.p-bs-2,
+.pbs-2,
+.pbs2{padding-block-start:16rpx;}
+.p-ie-none{padding-inline-end:0;}
+.p-is,
+.pis{padding-inline-start:32rpx;}
+.pis-10px{padding-inline-start:10px;}
+.-m-lg{margin:-36rpx;}
+.m-0{margin:0rpx;}
+.m-1_2{margin:50%;}
+.m-10rpx{margin:10rpx;}
+.m-auto{margin:auto;}
+.m-none{margin:0;}
+.m-xy,
+.mxy{margin:32rpx;}
+.mx-2{margin-left:16rpx;margin-right:16rpx;}
+.my-auto{margin-top:auto;margin-bottom:auto;}
+.m-block{margin-block-start:32rpx;margin-block-end:32rpx;}
+.m-block-auto{margin-block-start:auto;margin-block-end:auto;}
+.m-inline-none{margin-inline-start:0;margin-inline-end:0;}
+.mbs{margin-block-start:32rpx;}"
+`;
+
 exports[`preset-weapp > typography 1`] = `
 "/* layer: preflights */
 view,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-ring-offset-shadow:0 0 #0000;--un-ring-shadow:0 0 #0000;--un-shadow-inset:var(--un-empty,/*!*/ /*!*/);--un-shadow:0 0 #0000;--un-ring-inset:var(--un-empty,/*!*/ /*!*/);--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgba(147,197,253,0.5);}

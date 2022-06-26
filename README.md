@@ -280,3 +280,37 @@ line-height: 0.5rem
 line-height:16rpx
 ```
 
+### spacing
+
+| class      | Properties                           |
+| ---------- | ------------------------------------ |
+| p-2<br/>p2 | padding:16rpx                        |
+| mx-2       | margin-left:16rpx;margin-right:16rpx |
+| -m-lg      | margin:-36rpx                        |
+| pl-10px    | padding-left:10px                    |
+| m-10rpx    | margin:10rpx                         |
+> 预设
+
+```js
+export const spacing = {
+  'DEFAULT': '32rpx',
+  'none': '0',
+  'xs': '24rpx',
+  'sm': '28rpx',
+  'lg': '36rpx',
+  'xl': '40rpx',
+  '2xl': '48rpx',
+  '3xl': '60rpx',
+  '4xl': '72rpx',
+  '5xl': '96rpx',
+  '6xl': '120rpx',
+  '7xl': '144rpx',
+  '8xl': '192rpx',
+  '9xl': '256rpx',
+}
+
+p-2    
+padding: 0.5rem 
+padding:16rpx
+```
+

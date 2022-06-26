@@ -6,10 +6,11 @@ import Align from '../components/Align.vue'
 import Color from '../components/Color.vue'
 import Bg from '../components/Bg.vue'
 import Typography from '../components/Typography.vue'
+import Spacing from '../components/Spacing.vue'
 </script>
 
 <template>
-  <view class="p-5 bg-red/10">
+  <view class="p-5 bg-red/10 text-justify line-through truncate whitespace-nowrap lowercase">
     <Size />
     <Border />
     <BorderColor />
@@ -17,9 +18,6 @@ import Typography from '../components/Typography.vue'
     <Color />
     <Bg />
     <Typography />
+    <Spacing />
   </view>
 </template>
-
-<style scoped>
-
-</style>

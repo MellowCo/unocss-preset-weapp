@@ -15,7 +15,7 @@ export const CONTROL_MINI_NO_NEGATIVE = '$$mini-no-negative'
  * @see {@link directionMap}
  */
 export const directionSize = (propertyPrefix: string) => ([_, direction, size]: string[], { theme }: RuleContext<Theme>): CSSEntries | undefined => {
-  const v = theme.spacing?.[size || 'DEFAULT'] ?? h.bracket.cssvar.auto.fraction.rem(size)
+  const v = theme.spacing?.[size || 'DEFAULT'] ?? h.bracket.cssvar.auto.fraction.remToRpx(size)
   if (v != null)
     return directionMap[direction].map(i => [`${propertyPrefix}${i}`, v])
 }
