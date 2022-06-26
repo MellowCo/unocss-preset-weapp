@@ -137,15 +137,10 @@ export const parseColor = (body: string, theme: Theme): ParsedColorValue | undef
 export const colorResolver = (property: string, varName: string) => ([, body]: string[], { theme }: RuleContext<Theme>): CSSObject | undefined => {
   const data = parseColor(body, theme)
 
-  console.log('[ body ] >', body)
-
   if (!data)
     return
 
   const { alpha, color, cssColor } = data
-
-  console.log('[ data ] >', data)
-  console.log('-----------------------')
 
   if (cssColor) {
     if (alpha != null) {

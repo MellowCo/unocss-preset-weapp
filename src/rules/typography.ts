@@ -37,13 +37,13 @@ export const fonts: Rule<Theme>[] = [
         }
       }
 
-      return { 'font-size': h.bracketOfLength.rem(s) }
+      return { 'font-size': h.bracketOfLength.rpx(s) }
     },
     { autocomplete: 'text-$fontSize' },
   ],
   [/^text-size-(.+)$/, ([, s], { theme }) => {
     const themed = toArray(theme.fontSize?.[s])
-    const size = themed?.[0] ?? h.bracket.cssvar.rem(s)
+    const size = themed?.[0] ?? h.bracket.cssvar.rpx(s)
     if (size != null)
       return { 'font-size': size }
   }, { autocomplete: 'text-size-$fontSize' }],
@@ -58,7 +58,7 @@ export const fonts: Rule<Theme>[] = [
   // leadings
   [
     /^(?:font-)?(?:leading|lh)-(.+)$/,
-    ([, s], { theme }) => ({ 'line-height': theme.lineHeight?.[s] || h.bracket.cssvar.global.rem(s) }),
+    ([, s], { theme }) => ({ 'line-height': theme.lineHeight?.[s] || h.bracket.cssvar.global.remToRpx(s) }),
     { autocomplete: '(leading|lh)-$lineHeight' },
   ],
 
@@ -72,14 +72,14 @@ export const fonts: Rule<Theme>[] = [
   // tracking
   [
     /^(?:font-)?tracking-(.+)$/,
-    ([, s], { theme }) => ({ 'letter-spacing': theme.letterSpacing?.[s] || h.bracket.cssvar.global.rem(s) }),
+    ([, s], { theme }) => ({ 'letter-spacing': theme.letterSpacing?.[s] || h.bracket.cssvar.global.remToRpx(s) }),
     { autocomplete: 'tracking-$letterSpacing' },
   ],
 
   // word-spacing
   [
     /^(?:font-)?word-spacing-(.+)$/,
-    ([, s], { theme }) => ({ 'word-spacing': theme.wordSpacing?.[s] || h.bracket.cssvar.global.rem(s) }),
+    ([, s], { theme }) => ({ 'word-spacing': theme.wordSpacing?.[s] || h.bracket.cssvar.global.remToRpx(s) }),
     { autocomplete: 'word-spacing-$wordSpacing' },
   ],
 ]
@@ -98,7 +98,7 @@ export const tabSizes: Rule<Theme>[] = [
 ]
 
 export const textIndents: Rule<Theme>[] = [
-  [/^indent(?:-(.+))?$/, ([, s], { theme }) => ({ 'text-indent': theme.textIndent?.[s || 'DEFAULT'] || h.bracket.cssvar.global.fraction.rem(s) }), { autocomplete: 'indent-$textIndent' }],
+  [/^indent(?:-(.+))?$/, ([, s], { theme }) => ({ 'text-indent': theme.textIndent?.[s || 'DEFAULT'] || h.bracket.cssvar.global.fraction.remToRpx(s) }), { autocomplete: 'indent-$textIndent' }],
 ]
 
 export const textStrokes: Rule<Theme>[] = [

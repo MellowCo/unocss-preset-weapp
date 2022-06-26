@@ -38,34 +38,34 @@ export const fontFamily = {
 }
 
 export const fontSize: Theme['fontSize'] = {
-  'xs': ['0.75rem', '1rem'],
-  'sm': ['0.875rem', '1.25rem'],
-  'base': ['1rem', '1.5rem'],
-  'lg': ['1.125rem', '1.75rem'],
-  'xl': ['1.25rem', '1.75rem'],
-  '2xl': ['1.5rem', '2rem'],
-  '3xl': ['1.875rem', '2.25rem'],
-  '4xl': ['2.25rem', '2.5rem'],
-  '5xl': ['3rem', '1'],
-  '6xl': ['3.75rem', '1'],
-  '7xl': ['4.5rem', '1'],
-  '8xl': ['6rem', '1'],
-  '9xl': ['8rem', '1'],
+  'xs': ['24rpx', '32rpx'],
+  'sm': ['28rpx', '40rpx'],
+  'base': ['32rpx', '48rpx'],
+  'lg': ['36rpx', '56rpx'],
+  'xl': ['40rpx', '56rpx'],
+  '2xl': ['48rpx', '64rpx'],
+  '3xl': ['60rpx', '72rpx'],
+  '4xl': ['72rpx', '80rpx'],
+  '5xl': ['96rpx', '1'],
+  '6xl': ['120rpx', '1'],
+  '7xl': ['144rpx', '1'],
+  '8xl': ['192rpx', '1'],
+  '9xl': ['256rpx', '1'],
 }
 
 export const textIndent: Theme['textIndent'] = {
-  'DEFAULT': '1.5rem',
-  'xs': '0.5rem',
-  'sm': '1rem',
-  'md': '1.5rem',
-  'lg': '2rem',
-  'xl': '2.5rem',
-  '2xl': '3rem',
-  '3xl': '4rem',
+  'DEFAULT': '48rpx',
+  'xs': '16rpx',
+  'sm': '32rpx',
+  'md': '48rpx',
+  'lg': '64rpx',
+  'xl': '80rpx',
+  '2xl': '96rpx',
+  '3xl': '128rpx',
 }
 
 export const textStrokeWidth: Theme['textStrokeWidth'] = {
-  DEFAULT: '1.5rem',
+  DEFAULT: '48rpx',
   none: '0',
   sm: 'thin',
   md: 'medium',
@@ -73,12 +73,12 @@ export const textStrokeWidth: Theme['textStrokeWidth'] = {
 }
 
 export const textShadow: Theme['textShadow'] = {
-  DEFAULT: ['0 0 1px rgba(0,0,0,0.2)', '0 0 1px rgba(1,0,5,0.1)'],
+  DEFAULT: ['0 0 2rpx rgba(0,0,0,0.2)', '0 0 2rpx rgba(1,0,5,0.1)'],
   none: '0 0 #0000',
-  sm: '1px 1px 3px rgba(36,37,47,0.25)',
-  md: ['0 1px 2px rgba(30,29,39,0.19)', '1px 2px 4px rgba(54,64,147,0.18)'],
-  lg: ['3px 3px 6px rgba(0,0,0,0.26)', '0 0 5px rgba(15,3,86,0.22)'],
-  xl: ['1px 1px 3px rgba(0,0,0,0.29)', '2px 4px 7px rgba(73,64,125,0.35)'],
+  sm: '2rpx 2rpx 6rpx rgba(36,37,47,0.25)',
+  md: ['0 2rpx 4rpx rgba(30,29,39,0.19)', '2rpx 4rpx 8rpx rgba(54,64,147,0.18)'],
+  lg: ['6rpx 6rpx 12rpx rgba(0,0,0,0.26)', '0 0 10rpx rgba(15,3,86,0.22)'],
+  xl: ['2rpx 2rpx 6rpx rgba(0,0,0,0.29)', '4rpx 8rpx 14rpx rgba(73,64,125,0.35)'],
 }
 
 export const lineHeight: Theme['lineHeight'] = {

@@ -163,36 +163,120 @@ export const borderRadius = {
 
 ### border-color
 
-| class                                                       | Properties                                                   |
-| ----------------------------------------------------------- | ------------------------------------------------------------ |
-| border-red-100   border-red100   border-red1   border-red-1 | --un-border-opacity:1;  border-color:rgba(254,226,226,var(--un-border-opacity)) |
-| border-opacity-20                                           | --un-border-opacity:0.2                                      |
-| border-y-op-30                                              | --un-border-top-opacity:0.3;   --un-border-bottom-opacity:0.3 |
-| border-b-op40                                               | --un-border-bottom-opacity:0.4;                              |
-| border-black_10                                             | border-color:rgba(0,0,0,0.1)                                 |
-| border-green-100_20                                         | border-color:rgba(220,252,231,0.2)                           |
+| class                                                        | Properties                                                   |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| border-red-100<br/>border-red100<br/>border-red1<br/>border-red-1 | --un-border-opacity:1;  border-color:rgba(254,226,226,var(--un-border-opacity)) |
+| border-opacity-20                                            | --un-border-opacity:0.2                                      |
+| border-y-op-30                                               | --un-border-top-opacity:0.3;   --un-border-bottom-opacity:0.3 |
+| border-b-op40                                                | --un-border-bottom-opacity:0.4;                              |
+| border-black_10                                              | border-color:rgba(0,0,0,0.1)                                 |
+| border-green-100_20                                          | border-color:rgba(220,252,231,0.2)                           |
 
 
 
 ---
 ### color
 
-| class                                | Properties                                                   |
-| ------------------------------------ | ------------------------------------------------------------ |
-| op-10 opacity-10                     | opacity:0.1                                                  |
-| color-hex-157   c-hex-157            | --un-text-opacity:1;color:rgba(17,85,119,var(--un-text-opacity)) |
-| c-hex-157_10                         | color:rgba(17,85,119,0.1)                                    |
-| color-blue   color-blue-400   c-blue | --un-text-opacity:1;color:rgba(96,165,250,var(--un-text-opacity)) |
-| text-red-100 text-red100 text-red1   | --un-text-opacity:1;color:rgba(254,226,226,var(--un-text-opacity)) |
-| text-red-100_20                      | color:rgba(254,226,226,0.2)                                  |
+| class                                      | Properties                                                   |
+| ------------------------------------------ | ------------------------------------------------------------ |
+| op-10<br/>opacity-10                       | opacity:0.1                                                  |
+| color-hex-157<br/>c-hex-157                | --un-text-opacity:1;color:rgba(17,85,119,var(--un-text-opacity)) |
+| c-hex-157_10                               | color:rgba(17,85,119,0.1)                                    |
+| color-blue<br/>color-blue-400<br/>c-blue   | --un-text-opacity:1;color:rgba(96,165,250,var(--un-text-opacity)) |
+| text-red-100<br/>text-red100<br/>text-red1 | --un-text-opacity:1;color:rgba(254,226,226,var(--un-text-opacity)) |
+| text-red-100_20                            | color:rgba(254,226,226,0.2)                                  |
 
 
 
 ### bg
 
-| class                            | Properties                                                   |
-| -------------------------------- | ------------------------------------------------------------ |
-| bg-hex-452233_40                 | background-color:rgba(69,34,51,0.4)                          |
-| bg-red-100   bg-red1   bg-red100 | --un-bg-opacity:1;background-color:rgba(254,226,226,var(--un-bg-opacity)) |
-| bg-teal-100_55                   | background-color:rgba(204,251,241,0.55)                      |
-| bg-opacity-45                    | --un-bg-opacity:0.45                                         |
+| class                              | Properties                                                   |
+| ---------------------------------- | ------------------------------------------------------------ |
+| bg-hex-452233_40                   | background-color:rgba(69,34,51,0.4)                          |
+| bg-red-100<br>bg-red1<br>bg-red100 | --un-bg-opacity:1;background-color:rgba(254,226,226,var(--un-bg-opacity)) |
+| bg-teal-100_55                     | background-color:rgba(204,251,241,0.55)                      |
+| bg-opacity-45                      | --un-bg-opacity:0.45                                         |
+
+
+### typography
+
+| class                                | Properties                                                   |
+| ------------------------------------ | ------------------------------------------------------------ |
+| text-base                            | font-size:32rpx;line-height:48rpx                            |
+| text-100,<br>text-size-100           | font-size:100rpx                                             |
+| text-2em                             | font-size:2em                                                |
+| font-900,<br/>font-black,<br/>fw-900 | font-weight:900                                              |
+| font-leading-2 ,<br/>leading-2       | line-height:16rpx                                            |
+| indent                               | text-indent:48rpx                                            |
+| indent-2                             | text-indent:16rpx                                            |
+| indent-1_2                           | text-indent:50%                                              |
+| indent-lg                            | text-indent:64rpx                                            |
+| text-shadow-lg                       | --un-text-shadow:6rpx 6rpx 12rpx var(--un-text-shadow-color, rgba(0,0,0,0.26)),0 0 10rpx var(--un-text-shadow-color, rgba(15,3,86,0.22));text-shadow:var(--un-text-shadow) |
+| word-spacing-2                       | word-spacing:16rpx                                           |
+| tracking-2                           | letter-spacing:16rpx                                         |
+
+
+
+> fontSize预设 `text-base`
+
+```js
+export const fontSize: Theme['fontSize'] = {
+  'xs': ['24rpx', '32rpx'],
+  'sm': ['28rpx', '40rpx'],
+  'base': ['32rpx', '48rpx'],
+  'lg': ['36rpx', '56rpx'],
+  'xl': ['40rpx', '56rpx'],
+  '2xl': ['48rpx', '64rpx'],
+  '3xl': ['60rpx', '72rpx'],
+  '4xl': ['72rpx', '80rpx'],
+  '5xl': ['96rpx', '1'],
+  '6xl': ['120rpx', '1'],
+  '7xl': ['144rpx', '1'],
+  '8xl': ['192rpx', '1'],
+  '9xl': ['256rpx', '1'],
+}
+
+text-100 => font-size:100rpx
+```
+
+> textIndent预设 `indent-lg`
+
+```js
+export const textIndent: Theme['textIndent'] = {
+  'DEFAULT': '48rpx',
+  'xs': '16rpx',
+  'sm': '32rpx',
+  'md': '48rpx',
+  'lg': '64rpx',
+  'xl': '80rpx',
+  '2xl': '96rpx',
+  '3xl': '128rpx',
+}
+```
+
+> `leadings`  `tracking`  `word-spacing`  `indent` 计算方式
+
+`indent-2`原为`text-indent: 0.5rem`等于`8px`,
+
+小程序使用`750rpx`的基准是`2倍px`等于`16rpx`,
+
+所以计算为`2*0.5*1rem = 2*0.5*16px = 16rpx`
+
+```js
+indent-2    
+text-indent: 0.5rem 
+text-indent: 16rpx
+
+tracking-2    
+letter-spacing: 0.5rem  
+letter-spacing:16rpx
+
+word-spacing-2   
+word-spacing: 0.5rem  
+word-spacing:16rpx
+
+leadings-2  
+line-height: 0.5rem  
+line-height:16rpx
+```
+

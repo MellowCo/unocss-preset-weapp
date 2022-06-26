@@ -57,6 +57,19 @@ export function rem(str: string) {
     return unit ? `${round(num)}${unit}` : `${round(num / 4)}rem`
 }
 
+export function remToRpx(str: string) {
+  if (str.match(unitOnlyRE))
+    return `1${str}`
+  const match = str.match(numberWithUnitRE)
+  if (!match)
+    return
+  const [, n, unit] = match
+  const num = parseFloat(n)
+  if (!Number.isNaN(num))
+  // 32 = 2 * rem
+    return unit ? `${round(num)}${unit}` : `${round(32 * num / 4)}rpx`
+}
+
 // 小程序 rpx
 export function rpx(str: string) {
   if (str.match(unitOnlyRE))

@@ -64,7 +64,8 @@
     "build": "unbuild",
     "stub": "unbuild --stub",
     "test": "vitest",
-    "uniapp3": "npm -C examples/uniapp_vue3 run dev:mp-weixin"
+    "uniapp3": "npm run build && npm -C examples/uniapp_vue3 run dev:mp-weixin",
+    "uniapp3:h5": "npm run build && npm -C examples/uniapp_vue3 run dev:h5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",
