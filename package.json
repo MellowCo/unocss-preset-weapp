@@ -79,6 +79,6 @@
     "vitest": "^0.16.0"
   },
   "dependencies": {
-    "@unocss/core": "^0.40.0"
+    "@unocss/core": "^0.41.0"
   }
 }

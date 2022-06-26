@@ -1,6 +1,6 @@
 # unocss-preset-wxapp
 
-[unocss](https://github.com/unocss/unocss) 小程序预设
+[unocss](https://github.com/unocss/unocss) 微信小程序预设
 
 ## 安装
 
@@ -29,9 +29,10 @@ export default defineConfig({
       presets: [
         presetWxapp(),
       ],
-        shortcuts: [
+      shortcuts: [
         {
           'border-base': 'border border-gray-500_10',
+          'center': 'flex justify-center items-center',
         },
       ],
     }),
@@ -45,7 +46,15 @@ export default defineConfig({
 import 'uno.css'
 ```
 
+### 示例
 
+[MellowCo/unocss-preset-weapp-example (github.com)](https://github.com/MellowCo/unocss-preset-weapp-example)
+
+<img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202206262006057.png" alt="image-20220626200638930" style="zoom:50%;" />
+
+<img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202206262008208.png" alt="image-20220626200851164" style="zoom:50%;" />
+
+<img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202206262007807.png" alt="image-20220626200728759" style="zoom:50%;" />
 
 ## 注意事项
 
@@ -305,16 +314,16 @@ export const spacing = {
   'none': '0',
   'xs': '24rpx',
   'sm': '28rpx',
-  'lg': '36rpx',
-  'xl': '40rpx',
-  '2xl': '48rpx',
-  '3xl': '60rpx',
-  '4xl': '72rpx',
-  '5xl': '96rpx',
-  '6xl': '120rpx',
-  '7xl': '144rpx',
-  '8xl': '192rpx',
-  '9xl': '256rpx',
+  'md': '36rpx',
+  'lg': '40rpx',
+  'xl': '48rpx',
+  '2xl': '60rpx',
+  '3xl': '72rpx',
+  '4xl': '96rpx',
+  '5xl': '120rpx',
+  '6xl': '144rpx',
+  '7xl': '192rpx',
+  '8xl': '256rpx',
 }
 
 p-2    
