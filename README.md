@@ -29,6 +29,7 @@ export default defineConfig({
       presets: [
         presetWxapp(),
       ],
+      // 设置快捷 
       shortcuts: [
         {
           'border-base': 'border border-gray-500_10',

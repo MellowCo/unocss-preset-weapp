@@ -1,28 +1,27 @@
 <script setup lang="ts">
-import Size from '../components/Size.vue'
-import Border from '../components/Border.vue'
-import BorderColor from '../components/BorderColor.vue'
-import Align from '../components/Align.vue'
-import Color from '../components/Color.vue'
-import Bg from '../components/Bg.vue'
-import Typography from '../components/Typography.vue'
-import Spacing from '../components/Spacing.vue'
-import BoxShadow from '../components/BoxShadow.vue'
+const list = [
+  { name: 'font', path: '/pages/font/index' },
+  { name: 'size', path: '/pages/size/index' },
+  { name: 'shadow', path: '/pages/shadow/index' },
+  { name: 'border', path: '/pages/border/index' },
+  { name: 'spacing', path: '/pages/spacing/index' },
+  { name: 'shortcuts', path: '/pages/shortcuts/index' },
+]
+
+const to = (to: string) => {
+  uni.navigateTo({
+    url: to,
+  })
+}
 </script>
 
 <template>
-  <view class="p-5 bg-red/10 text-justify line-through truncate whitespace-nowrap lowercase divide-y">
-    <Size />
-    <Border />
-    <BorderColor />
-    <Align />
-    <Color />
-    <Bg />
-    <Typography />
-    <view class="border-base">
-      <Spacing />
+  <view class="py-3">
+    <view class="grid grid-cols-3 justify-items-center">
+      <view v-for="(item, index) in list" :key="index" class="w-200 h-200 shadow-md center rounded-md" @click="to(item.path)">
+        {{ item.name }}
+      </view>
     </view>
-
-    <BoxShadow />
   </view>
 </template>
+
