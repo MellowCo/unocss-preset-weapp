@@ -1,6 +1,6 @@
 {
   "name": "unocss-preset-wxapp",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "the wxapp preset for UnoCss",
   "author": "MellowCo",
   "license": "MIT",
@@ -66,7 +66,7 @@
     "test": "vitest",
     "uniapp3": "npm run build && npm -C examples/uniapp_vue3 run dev:mp-weixin",
     "uniapp3:h5": "npm run build && npm -C examples/uniapp_vue3 run dev:h5",
-    "publish": "npm run build && bumpp --commit --push --tag && npm publish"
+    "publish": "bumpp --commit --push --tag && npm publish"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",
