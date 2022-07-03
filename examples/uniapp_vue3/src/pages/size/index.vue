@@ -1,32 +1,141 @@
-<!--
- * @Author: licl
- * @Date: 2022-06-26 18:30:52
- * @LastEditTime: 2022-06-27 21:54:50
- * @LastEditors: licl
- * @Description:
--->
-<script setup lang="ts">
-import { height, width } from '../../../../targets'
-</script>
-
 <template>
   <view>
     <view class="p-2">
       <view class="text-2xl text-center my-3">
-        {{ width.title }}
+        width
       </view>
-      <view v-for="(className, j) in width.classNames" :key="j" :class="className" class="h-50 bg-blue-200 mb-3">
-        {{ className }}
+      <view class="h-50 bg-blue-200 mb-3 w-xs">
+        w-xs
+      </view>
+
+      <view class="h-50 bg-blue-200 mb-3 w-sm">
+        w-sm
+      </view>
+
+      <view class="h-50 bg-blue-200 mb-3 w-md">
+        w-md
+      </view>
+
+      <view class="h-50 bg-blue-200 mb-3 w-lg">
+        w-lg
+      </view>
+
+      <view class="h-50 bg-blue-200 mb-3 w-xl">
+        w-xl
+      </view>
+
+      <view class="h-50 bg-blue-200 mb-3 w-2xl">
+        w-2xl
+      </view>
+
+      <view class="h-50 bg-blue-200 mb-3 w-3xl">
+        w-3xl
+      </view>
+
+      <view class="h-50 bg-blue-200 mb-3 w-4xl">
+        w-4xl
+      </view>
+
+      <view class="h-50 bg-blue-200 mb-3 w-200">
+        w-200
+      </view>
+
+      <view class="h-50 bg-blue-200 mb-3 w-500">
+        w-500
+      </view>
+
+      <view class="h-50 bg-blue-200 mb-3 w-1_4">
+        w-1_4
+      </view>
+
+      <view class="h-50 bg-blue-200 mb-3 w-1_3">
+        w-1_3
+      </view>
+
+      <view class="h-50 bg-blue-200 mb-3 w-1_2">
+        w-1_2
+      </view>
+
+      <view class="h-50 bg-blue-200 mb-3 w-half">
+        w-half
+      </view>
+
+      <view class="h-50 bg-blue-200 mb-3 w-auto">
+        w-auto
+      </view>
+
+      <view class="h-50 bg-blue-200 mb-3 w-full">
+        w-full
       </view>
     </view>
 
     <view class="p-1">
       <view class="text-2xl text-center my-3">
-        {{ height.title }}
+        height
       </view>
       <view class="flex flex-wrap h-600 bg-green-500">
-        <view v-for="(className, j) in height.classNames" :key="j" :class="className" class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center">
-          {{ className }}
+        <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-xs">
+          h-xs
+        </view>
+
+        <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-sm">
+          h-sm
+        </view>
+
+        <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-md">
+          h-md
+        </view>
+
+        <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-lg">
+          h-lg
+        </view>
+
+        <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-xl">
+          h-xl
+        </view>
+
+        <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-2xl">
+          h-2xl
+        </view>
+
+        <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-3xl">
+          h-3xl
+        </view>
+
+        <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-4xl">
+          h-4xl
+        </view>
+
+        <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-200">
+          h-200
+        </view>
+
+        <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-500">
+          h-500
+        </view>
+
+        <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-1_4">
+          h-1_4
+        </view>
+
+        <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-1_3">
+          h-1_3
+        </view>
+
+        <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-1_2">
+          h-1_2
+        </view>
+
+        <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-half">
+          h-half
+        </view>
+
+        <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-auto">
+          h-auto
+        </view>
+
+        <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-full">
+          h-full
         </view>
       </view>
     </view>

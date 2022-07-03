@@ -340,7 +340,7 @@ view,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .p-is,
 .pis{padding-inline-start:32rpx;}
 .pis-10px{padding-inline-start:10px;}
-.-m-lg{margin:-36rpx;}
+.-m-lg{margin:-40rpx;}
 .m-0{margin:0rpx;}
 .m-1_2{margin:50%;}
 .m-10rpx{margin:10rpx;}

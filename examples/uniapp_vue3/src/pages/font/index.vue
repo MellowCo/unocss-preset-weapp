@@ -1,29 +1,30 @@
-<!--
- * @Author: licl
- * @Date: 2022-06-26 17:28:31
- * @LastEditTime: 2022-06-27 21:49:17
- * @LastEditors: licl
- * @Description:
--->
 <script setup lang="ts">
-import { fontAlign, fontBold, fontColor, fontDecoration, fontDecorationStyle, fontIndent, fontLetter, fontLine, fontOpacity, fontShadow, fontSize } from '../../../../targets'
-
-const list = [fontAlign, fontBold, fontColor, fontDecoration, fontDecorationStyle, fontIndent, fontLetter, fontLine, fontOpacity, fontShadow, fontSize]
+import FontSize from './components/FontSize.vue'
+import FontBold from './components/FontBold.vue'
+import LetterSpacing from './components/LetterSpacing.vue'
+import LineHeight from './components/LineHeight.vue'
+import TextAlign from './components/TextAlign.vue'
+import TextColor from './components/TextColor.vue'
+import TextDecoration from './components/TextDecoration.vue'
+import TextDecorationStyle from './components/TextDecorationStyle.vue'
+import TextIndent from './components/TextIndent.vue'
+import TextOpacity from './components/TextOpacity.vue'
+import TextShadow from './components/TextShadow.vue'
 </script>
 
 <template>
   <view>
-    <view v-for="(item, i) in list" :key="i" class="p-2">
-      <view class="text-2xl text-center my-3">
-        {{ item.title }}
-      </view>
-      <view v-for="(className, j) in item.classNames" :key="j" :class="className">
-        {{ className }}
-      </view>
-    </view>
+    <FontSize />
+    <FontBold />
+    <LetterSpacing />
+    <LineHeight />
+    <TextAlign />
+    <TextColor />
+    <TextDecoration />
+    <TextDecorationStyle />
+    <TextIndent />
+    <TextOpacity />
+    <TextShadow />
   </view>
 </template>
 
-<style lang="scss" scoped>
-
-</style>
