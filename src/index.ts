@@ -26,7 +26,7 @@ export interface PresetMiniOptions extends PresetOptions {
   variablePrefix?: string
 }
 
-export const presetMini = (options: PresetMiniOptions = {}): Preset<Theme> => {
+export const presetWeapp = (options: PresetMiniOptions = {}): Preset<Theme> => {
   options.dark = options.dark ?? 'class'
   options.attributifyPseudo = options.attributifyPseudo ?? false
 
@@ -43,7 +43,7 @@ export const presetMini = (options: PresetMiniOptions = {}): Preset<Theme> => {
   }
 }
 
-export default presetMini
+export default presetWeapp
 
 function VarPrefixPostprocessor(prefix: string): Postprocessor {
   return (obj) => {

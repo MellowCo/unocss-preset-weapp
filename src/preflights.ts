@@ -2,7 +2,7 @@ import type { Preflight, PreflightContext } from '@unocss/core'
 import { entriesToCss } from '@unocss/core'
 import type { Theme } from './theme'
 
-const wxPerfix = 'view'
+const wxPerfix = 'page'
 
 export const preflights: Preflight[] = [
   {
