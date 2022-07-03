@@ -1,7 +1,7 @@
 /*
  * @Author: licl
  * @Date: 2022-06-25 19:43:51
- * @LastEditTime: 2022-06-26 16:35:08
+ * @LastEditTime: 2022-07-03 13:53:04
  * @LastEditors: licl
  * @Description: border
  */
@@ -27,6 +27,7 @@ export const border: string[] = [
   'border-x-width-3',
   'border-t-width-3',
   'rounded-1_2',
+  'rounded-1/2',
   'rounded-2',
   'rounded-4',
   'rounded-full',

@@ -48,12 +48,24 @@
         w-1_4
       </view>
 
+      <view class="h-50 bg-blue-200 mb-3 w-1/4">
+        w-1/4
+      </view>
+
       <view class="h-50 bg-blue-200 mb-3 w-1_3">
         w-1_3
       </view>
 
+      <view class="h-50 bg-blue-200 mb-3 w-1/3">
+        w-1/3
+      </view>
+
       <view class="h-50 bg-blue-200 mb-3 w-1_2">
         w-1_2
+      </view>
+
+      <view class="h-50 bg-blue-200 mb-3 w-1/2">
+        w-1/2
       </view>
 
       <view class="h-50 bg-blue-200 mb-3 w-half">
@@ -94,18 +106,6 @@
           h-xl
         </view>
 
-        <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-2xl">
-          h-2xl
-        </view>
-
-        <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-3xl">
-          h-3xl
-        </view>
-
-        <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-4xl">
-          h-4xl
-        </view>
-
         <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-200">
           h-200
         </view>
@@ -118,12 +118,24 @@
           h-1_4
         </view>
 
+        <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-1/4">
+          h-1/4
+        </view>
+
         <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-1_3">
           h-1_3
         </view>
 
+        <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-1/3">
+          h-1/3
+        </view>
+
         <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-1_2">
           h-1_2
+        </view>
+
+        <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-1/2">
+          h-1/2
         </view>
 
         <view class="bg-green-200 mb-3 flex-1 mr-1 text-xs text-center h-half">

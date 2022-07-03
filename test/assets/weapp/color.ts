@@ -1,13 +1,17 @@
 /*
  * @Author: licl
  * @Date: 2022-06-26 13:07:18
- * @LastEditTime: 2022-06-26 13:37:47
+ * @LastEditTime: 2022-07-03 14:04:01
  * @LastEditors: licl
  * @Description:
  */
 export const color = [
   'c-hex-157',
   'c-hex-157_10',
+  'c-hex-157/10',
+  'c-[#157]/10',
+  'c-[#157]:10',
+  'c-[#157]_10',
   'color-hex-157',
   'c-hex-2573',
   'c-hex-2573_10',

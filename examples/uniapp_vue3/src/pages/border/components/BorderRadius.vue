@@ -40,6 +40,10 @@
         rounded-1_2
       </view>
 
+      <view class="w-half h-200 mb-3  bg-blue-100 center text-center rounded-1/2">
+        rounded-1/2
+      </view>
+
       <view class="w-half h-200 mb-3  bg-blue-100 center text-center rounded-full">
         rounded-full
       </view>

@@ -116,7 +116,7 @@ export function fraction(str: string) {
     return '100%'
 
   // 小程序百分比 / 改为 _
-  const [left, right] = str.split('_')
+  const [left, right] = str.split(/[\/\_]/)
   const num = parseFloat(left) / parseFloat(right)
   if (!Number.isNaN(num))
     return `${round(num * 100)}%`

@@ -49,57 +49,66 @@ import 'uno.css'
 
 ### 示例
 
-[MellowCo/unocss-preset-weapp-example (github.com)](https://github.com/MellowCo/unocss-preset-weapp-example)
+[unocss-preset-weapp/examples/uniapp_vue3 ](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue3)
 
-<img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202206262006057.png" alt="image-20220626200638930" style="zoom:50%;" />
+<img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031414239.png" alt="image-20220703141451188" style="zoom:50%;" />
 
-<img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202206262008208.png" alt="image-20220626200851164" style="zoom:50%;" />
 
-<img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202206262007807.png" alt="image-20220626200728759" style="zoom:50%;" />
 
+---
 ## 注意事项
 
-**小程序不支持使用反斜杠，冒号，方括号，$等作为类名**
+**小程序不支持使用`反斜杠`，`冒号`，`方括号`，`$`等作为类名，可通过[插件](https://github.com/MellowCo/vite-plugin-transform-wx-class)转换支持**
 
-> 不支持`%`
+> 不支持`% ` h-1.000%
 
-```
-h-1.000%
-h-1.001%
-h-1.010%
-h-1.100%
-```
+> 不支持`/`，可以将`/`改为`_`  h-1/2 => h-1_2
 
-> 不支持`/`改为`_`
+> 不支持`[] `  bg-[#153]/10
 
-```
-h-1/2 => h-1_2
-h-2/2 => h-2_2
-```
+> 不支持`$var` h-$var
 
-> 不支持`[]`
+> 不支持`:`  bg-teal-300:50
 
-```
-max-h-[1px]
-h-[calc(1000px-4rem)]
-bg-[#153]/10
+### 使用class转换插件
+
+> 使用[vite-plugin-transform-wx-class](https://github.com/MellowCo/vite-plugin-transform-wx-class)，转换`反斜杠`，`冒号`，`方括号`，`$`等类名
+
+![image-20220703141301371](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031413496.png)
+
+```shell
+pnpm add -D vite-plugin-transform-wx-class 
 ```
 
-> 不支持`$var`
+```js
+import { defineConfig } from 'vite'
+import uni from '@dcloudio/vite-plugin-uni'
+import Unocss from 'unocss/vite'
+import presetWxapp from 'unocss-preset-wxapp'
+import transformWxClass, { transformSelector } from 'vite-plugin-transform-wx-class'
 
+export default defineConfig({
+  plugins: [
+    uni(),
+    Unocss({
+      presets: [
+        presetWxapp(),
+      ],
+      shortcuts: [
+        {
+          'border-base': 'border border-gray-500_10',
+          'center': 'flex justify-center items-center',
+        },
+      ],
+      postprocess: (css) => {
+        css.selector = transformSelector(css.selector)
+        return css
+      },
+    }),
+    transformWxClass(),
+  ],
+})
 ```
-max-w-$var
-min-w-$var
-h-$var
-```
-
-> 不支持`:` 
-
-```
-bg-teal-300:50
-```
-
-
 
 ##  使用
 [UnoCSS 文档](https://uno.antfu.me/)
@@ -108,20 +117,19 @@ bg-teal-300:50
 
 > 默认单位`rpx`，w-100 => w-100rpx
 >
-> 百分比`/`改为`_`，h-1/2 => h-1_2
+> **不使用[class转换插件](https://github.com/MellowCo/vite-plugin-transform-wx-class)**，百分比`/`改为`_`，h-1/2 => h-1_2
 
 ### width and height
 
-| class       | Properties       |
-| ----------- | ---------------- |
-| h-1_2       | height: 50%      |
-| w-1_3       | width: 33.33333% |
-| width-20    | width: 20rpx     |
-| width-50rpx | width: 50rpx     |
-| h-xs        | height: 180rpx   |
-| h-xl        | height: 340rpx   |
-| h-full      | height: 100%     |
-| h-half      | height: 50%      |
+| class              | Properties       |
+| ------------------ | ---------------- |
+| h-1_2,h-1/2,h-half | height: 50%      |
+| w-1_3,w-1/3        | width: 33.33333% |
+| width-20           | width: 20rpx     |
+| width-50rpx        | width: 50rpx     |
+| h-xs               | height: 180rpx   |
+| h-xl               | height: 340rpx   |
+| h-full             | height: 100%     |
 
 > 预设
 
@@ -151,13 +159,13 @@ export const baseSize = {
 
 ### border
 
-| class            | Properties                                        |
-| ---------------- | ------------------------------------------------- |
-| border-2         | border-width:2rpx;border-style:solid;             |
-| b-2              | border-width:2rpx;border-style:solid;             |
-| border-dashed    | border-style:dashed                               |
-| rounded-1_2      | border-radius:50%                                 |
-| rounded-md       | border-radius:12rpx                               |
+| class                   | Properties                            |
+| ----------------------- | ------------------------------------- |
+| border-2                | border-width:2rpx;border-style:solid; |
+| b-2                     | border-width:2rpx;border-style:solid; |
+| border-dashed           | border-style:dashed                   |
+| rounded-1_2,rounded-1/2 | border-radius:50%                     |
+| rounded-md              | border-radius:12rpx                   |
 
 > 预设
 
@@ -184,54 +192,51 @@ export const borderRadius = {
 | class                                                        | Properties                                                   |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | border-red-100<br/>border-red100<br/>border-red1<br/>border-red-1 | --un-border-opacity:1;  border-color:rgba(254,226,226,var(--un-border-opacity)) |
-| border-opacity-20                                            | --un-border-opacity:0.2                                      |
-| border-y-op-30                                               | --un-border-top-opacity:0.3;   --un-border-bottom-opacity:0.3 |
-| border-b-op40                                                | --un-border-bottom-opacity:0.4;                              |
-| border-black_10                                              | border-color:rgba(0,0,0,0.1)                                 |
-| border-green-100_20                                          | border-color:rgba(220,252,231,0.2)                           |
+| border-opacity-20,border-op-20,border-op20                   | --un-border-opacity:0.2                                      |
+| border-black_10,border-black/10,border-black:10              | border-color:rgba(0,0,0,0.1)                                 |
 
 
 
 ---
 ### color
 
-| class                                      | Properties                                                   |
-| ------------------------------------------ | ------------------------------------------------------------ |
-| op-10<br/>opacity-10                       | opacity:0.1                                                  |
-| color-hex-157<br/>c-hex-157                | --un-text-opacity:1;color:rgba(17,85,119,var(--un-text-opacity)) |
-| c-hex-157_10                               | color:rgba(17,85,119,0.1)                                    |
-| color-blue<br/>color-blue-400<br/>c-blue   | --un-text-opacity:1;color:rgba(96,165,250,var(--un-text-opacity)) |
-| text-red-100<br/>text-red100<br/>text-red1 | --un-text-opacity:1;color:rgba(254,226,226,var(--un-text-opacity)) |
-| text-red-100_20                            | color:rgba(254,226,226,0.2)                                  |
+| class                                                        | Properties                                                   |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| op-10,opacity-10                                             | opacity:0.1                                                  |
+| color-hex-157,c-hex-157,c-[#157]                             | --un-text-opacity:1;color:rgba(17,85,119,var(--un-text-opacity)) |
+| c-hex-157_10,c-hex-157/10,c-[#157]/10,c-[#157]:10,c-[#157]_10 | color:rgba(17,85,119,0.1)                                    |
+| color-blue,color-blue-400,c-blue                             | --un-text-opacity:1;color:rgba(96,165,250,var(--un-text-opacity)) |
+| text-red-100,text-red100,text-red1                           | --un-text-opacity:1;color:rgba(254,226,226,var(--un-text-opacity)) |
+| text-red-100_20,text-red-100/20,text-red-100:20              | color:rgba(254,226,226,0.2)                                  |
 
 
 
 ### bg
 
-| class                              | Properties                                                   |
-| ---------------------------------- | ------------------------------------------------------------ |
-| bg-hex-452233_40                   | background-color:rgba(69,34,51,0.4)                          |
-| bg-red-100<br>bg-red1<br>bg-red100 | --un-bg-opacity:1;background-color:rgba(254,226,226,var(--un-bg-opacity)) |
-| bg-teal-100_55                     | background-color:rgba(204,251,241,0.55)                      |
-| bg-opacity-45                      | --un-bg-opacity:0.45                                         |
+| class                                                        | Properties                                                   |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| bg-hex-452233_40,bg-[#452233]_40,bg-[#452233]/40,bg-[#452233]:40 | background-color:rgba(69,34,51,0.4)                          |
+| bg-red-100,bg-red1,bg-red100                                 | --un-bg-opacity:1;background-color:rgba(254,226,226,var(--un-bg-opacity)) |
+| bg-teal-100_55,bg-teal-100/55,bg-teal-100:55                 | background-color:rgba(204,251,241,0.55)                      |
+| bg-opacity-45                                                | --un-bg-opacity:0.45                                         |
 
 
 ### typography
 
-| class                                | Properties                                                   |
-| ------------------------------------ | ------------------------------------------------------------ |
-| text-base                            | font-size:32rpx;line-height:48rpx                            |
-| text-100,<br>text-size-100           | font-size:100rpx                                             |
-| text-2em                             | font-size:2em                                                |
-| font-900,<br/>font-black,<br/>fw-900 | font-weight:900                                              |
-| font-leading-2 ,<br/>leading-2       | line-height:16rpx                                            |
-| indent                               | text-indent:48rpx                                            |
-| indent-2                             | text-indent:16rpx                                            |
-| indent-1_2                           | text-indent:50%                                              |
-| indent-lg                            | text-indent:64rpx                                            |
-| text-shadow-lg                       | --un-text-shadow:6rpx 6rpx 12rpx var(--un-text-shadow-color, rgba(0,0,0,0.26)),0 0 10rpx var(--un-text-shadow-color, rgba(15,3,86,0.22));text-shadow:var(--un-text-shadow) |
-| word-spacing-2                       | word-spacing:16rpx                                           |
-| tracking-2                           | letter-spacing:16rpx                                         |
+| class                            | Properties                                                   |
+| -------------------------------- | ------------------------------------------------------------ |
+| text-base                        | font-size:32rpx;line-height:48rpx                            |
+| text-100,text-size-100           | font-size:100rpx                                             |
+| text-2em                         | font-size:2em                                                |
+| font-900,font-black,fw-900       | font-weight:900                                              |
+| font-leading-2 ,leading-2        | line-height:16rpx                                            |
+| indent                           | text-indent:48rpx                                            |
+| indent-2                         | text-indent:16rpx                                            |
+| indent-1_2,indent-1/2,indent-1:2 | text-indent:50%                                              |
+| indent-lg                        | text-indent:64rpx                                            |
+| text-shadow-lg                   | --un-text-shadow:6rpx 6rpx 12rpx var(--un-text-shadow-color, rgba(0,0,0,0.26)),0 0 10rpx var(--un-text-shadow-color, rgba(15,3,86,0.22));text-shadow:var(--un-text-shadow) |
+| word-spacing-2                   | word-spacing:16rpx                                           |
+| tracking-2                       | letter-spacing:16rpx                                         |
 
 
 
@@ -300,13 +305,13 @@ line-height:16rpx
 
 ### spacing
 
-| class      | Properties                           |
-| ---------- | ------------------------------------ |
-| p-2<br/>p2 | padding:16rpx                        |
-| mx-2       | margin-left:16rpx;margin-right:16rpx |
-| -m-lg      | margin:-36rpx                        |
-| pl-10px    | padding-left:10px                    |
-| m-10rpx    | margin:10rpx                         |
+| class   | Properties                           |
+| ------- | ------------------------------------ |
+| p-2,p2  | padding:16rpx                        |
+| mx-2    | margin-left:16rpx;margin-right:16rpx |
+| -m-lg   | margin:-36rpx                        |
+| pl-10px | padding-left:10px                    |
+| m-10rpx | margin:10rpx                         |
 > 预设
 
 ```js
