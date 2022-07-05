@@ -1,23 +1,20 @@
 * init uniapp
 ```sh
-# init uniapp
-npx degit dcloudio/uni-preset-vue#vite-ts uniapp_examples
-
-# unocss 小程序预设
-pnpm add unocss-preset-wxapp unocss -D 
-
-# 小程序class转换插件
-pnpm add vite-plugin-transform-wx-class -D
+# 使用Vue3/Vite版
+npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
+# 安装unocss
+pnpm add -D unocss unplugin-transform-wx-class unocss-preset-wxapp
 ```
 
 * vite.config.ts
 
 ```js
+
 import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 import Unocss from 'unocss/vite'
 import presetWxapp from 'unocss-preset-wxapp'
-import transformWxClass, { transformSelector } from 'vite-plugin-transform-wx-class'
+import { transformWxClass,transformSelector } from 'unplugin-transform-wx-class/vite'
 
 export default defineConfig({
   plugins: [

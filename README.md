@@ -5,9 +5,7 @@
 ## 安装
 
 ```sh
-npm i unocss-preset-wxapp unocss --save-dev # with npm
-yarn add unocss-preset-wxapp unocss -D # with yarn
-pnpm add unocss-preset-wxapp unocss -D # with pnpm
+pnpm add unocss-preset-wxapp unocss -D
 ```
 
 ## 引入插件
@@ -49,7 +47,9 @@ import 'uno.css'
 
 ### 示例
 
-[unocss-preset-weapp/examples/uniapp_vue3 ](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue3)
+[uniapp_vue3](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue3)
+
+[uniapp_vue2](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue2)
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031414239.png" alt="image-20220703141451188" style="zoom:50%;" />
 
@@ -58,7 +58,7 @@ import 'uno.css'
 ---
 ## 注意事项
 
-**小程序不支持使用`反斜杠`，`冒号`，`方括号`，`$`等作为类名，可通过[插件](https://github.com/MellowCo/vite-plugin-transform-wx-class)转换支持**
+**小程序不支持使用`反斜杠`，`冒号`，`方括号`，`$`等作为类名，可通过[插件](https://github.com/MellowCo/unplugin-transform-wx-class)转换支持**
 
 > 不支持`% ` h-1.000%
 
@@ -72,20 +72,83 @@ import 'uno.css'
 
 ### 使用class转换插件
 
-> 使用[vite-plugin-transform-wx-class](https://github.com/MellowCo/vite-plugin-transform-wx-class)，转换`反斜杠`，`冒号`，`方括号`，`$`等类名
+> 使用[unplugin-transform-wx-class](https://github.com/MellowCo/unplugin-transform-wx-class)，转换`反斜杠`，`冒号`，`方括号`，`$`等类名
 
 ![image-20220703141301371](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031413496.png)
 
+#### webpack
+
+> 在[uniapp vue2](https://uniapp.dcloud.io/quickstart-cli.html#创建uni-app)中使用
+
 ```shell
-pnpm add -D vite-plugin-transform-wx-class 
+# 创建uni-app
+vue create -p dcloudio/uni-preset-vue my-project
+# 安装unocss
+yarn add -D unocss @unocss/webpack unplugin-transform-wx-class unocss-preset-wxapp
 ```
 
+> vue.config.js
+
 ```js
+const UnoCSS = require('unocss/webpack').default
+const presetWxapp = require('unocss-preset-wxapp').default
+const transformWxClass = require('unplugin-transform-wx-class/webpack')
+const transformSelector = require('unplugin-transform-wx-class/transformSelector')
+
+module.exports = {
+  configureWebpack: {
+    plugins: [
+      UnoCSS({
+        presets: [
+          presetWxapp(),
+        ],
+        shortcuts: [
+          {
+            'border-base': 'border border-gray-500_10',
+            'center': 'flex justify-center items-center',
+          },
+        ],
+        postprocess: (css) => {
+          css.selector = transformSelector(css.selector)
+          return css
+        },
+      }),
+      transformWxClass(),
+    ],
+  },
+}
+
+```
+
+> main.js
+
+```js
+import 'uno.css'
+```
+
+
+
+---
+
+#### vite
+
+> 在[uni-app vue3中使用](https://ask.dcloud.net.cn/article/37834)中使用
+
+```shell
+# 使用Vue3/Vite版
+npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
+# 安装unocss
+pnpm add -D unocss unplugin-transform-wx-class unocss-preset-wxapp
+```
+
+> vite.config.ts
+
+```ts
 import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 import Unocss from 'unocss/vite'
 import presetWxapp from 'unocss-preset-wxapp'
-import transformWxClass, { transformSelector } from 'vite-plugin-transform-wx-class'
+import { transformWxClass,transformSelector } from 'unplugin-transform-wx-class/vite'
 
 export default defineConfig({
   plugins: [
@@ -109,6 +172,16 @@ export default defineConfig({
   ],
 })
 ```
+
+> mian.ts
+
+```ts
+import 'uno.css'
+```
+
+
+
+---
 
 ##  使用
 [UnoCSS 文档](https://uno.antfu.me/)
