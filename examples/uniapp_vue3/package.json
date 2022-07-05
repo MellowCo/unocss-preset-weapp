@@ -55,7 +55,8 @@
     "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3040820220424001",
     "typescript": "^4.7.3",
     "unocss": "^0.43.0",
+    "unplugin-transform-wx-class": "^0.0.2",
     "vite": "^2.9.13",
-    "vite-plugin-transform-wx-class": "^0.0.2"
+    "unocss-preset-wxapp":"link:../../"
   }
 }

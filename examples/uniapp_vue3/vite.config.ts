@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 import Unocss from 'unocss/vite'
-import transformWxClass, { transformSelector } from 'vite-plugin-transform-wx-class'
-import presetWxapp from '../../src/index'
+import { transformSelector, transformWxClass } from 'unplugin-transform-wx-class/vite'
+import presetWxapp from 'unocss-preset-wxapp'
 
 // https://vitejs.dev/config/
 export default defineConfig({
