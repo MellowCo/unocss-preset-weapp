@@ -10796,10 +10796,10 @@ unpipe@1.0.0, unpipe@~1.0.0:
   resolved "https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
   integrity sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==
 
-unplugin-transform-wx-class@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.npmjs.org/unplugin-transform-wx-class/-/unplugin-transform-wx-class-0.0.3.tgz#bb467f9c9d6c7fe4ab2b515d599c416438a7a1aa"
-  integrity sha512-wJBtk/wb8vTvGqhXviEDlLWrsJfVxlqmxxqmReFszmm8uVOLU6qcUBegw7C+io8b6oQkHnzCzmWqsjMR0MG/6w==
+unplugin-transform-wx-class@^0.1.0:
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/unplugin-transform-wx-class/-/unplugin-transform-wx-class-0.1.1.tgz#dfc574b3f3c990827813341e9a1062b0db1fcd3a"
+  integrity sha512-KrQi1a0jEORoIcfQo7JmbRwmAyBSwqr3Vq+g6vk6YQkSUXFsa2vz1+9n1oEE1kOGIWUz7gKR7PKLJwJlweknrQ==
   dependencies:
     unplugin "^0.6.3"
 

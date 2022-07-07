@@ -9,6 +9,7 @@ export default {
         { name: 'border', path: '/pages/border/index' },
         { name: 'spacing', path: '/pages/spacing/index' },
         { name: 'shortcuts', path: '/pages/shortcuts/index' },
+        { name: ':class', path: '/pages/class/index' },
       ],
     }
   },
