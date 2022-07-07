@@ -80,6 +80,6 @@
     "vitest": "^0.16.0"
   },
   "dependencies": {
-    "@unocss/core": "^0.43.0"
+    "@unocss/core": "^0.43.2"
   }
 }

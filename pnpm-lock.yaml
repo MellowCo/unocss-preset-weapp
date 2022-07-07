@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@antfu/eslint-config': ^0.25.2
-  '@unocss/core': ^0.43.0
+  '@unocss/core': ^0.43.2
   bumpp: ^8.2.1
   eslint: ^8.19.0
   msw: ^0.42.3
@@ -12,7 +12,7 @@ specifiers:
   vitest: ^0.16.0
 
 dependencies:
-  '@unocss/core': 0.43.0
+  '@unocss/core': 0.43.2
 
 devDependencies:
   '@antfu/eslint-config': 0.25.2_4x5o4skxv6sl53vpwefgt23khm
@@ -724,8 +724,8 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@unocss/core/0.43.0:
-    resolution: {integrity: sha512-TQ3ZmZjlxSeoej2B8lcmub8Ct/iVfDX3BgWL+1IpNlayMpV6BS52HY+WIyZkv+eTleokCNNtgj1AbQjdT4N7sw==}
+  /@unocss/core/0.43.2:
+    resolution: {integrity: sha512-SR2gHIl/5APfkl9WWbpKjYxMUkBin67uw8NIXOz0u/J5jSnXnu2z15DGwgOxwLfTl/AlBTsM0/lIJqfbckyPnw==}
     dev: false
 
   /@xmldom/xmldom/0.7.5:
