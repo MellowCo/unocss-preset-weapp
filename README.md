@@ -1,6 +1,12 @@
 # unocss-preset-wxapp
 
-[unocss](https://github.com/unocss/unocss) 微信小程序预设
+[unocss-preset-wxapp](https://github.com/MellowCo/unocss-preset-weapp)的微信小程序预设
+
+在小程序中使用`原子化css`时，`bg-[#153]/10`经过编辑，会变成`bg-\[\#153\]\/10`, 由于小程序不支持`\\`，`\:`，`\[`，`\$`,`\.`等转义类名，导致报错。
+
+通过使用[unplugin-transform-wx-class](https://github.com/MellowCo/unplugin-transform-wx-class)转换转义类名，保持`原子化css`的规范去书写`class`
+
+支持[uniapp vue2 webpack版本](#uniapp vue2)和[uniapp vue3 vite版本](#uni-app vue3)
 
 ## 安装
 
@@ -58,7 +64,7 @@ import 'uno.css'
 ---
 ## 注意事项
 
-**小程序不支持使用`反斜杠`，`冒号`，`方括号`，`$`等作为类名，可通过[插件](https://github.com/MellowCo/unplugin-transform-wx-class)转换支持**
+**小程序不支持使用`\\`，`\:`，`\[`，`\$`,`\.`等转义类名，可通过[插件](https://github.com/MellowCo/unplugin-transform-wx-class)转换支持**
 
 > 不支持`% ` h-1.000%
 
@@ -70,14 +76,14 @@ import 'uno.css'
 
 > 不支持`:`  bg-teal-300:50
 
-### 使用class转换插件
+## 使用class转换插件
 
-> 使用[unplugin-transform-wx-class](https://github.com/MellowCo/unplugin-transform-wx-class)，转换`反斜杠`，`冒号`，`方括号`，`$`等类名
+> 使用[unplugin-transform-wx-class](https://github.com/MellowCo/unplugin-transform-wx-class)，转换`\\`，`\:`，`\[`，`\$`,`\.`等转义类名
 
 ![image-20220703141301371](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031413496.png)
 
-#### webpack
-
+### webpack
+#### uniapp vue2
 > 在[uniapp vue2](https://uniapp.dcloud.io/quickstart-cli.html#创建uni-app)中使用
 
 ```shell
@@ -130,7 +136,9 @@ import 'uno.css'
 
 ---
 
-#### vite
+### vite
+
+#### uni-app vue3
 
 > 在[uni-app vue3中使用](https://ask.dcloud.net.cn/article/37834)中使用
 
@@ -190,7 +198,7 @@ import 'uno.css'
 
 > 默认单位`rpx`，w-100 => w-100rpx
 >
-> **不使用[class转换插件](https://github.com/MellowCo/vite-plugin-transform-wx-class)**，百分比`/`改为`_`，h-1/2 => h-1_2
+> **不使用[unplugin-transform-wx-class](https://github.com/MellowCo/unplugin-transform-wx-class)**，请将百分比`/`改为`_`，h-1/2 => h-1_2
 
 ### width and height
 
