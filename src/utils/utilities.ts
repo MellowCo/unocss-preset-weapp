@@ -1,6 +1,7 @@
 import type { CSSEntries, CSSObject, ParsedColorValue, RuleContext, VariantContext } from '@unocss/core'
 import { toArray } from '@unocss/core'
 import type { Theme } from '../theme'
+import { restoreSelector } from '../transform'
 import { colorOpacityToString, colorToString, getComponents, parseCssColor } from './colors'
 import { handler as h } from './handlers'
 import { directionMap } from './mappings'
@@ -45,7 +46,7 @@ const getThemeColor = (theme: Theme, colors: string[]) => {
  */
 export const parseColor = (body: string, theme: Theme): ParsedColorValue | undefined => {
   // 百分比 / 改为 _
-  const split = body.split(/(?:\/|\_|:)/)
+  const split = restoreSelector(body).split(/(?:\/|\_|:)/)
 
   let main, opacity
   if (split[0] === '[color') {

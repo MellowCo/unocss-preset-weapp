@@ -1,4 +1,5 @@
 import { escapeSelector } from '@unocss/core'
+import { restoreSelector } from '../../transform'
 import { globalKeywords } from '../mappings'
 
 // Not all, but covers most high frequency attributes
@@ -114,9 +115,8 @@ export function percent(str: string) {
 export function fraction(str: string) {
   if (str === 'full')
     return '100%'
-
   // 小程序百分比 / 改为 _
-  const [left, right] = str.split(/[\/\_]/)
+  const [left, right] = restoreSelector(str).split(/[\/\_]/)
   const num = parseFloat(left) / parseFloat(right)
   if (!Number.isNaN(num))
     return `${round(num * 100)}%`

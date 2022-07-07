@@ -31,7 +31,7 @@ export const presetWeapp = (options: PresetMiniOptions = {}): Preset<Theme> => {
   options.attributifyPseudo = options.attributifyPseudo ?? false
 
   return {
-    name: '@unocss/preset-mini',
+    name: 'unocss-preset-weapp',
     theme,
     rules,
     variants: variants(options),
