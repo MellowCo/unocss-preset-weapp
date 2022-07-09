@@ -877,6 +877,16 @@ export const presetMiniTargets: string[] = [
   'peer-checked:bg-blue-500',
   'parent-hover:text-center',
   'previous-checked:bg-red-500',
+
+  // variants - variables
+  '[&:nth-child(2)]:m-10',
+  '[&>*]:m-11',
+  '[*>&]:m-12',
+  '[&_&]:m-13',
+  '[&[open]]:m-14',
+  '[&[readonly][disabled]]:m-15',
+  '[@supports(display:grid)]:bg-red/33',
+  '[@supports(display:grid)]:[*+&]:bg-red/34',
 ]
 
 export const presetMiniNonTargets = [
