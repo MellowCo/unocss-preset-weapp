@@ -7,8 +7,6 @@ exports[`preset-mini > custom var prefix 1`] = `
 .scale-100{--hi-scale-x:1;--hi-scale-y:1;transform:translateX(var(--hi-translate-x)) translateY(var(--hi-translate-y)) translateZ(var(--hi-translate-z)) rotate(var(--hi-rotate)) rotateX(var(--hi-rotate-x)) rotateY(var(--hi-rotate-y)) rotateZ(var(--hi-rotate-z)) skewX(var(--hi-skew-x)) skewY(var(--hi-skew-y)) scaleX(var(--hi-scale-x)) scaleY(var(--hi-scale-y)) scaleZ(var(--hi-scale-z));}"
 `;
 
-exports[`preset-mini > nested theme colors 1`] = `""`;
-
 exports[`preset-mini > targets 1`] = `
 "/* layer: preflights */
 *,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-ring-offset-shadow:0 0 #0000;--un-ring-shadow:0 0 #0000;--un-shadow-inset:var(--un-empty,/*!*/ /*!*/);--un-shadow:0 0 #0000;--un-ring-inset:var(--un-empty,/*!*/ /*!*/);--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgba(147,197,253,0.5);}::backdrop{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-ring-offset-shadow:0 0 #0000;--un-ring-shadow:0 0 #0000;--un-shadow-inset:var(--un-empty,/*!*/ /*!*/);--un-shadow:0 0 #0000;--un-ring-inset:var(--un-empty,/*!*/ /*!*/);--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgba(147,197,253,0.5);}
@@ -207,8 +205,6 @@ div:hover .group-\\\\[div\\\\:hover\\\\]-\\\\[combinator\\\\:test-4\\\\]{combina
 .border-t-\\\\[\\\\#124\\\\]{--un-border-opacity:1;--un-border-top-opacity:var(--un-border-opacity);border-top-color:rgba(17,34,68,var(--un-border-top-opacity));}
 .border-t-\\\\$color{border-top-color:var(--color);}
 .border-t-black\\\\/10{border-top-color:rgba(0,0,0,0.1);}
-.border-op-20,
-.border-op20,
 .border-opacity-20{--un-border-opacity:0.2;}
 .border-y-op-30{--un-border-top-opacity:0.3;--un-border-bottom-opacity:0.3;}
 .border-b-op40{--un-border-bottom-opacity:0.4;}
@@ -349,12 +345,10 @@ div:hover .group-\\\\[div\\\\:hover\\\\]-\\\\[combinator\\\\:test-4\\\\]{combina
 .c-\\\\[\\\\#157\\\\],
 .c-\\\\#157,
 .c-hex-157{--un-text-opacity:1;color:rgba(17,85,119,var(--un-text-opacity));}
-.c-\\\\[\\\\#157\\\\]_10,
-.c-\\\\[\\\\#157\\\\]\\\\:10,
+.c-\\\\[\\\\#157\\\\]\\\\/\\\\$opacity-variable{color:rgba(17,85,119,var(--opacity-variable));}
 .c-\\\\[\\\\#157\\\\]\\\\/10,
 .c-\\\\#157\\\\/10,
 .c-hex-157\\\\/10{color:rgba(17,85,119,0.1);}
-.c-\\\\[\\\\#157\\\\]\\\\/\\\\$opacity-variable{color:rgba(17,85,119,var(--opacity-variable));}
 .c-\\\\[\\\\#2573\\\\],
 .c-\\\\#2573,
 .c-hex-2573{--un-text-opacity:0.2;color:rgba(34,85,119,var(--un-text-opacity));}
@@ -379,6 +373,7 @@ div:hover .group-\\\\[div\\\\:hover\\\\]-\\\\[combinator\\\\:test-4\\\\]{combina
 .c-\\\\$color-variable,
 .c-\\\\$color-variable\\\\/\\\\$opacity-variable,
 .c-\\\\$color-variable\\\\/10{color:var(--color-variable);}
+.checked\\\\:next\\\\:text-slate-100+*:checked{--un-text-opacity:1;color:rgba(241,245,249,var(--un-text-opacity));}
 .color-\\\\$red{color:var(--red);}
 .color-blue,
 .color-blue-400{--un-text-opacity:1;color:rgba(96,165,250,var(--un-text-opacity));}
@@ -395,6 +390,7 @@ div:hover .group-\\\\[div\\\\:hover\\\\]-\\\\[combinator\\\\:test-4\\\\]{combina
 .in-range\\\\:color-pink-100:in-range,
 .open\\\\:color-pink-100[open],
 .out-of-range\\\\:color-pink-100:out-of-range{--un-text-opacity:1;color:rgba(252,231,243,var(--un-text-opacity));}
+.next\\\\:checked\\\\:text-slate-200:checked+*{--un-text-opacity:1;color:rgba(226,232,240,var(--un-text-opacity));}
 .placeholder-color-red-1::placeholder,
 .text-red-100,
 .text-red100{--un-text-opacity:1;color:rgba(254,226,226,var(--un-text-opacity));}
@@ -812,6 +808,9 @@ div:hover .group-\\\\[div\\\\:hover\\\\]-\\\\[combinator\\\\:test-4\\\\]{combina
 @media (max-width: 639.9px){
 .lt-sm\\\\:m1{margin:8rpx;}
 }
+@media (max-width: 1023.9px){@media (min-width: 640px){
+.sm\\\\:lt-lg\\\\:p-10{padding:80rpx;}
+}}
 @media (min-width: 640px){
 .sm\\\\:important\\\\:p-3{padding:24rpx !important;}
 .sm\\\\:m-1,

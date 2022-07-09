@@ -1,12 +1,12 @@
 import { createGenerator, escapeSelector } from '@unocss/core'
 import { describe, expect, test } from 'vitest'
-import presetWeapp from '../src/index'
+import presetMini from '../src'
 import { presetMiniNonTargets, presetMiniTargets } from './assets/preset-mini-targets'
 import { presetWindTargets } from './assets/preset-wind-targets'
 
 const uno = createGenerator({
   presets: [
-    presetWeapp({
+    presetMini({
       dark: 'media',
     }),
   ],
@@ -15,12 +15,6 @@ const uno = createGenerator({
       custom: {
         a: 'var(--custom)',
         b: 'rgba(var(--custom), %alpha)',
-      },
-      a: {
-        b: {
-          c: '#514543',
-        },
-        camelCase: '#234',
       },
     },
   },
@@ -53,7 +47,7 @@ describe('preset-mini', () => {
   test('custom var prefix', async () => {
     const uno = createGenerator({
       presets: [
-        presetWeapp({
+        presetMini({
           variablePrefix: 'hi-',
         }),
       ],
@@ -66,17 +60,6 @@ describe('preset-mini', () => {
     ].join(' '), { preflights: false })
 
     expect(css).toMatchSnapshot()
-  })
-
-  test('nested theme colors', async () => {
-    const { css, matched } = await uno.generate([
-      'text-a-b-c',
-      'text-a-camel-case',
-      'bg-a-b-c',
-    ], { preflights: false })
-
-    expect(css).toMatchSnapshot('')
-    expect(matched.size).toBe(3)
   })
 
   test('none targets', async () => {

@@ -74,5 +74,6 @@ export const variantBreakpoints: Variant<Theme> = {
       }
     }
   },
+  multiPass: true,
   autocomplete: '(at-|lt-|)$breakpoints:',
 }
