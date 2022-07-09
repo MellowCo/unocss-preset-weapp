@@ -887,6 +887,13 @@ export const presetMiniTargets: string[] = [
   '[&[readonly][disabled]]:m-15',
   '[@supports(display:grid)]:bg-red/33',
   '[@supports(display:grid)]:[*+&]:bg-red/34',
+
+  // variants - tagged & pseudo
+  'checked:next:text-slate-100',
+  'next:checked:text-slate-200',
+
+  // variants - multiple parents
+  'sm:lt-lg:p-10',
 ]
 
 export const presetMiniNonTargets = [
