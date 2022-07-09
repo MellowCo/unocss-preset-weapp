@@ -6,7 +6,7 @@
 
 通过使用[unplugin-transform-wx-class](https://github.com/MellowCo/unplugin-transform-wx-class)转换转义类名，保持`原子化css`的规范去书写`class`
 
-支持[uniapp vue2 webpack版本](#uniapp vue2)和[uniapp vue3 vite版本](#uni-app vue3)
+支持<a href='#uniapp vue2'>uniapp vue2 webpack版本</a>,<a href='#uni-app vue3'>uni-app vue3</a>,<a href='#taro react'>taro react</a>
 
 ## 安装
 
@@ -33,7 +33,7 @@ export default defineConfig({
       presets: [
         presetWxapp(),
       ],
-      // 设置快捷 
+      // 设置快捷
       shortcuts: [
         {
           'border-base': 'border border-gray-500_10',
@@ -54,8 +54,8 @@ import 'uno.css'
 ### 示例
 
 [uniapp_vue3](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue3)
-
 [uniapp_vue2](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue2)
+[taro_react](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_react)
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031414239.png" alt="image-20220703141451188" style="zoom:50%;" />
 
@@ -82,8 +82,9 @@ import 'uno.css'
 
 ![image-20220703141301371](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031413496.png)
 
-### webpack
-#### uniapp vue2
+## webpack
+
+### uniapp vue2
 > 在[uniapp vue2](https://uniapp.dcloud.io/quickstart-cli.html#创建uni-app)中使用
 
 ```shell
@@ -136,9 +137,118 @@ import 'uno.css'
 
 ---
 
-### vite
+### taro react
 
-#### uni-app vue3
+[安装及使用 | Taro 文档 (jd.com)](https://taro-docs.jd.com/taro/docs/GETTING-STARTED)
+
+> `taro 3.4.x` 很多是通过是靠`幽灵依赖`来引用的，`pnpm`不允许`幽灵依赖`,使用`pnpm`会出现一些无厘头的问题
+
+<img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207091012142.png" alt="image-20220709101250085" style="zoom: 67%;" />
+
+```shell
+# 创建taro项目 选择react
+taro init taro_react
+# 安装unocss
+yarn add -D unocss @unocss/webpack unplugin-transform-wx-class unocss-preset-wxapp
+```
+
+> config/index.js
+>
+> 通过[miniwebpackchain](https://taro-docs.jd.com/taro/docs/config-detail#miniwebpackchain)，合并webpack配置
+
+```js
+// 导入unocss
+const UnoCSS = require('unocss/webpack').default
+const presetWxapp = require('unocss-preset-wxapp').default
+const transformWxClass = require('unplugin-transform-wx-class/webpack')
+const transformSelector = require('unplugin-transform-wx-class/transformSelector')
+
+const config = {
+  mini: {
+    // 合并webpack配置
+    webpackChain(chain){
+      chain.plugin('unocss')
+        .use(UnoCSS({
+          presets: [
+            presetWxapp(),
+          ],
+          shortcuts: [
+            {
+              'border-base': 'border border-gray-500_10',
+              'center': 'flex justify-center items-center',
+            },
+          ],
+          postprocess: (css) => {
+            css.selector = transformSelector(css.selector)
+            return css
+          },
+        }))
+      chain
+        .plugin('transformWxClass')
+        .use(transformWxClass())
+    },
+  },
+  h5: {
+    // 合并webpack配置
+    webpackChain(chain){
+      chain.plugin('unocss')
+        .use(UnoCSS({
+          presets: [
+            presetWxapp(),
+          ],
+          shortcuts: [
+            {
+              'border-base': 'border border-gray-500_10',
+              'center': 'flex justify-center items-center',
+            },
+          ],
+          postprocess: (css) => {
+            css.selector = transformSelector(css.selector)
+            return css
+          },
+        }))
+      chain
+        .plugin('transformWxClass')
+        .use(transformWxClass())
+    },
+  }
+}
+
+module.exports = function (merge) {
+  if (process.env.NODE_ENV === 'development') {
+    return merge({}, config, require('./dev'))
+  }
+  return merge({}, config, require('./prod'))
+}
+```
+
+> app.ts
+
+```js
+import 'uno.css'
+```
+
+
+
+---
+
+### taro vue2
+
+
+
+---
+
+### taro vue3
+
+
+
+
+
+---
+
+## vite
+
+### uni-app vue3
 
 > 在[uni-app vue3中使用](https://ask.dcloud.net.cn/article/37834)中使用
 
@@ -156,7 +266,7 @@ import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 import Unocss from 'unocss/vite'
 import presetWxapp from 'unocss-preset-wxapp'
-import { transformWxClass,transformSelector } from 'unplugin-transform-wx-class/vite'
+import { transformSelector, transformWxClass } from 'unplugin-transform-wx-class/vite'
 
 export default defineConfig({
   plugins: [
