@@ -11,6 +11,8 @@ export { parseColor } from './utils'
 
 export type { ThemeAnimation, Theme }
 
+// v0.41.2
+
 export interface PresetMiniOptions extends PresetOptions {
   /**
    * @default 'class'
