@@ -8,8 +8,10 @@ export const preflights: Preflight[] = [
   {
     layer: 'preflights',
     getCSS(ctx: PreflightContext<Theme>) {
-      if (ctx.theme.preflightBase)
-        return `${wxPerfix},::before,::after{${entriesToCss(Object.entries(ctx.theme.preflightBase))}}`
+      if (ctx.theme.preflightBase) {
+        const css = entriesToCss(Object.entries(ctx.theme.preflightBase))
+        return `*,::before,::after{${css}}::backdrop{${css}}`
+      }
     },
   },
 ]
