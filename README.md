@@ -6,7 +6,7 @@
 
 通过使用[unplugin-transform-wx-class](https://github.com/MellowCo/unplugin-transform-wx-class)转换转义类名，保持`原子化css`的规范去书写`class`
 
-支持<a href='#uniapp vue2'>uniapp vue2 webpack版本</a>,<a href='#uni-app vue3'>uni-app vue3</a>,<a href='#taro react'>taro react</a>,<a href='#taro vue2'>taro vue2</a>
+支持<a href='#uniapp vue2'>uniapp vue2 webpack版本</a>,<a href='#uni-app vue3'>uni-app vue3 vite</a>,<a href='#taro react'>taro react</a>,<a href='#taro vue2'>taro vue2</a>
 
 ## 安装
 
@@ -51,11 +51,13 @@ export default defineConfig({
 import 'uno.css'
 ```
 
-### 示例
+## 示例
 
 [uniapp_vue3](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue3)
 [uniapp_vue2](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue2)
 [taro_react](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_react)
+[taro_vue2](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_vue2)
+[taro_vue3](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_vue3)
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031414239.png" alt="image-20220703141451188" style="zoom:50%;" />
 
@@ -321,6 +323,87 @@ import 'uno.css'
 ---
 
 ### taro vue3
+```shell
+# 创建taro项目 选择vue3
+taro init taro_vue
+# 安装unocss
+yarn add -D unocss @unocss/webpack unplugin-transform-wx-class unocss-preset-wxapp
+```
+> config/index.js
+>
+> 通过[miniwebpackchain](https://taro-docs.jd.com/taro/docs/config-detail#miniwebpackchain)，合并webpack配置
+
+```js
+// 导入unocss
+const UnoCSS = require('unocss/webpack').default
+const presetWxapp = require('unocss-preset-wxapp').default
+const transformWxClass = require('unplugin-transform-wx-class/webpack')
+const transformSelector = require('unplugin-transform-wx-class/transformSelector')
+
+const config = {
+  mini: {
+    // 合并webpack配置
+    webpackChain(chain) {
+      chain.plugin('unocss')
+        .use(UnoCSS({
+          presets: [
+            presetWxapp(),
+          ],
+          shortcuts: [
+            {
+              'border-base': 'border border-gray-500_10',
+              'center': 'flex justify-center items-center',
+            },
+          ],
+          postprocess: (css) => {
+            css.selector = transformSelector(css.selector)
+            return css
+          },
+        }))
+      chain
+        .plugin('transformWxClass')
+        .use(transformWxClass())
+    },
+  },
+  h5: {
+    // 合并webpack配置
+    webpackChain(chain) {
+      chain.plugin('unocss')
+        .use(UnoCSS({
+          presets: [
+            presetWxapp(),
+          ],
+          shortcuts: [
+            {
+              'border-base': 'border border-gray-500_10',
+              'center': 'flex justify-center items-center',
+            },
+          ],
+          postprocess: (css) => {
+            css.selector = transformSelector(css.selector)
+            return css
+          },
+        }))
+      chain
+        .plugin('transformWxClass')
+        .use(transformWxClass())
+    },
+  }
+}
+
+module.exports = function (merge) {
+  if (process.env.NODE_ENV === 'development')
+    return merge({}, config, require('./dev'))
+
+  return merge({}, config, require('./prod'))
+}
+```
+
+> app.ts
+
+```js
+import 'uno.css'
+```
 
 
 
