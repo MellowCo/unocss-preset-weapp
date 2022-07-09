@@ -9,7 +9,7 @@ const directions: Record<string, string> = {
 }
 
 const handleGap = ([, d = '', s]: string[], { theme }: RuleContext<Theme>) => {
-  const v = theme.spacing?.[s] ?? h.bracket.cssvar.remToRpx(s)
+  const v = theme.spacing?.[s] ?? h.bracket.cssvar.global.remToRpx(s)
   if (v != null) {
     return {
       [`grid-${directions[d]}gap`]: v,

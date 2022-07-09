@@ -97,7 +97,7 @@ function handlerBorder(m: string[], ctx: RuleContext): CSSEntries | undefined {
 }
 
 function handlerBorderSize([, a = '', b]: string[], { theme }: RuleContext<Theme>): CSSEntries | undefined {
-  const v = theme.lineWidth?.[b || 'DEFAULT'] ?? h.bracket.cssvar.rpx(b || '1')
+  const v = theme.lineWidth?.[b || 'DEFAULT'] ?? h.bracket.cssvar.global.rpx(b || '1')
   if (a in directionMap && v != null)
     return directionMap[a].map(i => [`border${i}-width`, v])
 }
@@ -118,7 +118,7 @@ function handlerBorderOpacity([, a = '', opacity]: string[]): CSSEntries | undef
 }
 
 function handlerRounded([, a = '', s]: string[], { theme }: RuleContext<Theme>): CSSEntries | undefined {
-  const v = theme.borderRadius?.[s || 'DEFAULT'] || h.bracket.cssvar.fraction.remToRpx(s || '1')
+  const v = theme.borderRadius?.[s || 'DEFAULT'] || h.bracket.cssvar.global.fraction.remToRpx(s || '1')
   if (a in cornerMap && v != null)
     return cornerMap[a].map(i => [`border${i}-radius`, v])
 }
