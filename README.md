@@ -6,7 +6,7 @@
 
 通过使用[unplugin-transform-wx-class](https://github.com/MellowCo/unplugin-transform-wx-class)转换转义类名，保持`原子化css`的规范去书写`class`
 
-支持<a href='#uniapp vue2'>uniapp vue2 webpack版本</a>,<a href='#uni-app vue3'>uni-app vue3 vite</a>,<a href='#taro react'>taro react</a>,<a href='#taro vue2'>taro vue2</a>
+支持<a href='#uniapp vue2'>uniapp vue2 webpack版本</a>,<a href='#uni-app vue3'>uni-app vue3 vite</a>,<a href='#taro react'>taro react</a>,<a href='#taro vue2'>taro vue2</a>,,<a href='#taro vue3'>taro vue3</a>
 
 ## 安装
 
@@ -325,7 +325,7 @@ import 'uno.css'
 ### taro vue3
 ```shell
 # 创建taro项目 选择vue3
-taro init taro_vue
+taro init taro_vue3
 # 安装unocss
 yarn add -D unocss @unocss/webpack unplugin-transform-wx-class unocss-preset-wxapp
 ```
