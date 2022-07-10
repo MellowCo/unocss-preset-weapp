@@ -393,8 +393,8 @@ exports[`preset-weapp > typography 1`] = `
 .font-leading-2,
 .leading-2{line-height:16rpx;}
 .leading-inherit{line-height:inherit;}
-.font-synthesis-small-caps{font-synthesis:small-caps;}
 .font-synthesis-weight{font-synthesis:weight;}
+.font-synthesis-small-caps{font-synthesis:small-caps;}
 .font-tracking-1em{letter-spacing:1em;}
 .tracking-2{letter-spacing:16rpx;}
 .tracking-inherit{letter-spacing:inherit;}
