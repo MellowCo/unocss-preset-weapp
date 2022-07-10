@@ -16,5 +16,5 @@ export const dropShadow = {
   'lg': ['0 20rpx 16rpx rgba(0,0,0,0.04)', '0 8rpx 6rpx rgba(0,0,0,0.1)'],
   'xl': ['0 40rpx 26rpx rgba(0,0,0,0.03)', '0 16rpx 10rpx rgba(0,0,0,0.08)'],
   '2xl': '0 50rpx 50rpx rgba(0,0,0,0.15)',
-  'none': '0 0 #0000',
+  'none': '0 0 rgba(0,0,0,0)',
 }

@@ -58,7 +58,7 @@ export const borderRadius = {
 
 export const boxShadow = {
   'DEFAULT': ['var(--un-shadow-inset) 0 2rpx 6rpx 0 rgba(0,0,0,0.1)', 'var(--un-shadow-inset) 0 2rpx 4rpx -2rpx rgba(0,0,0,0.1)'],
-  'none': '0 0 #0000',
+  'none': '0 0 rgba(0,0,0,0)',
   'sm': 'var(--un-shadow-inset) 0 2rpx 4rpx 0 rgba(0,0,0,0.05)',
   'md': ['var(--un-shadow-inset) 0 8rpx 12rpx -2rpx rgba(0,0,0,0.1)', 'var(--un-shadow-inset) 0 4rpx 8rpx -4rpx rgba(0,0,0,0.1)'],
   'lg': ['var(--un-shadow-inset) 0 20rpx 30rpx -6rpx rgba(0,0,0,0.1)', 'var(--un-shadow-inset) 0 8rpx 12rpx -8rpx rgba(0,0,0,0.1)'],
