@@ -38,7 +38,6 @@ describe('preset-mini', () => {
         unmatched.push(i)
     }
 
-    console.log('[ unmatched ] >', unmatched)
     expect(unmatched).toEqual([])
     expect(css).toMatchSnapshot()
     expect(css).toEqual(css2)

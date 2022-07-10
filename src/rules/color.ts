@@ -13,6 +13,7 @@ export const opacity: Rule[] = [
  * @example c-red color-red5 text-red-300
  */
 export const textColors: Rule[] = [
+  [/^(?:color|c)-(.+)$/, colorResolver('color', 'text'), { autocomplete: '(text|color|c)-$colors' }],
   // auto detection and fallback to font-size if the content looks like a size
   [/^text-(.+)$/, colorResolver('color', 'text', css => !css.color?.toString().match(numberWithUnitRE)), { autocomplete: '(text|color|c)-$colors' }],
   [/^(?:text|color|c)-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-text-opacity': h.bracket.percent(opacity) }), { autocomplete: '(text|color|c)-(op|opacity)-<percent>' }],
