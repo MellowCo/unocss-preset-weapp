@@ -1,7 +1,7 @@
 import type { Rule } from '@unocss/core'
 import { globalKeywords, handler as h, makeGlobalStaticRules } from '../utils'
 
-export const varEmpty = 'var(--un-empty,/*!*/ /*!*/)'
+export const varEmpty = ' '
 
 // display table included on table.ts
 export const displays: Rule[] = [
