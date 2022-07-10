@@ -1,5 +1,4 @@
 import type { CSSEntries, CSSObject, ParsedColorValue, Rule, RuleContext, VariantContext } from '@unocss/core'
-
 import { toArray } from '@unocss/core'
 import type { Theme } from '../theme'
 import { restoreSelector } from '../transform'
@@ -11,7 +10,6 @@ export const CONTROL_MINI_NO_NEGATIVE = '$$mini-no-negative'
 
 /**
  * Provide {@link DynamicMatcher} function returning spacing definition. See spacing rules.
- *
  * @param {string} propertyPrefix - Property for the css value to be created. Postfix will be appended according to direction matched.
  * @return {@link DynamicMatcher} object.
  * @see {@link directionMap}
@@ -26,9 +24,25 @@ export const directionSize = (propertyPrefix: string) => ([_, direction, size]: 
  * Obtain color from theme by camel-casing colors.
  */
 const getThemeColor = (theme: Theme, colors: string[]) => {
-  return theme.colors?.[
-    colors.join('-').replace(/(-[a-z])/g, n => n.slice(1).toUpperCase())
-  ]
+  let obj: Theme['colors'] | string = theme.colors
+  let index = -1
+
+  for (const c of colors) {
+    index += 1
+    if (obj && typeof obj !== 'string') {
+      const camel = colors.slice(index).join('-').replace(/(-[a-z])/g, n => n.slice(1).toUpperCase())
+      if (obj[camel])
+        return obj[camel]
+
+      if (obj[c]) {
+        obj = obj[c]
+        continue
+      }
+    }
+    return undefined
+  }
+
+  return obj
 }
 
 /**
@@ -46,8 +60,7 @@ const getThemeColor = (theme: Theme, colors: string[]) => {
  * @return {ParsedColorValue|undefined}  {@link ParsedColorValue} object if string is parseable.
  */
 export const parseColor = (body: string, theme: Theme): ParsedColorValue | undefined => {
-  // 百分比 / 改为 _
-  const split = restoreSelector(body).split(/(?:\/|\_|:)/)
+  const split = restoreSelector(body).split(/(?:\/|\_|:)/) // 百分比 / 改为 _
 
   let main, opacity
   if (split[0] === '[color') {
@@ -86,6 +99,10 @@ export const parseColor = (body: string, theme: Theme): ParsedColorValue | undef
     if (scale.match(/^\d+$/)) {
       no = scale
       colorData = getThemeColor(theme, colors.slice(0, -1))
+      if (!colorData || typeof colorData === 'string')
+        color = undefined
+      else
+        color = colorData[no] as string
     }
     else {
       colorData = getThemeColor(theme, colors)
@@ -93,12 +110,12 @@ export const parseColor = (body: string, theme: Theme): ParsedColorValue | undef
         [, no = no] = colors
         colorData = getThemeColor(theme, [name])
       }
-    }
 
-    if (typeof colorData === 'string')
-      color = colorData
-    else if (no && colorData)
-      color = colorData[no]
+      if (typeof colorData === 'string')
+        color = colorData
+      else if (no && colorData)
+        color = colorData[no] as string
+    }
   }
 
   return {
