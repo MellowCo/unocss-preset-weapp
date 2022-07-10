@@ -37,6 +37,8 @@ describe('preset-mini', () => {
       if (!css.includes(escapeSelector(i)))
         unmatched.push(i)
     }
+
+    console.log('[ unmatched ] >', unmatched)
     expect(unmatched).toEqual([])
     expect(css).toMatchSnapshot()
     expect(css).toEqual(css2)
