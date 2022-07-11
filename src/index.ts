@@ -44,9 +44,10 @@ export const presetWeapp = (options: PresetMiniOptions = {}): Preset<Theme> => {
     rules,
     variants: variants(options),
     options,
-    postprocess: options.variablePrefix && options.variablePrefix !== 'un-'
-      ? VarPrefixPostprocessor(options.variablePrefix)
-      : undefined,
+    postprocess(css) {
+      if (options.variablePrefix && options.variablePrefix !== 'un-')
+        VarPrefixPostprocessor(options.variablePrefix, css)
+    },
     preflights,
     prefix: options.prefix,
   }
@@ -54,12 +55,10 @@ export const presetWeapp = (options: PresetMiniOptions = {}): Preset<Theme> => {
 
 export default presetWeapp
 
-function VarPrefixPostprocessor(prefix: string): Postprocessor {
-  return (obj) => {
-    obj.entries.forEach((i) => {
-      i[0] = i[0].replace(/^--un-/, `--${prefix}`)
-      if (typeof i[1] === 'string')
-        i[1] = i[1].replace(/var\(--un-/g, `var(--${prefix}`)
-    })
-  }
+function VarPrefixPostprocessor(prefix: string, obj: any) {
+  obj.entries.forEach((i: any) => {
+    i[0] = i[0].replace(/^--un-/, `--${prefix}`)
+    if (typeof i[1] === 'string')
+      i[1] = i[1].replace(/var\(--un-/g, `var(--${prefix}`)
+  })
 }

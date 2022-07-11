@@ -8,6 +8,7 @@ const uno = createGenerator({
   presets: [
     presetMini({
       dark: 'media',
+      variablePrefix: 'licl-',
     }),
   ],
   theme: {
