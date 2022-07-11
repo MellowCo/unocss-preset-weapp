@@ -107,5 +107,13 @@
     <view class="c-[#157]:60">
       c-[#157]:60
     </view>
+
+    <view class="c-[#157111]:60">
+      #157111
+    </view>
+
+     <view class="c-[#157111]:80">
+      #157111
+    </view>
   </view>
 </template>

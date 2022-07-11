@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <view>
     <view class="p-2 bg-gray-100">
       <view class="text-2xl text-center my-3">
         shadow
@@ -36,6 +36,6 @@
         shadow-inner
       </view>
     </view>
-  </div>
+  </view>
 </template>
 

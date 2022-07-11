@@ -111,7 +111,7 @@ export default function TextColor() {
       c-[#157]:60
     </view>
 
-    <view className='c-[#784469]:60 bg-[#153625]/60'>
+    <view className='c-[#784469]:80 bg-[#153625]/90'>
     #784469 #153625
     </view>
   </view>

@@ -107,5 +107,9 @@
     <view class="c-[#157]:60">
       c-[#157]:60
     </view>
+
+    <view class="c-[#198]/60">
+      c-[#198]/
+    </view>
   </view>
 </template>

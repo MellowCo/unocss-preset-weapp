@@ -1783,10 +1783,15 @@
     "@unocss/core" "0.43.2"
     unconfig "^0.3.4"
 
-"@unocss/core@0.43.2", "@unocss/core@^0.43.2":
+"@unocss/core@0.43.2":
   version "0.43.2"
   resolved "https://registry.npmjs.org/@unocss/core/-/core-0.43.2.tgz#be4a5620ad5c00f59747d44914a73f16b8f6bfd3"
   integrity sha512-SR2gHIl/5APfkl9WWbpKjYxMUkBin67uw8NIXOz0u/J5jSnXnu2z15DGwgOxwLfTl/AlBTsM0/lIJqfbckyPnw==
+
+"@unocss/core@^0.44.0":
+  version "0.44.0"
+  resolved "https://registry.npmjs.org/@unocss/core/-/core-0.44.0.tgz#880e50ca72a3b6df452fbeddee2ab378279d200f"
+  integrity sha512-stuRYyY6GJW9kFzAv5MbAwxYDVMS5ycYTvgrRZrctyV3BHLERRQD1jyQfFNn1QHTxYceH4VpQDKjueHiUmqMHw==
 
 "@unocss/inspector@0.43.2":
   version "0.43.2"
@@ -2871,7 +2876,7 @@ browserify-zlib@^0.2.0:
   dependencies:
     pako "~1.0.5"
 
-browserslist@^4.12.0, browserslist@^4.20.2, browserslist@^4.21.0:
+browserslist@^4.12.0, browserslist@^4.20.2, browserslist@^4.21.1:
   version "4.21.1"
   resolved "https://registry.npmjs.org/browserslist/-/browserslist-4.21.1.tgz#c9b9b0a54c7607e8dc3e01a0d311727188011a00"
   integrity sha512-Nq8MFCSrnJXSc88yliwlzQe3qNe3VntIjhsArW9IJOEPSHNx23FalwApUVbzAWABLhYJJ7y8AynWI/XM8OdfjQ==
@@ -3036,9 +3041,9 @@ camelize@^1.0.0:
   integrity sha512-W2lPwkBkMZwFlPCXhIlYgxu+7gC/NUlCtdK652DAJ1JdgV0sTrvuPFshNPrFa1TY2JOkLhgdeEBplB4ezEa+xg==
 
 caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001359:
-  version "1.0.30001363"
-  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001363.tgz#26bec2d606924ba318235944e1193304ea7c4f15"
-  integrity sha512-HpQhpzTGGPVMnCjIomjt+jvyUu8vNFo3TaDiZ/RcoTrlOq/5+tC8zHdsbgFB6MxmaY+jCpsH09aD80Bb4Ow3Sg==
+  version "1.0.30001364"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001364.tgz#1e118f0e933ed2b79f8d461796b8ce45398014a0"
+  integrity sha512-9O0xzV3wVyX0SlegIQ6knz+okhBB5pE0PC40MNdwcipjwpxoUEHL24uJ+gG42cgklPjfO5ZjZPme9FTSN3QT2Q==
 
 chalk@3.0.0, chalk@^3.0.0:
   version "3.0.0"
@@ -3433,17 +3438,17 @@ copy-webpack-plugin@5.1.2:
     webpack-log "^2.0.0"
 
 core-js-compat@^3.21.0, core-js-compat@^3.22.1:
-  version "3.23.3"
-  resolved "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.23.3.tgz#7d8503185be76bb6d8d592c291a4457a8e440aa9"
-  integrity sha512-WSzUs2h2vvmKsacLHNTdpyOC9k43AEhcGoFlVgCY4L7aw98oSBKtPL6vD0/TqZjRWRQYdDSLkzZIni4Crbbiqw==
+  version "3.23.4"
+  resolved "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.23.4.tgz#56ad4a352884317a15f6b04548ff7139d23b917f"
+  integrity sha512-RkSRPe+JYEoflcsuxJWaiMPhnZoFS51FcIxm53k4KzhISCBTmaGlto9dTIrYuk0hnJc3G6pKufAKepHnBq6B6Q==
   dependencies:
-    browserslist "^4.21.0"
+    browserslist "^4.21.1"
     semver "7.0.0"
 
 core-js-pure@^3.20.2:
-  version "3.23.3"
-  resolved "https://registry.npmjs.org/core-js-pure/-/core-js-pure-3.23.3.tgz#bcd02d3d8ec68ad871ef50d5ccbb248ddb54f401"
-  integrity sha512-XpoouuqIj4P+GWtdyV8ZO3/u4KftkeDVMfvp+308eGMhCrA3lVDSmAxO0c6GGOcmgVlaKDrgWVMo49h2ab/TDA==
+  version "3.23.4"
+  resolved "https://registry.npmjs.org/core-js-pure/-/core-js-pure-3.23.4.tgz#aba5c7fb297063444f6bf93afb0362151679a012"
+  integrity sha512-lizxkcgj3XDmi7TUBFe+bQ1vNpD5E4t76BrBWI3HdUxdw/Mq1VF4CkiHzIKyieECKtcODK2asJttoofEeUKICQ==
 
 core-js@^2.4.0:
   version "2.6.12"
@@ -3451,9 +3456,9 @@ core-js@^2.4.0:
   integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
 
 core-js@^3.6.5:
-  version "3.23.3"
-  resolved "https://registry.npmjs.org/core-js/-/core-js-3.23.3.tgz#3b977612b15da6da0c9cc4aec487e8d24f371112"
-  integrity sha512-oAKwkj9xcWNBAvGbT//WiCdOMpb9XQG92/Fe3ABFM/R16BsHgePG00mFOgKf7IsCtfj8tA1kHtf/VwErhriz5Q==
+  version "3.23.4"
+  resolved "https://registry.npmjs.org/core-js/-/core-js-3.23.4.tgz#92d640faa7f48b90bbd5da239986602cfc402aa6"
+  integrity sha512-vjsKqRc1RyAJC3Ye2kYqgfdThb3zYnx9CrqoCcjMOENMtQPC7ZViBvlDxwYU/2z2NI/IPuiXw5mT4hWhddqjzQ==
 
 core-util-is@~1.0.0:
   version "1.0.3"
@@ -9245,12 +9250,9 @@ universalify@^0.1.0, universalify@^0.1.2:
   resolved "https://registry.npmjs.org/universalify/-/universalify-0.1.2.tgz#b646f69be3942dabcecc9d6639c80dc105efaa66"
   integrity sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
 
-unocss-preset-wxapp@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.npmjs.org/unocss-preset-wxapp/-/unocss-preset-wxapp-0.1.0.tgz#20753f737c0f1cb1ebc376859cd62f9c40b978c6"
-  integrity sha512-5zxvxDnFo68gOzvnKsrYkAG7blZopFsxVqJ9FFH7wlbMzaZ/UIBS7BSQbBmxgNXgSqj6R6WxNgfZlyaF6U8Wfw==
-  dependencies:
-    "@unocss/core" "^0.43.2"
+"unocss-preset-wxapp@link:../..":
+  version "0.0.0"
+  uid ""
 
 unocss@^0.43.2:
   version "0.43.2"

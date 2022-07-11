@@ -111,5 +111,9 @@
      <view class="c-[#c026d3]:60 bg-[#0ea5e9]/50">
       #c026d3
     </view>
+
+     <view class="c-[#c026]:60">
+      #c026
+    </view>
   </view>
 </template>
