@@ -1,7 +1,7 @@
 <script>
 export default {
   onLaunch() {
-    console.log('App Launch1')
+    console.log('App Launch')
   },
   onShow() {
     console.log('App Show')
