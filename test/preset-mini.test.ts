@@ -28,21 +28,23 @@ const uno = createGenerator({
 })
 
 describe('preset-mini', () => {
-  test('targets', async () => {
-    const code = presetMiniTargets.join(' ')
-    const { css } = await uno.generate(code)
-    const { css: css2 } = await uno.generate(code)
+  // test('targets', async () => {
+  //   const code = presetMiniTargets.join(' ')
+  //   const { css } = await uno.generate(code)
+  //   const { css: css2 } = await uno.generate(code)
 
-    const unmatched = []
-    for (const i of presetMiniTargets) {
-      if (!css.includes(escapeSelector(i)))
-        unmatched.push(i)
-    }
+  //   const unmatched = []
+  //   for (const i of presetMiniTargets) {
+  //     if (css.includes('\\'))
+  //       unmatched.push(i)
+  //   }
 
-    expect(unmatched).toEqual([])
-    expect(css).toMatchSnapshot()
-    expect(css).toEqual(css2)
-  })
+  //   console.log('[ unmatched ] >', unmatched)
+
+  //   expect(unmatched).toEqual([])
+  //   expect(css).toMatchSnapshot()
+  //   expect(css).toEqual(css2)
+  // })
 
   test('utils from preset-wind should be non-targets', async () => {
     const code = presetWindTargets.join(' ')

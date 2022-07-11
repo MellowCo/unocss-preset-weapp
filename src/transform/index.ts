@@ -1,22 +1,17 @@
-/*
- * @Author: licl
- * @Date: 2022-07-07 21:07:52
- * @LastEditTime: 2022-07-07 21:17:38
- * @LastEditors: licl
- * @Description:
- */
-const rules: { [key: string]: string } = {
-  '-d-': '.',
-  '-s-': '/',
-  '-c-': ':',
-  '-p-': '%',
-  '-e-': '!',
-  '-w-': '#',
-  '-bl-': '(',
-  '-br-': ')',
-  '-fl-': '[',
-  '-fr-': ']',
-  '-r-': '$',
+import { escapeRegExp } from '@unocss/core'
+
+const rules: Record<string, string> = {
+  '.': '-d-',
+  '/': '-s-',
+  ':': '-c-',
+  '%': '-p-',
+  '!': '-e-',
+  '#': '-w-',
+  '(': '-bl-',
+  ')': '-br-',
+  '[': '-fl-',
+  ']': '-fr-',
+  '$': '-r-',
 }
 
 /**
@@ -27,6 +22,20 @@ const rules: { [key: string]: string } = {
  */
 export function restoreSelector(selector: string) {
   for (const rule in rules)
-    selector = selector.replaceAll(rule, rules[rule])
+    selector = selector.replaceAll(rules[rule], rule)
+  return selector
+}
+
+export function transformSelector(selector: string) {
+  // selector = selector.slice(1)
+  // .ring-offset-size-\$variable => .ring-offset-size--r-variable
+
+  if (/[\.\/:%!#\(\)\[\]$]/.test(selector)) {
+    for (const rule in rules) {
+      const replaceReg = new RegExp(escapeRegExp(`\\${rule}`), 'g')
+      // selector = selector.replace(replaceReg, transformRules[transformRule])
+      selector = selector.replace(replaceReg, rules[rule])
+    }
+  }
   return selector
 }

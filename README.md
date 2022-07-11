@@ -107,7 +107,6 @@ yarn add -D unocss @unocss/webpack unplugin-transform-wx-class unocss-preset-wxa
 const UnoCSS = require('unocss/webpack').default
 const presetWxapp = require('unocss-preset-wxapp').default
 const transformWxClass = require('unplugin-transform-wx-class/webpack')
-const transformSelector = require('unplugin-transform-wx-class/transformSelector')
 
 module.exports = {
   configureWebpack: {
@@ -122,10 +121,6 @@ module.exports = {
             'center': 'flex justify-center items-center',
           },
         ],
-        postprocess: (css) => {
-          css.selector = transformSelector(css.selector)
-          return css
-        },
       }),
       transformWxClass(),
     ],
@@ -168,7 +163,6 @@ yarn add -D unocss @unocss/webpack unplugin-transform-wx-class unocss-preset-wxa
 const UnoCSS = require('unocss/webpack').default
 const presetWxapp = require('unocss-preset-wxapp').default
 const transformWxClass = require('unplugin-transform-wx-class/webpack')
-const transformSelector = require('unplugin-transform-wx-class/transformSelector')
 
 const config = {
   mini: {
@@ -185,10 +179,6 @@ const config = {
               'center': 'flex justify-center items-center',
             },
           ],
-          postprocess: (css) => {
-            css.selector = transformSelector(css.selector)
-            return css
-          },
         }))
       chain
         .plugin('transformWxClass')
@@ -209,10 +199,6 @@ const config = {
               'center': 'flex justify-center items-center',
             },
           ],
-          postprocess: (css) => {
-            css.selector = transformSelector(css.selector)
-            return css
-          },
         }))
       chain
         .plugin('transformWxClass')
@@ -256,7 +242,6 @@ yarn add -D unocss @unocss/webpack unplugin-transform-wx-class unocss-preset-wxa
 const UnoCSS = require('unocss/webpack').default
 const presetWxapp = require('unocss-preset-wxapp').default
 const transformWxClass = require('unplugin-transform-wx-class/webpack')
-const transformSelector = require('unplugin-transform-wx-class/transformSelector')
 
 const config = {
   mini: {
@@ -273,10 +258,6 @@ const config = {
               'center': 'flex justify-center items-center',
             },
           ],
-          postprocess: (css) => {
-            css.selector = transformSelector(css.selector)
-            return css
-          },
         }))
       chain
         .plugin('transformWxClass')
@@ -297,10 +278,6 @@ const config = {
               'center': 'flex justify-center items-center',
             },
           ],
-          postprocess: (css) => {
-            css.selector = transformSelector(css.selector)
-            return css
-          },
         }))
       chain
         .plugin('transformWxClass')
@@ -343,7 +320,6 @@ yarn add -D unocss @unocss/webpack unplugin-transform-wx-class unocss-preset-wxa
 const UnoCSS = require('unocss/webpack').default
 const presetWxapp = require('unocss-preset-wxapp').default
 const transformWxClass = require('unplugin-transform-wx-class/webpack')
-const transformSelector = require('unplugin-transform-wx-class/transformSelector')
 
 const config = {
   mini: {
@@ -360,10 +336,6 @@ const config = {
               'center': 'flex justify-center items-center',
             },
           ],
-          postprocess: (css) => {
-            css.selector = transformSelector(css.selector)
-            return css
-          },
         }))
       chain
         .plugin('transformWxClass')
@@ -436,7 +408,7 @@ import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 import Unocss from 'unocss/vite'
 import presetWxapp from 'unocss-preset-wxapp'
-import { transformSelector, transformWxClass } from 'unplugin-transform-wx-class/vite'
+import transformWxClass  from 'unplugin-transform-wx-class/vite'
 
 export default defineConfig({
   plugins: [
@@ -451,10 +423,6 @@ export default defineConfig({
           'center': 'flex justify-center items-center',
         },
       ],
-      postprocess: (css) => {
-        css.selector = transformSelector(css.selector)
-        return css
-      },
     }),
     transformWxClass(),
   ],

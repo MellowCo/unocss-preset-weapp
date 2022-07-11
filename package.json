@@ -66,9 +66,12 @@
     "test": "vitest",
     "uniapp3": "npm -C examples/uniapp_vue3 run dev:mp-weixin",
     "uniapp2": "nr build &&npm -C examples/uniapp_vue2 run dev:mp-weixin",
+    "taro": "nr build &&npm -C examples/taro_react run dev:weapp",
+    "taro_vue2": "nr build &&npm -C examples/taro_vue2 run dev:weapp",
+    "taro_vue3": "nr build &&npm -C examples/taro_vue3 run dev:weapp",
     "uniapp3:h5": "npm run build && npm -C examples/uniapp_vue3 run dev:h5",
     "prepublishOnly": "nr build",
-    "release": "bumpp && npm publish"
+    "release": "bumpp"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",
@@ -78,7 +81,7 @@
     "typescript": "^4.7.4",
     "unbuild": "^0.7.4",
     "vite": "^2.9.14",
-    "vitest": "^0.17.1"
+    "vitest": "^0.18.0"
   },
   "dependencies": {
     "@unocss/core": "^0.44.0"
