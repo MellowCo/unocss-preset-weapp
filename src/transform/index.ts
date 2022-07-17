@@ -21,8 +21,10 @@ const rules: Record<string, string> = {
  * @param selector
  */
 export function restoreSelector(selector: string) {
-  for (const rule in rules)
-    selector = selector.replaceAll(rules[rule], rule)
+  for (const rule in rules) {
+    const replaceReg = new RegExp(rules[rule], 'g')
+    selector = selector.replace(replaceReg, rules[rule])
+  }
   return selector
 }
 
@@ -33,7 +35,6 @@ export function transformSelector(selector: string) {
   if (/[\.\/:%!#\(\)\[\]$]/.test(selector)) {
     for (const rule in rules) {
       const replaceReg = new RegExp(escapeRegExp(`\\${rule}`), 'g')
-      // selector = selector.replace(replaceReg, transformRules[transformRule])
       selector = selector.replace(replaceReg, rules[rule])
     }
   }
