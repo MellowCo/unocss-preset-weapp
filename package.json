@@ -71,7 +71,11 @@
     "taro_vue3": "nr build &&npm -C examples/taro_vue3 run dev:weapp",
     "uniapp3:h5": "npm run build && npm -C examples/uniapp_vue3 run dev:h5",
     "prepublishOnly": "nr build",
-    "release": "bumpp"
+    "release": "bumpp",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@unocss/core": "^0.44.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",
@@ -82,8 +86,5 @@
     "unbuild": "^0.7.4",
     "vite": "^3.0.0",
     "vitest": "^0.18.1"
-  },
-  "dependencies": {
-    "@unocss/core": "^0.44.3"
   }
 }
