@@ -1,7 +1,6 @@
 // 导入unocss
-const UnoCSS = require('unocss/webpack').default
-const presetWxapp = require('unocss-preset-wxapp').default
-const transformWxClass = require('unplugin-transform-wx-class/webpack')
+import UnoCSS from 'unocss/webpack'
+import transformWxClass from 'unplugin-transform-wx-class/webpack'
 
 const config = {
   projectName: 'taro_react',
@@ -49,17 +48,7 @@ const config = {
     // 合并webpack配置
     webpackChain(chain){
       chain.plugin('unocss')
-        .use(UnoCSS({
-          presets: [
-            presetWxapp(),
-          ],
-          shortcuts: [
-            {
-              'border-base': 'border border-gray-500_10',
-              'center': 'flex justify-center items-center',
-            },
-          ]
-        }))
+        .use(UnoCSS())
 
       chain
         .plugin('transformWxClass')
@@ -86,17 +75,7 @@ const config = {
     // 合并webpack配置
     webpackChain(chain){
       chain.plugin('unocss')
-        .use(UnoCSS({
-          presets: [
-            presetWxapp(),
-          ],
-          shortcuts: [
-            {
-              'border-base': 'border border-gray-500_10',
-              'center': 'flex justify-center items-center',
-            },
-          ]
-        }))
+        .use(UnoCSS())
 
       chain
         .plugin('transformWxClass')

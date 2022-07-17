@@ -108,11 +108,11 @@
       c-[#157]:60
     </view>
 
-    <view class="c-[#157111]:60">
+    <view class="c-[#1571dd]:60">
       #157111
     </view>
 
-     <view class="c-[#157111]:30">
+    <view class="c-[#157111]:80">
       #157111
     </view>
   </view>

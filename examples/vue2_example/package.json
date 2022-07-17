@@ -1,5 +1,5 @@
 {
-  "name": "uniapp_vue2",
+  "name": "vue2_example",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -86,19 +86,19 @@
     "@dcloudio/vue-cli-plugin-uni-optimize": "^2.0.1-34920220630001",
     "@dcloudio/webpack-uni-mp-loader": "^2.0.1-34920220630001",
     "@dcloudio/webpack-uni-pages-loader": "^2.0.1-34920220630001",
-    "@unocss/webpack": "^0.44.3",
-    "@vue/cli-plugin-babel": "~4.5.17",
-    "@vue/cli-service": "~4.5.17",
+    "@vue/cli-plugin-babel": "~4.5.19",
+    "@vue/cli-service": "~4.5.19",
     "babel-plugin-import": "^1.11.0",
     "cross-env": "^7.0.2",
     "jest": "^25.4.0",
     "mini-types": "*",
     "miniprogram-api-typings": "*",
     "postcss-comment": "^2.0.0",
+    "vue-template-compiler": "^2.6.11",
     "unocss": "^0.44.3",
     "unocss-preset-wxapp": "link:../../",
     "unplugin-transform-wx-class": "^0.1.5",
-    "vue-template-compiler": "^2.6.11"
+    "@unocss/webpack": "^0.44.3"
   },
   "browserslist": [
     "Android >= 4.4",

@@ -19,7 +19,7 @@
 pnpm add unocss-preset-wxapp unocss -D
 ```
 
-## 引入插件
+## 基本使用
 
 > uniapp by vue3
 
@@ -58,11 +58,11 @@ import 'uno.css'
 
 ## 示例
 
-[uniapp_vue3](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue3)
-[uniapp_vue2](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue2)
-[taro_react](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_react)
-[taro_vue2](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_vue2)
-[taro_vue3](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_vue3)
+[uniapp_vue3](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue3)   
+[uniapp_vue2](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue2)   
+[taro_react](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_react)   
+[taro_vue2](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_vue2)   
+[taro_vue3](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_vue3)   
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031414239.png" alt="image-20220703141451188" style="zoom:50%;" />
 
@@ -101,35 +101,44 @@ vue create -p dcloudio/uni-preset-vue my-project
 yarn add -D unocss @unocss/webpack unplugin-transform-wx-class unocss-preset-wxapp
 ```
 
-> vue.config.js
+* vue.config.js
 
 ```js
 const UnoCSS = require('unocss/webpack').default
-const presetWxapp = require('unocss-preset-wxapp').default
 const transformWxClass = require('unplugin-transform-wx-class/webpack')
 
 module.exports = {
   configureWebpack: {
     plugins: [
-      UnoCSS({
-        presets: [
-          presetWxapp(),
-        ],
-        shortcuts: [
-          {
-            'border-base': 'border border-gray-500_10',
-            'center': 'flex justify-center items-center',
-          },
-        ],
-      }),
+      UnoCSS(),
       transformWxClass(),
     ],
   },
 }
 
 ```
+* unocss.config.js
+> 添加unocss.config.js文件，搭配[unocss vscode](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)插件，智能提示
 
-> main.js
+<img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207171840689.png" alt="image-20220703141451188" style="zoom:50%;" />
+
+```js
+const presetWxapp = require('unocss-preset-wxapp').default
+
+export default {
+  presets: [
+    presetWxapp(),
+  ],
+  shortcuts: [
+    {
+      'border-base': 'border border-gray-500_10',
+      'center': 'flex justify-center items-center',
+    },
+  ],
+}
+```
+
+* main.js
 
 ```js
 import 'uno.css'
@@ -154,32 +163,20 @@ taro init taro_react
 yarn add -D unocss @unocss/webpack unplugin-transform-wx-class unocss-preset-wxapp
 ```
 
-> config/index.js
->
+* config/index.js
 > 通过[miniwebpackchain](https://taro-docs.jd.com/taro/docs/config-detail#miniwebpackchain)，合并webpack配置
 
 ```js
 // 导入unocss
-const UnoCSS = require('unocss/webpack').default
-const presetWxapp = require('unocss-preset-wxapp').default
-const transformWxClass = require('unplugin-transform-wx-class/webpack')
+import UnoCSS from 'unocss/webpack'
+import transformWxClass from 'unplugin-transform-wx-class/webpack'
 
 const config = {
   mini: {
     // 合并webpack配置
     webpackChain(chain) {
       chain.plugin('unocss')
-        .use(UnoCSS({
-          presets: [
-            presetWxapp(),
-          ],
-          shortcuts: [
-            {
-              'border-base': 'border border-gray-500_10',
-              'center': 'flex justify-center items-center',
-            },
-          ],
-        }))
+        .use(UnoCSS())
       chain
         .plugin('transformWxClass')
         .use(transformWxClass())
@@ -189,17 +186,7 @@ const config = {
     // 合并webpack配置
     webpackChain(chain) {
       chain.plugin('unocss')
-        .use(UnoCSS({
-          presets: [
-            presetWxapp(),
-          ],
-          shortcuts: [
-            {
-              'border-base': 'border border-gray-500_10',
-              'center': 'flex justify-center items-center',
-            },
-          ],
-        }))
+        .use(UnoCSS())
       chain
         .plugin('transformWxClass')
         .use(transformWxClass())
@@ -214,177 +201,40 @@ module.exports = function (merge) {
   return merge({}, config, require('./prod'))
 }
 ```
+* unocss.config.ts
+> 添加unocss.config.js文件，搭配[unocss vscode](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)插件，智能提示
 
-> app.ts
+```ts
+import presetWxapp from 'unocss-preset-wxapp'
+
+export default {
+  presets: [
+    presetWxapp(),
+  ],
+  shortcuts: [
+    {
+      'border-base': 'border border-gray-500/10',
+      'center': 'flex justify-center items-center',
+    },
+  ]
+}
+```
+
+* app.ts
 
 ```js
 import 'uno.css'
 ```
-
-
 
 ---
 
 ### taro-vue2
-
-```shell
-# 创建taro项目 选择vue
-taro init taro_vue
-# 安装unocss
-yarn add -D unocss @unocss/webpack unplugin-transform-wx-class unocss-preset-wxapp
-```
-> config/index.js
->
-> 通过[miniwebpackchain](https://taro-docs.jd.com/taro/docs/config-detail#miniwebpackchain)，合并webpack配置
-
-```js
-// 导入unocss
-const UnoCSS = require('unocss/webpack').default
-const presetWxapp = require('unocss-preset-wxapp').default
-const transformWxClass = require('unplugin-transform-wx-class/webpack')
-
-const config = {
-  mini: {
-    // 合并webpack配置
-    webpackChain(chain) {
-      chain.plugin('unocss')
-        .use(UnoCSS({
-          presets: [
-            presetWxapp(),
-          ],
-          shortcuts: [
-            {
-              'border-base': 'border border-gray-500_10',
-              'center': 'flex justify-center items-center',
-            },
-          ],
-        }))
-      chain
-        .plugin('transformWxClass')
-        .use(transformWxClass())
-    },
-  },
-  h5: {
-    // 合并webpack配置
-    webpackChain(chain) {
-      chain.plugin('unocss')
-        .use(UnoCSS({
-          presets: [
-            presetWxapp(),
-          ],
-          shortcuts: [
-            {
-              'border-base': 'border border-gray-500_10',
-              'center': 'flex justify-center items-center',
-            },
-          ],
-        }))
-      chain
-        .plugin('transformWxClass')
-        .use(transformWxClass())
-    },
-  }
-}
-
-module.exports = function (merge) {
-  if (process.env.NODE_ENV === 'development')
-    return merge({}, config, require('./dev'))
-
-  return merge({}, config, require('./prod'))
-}
-```
-
-> app.ts
-
-```js
-import 'uno.css'
-```
-
-
+见 <a href='#taro-react'>taro-react</a>
 
 ---
 
 ### taro-vue3
-```shell
-# 创建taro项目 选择vue3
-taro init taro_vue3
-# 安装unocss
-yarn add -D unocss @unocss/webpack unplugin-transform-wx-class unocss-preset-wxapp
-```
-> config/index.js
->
-> 通过[miniwebpackchain](https://taro-docs.jd.com/taro/docs/config-detail#miniwebpackchain)，合并webpack配置
-
-```js
-// 导入unocss
-const UnoCSS = require('unocss/webpack').default
-const presetWxapp = require('unocss-preset-wxapp').default
-const transformWxClass = require('unplugin-transform-wx-class/webpack')
-
-const config = {
-  mini: {
-    // 合并webpack配置
-    webpackChain(chain) {
-      chain.plugin('unocss')
-        .use(UnoCSS({
-          presets: [
-            presetWxapp(),
-          ],
-          shortcuts: [
-            {
-              'border-base': 'border border-gray-500_10',
-              'center': 'flex justify-center items-center',
-            },
-          ],
-        }))
-      chain
-        .plugin('transformWxClass')
-        .use(transformWxClass())
-    },
-  },
-  h5: {
-    // 合并webpack配置
-    webpackChain(chain) {
-      chain.plugin('unocss')
-        .use(UnoCSS({
-          presets: [
-            presetWxapp(),
-          ],
-          shortcuts: [
-            {
-              'border-base': 'border border-gray-500_10',
-              'center': 'flex justify-center items-center',
-            },
-          ],
-          postprocess: (css) => {
-            css.selector = transformSelector(css.selector)
-            return css
-          },
-        }))
-      chain
-        .plugin('transformWxClass')
-        .use(transformWxClass())
-    },
-  }
-}
-
-module.exports = function (merge) {
-  if (process.env.NODE_ENV === 'development')
-    return merge({}, config, require('./dev'))
-
-  return merge({}, config, require('./prod'))
-}
-```
-
-> app.ts
-
-```js
-import 'uno.css'
-```
-
-
-
-
+见 <a href='#taro-react'>taro-react</a>
 
 ---
 
@@ -401,41 +251,46 @@ npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
 pnpm add -D unocss unplugin-transform-wx-class unocss-preset-wxapp
 ```
 
-> vite.config.ts
+* vite.config.ts
 
 ```ts
 import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 import Unocss from 'unocss/vite'
-import presetWxapp from 'unocss-preset-wxapp'
-import transformWxClass  from 'unplugin-transform-wx-class/vite'
+import transformWxClass from 'unplugin-transform-wx-class/vite'
 
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     uni(),
-    Unocss({
-      presets: [
-        presetWxapp(),
-      ],
-      shortcuts: [
-        {
-          'border-base': 'border border-gray-500_10',
-          'center': 'flex justify-center items-center',
-        },
-      ],
-    }),
+    Unocss(),
     transformWxClass(),
   ],
 })
 ```
 
-> mian.ts
+* unocss.config.ts
+> 添加unocss.config.js文件，搭配[unocss vscode](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)插件，智能提示
+```ts
+import presetWxapp from 'unocss-preset-wxapp'
+export default {
+  presets: [
+    presetWxapp(),
+  ],
+  shortcuts: [
+    {
+      'border-base': 'border border-gray-500_10',
+      'center': 'flex justify-center items-center',
+    },
+  ],
+}
+```
+
+* mian.ts
 
 ```ts
 import 'uno.css'
 ```
-
-
 
 ---
 

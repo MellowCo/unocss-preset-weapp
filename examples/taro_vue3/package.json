@@ -49,7 +49,7 @@
     "@types/webpack-env": "^1.13.6",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
-    "@unocss/webpack": "^0.44.0",
+    "@unocss/webpack": "^0.44.3",
     "@vue/compiler-sfc": "^3.0.0",
     "babel-preset-taro": "3.4.13",
     "eslint": "^8.12.0",
@@ -57,7 +57,7 @@
     "eslint-plugin-vue": "^8.0.0",
     "stylelint": "^14.4.0",
     "typescript": "^4.1.0",
-    "unocss": "^0.44.0",
+    "unocss": "^0.44.3",
     "unocss-preset-wxapp": "link:../../",
     "unplugin-transform-wx-class": "^0.1.5",
     "vue-loader": "^16.0.0-beta.8"

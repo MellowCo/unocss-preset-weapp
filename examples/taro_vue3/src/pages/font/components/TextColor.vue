@@ -112,7 +112,7 @@
       #c026d3
     </view>
 
-     <view class="c-[#c026]:50">
+     <view class="c-[#c02611]:90">
       #c026
     </view>
   </view>

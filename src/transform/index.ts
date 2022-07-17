@@ -23,7 +23,7 @@ const rules: Record<string, string> = {
 export function restoreSelector(selector: string) {
   for (const rule in rules) {
     const replaceReg = new RegExp(rules[rule], 'g')
-    selector = selector.replace(replaceReg, rules[rule])
+    selector = selector.replace(replaceReg, rule)
   }
   return selector
 }
