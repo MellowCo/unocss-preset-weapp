@@ -10,29 +10,51 @@ export { preflights } from './preflights'
 export { theme, colors } from './theme'
 export { parseColor } from './utils'
 
+// v0.44.0
 export type { ThemeAnimation, Theme }
 
-// v0.44.0
+export interface DarkModeSelectors {
+  /**
+   * Selector for light variant.
+   *
+   * @default '.light'
+   */
+  light?: string
+
+  /**
+   * Selector for dark variant.
+   *
+   * @default '.dark'
+   */
+  dark?: string
+}
 
 export interface PresetMiniOptions extends PresetOptions {
   /**
-   * @default 'class'
+   * Dark mode options
+   *
    */
-  dark?: 'class' | 'media'
+  dark?: 'class' | 'media' | DarkModeSelectors
+
   /**
    * @default false
    */
   attributifyPseudo?: Boolean
+
   /**
+   * Prefix for CSS variables.
+   *
    * @default 'un-'
    */
   variablePrefix?: string
+
   /**
    * Utils prefix
    *
    * @default undefined
    */
   prefix?: string
+
   /**
    * 是否转换微信class
    *
@@ -54,7 +76,7 @@ export const presetWeapp = (options: PresetMiniOptions = {}): Preset<Theme> => {
     options,
     postprocess(css) {
       if (options.transform) {
-      // 转换
+        // 转换
         css.selector = transformSelector(css.selector)
       }
 
