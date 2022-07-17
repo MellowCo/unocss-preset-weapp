@@ -33,11 +33,18 @@ export interface PresetMiniOptions extends PresetOptions {
    * @default undefined
    */
   prefix?: string
+  /**
+   * 是否转换微信class
+   *
+   * @default true
+   */
+  transform?: boolean
 }
 
 export const presetWeapp = (options: PresetMiniOptions = {}): Preset<Theme> => {
   options.dark = options.dark ?? 'class'
   options.attributifyPseudo = options.attributifyPseudo ?? false
+  options.transform = options.transform ?? true
 
   return {
     name: 'unocss-preset-weapp',
@@ -46,8 +53,10 @@ export const presetWeapp = (options: PresetMiniOptions = {}): Preset<Theme> => {
     variants: variants(options),
     options,
     postprocess(css) {
+      if (options.transform) {
       // 转换
-      css.selector = transformSelector(css.selector)
+        css.selector = transformSelector(css.selector)
+      }
 
       // 设置变量前缀
       if (options.variablePrefix && options.variablePrefix !== 'un-')
