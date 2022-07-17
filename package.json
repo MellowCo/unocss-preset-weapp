@@ -76,14 +76,14 @@
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",
     "bumpp": "^8.2.1",
-    "eslint": "^8.19.0",
-    "msw": "^0.43.1",
+    "eslint": "^8.20.0",
+    "msw": "^0.44.1",
     "typescript": "^4.7.4",
     "unbuild": "^0.7.4",
-    "vite": "^2.9.14",
-    "vitest": "^0.18.0"
+    "vite": "^3.0.0",
+    "vitest": "^0.18.1"
   },
   "dependencies": {
-    "@unocss/core": "^0.44.0"
+    "@unocss/core": "^0.44.3"
   }
 }
