@@ -1,7 +1,7 @@
 /*
  * @Author: licl
  * @Date: 2022-06-25 13:30:37
- * @LastEditTime: 2022-07-17 17:48:45
+ * @LastEditTime: 2022-07-23 13:50:24
  * @LastEditors: licl
  * @Description:
  */
@@ -14,6 +14,7 @@ const uno = createGenerator({
   presets: [
     presetWeapp({
       dark: 'media',
+      unit: 'px',
     }),
   ],
   theme: {
