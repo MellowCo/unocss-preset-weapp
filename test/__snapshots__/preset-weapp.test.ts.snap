@@ -20,6 +20,11 @@ page,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .bg--fl--w-452233-fr--c-40,
 .bg--fl--w-452233-fr--s-40,
 .bg-hex-452233_40{background-color:rgba(69,34,51,0.4);}
+.bg--fl--w-fff-fr--c-40{background-color:rgba(255,255,255,0.4);}
+.bg-hex-fff{--un-bg-opacity:1;background-color:rgba(255,255,255,var(--un-bg-opacity));}
+.bg-hex-fff_10,
+.bg-hex-fff-c-10,
+.bg-hex-fff-s-10{background-color:rgba(255,255,255,0.1);}
 .bg-red-100,
 .bg-red1,
 .bg-red100{--un-bg-opacity:1;background-color:rgba(254,226,226,var(--un-bg-opacity));}

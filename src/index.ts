@@ -10,7 +10,7 @@ export { preflights } from './preflights'
 export { theme, colors } from './theme'
 export { parseColor } from './utils'
 
-// feat(preset-mini): add bracket support for transition-property
+// fix(preset-mini): stricter color match, close
 export type { ThemeAnimation, Theme }
 
 export interface DarkModeSelectors {
