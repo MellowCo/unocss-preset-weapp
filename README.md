@@ -89,6 +89,54 @@ import 'uno.css'
 
 ![image-20220703141301371](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031413496.png)
 
+
+---
+### taro h5兼容
+* `taro`不会像`uniapp`将css编译各平台需要的单位，如小程序使用`rpx`，h5使用`rem`
+  * uniapp 在h5中将`rpx`编译成`rem`
+  <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231615696.png" style="zoom:50%;" />
+  * taro 在h5中还是使用`rpx`
+  <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231620090.png" style="zoom: 50%;" />
+
+* `taro`需要在`unocss.config.ts`中添加`h5`兼容
+```js
+export default {
+  presets: [
+    presetWxapp({
+      isTaroH5: process.env.TARO_ENV === 'h5',
+      designWidth: 750
+    }),
+  ],
+  shortcuts: [
+    {
+      'border-base': 'border border-gray-500/10',
+      'center': 'flex justify-center items-center',
+    },
+  ]
+}
+```
+
+### taro h5 基准字体
+* 添加兼容代码后，大小显示正常
+
+<img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231622120.png" alt="image-20220703141451188" style="zoom: 67%;" />
+
+* 但是`taro` h5的375基准的`rem`为`24px`，不是`16px`，导致默认字体很大，。。。。
+
+<img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231625587.png" style="zoom:50%;" />
+
+> 在`index.html` 中设置body
+
+<img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231650890.png" style="zoom: 67%;" />
+
+```html
+<body class="text-base">
+  <div id="app"></div>
+</body>
+```
+
+<img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231629548.png" style="zoom: 50%;" />
+
 ## webpack
 
 ### uniapp-vue2
@@ -209,7 +257,13 @@ import presetWxapp from 'unocss-preset-wxapp'
 
 export default {
   presets: [
-    presetWxapp(),
+    presetWxapp(
+      // 如有h5需要 需要设置以下taro h5兼容
+      // {
+      // isTaroH5: process.env.TARO_ENV === 'h5',
+      // designWidth: 750,
+      // }
+    ),
   ],
   shortcuts: [
     {
