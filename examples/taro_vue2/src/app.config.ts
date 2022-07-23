@@ -8,6 +8,7 @@ export default defineAppConfig({
     'pages/spacing/index' ,
     'pages/shortcuts/index',
     'pages/class/index',
+    'pages/color/index',
   ],
   window: {
     backgroundTextStyle: 'light',

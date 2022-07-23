@@ -48,6 +48,12 @@
       "style": {
         "navigationBarTitleText": ":class"
       }
+    },
+    {
+      "path": "pages/color/index",
+      "style": {
+        "navigationBarTitleText": "color"
+      }
     }
   ],
   "globalStyle": {

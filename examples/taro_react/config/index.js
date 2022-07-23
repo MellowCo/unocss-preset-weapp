@@ -28,7 +28,6 @@ const config = {
       pxtransform: {
         enable: true,
         config: {
-
         }
       },
       url: {

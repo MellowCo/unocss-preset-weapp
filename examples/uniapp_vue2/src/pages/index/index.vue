@@ -10,6 +10,7 @@ export default {
         { name: 'spacing', path: '/pages/spacing/index' },
         { name: 'shortcuts', path: '/pages/shortcuts/index' },
         { name: ':class', path: '/pages/class/index' },
+        { name: 'color', path: '/pages/color/index' },
       ],
     }
   },

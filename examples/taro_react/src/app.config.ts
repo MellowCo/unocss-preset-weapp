@@ -6,7 +6,8 @@ export default defineAppConfig({
     'pages/shadow/index' ,
     'pages/border/index' ,
     'pages/spacing/index' ,
-    'pages/shortcuts/index'
+    'pages/shortcuts/index',
+    'pages/color/index',
   ],
   window: {
     backgroundTextStyle: 'light',
