@@ -80,19 +80,29 @@ import 'uno.css'
 # 创建uni-app
 vue create -p dcloudio/uni-preset-vue my-project
 # 安装unocss
-yarn add -D unocss @unocss/webpack unplugin-transform-we-class unocss-preset-weapp
+yarn add -D unocss unocss-webpack-uniapp2 unplugin-transform-we-class unocss-preset-weapp
+
 ```
+
+> 使用 unocss-webpack-uniapp2 替换 @unocss/webpack，[原因](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2)
 
 * vue.config.js
 
 ```js
-const UnoCSS = require('unocss/webpack').default
+// 使用 unocss-webpack-uniapp2 替换 @unocss/webpack
+const UnoCSS = require('unocss-webpack-uniapp2').default
 const transformWeClass = require('unplugin-transform-we-class/webpack')
 
 module.exports = {
   configureWebpack: {
     plugins: [
-      UnoCSS(),
+      UnoCSS(
+         // 如有app开发需求
+      	// {
+        // 需要app开发，cssMode设置为 style
+        // cssMode: 'style',
+      	//}
+      ),
       transformWeClass(),
     ],
   },
@@ -109,11 +119,14 @@ import presetWeapp from 'unocss-preset-weapp'
 
 export default {
   presets: [
-    presetWeapp({
-      // h5兼容
-      platform: 'uniapp',
-      isH5: process.env.UNI_PLATFORM === 'h5'
-    }),
+    presetWeapp(
+        // 如有h5开发需求
+        //{
+        // h5兼容
+        //platform: 'uniapp',
+        //isH5: process.env.UNI_PLATFORM === 'h5'
+        //}
+    ),
   ],
   shortcuts: [
     {
@@ -124,10 +137,40 @@ export default {
 }
 ```
 
-* main.js
+* main.js [cssMode参数说明](https://github.com/MellowCo/unocss-webpack-uniapp2#参数说明)
 
 ```js
-import 'uno.css'
+// 如需要开发app， 使用 cssMode: 'style'，不需要在 main.js 中引入 uno.css
+// 只开发h5和小程序，使用 cssMode: 'import'，则需要在 main.js 中引入 uno.css
+// import 'uno.css'
+```
+
+* App.vue
+
+```vue
+<script>
+export default {
+  onLaunch() {
+    console.log('App Launch')
+  },
+  onShow() {
+    console.log('App Show')
+  },
+  onHide() {
+    console.log('App Hide')
+  },
+}
+</script>
+
+<style>
+/*每个页面公共css */
+
+    
+/* 如需要开发app， cssMode: 'style'，需要添加以下css占位符，只开发h5或小程序，可删除以下代码 */
+/* unocss-start */
+/* 生成的unocss代码 会添加在这里 */
+/* unocss-end */
+</style>
 ```
 
 
@@ -195,12 +238,15 @@ import presetWeapp from 'unocss-preset-weapp'
 
 export default {
   presets: [
-    presetWeapp({
+    presetWeapp(
+        // 如有h5开发需求
+    //{
       // h5兼容
-      isH5: process.env.TARO_ENV === 'h5',
-      platform: 'taro',
-      designWidth: 750
-    }),
+      //isH5: process.env.TARO_ENV === 'h5',
+      //platform: 'taro',
+      //designWidth: 750
+    //}
+    ),
   ],
   shortcuts: [
     {
@@ -303,6 +349,14 @@ import 'uno.css'
 > 使用[unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class)，转换`\\`，`\:`，`\[`，`\$`,`\.`等转义类名
 
 ![image-20220703141301371](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031413496.png)
+
+
+
+---
+
+### uniapp vue2 app兼容
+
+[见unocss-webpack-uniapp2](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2)
 
 
 

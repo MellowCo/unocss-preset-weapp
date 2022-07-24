@@ -26,8 +26,9 @@ export default {
 
 <template>
   <view class="py-3">
-    <view class="grid grid-cols-3 justify-items-center">
-      <view v-for="(item, index) in list" :key="index" class="w-200 h-200 shadow-md center rounded-md" @click="to(item.path)">
+    <view class="grid grid-cols-3 justify-items-center bg-[#faff]:50">
+      <view v-for="(item, index) in list" :key="index" class="w-200 h-200 shadow-md center rounded-md"
+        @click="to(item.path)">
         {{ item.name }}
       </view>
     </view>
