@@ -3,7 +3,9 @@ import presetWxapp from 'unocss-preset-wxapp'
 export default {
   presets: [
     presetWxapp({
-      isTaroH5: process.env.TARO_ENV === 'h5',
+      // h5兼容
+      isH5: process.env.TARO_ENV === 'h5',
+      platform: 'taro',
       designWidth: 750
     }),
   ],

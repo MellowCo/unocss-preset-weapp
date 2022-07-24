@@ -1,8 +1,12 @@
-const presetWxapp = require('../../dist/index.cjs').default
+import presetWxapp from 'unocss-preset-wxapp';
 
 export default {
   presets: [
-    presetWxapp(),
+    presetWxapp({
+      // h5兼容
+      platform: 'uniapp',
+      isH5: process.env.UNI_PLATFORM === 'h5'
+    }),
   ],
   shortcuts: [
     {

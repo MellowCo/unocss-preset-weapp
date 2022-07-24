@@ -2,7 +2,7 @@
   <view>
     <view class="p-2">
       <view class="text-2xl text-center my-3">
-        width
+        width111
       </view>
       <view class="h-50 bg-blue-200 mb-3 w-xs">
         w-xs

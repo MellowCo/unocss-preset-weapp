@@ -105,11 +105,15 @@ module.exports = {
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207171840689.png" alt="image-20220703141451188" style="zoom:50%;" />
 
 ```js
-const presetWxapp = require('unocss-preset-wxapp').default
+import presetWxapp from 'unocss-preset-wxapp';
 
 export default {
   presets: [
-    presetWxapp(),
+    presetWxapp({
+  	  // h5兼容
+      platform: 'uniapp',
+      isH5: process.env.UNI_PLATFORM === 'h5'
+    }),
   ],
   shortcuts: [
     {
@@ -191,13 +195,12 @@ import presetWxapp from 'unocss-preset-wxapp'
 
 export default {
   presets: [
-    presetWxapp(
-      // 如有h5需要 需要设置以下taro h5兼容
-      // {
-      // isTaroH5: process.env.TARO_ENV === 'h5',
-      // designWidth: 750,
-      // }
-    ),
+    presetWxapp({
+      // h5兼容
+      isH5: process.env.TARO_ENV === 'h5',
+      platform: 'taro',
+      designWidth: 750
+    }),
   ],
   shortcuts: [
     {
@@ -304,19 +307,31 @@ import 'uno.css'
 
 
 ---
-### taro h5兼容
-* `taro`不会像`uniapp`将css编译各平台需要的单位，如小程序使用`rpx`，h5使用`rem`
-  * uniapp 在h5中将`rpx`编译成`rem`
-  <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231615696.png" style="zoom:50%;" />
-  * taro 在h5中还是使用`rpx`
-  <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231620090.png" style="zoom: 50%;" />
+### h5兼容
+> `uniapp vite vue3` 会将css编译各平台需要的单位，如小程序使用`rpx`，h5使用`rem`
+>
+> **vite太香了**
 
-* `taro`需要在`unocss.config.ts`中添加`h5`兼容
+<img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231615696.png" style="zoom:50%;" />
+
+> `taro ` `uniapp vue2` 在h5中还是使用`rpx`
+
+<img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231620090.png" style="zoom: 50%;" />
+
+  
+
+#### taro
+
+> unocss.config.ts
+
 ```js
+import presetWxapp from 'unocss-preset-wxapp'
+
 export default {
   presets: [
     presetWxapp({
-      isTaroH5: process.env.TARO_ENV === 'h5',
+      isH5: process.env.TARO_ENV === 'h5',
+      platform: 'taro',
       designWidth: 750
     }),
   ],
@@ -328,6 +343,35 @@ export default {
   ]
 }
 ```
+
+
+
+---
+
+#### uniapp vue2
+
+> unocss.config.js
+
+```js
+import presetWxapp from 'unocss-preset-wxapp';
+
+export default {
+  presets: [
+    presetWxapp({
+      platform: 'uniapp',
+      isH5: process.env.UNI_PLATFORM === 'h5'
+    }),
+  ],
+  shortcuts: [
+    {
+      'border-base': 'border border-gray-500_10',
+      'center': 'flex justify-center items-center',
+    },
+  ],
+}
+
+```
+
 
 
 
