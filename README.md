@@ -4,7 +4,7 @@
 
 在小程序中使用`原子化css`时，`bg-[#153]/10`经过编辑，会变成`bg-\[\#153\]\/10`, 由于小程序不支持`\\`，`\:`，`\[`，`\$`,`\.`等转义类名，导致报错。
 
-通过使用[unplugin-transform-wx-class](https://github.com/MellowCo/unplugin-transform-wx-class)转换转义类名，保持`原子化css`的规范去书写`class`
+通过使用[unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class)转换转义类名，保持`原子化css`的规范去书写`class`
 
 支持
 * <a href='#uniapp-vue2'>uniapp vue2</a>
@@ -80,20 +80,20 @@ import 'uno.css'
 # 创建uni-app
 vue create -p dcloudio/uni-preset-vue my-project
 # 安装unocss
-yarn add -D unocss @unocss/webpack unplugin-transform-wx-class unocss-preset-weapp
+yarn add -D unocss @unocss/webpack unplugin-transform-we-class unocss-preset-weapp
 ```
 
 * vue.config.js
 
 ```js
 const UnoCSS = require('unocss/webpack').default
-const transformWxClass = require('unplugin-transform-wx-class/webpack')
+const transformWeClass = require('unplugin-transform-we-class/webpack')
 
 module.exports = {
   configureWebpack: {
     plugins: [
       UnoCSS(),
-      transformWxClass(),
+      transformWeClass(),
     ],
   },
 }
@@ -146,7 +146,7 @@ import 'uno.css'
 # 创建taro项目 选择react
 taro init taro_react
 # 安装unocss
-yarn add -D unocss @unocss/webpack unplugin-transform-wx-class unocss-preset-weapp
+yarn add -D unocss @unocss/webpack unplugin-transform-we-class unocss-preset-weapp
 ```
 
 * config/index.js
@@ -155,7 +155,7 @@ yarn add -D unocss @unocss/webpack unplugin-transform-wx-class unocss-preset-wea
 ```js
 // 导入unocss
 import UnoCSS from 'unocss/webpack'
-import transformWxClass from 'unplugin-transform-wx-class/webpack'
+import transformWeClass from 'unplugin-transform-we-class/webpack'
 
 const config = {
   mini: {
@@ -164,8 +164,8 @@ const config = {
       chain.plugin('unocss')
         .use(UnoCSS())
       chain
-        .plugin('transformWxClass')
-        .use(transformWxClass())
+        .plugin('transformWeClass')
+        .use(transformWeClass())
     },
   },
   h5: {
@@ -174,8 +174,8 @@ const config = {
       chain.plugin('unocss')
         .use(UnoCSS())
       chain
-        .plugin('transformWxClass')
-        .use(transformWxClass())
+        .plugin('transformWeClass')
+        .use(transformWeClass())
     },
   }
 }
@@ -239,7 +239,7 @@ import 'uno.css'
 # 使用Vue3/Vite版
 npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
 # 安装unocss
-pnpm add -D unocss unplugin-transform-wx-class unocss-preset-weapp
+pnpm add -D unocss unplugin-transform-we-class unocss-preset-weapp
 ```
 
 * vite.config.ts
@@ -248,14 +248,14 @@ pnpm add -D unocss unplugin-transform-wx-class unocss-preset-weapp
 import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 import Unocss from 'unocss/vite'
-import transformWxClass from 'unplugin-transform-wx-class/vite'
+import transformWeClass from 'unplugin-transform-we-class/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     uni(),
     Unocss(),
-    transformWxClass(),
+    transformWeClass(),
   ],
 })
 ```
@@ -286,7 +286,7 @@ import 'uno.css'
 ---
 ## 注意事项
 
-**小程序不支持使用`\\`，`\:`，`\[`，`\$`,`\.`等转义类名，可通过[插件](https://github.com/MellowCo/unplugin-transform-wx-class)转换支持**
+**小程序不支持使用`\\`，`\:`，`\[`，`\$`,`\.`等转义类名，可通过[插件](https://github.com/MellowCo/unplugin-transform-we-class)转换支持**
 
 > 不支持`% ` h-1.000%
 
@@ -300,7 +300,7 @@ import 'uno.css'
 
 ### 使用class转换插件
 
-> 使用[unplugin-transform-wx-class](https://github.com/MellowCo/unplugin-transform-wx-class)，转换`\\`，`\:`，`\[`，`\$`,`\.`等转义类名
+> 使用[unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class)，转换`\\`，`\:`，`\[`，`\$`,`\.`等转义类名
 
 ![image-20220703141301371](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031413496.png)
 
@@ -405,7 +405,7 @@ export default {
 
 > 默认单位`rpx`，w-100 => w-100rpx
 >
-> **不使用[unplugin-transform-wx-class](https://github.com/MellowCo/unplugin-transform-wx-class)**，请将百分比`/`改为`_`，h-1/2 => h-1_2
+> **不使用[unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class)**，请将百分比`/`改为`_`，h-1/2 => h-1_2
 
 ### width and height
 

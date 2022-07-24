@@ -1,6 +1,6 @@
 // 导入unocss
 import UnoCSS from 'unocss/webpack'
-import transformWxClass from 'unplugin-transform-wx-class/webpack'
+import transformWeClass from 'unplugin-transform-we-class/webpack'
 
 const config = {
   projectName: 'taro_react',
@@ -50,8 +50,8 @@ const config = {
         .use(UnoCSS())
 
       chain
-        .plugin('transformWxClass')
-        .use(transformWxClass())
+        .plugin('transformWeClass')
+        .use(transformWeClass())
     },
   },
   h5: {
@@ -77,8 +77,8 @@ const config = {
         .use(UnoCSS())
 
       chain
-        .plugin('transformWxClass')
-        .use(transformWxClass())
+        .plugin('transformWeClass')
+        .use(transformWeClass())
     },
   }
 }

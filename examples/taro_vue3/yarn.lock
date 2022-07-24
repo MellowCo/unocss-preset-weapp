@@ -1784,15 +1784,10 @@
     "@unocss/core" "0.44.5"
     unconfig "^0.3.4"
 
-"@unocss/core@0.44.5":
+"@unocss/core@0.44.5", "@unocss/core@^0.44.5":
   version "0.44.5"
   resolved "https://registry.npmjs.org/@unocss/core/-/core-0.44.5.tgz#5f8ee9e24716e9eb226f1903eecbffa807e3866c"
   integrity sha512-IxFg0b0Exudko5akYLA4kfdv2MNYpQlgrB33N+UcHb8z0eGENBStq/ZKjwneplHV9RiSOM4d7nPYkK7Id1RgPA==
-
-"@unocss/core@^0.44.3":
-  version "0.44.3"
-  resolved "https://registry.npmmirror.com/@unocss/core/-/core-0.44.3.tgz#a0141a39ed973f8964a2c97a210cbdc2cbb51059"
-  integrity sha512-UXKEefjIRqsGzd3IpsblCHv5udUuTRFrhg9sH6VCAgM+5D8vJwVkWJMcpnvKD9Bue915qFHqkXVc/A4DlUv5gw==
 
 "@unocss/inspector@0.44.5":
   version "0.44.5"
@@ -9278,7 +9273,7 @@ universalify@^0.1.0, universalify@^0.1.2:
   resolved "https://registry.npmjs.org/universalify/-/universalify-0.1.2.tgz#b646f69be3942dabcecc9d6639c80dc105efaa66"
   integrity sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
 
-"unocss-preset-wxapp@link:../..":
+"unocss-preset-weapp@link:../..":
   version "0.0.0"
   uid ""
 
@@ -9308,10 +9303,10 @@ unpipe@1.0.0, unpipe@~1.0.0:
   resolved "https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
   integrity sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==
 
-unplugin-transform-wx-class@^0.1.6:
+unplugin-transform-we-class@^0.1.6:
   version "0.1.6"
-  resolved "https://registry.npmjs.org/unplugin-transform-wx-class/-/unplugin-transform-wx-class-0.1.6.tgz#6435759a9a06a935497e742517bb5a82680f2b58"
-  integrity sha512-P968L0l0RywZ+Sb6Hs+TRgqn43VGaa0/1FQJsM37iwZ286ro42GX1AmWGALBkt3R1gNO3SELBlSYpk6g6LD4JQ==
+  resolved "https://registry.npmjs.org/unplugin-transform-we-class/-/unplugin-transform-we-class-0.1.6.tgz#e611ee7a6c4d7f4a4f0f630a4ac182552515543c"
+  integrity sha512-hyXFUgQjC8wuN7plAj4bPQM9J/iLv0Ma4diGmLRi9RxJV4xEVaHcUrf27jbwg10q1fWF3Ems3SW2DPt9aLZs5g==
   dependencies:
     unplugin "^0.7.2"
 

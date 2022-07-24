@@ -59,7 +59,7 @@
     "typescript": "^4.1.0",
     "unocss": "^0.44.5",
     "unocss-preset-weapp": "link:../../",
-    "unplugin-transform-wx-class": "^0.1.6",
+    "unplugin-transform-we-class": "^0.1.6",
     "vue-loader": "^16.0.0-beta.8"
   }
 }

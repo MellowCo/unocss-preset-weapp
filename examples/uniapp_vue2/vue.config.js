@@ -1,11 +1,11 @@
 const UnoCSS = require('unocss/webpack').default
-const transformWxClass = require('unplugin-transform-wx-class/webpack')
+const transformWeClass = require('unplugin-transform-we-class/webpack')
 
 module.exports = {
   configureWebpack: {
     plugins: [
       UnoCSS(),
-      transformWxClass(),
+      transformWeClass(),
     ],
   },
   chainWebpack(config) {
