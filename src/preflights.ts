@@ -3,7 +3,8 @@ import { entriesToCss } from '@unocss/core'
 import type { Theme } from './theme'
 
 const wxPrefix = 'page'
-const h5Prefix = '*'
+const taroPrefix = '*'
+const uniappPrefix = 'uni-page-body'
 
 // export const preflights: Preflight[] = [
 //   {
@@ -18,17 +19,21 @@ const h5Prefix = '*'
 // ]
 
 /**
- * taro h5替换prefix
- * @param isTaroH5
+ * h5替换prefix
  */
-export default function (isTaroH5: boolean): Preflight[] {
+export default function (isH5: boolean, platform: string): Preflight[] {
   return [
     {
       layer: 'preflights',
       getCSS(ctx: PreflightContext<Theme>) {
         if (ctx.theme.preflightBase) {
           const css = entriesToCss(Object.entries(ctx.theme.preflightBase))
-          return `${isTaroH5 ? h5Prefix : wxPrefix},::before,::after{${css}}::backdrop{${css}}`
+          const preflights = `,::before,::after{${css}}::backdrop{${css}}`
+
+          if (isH5)
+            return `${platform === 'uniapp' ? uniappPrefix : taroPrefix}${preflights}`
+          else
+            return `${wxPrefix}${preflights}`
         }
       },
     },
