@@ -1,7 +1,7 @@
-import presetWxapp from 'unocss-preset-wxapp'
+import presetWeapp from 'unocss-preset-weapp'
 export default {
   presets: [
-    presetWxapp(),
+    presetWeapp(),
   ],
   shortcuts: [
     {

@@ -1,8 +1,8 @@
-import presetWxapp from 'unocss-preset-wxapp'
+import presetWeapp from 'unocss-preset-weapp'
 
 export default {
   presets: [
-    presetWxapp({
+    presetWeapp({
       // h5兼容
       isH5: process.env.TARO_ENV === 'h5',
       platform: 'taro',

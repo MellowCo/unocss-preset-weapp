@@ -58,7 +58,7 @@
     "stylelint": "^14.4.0",
     "typescript": "^4.1.0",
     "unocss": "^0.44.5",
-    "unocss-preset-wxapp": "link:../../",
+    "unocss-preset-weapp": "link:../../",
     "unplugin-transform-wx-class": "^0.1.6",
     "vue-loader": "^16.0.0-beta.8"
   }

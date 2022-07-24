@@ -1,7 +1,7 @@
 {
-  "name": "unocss-preset-wxapp",
+  "name": "unocss-preset-weapp",
   "version": "0.1.3",
-  "description": "the wxapp preset for UnoCss",
+  "description": "the weapp preset for UnoCss",
   "author": "MellowCo",
   "license": "MIT",
   "homepage": "https://github.com/MellowCo/unocss-prest-weapp",
@@ -15,7 +15,7 @@
   "keywords": [
     "unocss",
     "unocss-preset",
-    "wxapp",
+    "weapp",
     "uniapp"
   ],
   "sideEffects": false,

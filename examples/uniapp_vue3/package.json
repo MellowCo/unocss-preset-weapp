@@ -57,6 +57,6 @@
     "unocss": "^0.44.5",
     "unplugin-transform-wx-class": "^0.1.6",
     "vite": "^2.9.13",
-    "unocss-preset-wxapp":"link:../../"
+    "unocss-preset-weapp":"link:../../"
   }
 }

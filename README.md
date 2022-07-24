@@ -1,6 +1,6 @@
-# unocss-preset-wxapp
+# unocss-preset-weapp
 
-[unocss-preset-wxapp](https://github.com/MellowCo/unocss-preset-weapp)的微信小程序预设
+[unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp)的微信小程序预设
 
 在小程序中使用`原子化css`时，`bg-[#153]/10`经过编辑，会变成`bg-\[\#153\]\/10`, 由于小程序不支持`\\`，`\:`，`\[`，`\$`,`\.`等转义类名，导致报错。
 
@@ -16,7 +16,7 @@
 ## 安装
 
 ```sh
-pnpm add unocss-preset-wxapp unocss -D
+pnpm add unocss-preset-weapp unocss -D
 ```
 
 ## 基本使用
@@ -29,14 +29,14 @@ pnpm add unocss-preset-wxapp unocss -D
 import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 import Unocss from 'unocss/vite'
-import presetWxapp from 'unocss-preset-wxapp'
+import presetWeapp from 'unocss-preset-weapp'
 
 export default defineConfig({
   plugins: [
     uni(),
     Unocss({
       presets: [
-        presetWxapp(),
+        presetWeapp(),
       ],
       // 设置快捷
       shortcuts: [
@@ -80,7 +80,7 @@ import 'uno.css'
 # 创建uni-app
 vue create -p dcloudio/uni-preset-vue my-project
 # 安装unocss
-yarn add -D unocss @unocss/webpack unplugin-transform-wx-class unocss-preset-wxapp
+yarn add -D unocss @unocss/webpack unplugin-transform-wx-class unocss-preset-weapp
 ```
 
 * vue.config.js
@@ -105,11 +105,11 @@ module.exports = {
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207171840689.png" alt="image-20220703141451188" style="zoom:50%;" />
 
 ```js
-import presetWxapp from 'unocss-preset-wxapp'
+import presetWeapp from 'unocss-preset-weapp'
 
 export default {
   presets: [
-    presetWxapp({
+    presetWeapp({
       // h5兼容
       platform: 'uniapp',
       isH5: process.env.UNI_PLATFORM === 'h5'
@@ -146,7 +146,7 @@ import 'uno.css'
 # 创建taro项目 选择react
 taro init taro_react
 # 安装unocss
-yarn add -D unocss @unocss/webpack unplugin-transform-wx-class unocss-preset-wxapp
+yarn add -D unocss @unocss/webpack unplugin-transform-wx-class unocss-preset-weapp
 ```
 
 * config/index.js
@@ -191,11 +191,11 @@ module.exports = function (merge) {
 > 添加unocss.config.js文件，搭配[unocss vscode](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)插件，智能提示
 
 ```ts
-import presetWxapp from 'unocss-preset-wxapp'
+import presetWeapp from 'unocss-preset-weapp'
 
 export default {
   presets: [
-    presetWxapp({
+    presetWeapp({
       // h5兼容
       isH5: process.env.TARO_ENV === 'h5',
       platform: 'taro',
@@ -239,7 +239,7 @@ import 'uno.css'
 # 使用Vue3/Vite版
 npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
 # 安装unocss
-pnpm add -D unocss unplugin-transform-wx-class unocss-preset-wxapp
+pnpm add -D unocss unplugin-transform-wx-class unocss-preset-weapp
 ```
 
 * vite.config.ts
@@ -263,10 +263,10 @@ export default defineConfig({
 * unocss.config.ts
 > 添加unocss.config.js文件，搭配[unocss vscode](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)插件，智能提示
 ```ts
-import presetWxapp from 'unocss-preset-wxapp'
+import presetWeapp from 'unocss-preset-weapp'
 export default {
   presets: [
-    presetWxapp(),
+    presetWeapp(),
   ],
   shortcuts: [
     {
@@ -325,11 +325,11 @@ import 'uno.css'
 > unocss.config.ts
 
 ```js
-import presetWxapp from 'unocss-preset-wxapp'
+import presetWeapp from 'unocss-preset-weapp'
 
 export default {
   presets: [
-    presetWxapp({
+    presetWeapp({
       isH5: process.env.TARO_ENV === 'h5',
       platform: 'taro',
       designWidth: 750
@@ -353,11 +353,11 @@ export default {
 > unocss.config.js
 
 ```js
-import presetWxapp from 'unocss-preset-wxapp'
+import presetWeapp from 'unocss-preset-weapp'
 
 export default {
   presets: [
-    presetWxapp({
+    presetWeapp({
       platform: 'uniapp',
       isH5: process.env.UNI_PLATFORM === 'h5'
     }),

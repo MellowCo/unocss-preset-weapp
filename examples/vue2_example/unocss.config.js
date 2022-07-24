@@ -1,8 +1,8 @@
-const presetWxapp = require('../../dist/index.cjs').default
+const presetWeapp = require('../../dist/index.cjs').default
 
 export default {
   presets: [
-    presetWxapp(),
+    presetWeapp(),
   ],
   shortcuts: [
     {

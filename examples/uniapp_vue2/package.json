@@ -96,7 +96,7 @@
     "miniprogram-api-typings": "*",
     "postcss-comment": "^2.0.0",
     "unocss": "^0.44.5",
-    "unocss-preset-wxapp": "link:../../",
+    "unocss-preset-weapp": "link:../../",
     "unplugin-transform-wx-class": "^0.1.6",
     "vue-template-compiler": "^2.6.11"
   },
