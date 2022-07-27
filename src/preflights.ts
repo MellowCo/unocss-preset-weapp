@@ -18,9 +18,6 @@ const uniappPrefix = 'uni-page-body'
 //   },
 // ]
 
-/**
- * h5替换prefix
- */
 export default function (isH5: boolean, platform: string): Preflight[] {
   return [
     {

@@ -29,9 +29,7 @@ export function restoreSelector(selector: string) {
 }
 
 export function transformSelector(selector: string) {
-  // selector = selector.slice(1)
   // .ring-offset-size-\$variable => .ring-offset-size--r-variable
-
   if (/[\.\/:%!#\(\)\[\]$]/.test(selector)) {
     for (const rule in rules) {
       const replaceReg = new RegExp(escapeRegExp(`\\${rule}`), 'g')

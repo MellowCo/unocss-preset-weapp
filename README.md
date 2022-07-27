@@ -1,10 +1,10 @@
 # unocss-preset-weapp
 
-[unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp)的微信小程序预设
+[UnoCSS](https://github.com/unocss/unocss) 微信小程序预设 [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp) , fork form [@unocss/preset-mini](https://github.com/unocss/unocss/tree/main/packages/preset-mini)
 
 在小程序中使用`原子化css`时，`bg-[#153]/10`经过编辑，会变成`bg-\[\#153\]\/10`, 由于小程序不支持`\\`，`\:`，`\[`，`\$`,`\.`等转义类名，导致报错。
 
-通过使用[unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class)转换转义类名，保持`原子化css`的规范去书写`class`
+通过 [unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class) 转换转义类名，保持`原子化css`的规范去书写`class`
 
 支持
 * <a href='#uniapp-vue2'>uniapp vue2</a>
@@ -74,7 +74,7 @@ import 'uno.css'
 ## webpack
 
 ### uniapp-vue2
-> 在[uniapp vue2](https://uniapp.dcloud.io/quickstart-cli.html#创建uni-app)中使用
+> 在 [uniapp vue2](https://uniapp.dcloud.io/quickstart-cli.html#创建uni-app) 中使用
 
 ```shell
 # 创建uni-app
@@ -84,7 +84,7 @@ yarn add -D unocss unocss-webpack-uniapp2 unplugin-transform-we-class unocss-pre
 
 ```
 
-> 使用 unocss-webpack-uniapp2 替换 @unocss/webpack，[原因](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2)
+> 使用 [unocss-webpack-uniapp2](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2) 替换 @unocss/webpack，[原因](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2)
 
 * vue.config.js
 
@@ -97,11 +97,11 @@ module.exports = {
   configureWebpack: {
     plugins: [
       UnoCSS(
-         // 如有app开发需求
-      	// {
+        // 如有app开发需求
+        // {
         // 需要app开发，cssMode设置为 style
         // cssMode: 'style',
-      	//}
+        // }
       ),
       transformWeClass(),
     ],
@@ -120,12 +120,12 @@ import presetWeapp from 'unocss-preset-weapp'
 export default {
   presets: [
     presetWeapp(
-        // 如有h5开发需求
-        //{
-        // h5兼容
-        //platform: 'uniapp',
-        //isH5: process.env.UNI_PLATFORM === 'h5'
-        //}
+      // 如有h5开发需求
+      // {
+      // h5兼容
+      // platform: 'uniapp',
+      // isH5: process.env.UNI_PLATFORM === 'h5'
+      // }
     ),
   ],
   shortcuts: [
@@ -165,15 +165,12 @@ export default {
 <style>
 /*每个页面公共css */
 
-    
 /* 如需要开发app， cssMode: 'style'，需要添加以下css占位符，只开发h5或小程序，可删除以下代码 */
 /* unocss-start */
 /* 生成的unocss代码 会添加在这里 */
 /* unocss-end */
 </style>
 ```
-
-
 
 ---
 
@@ -239,13 +236,13 @@ import presetWeapp from 'unocss-preset-weapp'
 export default {
   presets: [
     presetWeapp(
-        // 如有h5开发需求
-    //{
+      // 如有h5开发需求
+      // {
       // h5兼容
-      //isH5: process.env.TARO_ENV === 'h5',
-      //platform: 'taro',
-      //designWidth: 750
-    //}
+      // isH5: process.env.TARO_ENV === 'h5',
+      // platform: 'taro',
+      // designWidth: 750
+      // }
     ),
   ],
   shortcuts: [
@@ -459,7 +456,7 @@ export default {
 
 > 默认单位`rpx`，w-100 => w-100rpx
 >
-> **不使用[unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class)**，请将百分比`/`改为`_`，h-1/2 => h-1_2
+> **不使用 [unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class)**，请将百分比`/`改为`_`，h-1/2 => h-1_2
 
 ### width and height
 
@@ -582,9 +579,9 @@ export const borderRadius = {
 
 
 
-> fontSize预设 `text-base`
+> fontSize预设 `text-base`   
 
-```text
+```ts
 export const fontSize: Theme['fontSize'] = {
   'xs': ['24rpx', '32rpx'],
   'sm': ['28rpx', '40rpx'],
@@ -600,12 +597,13 @@ export const fontSize: Theme['fontSize'] = {
   '8xl': ['192rpx', '1'],
   '9xl': ['256rpx', '1'],
 }
-
+```
+```
 text-100 => font-size:100rpx
 ```
 
-> textIndent预设 `indent-lg`
 
+> textIndent 预设 `indent-lg`
 ```js
 export const textIndent: Theme['textIndent'] = {
   'DEFAULT': '48rpx',
@@ -621,11 +619,11 @@ export const textIndent: Theme['textIndent'] = {
 
 > `leadings`  `tracking`  `word-spacing`  `indent` 计算方式
 
-`indent-2`原为`text-indent: 0.5rem`等于`8px`,
+`indent-2` 原为 `text-indent: 0.5rem` 等于 `8px` ,
 
-小程序使用`750rpx`的基准是`2倍px`等于`16rpx`,
+小程序使用 `750rpx` 的基准是 `2倍px` 等于 `16rpx` ,
 
-所以计算为`2*0.5*1rem = 2*0.5*16px = 16rpx`
+所以计算为 `2*0.5*1rem = 2*0.5*16px = 16rpx`
 
 ```text
 indent-2    
@@ -656,7 +654,7 @@ line-height:16rpx
 | m-10rpx | margin:10rpx                         |
 > 预设
 
-```text
+```ts
 export const spacing = {
   'DEFAULT': '32rpx',
   'none': '0',
@@ -673,11 +671,10 @@ export const spacing = {
   '7xl': '192rpx',
   '8xl': '256rpx',
 }
-
-p-2    
-padding: 0.5rem 
-padding:16rpx
 ```
+> p-2    
+> padding: 0.5rem    
+> padding:16rpx
 
 ### box-shadow
 
@@ -685,14 +682,14 @@ padding:16rpx
 
 ```js
 export const boxShadow = {
-  'DEFAULT': ['var(--un-shadow-inset) 0 2rpx 6rpx 0 rgba(0,0,0,0.1)', 'var(--un-shadow-inset) 0 2rpx 4rpx -2rpx rgba(0,0,0,0.1)'],
-  'none': '0 0 #0000',
-  'sm': 'var(--un-shadow-inset) 0 2rpx 4rpx 0 rgba(0,0,0,0.05)',
-  'md': ['var(--un-shadow-inset) 0 8rpx 12rpx -2rpx rgba(0,0,0,0.1)', 'var(--un-shadow-inset) 0 4rpx 8rpx -4rpx rgba(0,0,0,0.1)'],
-  'lg': ['var(--un-shadow-inset) 0 20rpx 30rpx -6rpx rgba(0,0,0,0.1)', 'var(--un-shadow-inset) 0 8rpx 12rpx -8rpx rgba(0,0,0,0.1)'],
-  'xl': ['var(--un-shadow-inset) 0 40rpx 50rpx -10rpx rgba(0,0,0,0.1)', 'var(--un-shadow-inset) 0 16rpx 20rpx -12rpx rgba(0,0,0,0.1)'],
-  '2xl': 'var(--un-shadow-inset) 0 50rpx 100rpx -24rpx rgba(0,0,0,0.25)',
-  'inner': 'inset 0 4rpx 8rpx 0 rgba(0,0,0,0.05)',
+  'DEFAULT': ['var(--un-shadow-inset) 0 1px 3px 0 rgba(0,0,0,0.1)', 'var(--un-shadow-inset) 0 1px 2px -1px rgba(0,0,0,0.1)'],
+  'none': '0 0 rgba(0,0,0,0)',
+  'sm': 'var(--un-shadow-inset) 0 1px 2px 0 rgba(0,0,0,0.05)',
+  'md': ['var(--un-shadow-inset) 0 4px 6px -1px rgba(0,0,0,0.1)', 'var(--un-shadow-inset) 0 2px 4px -2px rgba(0,0,0,0.1)'],
+  'lg': ['var(--un-shadow-inset) 0 10px 15px -3px rgba(0,0,0,0.1)', 'var(--un-shadow-inset) 0 4px 6px -4px rgba(0,0,0,0.1)'],
+  'xl': ['var(--un-shadow-inset) 0 20px 25px -5px rgba(0,0,0,0.1)', 'var(--un-shadow-inset) 0 8px 10px -6px rgba(0,0,0,0.1)'],
+  '2xl': 'var(--un-shadow-inset) 0 25px 50px -12px rgba(0,0,0,0.25)',
+  'inner': 'inset 0 2px 4px 0 rgba(0,0,0,0.05)',
 }
 ```
 

@@ -7,7 +7,7 @@
   "homepage": "https://github.com/MellowCo/unocss-prest-weapp",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MellowCo/unocss-prest-weapp.git"
+    "url": "https://github.com/MellowCo/unocss-prest-weapp"
   },
   "bugs": {
     "url": "https://github.com/MellowCo/unocss-prest-weapp/issues"
@@ -79,7 +79,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@unocss/core": "^0.44.5"
+    "@unocss/core": "^0.44.7"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",
