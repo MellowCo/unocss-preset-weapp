@@ -326,6 +326,8 @@ export default {
 import 'uno.css'
 ```
 
+> app打包中断问题， <a href='#uniapp vue3 vite app打包中断'>见</a>
+
 ---
 ## 注意事项
 
@@ -448,6 +450,18 @@ export default {
 ```
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231629548.png" style="zoom: 50%;" />
+
+---
+### uniapp vue3 vite app打包中断
+> vue3 APP打包 `warn` 导致打包中断
+>
+> [unocss] entry module not found, have you add `import 'uno.css'` in your main entry?
+
+![image-20220730140841046](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207301416199.png)
+
+> 在 `node_modules/@unocss/vite/index.cjs` 中，将 `warn` 注释掉即可完成打包
+
+![image-20220730140554224](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207301416930.png)
 
 ##  使用
 [UnoCSS 文档](https://uno.antfu.me/)
