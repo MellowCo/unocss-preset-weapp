@@ -66,11 +66,13 @@ export interface PresetMiniOptions extends PresetOptions {
    * @default 'uniapp'
    */
   platform?: 'taro' | 'uniapp'
+
   /**
    * taro h5 rem 换算尺寸标准
    * @default 750
    */
   designWidth?: number
+
   /**
    * 是否为h5
    * @default false
