@@ -98,8 +98,8 @@ module.exports = {
     plugins: [
       UnoCSS(
         // 如有app开发需求
-        // {
         // 需要app开发，cssMode设置为 style
+        // {
         // cssMode: 'style',
         // }
       ),
@@ -121,8 +121,8 @@ export default {
   presets: [
     presetWeapp(
       // 如有h5开发需求
-      // {
       // h5兼容
+      // {
       // platform: 'uniapp',
       // isH5: process.env.UNI_PLATFORM === 'h5'
       // }
@@ -237,8 +237,8 @@ export default {
   presets: [
     presetWeapp(
       // 如有h5开发需求
-      // {
       // h5兼容
+      // {
       // isH5: process.env.TARO_ENV === 'h5',
       // platform: 'taro',
       // designWidth: 750
@@ -326,7 +326,7 @@ export default {
 import 'uno.css'
 ```
 
-> app打包中断问题， <a href='#uniapp vue3 vite app打包中断'>见</a>
+> app打包中断问题， <a href='#uniapp vue3 vite app打包中断'>见注意事项</a>
 
 ---
 ## 注意事项
@@ -373,7 +373,7 @@ import 'uno.css'
 
   
 
-#### taro
+#### taro h5兼容
 
 > unocss.config.ts
 
@@ -401,7 +401,7 @@ export default {
 
 ---
 
-#### uniapp vue2
+#### uniapp-vue2 h5兼容
 
 > unocss.config.js
 
