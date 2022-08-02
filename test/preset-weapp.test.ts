@@ -1,14 +1,14 @@
 /*
  * @Author: licl
  * @Date: 2022-06-25 13:30:37
- * @LastEditTime: 2022-08-02 21:09:04
+ * @LastEditTime: 2022-08-02 21:22:32
  * @LastEditors: licl
  * @Description:
  */
 import { createGenerator } from '@unocss/core'
 import { describe, expect, test } from 'vitest'
 import presetWeapp from '../src/index'
-import { align, bg, border, borderColor, color, flex, grid, position, replaceAll, shadow, size, spacing, typography, safeArea } from './assets/weapp'
+import { align, bg, border, borderColor, color, flex, grid, position, replaceAll, safeArea, shadow, size, spacing, typography } from './assets/weapp'
 
 const uno = createGenerator({
   presets: [

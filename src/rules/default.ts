@@ -20,7 +20,7 @@ import { textAligns, verticalAligns } from './align'
 import { appearance, outline, willChange } from './behaviors'
 import { textDecorations } from './decoration'
 import { svgUtilities } from './svg'
-import {safeArea} from './safe-area';
+import { safeArea } from './safe-area'
 
 export const rules: Rule[] = [
   cssVariables,

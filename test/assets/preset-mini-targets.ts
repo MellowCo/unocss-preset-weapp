@@ -972,7 +972,7 @@ export const presetMiniTargets: string[] = [
 
   // variants - multiple parents
   'sm:lt-lg:p-10',
-  
+
   // safe-area
   'p-safe',
   'pt-safe',
