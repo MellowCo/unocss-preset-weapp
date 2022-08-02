@@ -472,6 +472,16 @@ export default {
 >
 > **不使用 [unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class)**，请将百分比`/`改为`_`，h-1/2 => h-1_2
 
+
+### safe-area (v0.1.6)
+| class              | Properties       |
+| ------------------ | ---------------- |
+| p-safe | padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)    |
+| pt-safe        | padding-top: env(safe-area-inset-top) |
+| pb-safe           | padding-bottom: env(safe-area-inset-bottom)    |
+| pl-safe        | padding-left: env(safe-area-inset-left)     |
+| pr-safe               | padding-right: env(safe-area-inset-right)   |
+
 ### width and height
 
 | class              | Properties       |
