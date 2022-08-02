@@ -878,6 +878,11 @@ div:hover .group-\\\\[div\\\\:hover\\\\]-\\\\[combinator\\\\:test-4\\\\]{combina
 .will-change-scroll{will-change:scroll-position;}
 .will-change-transform{will-change:transform;}
 .will-change-unset{will-change:unset;}
+.p-safe{padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);}
+.pt-safe{padding-top:env(safe-area-inset-top);}
+.pb-safe{padding-bottom:env(safe-area-inset-bottom);}
+.pl-safe{padding-left:env(safe-area-inset-left);}
+.pr-safe{padding-right:env(safe-area-inset-right);}
 @layer base{
 .layer-base\\\\:translate-0{--licl-translate-x:0rpx;--licl-translate-y:0rpx;transform:translateX(var(--licl-translate-x)) translateY(var(--licl-translate-y)) translateZ(var(--licl-translate-z)) rotate(var(--licl-rotate)) rotateX(var(--licl-rotate-x)) rotateY(var(--licl-rotate-y)) rotateZ(var(--licl-rotate-z)) skewX(var(--licl-skew-x)) skewY(var(--licl-skew-y)) scaleX(var(--licl-scale-x)) scaleY(var(--licl-scale-y)) scaleZ(var(--licl-scale-z));}
 }
