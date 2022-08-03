@@ -79,6 +79,10 @@ import 'uno.css'
 ```shell
 # 创建uni-app
 vue create -p dcloudio/uni-preset-vue my-project
+
+# @unocss/webpack 与 uniapp 不兼容 无法及时生成css代码
+# yarn add -D unocss @unocss/webpack unplugin-transform-we-class unocss-preset-weapp
+
 # 安装unocss
 yarn add -D unocss unocss-webpack-uniapp2 unplugin-transform-we-class unocss-preset-weapp
 
@@ -88,6 +92,10 @@ yarn add -D unocss unocss-webpack-uniapp2 unplugin-transform-we-class unocss-pre
 
 * vue.config.js
 
+> uniapp vue2 使用`import 'uno.css'` 无法及时生成`css`代码，导致打包时没有`css`代码
+>
+> 去除`cssMode`参数
+
 ```js
 // 使用 unocss-webpack-uniapp2 替换 @unocss/webpack
 const UnoCSS = require('unocss-webpack-uniapp2').default
@@ -96,13 +104,7 @@ const transformWeClass = require('unplugin-transform-we-class/webpack')
 module.exports = {
   configureWebpack: {
     plugins: [
-      UnoCSS(
-        // 如有app开发需求
-        // 需要app开发，cssMode设置为 style
-        // {
-        // cssMode: 'style',
-        // }
-      ),
+      UnoCSS(),
       transformWeClass(),
     ],
   },
@@ -137,15 +139,18 @@ export default {
 }
 ```
 
-* main.js [cssMode参数说明](https://github.com/MellowCo/unocss-webpack-uniapp2#参数说明)
+* main.js
 
 ```js
-// 如需要开发app， 使用 cssMode: 'style'，不需要在 main.js 中引入 uno.css
-// 只开发h5和小程序，使用 cssMode: 'import'，则需要在 main.js 中引入 uno.css
+// 不在需要导入 uno.css
 // import 'uno.css'
 ```
 
 * App.vue
+
+> 原为`注释占位符`，但是在`app`打包时，会将注释删除，导致打包后的`app`没有`css`文件，小程序和h5不会删除`注释`。。。
+>
+> 将`注释占位符`改为`css选择器占位符`,使用`uno-start`和`uno-end`,作为占位符，内容随意
 
 ```vue
 <script>
@@ -163,12 +168,13 @@ export default {
 </script>
 
 <style>
-/*每个页面公共css */
-
-/* 如需要开发app， cssMode: 'style'，需要添加以下css占位符，只开发h5或小程序，可删除以下代码 */
-/* unocss-start */
-/* 生成的unocss代码 会添加在这里 */
-/* unocss-end */
+.uno-start {
+  --un: 0;
+}
+/* unocss 代码生成在这 */
+.uno-end {
+  --un: 0;
+}
 </style>
 ```
 
