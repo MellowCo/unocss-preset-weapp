@@ -1913,6 +1913,11 @@
   resolved "https://registry.npmjs.org/@unocss/core/-/core-0.44.5.tgz#5f8ee9e24716e9eb226f1903eecbffa807e3866c"
   integrity sha512-IxFg0b0Exudko5akYLA4kfdv2MNYpQlgrB33N+UcHb8z0eGENBStq/ZKjwneplHV9RiSOM4d7nPYkK7Id1RgPA==
 
+"@unocss/core@^0.45.1":
+  version "0.45.1"
+  resolved "https://registry.npmjs.org/@unocss/core/-/core-0.45.1.tgz#b14c80fa1c75b556946892177156092354629752"
+  integrity sha512-PRbpgWtXs+GnU8Mi6MAG3l/VCqmzn6s5k/QvQLG9J27AzN+ps651YKBfWKiGYrjMtt+0B41iq0w9fcNd8vQUpg==
+
 "@vue/babel-helper-vue-jsx-merge-props@^1.2.1":
   version "1.2.1"
   resolved "https://registry.npmjs.org/@vue/babel-helper-vue-jsx-merge-props/-/babel-helper-vue-jsx-merge-props-1.2.1.tgz#31624a7a505fb14da1d58023725a4c5f270e6a81"
@@ -2398,6 +2403,11 @@ acorn@^8.7.1:
   version "8.7.1"
   resolved "https://registry.npmjs.org/acorn/-/acorn-8.7.1.tgz#0197122c843d1bf6d0a5e83220a788f278f63c30"
   integrity sha512-Xx54uLJQZ19lKygFXOWsscKUbsBZW0CPykPhVQdhIeIwrbPmJzqeASDInc8nKBnp/JT6igTs82qPXz069H8I/A==
+
+acorn@^8.8.0:
+  version "8.8.0"
+  resolved "https://registry.npmjs.org/acorn/-/acorn-8.8.0.tgz#88c0187620435c7f6015803f5539dae05a9dbea8"
+  integrity sha512-QOxyigPVrpZ2GXT+PFyZTl6TtOFc5egxHIP9IlQ+RbupQuX4RkT/Bee4/kQuC02Xkzg84JcT7oLYtDIQxp+v7w==
 
 adb-commander@^0.1.8, adb-commander@^0.1.9:
   version "0.1.9"
@@ -10411,10 +10421,10 @@ universalify@^0.1.0:
   version "0.0.0"
   uid ""
 
-unocss-webpack-uniapp2@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.npmjs.org/unocss-webpack-uniapp2/-/unocss-webpack-uniapp2-0.1.1.tgz#bb12edf0569393e534e7be5b3255cc019a300e06"
-  integrity sha512-cBjl94nytQ7aqPEljBCAXJAcBy3WCrb/obeNNvz98dTzYYUD/eLmbRSdHYwZ9haR0YP6NKxnMKwjZ8JA5Hmm5g==
+unocss-webpack-uniapp2@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.npmjs.org/unocss-webpack-uniapp2/-/unocss-webpack-uniapp2-0.1.3.tgz#99ac4416b1ebcb88108001122f35b313afdd525e"
+  integrity sha512-X5PBgt01LOdNvIs+M5uoc80lZhgjM1v0HTlTT08qvsveqlYTGbpvNaoBNXoAPsaekS8npFSYyH12vMH5GjdNSA==
   dependencies:
     "@ampproject/remapping" "^2.2.0"
     "@rollup/pluginutils" "^4.2.1"
@@ -10429,19 +10439,29 @@ unpipe@1.0.0, unpipe@~1.0.0:
   resolved "https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
   integrity sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==
 
-unplugin-transform-we-class@^0.1.6:
-  version "0.1.6"
-  resolved "https://registry.npmjs.org/unplugin-transform-we-class/-/unplugin-transform-we-class-0.1.6.tgz#e611ee7a6c4d7f4a4f0f630a4ac182552515543c"
-  integrity sha512-hyXFUgQjC8wuN7plAj4bPQM9J/iLv0Ma4diGmLRi9RxJV4xEVaHcUrf27jbwg10q1fWF3Ems3SW2DPt9aLZs5g==
+unplugin-transform-we-class@^0.1.10:
+  version "0.1.10"
+  resolved "https://registry.npmjs.org/unplugin-transform-we-class/-/unplugin-transform-we-class-0.1.10.tgz#7e5cfad19c4407a4a01b041f47df69f4d4dd2a0f"
+  integrity sha512-EaS0MCEcI3VAc3bFvFeKX18rDEARz8BklDgCeOxpvo2+sYHqOC9DydGoAY/+SgeEUAgpLCxxSwTl9k2SPJPNdQ==
   dependencies:
-    unplugin "^0.7.2"
+    unplugin "^0.8.0"
 
-unplugin@^0.7.0, unplugin@^0.7.2:
+unplugin@^0.7.0:
   version "0.7.2"
   resolved "https://registry.npmjs.org/unplugin/-/unplugin-0.7.2.tgz#4127012fdc2c84ea4ce03ce75e3d4f54ea47bba1"
   integrity sha512-m7thX4jP8l5sETpLdUASoDOGOcHaOVtgNyrYlToyQUvILUtEzEnngRBrHnAX3IKqooJVmXpoa/CwQ/QqzvGaHQ==
   dependencies:
     acorn "^8.7.1"
+    chokidar "^3.5.3"
+    webpack-sources "^3.2.3"
+    webpack-virtual-modules "^0.4.4"
+
+unplugin@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.npmjs.org/unplugin/-/unplugin-0.8.0.tgz#aeabac40e89fb69e5c9366b4821c3836d1b6ffce"
+  integrity sha512-OzOkJ9XOPlD1Cph6qy/p4i/KSUbs76GToXjH/STHpfo6D7y+EqpfAL6G6HaoOw5QLkt9+KWwcxYUmPFkDf1upQ==
+  dependencies:
+    acorn "^8.8.0"
     chokidar "^3.5.3"
     webpack-sources "^3.2.3"
     webpack-virtual-modules "^0.4.4"

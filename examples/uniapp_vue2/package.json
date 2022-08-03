@@ -95,8 +95,8 @@
     "miniprogram-api-typings": "*",
     "postcss-comment": "^2.0.0",
     "unocss-preset-weapp": "link:../../",
-    "unocss-webpack-uniapp2": "^0.1.1",
-    "unplugin-transform-we-class": "^0.1.6",
+    "unocss-webpack-uniapp2": "^0.1.3",
+    "unplugin-transform-we-class": "^0.1.10",
     "vue-template-compiler": "^2.6.11"
   },
   "browserslist": [
