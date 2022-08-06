@@ -284,6 +284,8 @@ import 'uno.css'
 
 > 在[uni-app vue3中使用](https://ask.dcloud.net.cn/article/37834)中使用
 
+> 个人 uniapp-vite 模版 [uni-vue3-starter](https://github.com/MellowCo/uni-vue3-starter)
+
 ```shell
 # 使用Vue3/Vite版
 npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
