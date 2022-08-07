@@ -8,53 +8,19 @@
 
 支持
 * <a href='#uniapp-vue2'>uniapp vue2</a>
-* <a href='#uni-app-vue3'>uni-app vue3</a>
+* <a href='#uni-app-vue3'>uniapp vue3</a>
 * <a href='#taro-react'>taro react</a>
 * <a href='#taro-vue2'>taro vue2</a>
 * <a href='#taro-vue3'>taro vue3</a>
 
-## 安装
+相关链接
+* [UnoCSS](https://github.com/unocss/unocss) - 即时按需原子CSS引擎
+* [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp) - UnoCSS 微信小程序预设
+* [unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class) - 小程序原子化 CSS 转换转义类名插件
+* [unocss-webpack-uniapp2](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2) - 兼容 UniApp Vue2 App开发插件
+* [uni-vue3-starter](https://github.com/MellowCo/uni-vue3-starter) - Uniapp-Vite 模版
 
-```sh
-pnpm add unocss-preset-weapp unocss -D
-```
 
-## 基本使用
-
-> uniapp by vue3
-
-* vite.config.ts
-
-```js
-import { defineConfig } from 'vite'
-import uni from '@dcloudio/vite-plugin-uni'
-import Unocss from 'unocss/vite'
-import presetWeapp from 'unocss-preset-weapp'
-
-export default defineConfig({
-  plugins: [
-    uni(),
-    Unocss({
-      presets: [
-        presetWeapp(),
-      ],
-      // 设置快捷
-      shortcuts: [
-        {
-          'border-base': 'border border-gray-500_10',
-          'center': 'flex justify-center items-center',
-        },
-      ],
-    }),
-  ],
-})
-```
-
-* main.ts
-
-```js
-import 'uno.css'
-```
 
 ## 示例
 
