@@ -9,6 +9,7 @@ export default defineAppConfig({
     'pages/shortcuts/index',
     'pages/class/index',
     'pages/color/index',
+    'pages/attributify-mode/index',
   ],
   window: {
     backgroundTextStyle: 'light',

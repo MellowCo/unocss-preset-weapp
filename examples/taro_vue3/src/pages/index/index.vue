@@ -9,6 +9,7 @@ const list = [
   { name: "shortcuts", path: "/pages/shortcuts/index" },
   { name: ":class", path: "/pages/class/index" },
   { name: "color", path: "/pages/color/index" },
+  { name: "attributify", path: "/pages/attributify-mode/index" },
 ];
 
 const to = (to: string) => {

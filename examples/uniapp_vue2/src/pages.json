@@ -54,6 +54,12 @@
       "style": {
         "navigationBarTitleText": "color"
       }
+    },
+    {
+      "path": "pages/attributify-mode/index",
+      "style": {
+        "navigationBarTitleText": "attributify-mode"
+      }
     }
   ],
   "globalStyle": {

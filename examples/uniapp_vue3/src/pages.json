@@ -1,10 +1,10 @@
 {
   "pages": [
-    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    // pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
       "path": "pages/index/index",
       "style": {
-        "navigationBarTitleText": "unocss-preset-weapp"
+        "navigationBarTitleText": "unocss-preset-weapp-uniapp-vue3"
       }
     },
     {
@@ -53,6 +53,12 @@
       "path": "pages/color/index",
       "style": {
         "navigationBarTitleText": "color"
+      }
+    },
+    {
+      "path": "pages/attributify-mode/index",
+      "style": {
+        "navigationBarTitleText": "attributify-mode"
       }
     }
   ],

@@ -49,7 +49,7 @@
     "@types/webpack-env": "^1.13.6",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
-    "@unocss/webpack": "^0.44.5",
+    "@unocss/webpack": "^0.45.5",
     "@vue/compiler-sfc": "^3.0.0",
     "babel-preset-taro": "3.4.13",
     "eslint": "^8.12.0",
@@ -57,9 +57,10 @@
     "eslint-plugin-vue": "^8.0.0",
     "stylelint": "^14.4.0",
     "typescript": "^4.1.0",
-    "unocss": "^0.44.5",
+    "unocss": "^0.45.5",
     "unocss-preset-weapp": "link:../../",
-    "unplugin-transform-we-class": "^0.1.6",
+    "unplugin-transform-we-class": "0.1.12",
+    "unplugin-unocss-attributify-wechat": "^0.1.7",
     "vue-loader": "^16.0.0-beta.8"
   }
 }

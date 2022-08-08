@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { } from '@dcloudio/uni-app';
+import { } from '@dcloudio/uni-app'
 const list = [
   { name: 'font', path: '/pages/font/index' },
   { name: 'size', path: '/pages/size/index' },
@@ -9,6 +9,7 @@ const list = [
   { name: 'shortcuts', path: '/pages/shortcuts/index' },
   { name: ':class', path: '/pages/class/index' },
   { name: 'color', path: '/pages/color/index' },
+  { name: 'attributify', path: '/pages/attributify-mode/index' },
 ]
 
 const to = (to: string) => {
@@ -21,8 +22,10 @@ const to = (to: string) => {
 <template>
   <view class="py-3">
     <view class="grid grid-cols-3 justify-items-center">
-      <view v-for="(item, index) in list" :key="index" class="w-200 h-200 shadow-md center rounded-md"
-        @click="to(item.path)">
+      <view
+        v-for="(item, index) in list" :key="index" class="w-200 h-200 shadow-md center rounded-md"
+        @click="to(item.path)"
+      >
         {{ item.name }}
       </view>
     </view>

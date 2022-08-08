@@ -1,6 +1,7 @@
 import presetWeapp from 'unocss-preset-weapp'
 export default {
   presets: [
+    // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp(),
   ],
   shortcuts: [
