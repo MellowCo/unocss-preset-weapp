@@ -4,7 +4,10 @@
 
 在小程序中使用`原子化css`时，`bg-[#153]/10`经过编辑，会变成`bg-\[\#153\]\/10`, 由于小程序不支持`\\`，`\:`，`\[`，`\$`,`\.`等转义类名，导致报错。
 
+
 通过 [unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class) 转换转义类名，保持`原子化css`的规范去书写`class`
+
+通过 [unplugin-unocss-attributify-wechat](https://github.com/MellowCo/unplugin-unocss-attributify-wechat)，支持 [UnoCSS presetAttributify](https://github.com/unocss/unocss/tree/main/packages/preset-attributify)
 
 支持
 * <a href='#uniapp-vue2'>uniapp vue2</a>
@@ -17,6 +20,7 @@
 * [UnoCSS](https://github.com/unocss/unocss) - 即时按需原子CSS引擎
 * [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp) - UnoCSS 微信小程序预设
 * [unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class) - 小程序原子化 CSS 转换转义类名插件
+* [unplugin-unocss-attributify-wechat](https://github.com/MellowCo/unplugin-unocss-attributify-wechat) - 小程序 Attributify Mode 插件
 * [unocss-webpack-uniapp2](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2) - 兼容 UniApp Vue2 App开发插件
 * [uni-vue3-starter](https://github.com/MellowCo/uni-vue3-starter) - Uniapp-Vite 模版
 
@@ -50,7 +54,7 @@ vue create -p dcloudio/uni-preset-vue my-project
 # yarn add -D unocss @unocss/webpack unplugin-transform-we-class unocss-preset-weapp
 
 # 安装unocss
-yarn add -D unocss unocss-webpack-uniapp2 unplugin-transform-we-class unocss-preset-weapp
+yarn add -D unocss unocss-webpack-uniapp2 unplugin-transform-we-class unocss-preset-weapp unplugin-unocss-attributify-wechat 
 
 ```
 
@@ -66,16 +70,26 @@ yarn add -D unocss unocss-webpack-uniapp2 unplugin-transform-we-class unocss-pre
 // 使用 unocss-webpack-uniapp2 替换 @unocss/webpack
 const UnoCSS = require('unocss-webpack-uniapp2').default
 const transformWeClass = require('unplugin-transform-we-class/webpack')
+const { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } = require('unplugin-unocss-attributify-wechat/webpack')
 
 module.exports = {
   configureWebpack: {
     plugins: [
+      // https://github.com/unocss/unocss
       UnoCSS(),
+      // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+      presetAttributifyWechat({
+        attributes: [...defaultAttributes, 'my-attr'],
+        ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
+        nonValuedAttribute: true,
+        prefix: 'li-',
+        prefixedOnly: true,
+      }),
+      // https://github.com/MellowCo/unplugin-transform-we-class
       transformWeClass(),
     ],
   },
 }
-
 ```
 * unocss.config.js
 > 添加unocss.config.js文件，搭配[unocss vscode](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)插件，智能提示
@@ -87,6 +101,7 @@ import presetWeapp from 'unocss-preset-weapp'
 
 export default {
   presets: [
+    // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp(
       // 如有h5开发需求
       // h5兼容
@@ -168,13 +183,28 @@ yarn add -D unocss @unocss/webpack unplugin-transform-we-class unocss-preset-wea
 // 导入unocss
 import UnoCSS from 'unocss/webpack'
 import transformWeClass from 'unplugin-transform-we-class/webpack'
+import { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } from 'unplugin-unocss-attributify-wechat/webpack'
 
 const config = {
   mini: {
     // 合并webpack配置
     webpackChain(chain) {
+      // https://github.com/unocss/unocss
       chain.plugin('unocss')
         .use(UnoCSS())
+
+      // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+      // taro-react 不支持 Attributify Mode ，react不支持，react不支持，react不支持
+      chain.plugin('presetAttributifyWechat').use(
+        presetAttributifyWechat({
+          attributes: [...defaultAttributes, 'my-attr'],
+          ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
+          nonValuedAttribute: true,
+          prefix: 'li-',
+          prefixedOnly: false,
+        }))
+
+      // https://github.com/MellowCo/unplugin-transform-we-class
       chain
         .plugin('transformWeClass')
         .use(transformWeClass())
@@ -183,8 +213,22 @@ const config = {
   h5: {
     // 合并webpack配置
     webpackChain(chain) {
+      // https://github.com/unocss/unocss
       chain.plugin('unocss')
         .use(UnoCSS())
+
+      // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+      // taro-react 不支持 Attributify Mode ，react不支持，react不支持，react不支持
+      chain.plugin('presetAttributifyWechat').use(
+        presetAttributifyWechat({
+          attributes: [...defaultAttributes, 'my-attr'],
+          ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
+          nonValuedAttribute: true,
+          prefix: 'li-',
+          prefixedOnly: false,
+        }))
+
+      // https://github.com/MellowCo/unplugin-transform-we-class
       chain
         .plugin('transformWeClass')
         .use(transformWeClass())
@@ -207,6 +251,7 @@ import presetWeapp from 'unocss-preset-weapp'
 
 export default {
   presets: [
+    // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp(
       // 如有h5开发需求
       // h5兼容
@@ -256,7 +301,7 @@ import 'uno.css'
 # 使用Vue3/Vite版
 npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
 # 安装unocss
-pnpm add -D unocss unplugin-transform-we-class unocss-preset-weapp
+pnpm add -D unocss unplugin-transform-we-class unocss-preset-weapp unplugin-unocss-attributify-wechat
 ```
 
 * vite.config.ts
@@ -266,12 +311,25 @@ import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 import Unocss from 'unocss/vite'
 import transformWeClass from 'unplugin-transform-we-class/vite'
+import { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } from 'unplugin-unocss-attributify-wechat/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     uni(),
+    // https://github.com/unocss/unocss
     Unocss(),
+
+    // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+    presetAttributifyWechat({
+      attributes: [...defaultAttributes, 'my-attr'],
+      ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
+      nonValuedAttribute: true,
+      prefix: 'li-',
+      prefixedOnly: true,
+    }),
+
+    // https://github.com/MellowCo/unplugin-transform-we-class
     transformWeClass(),
   ],
 })
@@ -283,6 +341,7 @@ export default defineConfig({
 import presetWeapp from 'unocss-preset-weapp'
 export default {
   presets: [
+    // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp(),
   ],
   shortcuts: [
@@ -317,21 +376,60 @@ import 'uno.css'
 
 > 不支持`:`  bg-teal-300:50
 
-### 使用class转换插件
+### 使用 class 转换插件
 
 > 使用[unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class)，转换`\\`，`\:`，`\[`，`\$`,`\.`等转义类名
 
 ![image-20220703141301371](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031413496.png)
 
+### 使用 attributify 插件
+```html
+<view>
+    <button
+      text="sm green"
+      p="y-2 x-4"
+      m="4"
+      my-attr="y-1 x-2 sm"
+    >
+      Button
+    </button>
 
+    <button
+      text-base text-blue
+      py-2 px-4
+      m-4
+    >
+      Button
+    </button>
 
+    <button
+      li-text="sm green"
+      li-p="y-2 x-4"
+      li-m="4"
+      li-my-attr="y-1 x-2 sm"
+    >
+      Button
+    </button>
+
+    <button border="~ red" m="4">
+      Button
+    </button>
+
+    <button flex="~ col wrap" class="m4">
+      Button
+    </button>
+
+    <text text="red" li-text="blue">
+      This conflicts with links' text prop
+    </text>
+  </view>
+```
+![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208082120717.png)
 ---
 
 ### uniapp vue2 app兼容
 
 [见unocss-webpack-uniapp2](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2)
-
-
 
 ---
 ### h5兼容
@@ -344,8 +442,6 @@ import 'uno.css'
 > `taro ` `uniapp vue2` 在h5中还是使用`rpx`
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231620090.png" style="zoom: 50%;" />
-
-  
 
 #### taro h5兼容
 
