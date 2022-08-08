@@ -79,7 +79,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@unocss/core": "^0.45.1"
+    "@unocss/core": "^0.45.5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",
@@ -89,6 +89,6 @@
     "typescript": "^4.7.4",
     "unbuild": "^0.7.6",
     "vite": "^3.0.4",
-    "vitest": "^0.20.2"
+    "vitest": "^0.21.0"
   }
 }
