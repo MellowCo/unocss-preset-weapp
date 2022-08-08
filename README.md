@@ -55,7 +55,6 @@ vue create -p dcloudio/uni-preset-vue my-project
 
 # 安装unocss
 yarn add -D unocss unocss-webpack-uniapp2 unplugin-transform-we-class unocss-preset-weapp unplugin-unocss-attributify-wechat 
-
 ```
 
 > 使用 [unocss-webpack-uniapp2](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2) 替换 @unocss/webpack，[原因](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2)
@@ -173,7 +172,7 @@ export default {
 # 创建taro项目 选择react
 taro init taro_react
 # 安装unocss
-yarn add -D unocss @unocss/webpack unplugin-transform-we-class unocss-preset-weapp
+yarn add -D unocss @unocss/webpack unplugin-transform-we-class unocss-preset-weapp unplugin-unocss-attributify-wechat
 ```
 
 * config/index.js
