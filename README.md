@@ -276,6 +276,23 @@ export default {
 import 'uno.css'
 ```
 
+* index.html
+> `taro h5` 的基准文字不是 `16px` ，导致默认文字过大   
+
+> 在`index.html` 中设置body
+
+
+
+<img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231650890.png" style="zoom: 67%;" />
+
+```html
+<body class="text-base">
+  <div id="app"></div>
+</body>
+```
+
+<img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231629548.png" style="zoom: 50%;" />
+
 ---
 
 ### taro-vue2
@@ -316,8 +333,16 @@ import { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyW
 export default defineConfig({
   plugins: [
     uni(),
-    // https://github.com/unocss/unocss
-    Unocss(),
+
+    // https://github.com/antfu/unocss
+    // Unocss(),
+
+    // app打包配置
+    // uniapp打包app时，打包2次，一次使用 vue 模式打包h5，第2次使用 nvue 模式打包app，
+    // 第2次打包 unocss 会抛出warn
+    // entry module not found, have you add `import 'uno.css'` in your main entry?
+    // 导致打包终止
+    process.env.UNI_COMPILER === 'vue' ? Unocss() : undefined,
 
     // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
     presetAttributifyWechat({
@@ -333,6 +358,10 @@ export default defineConfig({
   ],
 })
 ```
+
+> [unocss] entry module not found, have you add `import 'uno.css'` in your main entry?
+
+![image-20220730140841046](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207301416199.png)
 
 * unocss.config.ts
 > 添加unocss.config.js文件，搭配[unocss vscode](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)插件，智能提示
@@ -526,11 +555,44 @@ export default {
 >
 > [unocss] entry module not found, have you add `import 'uno.css'` in your main entry?
 
+* vite.config.ts
+
+```ts
+import { defineConfig } from 'vite'
+import uni from '@dcloudio/vite-plugin-uni'
+import Unocss from 'unocss/vite'
+import transformWeClass from 'unplugin-transform-we-class/vite'
+import { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } from 'unplugin-unocss-attributify-wechat/vite'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    uni(),
+
+    // app打包配置
+    // uniapp打包app时，打包2次，一次使用 vue 模式打包h5，第2次使用 nvue 模式打包app，
+    // 第2次打包 unocss 会抛出warn
+    // entry module not found, have you add `import 'uno.css'` in your main entry?
+    // 导致打包终止
+    process.env.UNI_COMPILER === 'vue' ? Unocss() : undefined,
+
+    // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+    presetAttributifyWechat({
+      attributes: [...defaultAttributes, 'my-attr'],
+      ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
+      nonValuedAttribute: true,
+      prefix: 'li-',
+      prefixedOnly: true,
+    }),
+
+    // https://github.com/MellowCo/unplugin-transform-we-class
+    transformWeClass(),
+  ],
+})
+```
+
 ![image-20220730140841046](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207301416199.png)
 
-> 在 `node_modules/@unocss/vite/index.cjs` 中，将 `warn` 注释掉即可完成打包
-
-![image-20220730140554224](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207301416930.png)
 
 ##  使用
 [UnoCSS 文档](https://uno.antfu.me/)
