@@ -386,9 +386,6 @@ export default {
 ```ts
 import 'uno.css'
 ```
-
-> app打包中断问题， <a href='#uniapp vue3 vite app打包中断'>见注意事项</a>
-
 ---
 ## 注意事项
 
