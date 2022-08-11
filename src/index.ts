@@ -4,7 +4,6 @@ import preflights from './preflights'
 import { rules } from './rules'
 import type { Theme, ThemeAnimation } from './theme'
 import { theme } from './theme'
-import { transformSelector } from './transform'
 import { variants } from './variants'
 
 export { theme, colors } from './theme'
