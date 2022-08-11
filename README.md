@@ -342,7 +342,7 @@ export default defineConfig({
     // 第2次打包 unocss 会抛出warn
     // entry module not found, have you add `import 'uno.css'` in your main entry?
     // 导致打包终止
-    process.env.UNI_COMPILER === 'vue' ? Unocss() : undefined,
+    process.env.UNI_COMPILER !== 'nvue' ? Unocss() : undefined,
 
     // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
     presetAttributifyWechat({
@@ -571,7 +571,7 @@ export default defineConfig({
     // 第2次打包 unocss 会抛出warn
     // entry module not found, have you add `import 'uno.css'` in your main entry?
     // 导致打包终止
-    process.env.UNI_COMPILER === 'vue' ? Unocss() : undefined,
+    process.env.UNI_COMPILER !== 'nvue' ? Unocss() : undefined,
 
     // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
     presetAttributifyWechat({
