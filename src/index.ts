@@ -1,4 +1,5 @@
 import type { Preset, PresetOptions } from '@unocss/core'
+import { transformEscapESelector } from 'unplugin-transform-we-class/utils'
 import preflights from './preflights'
 import { rules } from './rules'
 import type { Theme, ThemeAnimation } from './theme'
@@ -109,10 +110,8 @@ export const presetWeapp = (options: PresetMiniOptions = {}): Preset<Theme> => {
     variants: variants(options),
     options,
     postprocess(css) {
-      if (options.transform) {
-        // 转换
-        css.selector = transformSelector(css.selector)
-      }
+      if (options.transform)
+        css.selector = transformEscapESelector(css.selector)
 
       // 设置变量前缀
       if (options.variablePrefix && options.variablePrefix !== 'un-')

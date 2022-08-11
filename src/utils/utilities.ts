@@ -1,7 +1,7 @@
 import type { CSSEntries, CSSObject, DynamicMatcher, ParsedColorValue, Rule, RuleContext, VariantContext } from '@unocss/core'
 import { toArray } from '@unocss/core'
+import { restoreSelector } from 'unplugin-transform-we-class/utils'
 import type { Theme } from '../theme'
-import { restoreSelector } from '../transform'
 import { colorOpacityToString, colorToString, parseCssColor } from './colors'
 import { handler as h } from './handlers'
 import { directionMap, globalKeywords } from './mappings'
