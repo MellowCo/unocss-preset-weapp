@@ -355,6 +355,10 @@ export const presetMiniTargets: string[] = [
 
   // position - insets
   'top-0',
+  'top-5',
+  'bottom-10',
+  'left-10',
+  'right-10',
   'top-$top-height',
   'inset-none',
   'inset-unset',

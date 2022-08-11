@@ -1,7 +1,7 @@
 /*
  * @Author: licl
  * @Date: 2022-06-26 16:29:55
- * @LastEditTime: 2022-06-26 16:29:56
+ * @LastEditTime: 2022-08-11 20:16:50
  * @LastEditors: licl
  * @Description:
  */
@@ -26,6 +26,10 @@ export const position = [
   'place-self-stretch',
 
   'top-0',
+  'top-5',
+  'bottom-10',
+  'left-10',
+  'right-10',
   'inset-none',
   'inset-x-5',
   'inset-y-5',
