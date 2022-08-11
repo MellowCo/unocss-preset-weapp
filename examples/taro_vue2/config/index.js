@@ -59,7 +59,7 @@ const config = {
           ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
           nonValuedAttribute: true,
           prefix: 'li-',
-          prefixedOnly: false,
+          prefixedOnly: true,
         }))
 
       // https://github.com/MellowCo/unplugin-transform-we-class

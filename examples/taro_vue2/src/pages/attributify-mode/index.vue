@@ -37,6 +37,18 @@
     <text text="red" li-text="blue">
       This conflicts with links' text prop
     </text>
+
+    <view bg="#333:90">
+      111
+    </view>
+
+    <view li-bg="[#9b59b6]/50">
+      222
+    </view>
+
+    <view bg="#2ecc71:50">
+      333
+    </view>
   </view>
 </template>
 

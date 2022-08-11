@@ -113,6 +113,24 @@
         </text>
       </view>
     </view>
+
+    <view class="p-2">
+      <text class="bg-green-100 top-20">
+        top
+      </text>
+
+      <text class="bg-green-100 bottom-20">
+        bottom
+      </text>
+
+      <text class="bg-green-100 left-20">
+        left
+      </text>
+
+      <text class="bg-green-100 right-20">
+        right
+      </text>
+    </view>
   </view>
 </template>
 

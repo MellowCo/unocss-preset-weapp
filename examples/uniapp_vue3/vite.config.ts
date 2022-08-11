@@ -14,7 +14,7 @@ export default defineConfig({
       ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
       nonValuedAttribute: true,
       prefix: 'li-',
-      prefixedOnly: true,
+      prefixedOnly: false,
     }),
     // https://github.com/unocss/unocss
     Unocss(),

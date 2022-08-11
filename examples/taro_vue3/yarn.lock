@@ -1784,10 +1784,15 @@
     "@unocss/core" "0.45.5"
     unconfig "^0.3.5"
 
-"@unocss/core@0.45.5", "@unocss/core@^0.45.5":
+"@unocss/core@0.45.5":
   version "0.45.5"
   resolved "https://registry.npmjs.org/@unocss/core/-/core-0.45.5.tgz#d2cd4351e35a11629755ad65b514a83a38c70187"
   integrity sha512-6boP8sGTRb+nE87pdjii7otO/tguIlDkFh90E6mglA0XdjHWiLCCNlgJoxgjCGCPNYUm/Nojx0bUbcokuqBZDw==
+
+"@unocss/core@^0.45.6":
+  version "0.45.6"
+  resolved "https://registry.npmjs.org/@unocss/core/-/core-0.45.6.tgz#36be77aea7ab2f97b04294d7c46628eeb78c17be"
+  integrity sha512-AeV2/HOTnmc2t2Z0oJ4qKhxDuvYKJ4sVLhqZi+Ex8SP5JSm65SrW3kmGWJMkSGHqJG6ey2ugAiZh6rHzELlB7A==
 
 "@unocss/inspector@0.45.5":
   version "0.45.5"
@@ -9324,13 +9329,22 @@ unplugin-transform-we-class@0.1.12:
     "@rollup/pluginutils" "^4.2.1"
     unplugin "0.9.0"
 
-unplugin-unocss-attributify-wechat@^0.1.7:
-  version "0.1.7"
-  resolved "https://registry.npmjs.org/unplugin-unocss-attributify-wechat/-/unplugin-unocss-attributify-wechat-0.1.7.tgz#d4a56fe6d5b961a5a0a309497741b11c1a88ea53"
-  integrity sha512-t+ixktEVYcYvbGyTzx3zQGTrlpK+fsPSmgIAVGM+GGdCWuylaGoCPioVPkiFBEqRy+K1P522NA9klWxkiLskcA==
+unplugin-transform-we-class@^0.1.13:
+  version "0.1.13"
+  resolved "https://registry.npmjs.org/unplugin-transform-we-class/-/unplugin-transform-we-class-0.1.13.tgz#d84427490d222db78986c92457ef673392b578ff"
+  integrity sha512-CseC85qYoYk802PIm3MFau4geLq9SzoT9EHUjboEYc5Xj4w/B/cPYv4DTY1n7Bd/T0b/IARH2AOEGv+WaCf26Q==
+  dependencies:
+    "@rollup/pluginutils" "^4.2.1"
+    unplugin "0.9.0"
+
+unplugin-unocss-attributify-wechat@^0.1.8:
+  version "0.1.8"
+  resolved "https://registry.npmjs.org/unplugin-unocss-attributify-wechat/-/unplugin-unocss-attributify-wechat-0.1.8.tgz#07c417266a948560b22b2f8a1a75bf7a641c2f64"
+  integrity sha512-A6h/CYRy/fUY1pME8ur4xw6qeeEUx5+2zZ0qfx+IFAv1ZGAoEOKSGhIlmwWESo0ZBCYm4KRsfvr1JQCWQuoODg==
   dependencies:
     "@rollup/pluginutils" "^4.2.1"
     unplugin "^0.9.0"
+    unplugin-transform-we-class "^0.1.13"
 
 unplugin@0.9.0, unplugin@^0.9.0:
   version "0.9.0"
