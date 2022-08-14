@@ -12,7 +12,7 @@ import { rings } from './ring'
 import { boxShadows } from './shadow'
 import { aspectRatio, sizes } from './size'
 import { margins, paddings } from './spacing'
-import { appearances, breaks, contents, cursors, displays, fontSmoothings, fontStyles, pointerEvents, resizes, textOverflows, textTransforms, userSelects, whitespaces } from './static'
+import { appearances, breaks, contentVisibility, contents, cursors, displays, fontSmoothings, fontStyles, pointerEvents, resizes, textOverflows, textTransforms, userSelects, whitespaces } from './static'
 import { transforms } from './transform'
 import { cssProperty, cssVariables } from './variables'
 import { questionMark } from './question-mark'
@@ -32,6 +32,7 @@ export const rules: Rule[] = [
   bgColors,
   svgUtilities,
   borders,
+  contentVisibility,
   contents,
   fonts,
   tabSizes,
