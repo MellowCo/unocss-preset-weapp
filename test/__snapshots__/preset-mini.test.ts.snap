@@ -30,6 +30,50 @@ page,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 /* layer: 1 */
 .uno-layer-1\\\\:translate-0{--licl-translate-x:0rpx;--licl-translate-y:0rpx;transform:translateX(var(--licl-translate-x)) translateY(var(--licl-translate-y)) translateZ(var(--licl-translate-z)) rotate(var(--licl-rotate)) rotateX(var(--licl-rotate-x)) rotateY(var(--licl-rotate-y)) rotateZ(var(--licl-rotate-z)) skewX(var(--licl-skew-x)) skewY(var(--licl-skew-y)) scaleX(var(--licl-scale-x)) scaleY(var(--licl-scale-y)) scaleZ(var(--licl-scale-z));}
 /* layer: default */
+@keyframes pulse-alt{from{transform:scale3d(1,1,1)}50%{transform:scale3d(1.05,1.05,1.05)}to{transform:scale3d(1,1,1)}}
+@keyframes pulse{0%, 100% {opacity:1} 50% {opacity:.5}}
+.animate-keyframes-pulse,
+.keyframes-pulse{animation:pulse;}
+.animate-keyframes-pulse-alt,
+.keyframes-pulse-alt{animation:pulse-alt;}
+.animate-\\\\[4s_linear_0s_infinite_alternate_move\\\\\\\\_eye\\\\]{animation:4s linear 0s infinite alternate move\\\\_eye;}
+.animate-\\\\$variable{animation:var(--variable);}
+.animate-pulse{animation:pulse 2s cubic-bezier(0.4,0,.6,1) infinite;}
+.animate-pulse-alt{animation:pulse-alt 1s ease-in-out infinite;}
+.animate-name-move{animation-name:move;}
+.animate-duration-\\\\$variable{animation-duration:var(--variable);}
+.animate-duration-100,
+.animate-duration-100\\\\.00,
+.animate-duration-100ms{animation-duration:100ms;}
+.animate-duration-100\\\\.02{animation-duration:100.02ms;}
+.animate-duration-100\\\\.30{animation-duration:100.3ms;}
+.animate-duration-100\\\\.32{animation-duration:100.32ms;}
+.animate-duration-100s{animation-duration:100s;}
+.animate-delay--1\\\\.37{animation-delay:-1.37ms;}
+.animate-delay-\\\\$variable{animation-delay:var(--variable);}
+.animate-ease{animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);}
+.animate-ease-\\\\[steps\\\\(4\\\\,_jump-start\\\\)\\\\]{animation-timing-function:steps(4, jump-start);}
+.animate-ease-\\\\$variable{animation-timing-function:var(--variable);}
+.animate-ease-linear{animation-timing-function:linear;}
+.animate-fill-backwards{animation-fill-mode:backwards;}
+.animate-fill-mode-both{animation-fill-mode:both;}
+.animate-mode-none{animation-fill-mode:none;}
+.animate-direction-alternate-reverse{animation-direction:alternate-reverse;}
+.animate-normal{animation-direction:normal;}
+.animate-reverse{animation-direction:reverse;}
+.animate-count-2\\\\.4{animation-iteration-count:2.4;}
+.animate-iteration-2{animation-iteration-count:2;}
+.animate-iteration-count-\\\\[2\\\\,4\\\\,infinity\\\\]{animation-iteration-count:count,[2,4,infinity];}
+.animate-iteration-count-\\\\$variable{animation-iteration-count:count,$variable;}
+.animate-iteration-count-2{animation-iteration-count:count,2;}
+.animate-iteration-count-2-4-infinity{animation-iteration-count:count,2,4,infinity;}
+.animate-paused,
+.animate-play-paused{animation-play-state:paused;}
+.animate-play-state-running,
+.animate-state-running{animation-play-state:running;}
+.animate-none{animation:none;}
+.animate-inherit{animation:inherit;}
+.animate-unset{animation:unset;}
 .content-\\\\$unocss-var{align-content:var(--unocss-var);}
 .fw-\\\\$variable{font-weight:var(--variable);}
 .items-\\\\$size{align-items:var(--size);}

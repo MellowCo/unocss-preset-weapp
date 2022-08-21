@@ -2,7 +2,6 @@ import { createGenerator, escapeSelector } from '@unocss/core'
 import { describe, expect, test } from 'vitest'
 import presetMini from '../src'
 import { presetMiniNonTargets, presetMiniTargets } from './assets/preset-mini-targets'
-import { presetWindTargets } from './assets/preset-wind-targets'
 
 const uno = createGenerator({
   presets: [
@@ -68,14 +67,6 @@ describe('preset-mini', () => {
     expect(unmatched).toEqual([])
     expect(css).toMatchSnapshot()
     expect(css).toEqual(css2)
-  })
-
-  test('utils from preset-wind should be non-targets', async () => {
-    const code = presetWindTargets.join(' ')
-    const { css, matched } = await uno.generate(code, { preflights: false })
-
-    expect(Array.from(matched)).toEqual([])
-    expect(css).toBe('')
   })
 
   test('custom var prefix', async () => {
