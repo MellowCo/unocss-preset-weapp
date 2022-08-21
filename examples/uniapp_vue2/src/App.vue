@@ -13,5 +13,11 @@ export default {
 </script>
 
 <style>
-/*每个页面公共css */
+.uno-start {
+  --un: 0;
+}
+/* unocss 代码生成在这 */
+.uno-end {
+  --un: 0;
+}
 </style>

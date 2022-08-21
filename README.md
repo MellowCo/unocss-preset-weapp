@@ -46,28 +46,36 @@
 ### uniapp-vue2
 > 在 [uniapp vue2](https://uniapp.dcloud.io/quickstart-cli.html#创建uni-app) 中使用
 
+#### 注意事项
+
+1. @unocss/webpack v0.45.8 之前版本，会出现无法及时生成`css`代码，导致打包时没有`css`代码
+
+> 解决方法：使用 v0.45.8 或以上版本
+```shell
+npm i -D @unocss/webpack@^0.45.8
+```
+
+2. App平台 v3 模式暂不支持在 js 文件中引用"uno.css" 请改在 style 内引用
+> 解决方法：使用 [unocss-webpack-uniapp2](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2) 替换 @unocss/webpack，<a href='#App平台'>见 App 平台</a>
+>
+> 开发 `小程序` `h5` 平台，使用 [@unocss/webpack](https://github.com/unocss/unocss/tree/main/packages/webpack)
+>
+> 开发 `小程序` `h5` `app` 平台，使用 [unocss-webpack-uniapp2](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2)
+
+#### 小程序 h5 平台
 ```shell
 # 创建uni-app
 vue create -p dcloudio/uni-preset-vue my-project
 
-# @unocss/webpack 与 uniapp 不兼容 无法及时生成css代码
-# yarn add -D unocss @unocss/webpack unplugin-transform-we-class unocss-preset-weapp
-
-# 安装unocss
-yarn add -D unocss unocss-webpack-uniapp2 unplugin-transform-we-class unocss-preset-weapp unplugin-unocss-attributify-wechat 
+# @unocss/webpack 请使用 v0.45.8 之后版本
+yarn add -D unocss @unocss/webpack unplugin-transform-we-class unocss-preset-weapp unplugin-unocss-attributify-wechat
 ```
 
-> 使用 [unocss-webpack-uniapp2](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2) 替换 @unocss/webpack，[原因](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2)
-
 * vue.config.js
-
-> uniapp vue2 使用`import 'uno.css'` 无法及时生成`css`代码，导致打包时没有`css`代码
->
-> 去除`cssMode`参数
-
 ```js
-// 使用 unocss-webpack-uniapp2 替换 @unocss/webpack
-const UnoCSS = require('unocss-webpack-uniapp2').default
+// 请使用 @unocss/webpack 0.45.8 后版本
+// 0.45.8 之前版本 会出现无法及时生成`css`代码，导致打包时没有`css`代码
+const UnoCSS = require('@unocss/webpack').default
 const transformWeClass = require('unplugin-transform-we-class/webpack')
 const { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } = require('unplugin-unocss-attributify-wechat/webpack')
 
@@ -95,20 +103,19 @@ module.exports = {
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207171840689.png" alt="image-20220703141451188" style="zoom:50%;" />
 
+
 ```js
 import presetWeapp from 'unocss-preset-weapp'
+import { defineConfig } from 'unocss'
 
-export default {
+export default defineConfig({
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
-    presetWeapp(
-      // 如有h5开发需求
+    presetWeapp({
       // h5兼容
-      // {
-      // platform: 'uniapp',
-      // isH5: process.env.UNI_PLATFORM === 'h5'
-      // }
-    ),
+      platform: 'uniapp',
+      isH5: process.env.UNI_PLATFORM === 'h5',
+    }),
   ],
   shortcuts: [
     {
@@ -116,20 +123,128 @@ export default {
       'center': 'flex justify-center items-center',
     },
   ],
-}
+  theme: {
+    // 自定义动画
+    animation: {
+      keyframes: {
+        'my-animation': '{0% {letter-spacing: -0.5em;transform: translateZ(-700px);opacity: 0;}40% {opacity: 0.6;}100% {transform: translateZ(0);opacity: 1;}}',
+      },
+      durations: {
+        'my-animation': '0.8s',
+      },
+      counts: {
+        'my-animation': 'infinite',
+      },
+      timingFns: {
+        'my-animation': 'cubic-bezier(0.215, 0.610, 0.355, 1.000)',
+      },
+    },
+  },
+})
+
 ```
 
 * main.js
 
 ```js
-// 不在需要导入 uno.css
+import 'uno.css'
+```
+
+#### App平台
+> unocss-webpack-uniapp2 同样支持 小程序 和 h5 平台
+
+
+```shell
+# 创建uni-app
+vue create -p dcloudio/uni-preset-vue my-project
+
+# unocss-webpack-uniapp2 兼容 vue2 app
+# 解决 App平台 v3 模式暂不支持在 js 文件中引用"uno.css" 请改在 style 内引用
+yarn add -D unocss unocss-webpack-uniapp2 unplugin-transform-we-class unocss-preset-weapp unplugin-unocss-attributify-wechat 
+```
+
+* vue.config.js
+```js
+// 兼容 app
+// 解决 App平台 v3 模式暂不支持在 js 文件中引用"uno.css" 请改在 style 内引用
+const UnoCSS = require('unocss-webpack-uniapp2').default
+
+const transformWeClass = require('unplugin-transform-we-class/webpack')
+const { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } = require('unplugin-unocss-attributify-wechat/webpack')
+
+module.exports = {
+  configureWebpack: {
+    plugins: [
+      // https://github.com/unocss/unocss
+      UnoCSS(),
+      // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+      presetAttributifyWechat({
+        attributes: [...defaultAttributes, 'my-attr'],
+        ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
+        nonValuedAttribute: true,
+        prefix: 'li-',
+        prefixedOnly: true,
+      }),
+      // https://github.com/MellowCo/unplugin-transform-we-class
+      transformWeClass(),
+    ],
+  },
+}
+```
+
+* unocss.config.js
+> 添加unocss.config.js文件，搭配[unocss vscode](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)插件，智能提示
+
+
+```js
+import presetWeapp from 'unocss-preset-weapp'
+import { defineConfig } from 'unocss'
+
+export default defineConfig({
+  presets: [
+    // https://github.com/MellowCo/unocss-preset-weapp
+    presetWeapp({
+      // h5兼容
+      platform: 'uniapp',
+      isH5: process.env.UNI_PLATFORM === 'h5',
+    }),
+  ],
+  shortcuts: [
+    {
+      'border-base': 'border border-gray-500_10',
+      'center': 'flex justify-center items-center',
+    },
+  ],
+  theme: {
+    // 自定义动画
+    animation: {
+      keyframes: {
+        'my-animation': '{0% {letter-spacing: -0.5em;transform: translateZ(-700px);opacity: 0;}40% {opacity: 0.6;}100% {transform: translateZ(0);opacity: 1;}}',
+      },
+      durations: {
+        'my-animation': '0.8s',
+      },
+      counts: {
+        'my-animation': 'infinite',
+      },
+      timingFns: {
+        'my-animation': 'cubic-bezier(0.215, 0.610, 0.355, 1.000)',
+      },
+    },
+  },
+})
+
+```
+
+* main.js
+
+```js
+// 不再需要导入 uno.css
 // import 'uno.css'
 ```
 
-* App.vue
 
-> 原为`注释占位符`，但是在`app`打包时，会将注释删除，导致打包后的`app`没有`css`文件，小程序和h5不会删除`注释`。。。
->
+* App.vue
 > 将`注释占位符`改为`css选择器占位符`,使用`uno-start`和`uno-end`,作为占位符，内容随意
 
 ```vue
@@ -157,6 +272,8 @@ export default {
 }
 </style>
 ```
+
+
 
 ---
 
@@ -266,7 +383,24 @@ export default {
       'border-base': 'border border-gray-500/10',
       'center': 'flex justify-center items-center',
     },
-  ]
+  ],
+  theme: {
+    // 自定义动画
+    animation: {
+      keyframes: {
+        'my-animation': '{0% {letter-spacing: -0.5em;transform: translateZ(-700px);opacity: 0;}40% {opacity: 0.6;}100% {transform: translateZ(0);opacity: 1;}}',
+      },
+      durations: {
+        'my-animation': '0.8s',
+      },
+      counts: {
+        'my-animation': 'infinite',
+      },
+      timingFns: {
+        'my-animation': 'cubic-bezier(0.215, 0.610, 0.355, 1.000)',
+      },
+    },
+  },
 }
 ```
 
@@ -364,10 +498,12 @@ export default defineConfig({
 ![image-20220730140841046](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207301416199.png)
 
 * unocss.config.ts
-> 添加unocss.config.js文件，搭配[unocss vscode](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)插件，智能提示
+> 添加unocss.config.js文件，搭配 [unocss vscode](https://marketplace.visualstudio.com/items?itemName=antfu.unocss) 插件，智能提示
 ```ts
 import presetWeapp from 'unocss-preset-weapp'
-export default {
+import { defineConfig } from 'unocss'
+
+export default defineConfig({
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp(),
@@ -378,7 +514,24 @@ export default {
       'center': 'flex justify-center items-center',
     },
   ],
-}
+  theme: {
+    // 自定义动画
+    animation: {
+      keyframes: {
+        'my-animation': '{0% {letter-spacing: -0.5em;transform: translateZ(-700px);opacity: 0;}40% {opacity: 0.6;}100% {transform: translateZ(0);opacity: 1;}}',
+      },
+      durations: {
+        'my-animation': '0.8s',
+      },
+      counts: {
+        'my-animation': 'infinite',
+      },
+      timingFns: {
+        'my-animation': 'cubic-bezier(0.215, 0.610, 0.355, 1.000)',
+      },
+    },
+  },
+})
 ```
 
 * mian.ts
@@ -600,6 +753,12 @@ export default defineConfig({
 >
 > **不使用 [unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class)**，请将百分比`/`改为`_`，h-1/2 => h-1_2
 
+### animation (v0.1.9)
+参考 [windicss-animation](https://cn.windicss.org/utilities/animations/animation.html) [@windicss/plugin-animations](https://cn.windicss.org/plugins/community/animations.html)
+
+相关动画网站 [animate.css](https://animate.style/) [animista.net](https://animista.net/play/basic)
+
+<img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208211944041.gif" style="zoom: 50%;" />
 
 ### safe-area (v0.1.6)
 | class              | Properties       |

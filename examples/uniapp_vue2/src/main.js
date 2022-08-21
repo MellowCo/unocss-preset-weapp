@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App'
 // 不再需要导入 uno.css
-import 'uno.css'
+// import 'uno.css'
 
 Vue.config.productionTip = false
 

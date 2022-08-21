@@ -1962,7 +1962,7 @@
     pathe "^0.3.3"
     perfect-debounce "^0.1.3"
 
-"@unocss/config@0.45.8":
+"@unocss/config@0.45.8", "@unocss/config@^0.45.8":
   version "0.45.8"
   resolved "https://registry.npmmirror.com/@unocss/config/-/config-0.45.8.tgz#61de30f73da948188d6c51a0888346ce3a3fdabd"
   integrity sha512-iwxHS0yuf/tPab8Oij6Q9pjCUASAdUJC31n0rp3VpyexjzfI/335ysbEzrBuwgxLV3RWk7Z1kHizCw+kQwZ+tw==
@@ -1970,28 +1970,10 @@
     "@unocss/core" "0.45.8"
     unconfig "^0.3.5"
 
-"@unocss/config@^0.44.5":
-  version "0.44.7"
-  resolved "https://registry.npmjs.org/@unocss/config/-/config-0.44.7.tgz#00ce8ac5977858b9361c72bae05a457b27321ca1"
-  integrity sha512-KSboUqIMkSLBQtVaQ2oTWSqdIBvj8Ged38h9un7Qe047jrYFHzgpCYVfmr7ZgZ2hqDYCdNc1357WgqNZO4AwiQ==
-  dependencies:
-    "@unocss/core" "0.44.7"
-    unconfig "^0.3.4"
-
-"@unocss/core@0.44.7":
-  version "0.44.7"
-  resolved "https://registry.npmjs.org/@unocss/core/-/core-0.44.7.tgz#e2185cbdee65e13821a8ba102dfecd5d54ebadcc"
-  integrity sha512-EPs3IxvPdzxEkEynAyCqyJX25IPp5RtFK3mFdgmXGvigwpgq9sxJBzQRXmYNtDeZriSyiwjYmc9yclLEJH3IiA==
-
 "@unocss/core@0.45.8", "@unocss/core@^0.45.8":
   version "0.45.8"
   resolved "https://registry.npmmirror.com/@unocss/core/-/core-0.45.8.tgz#e9beebf6dfdd85ef7d0fef70fc68b4e38560979c"
   integrity sha512-Iskmc1FaxIUAw4HK1U3htvXxJ4YAtffn3+ygNKY8+bzuOqhIk84vbp7SnHV3b8X6IHl4/OYzNRlVFhJQYnWV7g==
-
-"@unocss/core@^0.44.5":
-  version "0.44.5"
-  resolved "https://registry.npmjs.org/@unocss/core/-/core-0.44.5.tgz#5f8ee9e24716e9eb226f1903eecbffa807e3866c"
-  integrity sha512-IxFg0b0Exudko5akYLA4kfdv2MNYpQlgrB33N+UcHb8z0eGENBStq/ZKjwneplHV9RiSOM4d7nPYkK7Id1RgPA==
 
 "@unocss/inspector@0.45.8":
   version "0.45.8"
@@ -2609,11 +2591,6 @@ acorn@^7.1.0, acorn@^7.1.1, acorn@^7.4.0:
   version "7.4.1"
   resolved "https://registry.npmjs.org/acorn/-/acorn-7.4.1.tgz#feaed255973d2e77555b83dbc08851a6c63520fa"
   integrity sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==
-
-acorn@^8.7.1:
-  version "8.7.1"
-  resolved "https://registry.npmjs.org/acorn/-/acorn-8.7.1.tgz#0197122c843d1bf6d0a5e83220a788f278f63c30"
-  integrity sha512-Xx54uLJQZ19lKygFXOWsscKUbsBZW0CPykPhVQdhIeIwrbPmJzqeASDInc8nKBnp/JT6igTs82qPXz069H8I/A==
 
 acorn@^8.8.0:
   version "8.8.0"
@@ -10720,7 +10697,7 @@ unbox-primitive@^1.0.2:
     has-symbols "^1.0.3"
     which-boxed-primitive "^1.0.2"
 
-unconfig@^0.3.4, unconfig@^0.3.5:
+unconfig@^0.3.5:
   version "0.3.5"
   resolved "https://registry.npmjs.org/unconfig/-/unconfig-0.3.5.tgz#15520f6481bdb9d6f551c8f04626477bb520882d"
   integrity sha512-YMnPPUSfW0pT4Zzy4inM8tRHJZmhH+KcuFW/3qxkLKPhswEw18gQYe1jt57jY6ctFB0fnpiCpQ2Jtkbg4y/IPA==
@@ -10800,17 +10777,17 @@ universalify@^0.1.0:
   version "0.0.0"
   uid ""
 
-unocss-webpack-uniapp2@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.npmjs.org/unocss-webpack-uniapp2/-/unocss-webpack-uniapp2-0.1.3.tgz#99ac4416b1ebcb88108001122f35b313afdd525e"
-  integrity sha512-X5PBgt01LOdNvIs+M5uoc80lZhgjM1v0HTlTT08qvsveqlYTGbpvNaoBNXoAPsaekS8npFSYyH12vMH5GjdNSA==
+unocss-webpack-uniapp2@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.npmjs.org/unocss-webpack-uniapp2/-/unocss-webpack-uniapp2-0.1.4.tgz#33db27bda1cb1c3ff83d3ec4589125f05045dd5b"
+  integrity sha512-IEKe2hpVSlu0zNvCNA66G0fzPGDep6wYrpkuA7oQzBDsgb0/sNU03+UvYr0lq/y9ob8o2t0SpbEHcJQtabwIHA==
   dependencies:
     "@ampproject/remapping" "^2.2.0"
     "@rollup/pluginutils" "^4.2.1"
-    "@unocss/config" "^0.44.5"
-    "@unocss/core" "^0.44.5"
+    "@unocss/config" "^0.45.8"
+    "@unocss/core" "^0.45.8"
     magic-string "^0.26.2"
-    unplugin "^0.7.0"
+    unplugin "^0.9.3"
     webpack-sources "^3.2.3"
 
 unocss@^0.45.8:
@@ -10867,20 +10844,20 @@ unplugin@0.9.0, unplugin@^0.9.0:
     webpack-sources "^3.2.3"
     webpack-virtual-modules "^0.4.4"
 
-unplugin@^0.7.0:
-  version "0.7.2"
-  resolved "https://registry.npmjs.org/unplugin/-/unplugin-0.7.2.tgz#4127012fdc2c84ea4ce03ce75e3d4f54ea47bba1"
-  integrity sha512-m7thX4jP8l5sETpLdUASoDOGOcHaOVtgNyrYlToyQUvILUtEzEnngRBrHnAX3IKqooJVmXpoa/CwQ/QqzvGaHQ==
-  dependencies:
-    acorn "^8.7.1"
-    chokidar "^3.5.3"
-    webpack-sources "^3.2.3"
-    webpack-virtual-modules "^0.4.4"
-
 unplugin@^0.8.1:
   version "0.8.1"
   resolved "https://registry.npmmirror.com/unplugin/-/unplugin-0.8.1.tgz#4517b6a8ec3d944e838f9c346921d9777cd159e1"
   integrity sha512-o7rUZoPLG1fH4LKinWgb77gDtTE6mw/iry0Pq0Z5UPvZ9+HZ1/4+7fic7t58s8/CGkPrDpGq+RltO+DmswcR4g==
+  dependencies:
+    acorn "^8.8.0"
+    chokidar "^3.5.3"
+    webpack-sources "^3.2.3"
+    webpack-virtual-modules "^0.4.4"
+
+unplugin@^0.9.3:
+  version "0.9.3"
+  resolved "https://registry.npmjs.org/unplugin/-/unplugin-0.9.3.tgz#baeec1e3d70d18f693597ef3fcc441779e164e7f"
+  integrity sha512-GWXxizZG+tobNs8fuGTCeilerkkfZTZax2iivuE4pxLaF9wTnPJHOq8tbLKDb5ohVb+2BXNjrU9xx59yWTUnuw==
   dependencies:
     acorn "^8.8.0"
     chokidar "^3.5.3"
