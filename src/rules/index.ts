@@ -1,4 +1,5 @@
 /* @export-submodules */
+export * from './animation'
 export * from './align'
 export * from './behaviors'
 export * from './border'

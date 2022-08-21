@@ -21,8 +21,10 @@ import { appearance, outline, willChange } from './behaviors'
 import { textDecorations } from './decoration'
 import { svgUtilities } from './svg'
 import { safeArea } from './safe-area'
+import { animations } from './animation'
 
 export const rules: Rule[] = [
+  animations,
   cssVariables,
   cssProperty,
   paddings,

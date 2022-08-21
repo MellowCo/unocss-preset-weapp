@@ -5,6 +5,7 @@ import { blur, dropShadow } from './filters'
 import { height, maxHeight, maxWidth, width } from './size'
 import type { Theme } from './types'
 import { preflightBase } from './preflight'
+import { animation } from './animation'
 
 export const theme: Theme = {
   width,
@@ -40,4 +41,5 @@ export const theme: Theme = {
   duration,
   ringWidth,
   preflightBase,
+  animation,
 }
