@@ -9,7 +9,7 @@ import { variants } from './variants'
 export { theme, colors } from './theme'
 export { parseColor } from './utils'
 
-// fix(preset-mini): stricter color match, close
+// feat(preset-mini): add more overflowValues
 export type { ThemeAnimation, Theme }
 
 export interface DarkModeSelectors {
@@ -109,6 +109,7 @@ export const presetWeapp = (options: PresetMiniOptions = {}): Preset<Theme> => {
     variants: variants(options),
     options,
     postprocess(css) {
+      // 是否转义class
       if (options.transform)
         css.selector = transformEscapESelector(css.selector)
 
@@ -116,6 +117,7 @@ export const presetWeapp = (options: PresetMiniOptions = {}): Preset<Theme> => {
       if (options.variablePrefix && options.variablePrefix !== 'un-')
         VarPrefixPostprocessor(options.variablePrefix, css)
 
+      // h5 rpx 处理
       if (options.isH5) {
         css.entries.forEach((i) => {
           const value = i[1]
