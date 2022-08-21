@@ -10,6 +10,7 @@ const list = [
   { name: ':class', path: '/pages/class/index' },
   { name: 'color', path: '/pages/color/index' },
   { name: 'attributify', path: '/pages/attributify-mode/index' },
+  { name: 'animation', path: '/pages/animation/index' },
 ]
 
 const to = (to: string) => {

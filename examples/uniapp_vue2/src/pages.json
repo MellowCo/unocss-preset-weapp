@@ -60,6 +60,12 @@
       "style": {
         "navigationBarTitleText": "attributify-mode"
       }
+    },
+    {
+      "path": "pages/animation/index",
+      "style": {
+        "navigationBarTitleText": "animation"
+      }
     }
   ],
   "globalStyle": {

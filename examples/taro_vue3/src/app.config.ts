@@ -10,6 +10,7 @@ export default defineAppConfig({
     'pages/class/index',
     'pages/color/index',
     'pages/attributify-mode/index',
+    'pages/animation/index',
   ],
   window: {
     backgroundTextStyle: 'light',
