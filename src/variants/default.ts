@@ -1,5 +1,5 @@
 import type { Variant } from '@unocss/core'
-import type { PresetMiniOptions } from '..'
+import type { PresetWeappOptions } from '..'
 import type { Theme } from '../theme'
 import { variantBreakpoints } from './breakpoints'
 import { variantCombinators } from './combinators'
@@ -11,7 +11,7 @@ import { variantImportant } from './important'
 import { variantCustomMedia, variantPrint } from './media'
 import { partClasses, variantPseudoClassFunctions, variantPseudoClassesAndElements, variantTaggedPseudoClasses } from './pseudo'
 
-export const variants = (options: PresetMiniOptions): Variant<Theme>[] => [
+export const variants = (options: PresetWeappOptions): Variant<Theme>[] => [
   variantVariables,
   variantCssLayer,
 

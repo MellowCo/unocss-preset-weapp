@@ -28,7 +28,7 @@ export interface DarkModeSelectors {
   dark?: string
 }
 
-export interface PresetMiniOptions extends PresetOptions {
+export interface PresetWeappOptions extends PresetOptions {
   /**
    * Dark mode options
    *
@@ -94,7 +94,7 @@ function uniAppRpxTransform(size: string) {
   return `%?${size}?%`
 }
 
-export const presetWeapp = (options: PresetMiniOptions = {}): Preset<Theme> => {
+export const presetWeapp = (options: PresetWeappOptions = {}): Preset<Theme> => {
   options.dark = options.dark ?? 'class'
   options.attributifyPseudo = options.attributifyPseudo ?? false
   options.transform = options.transform ?? true

@@ -1,6 +1,6 @@
 import type { VariantObject } from '@unocss/core'
 import { escapeRegExp } from '@unocss/core'
-import type { PresetMiniOptions } from '..'
+import type { PresetWeappOptions } from '..'
 
 const PseudoClasses: Record<string, string> = Object.fromEntries([
   // pseudo elements part 1
@@ -159,7 +159,7 @@ export const variantPseudoClassFunctions: VariantObject = {
   autocomplete: `(${PseudoClassFunctionsStr})-(${PseudoClassesStr}|${PseudoClassesColonStr}):`,
 }
 
-export const variantTaggedPseudoClasses = (options: PresetMiniOptions = {}): VariantObject[] => {
+export const variantTaggedPseudoClasses = (options: PresetWeappOptions = {}): VariantObject[] => {
   const attributify = !!options?.attributifyPseudo
 
   return [
