@@ -7,6 +7,10 @@ export const animation = {
     'bounce-alt': '{from,20%,53%,80%,to{animation-timing-function:cubic-bezier(0.215,0.61,0.355,1);transform:translate3d(0,0,0)}40%,43%{animation-timing-function:cubic-bezier(0.755,0.05,0.855,0.06);transform:translate3d(0,-30px,0)}70%{animation-timing-function:cubic-bezier(0.755,0.05,0.855,0.06);transform:translate3d(0,-15px,0)}90%{transform:translate3d(0,-4px,0)}}',
     'flash': '{from,50%,to{opacity:1}25%,75%{opacity:0}}',
     'pulse-alt': '{from{transform:scale3d(1,1,1)}50%{transform:scale3d(1.05,1.05,1.05)}to{transform:scale3d(1,1,1)}}',
+    // https://animista.net/play/attention/pulsate/pulsate-bck
+    'pulse-bck': '{0%{transform:scale(1)}50%{transform:scale(0.9)}to{transform: scale(1)}}',
+    // https://animista.net/play/attention/pulsate/pulsate-fwd
+    'pulse-fwd': '{0%{transform:scale(1)}50%{transform:scale(1.1)}to{transform: scale(1)}}',
     'rubber-band': '{from{transform:scale3d(1,1,1)}30%{transform:scale3d(1.25,0.75,1)}40%{transform:scale3d(0.75,1.25,1)}50%{transform:scale3d(1.15,0.85,1)}65%{transform:scale3d(0.95,1.05,1)}75%{transform:scale3d(1.05,0.95,1)}to{transform:scale3d(1,1,1)}}',
     'shake-x': '{from,to{transform:translate3d(0,0,0)}10%,30%,50%,70%,90%{transform:translate3d(-10px,0,0)}20%,40%,60%,80%{transform:translate3d(10px,0,0)}}',
     'shake-y': '{from,to{transform:translate3d(0,0,0)}10%,30%,50%,70%,90%{transform:translate3d(0,-10px,0)}20%,40%,60%,80%{transform:translate3d(0,10px,0)}}',
@@ -104,6 +108,8 @@ export const animation = {
   },
   durations: {
     'pulse': '2s',
+    'pulse-bck': '0.5s',
+    'pulse-fwd': '0.5s',
     'heart-beat': '1.3s',
     'bounce-in': '0.75s',
     'bounce-out': '0.75s',
@@ -113,6 +119,8 @@ export const animation = {
   },
   timingFns: {
     'pulse': 'cubic-bezier(0.4,0,.6,1)',
+    'pulse-bck': 'ease-in-out',
+    'pulse-fwd': 'ease-in-out',
     'ping': 'cubic-bezier(0,0,.2,1)',
     'head-shake': 'ease-in-out',
     'heart-beat': 'ease-in-out',
@@ -152,6 +160,8 @@ export const animation = {
     'ping': 'infinite',
     'pulse': 'infinite',
     'pulse-alt': 'infinite',
+    'pulse-bck': 'infinite',
+    'pulse-fwd': 'infinite',
     'bounce': 'infinite',
     'bounce-alt': 'infinite',
   },
