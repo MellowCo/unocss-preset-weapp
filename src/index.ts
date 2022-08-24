@@ -6,7 +6,7 @@ import type { Theme, ThemeAnimation } from './theme'
 import { theme } from './theme'
 import { variants } from './variants'
 
-import { taroPxToRem, taroPxToRpx, taroRpxToPx, uniAppRpxTransform } from './rpxTranform'
+import { taroPxToRemW4, taroPxToRemW5, taroPxToRpx, taroRpxToPx, uniAppRpxTransform } from './rpxTranform'
 
 export { theme, colors } from './theme'
 export { parseColor } from './utils'
@@ -84,6 +84,15 @@ export interface PresetWeappOptions extends PresetOptions {
   deviceRatio?: { [key: number]: number }
 
   /**
+   * taro webpack 版本
+   * taro webpack4 和 webpack5 h5根字体大小，导致不同版本 rem 不一致
+   * 见下面issues
+   * @link https://github.com/NervJS/taro/issues/12361
+   * @default webpack4
+   */
+  taroWebpack?: 'webpack4' | 'webpack5'
+
+  /**
    * 是否为h5
    * @default false
    */
@@ -106,6 +115,7 @@ export const presetWeapp = (options: PresetWeappOptions = {}): Preset<Theme> => 
     828: 1.81 / 2,
   }
   options.platform = options.platform ?? 'uniapp'
+  options.taroWebpack = options.taroWebpack ?? 'webpack4'
 
   return {
     name: 'unocss-preset-weapp',
@@ -132,7 +142,7 @@ export const presetWeapp = (options: PresetWeappOptions = {}): Preset<Theme> => 
             (value) => {
               const size = value.endsWith('rpx') ? taroRpxToPx(value.slice(0, -3), options.designWidth, options.deviceRatio) : value.slice(0, -2)
 
-              return taroPxToRem(size, options.designWidth)
+              return options.taroWebpack === 'webpack4' ? taroPxToRemW4(size, options.designWidth) : taroPxToRemW5(size, options.designWidth, options.deviceRatio)
             })
         }
         else {
