@@ -362,6 +362,39 @@ module.exports = function (merge) {
 * unocss.config.ts
 > 添加unocss.config.js文件，搭配[unocss vscode](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)插件，智能提示
 
+> 默认生成 css 单位为 `rpx` ，`rpx` 在h5平台中，会自动转为 `rem`
+
+> 由于 taro 建议使用 px，针对 `taro` 加入小程序 px 转 rpx，h5 px 转 rem, [taro px 转换规则](https://taro-docs.jd.com/taro/docs/size)
+
+```ts
+/**
+ * 平台
+ */
+platform
+
+/**
+ * taro px 转 h5 rem 换算尺寸标准
+ * @default 750
+ * @link https://taro-docs.jd.com/taro/docs/size
+ */
+designWidth
+
+/**
+ * taro 设计稿尺寸换算规则
+ * @default { 640: 2.34 / 2, 750: 1, 828: 1.81 / 2}
+ * @link https://taro-docs.jd.com/taro/docs/size
+ */
+deviceRatio
+
+/**
+ * 是否为h5 针对h5转为rem 小程序转为rpx
+ * @default false
+ */
+isH5
+```
+
+
+
 ```ts
 import presetWeapp from 'unocss-preset-weapp'
 
@@ -369,13 +402,25 @@ export default {
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp(
-      // 如有h5开发需求
-      // h5兼容
+      // px 转 rpx，rem，
+      // 默认以 750px 作为换算尺寸标准，如果设计稿不是以 750px 为标准，需要设置 designWidth ，deviceRatio
+
+      // 750 标准
       // {
-      // isH5: process.env.TARO_ENV === 'h5',
-      // platform: 'taro',
-      // designWidth: 750
+      //   isH5: process.env.TARO_ENV === 'h5',
+      //   platform: 'taro',
       // }
+
+      // 375 标准
+      {
+        isH5: process.env.TARO_ENV === 'h5',
+        platform: 'taro',
+        designWidth: 375,
+        deviceRatio: {
+          375: 2 / 1,
+          750: 1,
+        }
+      }
     ),
   ],
   shortcuts: [
