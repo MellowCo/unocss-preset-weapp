@@ -1,10 +1,12 @@
-import type { Preset, PresetOptions } from '@unocss/core'
+import type { Preset, PresetOptions, UtilObject } from '@unocss/core'
 import { transformEscapESelector } from 'unplugin-transform-we-class/utils'
 import preflights from './preflights'
 import { rules } from './rules'
 import type { Theme, ThemeAnimation } from './theme'
 import { theme } from './theme'
 import { variants } from './variants'
+
+import { taroPxToRem, taroPxToRpx, taroRpxToPx, uniAppRpxTransform } from './rpxTranform'
 
 export { theme, colors } from './theme'
 export { parseColor } from './utils'
@@ -70,8 +72,16 @@ export interface PresetWeappOptions extends PresetOptions {
   /**
    * taro h5 rem 换算尺寸标准
    * @default 750
+   * @link https://taro-docs.jd.com/taro/docs/size
    */
   designWidth?: number
+
+  /**
+   * taro 设计稿尺寸换算规则
+   * @default { 640: 2.34 / 2, 750: 1, 828: 1.81 / 2}
+   * @link https://taro-docs.jd.com/taro/docs/size
+   */
+  deviceRatio?: { [key: number]: number }
 
   /**
    * 是否为h5
@@ -80,19 +90,9 @@ export interface PresetWeappOptions extends PresetOptions {
   isH5?: boolean
 }
 
-const rpxRE = /^-?[\.\d]+rpx$/
-
-function taroRpxTransform(size: string, designWidth: number) {
-  return `${Math.ceil((((parseInt(size, 10) / 40) * 640) / designWidth) * 100000) / 100000}rem`
-}
-
-/**
- * uniapp postcss rpx 转换规则
- * pkg: @dcloudio/vue-cli-plugin-uni/packages/postcss 37行
- */
-function uniAppRpxTransform(size: string) {
-  return `%?${size}?%`
-}
+export const pxRE = /^-?[\.\d]+px$/
+export const rpxRE = /^-?[\.\d]+rpx$/
+export const rpxOrPxRE = /^-?[\.\d]+r?px$/
 
 export const presetWeapp = (options: PresetWeappOptions = {}): Preset<Theme> => {
   options.dark = options.dark ?? 'class'
@@ -100,6 +100,11 @@ export const presetWeapp = (options: PresetWeappOptions = {}): Preset<Theme> => 
   options.transform = options.transform ?? true
   options.isH5 = options.isH5 ?? false
   options.designWidth = options.designWidth ?? 750
+  options.deviceRatio = options.deviceRatio ?? {
+    640: 2.34 / 2,
+    750: 1,
+    828: 1.81 / 2,
+  }
   options.platform = options.platform ?? 'uniapp'
 
   return {
@@ -117,16 +122,37 @@ export const presetWeapp = (options: PresetWeappOptions = {}): Preset<Theme> => 
       if (options.variablePrefix && options.variablePrefix !== 'un-')
         VarPrefixPostprocessor(options.variablePrefix, css)
 
-      // h5 rpx 处理
-      if (options.isH5) {
+      // taro 处理 h5 和 小程序 px 和 rpx 转换
+      if (options.platform === 'taro') {
+        if (options.isH5) {
+          cssRpxTransform(css,
+            (value) => {
+              return rpxOrPxRE.test(value)
+            },
+            (value) => {
+              const size = value.endsWith('rpx') ? taroRpxToPx(value.slice(0, -3), options.designWidth, options.deviceRatio) : value.slice(0, -2)
+
+              return taroPxToRem(size, options.designWidth)
+            })
+        }
+        else {
+          // 小程序 taro 处理 px 为 rpx
+          cssRpxTransform(css,
+            (value) => {
+              return pxRE.test(value)
+            },
+            (value) => {
+              return taroPxToRpx(value.slice(0, -2), options.designWidth, options.deviceRatio)
+            })
+        }
+      }
+
+      // uniapp vue2 webpack: h5 rpx 处理
+      if (options.platform === 'uniapp' && options.isH5) {
         css.entries.forEach((i) => {
           const value = i[1]
-          if (value && typeof value === 'string' && rpxRE.test(value)) {
-            if (options.platform === 'taro')
-              i[1] = `${taroRpxTransform(value.slice(0, -3), options.designWidth!)}`
-            else
-              i[1] = `${uniAppRpxTransform(value.slice(0, -3))}`
-          }
+          if (value && typeof value === 'string' && rpxRE.test(value))
+            i[1] = `${uniAppRpxTransform(value.slice(0, -3))}`
         })
       }
     },
@@ -142,5 +168,13 @@ function VarPrefixPostprocessor(prefix: string, obj: any) {
     i[0] = i[0].replace(/^--un-/, `--${prefix}`)
     if (typeof i[1] === 'string')
       i[1] = i[1].replace(/var\(--un-/g, `var(--${prefix}`)
+  })
+}
+
+function cssRpxTransform(css: UtilObject, condition: (val: string) => boolean, transform: (val: string) => string) {
+  css.entries.forEach((i) => {
+    const value = i[1]
+    if (value && typeof value === 'string' && condition(value))
+      i[1] = `${transform(value)}`
   })
 }
