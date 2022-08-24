@@ -216,7 +216,8 @@ export default defineConfig({
     },
   ],
   theme: {
-    // 自定义动画
+    // v0.1.9 加入动画预设
+    // 设置自定义动画
     animation: {
       keyframes: {
         'my-animation': '{0% {letter-spacing: -0.5em;transform: translateZ(-700px);opacity: 0;}40% {opacity: 0.6;}100% {transform: translateZ(0);opacity: 1;}}',
@@ -364,7 +365,7 @@ module.exports = function (merge) {
 
 > 由于 taro 建议使用 px，针对 `taro` 加入小程序 px 转 rpx，h5 px 转 rem, [taro px 转换规则](https://taro-docs.jd.com/taro/docs/size)
 
-> taro webpack4 和 webpack5 h5根字体大小，导致不同版本 rem 不一致，需要通过版本区分，[taro issues](https://github.com/NervJS/taro/issues/12361)
+> taro `webpack4` 和 `webpack5` h5根字体(rem)大小不同，导致不同版本字体大小不同[taro issues](https://github.com/NervJS/taro/issues/12361)
 
 ```ts
 export interface PresetWeappOptions extends PresetOptions {
@@ -442,7 +443,8 @@ export default {
     },
   ],
   theme: {
-    // 自定义动画
+    // v0.1.9 加入动画预设
+    // 设置自定义动画
     animation: {
       keyframes: {
         'my-animation': '{0% {letter-spacing: -0.5em;transform: translateZ(-700px);opacity: 0;}40% {opacity: 0.6;}100% {transform: translateZ(0);opacity: 1;}}',
@@ -572,7 +574,8 @@ export default defineConfig({
     },
   ],
   theme: {
-    // 自定义动画
+    // v0.1.9 加入动画预设
+    // 设置自定义动画
     animation: {
       keyframes: {
         'my-animation': '{0% {letter-spacing: -0.5em;transform: translateZ(-700px);opacity: 0;}40% {opacity: 0.6;}100% {transform: translateZ(0);opacity: 1;}}',
@@ -669,8 +672,6 @@ import 'uno.css'
 ---
 ### h5兼容
 > `uniapp vite vue3` 会将css编译各平台需要的单位，如小程序使用`rpx`，h5使用`rem`
->
-> **vite太香了**
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231615696.png" style="zoom:50%;" />
 
@@ -679,7 +680,7 @@ import 'uno.css'
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231620090.png" style="zoom: 50%;" />
 
 #### taro h5兼容
->  taro webpack4 和 webpack5 h5根字体大小，导致不同版本 rem 不一致，需要通过版本区分，[taro issues](https://github.com/NervJS/taro/issues/12361)
+>  taro `webpack4` 和 `webpack5` h5根字体(rem)大小不同，导致不同版本字体大小不同[taro issues](https://github.com/NervJS/taro/issues/12361)
 
 * webpack5 375 根字体为 20.0178px
 ![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208242311419.png)
