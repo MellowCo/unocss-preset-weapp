@@ -5,10 +5,13 @@ export default defineConfig({
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp({
-       // h5兼容
-       isH5: process.env.TARO_ENV === 'h5',
-       platform: 'taro',
-       designWidth: 750
+      isH5: process.env.TARO_ENV === 'h5',
+      platform: 'taro',
+      designWidth: 375,
+      deviceRatio:{
+        375: 2 / 1,
+        750: 1,
+      }
     }),
   ],
   shortcuts: [

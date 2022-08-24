@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { navigateTo } from "@tarojs/taro";
+import  { navigateTo, pxTransform } from "@tarojs/taro";
+
+console.log(pxTransform(100),'111111');
+
 const list = [
   { name: "font", path: "/pages/font/index" },
   { name: "size", path: "/pages/size/index" },
@@ -11,7 +14,9 @@ const list = [
   { name: "color", path: "/pages/color/index" },
   { name: "attributify", path: "/pages/attributify-mode/index" },
   { name: "animation", path: "/pages/animation/index" },
+  { name: "rpxTranform", path: "/pages/rpxTranform/index" },
 ];
+
 
 const to = (to: string) => {
   navigateTo({
