@@ -273,8 +273,6 @@ export default {
 </style>
 ```
 
-
-
 ---
 
 ### taro-react
@@ -677,8 +675,7 @@ export default {
   presets: [
     presetWeapp({
       isH5: process.env.TARO_ENV === 'h5',
-      platform: 'taro',
-      designWidth: 750
+      platform: 'taro'
     }),
   ],
   shortcuts: [
@@ -719,9 +716,6 @@ export default {
 ```
 
 
-
-
-
 ---
 ### taro h5 基准字体
 * 添加兼容代码后，大小显示正常
@@ -753,35 +747,15 @@ export default {
 * vite.config.ts
 
 ```ts
-import { defineConfig } from 'vite'
-import uni from '@dcloudio/vite-plugin-uni'
-import Unocss from 'unocss/vite'
-import transformWeClass from 'unplugin-transform-we-class/vite'
-import { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } from 'unplugin-unocss-attributify-wechat/vite'
-
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    uni(),
-
     // app打包配置
     // uniapp打包app时，打包2次，一次使用 vue 模式打包h5，第2次使用 nvue 模式打包app，
     // 第2次打包 unocss 会抛出warn
     // entry module not found, have you add `import 'uno.css'` in your main entry?
     // 导致打包终止
     process.env.UNI_COMPILER !== 'nvue' ? Unocss() : undefined,
-
-    // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
-    presetAttributifyWechat({
-      attributes: [...defaultAttributes, 'my-attr'],
-      ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
-      nonValuedAttribute: true,
-      prefix: 'li-',
-      prefixedOnly: true,
-    }),
-
-    // https://github.com/MellowCo/unplugin-transform-we-class
-    transformWeClass(),
   ],
 })
 ```
