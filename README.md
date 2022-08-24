@@ -364,34 +364,46 @@ module.exports = function (merge) {
 
 > 由于 taro 建议使用 px，针对 `taro` 加入小程序 px 转 rpx，h5 px 转 rem, [taro px 转换规则](https://taro-docs.jd.com/taro/docs/size)
 
+> taro webpack4 和 webpack5 h5根字体大小，导致不同版本 rem 不一致，需要通过版本区分，[taro issues](https://github.com/NervJS/taro/issues/12361)
+
 ```ts
-/**
- * 平台
- */
-platform
+export interface PresetWeappOptions extends PresetOptions {
+  /**
+   * 平台
+   * @default 'uniapp'
+   */
+  platform?: 'taro' | 'uniapp'
 
-/**
- * taro px 转 h5 rem 换算尺寸标准
- * @default 750
- * @link https://taro-docs.jd.com/taro/docs/size
- */
-designWidth
+  /**
+   * taro h5 rem 换算尺寸标准
+   * @default 750
+   * @link https://taro-docs.jd.com/taro/docs/size
+   */
+  designWidth?: number
 
-/**
- * taro 设计稿尺寸换算规则
- * @default { 640: 2.34 / 2, 750: 1, 828: 1.81 / 2}
- * @link https://taro-docs.jd.com/taro/docs/size
- */
-deviceRatio
+  /**
+   * taro 设计稿尺寸换算规则
+   * @default { 640: 2.34 / 2, 750: 1, 828: 1.81 / 2}
+   * @link https://taro-docs.jd.com/taro/docs/size
+   */
+  deviceRatio?: { [key: number]: number }
 
-/**
- * 是否为h5 针对h5转为rem 小程序转为rpx
- * @default false
- */
-isH5
+  /**
+   * taro webpack 版本
+   * taro webpack4 和 webpack5 h5根字体大小，导致不同版本 rem 不一致
+   * 见下面issues
+   * @link https://github.com/NervJS/taro/issues/12361
+   * @default webpack4
+   */
+  taroWebpack?: 'webpack4' | 'webpack5'
+
+  /**
+   * 是否为h5 针对h5转为rem 小程序转为rpx
+   * @default false
+   */
+  isH5?: boolean
+}
 ```
-
-
 
 ```ts
 import presetWeapp from 'unocss-preset-weapp'
@@ -407,6 +419,7 @@ export default {
       // {
       //   isH5: process.env.TARO_ENV === 'h5',
       //   platform: 'taro',
+      //   taroWebpack: 'webpack4'
       // }
 
       // 375 标准
@@ -417,7 +430,8 @@ export default {
         deviceRatio: {
           375: 2 / 1,
           750: 1,
-        }
+        },
+        taroWebpack: 'webpack5'
       }
     ),
   ],
@@ -665,6 +679,13 @@ import 'uno.css'
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231620090.png" style="zoom: 50%;" />
 
 #### taro h5兼容
+>  taro webpack4 和 webpack5 h5根字体大小，导致不同版本 rem 不一致，需要通过版本区分，[taro issues](https://github.com/NervJS/taro/issues/12361)
+
+* webpack5 375 根字体为 20.0178px
+![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208242311419.png)
+
+* webpack4 375 根字体为 23.4583px
+![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208242310456.png)
 
 > unocss.config.ts
 
@@ -675,7 +696,9 @@ export default {
   presets: [
     presetWeapp({
       isH5: process.env.TARO_ENV === 'h5',
-      platform: 'taro'
+      platform: 'taro',
+      // 区分版本 生成对应的 rem
+      taroWebpack: 'webpack5'
     }),
   ],
   shortcuts: [

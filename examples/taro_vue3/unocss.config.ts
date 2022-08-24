@@ -12,7 +12,7 @@ export default defineConfig({
         375: 2 / 1,
         750: 1,
       },
-      taroWebpack:'webpack5'
+      taroWebpack:'webpack4'
     }),
   ],
   shortcuts: [
