@@ -11,7 +11,8 @@ export default defineConfig({
       deviceRatio:{
         375: 2 / 1,
         750: 1,
-      }
+      },
+      taroWebpack:'webpack5'
     }),
   ],
   shortcuts: [

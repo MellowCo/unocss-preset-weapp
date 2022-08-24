@@ -11,7 +11,7 @@ const taroH5_750 = createGenerator({
   ],
 })
 
-const taroWe_750 = createGenerator({
+const taroWe_750_W4 = createGenerator({
   presets: [
     presetMini({
       isH5: false,
@@ -20,7 +20,7 @@ const taroWe_750 = createGenerator({
   ],
 })
 
-const taroH5_375 = createGenerator({
+const taroH5_375_W4 = createGenerator({
   presets: [
     presetMini({
       isH5: true,
@@ -29,6 +29,30 @@ const taroH5_375 = createGenerator({
       deviceRatio: {
         375: 2 / 1,
       },
+    }),
+  ],
+})
+
+const taroWe_750_W5 = createGenerator({
+  presets: [
+    presetMini({
+      isH5: false,
+      platform: 'taro',
+      taroWebpack: 'webpack5',
+    }),
+  ],
+})
+
+const taroH5_375_W5 = createGenerator({
+  presets: [
+    presetMini({
+      isH5: true,
+      platform: 'taro',
+      designWidth: 375,
+      deviceRatio: {
+        375: 2 / 1,
+      },
+      taroWebpack: 'webpack5',
     }),
   ],
 })
@@ -56,11 +80,13 @@ const uniapp_750 = createGenerator({
 })
 
 const size = [
-  'w-100px',
-  'w-100',
-  'w-100rpx',
+  // 'w-100px',
+  // 'w-100',
+  // 'w-100rpx',
+
   'text-base',
-  'm-6',
+  'text-16px',
+  // 'm-6',
 ]
 
 describe('rpx-tranform', () => {
@@ -70,15 +96,27 @@ describe('rpx-tranform', () => {
     expect(css).toMatchSnapshot()
   })
 
-  test('taroWe_750', async () => {
+  test('taroWe_750_W4', async () => {
     const code = size.join(' ')
-    const { css } = await taroWe_750.generate(code)
+    const { css } = await taroWe_750_W4.generate(code)
     expect(css).toMatchSnapshot()
   })
 
-  test('taroH5_375', async () => {
+  test('taroH5_375_W4', async () => {
     const code = size.join(' ')
-    const { css } = await taroH5_375.generate(code)
+    const { css } = await taroH5_375_W4.generate(code)
+    expect(css).toMatchSnapshot()
+  })
+
+  test('taroWe_750_W5', async () => {
+    const code = size.join(' ')
+    const { css } = await taroWe_750_W5.generate(code)
+    expect(css).toMatchSnapshot()
+  })
+
+  test('taroH5_375_W5', async () => {
+    const code = size.join(' ')
+    const { css } = await taroH5_375_W5.generate(code)
     expect(css).toMatchSnapshot()
   })
 
