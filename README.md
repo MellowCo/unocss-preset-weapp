@@ -40,7 +40,6 @@
 
 ---
 
-
 ## webpack
 
 ### uniapp-vue2
@@ -124,7 +123,9 @@ export default defineConfig({
     },
   ],
   theme: {
-    // 自定义动画
+    // v0.1.9 加入动画预设
+    // https://github.com/MellowCo/unocss-preset-weapp#animation-v019
+    // 设置自定义动画
     animation: {
       keyframes: {
         'my-animation': '{0% {letter-spacing: -0.5em;transform: translateZ(-700px);opacity: 0;}40% {opacity: 0.6;}100% {transform: translateZ(0);opacity: 1;}}',
@@ -193,7 +194,7 @@ module.exports = {
 ```
 
 * unocss.config.js
-> 添加unocss.config.js文件，搭配[unocss vscode](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)插件，智能提示
+> 添加unocss.config.js文件，搭配 [unocss vscode ](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)插件，智能提示
 
 
 ```js
@@ -217,6 +218,7 @@ export default defineConfig({
   ],
   theme: {
     // v0.1.9 加入动画预设
+    // https://github.com/MellowCo/unocss-preset-weapp#animation-v019
     // 设置自定义动画
     animation: {
       keyframes: {
@@ -285,8 +287,8 @@ export default {
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207091012142.png" alt="image-20220709101250085" style="zoom: 67%;" />
 
 ```shell
-# 创建taro项目 选择react
-taro init taro_react
+# 创建taro项目
+taro init taro_xxx
 # 安装unocss
 yarn add -D unocss @unocss/webpack unplugin-transform-we-class unocss-preset-weapp unplugin-unocss-attributify-wechat
 ```
@@ -363,9 +365,9 @@ module.exports = function (merge) {
 
 > 默认生成 css 单位为 `rpx` ，`rpx` 在h5平台中，会自动转为 `rem`
 
-> 由于 taro 建议使用 px，针对 `taro` 加入小程序 px 转 rpx，h5 px 转 rem, [taro px 转换规则](https://taro-docs.jd.com/taro/docs/size)
+> 由于 taro 建议使用 px，针对 `taro` 加入小程序  `px` 转 `rpx`，h5 `px` 转 `rem` , 设置 `designWidth` ,`deviceRatio` , 默认为 `750` ，`1:1`  [taro px 转换规则](https://taro-docs.jd.com/taro/docs/size)
 
-> taro `webpack4` 和 `webpack5` h5根字体(rem)大小不同，导致不同版本字体大小不同[taro issues](https://github.com/NervJS/taro/issues/12361)
+> taro `webpack4` 和 `webpack5`  [h5根字体(rem)](https://github.com/MellowCo/unocss-preset-weapp#taro-h5兼容)大小不同，导致不同版本字体大小不同 [taro issues](https://github.com/NervJS/taro/issues/12361) 
 
 ```ts
 export interface PresetWeappOptions extends PresetOptions {
@@ -391,8 +393,7 @@ export interface PresetWeappOptions extends PresetOptions {
 
   /**
    * taro webpack 版本
-   * taro webpack4 和 webpack5 h5根字体大小，导致不同版本 rem 不一致
-   * 见下面issues
+   * taro webpack4 和 webpack5 h5根字体(rem)大小不同，导致不同版本字体大小不同
    * @link https://github.com/NervJS/taro/issues/12361
    * @default webpack4
    */
@@ -420,7 +421,7 @@ export default {
       // {
       //   isH5: process.env.TARO_ENV === 'h5',
       //   platform: 'taro',
-      //   taroWebpack: 'webpack4'
+      //   taroWebpack: 'webpack5'
       // }
 
       // 375 标准
@@ -444,6 +445,7 @@ export default {
   ],
   theme: {
     // v0.1.9 加入动画预设
+    // https://github.com/MellowCo/unocss-preset-weapp#animation-v019
     // 设置自定义动画
     animation: {
       keyframes: {
@@ -473,8 +475,6 @@ import 'uno.css'
 > `taro h5` 的基准文字不是 `16px` ，导致默认文字过大   
 
 > 在`index.html` 中设置body
-
-
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231650890.png" style="zoom: 67%;" />
 
@@ -575,6 +575,7 @@ export default defineConfig({
   ],
   theme: {
     // v0.1.9 加入动画预设
+    // https://github.com/MellowCo/unocss-preset-weapp#animation-v019
     // 设置自定义动画
     animation: {
       keyframes: {
@@ -602,7 +603,7 @@ import 'uno.css'
 ---
 ## 注意事项
 
-**小程序不支持使用`\\`，`\:`，`\[`，`\$`,`\.`等转义类名，可通过[插件](https://github.com/MellowCo/unplugin-transform-we-class)转换支持**
+**小程序不支持使用`\\`，`\:`，`\[`，`\$`,`\.`等转义类名，可通过 [插件](https://github.com/MellowCo/unplugin-transform-we-class) 转换支持**
 
 > 不支持`% ` h-1.000%
 
@@ -616,7 +617,7 @@ import 'uno.css'
 
 ### 使用 class 转换插件
 
-> 使用[unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class)，转换`\\`，`\:`，`\[`，`\$`,`\.`等转义类名
+> 使用 [unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class) ，转换`\\`，`\:`，`\[`，`\$`,`\.`等转义类名
 
 ![image-20220703141301371](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031413496.png)
 
@@ -680,15 +681,21 @@ import 'uno.css'
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231620090.png" style="zoom: 50%;" />
 
 #### taro h5兼容
->  taro `webpack4` 和 `webpack5` h5根字体(rem)大小不同，导致不同版本字体大小不同[taro issues](https://github.com/NervJS/taro/issues/12361)
+>  taro `webpack4` 和 `webpack5` h5根字体(rem)大小不同，导致不同版本字体大小不同 [taro issues](https://github.com/NervJS/taro/issues/12361)
 
 * webpack5 375 根字体为 20.0178px
-![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208242311419.png)
+
+  ![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208242311419.png)
+
+  
 
 * webpack4 375 根字体为 23.4583px
-![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208242310456.png)
 
-> unocss.config.ts
+  ![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208242310456.png)
+
+
+
+* unocss.config.ts
 
 ```js
 import presetWeapp from 'unocss-preset-weapp'
@@ -699,6 +706,7 @@ export default {
       isH5: process.env.TARO_ENV === 'h5',
       platform: 'taro',
       // 区分版本 生成对应的 rem
+      // webpack4, webpack5
       taroWebpack: 'webpack5'
     }),
   ],
@@ -717,7 +725,7 @@ export default {
 
 #### uniapp-vue2 h5兼容
 
-> unocss.config.js
+* unocss.config.js
 
 ```js
 import presetWeapp from 'unocss-preset-weapp'
