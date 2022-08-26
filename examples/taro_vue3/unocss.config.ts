@@ -7,11 +7,7 @@ export default defineConfig({
     presetWeapp({
       isH5: process.env.TARO_ENV === 'h5',
       platform: 'taro',
-      designWidth: 375,
-      deviceRatio:{
-        375: 2 / 1,
-        750: 1,
-      },
+      designWidth: 750,
       taroWebpack:'webpack4'
     }),
   ],

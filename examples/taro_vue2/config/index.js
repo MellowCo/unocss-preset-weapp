@@ -65,7 +65,8 @@ const config = {
       // https://github.com/MellowCo/unplugin-transform-we-class
       chain
         .plugin('transformWeClass')
-        .use(transformWeClass())
+        .use(transformWeClass({
+        }))
     },
   },
   h5: {

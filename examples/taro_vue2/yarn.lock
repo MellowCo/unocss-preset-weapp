@@ -1205,6 +1205,13 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@meoc/utils@^0.1.8":
+  version "0.1.8"
+  resolved "https://registry.npmjs.org/@meoc/utils/-/utils-0.1.8.tgz#7dec82eae7922f82003f595b46150ecbaba6b099"
+  integrity sha512-72YUMtzt6NuPOTzYQSjgwmrhCi7xNqgYf3kiPzv7EP3nwg07UBPQXq4ITQVEotxOgnEQwgLtdnlbjWSIsE7djw==
+  dependencies:
+    dayjs "^1.11.5"
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
@@ -1783,10 +1790,15 @@
     "@unocss/core" "0.45.8"
     unconfig "^0.3.5"
 
-"@unocss/core@0.45.8", "@unocss/core@^0.45.8":
+"@unocss/core@0.45.8":
   version "0.45.8"
   resolved "https://registry.npmmirror.com/@unocss/core/-/core-0.45.8.tgz#e9beebf6dfdd85ef7d0fef70fc68b4e38560979c"
   integrity sha512-Iskmc1FaxIUAw4HK1U3htvXxJ4YAtffn3+ygNKY8+bzuOqhIk84vbp7SnHV3b8X6IHl4/OYzNRlVFhJQYnWV7g==
+
+"@unocss/core@^0.45.12":
+  version "0.45.13"
+  resolved "https://registry.npmjs.org/@unocss/core/-/core-0.45.13.tgz#fb41748276f04767b34abfc43e7c511185f47025"
+  integrity sha512-EesxqFM6lPA6Ot5X4cyRcjJQsgpztrNFpxpu4HBIzbZvXLcoeG97bcLTASGSHPGWeL4baq0ur/47lM42dtjiMQ==
 
 "@unocss/inspector@0.45.8":
   version "0.45.8"
@@ -3725,6 +3737,11 @@ data-urls@^2.0.0:
     abab "^2.0.3"
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
+
+dayjs@^1.11.5:
+  version "1.11.5"
+  resolved "https://registry.npmjs.org/dayjs/-/dayjs-1.11.5.tgz#00e8cc627f231f9499c19b38af49f56dc0ac5e93"
+  integrity sha512-CAdX5Q3YW3Gclyo5Vpqkgpj8fSdLQcRuzfX6mC6Phy0nfJ0eGYOeS7m4mt2plDWLAtA4TqTakvbboHvUxfe4iA==
 
 de-indent@^1.0.2:
   version "1.0.2"
@@ -9299,6 +9316,15 @@ unplugin-transform-we-class@^0.1.13:
     "@rollup/pluginutils" "^4.2.1"
     unplugin "0.9.0"
 
+unplugin-transform-we-class@^0.1.17:
+  version "0.1.17"
+  resolved "https://registry.npmjs.org/unplugin-transform-we-class/-/unplugin-transform-we-class-0.1.17.tgz#a8d15377bd2c8eb626d986a0482decfca9eca4e8"
+  integrity sha512-OuR9gepslHM6EC2Y7rsFJSUEmzlI+z0WYePz8IQv0UYnsh3vYG1ZrQxY72V8hOm3GKL1I4MsMqaktW3sSbMORw==
+  dependencies:
+    "@meoc/utils" "^0.1.8"
+    "@rollup/pluginutils" "^4.2.1"
+    unplugin "0.9.5"
+
 unplugin-unocss-attributify-wechat@^0.1.8:
   version "0.1.8"
   resolved "https://registry.npmjs.org/unplugin-unocss-attributify-wechat/-/unplugin-unocss-attributify-wechat-0.1.8.tgz#07c417266a948560b22b2f8a1a75bf7a641c2f64"
@@ -9312,6 +9338,16 @@ unplugin@0.9.0, unplugin@^0.9.0:
   version "0.9.0"
   resolved "https://registry.npmjs.org/unplugin/-/unplugin-0.9.0.tgz#ebad287d61aa1b1f16de60feea74e8dd12224819"
   integrity sha512-6o7q8Y9yxdPi5yCPmRuFfeNnVzGumRNZSK6hIkvZ6hd0cfigVdm0qBx/GgQ/NEjs54eUV1qTjvMYKRs9yh3rzw==
+  dependencies:
+    acorn "^8.8.0"
+    chokidar "^3.5.3"
+    webpack-sources "^3.2.3"
+    webpack-virtual-modules "^0.4.4"
+
+unplugin@0.9.5:
+  version "0.9.5"
+  resolved "https://registry.npmjs.org/unplugin/-/unplugin-0.9.5.tgz#2e546c044e0631e699ebd6fb521eeb7bbcb8899f"
+  integrity sha512-luraheyfxwtvkvHpsOvMNv7IjLdORTWKZp0gWYNHGLi2ImON3iIZOj464qEyyEwLA/EMt12fC415HW9zRpOfTg==
   dependencies:
     acorn "^8.8.0"
     chokidar "^3.5.3"
