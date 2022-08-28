@@ -12,6 +12,7 @@ export default defineAppConfig({
     'pages/attributify-mode/index',
     'pages/animation/index',
     'pages/rpxTranform/index',
+    'pages/bg/index',
   ],
   window: {
     backgroundTextStyle: 'light',

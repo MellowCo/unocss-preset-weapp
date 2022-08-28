@@ -13,6 +13,7 @@ export default {
         { name: 'color', path: '/pages/color/index' },
         { name: 'attributify', path: '/pages/attributify-mode/index' },
         { name: 'animation', path: '/pages/animation/index' },
+        { name: 'bg', path: '/pages/bg/index' },
       ],
     }
   },

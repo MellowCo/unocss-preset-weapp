@@ -1,6 +1,21 @@
 import presetWeapp from 'unocss-preset-weapp'
 import { defineConfig } from 'unocss'
 
+
+const transformRules = {
+  '.': '-dr1-',
+  '/': '-sr1-',
+  ':': '-cr1-',
+  '%': '-pr1-',
+  '!': '-er1-',
+  '#': '-wr1-',
+  '(': '-bl1r-',
+  ')': '-br1r-',
+  '[': '-fl1r-',
+  ']': '-fr1r-',
+  '$': '-rr1-',
+}
+
 export default defineConfig({
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
@@ -8,7 +23,8 @@ export default defineConfig({
       isH5: process.env.TARO_ENV === 'h5',
       platform: 'taro',
       designWidth: 750,
-      taroWebpack:'webpack4'
+      taroWebpack:'webpack4',
+      transformRules
     }),
   ],
   shortcuts: [

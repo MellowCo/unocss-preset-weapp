@@ -1,5 +1,6 @@
 import presetWeapp from 'unocss-preset-weapp'
 import { defineConfig } from 'unocss'
+import transformRules from './transformRules'
 
 export default defineConfig({
   presets: [
@@ -8,6 +9,7 @@ export default defineConfig({
       // h5兼容
       platform: 'uniapp',
       isH5: process.env.UNI_PLATFORM === 'h5',
+      transformRules,
     }),
   ],
   shortcuts: [

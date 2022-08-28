@@ -66,6 +66,12 @@
       "style": {
         "navigationBarTitleText": "animation"
       }
+    },
+    {
+      "path": "pages/bg/index",
+      "style": {
+        "navigationBarTitleText": "bg"
+      }
     }
   ],
   "globalStyle": {

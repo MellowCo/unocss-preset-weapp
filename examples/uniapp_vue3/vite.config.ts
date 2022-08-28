@@ -3,6 +3,7 @@ import uni from '@dcloudio/vite-plugin-uni'
 import Unocss from 'unocss/vite'
 import transformWeClass from 'unplugin-transform-we-class/vite'
 import { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } from 'unplugin-unocss-attributify-wechat/vite'
+import transformRules from './transformRules'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -15,10 +16,13 @@ export default defineConfig({
       nonValuedAttribute: true,
       prefix: 'li-',
       prefixedOnly: false,
+      transformRules,
     }),
     // https://github.com/unocss/unocss
     Unocss(),
     // https://github.com/MellowCo/unplugin-transform-we-class
-    transformWeClass(),
+    transformWeClass({
+      rules: transformRules,
+    }),
   ],
 })
