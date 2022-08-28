@@ -1,7 +1,7 @@
 /*
  * @Author: licl
  * @Date: 2022-06-26 15:16:34
- * @LastEditTime: 2022-06-26 15:29:22
+ * @LastEditTime: 2022-08-28 14:05:49
  * @LastEditors: licl
  * @Description:
  */
@@ -12,6 +12,7 @@ export const spacing = [
   'p2',
   'pl-10px',
   'pt-2',
+  '-p-1000rpx',
   'pt2',
   'pa',
   'm-0',
