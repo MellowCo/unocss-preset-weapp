@@ -12,7 +12,7 @@ import { rings } from './ring'
 import { boxShadows } from './shadow'
 import { aspectRatio, sizes } from './size'
 import { margins, paddings } from './spacing'
-import { appearances, breaks, contentVisibility, contents, cursors, displays, fontSmoothings, fontStyles, pointerEvents, resizes, textOverflows, textTransforms, userSelects, whitespaces } from './static'
+import { appearances, backgroundBlendModes, breaks, contentVisibility, contents, cursors, displays, fontSmoothings, fontStyles, hyphens, isolations, mixBlendModes, objectPositions, pointerEvents, resizes, screenReadersAccess, textOverflows, textTransforms, userSelects, whitespaces, writingModes, writingOrientations } from './static'
 import { transforms } from './transform'
 import { cssProperty, cssVariables } from './variables'
 import { questionMark } from './question-mark'
@@ -22,9 +22,11 @@ import { textDecorations } from './decoration'
 import { svgUtilities } from './svg'
 import { safeArea } from './safe-area'
 import { animations } from './animation'
+import { backgroundStyles } from './background'
 
 export const rules: Rule[] = [
   animations,
+  backgroundStyles,
   cssVariables,
   cssProperty,
   paddings,
@@ -82,4 +84,15 @@ export const rules: Rule[] = [
 
   // should be the last
   questionMark,
+
+  // wind
+  backgroundBlendModes,
+  hyphens,
+  isolations,
+  mixBlendModes,
+  objectPositions,
+  screenReadersAccess,
+  textTransforms,
+  writingModes,
+  writingOrientations,
 ].flat(1)
