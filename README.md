@@ -357,7 +357,7 @@ module.exports = function (merge) {
 
 > 默认生成 css 单位为 `rpx` ，`rpx` 在h5平台中，会自动转为 `rem`
 
-> 由于 taro 建议使用 px，针对 `taro` 加入小程序  `px` 转 `rpx`，h5 `px` 转 `rem` , 设置 `designWidth` ,`deviceRatio` <a href='#taro px to rpx rem'>转换说明</a>
+> 由于 taro 建议使用 px，针对 `taro` 加入小程序  `px` 转 `rpx`，h5 `px` 转 `rem` , 设置 `designWidth` ,`deviceRatio` <a href='#taro-px-to-rpx-rem'>转换说明</a>
 
 > taro `webpack4` 和 `webpack5`  [h5根字体(rem)](https://github.com/MellowCo/unocss-preset-weapp#taro-h5兼容)大小不同，导致不同版本字体大小不同 [taro issues](https://github.com/NervJS/taro/issues/12361) 
 
@@ -670,6 +670,33 @@ import 'uno.css'
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231620090.png" style="zoom: 50%;" />
 
+---
+### uniapp-vue2 h5兼容
+
+* unocss.config.js
+
+```js
+import presetWeapp from 'unocss-preset-weapp'
+
+export default {
+  presets: [
+    presetWeapp({
+      platform: 'uniapp',
+      isH5: process.env.UNI_PLATFORM === 'h5'
+    }),
+  ],
+  shortcuts: [
+    {
+      'border-base': 'border border-gray-500_10',
+      'center': 'flex justify-center items-center',
+    },
+  ],
+}
+
+```
+
+---
+
 ### taro h5兼容
 >  taro `webpack4` 和 `webpack5` h5根字体(rem)大小不同，导致不同版本字体大小不同 [taro issues](https://github.com/NervJS/taro/issues/12361)
 
@@ -708,6 +735,8 @@ export default {
   ]
 }
 ```
+
+---
 ### taro px to rpx rem
 > 这里以 640 标准，为例子，
 * [taro 的尺寸设计稿设置](https://taro-docs.jd.com/taro/docs/size) ，设置为 640
@@ -755,32 +784,7 @@ presetWeapp({
 
 ---
 
-### uniapp-vue2 h5兼容
 
-* unocss.config.js
-
-```js
-import presetWeapp from 'unocss-preset-weapp'
-
-export default {
-  presets: [
-    presetWeapp({
-      platform: 'uniapp',
-      isH5: process.env.UNI_PLATFORM === 'h5'
-    }),
-  ],
-  shortcuts: [
-    {
-      'border-base': 'border border-gray-500_10',
-      'center': 'flex justify-center items-center',
-    },
-  ],
-}
-
-```
-
-
----
 ### taro h5 基准字体
 * 添加兼容代码后，大小显示正常
 
