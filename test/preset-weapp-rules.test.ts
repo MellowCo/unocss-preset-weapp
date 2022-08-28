@@ -7,6 +7,19 @@ const uno = createGenerator({
   presets: [
     presetWeapp({
       dark: 'media',
+      transformRules: {
+        '.': '-dr1-',
+        '/': '-sr1-',
+        ':': '-cr1-',
+        '%': '-pr1-',
+        '!': '-er1-',
+        '#': '-wr1-',
+        '(': '-bl1r-',
+        ')': '-br1r-',
+        '[': '-fl1r-',
+        ']': '-fr1r-',
+        '$': '-rr1-',
+      },
     }),
   ],
   theme: {
@@ -19,7 +32,7 @@ const uno = createGenerator({
   },
 })
 
-describe('preset-weapp', () => {
+describe('preset-weapp-rules', () => {
   test('size', async () => {
     const code = size.join(' ')
     const { css } = await uno.generate(code)
