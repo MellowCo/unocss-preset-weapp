@@ -100,7 +100,7 @@ export const transforms: Rule[] = [
 ]
 
 function handleTranslate([, d, b]: string[], { theme }: RuleContext<Theme>): CSSValues | undefined {
-  const v = theme.spacing?.[b] ?? h.bracket.cssvar.fraction.remToRpx(b)
+  const v = theme.spacing?.[b] ?? h.bracket.cssvar.fraction.remToRpx(b, theme)
   if (v != null) {
     return [
       ...xyzMap[d].map((i): [string, string] => [`--un-translate${i}`, v]),
@@ -109,8 +109,8 @@ function handleTranslate([, d, b]: string[], { theme }: RuleContext<Theme>): CSS
   }
 }
 
-function handleScale([, d, b]: string[]): CSSValues | undefined {
-  const v = h.bracket.cssvar.fraction.percent(b)
+function handleScale([, d, b]: string[], { theme }: { theme: Theme }): CSSValues | undefined {
+  const v = h.bracket.cssvar.fraction.percent(b, theme)
   if (v != null) {
     return [
       ...xyzMap[d].map((i): [string, string] => [`--un-scale${i}`, v]),

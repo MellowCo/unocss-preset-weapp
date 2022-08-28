@@ -15,7 +15,7 @@ export const CONTROL_MINI_NO_NEGATIVE = '$$mini-no-negative'
  */
 export function directionSize(propertyPrefix: string): DynamicMatcher {
   return ([_, direction, size]: string[], { theme }: RuleContext<Theme>): CSSEntries | undefined => {
-    const v = theme.spacing?.[size || 'DEFAULT'] ?? h.bracket.cssvar.global.auto.fraction.remToRpx(size)
+    const v = theme.spacing?.[size || 'DEFAULT'] ?? h.bracket.cssvar.global.auto.fraction.remToRpx(size, theme)
     if (v != null)
       return directionMap[direction].map(i => [`${propertyPrefix}${i}`, v])
   }
@@ -61,7 +61,7 @@ function getThemeColor(theme: Theme, colors: string[]) {
  * @return {ParsedColorValue|undefined}  {@link ParsedColorValue} object if string is parseable.
  */
 export function parseColor(body: string, theme: Theme): ParsedColorValue | undefined {
-  const split = restoreSelector(body).split(/(?:\/|\_|:)/) // 百分比 / 改为 _
+  const split = restoreSelector(body, theme.transformRules).split(/(?:\/|\_|:)/) // 百分比 / 改为 _
 
   let main, opacity
   if (split[0] === '[color') {

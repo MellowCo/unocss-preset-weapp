@@ -59,4 +59,7 @@ export interface Theme {
   // vars
   /** Used to generate CSS variables placeholder in preflight */
   preflightBase?: Record<string, string | number>
+
+  // 小程序转义class 自定义转换规则
+  transformRules?: Record<string, string>
 }

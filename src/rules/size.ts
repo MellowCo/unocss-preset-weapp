@@ -31,7 +31,7 @@ function getSizeValue(minmax: string, hw: string, theme: Theme, prop: string) {
       return `${prop}-content`
   }
 
-  return h.bracket.cssvar.global.auto.fraction.rpx(prop)
+  return h.bracket.cssvar.global.auto.fraction.rpx(prop, theme)
 }
 
 export const sizes: Rule<Theme>[] = [

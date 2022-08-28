@@ -1,5 +1,5 @@
 import type { Preset, PresetOptions, UtilObject } from '@unocss/core'
-import { transformEscapESelector } from 'unplugin-transform-we-class/utils'
+import { defaultRules, transformEscapESelector } from 'unplugin-transform-we-class/utils'
 import preflights from './preflights'
 import { rules } from './rules'
 import type { Theme, ThemeAnimation } from './theme'
@@ -97,6 +97,12 @@ export interface PresetWeappOptions extends PresetOptions {
    * @default false
    */
   isH5?: boolean
+
+  /**
+   * 自定义转换规则
+   * @default https://github.com/MellowCo/unplugin-transform-we-class#options
+   */
+  transformRules?: Record<string, string>
 }
 
 export const pxRE = /^-?[\.\d]+px$/
@@ -116,17 +122,21 @@ export const presetWeapp = (options: PresetWeappOptions = {}): Preset<Theme> => 
   }
   options.platform = options.platform ?? 'uniapp'
   options.taroWebpack = options.taroWebpack ?? 'webpack4'
+  options.transformRules = options.transformRules ?? defaultRules
 
   return {
     name: 'unocss-preset-weapp',
-    theme,
+    theme: {
+      ...theme,
+      transformRules: options.transformRules,
+    },
     rules,
     variants: variants(options),
     options,
     postprocess(css) {
       // 是否转义class
       if (options.transform)
-        css.selector = transformEscapESelector(css.selector)
+        css.selector = transformEscapESelector(css.selector, options.transformRules)
 
       // 设置变量前缀
       if (options.variablePrefix && options.variablePrefix !== 'un-')

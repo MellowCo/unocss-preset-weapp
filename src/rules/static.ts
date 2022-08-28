@@ -61,7 +61,7 @@ export const whitespaces: Rule[] = [
 ]
 
 export const contentVisibility: Rule[] = [
-  [/^intrinsic-size-(.+)$/, ([, d]) => ({ 'contain-intrinsic-size': h.bracket.cssvar.global.fraction.rem(d) }), { autocomplete: 'intrinsic-size-<num>' }],
+  [/^intrinsic-size-(.+)$/, ([, d], { theme }) => ({ 'contain-intrinsic-size': h.bracket.cssvar.global.fraction.rem(d, theme) }), { autocomplete: 'intrinsic-size-<num>' }],
   ['content-visibility-visible', { 'content-visibility': 'visible' }],
   ['content-visibility-hidden', { 'content-visibility': 'hidden' }],
   ['content-visibility-auto', { 'content-visibility': 'auto' }],
@@ -190,11 +190,11 @@ export const objectPositions: Rule[] = [
   ['object-none', { 'object-fit': 'none' }],
 
   // object position
-  [/^object-(.+)$/, ([, d]) => {
+  [/^object-(.+)$/, ([, d], { theme }) => {
     if (positionMap[d])
       return { 'object-position': positionMap[d] }
     if (h.bracketOfPosition(d) != null)
-      return { 'object-position': h.bracketOfPosition(d)!.split(' ').map(e => h.position.fraction.auto.px.cssvar(e)).join(' ') }
+      return { 'object-position': h.bracketOfPosition(d)!.split(' ').map(e => h.position.fraction.auto.px.cssvar(e, theme)).join(' ') }
   }, { autocomplete: `object-(${Object.keys(positionMap).join('|')})` }],
 
 ]
