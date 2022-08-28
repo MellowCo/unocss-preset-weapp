@@ -1,6 +1,7 @@
 /* @export-submodules */
 export * from './animation'
 export * from './align'
+export * from './background'
 export * from './behaviors'
 export * from './border'
 export * from './color'
@@ -23,3 +24,4 @@ export * from './typography'
 export * from './variables'
 export * from './decoration'
 export * from './safe-area'
+
