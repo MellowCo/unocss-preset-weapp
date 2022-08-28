@@ -85,14 +85,12 @@ module.exports = {
       UnoCSS(),
       // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
       presetAttributifyWechat({
-        attributes: [...defaultAttributes, 'my-attr'],
-        ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
-        nonValuedAttribute: true,
-        prefix: 'li-',
-        prefixedOnly: true,
+        // options
       }),
       // https://github.com/MellowCo/unplugin-transform-we-class
-      transformWeClass(),
+      transformWeClass({
+        // options
+      }),
     ],
   },
 }
@@ -180,14 +178,12 @@ module.exports = {
       UnoCSS(),
       // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
       presetAttributifyWechat({
-        attributes: [...defaultAttributes, 'my-attr'],
-        ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
-        nonValuedAttribute: true,
-        prefix: 'li-',
-        prefixedOnly: true,
+        // options
       }),
       // https://github.com/MellowCo/unplugin-transform-we-class
-      transformWeClass(),
+      transformWeClass({
+        // options
+      }),
     ],
   },
 }
@@ -314,17 +310,15 @@ const config = {
       // taro-react 不支持 Attributify Mode ，react不支持，react不支持，react不支持
       chain.plugin('presetAttributifyWechat').use(
         presetAttributifyWechat({
-          attributes: [...defaultAttributes, 'my-attr'],
-          ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
-          nonValuedAttribute: true,
-          prefix: 'li-',
-          prefixedOnly: false,
+          // options
         }))
 
       // https://github.com/MellowCo/unplugin-transform-we-class
       chain
         .plugin('transformWeClass')
-        .use(transformWeClass())
+        .use(transformWeClass({
+          // options
+        }))
     },
   },
   h5: {
@@ -338,17 +332,15 @@ const config = {
       // taro-react 不支持 Attributify Mode ，react不支持，react不支持，react不支持
       chain.plugin('presetAttributifyWechat').use(
         presetAttributifyWechat({
-          attributes: [...defaultAttributes, 'my-attr'],
-          ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
-          nonValuedAttribute: true,
-          prefix: 'li-',
-          prefixedOnly: false,
+          // options
         }))
 
       // https://github.com/MellowCo/unplugin-transform-we-class
       chain
         .plugin('transformWeClass')
-        .use(transformWeClass())
+        .use(transformWeClass({
+          // options
+        }))
     },
   }
 }
@@ -365,7 +357,7 @@ module.exports = function (merge) {
 
 > 默认生成 css 单位为 `rpx` ，`rpx` 在h5平台中，会自动转为 `rem`
 
-> 由于 taro 建议使用 px，针对 `taro` 加入小程序  `px` 转 `rpx`，h5 `px` 转 `rem` , 设置 `designWidth` ,`deviceRatio` , 默认为 `750` ，`1:1`  [taro px 转换规则](https://taro-docs.jd.com/taro/docs/size)
+> 由于 taro 建议使用 px，针对 `taro` 加入小程序  `px` 转 `rpx`，h5 `px` 转 `rem` , 设置 `designWidth` ,`deviceRatio` <a href='#taro px to rpx rem'>转换说明</a>
 
 > taro `webpack4` 和 `webpack5`  [h5根字体(rem)](https://github.com/MellowCo/unocss-preset-weapp#taro-h5兼容)大小不同，导致不同版本字体大小不同 [taro issues](https://github.com/NervJS/taro/issues/12361) 
 
@@ -415,16 +407,16 @@ export default {
     // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp(
       // px 转 rpx，rem，
-      // 默认以 750px 作为换算尺寸标准，如果设计稿不是以 750px 为标准，需要设置 designWidth ，deviceRatio
 
-      // 750 标准
+      // 750 标准 webpack5 平台
+      // 可忽略 taroWebpack designWidth deviceRatio
       // {
       //   isH5: process.env.TARO_ENV === 'h5',
       //   platform: 'taro',
-      //   taroWebpack: 'webpack5'
       // }
 
-      // 375 标准
+      // 设置 375 标准，添加 designWidth deviceRatio 与 taro config 保持一致
+      // webpack5 版本 设置 taroWebpack
       {
         isH5: process.env.TARO_ENV === 'h5',
         platform: 'taro',
@@ -539,15 +531,13 @@ export default defineConfig({
 
     // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
     presetAttributifyWechat({
-      attributes: [...defaultAttributes, 'my-attr'],
-      ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
-      nonValuedAttribute: true,
-      prefix: 'li-',
-      prefixedOnly: true,
+      // options
     }),
 
     // https://github.com/MellowCo/unplugin-transform-we-class
-    transformWeClass(),
+    transformWeClass({
+      // options
+    }),
   ],
 })
 ```
@@ -680,7 +670,7 @@ import 'uno.css'
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231620090.png" style="zoom: 50%;" />
 
-#### taro h5兼容
+### taro h5兼容
 >  taro `webpack4` 和 `webpack5` h5根字体(rem)大小不同，导致不同版本字体大小不同 [taro issues](https://github.com/NervJS/taro/issues/12361)
 
 * webpack5 375 根字体为 20.0178px
@@ -718,12 +708,54 @@ export default {
   ]
 }
 ```
+### taro px to rpx rem
+> 这里以 640 标准，为例子，
+* [taro 的尺寸设计稿设置](https://taro-docs.jd.com/taro/docs/size) ，设置为 640
+```ts
+// config/index.js
+const config = {
+  projectName: 'Taro3',
+  date: '2021-12-18',
+  designWidth: 640,
+  deviceRatio: {
+    640: 2.34 / 2,
+    750: 1,
+    828: 1.81 / 2,
+    375: 2 / 1
+  },
+}
+```
 
+* unocss 与 taro config 保持一致
+```ts
+// unocss.config.ts
+presetWeapp({
+  // h5兼容
+  isH5: process.env.TARO_ENV === 'h5',
+  platform: 'taro',
+  designWidth: 640,
+  deviceRatio: {
+    640: 2.34 / 2,
+    750: 1,
+    828: 1.81 / 2,
+    375: 2 / 1
+  },
+  taroWebpack: 'webpack5'
+})
+```
 
+* 使用时，使用 `px` 即可转换为对应的 `rpx` `rem`
+> h5
+
+![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208281719097.png)
+
+> 小程序
+
+![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208281720438.png)
 
 ---
 
-#### uniapp-vue2 h5兼容
+### uniapp-vue2 h5兼容
 
 * unocss.config.js
 
@@ -794,6 +826,56 @@ export default defineConfig({
 
 ![image-20220730140841046](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207301416199.png)
 
+---
+### 自定义转换规则
+> 自定义转换规则 `:`，`[`，`$`,`.` 
+
+* 以 vite 为例子
+```ts
+const transformRules = {
+  '.': '-d111-',
+  '/': '-s111-',
+  ':': '-c111-',
+  '%': '-p111-',
+  '!': '-e111-',
+  '#': '-w111-',
+  '(': '-b111l-',
+  ')': '-b111r-',
+  '[': '-f111l-',
+  ']': '-f111r-',
+  '$': '-r111-',
+  ',': '-co111-',
+}
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    uni(),
+    // https://github.com/unocss/unocss
+    Unocss({
+      presets: [
+        // https://github.com/MellowCo/unocss-preset-weapp
+        presetWeapp({
+          transformRules,
+        }),
+      ],
+    }),
+
+    // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+    presetAttributifyWechat({
+      transformRules,
+    }),
+
+    // https://github.com/MellowCo/unplugin-transform-we-class
+    transformWeClass({
+      rules: transformRules,
+    }),
+  ],
+})
+
+```
+
+
 
 ##  使用
 [UnoCSS 文档](https://uno.antfu.me/)
@@ -803,6 +885,19 @@ export default defineConfig({
 > 默认单位`rpx`，w-100 => w-100rpx
 >
 > **不使用 [unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class)**，请将百分比`/`改为`_`，h-1/2 => h-1_2
+
+### 渐变背景 (v0.1.12)
+
+[gradients](https://cn.windicss.org/utilities/backgrounds/gradients.html)
+
+```html
+<view class="center h-200 bg-gradient-to-t from-#f39c12/60 via-#2ecc71:80 to-#9b59b6_70 mb-3">
+  to-t
+</view>
+```
+
+<img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208281630260.png" style="zoom: 50%;" />
+
 
 ### animation (v0.1.9)
 参考 [windicss-animation](https://cn.windicss.org/utilities/animations/animation.html) [@windicss/plugin-animations](https://cn.windicss.org/plugins/community/animations.html)
