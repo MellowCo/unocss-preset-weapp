@@ -52,6 +52,10 @@
         <text class="bg-green-100 mr-2 mb-2 center p-2xl">
           p-2xl
         </text>
+
+        <text class="bg-green-100 mr-2 mb-2 center -p-100rpx">
+          -p-1
+        </text>
       </view>
     </view>
 
