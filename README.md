@@ -71,7 +71,7 @@ npm i -D @unocss/webpack@0.45.8
 vue create -p dcloudio/uni-preset-vue my-project
 
 # @unocss/webpack 请使用 v0.45.8 
-yarn add -D unocss @unocss/webpack unplugin-transform-we-class unocss-preset-weapp unplugin-unocss-attributify-wechat
+yarn add -D unocss @unocss/webpack@0.45.8 unplugin-transform-we-class unocss-preset-weapp unplugin-unocss-attributify-wechat
 ```
 
 * vue.config.js
@@ -290,7 +290,7 @@ export default {
 # 创建taro项目
 taro init taro_xxx
 # 安装unocss
-yarn add -D unocss @unocss/webpack unplugin-transform-we-class unocss-preset-weapp unplugin-unocss-attributify-wechat
+yarn add -D unocss @unocss/webpack@0.45.8 unplugin-transform-we-class unocss-preset-weapp unplugin-unocss-attributify-wechat
 ```
 
 * config/index.js
