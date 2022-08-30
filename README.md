@@ -42,19 +42,23 @@
 
 ## webpack
 
+* 重要的事情说三遍 说三遍 说三遍
+> @unocss/webpack 0.45.8 之后版本，windows 系统出现 unocss 失效的问题，[unocss issues](https://github.com/unocss/unocss/issues/1455)，暂时没有解决，请使用 `@unocss/webpack@0.45.8`
+
+
 ### uniapp-vue2
 > 在 [uniapp vue2](https://uniapp.dcloud.io/quickstart-cli.html#创建uni-app) 中使用
 
 #### 注意事项
 
-1. @unocss/webpack v0.45.8 之前版本，会出现无法及时生成`css`代码，导致打包时没有`css`代码
+1. @unocss/webpack v0.45.8 之前和之后版本，会出现无法及时生成`css`代码，导致打包时没有`css`代码
 
-> 解决方法：使用 v0.45.8 或以上版本
+> 解决方法：使用 v0.45.8
 ```shell
-npm i -D @unocss/webpack@^0.45.8
+npm i -D @unocss/webpack@0.45.8
 ```
 
-2. App平台 v3 模式暂不支持在 js 文件中引用"uno.css" 请改在 style 内引用
+1. App平台 v3 模式暂不支持在 js 文件中引用"uno.css" 请改在 style 内引用
 > 解决方法：使用 [unocss-webpack-uniapp2](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2) 替换 @unocss/webpack，<a href='#App平台'>见 App 平台</a>
 >
 > 开发 `小程序` `h5` 平台，使用 [@unocss/webpack](https://github.com/unocss/unocss/tree/main/packages/webpack)
@@ -66,14 +70,14 @@ npm i -D @unocss/webpack@^0.45.8
 # 创建uni-app
 vue create -p dcloudio/uni-preset-vue my-project
 
-# @unocss/webpack 请使用 v0.45.8 之后版本
+# @unocss/webpack 请使用 v0.45.8 
 yarn add -D unocss @unocss/webpack unplugin-transform-we-class unocss-preset-weapp unplugin-unocss-attributify-wechat
 ```
 
 * vue.config.js
 ```js
-// 请使用 @unocss/webpack 0.45.8 后版本
-// 0.45.8 之前版本 会出现无法及时生成`css`代码，导致打包时没有`css`代码
+// 请使用 @unocss/webpack 0.45.8
+// 0.45.8 之前和之后版本 会出现无法及时生成`css`代码，导致打包时没有`css`代码
 const UnoCSS = require('@unocss/webpack').default
 const transformWeClass = require('unplugin-transform-we-class/webpack')
 const { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } = require('unplugin-unocss-attributify-wechat/webpack')
@@ -406,26 +410,10 @@ export default {
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp(
-      // px 转 rpx，rem，
-
-      // 750 标准 webpack5 平台
-      // 可忽略 taroWebpack designWidth deviceRatio
-      // {
-      //   isH5: process.env.TARO_ENV === 'h5',
-      //   platform: 'taro',
-      // }
-
-      // 设置 375 标准，添加 designWidth deviceRatio 与 taro config 保持一致
-      // webpack5 版本 设置 taroWebpack
+      // 默认为 750 标准 webpack4 平台
       {
         isH5: process.env.TARO_ENV === 'h5',
         platform: 'taro',
-        designWidth: 375,
-        deviceRatio: {
-          375: 2 / 1,
-          750: 1,
-        },
-        taroWebpack: 'webpack5'
       }
     ),
   ],
@@ -759,7 +747,6 @@ const config = {
 ```ts
 // unocss.config.ts
 presetWeapp({
-  // h5兼容
   isH5: process.env.TARO_ENV === 'h5',
   platform: 'taro',
   designWidth: 640,
