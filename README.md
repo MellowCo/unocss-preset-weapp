@@ -847,6 +847,12 @@ const transformRules = {
 export default defineConfig({
   plugins: [
     uni(),
+
+    // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+    presetAttributifyWechat({
+      transformRules,
+    }),
+
     // https://github.com/unocss/unocss
     Unocss({
       presets: [
@@ -855,11 +861,6 @@ export default defineConfig({
           transformRules,
         }),
       ],
-    }),
-
-    // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
-    presetAttributifyWechat({
-      transformRules,
     }),
 
     // https://github.com/MellowCo/unplugin-transform-we-class
