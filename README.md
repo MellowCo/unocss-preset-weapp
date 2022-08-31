@@ -510,6 +510,11 @@ export default defineConfig({
   plugins: [
     uni(),
 
+    // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+    presetAttributifyWechat({
+      // options
+    }),
+
     // https://github.com/antfu/unocss
     // Unocss(),
 
@@ -519,11 +524,6 @@ export default defineConfig({
     // entry module not found, have you add `import 'uno.css'` in your main entry?
     // 导致打包终止
     process.env.UNI_COMPILER !== 'nvue' ? Unocss() : undefined,
-
-    // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
-    presetAttributifyWechat({
-      // options
-    }),
 
     // https://github.com/MellowCo/unplugin-transform-we-class
     transformWeClass({
