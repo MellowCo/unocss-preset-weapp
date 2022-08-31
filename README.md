@@ -26,7 +26,7 @@
 * [unplugin-unocss-attributify-wechat](https://github.com/MellowCo/unplugin-unocss-attributify-wechat) - 小程序 Attributify Mode 插件
 * [unocss-webpack-uniapp2](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2) - 兼容 UniApp Vue2 App开发插件
 * [uni-vue3-starter](https://github.com/MellowCo/uni-vue3-starter) - Uniapp-Vite 模版
-
+* 原子化css冲突问题，例 [tmui](https://tmui.design/) 内置 [原子化css](https://tmui.design/doc/CSSTool/css.html) 与 unocss 冲突问题，[解决方案](https://github.com/MellowCo/unplugin-unocss-attributify-wechat#%E5%8E%9F%E5%AD%90%E5%8C%96-css-%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98)
 
 
 ## 示例
@@ -489,7 +489,7 @@ import 'uno.css'
 
 > uniapp-vite 模版 [uni-vue3-starter](https://github.com/MellowCo/uni-vue3-starter)
 
-> [tmui](https://tmui.design/) 内置 [原子化css](https://tmui.design/doc/CSSTool/css.html) 与 unocss 冲突问题，[解决方案](https://github.com/MellowCo/unplugin-unocss-attributify-wechat#%E5%8E%9F%E5%AD%90%E5%8C%96-css-%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98)
+
 
 ```shell
 # 使用Vue3/Vite版
