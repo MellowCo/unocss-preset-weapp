@@ -9,6 +9,7 @@ import transformRules from './transformRules'
 export default defineConfig({
   plugins: [
     uni(),
+
     // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
     presetAttributifyWechat({
       attributes: [...defaultAttributes, 'my-attr'],
@@ -18,8 +19,10 @@ export default defineConfig({
       prefixedOnly: false,
       transformRules,
     }),
+
     // https://github.com/unocss/unocss
     Unocss(),
+
     // https://github.com/MellowCo/unplugin-transform-we-class
     transformWeClass({
       rules: transformRules,

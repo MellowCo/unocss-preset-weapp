@@ -60,7 +60,7 @@
     "unocss": "^0.45.13",
     "unocss-preset-weapp": "link:../../",
     "unplugin-transform-we-class": "^0.1.18",
-    "unplugin-unocss-attributify-wechat": "^0.1.10",
+    "unplugin-unocss-attributify-wechat": "^0.1.13",
     "vue-loader": "^15.9.2"
   }
 }

@@ -24,7 +24,7 @@ export default defineConfig({
       platform: 'taro',
       designWidth: 750,
       taroWebpack:'webpack4',
-      transformRules
+      transformRules,
     }),
   ],
   shortcuts: [

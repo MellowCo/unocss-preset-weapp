@@ -74,7 +74,7 @@ const config = {
           nonValuedAttribute: true,
           prefix: 'li-',
           prefixedOnly: false,
-          transformRules
+          transformRules,
         }))
 
       // https://github.com/MellowCo/unplugin-transform-we-class

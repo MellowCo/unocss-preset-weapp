@@ -26,8 +26,10 @@ const transformRules = {
 module.exports = {
   configureWebpack: {
     plugins: [
+
       // https://github.com/unocss/unocss
       UnoCSS(),
+
       // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
       presetAttributifyWechat({
         attributes: [...defaultAttributes, 'my-attr'],
@@ -37,6 +39,7 @@ module.exports = {
         prefixedOnly: false,
         transformRules,
       }),
+
       // https://github.com/MellowCo/unplugin-transform-we-class
       transformWeClass({
         rules: transformRules,

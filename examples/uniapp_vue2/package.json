@@ -99,7 +99,7 @@
     "unocss-preset-weapp": "link:../../",
     "unocss-webpack-uniapp2": "^0.1.4",
     "unplugin-transform-we-class": "^0.1.18",
-    "unplugin-unocss-attributify-wechat": "^0.1.10",
+    "unplugin-unocss-attributify-wechat": "^0.1.13",
     "vue-template-compiler": "^2.6.11"
   },
   "browserslist": [

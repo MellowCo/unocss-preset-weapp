@@ -64,11 +64,13 @@ const config = {
     // 合并webpack配置
     webpackChain(chain){
 
+
+
      // https://github.com/unocss/unocss
       chain.plugin('unocss')
         .use(UnoCSS())
 
-      // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+       // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
       chain.plugin('presetAttributifyWechat').use(
         presetAttributifyWechat({
         attributes: [...defaultAttributes, 'my-attr'],
@@ -76,7 +78,7 @@ const config = {
         nonValuedAttribute: true,
         prefix: 'li-',
         prefixedOnly: false,
-        transformRules
+        transformRules,
       }))
 
       // https://github.com/MellowCo/unplugin-transform-we-class

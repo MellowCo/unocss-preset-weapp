@@ -20,7 +20,7 @@ export default {
     presetWeapp({
       isH5: process.env.TARO_ENV === 'h5',
       platform: 'taro',
-      transformRules
+      transformRules,
     }),
   ],
   shortcuts: [
