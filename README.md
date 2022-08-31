@@ -489,6 +489,8 @@ import 'uno.css'
 
 > uniapp-vite 模版 [uni-vue3-starter](https://github.com/MellowCo/uni-vue3-starter)
 
+> [tmui](https://tmui.design/) 内置 [原子化css](https://tmui.design/doc/CSSTool/css.html) 与 unocss 冲突问题，[解决方案](https://github.com/MellowCo/unplugin-unocss-attributify-wechat#%E5%8E%9F%E5%AD%90%E5%8C%96-css-%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98)
+
 ```shell
 # 使用Vue3/Vite版
 npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
@@ -503,7 +505,7 @@ import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 import Unocss from 'unocss/vite'
 import transformWeClass from 'unplugin-transform-we-class/vite'
-import { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } from 'unplugin-unocss-attributify-wechat/vite'
+import { presetAttributifyWechat } from 'unplugin-unocss-attributify-wechat/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
