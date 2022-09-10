@@ -39,7 +39,7 @@ export const presetMiniTargets: string[] = [
   'animate-ease-$variable',
   'animate-ease-[steps(4,_jump-start)]',
   'animate-$variable',
-  'animate-[4s_linear_0s_infinite_alternate_move\\_eye]',
+  'animate-[4s_linear_0s_infinite_alternate_move_eye]',
   'animate-inherit',
   'animate-unset',
 
@@ -538,6 +538,8 @@ export const presetMiniTargets: string[] = [
   'shadow-green-900/50',
   'shadow-op-50',
   'shadow-inset',
+  'shadow-[0px_4px_4px_0px_rgba(237,_0,_0,_1)]',
+  'shadow-$variable',
 
   // size
   'h-auto',

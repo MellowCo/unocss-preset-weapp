@@ -19,6 +19,7 @@ const uno = createGenerator({
         '[': '-fl1r-',
         ']': '-fr1r-',
         '$': '-rr1-',
+        ',': '-ccc-',
       },
     }),
   ],
