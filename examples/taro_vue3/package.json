@@ -57,7 +57,7 @@
     "eslint-plugin-vue": "^8.0.0",
     "stylelint": "^14.4.0",
     "typescript": "^4.1.0",
-    "unocss": "^0.45.13",
+    "unocss": "^0.45.18",
     "unocss-preset-weapp": "link:../../",
     "unplugin-transform-we-class": "^0.1.18",
     "unplugin-unocss-attributify-wechat": "^0.1.13",

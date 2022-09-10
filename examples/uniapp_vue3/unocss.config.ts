@@ -1,13 +1,10 @@
 import presetWeapp from 'unocss-preset-weapp'
 import { defineConfig } from 'unocss'
-import transformRules from './transformRules'
 
 export default defineConfig({
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
-    presetWeapp({
-      transformRules,
-    }),
+    presetWeapp(),
   ],
   shortcuts: [
     {

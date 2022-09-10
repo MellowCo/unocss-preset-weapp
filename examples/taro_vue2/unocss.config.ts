@@ -12,6 +12,7 @@ const transformRules = {
   '[': '-fl1r-',
   ']': '-fr1r-',
   '$': '-rr1-',
+  ',': '-ccc-',
 }
 
 export default {

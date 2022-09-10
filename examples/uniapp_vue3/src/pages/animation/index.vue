@@ -6,6 +6,10 @@ export default {
 
 <template>
   <view class="flex flex-col items-center p-3">
+    <view class="animate-[4s_linear_0s_infinite_alternate_bounce] bg-indigo text-white mb-6 p-2">
+      animate-[4s_linear_0s_infinite_alternate_bounce]
+    </view>
+
     <view class="animate-my-animation bg-indigo text-white mb-6 p-2">
       my-animation
     </view>
@@ -62,7 +66,7 @@ export default {
       wobble
     </view>
 
-    <view class="animate-jello animate-iteration-infinite bg-purple text-white mb-6 p-2">
+    <view class="animate-jello animate-iteration-infinite bg-purple text-white mb-6 p-2 ">
       jello
     </view>
 
