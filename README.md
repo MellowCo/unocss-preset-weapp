@@ -48,6 +48,8 @@
 * 重要的事情说三遍 说三遍 说三遍
 > @unocss/webpack 0.45.8 之后版本，windows 系统出现 unocss 失效的问题，[unocss issues](https://github.com/unocss/unocss/issues/1455)，暂时没有解决，请使用 `@unocss/webpack@0.45.8`
 
+<details>
+<summary>uniapp-vue2</summary><br>
 
 ### uniapp-vue2
 > 在 [uniapp vue2](https://uniapp.dcloud.io/quickstart-cli.html#创建uni-app) 中使用
@@ -272,8 +274,11 @@ export default {
 }
 </style>
 ```
-
+<br></details>
 ---
+
+<details>
+<summary>taro</summary><br>
 
 ### taro-react
 
@@ -467,10 +472,14 @@ import 'uno.css'
 
 ### taro-vue3
 见 <a href='#taro-react'>taro-react</a>
+</details>
 
 ---
 
 ## vite
+
+<details>
+<summary>uni-app-vue3</summary><br>
 
 ### uni-app-vue3
 
@@ -568,7 +577,13 @@ export default defineConfig({
 ```ts
 import 'uno.css'
 ```
+
+<br></details>
+
+
 ---
+
+
 ## 注意事项
 
 **小程序不支持使用`\\`，`\:`，`\[`，`\$`,`\.`等转义类名，可通过 [插件](https://github.com/MellowCo/unplugin-transform-we-class) 转换支持**
