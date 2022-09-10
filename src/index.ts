@@ -11,7 +11,7 @@ import { taroPxToRemW4, taroPxToRemW5, taroPxToRpx, taroRpxToPx, uniAppRpxTransf
 export { theme, colors } from './theme'
 export { parseColor } from './utils'
 
-// feat(preset-mini): add more overflowValues
+// feat(preset-mini): parse shadow with bracket
 export type { ThemeAnimation, Theme }
 
 export interface DarkModeSelectors {

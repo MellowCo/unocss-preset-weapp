@@ -39,7 +39,7 @@ export const presetMiniTargets: string[] = [
   'animate-ease-$variable',
   'animate-ease-[steps(4,_jump-start)]',
   'animate-$variable',
-  'animate-[4s_linear_0s_infinite_alternate_move_eye]',
+  'animate-[4s_linear_0s_infinite_alternate_move\\_eye]',
   'animate-inherit',
   'animate-unset',
 
