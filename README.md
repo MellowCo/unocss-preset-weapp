@@ -91,13 +91,9 @@ module.exports = {
       // https://github.com/unocss/unocss
       UnoCSS(),
       // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
-      presetAttributifyWechat({
-        // options
-      }),
+      presetAttributifyWechat(),
       // https://github.com/MellowCo/unplugin-transform-we-class
-      transformWeClass({
-        // options
-      }),
+      transformWeClass(),
     ],
   },
 }
@@ -183,14 +179,12 @@ module.exports = {
     plugins: [
       // https://github.com/unocss/unocss
       UnoCSS(),
+
       // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
-      presetAttributifyWechat({
-        // options
-      }),
+      presetAttributifyWechat(),
+
       // https://github.com/MellowCo/unplugin-transform-we-class
-      transformWeClass({
-        // options
-      }),
+      transformWeClass(),
     ],
   },
 }
@@ -310,22 +304,20 @@ const config = {
     // 合并webpack配置
     webpackChain(chain) {
       // https://github.com/unocss/unocss
-      chain.plugin('unocss')
+      chain
+        .plugin('unocss')
         .use(UnoCSS())
 
       // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
       // taro-react 不支持 Attributify Mode ，react不支持，react不支持，react不支持
-      chain.plugin('presetAttributifyWechat').use(
-        presetAttributifyWechat({
-          // options
-        }))
+      chain
+        .plugin('presetAttributifyWechat')
+        .use(presetAttributifyWechat())
 
       // https://github.com/MellowCo/unplugin-transform-we-class
       chain
         .plugin('transformWeClass')
-        .use(transformWeClass({
-          // options
-        }))
+        .use(transformWeClass())
     },
   },
   h5: {
@@ -337,17 +329,14 @@ const config = {
 
       // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
       // taro-react 不支持 Attributify Mode ，react不支持，react不支持，react不支持
-      chain.plugin('presetAttributifyWechat').use(
-        presetAttributifyWechat({
-          // options
-        }))
+      chain
+        .plugin('presetAttributifyWechat')
+        .use(presetAttributifyWechat())
 
       // https://github.com/MellowCo/unplugin-transform-we-class
       chain
         .plugin('transformWeClass')
-        .use(transformWeClass({
-          // options
-        }))
+        .use(transformWeClass())
     },
   }
 }
@@ -513,9 +502,7 @@ export default defineConfig({
     uni(),
 
     // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
-    presetAttributifyWechat({
-      // options
-    }),
+    presetAttributifyWechat(),
 
     // https://github.com/antfu/unocss
     // Unocss(),
@@ -528,9 +515,7 @@ export default defineConfig({
     process.env.UNI_COMPILER !== 'nvue' ? Unocss() : undefined,
 
     // https://github.com/MellowCo/unplugin-transform-we-class
-    transformWeClass({
-      // options
-    }),
+    transformWeClass(),
   ],
 })
 ```
@@ -730,7 +715,7 @@ export default {
 ```
 
 ---
-### taro px to rpx rem
+### taro px to (rpx rem)
 > 这里以 640 标准，为例子，
 * [taro 的尺寸设计稿设置](https://taro-docs.jd.com/taro/docs/size) ，设置为 640
 ```ts
@@ -888,9 +873,7 @@ export default defineConfig({
 [gradients](https://cn.windicss.org/utilities/backgrounds/gradients.html)
 
 ```html
-<view class="center h-200 bg-gradient-to-t from-#f39c12/60 via-#2ecc71:80 to-#9b59b6_70 mb-3">
-  to-t
-</view>
+<view class="bg-gradient-to-t from-#f39c12/60 via-#2ecc71:80 to-#9b59b6_70"></view>
 ```
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208281630260.png" style="zoom: 50%;" />
@@ -900,6 +883,19 @@ export default defineConfig({
 参考 [windicss-animation](https://cn.windicss.org/utilities/animations/animation.html) [@windicss/plugin-animations](https://cn.windicss.org/plugins/community/animations.html)
 
 相关动画网站 [animate.css](https://animate.style/) [animista.net](https://animista.net/play/basic)
+
+```html
+<view class="animate-pulse"></view>
+
+<view class="animate-back-in-down animate-iteration-infinite"></view>
+
+<view class="animate-[4s_linear_0s_infinite_alternate_bounce]"></view>
+
+.animate--fl-4s_linear_0s_infinite_alternate_bounce-fr- {
+  -webkit-animation: 4s linear 0s infinite alternate bounce;
+  animation: 4s linear 0s infinite alternate bounce;
+}
+```
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208211944041.gif" style="zoom: 50%;" />
 
@@ -1079,7 +1075,7 @@ export const textIndent: Theme['textIndent'] = {
 
 所以计算为 `2*0.5*1rem = 2*0.5*16px = 16rpx`
 
-```text
+```css
 indent-2    
 text-indent: 0.5rem 
 text-indent: 16rpx
@@ -1126,9 +1122,6 @@ export const spacing = {
   '8xl': '256rpx',
 }
 ```
-> p-2    
-> padding: 0.5rem    
-> padding:16rpx
 
 ### box-shadow
 
@@ -1145,6 +1138,11 @@ export const boxShadow = {
   '2xl': 'var(--un-shadow-inset) 0 25px 50px -12px rgba(0,0,0,0.25)',
   'inner': 'inset 0 2px 4px 0 rgba(0,0,0,0.05)',
 }
+```
+
+> 连体写法
+```html
+<view class="shadow-[0px_4px_4px_0px_rgba(237,_0,_0,_1)]"></view>
 ```
 
 
