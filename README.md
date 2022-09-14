@@ -18,6 +18,8 @@
 * <a href='#taro-react'>taro react</a>
 * <a href='#taro-vue2'>taro vue2</a>
 * <a href='#taro-vue3'>taro vue3</a>
+* [原生微信小程序 wxml](https://github.com/MellowCo/unocss-wechat)
+
 
 相关链接
 * [UnoCSS](https://github.com/unocss/unocss) - 即时按需原子CSS引擎
@@ -31,11 +33,12 @@
 
 ## 示例
 
-[uniapp_vue3](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue3)   
-[uniapp_vue2](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue2)   
-[taro_react](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_react)   
-[taro_vue2](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_vue2)   
-[taro_vue3](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_vue3)   
+* [uniapp_vue3](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue3)   
+* [uniapp_vue2](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue2)   
+* [taro_react](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_react)   
+* [taro_vue2](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_vue2)   
+* [taro_vue3](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_vue3)   
+* [原生微信小程序 wxml](https://github.com/MellowCo/unocss-wechat)
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031414239.png" alt="image-20220703141451188" style="zoom:50%;" />
 
