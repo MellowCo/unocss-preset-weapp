@@ -684,6 +684,8 @@ export default {
 ### taro h5兼容
 >  taro `webpack4` 和 `webpack5` h5根字体(rem)大小不同，导致不同版本字体大小不同 [taro issues](https://github.com/NervJS/taro/issues/12361)
 
+> 需要针对不同版本，设置不同的 rem 策略
+
 * webpack5 375 根字体为 20.0178px
 
   ![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208242311419.png)
@@ -851,11 +853,6 @@ export default defineConfig({
   transformers: [
     // options 见https://github.com/MellowCo/unplugin-unocss-attributify-wechat
     transformerAttributify({
-      attributes: [...defaultAttributes, 'my-attr'],
-      ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
-      nonValuedAttribute: true,
-      prefix: 'li-',
-      prefixedOnly: false,
       transformRules,
     }),
 
