@@ -8,6 +8,7 @@ export default defineBuildConfig({
     'src/rules',
     'src/colors',
     'src/variants',
+    'src/transformer',
   ],
   clean: true,
   declaration: true,
