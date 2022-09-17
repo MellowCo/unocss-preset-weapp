@@ -194,6 +194,7 @@ export const presetMiniTargets: string[] = [
   'border-t-width-3',
   'rounded-[4px]',
   'rounded-1/2',
+  'rounded-half',
   'rounded-full',
   'rounded-unset',
   'rounded-md',

@@ -51,6 +51,7 @@ export const borderRadius = {
   'md': '12rpx',
   'lg': '16rpx',
   'xl': '24rpx',
+  'half': '50%',
   '2xl': '32rpx',
   '3xl': '48rpx',
   'full': '9999px',

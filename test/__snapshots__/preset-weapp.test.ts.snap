@@ -331,7 +331,8 @@ div:hover .group--fl-div-c-hover-fr---fl-combinator-c-test-4-fr-{combinator:test
 .rounded{border-radius:8rpx;}
 .rounded--fl-4px-fr-{border-radius:4px;}
 .rounded--r-variable{border-radius:var(--variable);}
-.rounded-1-s-2{border-radius:50%;}
+.rounded-1-s-2,
+.rounded-half{border-radius:50%;}
 .rounded-full{border-radius:9999px;}
 .rounded-md{border-radius:12rpx;}
 .rounded-none{border-radius:0;}
