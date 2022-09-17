@@ -1,5 +1,5 @@
-import transformerWeClass from './transformer-we-class'
+import transformerClass from './transformerClass'
 
 export {
-  transformerWeClass,
+  transformerClass,
 }
