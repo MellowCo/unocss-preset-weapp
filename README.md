@@ -105,6 +105,7 @@ module.exports = {
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207171840689.png" alt="image-20220703141451188" style="zoom:50%;" />
 
+* [h5兼容说明](https://github.com/MellowCo/unocss-preset-weapp#h5%E5%85%BC%E5%AE%B9)
 
 ```js
 import presetWeapp from 'unocss-preset-weapp'
@@ -114,7 +115,7 @@ export default defineConfig({
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp({
-      // h5兼容
+      // h5兼容设置，只开发小程序可删除
       platform: 'uniapp',
       isH5: process.env.UNI_PLATFORM === 'h5',
     }),
@@ -195,6 +196,8 @@ module.exports = {
 * unocss.config.js
 > 添加unocss.config.js文件，搭配 [unocss vscode ](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)插件，智能提示
 
+* [h5兼容说明](https://github.com/MellowCo/unocss-preset-weapp#h5%E5%85%BC%E5%AE%B9)
+
 
 ```js
 import presetWeapp from 'unocss-preset-weapp'
@@ -205,6 +208,7 @@ export default defineConfig({
     // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp({
       // h5兼容
+      // 只开发小程序可删除
       platform: 'uniapp',
       isH5: process.env.UNI_PLATFORM === 'h5',
     }),
@@ -293,7 +297,7 @@ yarn add -D unocss @unocss/webpack@0.45.8 unplugin-transform-we-class unocss-pre
 ```
 
 * config/index.js
-> 通过[miniwebpackchain](https://taro-docs.jd.com/taro/docs/config-detail#miniwebpackchain)，合并webpack配置
+> 通过 [miniwebpackchain](https://taro-docs.jd.com/taro/docs/config-detail#miniwebpackchain) ，合并webpack配置
 
 ```js
 // 导入unocss
@@ -351,14 +355,6 @@ module.exports = function (merge) {
 }
 ```
 * unocss.config.ts
-> 添加unocss.config.js文件，搭配[unocss vscode](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)插件，智能提示
-
-> 默认生成 css 单位为 `rpx` ，`rpx` 在h5平台中，会自动转为 `rem`
-
-> 由于 taro 建议使用 px，针对 `taro` 加入小程序  `px` 转 `rpx`，h5 `px` 转 `rem` , 设置 `designWidth` ,`deviceRatio` <a href='#taro-px-to-rpx-rem'>转换说明</a>
-
-> taro `webpack4` 和 `webpack5`  [h5根字体(rem)](https://github.com/MellowCo/unocss-preset-weapp#taro-h5兼容)大小不同，导致不同版本字体大小不同 [taro issues](https://github.com/NervJS/taro/issues/12361) 
-
 ```ts
 export interface PresetWeappOptions extends PresetOptions {
   /**
@@ -396,6 +392,15 @@ export interface PresetWeappOptions extends PresetOptions {
   isH5?: boolean
 }
 ```
+* 添加unocss.config.js文件，搭配 [unocss vscode](https://marketplace.visualstudio.com/items?itemName=antfu.unocss) 插件，智能提示
+
+* 默认生成 css 单位为 `rpx` ，`rpx` 在h5平台中，会自动转为 `rem`
+
+* 由于 taro 建议使用 px，针对 `taro` 加入小程序  `px` 转 `rpx`，h5 `px` 转 `rem` , 设置 `designWidth` ,`deviceRatio` <a href='#taro-px-to-rpx-rem'>转换说明</a>
+
+* taro `webpack4` 和 `webpack5`  [h5根字体(rem)](https://github.com/MellowCo/unocss-preset-weapp#taro-h5兼容)大小不同，导致不同版本字体大小不同 [taro issues](https://github.com/NervJS/taro/issues/12361) 
+
+* [h5兼容说明](https://github.com/MellowCo/unocss-preset-weapp#h5%E5%85%BC%E5%AE%B9)
 
 ```ts
 import presetWeapp from 'unocss-preset-weapp'
@@ -404,7 +409,8 @@ export default {
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp(
-      // 默认为 750 标准 webpack4 平台
+      // h5兼容设置，默认为 750 标准，webpack4 平台
+      // 只开发小程序可删除
       {
         isH5: process.env.TARO_ENV === 'h5',
         platform: 'taro',
@@ -706,8 +712,8 @@ export default {
     presetWeapp({
       isH5: process.env.TARO_ENV === 'h5',
       platform: 'taro',
-      // 区分版本 生成对应的 rem
-      // webpack4, webpack5
+      // 通过设置 taroWebpack 版本，指定 rem 策略
+      // webpack4 webpack5
       taroWebpack: 'webpack5'
     }),
   ],
