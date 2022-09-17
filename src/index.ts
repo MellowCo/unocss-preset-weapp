@@ -181,8 +181,6 @@ export const presetWeapp = (options: PresetWeappOptions = {}): Preset<Theme> => 
   }
 }
 
-export default presetWeapp
-
 function VarPrefixPostprocessor(prefix: string, obj: any) {
   obj.entries.forEach((i: any) => {
     i[0] = i[0].replace(/^--un-/, `--${prefix}`)
@@ -198,3 +196,5 @@ function cssRpxTransform(css: UtilObject, condition: (val: string) => boolean, t
       i[1] = `${transform(value)}`
   })
 }
+
+export default presetWeapp
