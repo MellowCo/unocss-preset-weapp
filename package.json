@@ -80,7 +80,8 @@
   },
   "dependencies": {
     "@unocss/core": "^0.45.21",
-    "unplugin-transform-we-class": "^0.1.19"
+    "unplugin-transform-we-class": "^0.1.19",
+    "unplugin-unocss-attributify-wechat": "^0.1.14"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.26.3",

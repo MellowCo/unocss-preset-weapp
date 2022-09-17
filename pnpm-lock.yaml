@@ -9,12 +9,14 @@ specifiers:
   typescript: ^4.8.3
   unbuild: ^0.8.11
   unplugin-transform-we-class: ^0.1.19
+  unplugin-unocss-attributify-wechat: ^0.1.14
   vite: ^3.1.2
   vitest: ^0.23.2
 
 dependencies:
   '@unocss/core': 0.45.21
   unplugin-transform-we-class: 0.1.19_vite@3.1.2
+  unplugin-unocss-attributify-wechat: 0.1.14_vite@3.1.2
 
 devDependencies:
   '@antfu/eslint-config': 0.26.3_irgkl5vooow2ydyo6aokmferha
@@ -3965,6 +3967,19 @@ packages:
       '@meoc/utils': 0.1.8
       '@rollup/pluginutils': 4.2.1
       unplugin: 0.9.5_vite@3.1.2
+    transitivePeerDependencies:
+      - esbuild
+      - rollup
+      - vite
+      - webpack
+    dev: false
+
+  /unplugin-unocss-attributify-wechat/0.1.14_vite@3.1.2:
+    resolution: {integrity: sha512-26ooHGueeQtEQjgeZV3vj3qa3SVKJG78o98AZWKB9rANF+D28VpYba3qfheXoRkQoEfUqgBEmeSnZpOJkm/GPA==}
+    dependencies:
+      '@rollup/pluginutils': 4.2.1
+      unplugin: 0.9.5_vite@3.1.2
+      unplugin-transform-we-class: 0.1.19_vite@3.1.2
     transitivePeerDependencies:
       - esbuild
       - rollup
