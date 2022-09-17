@@ -9360,14 +9360,23 @@ unplugin-transform-we-class@^0.1.18:
     "@rollup/pluginutils" "^4.2.1"
     unplugin "0.9.5"
 
-unplugin-unocss-attributify-wechat@^0.1.13:
-  version "0.1.13"
-  resolved "https://registry.npmjs.org/unplugin-unocss-attributify-wechat/-/unplugin-unocss-attributify-wechat-0.1.13.tgz#8d8b4dc9e3e354f525a00a484e8df46e51c64fa7"
-  integrity sha512-k51LkcEo9Fr+Twj4/Vo58JTbY31DdqT8xhh8ZZ3FlaaC5Q9lwq7BYrfaRlL/uNXjxdGWL2qSJwNqt6jRG32oUQ==
+unplugin-transform-we-class@^0.1.19:
+  version "0.1.19"
+  resolved "https://registry.npmjs.org/unplugin-transform-we-class/-/unplugin-transform-we-class-0.1.19.tgz#8547c67d4c0b2f3fe1b701e617f64dfdbff4fa33"
+  integrity sha512-GK2aWL3HisNrQljQEjCnzEFJa6NRw0Nz5dECC5RdcGDN2n/hDQrh/ecCjCVowFnQWD065LWbXGfYIktORvFJ2Q==
+  dependencies:
+    "@meoc/utils" "^0.1.8"
+    "@rollup/pluginutils" "^4.2.1"
+    unplugin "0.9.5"
+
+unplugin-unocss-attributify-wechat@^0.1.14:
+  version "0.1.14"
+  resolved "https://registry.npmjs.org/unplugin-unocss-attributify-wechat/-/unplugin-unocss-attributify-wechat-0.1.14.tgz#7849025eca837fd5f465e8be94f93115494f7854"
+  integrity sha512-26ooHGueeQtEQjgeZV3vj3qa3SVKJG78o98AZWKB9rANF+D28VpYba3qfheXoRkQoEfUqgBEmeSnZpOJkm/GPA==
   dependencies:
     "@rollup/pluginutils" "^4.2.1"
     unplugin "^0.9.5"
-    unplugin-transform-we-class "^0.1.18"
+    unplugin-transform-we-class "^0.1.19"
 
 unplugin@0.9.5, unplugin@^0.9.5:
   version "0.9.5"
