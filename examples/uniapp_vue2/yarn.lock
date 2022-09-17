@@ -10882,10 +10882,10 @@ unplugin-transform-we-class@^0.1.19:
     "@rollup/pluginutils" "^4.2.1"
     unplugin "0.9.5"
 
-unplugin-unocss-attributify-wechat@^0.1.14:
-  version "0.1.14"
-  resolved "https://registry.npmjs.org/unplugin-unocss-attributify-wechat/-/unplugin-unocss-attributify-wechat-0.1.14.tgz#7849025eca837fd5f465e8be94f93115494f7854"
-  integrity sha512-26ooHGueeQtEQjgeZV3vj3qa3SVKJG78o98AZWKB9rANF+D28VpYba3qfheXoRkQoEfUqgBEmeSnZpOJkm/GPA==
+unplugin-unocss-attributify-wechat@^0.1.15:
+  version "0.1.15"
+  resolved "https://registry.npmjs.org/unplugin-unocss-attributify-wechat/-/unplugin-unocss-attributify-wechat-0.1.15.tgz#680263742b1114f0beec91100e545c1fc8633a4a"
+  integrity sha512-HnNNIbBkdQaZcFyrwKVJrWs3fquLLrqkCNeV60bBkOgLwGL68cz41uDUEeqK4O2LkuqnzpJqmhStf7qJ1sBrFQ==
   dependencies:
     "@rollup/pluginutils" "^4.2.1"
     unplugin "^0.9.5"

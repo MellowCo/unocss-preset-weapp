@@ -1,5 +1,5 @@
 import presetWeapp from 'unocss-preset-weapp'
-import { transformerWeClass } from 'unocss-preset-weapp/transformer';
+import { transformerClass,defaultAttributes,defaultIgnoreNonValuedAttributes,transformerAttributify } from 'unocss-preset-weapp/transformer';
 import {defineConfig} from 'unocss';
 
 const transformRules = {
@@ -50,9 +50,19 @@ export default defineConfig({
     },
   },
   transformers:[
+    // options 见https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+    transformerAttributify({
+      attributes: [...defaultAttributes, 'my-attr'],
+      ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
+      nonValuedAttribute: true,
+      prefix: 'li-',
+      prefixedOnly: false,
+      transformRules
+    }),
+
     // options 见https://github.com/MellowCo/unplugin-transform-we-class
-    transformerWeClass({
-      rules: transformRules
+    transformerClass({
+      transformRules,
     })
   ]
 })

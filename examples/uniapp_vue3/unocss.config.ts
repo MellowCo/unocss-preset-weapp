@@ -1,8 +1,8 @@
 import presetWeapp from 'unocss-preset-weapp'
-import { transformerWeClass } from 'unocss-preset-weapp/transformer'
+import { defaultAttributes, defaultIgnoreNonValuedAttributes, transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
 import { defineConfig } from 'unocss'
 
-const rules = {
+const transformRules = {
   '.': '-d111-',
   '/': '-s111-',
   ':': '-c111-',
@@ -21,7 +21,7 @@ export default defineConfig({
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp({
-      transformRules: rules,
+      transformRules,
     }),
   ],
   shortcuts: [
@@ -48,9 +48,20 @@ export default defineConfig({
     },
   },
   transformers: [
-    // options 见https://github.com/MellowCo/unplugin-transform-we-class
-    transformerWeClass({
-      rules,
+    // options 见https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+    transformerAttributify({
+      attributes: [...defaultAttributes, 'my-attr'],
+      ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
+      nonValuedAttribute: true,
+      prefix: 'li-',
+      prefixedOnly: false,
+      transformRules,
     }),
+
+    // options 见https://github.com/MellowCo/unplugin-transform-we-class
+    transformerClass({
+      transformRules,
+    }),
+
   ],
 })

@@ -9,24 +9,8 @@ const UnoCSS = require('@unocss/webpack').default
 module.exports = {
   configureWebpack: {
     plugins: [
-
       // https://github.com/unocss/unocss
       UnoCSS(),
-
-      // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
-      // presetAttributifyWechat({
-      //   attributes: [...defaultAttributes, 'my-attr'],
-      //   ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
-      //   nonValuedAttribute: true,
-      //   prefix: 'li-',
-      //   prefixedOnly: false,
-      //   transformRules,
-      // }),
-
-      // https://github.com/MellowCo/unplugin-transform-we-class
-      // transformWeClass({
-      //   rules: transformRules,
-      // }),
     ],
   },
 }

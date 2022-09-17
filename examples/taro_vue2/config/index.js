@@ -1,7 +1,5 @@
 // 导入unocss
 import UnoCSS from 'unocss/webpack'
-// import transformWeClass from 'unplugin-transform-we-class/webpack'
-// import { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } from 'unplugin-unocss-attributify-wechat/webpack'
 
 const config = {
   projectName: 'taro_vue2',
@@ -49,26 +47,7 @@ const config = {
     // 合并webpack配置
     webpackChain(chain){
       // https://github.com/unocss/unocss
-      chain.plugin('unocss')
-        .use(UnoCSS())
-
-      // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
-      // chain.plugin('presetAttributifyWechat').use(
-      //   presetAttributifyWechat({
-      //     attributes: [...defaultAttributes, 'my-attr'],
-      //     ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
-      //     nonValuedAttribute: true,
-      //     prefix: 'li-',
-      //     prefixedOnly: false,
-      //     transformRules,
-      //   }))
-
-      // https://github.com/MellowCo/unplugin-transform-we-class
-      // chain
-      //   .plugin('transformWeClass')
-      //   .use(transformWeClass({
-      //     rules: transformRules
-      //   }))
+      chain.plugin('unocss').use(UnoCSS())
     },
   },
   h5: {
@@ -91,23 +70,7 @@ const config = {
     // 合并webpack配置
     webpackChain(chain){
       // https://github.com/unocss/unocss
-      chain.plugin('unocss')
-        .use(UnoCSS())
-
-      // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
-      // chain.plugin('presetAttributifyWechat').use(
-      //   presetAttributifyWechat({
-      //     attributes: [...defaultAttributes, 'my-attr'],
-      //     ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
-      //     nonValuedAttribute: true,
-      //     prefix: 'li-',
-      //     prefixedOnly: true,
-      //   }))
-
-      // https://github.com/MellowCo/unplugin-transform-we-class
-      // chain
-      //   .plugin('transformWeClass')
-      //   .use(transformWeClass())
+      chain.plugin('unocss').use(UnoCSS())
     },
   }
 }
