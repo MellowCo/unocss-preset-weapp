@@ -1,3 +1,10 @@
+<!--
+ * @Author: licl
+ * @Date: 2022-09-17 20:28:29
+ * @LastEditTime: 2022-09-17 20:28:30
+ * @LastEditors: licl
+ * @Description: 
+-->
 # unocss-preset-weapp
 
 [![Version](https://img.shields.io/npm/v/unocss-preset-weapp.svg?style=flat-square&logo=npm) 
@@ -11,10 +18,6 @@
 通过 [unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class) 转换转义类名，保持`原子化css`的规范去书写`class`
 
 通过 [unplugin-unocss-attributify-wechat](https://github.com/MellowCo/unplugin-unocss-attributify-wechat)，支持 [UnoCSS presetAttributify](https://github.com/unocss/unocss/tree/main/packages/preset-attributify)
-
-> V 0.1.14版本后，`unplugin-unocss-attributify-wechat` 和 `unplugin-transform-we-class` 内置到 `transformer` 中， 不需要独立安装了
->
-> [之前的文档见](./OLD_README.md)
 
 支持
 * <a href='#uniapp-vue2'>uniapp vue2</a>
@@ -48,15 +51,12 @@
 
 
 
-
 ---
 
 ## webpack
 
 * 重要的事情说三遍 说三遍 说三遍
-> @unocss/webpack 0.45.8 之后版本，windows 系统出现 unocss 失效的问题，[unocss issues](https://github.com/unocss/unocss/issues/1455)
->
-> 暂时没有解决，请使用 `@unocss/webpack@0.45.8`
+> @unocss/webpack 0.45.8 之后版本，windows 系统出现 unocss 失效的问题，[unocss issues](https://github.com/unocss/unocss/issues/1455)，暂时没有解决，请使用 `@unocss/webpack@0.45.8`
 
 ### uniapp-vue2
 > 在 [uniapp vue2](https://uniapp.dcloud.io/quickstart-cli.html#创建uni-app) 中使用
@@ -83,7 +83,7 @@ npm i -D @unocss/webpack@0.45.8
 vue create -p dcloudio/uni-preset-vue my-project
 
 # @unocss/webpack 请使用 v0.45.8 
-yarn add -D unocss @unocss/webpack@0.45.8 unocss-preset-weapp
+yarn add -D unocss @unocss/webpack@0.45.8 unplugin-transform-we-class unocss-preset-weapp unplugin-unocss-attributify-wechat
 ```
 
 * vue.config.js
@@ -91,12 +91,18 @@ yarn add -D unocss @unocss/webpack@0.45.8 unocss-preset-weapp
 // 请使用 @unocss/webpack 0.45.8
 // 0.45.8 之前和之后版本 会出现无法及时生成`css`代码，导致打包时没有`css`代码
 const UnoCSS = require('@unocss/webpack').default
+const transformWeClass = require('unplugin-transform-we-class/webpack')
+const { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } = require('unplugin-unocss-attributify-wechat/webpack')
 
 module.exports = {
   configureWebpack: {
     plugins: [
       // https://github.com/unocss/unocss
       UnoCSS(),
+      // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+      presetAttributifyWechat(),
+      // https://github.com/MellowCo/unplugin-transform-we-class
+      transformWeClass(),
     ],
   },
 }
@@ -111,7 +117,6 @@ module.exports = {
 ```js
 import presetWeapp from 'unocss-preset-weapp'
 import { defineConfig } from 'unocss'
-import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
 
 export default defineConfig({
   presets: [
@@ -128,16 +133,6 @@ export default defineConfig({
       'center': 'flex justify-center items-center',
     },
   ],
-
-  // v0.1.14 unplugin-unocss-attributify-wechat 和 unplugin-transform-we-class 内置到 transformer 中
-  transformers: [
-    // options 见https://github.com/MellowCo/unplugin-unocss-attributify-wechat
-    transformerAttributify(),
-
-    // options 见https://github.com/MellowCo/unplugin-transform-we-class
-    transformerClass(),
-  ],
-
   theme: {
     // v0.1.9 加入动画预设
     // https://github.com/MellowCo/unocss-preset-weapp#animation-v019
@@ -177,7 +172,7 @@ vue create -p dcloudio/uni-preset-vue my-project
 
 # unocss-webpack-uniapp2 兼容 vue2 app
 # 解决 App平台 v3 模式暂不支持在 js 文件中引用"uno.css" 请改在 style 内引用
-yarn add -D unocss unocss-webpack-uniapp2 unocss-preset-weapp
+yarn add -D unocss unocss-webpack-uniapp2 unplugin-transform-we-class unocss-preset-weapp unplugin-unocss-attributify-wechat 
 ```
 
 * vue.config.js
@@ -186,11 +181,20 @@ yarn add -D unocss unocss-webpack-uniapp2 unocss-preset-weapp
 // 解决 App平台 v3 模式暂不支持在 js 文件中引用"uno.css" 请改在 style 内引用
 const UnoCSS = require('unocss-webpack-uniapp2').default
 
+const transformWeClass = require('unplugin-transform-we-class/webpack')
+const { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } = require('unplugin-unocss-attributify-wechat/webpack')
+
 module.exports = {
   configureWebpack: {
     plugins: [
       // https://github.com/unocss/unocss
       UnoCSS(),
+
+      // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+      presetAttributifyWechat(),
+
+      // https://github.com/MellowCo/unplugin-transform-we-class
+      transformWeClass(),
     ],
   },
 }
@@ -205,7 +209,6 @@ module.exports = {
 ```js
 import presetWeapp from 'unocss-preset-weapp'
 import { defineConfig } from 'unocss'
-import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
 
 export default defineConfig({
   presets: [
@@ -223,16 +226,6 @@ export default defineConfig({
       'center': 'flex justify-center items-center',
     },
   ],
-
-  // v0.1.14 unplugin-unocss-attributify-wechat 和 unplugin-transform-we-class 内置到 transformer 中
-  transformers: [
-    // options 见https://github.com/MellowCo/unplugin-unocss-attributify-wechat
-    transformerAttributify(),
-
-    // options 见https://github.com/MellowCo/unplugin-transform-we-class
-    transformerClass(),
-  ],
-
   theme: {
     // v0.1.9 加入动画预设
     // https://github.com/MellowCo/unocss-preset-weapp#animation-v019
@@ -307,7 +300,7 @@ export default {
 # 创建taro项目
 taro init taro_xxx
 # 安装unocss
-yarn add -D unocss @unocss/webpack@0.45.8 unocss-preset-weapp
+yarn add -D unocss @unocss/webpack@0.45.8 unplugin-transform-we-class unocss-preset-weapp unplugin-unocss-attributify-wechat
 ```
 
 * config/index.js
@@ -316,20 +309,47 @@ yarn add -D unocss @unocss/webpack@0.45.8 unocss-preset-weapp
 ```js
 // 导入unocss
 import UnoCSS from 'unocss/webpack'
+import transformWeClass from 'unplugin-transform-we-class/webpack'
+import { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } from 'unplugin-unocss-attributify-wechat/webpack'
 
 const config = {
   mini: {
     // 合并webpack配置
     webpackChain(chain) {
       // https://github.com/unocss/unocss
-      chain.plugin('unocss').use(UnoCSS())
+      chain
+        .plugin('unocss')
+        .use(UnoCSS())
+
+      // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+      // taro-react 不支持 Attributify Mode ，react不支持，react不支持，react不支持
+      chain
+        .plugin('presetAttributifyWechat')
+        .use(presetAttributifyWechat())
+
+      // https://github.com/MellowCo/unplugin-transform-we-class
+      chain
+        .plugin('transformWeClass')
+        .use(transformWeClass())
     },
   },
   h5: {
     // 合并webpack配置
     webpackChain(chain) {
       // https://github.com/unocss/unocss
-      chain.plugin('unocss').use(UnoCSS())
+      chain.plugin('unocss')
+        .use(UnoCSS())
+
+      // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+      // taro-react 不支持 Attributify Mode ，react不支持，react不支持，react不支持
+      chain
+        .plugin('presetAttributifyWechat')
+        .use(presetAttributifyWechat())
+
+      // https://github.com/MellowCo/unplugin-transform-we-class
+      chain
+        .plugin('transformWeClass')
+        .use(transformWeClass())
     },
   }
 }
@@ -391,7 +411,6 @@ export interface PresetWeappOptions extends PresetOptions {
 
 ```ts
 import presetWeapp from 'unocss-preset-weapp'
-import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
 
 export default {
   presets: [
@@ -411,16 +430,6 @@ export default {
       'center': 'flex justify-center items-center',
     },
   ],
-
-  // v0.1.14 unplugin-unocss-attributify-wechat 和 unplugin-transform-we-class 内置到 transformer 中
-  transformers: [
-    // options 见https://github.com/MellowCo/unplugin-unocss-attributify-wechat
-    transformerAttributify(),
-
-    // options 见https://github.com/MellowCo/unplugin-transform-we-class
-    transformerClass(),
-  ],
-
   theme: {
     // v0.1.9 加入动画预设
     // https://github.com/MellowCo/unocss-preset-weapp#animation-v019
@@ -490,7 +499,7 @@ import 'uno.css'
 # 使用Vue3/Vite版
 npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
 # 安装unocss
-pnpm add -D unocss unocss-preset-weapp
+pnpm add -D unocss unplugin-transform-we-class unocss-preset-weapp unplugin-unocss-attributify-wechat
 ```
 
 * vite.config.ts
@@ -499,11 +508,17 @@ pnpm add -D unocss unocss-preset-weapp
 import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 import Unocss from 'unocss/vite'
+import transformWeClass from 'unplugin-transform-we-class/vite'
+import { presetAttributifyWechat } from 'unplugin-unocss-attributify-wechat/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     uni(),
+
+    // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+    presetAttributifyWechat(),
+
     // https://github.com/antfu/unocss
     // Unocss(),
 
@@ -513,6 +528,9 @@ export default defineConfig({
     // entry module not found, have you add `import 'uno.css'` in your main entry?
     // 导致打包终止
     process.env.UNI_COMPILER !== 'nvue' ? Unocss() : undefined,
+
+    // https://github.com/MellowCo/unplugin-transform-we-class
+    transformWeClass(),
   ],
 })
 ```
@@ -526,7 +544,6 @@ export default defineConfig({
 ```ts
 import presetWeapp from 'unocss-preset-weapp'
 import { defineConfig } from 'unocss'
-import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
 
 export default defineConfig({
   presets: [
@@ -539,16 +556,6 @@ export default defineConfig({
       'center': 'flex justify-center items-center',
     },
   ],
-
-  // v0.1.14 unplugin-unocss-attributify-wechat 和 unplugin-transform-we-class 内置到 transformer 中
-  transformers: [
-    // options 见https://github.com/MellowCo/unplugin-unocss-attributify-wechat
-    transformerAttributify(),
-
-    // options 见https://github.com/MellowCo/unplugin-transform-we-class
-    transformerClass(),
-  ],
-
   theme: {
     // v0.1.9 加入动画预设
     // https://github.com/MellowCo/unocss-preset-weapp#animation-v019
@@ -674,7 +681,13 @@ export default {
       platform: 'uniapp',
       isH5: process.env.UNI_PLATFORM === 'h5'
     }),
-  ]
+  ],
+  shortcuts: [
+    {
+      'border-base': 'border border-gray-500_10',
+      'center': 'flex justify-center items-center',
+    },
+  ],
 }
 
 ```
@@ -710,6 +723,12 @@ export default {
       // webpack4 webpack5
       taroWebpack: 'webpack5'
     }),
+  ],
+  shortcuts: [
+    {
+      'border-base': 'border border-gray-500/10',
+      'center': 'flex justify-center items-center',
+    },
   ]
 }
 ```
@@ -811,12 +830,8 @@ export default defineConfig({
 ### 自定义转换规则
 > 自定义转换规则 `:`，`[`，`$`,`.` 
 
-* unocss.config.js
+* 以 vite 为例子
 ```ts
-import presetWeapp from 'unocss-preset-weapp'
-import { defaultAttributes, defaultIgnoreNonValuedAttributes, transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
-import { defineConfig } from 'unocss'
-
 const transformRules = {
   '.': '-d111-',
   '/': '-s111-',
@@ -829,60 +844,36 @@ const transformRules = {
   '[': '-f111l-',
   ']': '-f111r-',
   '$': '-r111-',
-  ',': '-r222-',
+  ',': '-co111-',
 }
 
+// https://vitejs.dev/config/
 export default defineConfig({
+  plugins: [
+    uni(),
 
-  presets: [
-    // https://github.com/MellowCo/unocss-preset-weapp
-    presetWeapp({
-      transformRules,
-    }),
-  ],
-
-  shortcuts: [
-    {
-      'border-base': 'border border-gray-500_10',
-      'center': 'flex justify-center items-center',
-    },
-  ],
-
-  transformers: [
-    // options 见https://github.com/MellowCo/unplugin-unocss-attributify-wechat
-    transformerAttributify({
-      attributes: [...defaultAttributes, 'my-attr'],
-      ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
-      nonValuedAttribute: true,
-      prefix: 'li-',
-      prefixedOnly: false,
+    // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+    presetAttributifyWechat({
       transformRules,
     }),
 
-    // options 见https://github.com/MellowCo/unplugin-transform-we-class
-    transformerClass({
-      transformRules,
+    // https://github.com/unocss/unocss
+    Unocss({
+      presets: [
+        // https://github.com/MellowCo/unocss-preset-weapp
+        presetWeapp({
+          transformRules,
+        }),
+      ],
+    }),
+
+    // https://github.com/MellowCo/unplugin-transform-we-class
+    transformWeClass({
+      rules: transformRules,
     }),
   ],
-
-  theme: {
-    // 自定义动画
-    animation: {
-      keyframes: {
-        'my-animation': '{0% {letter-spacing: -0.5em;transform: translateZ(-700px);opacity: 0;}40% {opacity: 0.6;}100% {transform: translateZ(0);opacity: 1;}}',
-      },
-      durations: {
-        'my-animation': '0.8s',
-      },
-      counts: {
-        'my-animation': 'infinite',
-      },
-      timingFns: {
-        'my-animation': 'cubic-bezier(0.215, 0.610, 0.355, 1.000)',
-      },
-    },
-  },
 })
+
 ```
 
 
@@ -928,23 +919,25 @@ export default defineConfig({
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208211944041.gif" style="zoom: 50%;" />
 
 ### safe-area (v0.1.6)
-| class                             | Properties       |
-| ----------------------- | ---------------- |
-| p-safe            | padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)     |
-| pt-safe          | padding-top: env(safe-area-inset-top) |
+| class              | Properties       |
+| ------------------ | ---------------- |
+| p-safe | padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)    |
+| pt-safe        | padding-top: env(safe-area-inset-top) |
 | pb-safe           | padding-bottom: env(safe-area-inset-bottom)    |
-| pl-safe          | padding-left: env(safe-area-inset-left)     |
+| pl-safe        | padding-left: env(safe-area-inset-left)     |
 | pr-safe               | padding-right: env(safe-area-inset-right)   |
 
 ### width and height
 
-| class                      | Properties       |
-| -------------------------- | ---------------- |
-| h-1_2<br/>h-1/2<br/>h-half | height: 50%      |
-| w-1_3<br/>w-1/3            | width: 33.33333% |
-| h-full                     | height: 100%     |
-| width-20                   | width: 20r       |
-| h-xs                       | height: 180rpx   |
+| class              | Properties       |
+| ------------------ | ---------------- |
+| h-1_2,h-1/2,h-half | height: 50%      |
+| w-1_3,w-1/3        | width: 33.33333% |
+| width-20           | width: 20rpx     |
+| width-50rpx        | width: 50rpx     |
+| h-xs               | height: 180rpx   |
+| h-xl               | height: 340rpx   |
+| h-full             | height: 100%     |
 
 > 预设
 
@@ -974,13 +967,13 @@ export const baseSize = {
 
 ### border
 
-| class                                      | Properties                            |
-| ------------------------------------------ | ------------------------------------- |
-| border-2                                   | border-width:2rpx;border-style:solid; |
-| b-2                                        | border-width:2rpx;border-style:solid; |
-| border-dashed                              | border-style:dashed                   |
-| rounded-1_2<br>rounded-1/2<br>rounded-half | border-radius:50%                     |
-| rounded-md                                 | border-radius:12rpx                   |
+| class                   | Properties                            |
+| ----------------------- | ------------------------------------- |
+| border-2                | border-width:2rpx;border-style:solid; |
+| b-2                     | border-width:2rpx;border-style:solid; |
+| border-dashed           | border-style:dashed                   |
+| rounded-1_2,rounded-1/2 | border-radius:50%                     |
+| rounded-md              | border-radius:12rpx                   |
 
 > 预设
 
@@ -994,7 +987,6 @@ export const borderRadius = {
   'xl': '24rpx',
   '2xl': '32rpx',
   '3xl': '48rpx',
-  'half': '50%',
   'full': '9999px',
 }
 ```
@@ -1005,11 +997,11 @@ export const borderRadius = {
 
 ### border-color
 
-| class                                                   | Properties                                                   |
-| ------------------------------------------------------- | ------------------------------------------------------------ |
-| border-red-100<br/>border-red-1                         | --un-border-opacity:1;  border-color:rgba(254,226,226,var(--un-border-opacity)) |
-| border-opacity-20<br/>border-op-20<br/>                 | --un-border-opacity:0.2                                      |
-| border-black_10<br/>border-black/10<br/>border-black:10 | border-color:rgba(0,0,0,0.1)                                 |
+| class                                                        | Properties                                                   |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| border-red-100<br/>border-red100<br/>border-red1<br/>border-red-1 | --un-border-opacity:1;  border-color:rgba(254,226,226,var(--un-border-opacity)) |
+| border-opacity-20,border-op-20,border-op20                   | --un-border-opacity:0.2                                      |
+| border-black_10,border-black/10,border-black:10              | border-color:rgba(0,0,0,0.1)                                 |
 
 
 
@@ -1018,12 +1010,12 @@ export const borderRadius = {
 
 | class                                                        | Properties                                                   |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| op-10<br/>opacity-10                                         | opacity:0.1                                                  |
-| color-hex-157<br/>c-hex-157<br/>c-[#157]                     | --un-text-opacity:1;color:rgba(17,85,119,var(--un-text-opacity)) |
-| c-hex-157_10<br/>c-hex-157/10<br/>c-[#157]/10<br/>c-[#157]:10<br/>c-[#157]_10 | color:rgba(17,85,119,0.1)                                    |
-| color-blue,<br/>color-blue-400,<br/>c-blue                   | --un-text-opacity:1;color:rgba(96,165,250,var(--un-text-opacity)) |
-| text-red-100<br/>text-red100<br/>text-red1                   | --un-text-opacity:1;color:rgba(254,226,226,var(--un-text-opacity)) |
-| text-red-100_20<br/>text-red-100/20<br/>text-red-100:20      | color:rgba(254,226,226,0.2)                                  |
+| op-10,opacity-10                                             | opacity:0.1                                                  |
+| color-hex-157,c-hex-157,c-[#157]                             | --un-text-opacity:1;color:rgba(17,85,119,var(--un-text-opacity)) |
+| c-hex-157_10,c-hex-157/10,c-[#157]/10,c-[#157]:10,c-[#157]_10 | color:rgba(17,85,119,0.1)                                    |
+| color-blue,color-blue-400,c-blue                             | --un-text-opacity:1;color:rgba(96,165,250,var(--un-text-opacity)) |
+| text-red-100,text-red100,text-red1                           | --un-text-opacity:1;color:rgba(254,226,226,var(--un-text-opacity)) |
+| text-red-100_20,text-red-100/20,text-red-100:20              | color:rgba(254,226,226,0.2)                                  |
 
 
 
@@ -1031,28 +1023,28 @@ export const borderRadius = {
 
 | class                                                        | Properties                                                   |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| bg-hex-452233_40<br/>bg-[#452233]_40<br/>bg-[#452233]/40<br/>bg-[#452233]:40 | background-color:rgba(69,34,51,0.4)                          |
-| bg-red-100<br/>bg-red1<br/>bg-red100                         | --un-bg-opacity:1;background-color:rgba(254,226,226,var(--un-bg-opacity)) |
-| bg-teal-100_55<br/>bg-teal-100/55<br/>bg-teal-100:55         | background-color:rgba(204,251,241,0.55)                      |
+| bg-hex-452233_40,bg-[#452233]_40,bg-[#452233]/40,bg-[#452233]:40 | background-color:rgba(69,34,51,0.4)                          |
+| bg-red-100,bg-red1,bg-red100                                 | --un-bg-opacity:1;background-color:rgba(254,226,226,var(--un-bg-opacity)) |
+| bg-teal-100_55,bg-teal-100/55,bg-teal-100:55                 | background-color:rgba(204,251,241,0.55)                      |
 | bg-opacity-45                                                | --un-bg-opacity:0.45                                         |
 
 
 ### typography
 
-| class                                    | Properties                                                   |
-| ---------------------------------------- | ------------------------------------------------------------ |
-| text-base                                | font-size:32rpx;line-height:48rpx                            |
-| text-100<br/>text-size-100               | font-size:100rpx                                             |
-| text-2em                                 | font-size:2em                                                |
-| font-900,<br/>font-black<br/>fw-900      | font-weight:900                                              |
-| font-leading-2 <br/>leading-2            | line-height:16rpx                                            |
-| indent                                   | text-indent:48rpx                                            |
-| indent-2                                 | text-indent:16rpx                                            |
-| indent-1_2<br/>indent-1/2<br/>indent-1:2 | text-indent:50%                                              |
-| indent-lg                                | text-indent:64rpx                                            |
-| text-shadow-lg                           | --un-text-shadow:6rpx 6rpx 12rpx var(--un-text-shadow-color, rgba(0,0,0,0.26)),0 0 10rpx var(--un-text-shadow-color, rgba(15,3,86,0.22));text-shadow:var(--un-text-shadow) |
-| word-spacing-2                           | word-spacing:16rpx                                           |
-| tracking-2                               | letter-spacing:16rpx                                         |
+| class                            | Properties                                                   |
+| -------------------------------- | ------------------------------------------------------------ |
+| text-base                        | font-size:32rpx;line-height:48rpx                            |
+| text-100,text-size-100           | font-size:100rpx                                             |
+| text-2em                         | font-size:2em                                                |
+| font-900,font-black,fw-900       | font-weight:900                                              |
+| font-leading-2 ,leading-2        | line-height:16rpx                                            |
+| indent                           | text-indent:48rpx                                            |
+| indent-2                         | text-indent:16rpx                                            |
+| indent-1_2,indent-1/2,indent-1:2 | text-indent:50%                                              |
+| indent-lg                        | text-indent:64rpx                                            |
+| text-shadow-lg                   | --un-text-shadow:6rpx 6rpx 12rpx var(--un-text-shadow-color, rgba(0,0,0,0.26)),0 0 10rpx var(--un-text-shadow-color, rgba(15,3,86,0.22));text-shadow:var(--un-text-shadow) |
+| word-spacing-2                   | word-spacing:16rpx                                           |
+| tracking-2                       | letter-spacing:16rpx                                         |
 
 
 
