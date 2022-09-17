@@ -1,6 +1,6 @@
 import presetWeapp from 'unocss-preset-weapp'
+import {transformerWeClass} from 'unocss-preset-weapp/transformer';
 import { defineConfig } from 'unocss'
-
 
 const transformRules = {
   '.': '-dr1-',
@@ -51,4 +51,10 @@ export default defineConfig({
       },
     },
   },
+  transformers:[
+    // options 见https://github.com/MellowCo/unplugin-transform-we-class
+    transformerWeClass({
+      rules:transformRules
+    })
+  ]
 })

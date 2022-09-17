@@ -1,22 +1,7 @@
 // 导入unocss
 import UnoCSS from 'unocss/webpack'
-import transformWeClass from 'unplugin-transform-we-class/webpack'
-import { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } from 'unplugin-unocss-attributify-wechat/webpack'
-
-const transformRules = {
-  '.': '-dr1-',
-  '/': '-sr1-',
-  ':': '-cr1-',
-  '%': '-pr1-',
-  '!': '-er1-',
-  '#': '-wr1-',
-  '(': '-bl1r-',
-  ')': '-br1r-',
-  '[': '-fl1r-',
-  ']': '-fr1r-',
-  '$': '-rr1-',
-  ',': '-ccc-',
-}
+// import transformWeClass from 'unplugin-transform-we-class/webpack'
+// import { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } from 'unplugin-unocss-attributify-wechat/webpack'
 
 const config = {
   projectName: 'taro_vue2',
@@ -68,22 +53,22 @@ const config = {
         .use(UnoCSS())
 
       // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
-      chain.plugin('presetAttributifyWechat').use(
-        presetAttributifyWechat({
-          attributes: [...defaultAttributes, 'my-attr'],
-          ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
-          nonValuedAttribute: true,
-          prefix: 'li-',
-          prefixedOnly: false,
-          transformRules,
-        }))
+      // chain.plugin('presetAttributifyWechat').use(
+      //   presetAttributifyWechat({
+      //     attributes: [...defaultAttributes, 'my-attr'],
+      //     ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
+      //     nonValuedAttribute: true,
+      //     prefix: 'li-',
+      //     prefixedOnly: false,
+      //     transformRules,
+      //   }))
 
       // https://github.com/MellowCo/unplugin-transform-we-class
-      chain
-        .plugin('transformWeClass')
-        .use(transformWeClass({
-          rules: transformRules
-        }))
+      // chain
+      //   .plugin('transformWeClass')
+      //   .use(transformWeClass({
+      //     rules: transformRules
+      //   }))
     },
   },
   h5: {
@@ -110,19 +95,19 @@ const config = {
         .use(UnoCSS())
 
       // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
-      chain.plugin('presetAttributifyWechat').use(
-        presetAttributifyWechat({
-          attributes: [...defaultAttributes, 'my-attr'],
-          ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
-          nonValuedAttribute: true,
-          prefix: 'li-',
-          prefixedOnly: true,
-        }))
+      // chain.plugin('presetAttributifyWechat').use(
+      //   presetAttributifyWechat({
+      //     attributes: [...defaultAttributes, 'my-attr'],
+      //     ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
+      //     nonValuedAttribute: true,
+      //     prefix: 'li-',
+      //     prefixedOnly: true,
+      //   }))
 
       // https://github.com/MellowCo/unplugin-transform-we-class
-      chain
-        .plugin('transformWeClass')
-        .use(transformWeClass())
+      // chain
+      //   .plugin('transformWeClass')
+      //   .use(transformWeClass())
     },
   }
 }

@@ -1,10 +1,28 @@
 import presetWeapp from 'unocss-preset-weapp'
+import { transformerWeClass } from 'unocss-preset-weapp/transformer'
 import { defineConfig } from 'unocss'
+
+const rules = {
+  '.': '-d111-',
+  '/': '-s111-',
+  ':': '-c111-',
+  '%': '-p111-',
+  '!': '-e111-',
+  '#': '-w111-',
+  '(': '-b111l-',
+  ')': '-b111r-',
+  '[': '-f111l-',
+  ']': '-f111r-',
+  '$': '-r111-',
+  ',': '-r222-',
+}
 
 export default defineConfig({
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
-    presetWeapp(),
+    presetWeapp({
+      transformRules: rules,
+    }),
   ],
   shortcuts: [
     {
@@ -29,4 +47,10 @@ export default defineConfig({
       },
     },
   },
+  transformers: [
+    // options 见https://github.com/MellowCo/unplugin-transform-we-class
+    transformerWeClass({
+      rules,
+    }),
+  ],
 })
