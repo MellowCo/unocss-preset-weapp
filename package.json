@@ -50,6 +50,11 @@
       "require": "./dist/utils.cjs",
       "import": "./dist/utils.mjs"
     },
+    "./transformer": {
+      "types": "./dist/transformer.d.ts",
+      "require": "./dist/transformer.cjs",
+      "import": "./dist/transformer.mjs"
+    },
     "./*": "./*"
   },
   "main": "dist/index.cjs",
@@ -79,6 +84,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@rollup/pluginutils": "^4.2.1",
     "@unocss/core": "^0.45.21",
     "unplugin-transform-we-class": "^0.1.19",
     "unplugin-unocss-attributify-wechat": "^0.1.14"

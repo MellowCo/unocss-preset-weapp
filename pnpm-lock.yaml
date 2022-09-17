@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@antfu/eslint-config': ^0.26.3
+  '@rollup/pluginutils': ^4.2.1
   '@unocss/core': ^0.45.21
   bumpp: ^8.2.1
   eslint: ^8.23.1
@@ -14,6 +15,7 @@ specifiers:
   vitest: ^0.23.2
 
 dependencies:
+  '@rollup/pluginutils': 4.2.1
   '@unocss/core': 0.45.21
   unplugin-transform-we-class: 0.1.19_vite@3.1.2
   unplugin-unocss-attributify-wechat: 0.1.14_vite@3.1.2
