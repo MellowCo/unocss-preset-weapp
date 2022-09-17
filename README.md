@@ -415,6 +415,7 @@ export default {
   // v0.1.14 unplugin-unocss-attributify-wechat 和 unplugin-transform-we-class 内置到 transformer 中
   transformers: [
     // options 见https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+    // taro-react 不支持 Attributify Mode ，react不支持，react不支持，react不支持
     transformerAttributify(),
 
     // options 见https://github.com/MellowCo/unplugin-transform-we-class
