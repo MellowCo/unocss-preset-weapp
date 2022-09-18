@@ -446,21 +446,10 @@ export default defineConfig({
   plugins: [
     uni(),
     // https://github.com/antfu/unocss
-    // Unocss(),
-
-    // app打包配置
-    // uniapp打包app时，打包2次，一次使用 vue 模式打包h5，第2次使用 nvue 模式打包app，
-    // 第2次打包 unocss 会抛出warn
-    // entry module not found, have you add `import 'uno.css'` in your main entry?
-    // 导致打包终止
-    process.env.UNI_COMPILER !== 'nvue' ? Unocss() : undefined,
+    Unocss(),
   ],
 })
 ```
-
-> [unocss] entry module not found, have you add `import 'uno.css'` in your main entry?
-
-![image-20220730140841046](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207301416199.png)
 
 * unocss.config.ts
 > 添加unocss.config.js文件，搭配 [unocss vscode](https://marketplace.visualstudio.com/items?itemName=antfu.unocss) 插件，智能提示
@@ -707,30 +696,6 @@ presetWeapp({
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231629548.png" style="zoom: 50%;" />
 
 ---
-### uniapp vue3 vite app打包中断
-> vue3 APP打包 `warn` 导致打包中断
->
-> [unocss] entry module not found, have you add `import 'uno.css'` in your main entry?
-
-* vite.config.ts
-
-```ts
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [
-    // app打包配置
-    // uniapp打包app时，打包2次，一次使用 vue 模式打包h5，第2次使用 nvue 模式打包app，
-    // 第2次打包 unocss 会抛出warn
-    // entry module not found, have you add `import 'uno.css'` in your main entry?
-    // 导致打包终止
-    process.env.UNI_COMPILER !== 'nvue' ? Unocss() : undefined,
-  ],
-})
-```
-
-![image-20220730140841046](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207301416199.png)
-
----
 ### 自定义转换规则
 > 自定义转换规则 `:`，`[`，`$`,`.` 
 
@@ -775,7 +740,6 @@ export default defineConfig({
   ],
 })
 ```
-
 
 
 ---
