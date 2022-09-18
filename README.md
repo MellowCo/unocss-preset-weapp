@@ -12,7 +12,7 @@
 
 通过 [unplugin-unocss-attributify-wechat](https://github.com/MellowCo/unplugin-unocss-attributify-wechat)，支持 [UnoCSS presetAttributify](https://github.com/unocss/unocss/tree/main/packages/preset-attributify)
 
-> V 0.1.14版本后，`unplugin-unocss-attributify-wechat` 和 `unplugin-transform-we-class` 内置到 `transformer` 中， 不需要独立安装了
+> v0.1.14版本后，`unplugin-unocss-attributify-wechat` 和 `unplugin-transform-we-class` 内置到 `transformer` 中， 不需要独立安装了
 >
 > [之前的文档见](./OLD_README.md)
 
@@ -35,7 +35,7 @@
 * 原子化css冲突问题，例 [tmui](https://tmui.design/) 内置 [原子化css](https://tmui.design/doc/CSSTool/css.html) 与 unocss 冲突问题，[解决方案](https://github.com/MellowCo/unplugin-unocss-attributify-wechat#%E5%8E%9F%E5%AD%90%E5%8C%96-css-%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98)
 
 
-## 示例
+## 示例Demo
 
 * [uniapp_vue3](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue3)   
 * [uniapp_vue2](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue2)   
@@ -136,27 +136,7 @@ export default defineConfig({
 
     // options 见https://github.com/MellowCo/unplugin-transform-we-class
     transformerClass(),
-  ],
-
-  theme: {
-    // v0.1.9 加入动画预设
-    // https://github.com/MellowCo/unocss-preset-weapp#animation-v019
-    // 设置自定义动画
-    animation: {
-      keyframes: {
-        'my-animation': '{0% {letter-spacing: -0.5em;transform: translateZ(-700px);opacity: 0;}40% {opacity: 0.6;}100% {transform: translateZ(0);opacity: 1;}}',
-      },
-      durations: {
-        'my-animation': '0.8s',
-      },
-      counts: {
-        'my-animation': 'infinite',
-      },
-      timingFns: {
-        'my-animation': 'cubic-bezier(0.215, 0.610, 0.355, 1.000)',
-      },
-    },
-  },
+  ]
 })
 
 ```
@@ -232,26 +212,6 @@ export default defineConfig({
     // options 见https://github.com/MellowCo/unplugin-transform-we-class
     transformerClass(),
   ],
-
-  theme: {
-    // v0.1.9 加入动画预设
-    // https://github.com/MellowCo/unocss-preset-weapp#animation-v019
-    // 设置自定义动画
-    animation: {
-      keyframes: {
-        'my-animation': '{0% {letter-spacing: -0.5em;transform: translateZ(-700px);opacity: 0;}40% {opacity: 0.6;}100% {transform: translateZ(0);opacity: 1;}}',
-      },
-      durations: {
-        'my-animation': '0.8s',
-      },
-      counts: {
-        'my-animation': 'infinite',
-      },
-      timingFns: {
-        'my-animation': 'cubic-bezier(0.215, 0.610, 0.355, 1.000)',
-      },
-    },
-  },
 })
 
 ```
@@ -420,26 +380,6 @@ export default {
     // options 见https://github.com/MellowCo/unplugin-transform-we-class
     transformerClass(),
   ],
-
-  theme: {
-    // v0.1.9 加入动画预设
-    // https://github.com/MellowCo/unocss-preset-weapp#animation-v019
-    // 设置自定义动画
-    animation: {
-      keyframes: {
-        'my-animation': '{0% {letter-spacing: -0.5em;transform: translateZ(-700px);opacity: 0;}40% {opacity: 0.6;}100% {transform: translateZ(0);opacity: 1;}}',
-      },
-      durations: {
-        'my-animation': '0.8s',
-      },
-      counts: {
-        'my-animation': 'infinite',
-      },
-      timingFns: {
-        'my-animation': 'cubic-bezier(0.215, 0.610, 0.355, 1.000)',
-      },
-    },
-  },
 }
 ```
 
@@ -547,27 +487,7 @@ export default defineConfig({
 
     // options 见https://github.com/MellowCo/unplugin-transform-we-class
     transformerClass(),
-  ],
-
-  theme: {
-    // v0.1.9 加入动画预设
-    // https://github.com/MellowCo/unocss-preset-weapp#animation-v019
-    // 设置自定义动画
-    animation: {
-      keyframes: {
-        'my-animation': '{0% {letter-spacing: -0.5em;transform: translateZ(-700px);opacity: 0;}40% {opacity: 0.6;}100% {transform: translateZ(0);opacity: 1;}}',
-      },
-      durations: {
-        'my-animation': '0.8s',
-      },
-      counts: {
-        'my-animation': 'infinite',
-      },
-      timingFns: {
-        'my-animation': 'cubic-bezier(0.215, 0.610, 0.355, 1.000)',
-      },
-    },
-  },
+  ]
 })
 ```
 
@@ -735,7 +655,7 @@ const config = {
 }
 ```
 
-* unocss 与 taro config 保持一致
+* `unocss config` 中`designWidth` ,`deviceRatio`与 `taro config` 保持一致
 ```ts
 // unocss.config.ts
 presetWeapp({
@@ -835,21 +755,12 @@ const transformRules = {
 }
 
 export default defineConfig({
-
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp({
       transformRules,
     }),
   ],
-
-  shortcuts: [
-    {
-      'border-base': 'border border-gray-500_10',
-      'center': 'flex justify-center items-center',
-    },
-  ],
-
   transformers: [
     // options 见https://github.com/MellowCo/unplugin-unocss-attributify-wechat
     transformerAttributify({
@@ -861,28 +772,53 @@ export default defineConfig({
       transformRules,
     }),
   ],
-
-  theme: {
-    // 自定义动画
-    animation: {
-      keyframes: {
-        'my-animation': '{0% {letter-spacing: -0.5em;transform: translateZ(-700px);opacity: 0;}40% {opacity: 0.6;}100% {transform: translateZ(0);opacity: 1;}}',
-      },
-      durations: {
-        'my-animation': '0.8s',
-      },
-      counts: {
-        'my-animation': 'infinite',
-      },
-      timingFns: {
-        'my-animation': 'cubic-bezier(0.215, 0.610, 0.355, 1.000)',
-      },
-    },
-  },
 })
 ```
 
 
+
+---
+
+### 原子化 css 冲突问题
+> 例如 [tmui](https://tmui.design/)，自身有一套[原子化 css](https://tmui.design/doc/CSSTool/css.html)，导致与 unocss 冲突
+
+![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208311130610.png)
+
+* unocss.config.ts
+
+> `presetWeapp` 配置 `prefix`, `transformerAttributify` 配置 `classPrefix`
+
+```ts
+export default defineConfig({
+  presets: [
+    // https://github.com/MellowCo/unocss-preset-weapp
+    presetWeapp({
+      prefix: 'li-',
+    }),
+  ],
+  transformers: [
+    // options 见https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+    transformerAttributify({
+      nonValuedAttribute: true,
+      classPrefix: 'li-'
+    }),
+
+    // options 见https://github.com/MellowCo/unplugin-transform-we-class
+    transformerClass(),
+  ],
+})
+```
+
+> 这样冲突问题就解决了
+```html
+<view bg="#333" p="x-6 y-10" w100 h200 class="li-bg-red">
+  this is a unocss
+</view>
+```
+
+![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208311149877.png)
+
+[tm-ui-demo](https://github.com/MellowCo/unplugin-unocss-attributify-wechat/tree/master/examples/tm-ui-demo)
 
 ##  使用
 [UnoCSS 文档](https://uno.antfu.me/)
@@ -908,6 +844,40 @@ export default defineConfig({
 参考 [windicss-animation](https://cn.windicss.org/utilities/animations/animation.html) [@windicss/plugin-animations](https://cn.windicss.org/plugins/community/animations.html)
 
 相关动画网站 [animate.css](https://animate.style/) [animista.net](https://animista.net/play/basic)
+
+* unocss.config.js 自定义动画
+
+```js
+import presetWeapp from 'unocss-preset-weapp'
+import { defineConfig } from 'unocss'
+import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
+
+export default defineConfig({
+  presets: [
+    // https://github.com/MellowCo/unocss-preset-weapp
+    presetWeapp(),
+  ],
+  theme: {
+    // v0.1.9 加入动画预设
+    // https://github.com/MellowCo/unocss-preset-weapp#animation-v019
+    // 设置自定义动画
+    animation: {
+      keyframes: {
+        'my-animation': '{0% {letter-spacing: -0.5em;transform: translateZ(-700px);opacity: 0;}40% {opacity: 0.6;}100% {transform: translateZ(0);opacity: 1;}}',
+      },
+      durations: {
+        'my-animation': '0.8s',
+      },
+      counts: {
+        'my-animation': 'infinite',
+      },
+      timingFns: {
+        'my-animation': 'cubic-bezier(0.215, 0.610, 0.355, 1.000)',
+      },
+    },
+  },
+})
+```
 
 ```html
 <view class="animate-pulse"></view>
