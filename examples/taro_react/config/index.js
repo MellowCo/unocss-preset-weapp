@@ -1,6 +1,5 @@
 // 导入unocss
 import UnoCSS from 'unocss/webpack'
-import transformWeClass from 'unplugin-transform-class/webpack'
 
 const config = {
   projectName: 'taro_react',
@@ -46,12 +45,7 @@ const config = {
     },
     // 合并webpack配置
     webpackChain(chain){
-      chain.plugin('unocss')
-        .use(UnoCSS())
-
-      chain
-        .plugin('transformWeClass')
-        .use(transformWeClass())
+      chain.plugin('unocss').use(UnoCSS())
     },
   },
   h5: {
@@ -73,12 +67,7 @@ const config = {
     },
     // 合并webpack配置
     webpackChain(chain){
-      chain.plugin('unocss')
-        .use(UnoCSS())
-
-      chain
-        .plugin('transformWeClass')
-        .use(transformWeClass())
+      chain.plugin('unocss').use(UnoCSS())
     },
   }
 }

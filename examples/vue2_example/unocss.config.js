@@ -1,6 +1,8 @@
-const presetWeapp = require('../../dist/index.cjs').default
+import presetWeapp from 'unocss-preset-weapp'
+import { transformerClass } from 'unocss-preset-weapp/transformer'
+import { defineConfig } from 'unocss'
 
-export default {
+export default defineConfig({
   presets: [
     presetWeapp(),
   ],
@@ -10,4 +12,7 @@ export default {
       'center': 'flex justify-center items-center',
     },
   ],
-}
+  transformers: [
+    transformerClass(),
+  ],
+})
