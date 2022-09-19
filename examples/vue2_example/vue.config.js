@@ -1,5 +1,5 @@
 const UnoCSS = require('unocss/webpack').default
-const transformWeClass = require('unplugin-transform-we-class/webpack')
+const transformWeClass = require('unplugin-transform-class/webpack')
 
 module.exports = {
   configureWebpack: {

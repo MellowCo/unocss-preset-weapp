@@ -1,6 +1,6 @@
 import type { SourceCodeTransformer } from '@unocss/core'
-import type { Options } from 'unplugin-unocss-attributify-wechat/types'
-import { extractorAttributify } from 'unplugin-unocss-attributify-wechat/utils'
+import type { Options } from 'unplugin-attributify-to-class/types'
+import { extractorAttributify } from 'unplugin-attributify-to-class/utils'
 import { createFilter } from '@rollup/pluginutils'
 
 export default function transformerWeAttributify(options: Options = {}): SourceCodeTransformer {

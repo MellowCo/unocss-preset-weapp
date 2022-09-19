@@ -1,4 +1,4 @@
-import { defaultAttributes, defaultIgnoreNonValuedAttributes } from 'unplugin-unocss-attributify-wechat/utils'
+import { defaultAttributes, defaultIgnoreNonValuedAttributes } from 'unplugin-attributify-to-class/utils'
 import transformerClass from './transformerClass'
 import transformerAttributify from './transformerAttributify'
 

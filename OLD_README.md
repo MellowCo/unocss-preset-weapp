@@ -15,9 +15,9 @@
 在小程序中使用`原子化css`时，`bg-[#153]/10`经过编辑，会变成`bg-\[\#153\]\/10`, 由于小程序不支持`\\`，`\:`，`\[`，`\$`,`\.`等转义类名，导致报错。
 
 
-通过 [unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class) 转换转义类名，保持`原子化css`的规范去书写`class`
+通过 [unplugin-transform-class](https://github.com/MellowCo/unplugin-transform-class) 转换转义类名，保持`原子化css`的规范去书写`class`
 
-通过 [unplugin-unocss-attributify-wechat](https://github.com/MellowCo/unplugin-unocss-attributify-wechat)，支持 [UnoCSS presetAttributify](https://github.com/unocss/unocss/tree/main/packages/preset-attributify)
+通过 [unplugin-attributify-to-class](https://github.com/MellowCo/unplugin-attributify-to-class)，支持 [UnoCSS presetAttributify](https://github.com/unocss/unocss/tree/main/packages/preset-attributify)
 
 支持
 * <a href='#uniapp-vue2'>uniapp vue2</a>
@@ -31,11 +31,11 @@
 相关链接
 * [UnoCSS](https://github.com/unocss/unocss) - 即时按需原子CSS引擎
 * [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp) - UnoCSS 微信小程序预设
-* [unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class) - 小程序原子化 CSS 转换转义类名插件
-* [unplugin-unocss-attributify-wechat](https://github.com/MellowCo/unplugin-unocss-attributify-wechat) - 小程序 Attributify Mode 插件
+* [unplugin-transform-class](https://github.com/MellowCo/unplugin-transform-class) - 小程序原子化 CSS 转换转义类名插件
+* [unplugin-attributify-to-class](https://github.com/MellowCo/unplugin-attributify-to-class) - 小程序 Attributify Mode 插件
 * [unocss-webpack-uniapp2](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2) - 兼容 UniApp Vue2 App开发插件
 * [uni-vue3-starter](https://github.com/MellowCo/uni-vue3-starter) - Uniapp-Vite 模版
-* 原子化css冲突问题，例 [tmui](https://tmui.design/) 内置 [原子化css](https://tmui.design/doc/CSSTool/css.html) 与 unocss 冲突问题，[解决方案](https://github.com/MellowCo/unplugin-unocss-attributify-wechat#%E5%8E%9F%E5%AD%90%E5%8C%96-css-%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98)
+* 原子化css冲突问题，例 [tmui](https://tmui.design/) 内置 [原子化css](https://tmui.design/doc/CSSTool/css.html) 与 unocss 冲突问题，[解决方案](https://github.com/MellowCo/unplugin-attributify-to-class#%E5%8E%9F%E5%AD%90%E5%8C%96-css-%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98)
 
 
 ## 示例
@@ -83,7 +83,7 @@ npm i -D @unocss/webpack@0.45.8
 vue create -p dcloudio/uni-preset-vue my-project
 
 # @unocss/webpack 请使用 v0.45.8 
-yarn add -D unocss @unocss/webpack@0.45.8 unplugin-transform-we-class unocss-preset-weapp unplugin-unocss-attributify-wechat
+yarn add -D unocss @unocss/webpack@0.45.8 unplugin-transform-class unocss-preset-weapp unplugin-attributify-to-class
 ```
 
 * vue.config.js
@@ -91,17 +91,17 @@ yarn add -D unocss @unocss/webpack@0.45.8 unplugin-transform-we-class unocss-pre
 // 请使用 @unocss/webpack 0.45.8
 // 0.45.8 之前和之后版本 会出现无法及时生成`css`代码，导致打包时没有`css`代码
 const UnoCSS = require('@unocss/webpack').default
-const transformWeClass = require('unplugin-transform-we-class/webpack')
-const { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } = require('unplugin-unocss-attributify-wechat/webpack')
+const transformWeClass = require('unplugin-transform-class/webpack')
+const { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } = require('unplugin-attributify-to-class/webpack')
 
 module.exports = {
   configureWebpack: {
     plugins: [
       // https://github.com/unocss/unocss
       UnoCSS(),
-      // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+      // https://github.com/MellowCo/unplugin-attributify-to-class
       presetAttributifyWechat(),
-      // https://github.com/MellowCo/unplugin-transform-we-class
+      // https://github.com/MellowCo/unplugin-transform-class
       transformWeClass(),
     ],
   },
@@ -172,7 +172,7 @@ vue create -p dcloudio/uni-preset-vue my-project
 
 # unocss-webpack-uniapp2 兼容 vue2 app
 # 解决 App平台 v3 模式暂不支持在 js 文件中引用"uno.css" 请改在 style 内引用
-yarn add -D unocss unocss-webpack-uniapp2 unplugin-transform-we-class unocss-preset-weapp unplugin-unocss-attributify-wechat 
+yarn add -D unocss unocss-webpack-uniapp2 unplugin-transform-class unocss-preset-weapp unplugin-attributify-to-class 
 ```
 
 * vue.config.js
@@ -181,8 +181,8 @@ yarn add -D unocss unocss-webpack-uniapp2 unplugin-transform-we-class unocss-pre
 // 解决 App平台 v3 模式暂不支持在 js 文件中引用"uno.css" 请改在 style 内引用
 const UnoCSS = require('unocss-webpack-uniapp2').default
 
-const transformWeClass = require('unplugin-transform-we-class/webpack')
-const { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } = require('unplugin-unocss-attributify-wechat/webpack')
+const transformWeClass = require('unplugin-transform-class/webpack')
+const { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } = require('unplugin-attributify-to-class/webpack')
 
 module.exports = {
   configureWebpack: {
@@ -190,10 +190,10 @@ module.exports = {
       // https://github.com/unocss/unocss
       UnoCSS(),
 
-      // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+      // https://github.com/MellowCo/unplugin-attributify-to-class
       presetAttributifyWechat(),
 
-      // https://github.com/MellowCo/unplugin-transform-we-class
+      // https://github.com/MellowCo/unplugin-transform-class
       transformWeClass(),
     ],
   },
@@ -300,7 +300,7 @@ export default {
 # 创建taro项目
 taro init taro_xxx
 # 安装unocss
-yarn add -D unocss @unocss/webpack@0.45.8 unplugin-transform-we-class unocss-preset-weapp unplugin-unocss-attributify-wechat
+yarn add -D unocss @unocss/webpack@0.45.8 unplugin-transform-class unocss-preset-weapp unplugin-attributify-to-class
 ```
 
 * config/index.js
@@ -309,8 +309,8 @@ yarn add -D unocss @unocss/webpack@0.45.8 unplugin-transform-we-class unocss-pre
 ```js
 // 导入unocss
 import UnoCSS from 'unocss/webpack'
-import transformWeClass from 'unplugin-transform-we-class/webpack'
-import { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } from 'unplugin-unocss-attributify-wechat/webpack'
+import transformWeClass from 'unplugin-transform-class/webpack'
+import { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } from 'unplugin-attributify-to-class/webpack'
 
 const config = {
   mini: {
@@ -321,13 +321,13 @@ const config = {
         .plugin('unocss')
         .use(UnoCSS())
 
-      // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+      // https://github.com/MellowCo/unplugin-attributify-to-class
       // taro-react 不支持 Attributify Mode ，react不支持，react不支持，react不支持
       chain
         .plugin('presetAttributifyWechat')
         .use(presetAttributifyWechat())
 
-      // https://github.com/MellowCo/unplugin-transform-we-class
+      // https://github.com/MellowCo/unplugin-transform-class
       chain
         .plugin('transformWeClass')
         .use(transformWeClass())
@@ -340,13 +340,13 @@ const config = {
       chain.plugin('unocss')
         .use(UnoCSS())
 
-      // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+      // https://github.com/MellowCo/unplugin-attributify-to-class
       // taro-react 不支持 Attributify Mode ，react不支持，react不支持，react不支持
       chain
         .plugin('presetAttributifyWechat')
         .use(presetAttributifyWechat())
 
-      // https://github.com/MellowCo/unplugin-transform-we-class
+      // https://github.com/MellowCo/unplugin-transform-class
       chain
         .plugin('transformWeClass')
         .use(transformWeClass())
@@ -499,7 +499,7 @@ import 'uno.css'
 # 使用Vue3/Vite版
 npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
 # 安装unocss
-pnpm add -D unocss unplugin-transform-we-class unocss-preset-weapp unplugin-unocss-attributify-wechat
+pnpm add -D unocss unplugin-transform-class unocss-preset-weapp unplugin-attributify-to-class
 ```
 
 * vite.config.ts
@@ -508,15 +508,15 @@ pnpm add -D unocss unplugin-transform-we-class unocss-preset-weapp unplugin-unoc
 import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 import Unocss from 'unocss/vite'
-import transformWeClass from 'unplugin-transform-we-class/vite'
-import { presetAttributifyWechat } from 'unplugin-unocss-attributify-wechat/vite'
+import transformWeClass from 'unplugin-transform-class/vite'
+import { presetAttributifyWechat } from 'unplugin-attributify-to-class/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     uni(),
 
-    // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+    // https://github.com/MellowCo/unplugin-attributify-to-class
     presetAttributifyWechat(),
 
     // https://github.com/antfu/unocss
@@ -529,7 +529,7 @@ export default defineConfig({
     // 导致打包终止
     process.env.UNI_COMPILER !== 'nvue' ? Unocss() : undefined,
 
-    // https://github.com/MellowCo/unplugin-transform-we-class
+    // https://github.com/MellowCo/unplugin-transform-class
     transformWeClass(),
   ],
 })
@@ -590,7 +590,7 @@ import 'uno.css'
 
 ## 注意事项
 
-**小程序不支持使用`\\`，`\:`，`\[`，`\$`,`\.`等转义类名，可通过 [插件](https://github.com/MellowCo/unplugin-transform-we-class) 转换支持**
+**小程序不支持使用`\\`，`\:`，`\[`，`\$`,`\.`等转义类名，可通过 [插件](https://github.com/MellowCo/unplugin-transform-class) 转换支持**
 
 > 不支持`% ` h-1.000%
 
@@ -604,7 +604,7 @@ import 'uno.css'
 
 ### 使用 class 转换插件
 
-> 使用 [unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class) ，转换`\\`，`\:`，`\[`，`\$`,`\.`等转义类名
+> 使用 [unplugin-transform-class](https://github.com/MellowCo/unplugin-transform-class) ，转换`\\`，`\:`，`\[`，`\$`,`\.`等转义类名
 
 ![image-20220703141301371](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031413496.png)
 
@@ -852,7 +852,7 @@ export default defineConfig({
   plugins: [
     uni(),
 
-    // https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+    // https://github.com/MellowCo/unplugin-attributify-to-class
     presetAttributifyWechat({
       transformRules,
     }),
@@ -867,7 +867,7 @@ export default defineConfig({
       ],
     }),
 
-    // https://github.com/MellowCo/unplugin-transform-we-class
+    // https://github.com/MellowCo/unplugin-transform-class
     transformWeClass({
       rules: transformRules,
     }),
@@ -885,7 +885,7 @@ export default defineConfig({
 
 > 默认单位`rpx`，w-100 => w-100rpx
 >
-> **不使用 [unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class)**，请将百分比`/`改为`_`，h-1/2 => h-1_2
+> **不使用 [unplugin-transform-class](https://github.com/MellowCo/unplugin-transform-class)**，请将百分比`/`改为`_`，h-1/2 => h-1_2
 
 ### 渐变背景 (v0.1.12)
 

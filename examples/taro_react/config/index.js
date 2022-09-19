@@ -1,6 +1,6 @@
 // 导入unocss
 import UnoCSS from 'unocss/webpack'
-import transformWeClass from 'unplugin-transform-we-class/webpack'
+import transformWeClass from 'unplugin-transform-class/webpack'
 
 const config = {
   projectName: 'taro_react',

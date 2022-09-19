@@ -48,7 +48,7 @@ export default defineConfig({
     },
   },
   transformers: [
-    // options 见https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+    // options 见https://github.com/MellowCo/unplugin-attributify-to-class
     transformerAttributify({
       attributes: [...defaultAttributes, 'my-attr'],
       ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
@@ -58,7 +58,7 @@ export default defineConfig({
       transformRules,
     }),
 
-    // options 见https://github.com/MellowCo/unplugin-transform-we-class
+    // options 见https://github.com/MellowCo/unplugin-transform-class
     transformerClass({
       transformRules,
     }),

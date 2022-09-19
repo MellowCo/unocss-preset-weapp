@@ -1,5 +1,5 @@
 import type { SourceCodeTransformer } from '@unocss/core'
-import { transformCode } from 'unplugin-transform-we-class/utils'
+import { transformCode } from 'unplugin-transform-class/utils'
 import type { FilterPattern } from '@rollup/pluginutils'
 import { createFilter } from '@rollup/pluginutils'
 

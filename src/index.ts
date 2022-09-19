@@ -1,5 +1,5 @@
 import type { Preset, PresetOptions, UtilObject } from '@unocss/core'
-import { defaultRules, transformEscapESelector } from 'unplugin-transform-we-class/utils'
+import { defaultRules, transformEscapESelector } from 'unplugin-transform-class/utils'
 import preflights from './preflights'
 import { rules } from './rules'
 import type { Theme, ThemeAnimation } from './theme'
@@ -100,7 +100,7 @@ export interface PresetWeappOptions extends PresetOptions {
 
   /**
    * 自定义转换规则
-   * @default https://github.com/MellowCo/unplugin-transform-we-class#options
+   * @default https://github.com/MellowCo/unplugin-transform-class#options
    */
   transformRules?: Record<string, string>
 }

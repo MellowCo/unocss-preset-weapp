@@ -97,7 +97,7 @@
     "vue-template-compiler": "^2.6.11",
     "unocss": "^0.44.5",
     "unocss-preset-weapp": "link:../../",
-    "unplugin-transform-we-class": "^0.1.6",
+    "unplugin-transform-class": "^0.1.6",
     "@unocss/webpack": "^0.44.5"
   },
   "browserslist": [

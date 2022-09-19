@@ -1,7 +1,7 @@
 {
   "name": "unocss-preset-weapp",
   "version": "0.1.14",
-  "description": "the weapp preset for UnoCss",
+  "description": "the unocss preset for wechat miniprogram",
   "author": "MellowCo",
   "license": "MIT",
   "homepage": "https://github.com/MellowCo/unocss-prest-weapp",
@@ -86,17 +86,17 @@
   "dependencies": {
     "@rollup/pluginutils": "^4.2.1",
     "@unocss/core": "^0.45.21",
-    "unplugin-transform-we-class": "^0.1.19",
-    "unplugin-unocss-attributify-wechat": "^0.1.15"
+    "unplugin-attributify-to-class": "^0.1.15",
+    "unplugin-transform-class": "^0.1.19"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.26.3",
+    "@antfu/eslint-config": "^0.27.0",
     "bumpp": "^8.2.1",
     "eslint": "^8.23.1",
     "msw": "^0.47.3",
     "typescript": "^4.8.3",
     "unbuild": "^0.8.11",
     "vite": "^3.1.2",
-    "vitest": "^0.23.2"
+    "vitest": "^0.23.4"
   }
 }

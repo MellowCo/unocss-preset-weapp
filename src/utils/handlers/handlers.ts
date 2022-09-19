@@ -1,5 +1,5 @@
 import { escapeSelector } from '@unocss/core'
-import { restoreSelector } from 'unplugin-transform-we-class/utils'
+import { restoreSelector } from 'unplugin-transform-class/utils'
 import type { Theme } from '../../'
 import { globalKeywords } from '../mappings'
 import { numberRE, numberWithUnitRE, unitOnlyRE } from './regex'

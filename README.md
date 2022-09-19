@@ -8,11 +8,11 @@
 在小程序中使用`原子化css`时，`bg-[#153]/10`经过编辑，会变成`bg-\[\#153\]\/10`, 由于小程序不支持`\\`，`\:`，`\[`，`\$`,`\.`等转义类名，导致报错。
 
 
-通过 [unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class) 转换转义类名，保持`原子化css`的规范去书写`class`
+通过 [unplugin-transform-class](https://github.com/MellowCo/unplugin-transform-class) 转换转义类名，保持`原子化css`的规范去书写`class`
 
-通过 [unplugin-unocss-attributify-wechat](https://github.com/MellowCo/unplugin-unocss-attributify-wechat)，支持 [UnoCSS presetAttributify](https://github.com/unocss/unocss/tree/main/packages/preset-attributify)
+通过 [unplugin-attributify-to-class](https://github.com/MellowCo/unplugin-attributify-to-class)，支持 [UnoCSS presetAttributify](https://github.com/unocss/unocss/tree/main/packages/preset-attributify)
 
-> v0.1.14版本后，`unplugin-unocss-attributify-wechat` 和 `unplugin-transform-we-class` 内置到 `transformer` 中， 不需要独立安装了
+> v0.1.14版本后，`unplugin-attributify-to-class` 和 `unplugin-transform-class` 内置到 `transformer` 中， 不需要独立安装了
 >
 > [之前的文档见](./OLD_README.md)
 
@@ -28,8 +28,8 @@
 相关链接
 * [UnoCSS](https://github.com/unocss/unocss) - 即时按需原子CSS引擎
 * [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp) - UnoCSS 微信小程序预设
-* [unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class) - 小程序原子化 CSS 转换转义类名插件
-* [unplugin-unocss-attributify-wechat](https://github.com/MellowCo/unplugin-unocss-attributify-wechat) - 小程序 Attributify Mode 插件
+* [unplugin-transform-class](https://github.com/MellowCo/unplugin-transform-class) - 小程序原子化 CSS 转换转义类名插件
+* [unplugin-attributify-to-class](https://github.com/MellowCo/unplugin-attributify-to-class) - 小程序 Attributify Mode 插件
 * [unocss-webpack-uniapp2](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2) - 兼容 UniApp Vue2 App开发插件
 * [uni-vue3-starter](https://github.com/MellowCo/uni-vue3-starter) - Uniapp-Vite 模版
 * 原子化css冲突问题，例 [tmui](https://tmui.design/) 内置 [原子化css](https://tmui.design/doc/CSSTool/css.html) 与 unocss 冲突问题，[解决方案](https://github.com/MellowCo/unocss-preset-weapp#%E5%8E%9F%E5%AD%90%E5%8C%96-css-%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98)
@@ -129,12 +129,12 @@ export default defineConfig({
     },
   ],
 
-  // v0.1.14 unplugin-unocss-attributify-wechat 和 unplugin-transform-we-class 内置到 transformer 中
+  // v0.1.14 unplugin-attributify-to-class 和 unplugin-transform-class 内置到 transformer 中
   transformers: [
-    // options 见https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+    // options 见https://github.com/MellowCo/unplugin-attributify-to-class
     transformerAttributify(),
 
-    // options 见https://github.com/MellowCo/unplugin-transform-we-class
+    // options 见https://github.com/MellowCo/unplugin-transform-class
     transformerClass(),
   ]
 })
@@ -204,12 +204,12 @@ export default defineConfig({
     },
   ],
 
-  // v0.1.14 unplugin-unocss-attributify-wechat 和 unplugin-transform-we-class 内置到 transformer 中
+  // v0.1.14 unplugin-attributify-to-class 和 unplugin-transform-class 内置到 transformer 中
   transformers: [
-    // options 见https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+    // options 见https://github.com/MellowCo/unplugin-attributify-to-class
     transformerAttributify(),
 
-    // options 见https://github.com/MellowCo/unplugin-transform-we-class
+    // options 见https://github.com/MellowCo/unplugin-transform-class
     transformerClass(),
   ],
 })
@@ -372,13 +372,13 @@ export default {
     },
   ],
 
-  // v0.1.14 unplugin-unocss-attributify-wechat 和 unplugin-transform-we-class 内置到 transformer 中
+  // v0.1.14 unplugin-attributify-to-class 和 unplugin-transform-class 内置到 transformer 中
   transformers: [
-    // options 见https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+    // options 见https://github.com/MellowCo/unplugin-attributify-to-class
     // taro-react 不支持 Attributify Mode ，react不支持，react不支持，react不支持
     transformerAttributify(),
 
-    // options 见https://github.com/MellowCo/unplugin-transform-we-class
+    // options 见https://github.com/MellowCo/unplugin-transform-class
     transformerClass(),
   ],
 }
@@ -470,12 +470,12 @@ export default defineConfig({
     },
   ],
 
-  // v0.1.14 unplugin-unocss-attributify-wechat 和 unplugin-transform-we-class 内置到 transformer 中
+  // v0.1.14 unplugin-attributify-to-class 和 unplugin-transform-class 内置到 transformer 中
   transformers: [
-    // options 见https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+    // options 见https://github.com/MellowCo/unplugin-attributify-to-class
     transformerAttributify(),
 
-    // options 见https://github.com/MellowCo/unplugin-transform-we-class
+    // options 见https://github.com/MellowCo/unplugin-transform-class
     transformerClass(),
   ]
 })
@@ -493,7 +493,7 @@ import 'uno.css'
 
 ## 注意事项
 
-**小程序不支持使用`\\`，`\:`，`\[`，`\$`,`\.`等转义类名，可通过 [插件](https://github.com/MellowCo/unplugin-transform-we-class) 转换支持**
+**小程序不支持使用`\\`，`\:`，`\[`，`\$`,`\.`等转义类名，可通过 [插件](https://github.com/MellowCo/unplugin-transform-class) 转换支持**
 
 > 不支持`% ` h-1.000%
 
@@ -507,7 +507,7 @@ import 'uno.css'
 
 ### 使用 class 转换插件
 
-> 使用 [unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class) ，转换`\\`，`\:`，`\[`，`\$`,`\.`等转义类名
+> 使用 [unplugin-transform-class](https://github.com/MellowCo/unplugin-transform-class) ，转换`\\`，`\:`，`\[`，`\$`,`\.`等转义类名
 
 ![image-20220703141301371](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031413496.png)
 
@@ -728,12 +728,12 @@ export default defineConfig({
     }),
   ],
   transformers: [
-    // options 见https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+    // options 见https://github.com/MellowCo/unplugin-attributify-to-class
     transformerAttributify({
       transformRules,
     }),
 
-    // options 见https://github.com/MellowCo/unplugin-transform-we-class
+    // options 见https://github.com/MellowCo/unplugin-transform-class
     transformerClass({
       transformRules,
     }),
@@ -762,13 +762,13 @@ export default defineConfig({
     }),
   ],
   transformers: [
-    // options 见https://github.com/MellowCo/unplugin-unocss-attributify-wechat
+    // options 见https://github.com/MellowCo/unplugin-attributify-to-class
     transformerAttributify({
       nonValuedAttribute: true,
       classPrefix: 'li-'
     }),
 
-    // options 见https://github.com/MellowCo/unplugin-transform-we-class
+    // options 见https://github.com/MellowCo/unplugin-transform-class
     transformerClass(),
   ],
 })
@@ -783,7 +783,7 @@ export default defineConfig({
 
 ![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208311149877.png)
 
-[tm-ui-demo](https://github.com/MellowCo/unplugin-unocss-attributify-wechat/tree/master/examples/tm-ui-demo)
+[tm-ui-demo](https://github.com/MellowCo/unplugin-attributify-to-class/tree/master/examples/tm-ui-demo)
 
 ##  使用
 [UnoCSS 文档](https://uno.antfu.me/)
@@ -792,7 +792,7 @@ export default defineConfig({
 
 > 默认单位`rpx`，w-100 => w-100rpx
 >
-> **不使用 [unplugin-transform-we-class](https://github.com/MellowCo/unplugin-transform-we-class)**，请将百分比`/`改为`_`，h-1/2 => h-1_2
+> **不使用 [unplugin-transform-class](https://github.com/MellowCo/unplugin-transform-class)**，请将百分比`/`改为`_`，h-1/2 => h-1_2
 
 ### 渐变背景 (v0.1.12)
 
