@@ -3,39 +3,42 @@
 [![Version](https://img.shields.io/npm/v/unocss-preset-weapp.svg?style=flat-square&logo=npm) 
 ![Downloads](https://img.shields.io/npm/dm/unocss-preset-weapp.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/unocss-preset-weapp)
 
-[UnoCSS](https://github.com/unocss/unocss) 微信小程序预设 [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp) , fork form [@unocss/preset-mini](https://github.com/unocss/unocss/tree/main/packages/preset-mini)
+[UnoCSS](https://github.com/unocss/unocss)小程序预设 [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp) , fork form [@unocss/preset-mini](https://github.com/unocss/unocss/tree/main/packages/preset-mini)
 
 在小程序中使用`原子化css`时，`bg-[#153]/10`经过编辑，会变成`bg-\[\#153\]\/10`, 由于小程序不支持`\\`，`\:`，`\[`，`\$`,`\.`等转义类名，导致报错。
 
+内置 `transformer` 用于兼容小程序
 
-通过 [unplugin-transform-class](https://github.com/MellowCo/unplugin-transform-class) 转换转义类名，保持`原子化css`的规范去书写`class`
+* `transformerClass` 转换转义类名，保持`原子化css`的规范去书写`class`
+* `transformerAttributify`，用于支持 [attributify mode](https://github.com/unocss/unocss/tree/main/packages/preset-attributify#attributify-mode)
 
-通过 [unplugin-attributify-to-class](https://github.com/MellowCo/unplugin-attributify-to-class)，支持 [UnoCSS presetAttributify](https://github.com/unocss/unocss/tree/main/packages/preset-attributify)
+---
 
-> v0.1.14版本后，`unplugin-attributify-to-class` 和 `unplugin-transform-class` 内置到 `transformer` 中， 不需要独立安装了
->
-> [之前的文档见](./OLD_README.md)
+快捷导航
 
-支持
-* <a href='#uniapp-vue2'>uniapp vue2</a>
-* <a href='#uni-app-vue3'>uniapp vue3</a>
-* <a href='#taro-react'>taro react</a>
-* <a href='#taro-vue2'>taro vue2</a>
-* <a href='#taro-vue3'>taro vue3</a>
+* <a href='#uniapp-vue2'>uniapp vue2 配置</a>
+* <a href='#uni-app-vue3'>uniapp vue3配置</a>
+* <a href='#taro-react'>taro react配置</a>
+* <a href='#taro-vue2'>taro vue2配置</a>
+* <a href='#taro-vue3'>taro vue3配置</a>
 * [原生微信小程序 wxml](https://github.com/MellowCo/unocss-wechat)
 
+---
 
 相关链接
+
 * [UnoCSS](https://github.com/unocss/unocss) - 即时按需原子CSS引擎
-* [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp) - UnoCSS 微信小程序预设
-* [unplugin-transform-class](https://github.com/MellowCo/unplugin-transform-class) - 小程序原子化 CSS 转换转义类名插件
-* [unplugin-attributify-to-class](https://github.com/MellowCo/unplugin-attributify-to-class) - 小程序 Attributify Mode 插件
+* [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp) - UnoCSS 小程序预设
+* [unplugin-transform-class](https://github.com/MellowCo/unplugin-transform-class) - class转换插件
+* [unplugin-attributify-to-class](https://github.com/MellowCo/unplugin-attributify-to-class) - attributify mode to class 插件
 * [unocss-webpack-uniapp2](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2) - 兼容 UniApp Vue2 App开发插件
 * [uni-vue3-starter](https://github.com/MellowCo/uni-vue3-starter) - Uniapp-Vite 模版
 * 原子化css冲突问题，例 [tmui](https://tmui.design/) 内置 [原子化css](https://tmui.design/doc/CSSTool/css.html) 与 unocss 冲突问题，[解决方案](https://github.com/MellowCo/unocss-preset-weapp#%E5%8E%9F%E5%AD%90%E5%8C%96-css-%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98)
 
+---
 
-## 示例Demo
+
+## 示例项目Demo
 
 * [uniapp_vue3](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue3)   
 * [uniapp_vue2](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue2)   
@@ -792,7 +795,6 @@ export default defineConfig({
 
 > 默认单位`rpx`，w-100 => w-100rpx
 >
-> **不使用 [unplugin-transform-class](https://github.com/MellowCo/unplugin-transform-class)**，请将百分比`/`改为`_`，h-1/2 => h-1_2
 
 ### 渐变背景 (v0.1.12)
 
@@ -815,7 +817,6 @@ export default defineConfig({
 ```js
 import presetWeapp from 'unocss-preset-weapp'
 import { defineConfig } from 'unocss'
-import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
 
 export default defineConfig({
   presets: [
