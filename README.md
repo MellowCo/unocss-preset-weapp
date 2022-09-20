@@ -5,7 +5,7 @@
 
 [UnoCSS](https://github.com/unocss/unocss)小程序预设 [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp) , fork form [@unocss/preset-mini](https://github.com/unocss/unocss/tree/main/packages/preset-mini)
 
-在小程序中使用`原子化css`时，`bg-[#153]/10`经过编辑，会变成`bg-\[\#153\]\/10`, 由于小程序不支持`\\`，`\:`，`\[`，`\$`,`\.`等转义类名，导致报错。
+在小程序中使用`原子化css`时，`bg-[#153]/10` 经过编译，生成的 css 会带上转义，`bg-\[\#153\]\/10`，由于小程序不支持 `\\`，`\:`，`\[`，`\$`， `\.` 等转义类名，导致报错。
 
 内置 `transformer` 用于兼容小程序
 
@@ -48,8 +48,6 @@
 * [原生微信小程序 wxml](https://github.com/MellowCo/unocss-wechat)
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031414239.png" alt="image-20220703141451188" style="zoom:50%;" />
-
-
 
 
 ---
