@@ -37,6 +37,10 @@ export default {
     <view class="center h-200 rounded-md bg-gradient-to-tl from-#f39c12/60 via-#2ecc71:80 to-#9b59b6_70 mb-3">
       to-tl
     </view>
+
+    <view class="center h-200 rounded-md bg-[url(src/static/logo.png)]">
+      to-tl
+    </view>
   </view>
 </template>
 

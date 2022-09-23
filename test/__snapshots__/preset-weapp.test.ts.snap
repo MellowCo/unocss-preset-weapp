@@ -56,6 +56,8 @@ page,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .bg--fl-position-c-10_20rem-fr-{background-position:10px 20rem;}
 .bg--fl-position-c-bottom_left_10-p--fr-{background-position:bottom left 10%;}
 .bg--fl-position-c-top_right_1-s-3-fr-{background-position:top right 33.3333333333%;}
+.bg--fl-url-bl-https-c--s--s-baidu-d-com-s-pic-s-logo-d-png-br--fr-{--un-url:url(https://baidu.com/pic/logo.png);background-image:var(--un-url);}
+.bg--fl-url-bl-src-s-static-s-logo-d-png-br--fr-{--un-url:url(src/static/logo.png);background-image:var(--un-url);}
 .bg-gradient--fl-70deg-co-blue-co-pink-fr-{--un-gradient:70deg,blue,pink;}
 .bg-gradient-stops--fl-blue-co-pink-fr-,
 .stops--fl-blue-co-pink-fr-{--un-gradient-stops:blue,pink;}

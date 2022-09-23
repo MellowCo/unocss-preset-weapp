@@ -72,6 +72,8 @@ export const presetMiniTargets: string[] = [
   'bg-[position:1/2_20rem]',
   'bg-[position:bottom_left_10%]',
   'bg-[position:top_right_1/3]',
+  'bg-[url(src/static/logo.png)]',
+  'bg-[url(https://baidu.com/pic/logo.png)]',
 
   // bg gradient
   'from-current',
