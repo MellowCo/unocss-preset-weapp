@@ -11,7 +11,8 @@
 
 * `transformerClass` 转换转义类名，保持`原子化css`的规范去书写`class`
 * `transformerAttributify`，用于支持 [attributify mode](https://github.com/unocss/unocss/tree/main/packages/preset-attributify#attributify-mode)
-
+* 在 `v0.1.14` 前，通过插件形式引入 `unplugin-transform-class` 和 `unplugin-attributify-to-class`
+* 在 `v0.1.14` 后，可以把 `unplugin-transform-class` 和 `unplugin-attributify-to-class` 删除，在 `unocss.config.ts` 中使用 `transformer` 替换
 ---
 
 快捷导航
@@ -21,7 +22,7 @@
 * <a href='#taro-react'>taro react配置</a>
 * <a href='#taro-vue2'>taro vue2配置</a>
 * <a href='#taro-vue3'>taro vue3配置</a>
-* [原生微信小程序 wxml](https://github.com/MellowCo/unocss-wechat)
+* [ 原生微信小程序 wxml ](https://github.com/MellowCo/unocss-wechat)
 
 ---
 
@@ -132,10 +133,10 @@ export default defineConfig({
 
   // v0.1.14 unplugin-attributify-to-class 和 unplugin-transform-class 内置到 transformer 中
   transformers: [
-    // options 见https://github.com/MellowCo/unplugin-attributify-to-class
+    // options 见 https://github.com/MellowCo/unplugin-attributify-to-class#options
     transformerAttributify(),
 
-    // options 见https://github.com/MellowCo/unplugin-transform-class
+    // options 见 https://github.com/MellowCo/unplugin-transform-class#options
     transformerClass(),
   ]
 })
@@ -207,10 +208,10 @@ export default defineConfig({
 
   // v0.1.14 unplugin-attributify-to-class 和 unplugin-transform-class 内置到 transformer 中
   transformers: [
-    // options 见https://github.com/MellowCo/unplugin-attributify-to-class
+    // options 见https://github.com/MellowCo/unplugin-attributify-to-class#options
     transformerAttributify(),
 
-    // options 见https://github.com/MellowCo/unplugin-transform-class
+    // options 见https://github.com/MellowCo/unplugin-transform-class#options
     transformerClass(),
   ],
 })
@@ -371,11 +372,11 @@ export default {
 
   // v0.1.14 unplugin-attributify-to-class 和 unplugin-transform-class 内置到 transformer 中
   transformers: [
-    // options 见https://github.com/MellowCo/unplugin-attributify-to-class
+    // options 见https://github.com/MellowCo/unplugin-attributify-to-class#options
     // taro-react 不支持 Attributify Mode ，react不支持，react不支持，react不支持
     transformerAttributify(),
 
-    // options 见https://github.com/MellowCo/unplugin-transform-class
+    // options 见https://github.com/MellowCo/unplugin-transform-class#options
     transformerClass(),
   ],
 }
@@ -469,10 +470,10 @@ export default defineConfig({
 
   // v0.1.14 unplugin-attributify-to-class 和 unplugin-transform-class 内置到 transformer 中
   transformers: [
-    // options 见https://github.com/MellowCo/unplugin-attributify-to-class
+    // options 见https://github.com/MellowCo/unplugin-attributify-to-class#options
     transformerAttributify(),
 
-    // options 见https://github.com/MellowCo/unplugin-transform-class
+    // options 见https://github.com/MellowCo/unplugin-transform-class#options
     transformerClass(),
   ]
 })
@@ -725,12 +726,12 @@ export default defineConfig({
     }),
   ],
   transformers: [
-    // options 见https://github.com/MellowCo/unplugin-attributify-to-class
+    // options 见https://github.com/MellowCo/unplugin-attributify-to-class#options
     transformerAttributify({
       transformRules,
     }),
 
-    // options 见https://github.com/MellowCo/unplugin-transform-class
+    // options 见https://github.com/MellowCo/unplugin-transform-class#options
     transformerClass({
       transformRules,
     }),
@@ -759,13 +760,13 @@ export default defineConfig({
     }),
   ],
   transformers: [
-    // options 见https://github.com/MellowCo/unplugin-attributify-to-class
+    // options 见https://github.com/MellowCo/unplugin-attributify-to-class#options
     transformerAttributify({
       nonValuedAttribute: true,
       classPrefix: 'li-'
     }),
 
-    // options 见https://github.com/MellowCo/unplugin-transform-class
+    // options 见https://github.com/MellowCo/unplugin-transform-class#options
     transformerClass(),
   ],
 })
