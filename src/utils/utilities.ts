@@ -15,7 +15,8 @@ export const CONTROL_MINI_NO_NEGATIVE = '$$mini-no-negative'
  */
 export function directionSize(propertyPrefix: string): DynamicMatcher {
   return ([_, direction, size]: string[], { theme }: RuleContext<Theme>): CSSEntries | undefined => {
-    const v = theme.spacing?.[size || 'DEFAULT'] ?? h.bracket.cssvar.global.auto.fraction.remToRpx(size, theme)
+    size = restoreSelector(size, theme?.transformRules)
+    const v = theme.spacing?.[size || 'DEFAULT'] ?? h.bracket.cssvar.global.auto.fraction.remToRpx(size)
     if (v != null)
       return directionMap[direction].map(i => [`${propertyPrefix}${i}`, v])
   }

@@ -1,4 +1,5 @@
 import type { Rule } from '@unocss/core'
+import { restoreSelector } from 'unplugin-transform-class/utils'
 import type { Theme } from '../theme'
 import { colorResolver, handler as h } from '../utils'
 
@@ -9,7 +10,12 @@ export const svgUtilities: Rule<Theme>[] = [
   ['fill-none', { fill: 'none' }],
 
   // stroke size
-  [/^stroke-(?:width-|size-)?(.+)$/, ([, s], { theme }) => ({ 'stroke-width': theme.lineWidth?.[s] ?? h.bracket.cssvar.fraction.px.number(s, theme) }), { autocomplete: ['stroke-width-$lineWidth', 'stroke-size-$lineWidth'] }],
+  [/^stroke-(?:width-|size-)?(.+)$/, ([, s], { theme }) => {
+    s = restoreSelector(s, theme?.transformRules)
+
+    return { 'stroke-width': theme.lineWidth?.[s] ?? h.bracket.cssvar.fraction.px.number(s) }
+  },
+  { autocomplete: ['stroke-width-$lineWidth', 'stroke-size-$lineWidth'] }],
 
   // stroke dash
   [/^stroke-dash-(.+)$/, ([, s]) => ({ 'stroke-dasharray': h.bracket.cssvar.number(s) }), { autocomplete: 'stroke-dash-<num>' }],

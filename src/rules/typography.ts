@@ -1,5 +1,6 @@
 import type { Rule } from '@unocss/core'
 import { toArray } from '@unocss/core'
+import { restoreSelector } from 'unplugin-transform-class/utils'
 import type { Theme } from '../theme'
 import { colorResolver, colorableShadows, handler as h } from '../utils'
 
@@ -98,7 +99,12 @@ export const tabSizes: Rule<Theme>[] = [
 ]
 
 export const textIndents: Rule<Theme>[] = [
-  [/^indent(?:-(.+))?$/, ([, s], { theme }) => ({ 'text-indent': theme.textIndent?.[s || 'DEFAULT'] || h.bracket.cssvar.global.fraction.remToRpx(s, theme) }), { autocomplete: 'indent-$textIndent' }],
+  [/^indent(?:-(.+))?$/, ([, s], { theme }) => {
+    s = restoreSelector(s, theme?.transformRules)
+
+    return { 'text-indent': theme.textIndent?.[s || 'DEFAULT'] || h.bracket.cssvar.global.fraction.remToRpx(s) }
+  },
+  { autocomplete: 'indent-$textIndent' }],
 ]
 
 export const textStrokes: Rule<Theme>[] = [

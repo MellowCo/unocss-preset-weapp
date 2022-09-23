@@ -1,4 +1,5 @@
 import type { CSSEntries, CSSObject, Rule, RuleContext } from '@unocss/core'
+import { restoreSelector } from 'unplugin-transform-class/utils'
 import type { Theme } from '../theme'
 import { colorOpacityToString, colorToString, cornerMap, directionMap, globalKeywords, handler as h, hasParseableColor, parseColor } from '../utils'
 
@@ -118,7 +119,8 @@ function handlerBorderOpacity([, a = '', opacity]: string[]): CSSEntries | undef
 }
 
 function handlerRounded([, a = '', s]: string[], { theme }: RuleContext<Theme>): CSSEntries | undefined {
-  const v = theme.borderRadius?.[s || 'DEFAULT'] || h.bracket.cssvar.global.fraction.remToRpx(s || '1', theme)
+  s = restoreSelector(s, theme?.transformRules)
+  const v = theme.borderRadius?.[s || 'DEFAULT'] || h.bracket.cssvar.global.fraction.remToRpx(s || '1')
   if (a in cornerMap && v != null)
     return cornerMap[a].map(i => [`border${i}-radius`, v])
 }

@@ -1,4 +1,5 @@
 import type { CSSEntries, Rule, RuleContext } from '@unocss/core'
+import { restoreSelector } from 'unplugin-transform-class/utils'
 import type { Theme } from '../theme'
 import { globalKeywords, handler as h, insetMap, makeGlobalStaticRules } from '../utils'
 
@@ -97,7 +98,8 @@ export const placements: Rule[] = [
 ]
 
 function handleInsetValue(v: string, { theme }: RuleContext<Theme>): string | number | undefined {
-  return theme.spacing?.[v] ?? h.bracket.cssvar.global.auto.fraction.rpx(v, theme)
+  v = restoreSelector(v, theme?.transformRules)
+  return theme.spacing?.[v] ?? h.bracket.cssvar.global.auto.fraction.rpx(v)
 }
 
 function handleInsetValues([, d, v]: string[], ctx: RuleContext): CSSEntries | undefined {

@@ -1,4 +1,5 @@
 import type { Rule } from '@unocss/core'
+import { restoreSelector } from 'unplugin-transform-class/utils'
 import type { Theme } from '../theme'
 import { handler as h } from '../utils'
 
@@ -9,7 +10,11 @@ export const flex: Rule<Theme>[] = [
   ['flex-inline', { display: 'inline-flex' }],
 
   // flex
-  [/^flex-(.*)$/, ([, d], { theme }) => ({ flex: h.bracket(d) != null ? h.bracket(d)!.split(' ').map(e => h.cssvar.fraction(e, theme) ?? e).join(' ') : h.cssvar.fraction(d, theme) })],
+  [/^flex-(.*)$/, ([, d], { theme }) => {
+    d = restoreSelector(d, theme?.transformRules)
+
+    return { flex: h.bracket(d) != null ? h.bracket(d)!.split(' ').map(e => h.cssvar.fraction(e) ?? e).join(' ') : h.cssvar.fraction(d) }
+  }],
   ['flex-1', { flex: '1 1 0%' }],
   ['flex-auto', { flex: '1 1 auto' }],
   ['flex-initial', { flex: '0 1 auto' }],
@@ -18,7 +23,11 @@ export const flex: Rule<Theme>[] = [
   // shrink/grow/basis
   [/^(?:flex-)?shrink(?:-(.*))?$/, ([, d = '']) => ({ 'flex-shrink': h.bracket.cssvar.number(d) ?? 1 }), { autocomplete: ['flex-shrink-<num>', 'shrink-<num>'] }],
   [/^(?:flex-)?grow(?:-(.*))?$/, ([, d = '']) => ({ 'flex-grow': h.bracket.cssvar.number(d) ?? 1 }), { autocomplete: ['flex-grow-<num>', 'grow-<num>'] }],
-  [/^(?:flex-)?basis-(.+)$/, ([, d], { theme }) => ({ 'flex-basis': theme.spacing?.[d] ?? h.bracket.cssvar.auto.fraction.remToRpx(d, theme) }), { autocomplete: ['flex-basis-$spacing', 'basis-$spacing'] }],
+  [/^(?:flex-)?basis-(.+)$/, ([, d], { theme }) => {
+    d = restoreSelector(d, theme?.transformRules)
+    return { 'flex-basis': theme.spacing?.[d] ?? h.bracket.cssvar.auto.fraction.remToRpx(d) }
+  },
+  { autocomplete: ['flex-basis-$spacing', 'basis-$spacing'] }],
 
   // directions
   ['flex-row', { 'flex-direction': 'row' }],

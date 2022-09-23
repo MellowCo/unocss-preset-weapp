@@ -1,4 +1,6 @@
 import type { Rule } from '@unocss/core'
+import { restoreSelector } from 'unplugin-transform-class/utils'
+import type { Theme } from '../theme'
 import { globalKeywords, handler as h, makeGlobalStaticRules, positionMap } from '../utils'
 
 const cursorValues = ['auto', 'default', 'none', 'context-menu', 'help', 'pointer', 'progress', 'wait', 'cell', 'crosshair', 'text', 'vertical-text', 'alias', 'copy', 'move', 'no-drop', 'not-allowed', 'grab', 'grabbing', 'all-scroll', 'col-resize', 'row-resize', 'n-resize', 'e-resize', 's-resize', 'w-resize', 'ne-resize', 'nw-resize', 'se-resize', 'sw-resize', 'ew-resize', 'ns-resize', 'nesw-resize', 'nwse-resize', 'zoom-in', 'zoom-out']
@@ -60,8 +62,14 @@ export const whitespaces: Rule[] = [
   ],
 ]
 
-export const contentVisibility: Rule[] = [
-  [/^intrinsic-size-(.+)$/, ([, d], { theme }) => ({ 'contain-intrinsic-size': h.bracket.cssvar.global.fraction.rem(d, theme) }), { autocomplete: 'intrinsic-size-<num>' }],
+export const contentVisibility: Rule<Theme>[] = [
+  [/^intrinsic-size-(.+)$/, ([, d], { theme }) => {
+    d = restoreSelector(d, theme?.transformRules)
+
+    return { 'contain-intrinsic-size': h.bracket.cssvar.global.fraction.rem(d) }
+  },
+  { autocomplete: 'intrinsic-size-<num>' },
+  ],
   ['content-visibility-visible', { 'content-visibility': 'visible' }],
   ['content-visibility-hidden', { 'content-visibility': 'hidden' }],
   ['content-visibility-auto', { 'content-visibility': 'auto' }],
@@ -181,7 +189,7 @@ export const isolations: Rule[] = [
   ['isolation-auto', { isolation: 'auto' }],
 ]
 
-export const objectPositions: Rule[] = [
+export const objectPositions: Rule<Theme>[] = [
   // object fit
   ['object-cover', { 'object-fit': 'cover' }],
   ['object-contain', { 'object-fit': 'contain' }],
@@ -191,10 +199,12 @@ export const objectPositions: Rule[] = [
 
   // object position
   [/^object-(.+)$/, ([, d], { theme }) => {
+    d = restoreSelector(d, theme?.transformRules)
+
     if (positionMap[d])
       return { 'object-position': positionMap[d] }
     if (h.bracketOfPosition(d) != null)
-      return { 'object-position': h.bracketOfPosition(d)!.split(' ').map(e => h.position.fraction.auto.px.cssvar(e, theme)).join(' ') }
+      return { 'object-position': h.bracketOfPosition(d)!.split(' ').map(e => h.position.fraction.auto.px.cssvar(e)).join(' ') }
   }, { autocomplete: `object-(${Object.keys(positionMap).join('|')})` }],
 
 ]

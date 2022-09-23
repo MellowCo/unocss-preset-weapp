@@ -1,4 +1,5 @@
 import type { Rule } from '@unocss/core'
+import { restoreSelector } from 'unplugin-transform-class/utils'
 import type { Theme } from '../theme'
 import { handler as h, resolveBreakpoints, resolveVerticalBreakpoints } from '../utils'
 
@@ -16,6 +17,8 @@ function getPropName(minmax: string, hw: string) {
 type SizeProps = 'width' | 'height' | 'maxWidth' | 'maxHeight' | 'minWidth' | 'minHeight' | 'inlineSize' | 'blockSize' | 'maxInlineSize' | 'maxBlockSize' | 'minInlineSize' | 'minBlockSize'
 
 function getSizeValue(minmax: string, hw: string, theme: Theme, prop: string) {
+  prop = restoreSelector(prop, theme?.transformRules)
+
   const str = getPropName(minmax, hw)
     .replace(/-(\w)/g, (_, p) => p.toUpperCase()) as SizeProps
 
@@ -31,7 +34,7 @@ function getSizeValue(minmax: string, hw: string, theme: Theme, prop: string) {
       return `${prop}-content`
   }
 
-  return h.bracket.cssvar.global.auto.fraction.rpx(prop, theme)
+  return h.bracket.cssvar.global.auto.fraction.rpx(prop)
 }
 
 export const sizes: Rule<Theme>[] = [

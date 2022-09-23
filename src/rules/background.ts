@@ -1,4 +1,5 @@
 import type { CSSColorValue, Rule, RuleContext } from '@unocss/core'
+import { restoreSelector } from 'unplugin-transform-class/utils'
 import { colorOpacityToString, colorToString, globalKeywords, handler as h, makeGlobalStaticRules, parseColor, positionMap } from '../utils'
 import type { Theme } from '../'
 
@@ -56,14 +57,18 @@ const bgGradientColorResolver = (mode: 'from' | 'to' | 'via') =>
 const bgUrlRE = /^\[url\(.+\)\]$/
 const bgLengthRE = /^\[length:.+\]$/
 const bgPositionRE = /^\[position:.+\]$/
-export const backgroundStyles: Rule[] = [
+export const backgroundStyles: Rule<Theme>[] = [
   [/^bg-(.+)$/, ([, d], { theme }) => {
+    d = restoreSelector(d, theme?.transformRules)
+
+    console.log(d, restoreSelector(d, theme?.transformRules), h.bracket(d))
+
     if (bgUrlRE.test(d))
       return { '--un-url': h.bracket(d), 'background-image': 'var(--un-url)' }
     if (bgLengthRE.test(d) && h.bracketOfLength(d) != null)
-      return { 'background-size': h.bracketOfLength(d)!.split(' ').map(e => h.fraction.auto.px.cssvar(e, theme)).join(' ') }
+      return { 'background-size': h.bracketOfLength(d)!.split(' ').map(e => h.fraction.auto.px.cssvar(e)).join(' ') }
     if (bgPositionRE.test(d) && h.bracketOfPosition(d) != null)
-      return { 'background-position': h.bracketOfPosition(d)!.split(' ').map(e => h.position.fraction.auto.px.cssvar(e, theme)).join(' ') }
+      return { 'background-position': h.bracketOfPosition(d)!.split(' ').map(e => h.position.fraction.auto.px.cssvar(e)).join(' ') }
   }],
 
   // gradients

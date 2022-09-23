@@ -1,6 +1,4 @@
 import { escapeSelector } from '@unocss/core'
-import { restoreSelector } from 'unplugin-transform-class/utils'
-import type { Theme } from '../../'
 import { globalKeywords } from '../mappings'
 import { numberRE, numberWithUnitRE, unitOnlyRE } from './regex'
 
@@ -110,11 +108,11 @@ export function percent(str: string) {
     return `${round(num / 100)}`
 }
 
-export function fraction(str: string, theme?: Theme) {
+export function fraction(str: string) {
   if (str === 'full')
     return '100%'
   // 小程序百分比 / 改为 _
-  const [left, right] = restoreSelector(str, theme?.transformRules).split(/[\/\_]/)
+  const [left, right] = str.split(/[\/\_]/)
 
   const num = parseFloat(left) / parseFloat(right)
   if (!Number.isNaN(num))
