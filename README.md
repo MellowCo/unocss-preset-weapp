@@ -260,10 +260,6 @@ export default {
 
 [安装及使用 | Taro 文档 (jd.com)](https://taro-docs.jd.com/taro/docs/GETTING-STARTED)
 
-> `taro 3.4.x` 很多是通过是靠`幽灵依赖`来引用的，`pnpm`不允许`幽灵依赖`,使用`pnpm`会出现一些无厘头的问题
-
-<img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207091012142.png" alt="image-20220709101250085" style="zoom: 67%;" />
-
 ```shell
 # 创建taro项目
 taro init taro_xxx
@@ -781,6 +777,14 @@ export default defineConfig({
   this is a unocss
 </view>
 ```
+
+transform
+```html
+<view class="li-bg-red li-bg-#333 li-p-x-6 li-p-y-10 li-w100 li-200">
+  this is a unocss
+</view>
+```
+
 
 ![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208311149877.png)
 
