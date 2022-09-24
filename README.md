@@ -9,12 +9,12 @@
 
 内置 `transformer` 用于兼容小程序
 
-* `transformerClass` 转换转义类名，保持`原子化css`的规范去书写`class`
-* `transformerAttributify`，用于支持 [attributify mode](https://github.com/unocss/unocss/tree/main/packages/preset-attributify#attributify-mode)
+*  [transformerClass](https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass) 转换转义类名，保持`原子化css`的规范去书写`class`
+*  [transformerAttributify](https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify)，用于支持 [attributify mode](https://github.com/unocss/unocss/tree/main/packages/preset-attributify#attributify-mode)
 ---
 
 升级变化
-* 在 `v0.1.14` 后，将 `unplugin-transform-class` 和 `unplugin-attributify-to-class`核心方法，提取到 `transformer` 中，
+* 在 `v0.1.14` 后，将 [unplugin-transform-class](https://github.com/MellowCo/unplugin-transform-class) 和 [unplugin-attributify-to-class](https://github.com/MellowCo/unplugin-attributify-to-class) 核心方法，提取到 `transformer` 中，
 * 如之前安装 `unplugin-transform-class` 和 `unplugin-attributify-to-class` 可以将卸载，使用  `transformer` 代替即可
 ---
 

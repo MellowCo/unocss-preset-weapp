@@ -34,12 +34,14 @@ export interface Options {
       ',': '-co-',
     }
    */
-  rules?: Record<string, string>
+  transformRules?: Record<string, string>
+
   /**
    * 排除转换目标
    * @default [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/]
    */
   exclude?: FilterPattern
+
   /**
    * 需要转换的目标
    * @default [/\.[jt]sx?$/, /\.vue$/,  /\.vue\?vue/]
@@ -62,7 +64,7 @@ const myRules = {
 }
 
 transformWeClass({
-  rules: myRules
+  transformRules: myRules
 })
 ```
 
