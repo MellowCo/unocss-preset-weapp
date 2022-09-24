@@ -60,9 +60,6 @@ const bgPositionRE = /^\[position:.+\]$/
 export const backgroundStyles: Rule<Theme>[] = [
   [/^bg-(.+)$/, ([, d], { theme }) => {
     d = restoreSelector(d, theme?.transformRules)
-
-    console.log(d, restoreSelector(d, theme?.transformRules), h.bracket(d))
-
     if (bgUrlRE.test(d))
       return { '--un-url': h.bracket(d), 'background-image': 'var(--un-url)' }
     if (bgLengthRE.test(d) && h.bracketOfLength(d) != null)
