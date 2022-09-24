@@ -11,7 +11,7 @@ npm i -D @unocss/webpack@0.45.8
 ```
 
 2. App平台 v3 模式暂不支持在 js 文件中引用"uno.css" 请改在 style 内引用
-> 解决方法：使用 [unocss-webpack-uniapp2](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2) 替换 @unocss/webpack，<a href='#App平台'>见 App 平台</a>
+> 解决方法：使用 [unocss-webpack-uniapp2](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2) 替换 @unocss/webpack，[见 App 小程序 h5 平台](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue2#app-%E5%B0%8F%E7%A8%8B%E5%BA%8F-h5-%E5%B9%B3%E5%8F%B0)
 >
 > 开发 `小程序` `h5` 平台，使用 [@unocss/webpack](https://github.com/unocss/unocss/tree/main/packages/webpack)
 >
@@ -48,7 +48,7 @@ module.exports = {
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207171840689.png" alt="image-20220703141451188" style="zoom:50%;" />
 
-* [h5兼容说明](https://github.com/MellowCo/unocss-preset-weapp#h5%E5%85%BC%E5%AE%B9)
+* [h5兼容说明](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue2#h5%E5%85%BC%E5%AE%B9)
 
 ```js
 import presetWeapp from 'unocss-preset-weapp'
@@ -91,7 +91,6 @@ import 'uno.css'
 
 ## App 小程序 h5 平台
 > unocss-webpack-uniapp2 同样支持 小程序 和 h5 平台
-
 
 ```shell
 # 创建uni-app

@@ -84,9 +84,9 @@ export interface PresetWeappOptions extends PresetOptions {
 
 * 由于 taro 建议使用 px，针对 `taro` 加入小程序  `px` 转 `rpx`，h5 `px` 转 `rem` , 设置 `designWidth` ,`deviceRatio` <a href='#taro-px-to-rpx-rem'>转换说明</a>
 
-* taro `webpack4` 和 `webpack5`  [h5根字体(rem)](https://github.com/MellowCo/unocss-preset-weapp#taro-h5兼容)大小不同，导致不同版本字体大小不同 [taro issues](https://github.com/NervJS/taro/issues/12361) 
+* taro `webpack4` 和 `webpack5`  [h5根字体(rem)](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_vue3#taro-h5%E5%85%BC%E5%AE%B9)大小不同，导致不同版本字体大小不同 [taro issues](https://github.com/NervJS/taro/issues/12361) 
 
-* [h5兼容说明](https://github.com/MellowCo/unocss-preset-weapp#h5%E5%85%BC%E5%AE%B9)
+* [h5兼容说明](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_vue3#h5%E5%85%BC%E5%AE%B9)
 
 ```ts
 import presetWeapp from 'unocss-preset-weapp'

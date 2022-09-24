@@ -38,11 +38,10 @@
 [使用配置与DEMO](https://github.com/MellowCo/unocss-wechat) 
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031414239.png" alt="image-20220703141451188" style="zoom:50%;" />
----
 
 ---
 
-## 注意事项
+## 其他
 
 ### 自定义转换规则
 > 如需更改默认的转换规则，可通过 `transformRules` 进行修改
@@ -140,7 +139,7 @@ transform
 
 [tm-ui-demo](https://github.com/MellowCo/unplugin-attributify-to-class/tree/master/examples/tm-ui-demo)
 
-##  使用
+## css预设
 [UnoCSS 文档](https://uno.antfu.me/)
 
 [Windi CSS文档](https://windicss.org/)
