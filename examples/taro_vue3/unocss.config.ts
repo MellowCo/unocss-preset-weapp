@@ -52,7 +52,7 @@ export default defineConfig({
     },
   },
   transformers:[
-     // https://github.com/MellowCo/unplugin-attributify-to-class
+     // https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify
     transformerAttributify({
       attributes: [...defaultAttributes, 'my-attr'],
       ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
@@ -62,7 +62,7 @@ export default defineConfig({
       transformRules
     }),
 
-    // options 见https://github.com/MellowCo/unplugin-transform-class
+    // options https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
     transformerClass({
       transformRules
     })

@@ -75,12 +75,12 @@ export default defineConfig({
     }),
   ],
   transformers: [
-    // options 见https://github.com/MellowCo/unplugin-attributify-to-class#options
+    // options 见https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify
     transformerAttributify({
       transformRules,
     }),
 
-    // options 见https://github.com/MellowCo/unplugin-transform-class#options
+    // options 见https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
     transformerClass({
       transformRules,
     }),
@@ -108,13 +108,13 @@ export default defineConfig({
     }),
   ],
   transformers: [
-    // options 见https://github.com/MellowCo/unplugin-attributify-to-class#options
+    // options 见https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify
     transformerAttributify({
       nonValuedAttribute: true,
       classPrefix: 'li-'
     }),
 
-    // options 见https://github.com/MellowCo/unplugin-transform-class#options
+    // options 见https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
     transformerClass(),
   ],
 })
