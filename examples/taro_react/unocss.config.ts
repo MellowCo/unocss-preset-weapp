@@ -8,7 +8,6 @@ export default defineConfig({
       // h5兼容
       isH5: process.env.TARO_ENV === 'h5',
       platform: 'taro',
-      designWidth: 750
     }),
   ],
   shortcuts: [

@@ -1,31 +1,13 @@
 import presetWeapp from 'unocss-preset-weapp'
-import { transformerClass,defaultAttributes,defaultIgnoreNonValuedAttributes,transformerAttributify } from 'unocss-preset-weapp/transformer';
+import { transformerClass , transformerAttributify } from 'unocss-preset-weapp/transformer';
 import { defineConfig } from 'unocss'
-
-const transformRules = {
-  '.': '-dr1-',
-  '/': '-sr1-',
-  ':': '-cr1-',
-  '%': '-pr1-',
-  '!': '-er1-',
-  '#': '-wr1-',
-  '(': '-bl1r-',
-  ')': '-br1r-',
-  '[': '-fl1r-',
-  ']': '-fr1r-',
-  '$': '-rr1-',
-  ',': '-ccc-',
-}
 
 export default defineConfig({
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp({
       isH5: process.env.TARO_ENV === 'h5',
-      platform: 'taro',
-      designWidth: 750,
-      taroWebpack:'webpack4',
-      transformRules,
+      platform: 'taro'
     }),
   ],
   shortcuts: [
@@ -54,17 +36,10 @@ export default defineConfig({
   transformers:[
      // https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify
     transformerAttributify({
-      attributes: [...defaultAttributes, 'my-attr'],
-      ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
       nonValuedAttribute: true,
-      prefix: 'li-',
-      prefixedOnly: false,
-      transformRules
     }),
 
     // options https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
-    transformerClass({
-      transformRules
-    })
+    transformerClass()
   ]
 })

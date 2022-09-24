@@ -1,28 +1,11 @@
 import presetWeapp from 'unocss-preset-weapp'
-import { defaultAttributes, defaultIgnoreNonValuedAttributes, transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
+import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
 import { defineConfig } from 'unocss'
-
-const transformRules = {
-  '.': '-d111-',
-  '/': '-s111-',
-  ':': '-c111-',
-  '%': '-p111-',
-  '!': '-e111-',
-  '#': '-w111-',
-  '(': '-b111l-',
-  ')': '-b111r-',
-  '[': '-f111l-',
-  ']': '-f111r-',
-  '$': '-r111-',
-  ',': '-r222-',
-}
 
 export default defineConfig({
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
-    presetWeapp({
-      transformRules,
-    }),
+    presetWeapp(),
   ],
   shortcuts: [
     {
@@ -50,18 +33,10 @@ export default defineConfig({
   transformers: [
     // options https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify
     transformerAttributify({
-      attributes: [...defaultAttributes, 'my-attr'],
-      ignoreNonValuedAttributes: [...defaultIgnoreNonValuedAttributes, 'my-ignore'],
       nonValuedAttribute: true,
-      prefix: 'li-',
-      prefixedOnly: false,
-      transformRules,
     }),
 
     // options https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
-    transformerClass({
-      transformRules,
-    }),
-
+    transformerClass(),
   ],
 })
