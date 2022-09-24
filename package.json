@@ -87,12 +87,12 @@
     "@rollup/pluginutils": "^4.2.1",
     "@unocss/core": "^0.45.22",
     "unplugin-attributify-to-class": "^0.1.15",
-    "unplugin-transform-class": "^0.1.19"
+    "unplugin-transform-class": "^0.1.20"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.27.0",
     "bumpp": "^8.2.1",
-    "eslint": "^8.23.1",
+    "eslint": "^8.24.0",
     "msw": "^0.47.3",
     "typescript": "^4.8.3",
     "unbuild": "^0.8.11",
