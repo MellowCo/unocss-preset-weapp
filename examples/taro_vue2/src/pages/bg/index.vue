@@ -6,6 +6,10 @@ export default {
 
 <template>
   <view text="white" class="p-3">
+        <view flex justify-center w-full>
+      <view class="w-100 h-100 bg-cover mb-3 bg-[url(https://raw.githubusercontent.com/unocss/unocss/main/playground/public/icon-gray.svg)]" />
+    </view>
+
     <view class="center h-200 rounded-md bg-gradient-to-t from-#f39c12/60 via-#2ecc71:80 to-#9b59b6_70 mb-3">
       to-t
     </view>

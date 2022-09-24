@@ -37,7 +37,7 @@
       </view>
 
       <view class="h-200 mb3 bg-white center shadow-[0px_4px_4px_0px_rgba(237,_0,_0,_1)]">
-        shadow-[0px_4px_4px_0px_rgba(237,_0,_0,_1)]
+        [0px_4px_4px_0px_rgba(237,_0,_0,_1)]
       </view>
     </view>
   </view>
