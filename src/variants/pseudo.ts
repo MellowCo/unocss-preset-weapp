@@ -1,6 +1,8 @@
 import type { VariantObject } from '@unocss/core'
 import { escapeRegExp } from '@unocss/core'
+import { restoreSelector } from 'unplugin-transform-class/utils'
 import type { PresetWeappOptions } from '..'
+import type { Theme } from '../theme'
 
 const PseudoClasses: Record<string, string> = Object.fromEntries([
   // pseudo elements part 1
@@ -111,12 +113,16 @@ const PseudoClassesAndElementsStr = Object.entries(PseudoClasses).map(([key]) =>
 const PseudoClassesAndElementsColonStr = Object.entries(PseudoClassesColon).map(([key]) => key).join('|')
 const PseudoClassesAndElementsRE = new RegExp(`^(${PseudoClassesAndElementsStr})[:-]`)
 const PseudoClassesAndElementsColonRE = new RegExp(`^(${PseudoClassesAndElementsColonStr})[:]`)
-export const variantPseudoClassesAndElements: VariantObject = {
+
+export const variantPseudoClassesAndElements: VariantObject<Theme> = {
   name: 'pseudo',
-  match: (input: string) => {
+  match: (input: string, content) => {
+    input = restoreSelector(input, content.theme.transformRules)
+
     const match = input.match(PseudoClassesAndElementsRE) || input.match(PseudoClassesAndElementsColonRE)
     if (match) {
       const pseudo = PseudoClasses[match[1]] || PseudoClassesColon[match[1]] || `:${match[1]}`
+
       return {
         matcher: input.slice(match[0].length),
         handle: (input, next) => {
@@ -143,9 +149,12 @@ export const variantPseudoClassesAndElements: VariantObject = {
 
 const PseudoClassFunctionsRE = new RegExp(`^(${PseudoClassFunctionsStr})-(${PseudoClassesStr})[:-]`)
 const PseudoClassColonFunctionsRE = new RegExp(`^(${PseudoClassFunctionsStr})-(${PseudoClassesColonStr})[:]`)
-export const variantPseudoClassFunctions: VariantObject = {
-  match: (input: string) => {
+
+export const variantPseudoClassFunctions: VariantObject<Theme> = {
+  match: (input: string, content) => {
+    input = restoreSelector(input, content.theme.transformRules)
     const match = input.match(PseudoClassFunctionsRE) || input.match(PseudoClassColonFunctionsRE)
+
     if (match) {
       const fn = match[1]
       const pseudo = PseudoClasses[match[2]] || PseudoClassesColon[match[2]] || `:${match[2]}`
