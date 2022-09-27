@@ -13,6 +13,7 @@ export default defineAppConfig({
     'pages/animation/index',
     'pages/rpxTranform/index',
     'pages/bg/index',
+    'pages/variants/index',
   ],
   window: {
     backgroundTextStyle: 'light',

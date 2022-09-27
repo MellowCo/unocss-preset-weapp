@@ -12,6 +12,7 @@ const list = [
   { name: 'attributify', path: '/pages/attributify-mode/index' },
   { name: 'animation', path: '/pages/animation/index' },
   { name: 'bg', path: '/pages/bg/index' },
+  { name: 'variants', path: '/pages/variants/index' },
 ]
 
 const to = (to: string) => {

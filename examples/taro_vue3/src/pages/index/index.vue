@@ -16,6 +16,7 @@ const list = [
   { name: "animation", path: "/pages/animation/index" },
   { name: "rpxTranform", path: "/pages/rpxTranform/index" },
   { name: "bg", path: "/pages/bg/index" },
+  { name: "variants", path: "/pages/variants/index" },
 ];
 
 

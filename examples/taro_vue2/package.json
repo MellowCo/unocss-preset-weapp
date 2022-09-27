@@ -57,7 +57,7 @@
     "eslint-plugin-vue": "^6.x",
     "stylelint": "^14.4.0",
     "typescript": "^4.1.0",
-    "unocss": "^0.45.22",
+    "unocss": "^0.45.25",
     "unocss-preset-weapp": "link:../../",
     "vue-loader": "^15.9.2"
   }

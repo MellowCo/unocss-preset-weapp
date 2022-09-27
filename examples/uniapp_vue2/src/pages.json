@@ -72,6 +72,12 @@
       "style": {
         "navigationBarTitleText": "bg"
       }
+    },
+    {
+      "path": "pages/variants/index",
+      "style": {
+        "navigationBarTitleText": "variants"
+      }
     }
   ],
   "globalStyle": {
