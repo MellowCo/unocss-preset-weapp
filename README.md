@@ -15,7 +15,7 @@
 
 升级变化
 * 在 `v0.1.14` 后，将 [unplugin-transform-class](https://github.com/MellowCo/unplugin-transform-class) 和 [unplugin-attributify-to-class](https://github.com/MellowCo/unplugin-attributify-to-class) 核心方法，提取到 `transformer` 中，
-* 如之前安装 `unplugin-transform-class` 和 `unplugin-attributify-to-class` 可以将卸载，使用  `transformer` 代替即可
+* 如之前安装 `unplugin-transform-class` 和 `unplugin-attributify-to-class` 可以将其卸载，使用  `transformer` 代替即可
 ---
 
 重要的事情说三遍 说三遍 说三遍
@@ -110,7 +110,6 @@ export default defineConfig({
   transformers: [
     // options 见https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify
     transformerAttributify({
-      nonValuedAttribute: true,
       classPrefix: 'li-'
     }),
 
