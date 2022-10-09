@@ -2,6 +2,8 @@
 
 [安装及使用 | Taro 文档 (jd.com)](https://taro-docs.jd.com/taro/docs/GETTING-STARTED)
 
+
+
 ```shell
 # 创建taro项目
 taro init taro_xxx
@@ -40,7 +42,56 @@ module.exports = function (merge) {
   return merge({}, config, require('./prod'))
 }
 ```
+
+
+
+
 * unocss.config.ts
+  * 默认生成 css 单位为 `rpx` ，`rpx` 在h5平台中，会自动转为 `rem`
+
+  * 由于 taro 建议使用 px，针对 `taro` 加入小程序  `px` 转 `rpx`，h5 `px` 转 `rem` , 设置 `designWidth` ,`deviceRatio` <a href='#taro-px-to-rpx-rem'>转换说明</a>
+
+  * taro `webpack4` 和 `webpack5`  [h5根字体(rem)](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_vue3#taro-h5%E5%85%BC%E5%AE%B9)大小不同，导致不同版本字体大小不同 [taro issues](https://github.com/NervJS/taro/issues/12361) 
+
+  * [h5兼容说明](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_vue3#h5%E5%85%BC%E5%AE%B9)
+
+```ts
+// unocss.config.ts
+import presetWeapp from 'unocss-preset-weapp'
+import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
+
+export default {
+  presets: [
+    // https://github.com/MellowCo/unocss-preset-weapp
+    presetWeapp(
+      // h5兼容设置，默认为 750 标准，webpack4 平台
+      // 只开发小程序可删除
+      {
+        isH5: process.env.TARO_ENV === 'h5',
+        platform: 'taro',
+      }
+    ),
+  ],
+  shortcuts: [
+    {
+      'border-base': 'border border-gray-500/10',
+      'center': 'flex justify-center items-center',
+    },
+  ],
+
+  // v0.1.14 unplugin-attributify-to-class 和 unplugin-transform-class 内置到 transformer 中
+  transformers: [
+    // options 见https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify
+    // taro-react 不支持 Attributify Mode ，react不支持，react不支持，react不支持
+    transformerAttributify(),
+
+    // options 见https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
+    transformerClass(),
+  ],
+}
+```
+
+* PresetWeappOptions
 ```ts
 export interface PresetWeappOptions extends PresetOptions {
   /**
@@ -76,50 +127,6 @@ export interface PresetWeappOptions extends PresetOptions {
    * @default false
    */
   isH5?: boolean
-}
-```
-* 添加unocss.config.js文件，搭配 [unocss vscode](https://marketplace.visualstudio.com/items?itemName=antfu.unocss) 插件，智能提示
-
-* 默认生成 css 单位为 `rpx` ，`rpx` 在h5平台中，会自动转为 `rem`
-
-* 由于 taro 建议使用 px，针对 `taro` 加入小程序  `px` 转 `rpx`，h5 `px` 转 `rem` , 设置 `designWidth` ,`deviceRatio` <a href='#taro-px-to-rpx-rem'>转换说明</a>
-
-* taro `webpack4` 和 `webpack5`  [h5根字体(rem)](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_vue3#taro-h5%E5%85%BC%E5%AE%B9)大小不同，导致不同版本字体大小不同 [taro issues](https://github.com/NervJS/taro/issues/12361) 
-
-* [h5兼容说明](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_vue3#h5%E5%85%BC%E5%AE%B9)
-
-```ts
-import presetWeapp from 'unocss-preset-weapp'
-import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
-
-export default {
-  presets: [
-    // https://github.com/MellowCo/unocss-preset-weapp
-    presetWeapp(
-      // h5兼容设置，默认为 750 标准，webpack4 平台
-      // 只开发小程序可删除
-      {
-        isH5: process.env.TARO_ENV === 'h5',
-        platform: 'taro',
-      }
-    ),
-  ],
-  shortcuts: [
-    {
-      'border-base': 'border border-gray-500/10',
-      'center': 'flex justify-center items-center',
-    },
-  ],
-
-  // v0.1.14 unplugin-attributify-to-class 和 unplugin-transform-class 内置到 transformer 中
-  transformers: [
-    // options 见https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify
-    // taro-react 不支持 Attributify Mode ，react不支持，react不支持，react不支持
-    transformerAttributify(),
-
-    // options 见https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
-    transformerClass(),
-  ],
 }
 ```
 
