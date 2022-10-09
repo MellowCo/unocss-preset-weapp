@@ -1,9 +1,6 @@
 # unocss-preset-weapp
 
-[![Version](https://img.shields.io/npm/v/unocss-preset-weapp.svg?style=flat-square&logo=npm) 
-![Downloads](https://img.shields.io/npm/dm/unocss-preset-weapp.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/unocss-preset-weapp)
-
-[UnoCSS](https://github.com/unocss/unocss)小程序预设 [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp) , fork form [@unocss/preset-mini](https://github.com/unocss/unocss/tree/main/packages/preset-mini)
+[UnoCSS](https://github.com/unocss/unocss)小程序预设 [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp)
 
 --- 
 
