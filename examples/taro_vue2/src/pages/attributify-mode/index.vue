@@ -42,7 +42,7 @@
       111
     </view>
 
-    <view bg="[#aa2222]/50">
+    <view bg="[#aaddd2]/50">
       222
     </view>
 
