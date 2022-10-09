@@ -17,8 +17,8 @@
 
 重要的事情说三遍 说三遍 说三遍
 > @unocss/webpack 0.45.8 之后版本，windows 系统出现 unocss 失效的问题，[unocss issues](https://github.com/unocss/unocss/issues/1455)
->
-> 暂时没有解决，请使用 `@unocss/webpack@0.45.8`
+> 
+> 该问题在 [@unocss/webpack 0.45.29 中修复](https://github.com/unocss/unocss/releases/tag/v0.45.29)，请升级到最新版本
 
 
 ## 使用

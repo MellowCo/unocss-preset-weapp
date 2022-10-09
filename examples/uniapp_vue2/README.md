@@ -2,15 +2,7 @@
 > 在 [uniapp vue2](https://uniapp.dcloud.io/quickstart-cli.html#创建uni-app) 中使用
 
 ## 注意事项
-
-1. @unocss/webpack v0.45.8 之前和之后版本，会出现无法及时生成`css`代码，导致打包时没有`css`代码
-
-> 解决方法：使用 v0.45.8
-```shell
-npm i -D @unocss/webpack@0.45.8
-```
-
-2. App平台 v3 模式暂不支持在 js 文件中引用"uno.css" 请改在 style 内引用
+1. App平台 v3 模式暂不支持在 js 文件中引用"uno.css" 请改在 style 内引用
 > 解决方法：使用 [unocss-webpack-uniapp2](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2) 替换 @unocss/webpack，[见 App 小程序 h5 平台](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue2#app-%E5%B0%8F%E7%A8%8B%E5%BA%8F-h5-%E5%B9%B3%E5%8F%B0)
 >
 > 开发 `小程序` `h5` 平台，使用 [@unocss/webpack](https://github.com/unocss/unocss/tree/main/packages/webpack)
@@ -24,14 +16,11 @@ npm i -D @unocss/webpack@0.45.8
 # 创建uni-app
 vue create -p dcloudio/uni-preset-vue my-project
 
-# @unocss/webpack 请使用 v0.45.8 
-yarn add -D unocss @unocss/webpack@0.45.8 unocss-preset-weapp
+yarn add -D unocss @unocss/webpack unocss-preset-weapp
 ```
 
 * vue.config.js
 ```js
-// 请使用 @unocss/webpack 0.45.8
-// 0.45.8 之前和之后版本 会出现无法及时生成`css`代码，导致打包时没有`css`代码
 const UnoCSS = require('@unocss/webpack').default
 
 module.exports = {

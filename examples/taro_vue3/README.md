@@ -3,12 +3,11 @@
 [安装及使用 | Taro 文档 (jd.com)](https://taro-docs.jd.com/taro/docs/GETTING-STARTED)
 
 
-
 ```shell
 # 创建taro项目
 taro init taro_xxx
 # 安装unocss
-yarn add -D unocss @unocss/webpack@0.45.8 unocss-preset-weapp
+yarn add -D unocss @unocss/webpack unocss-preset-weapp
 ```
 
 * config/index.js
@@ -42,9 +41,6 @@ module.exports = function (merge) {
   return merge({}, config, require('./prod'))
 }
 ```
-
-
-
 
 * unocss.config.ts
   * 默认生成 css 单位为 `rpx` ，`rpx` 在h5平台中，会自动转为 `rem`
