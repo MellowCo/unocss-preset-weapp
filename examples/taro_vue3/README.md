@@ -60,7 +60,7 @@ export default {
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp(
-      // h5兼容设置，默认为 750 标准，webpack4 平台
+      // h5兼容设置，默认为 750 标准（designWidth: 750），webpack4 平台(taroWebpack: webpack4)
       // 只开发小程序可删除
       {
         isH5: process.env.TARO_ENV === 'h5',
