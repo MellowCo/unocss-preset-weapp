@@ -1,6 +1,6 @@
 # taro
 
-[安装及使用 | Taro 文档 (jd.com)](https://taro-docs.jd.com/taro/docs/GETTING-STARTED)
+[安装及使用 | Taro 文档 (jd.com)](https://taro-docs.jd.com/docs/GETTING-STARTED)
 
 
 ```shell
@@ -11,7 +11,7 @@ yarn add -D unocss @unocss/webpack unocss-preset-weapp
 ```
 
 * config/index.js
-> 通过 [miniwebpackchain](https://taro-docs.jd.com/taro/docs/config-detail#miniwebpackchain) ，合并webpack配置
+> 通过 [miniwebpackchain](https://taro-docs.jd.com/docs/config-detail#miniwebpackchain) ，合并webpack配置
 
 ```js
 // 导入unocss
@@ -99,14 +99,14 @@ export interface PresetWeappOptions extends PresetOptions {
   /**
    * taro h5 rem 换算尺寸标准
    * @default 750
-   * @link https://taro-docs.jd.com/taro/docs/size
+   * @link https://taro-docs.jd.com/docs/size
    */
   designWidth?: number
 
   /**
    * taro 设计稿尺寸换算规则
    * @default { 640: 2.34 / 2, 750: 1, 828: 1.81 / 2}
-   * @link https://taro-docs.jd.com/taro/docs/size
+   * @link https://taro-docs.jd.com/docs/size
    */
   deviceRatio?: { [key: number]: number }
 
@@ -223,8 +223,9 @@ export default {
 ---
 
 ### taro px to (rpx rem)
-> 这里以 640 标准，为例子，
-* [taro 的尺寸设计稿设置](https://taro-docs.jd.com/taro/docs/size) ，设置为 640
+> 这里以 640 的设计稿为例子，**使用时请按实际需求设置，designWidth deviceRatio**
+
+* [taro 的尺寸设计稿设置](https://taro-docs.jd.com/docs/GETTING-STARTED) ，设置为 640
 ```ts
 // config/index.js
 const config = {
