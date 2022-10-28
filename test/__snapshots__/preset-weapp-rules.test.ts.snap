@@ -121,7 +121,6 @@ page,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .bg-repeat-revert{background-repeat:revert;}
 .bg-origin-border{background-origin:border-box;}
 .bg-origin-initial{background-origin:initial;}
-.content--rr1-unocss-var{align-content:var(--unocss-var);}
 .fw--rr1-variable{font-weight:var(--variable);}
 .items--rr1-size{align-items:var(--size);}
 .ws--rr1-variable{white-space:var(--variable);}
@@ -379,11 +378,13 @@ div:hover .group--fl1r-div-cr1-hover-fr1r---fl1r-combinator-cr1-test-4-fr1r-{com
 .content-visibility-hidden{content-visibility:hidden;}
 .content-visibility-auto{content-visibility:auto;}
 .content-visibility-unset{content-visibility:unset;}
-.after-cr1-content--fl1r-unocss-fr1r-::after,
-.content--fl1r-unocss-fr1r-{content:\\"unocss\\";}
-.content--fl1r--er1--fr1r-{content:\\"!\\";}
-.content--fl1r-attr-bl1r-dashed-attr-br1r--fr1r-{content:\\"attr(dashed-attr)\\";}
-.content--fl1r-attr-bl1r-underlined_attr-br1r--fr1r-{content:\\"attr(underlined_attr)\\";}
+.after-cr1-content--fl1r-quoted-cr1-unocss-fr1r-::after,
+.content--fl1r-quoted-cr1-unocss-fr1r-{content:\\"unocss\\";}
+.content--fl1r-normal-fr1r-{content:normal;}
+.content--fl1r-quoted-cr1--er1--fr1r-{content:\\"!\\";}
+.content--fl1r-string-cr1-attr-bl1r-dashed-attr-br1r--fr1r-{content:attr(dashed-attr);}
+.content--fl1r-string-cr1-attr-bl1r-underlined\\\\\\\\_attr-br1r--fr1r-{content:attr(underlined_attr);}
+.content--rr1-unocss-var{content:var(--unocss-var);}
 .content-empty,
 .content-none{content:\\"\\";}
 .font--fl1r-system-ui-fr1r-{font-family:system-ui;}

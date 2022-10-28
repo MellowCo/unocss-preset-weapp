@@ -155,7 +155,6 @@ page,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .bg-repeat-revert{background-repeat:revert;}
 .bg-origin-border{background-origin:border-box;}
 .bg-origin-initial{background-origin:initial;}
-.content-\\\\$unocss-var{align-content:var(--unocss-var);}
 .fw-\\\\$variable{font-weight:var(--variable);}
 .items-\\\\$size{align-items:var(--size);}
 .ws-\\\\$variable{white-space:var(--variable);}
@@ -416,11 +415,13 @@ div:hover .group-\\\\[div\\\\:hover\\\\]-\\\\[combinator\\\\:test-4\\\\]{combina
 .content-visibility-hidden{content-visibility:hidden;}
 .content-visibility-auto{content-visibility:auto;}
 .content-visibility-unset{content-visibility:unset;}
-.after\\\\:content-\\\\[unocss\\\\]::after,
-.content-\\\\[unocss\\\\]{content:\\"unocss\\";}
-.content-\\\\[\\\\!\\\\]{content:\\"!\\";}
-.content-\\\\[attr\\\\(dashed-attr\\\\)\\\\]{content:\\"attr(dashed-attr)\\";}
-.content-\\\\[attr\\\\(underlined_attr\\\\)\\\\]{content:\\"attr(underlined_attr)\\";}
+.after\\\\:content-\\\\[quoted\\\\:unocss\\\\]::after,
+.content-\\\\[quoted\\\\:unocss\\\\]{content:\\"unocss\\";}
+.content-\\\\[normal\\\\]{content:normal;}
+.content-\\\\[quoted\\\\:\\\\!\\\\]{content:\\"!\\";}
+.content-\\\\[string\\\\:attr\\\\(dashed-attr\\\\)\\\\]{content:attr(dashed-attr);}
+.content-\\\\[string\\\\:attr\\\\(underlined\\\\\\\\_attr\\\\)\\\\]{content:attr(underlined_attr);}
+.content-\\\\$unocss-var{content:var(--unocss-var);}
 .content-empty,
 .content-none{content:\\"\\";}
 .font-\\\\[system-ui\\\\]{font-family:system-ui;}
