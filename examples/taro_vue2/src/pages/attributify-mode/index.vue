@@ -38,7 +38,7 @@
       This conflicts with links' text prop
     </text>
 
-    <view bg="#33aaa3:90">
+    <view bg="#ddaaaa:90">
       111
     </view>
 

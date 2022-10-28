@@ -11,7 +11,7 @@ import { taroPxToRemW4, taroPxToRemW5, taroPxToRpx, taroRpxToPx, uniAppRpxTransf
 export { theme, colors } from './theme'
 export { parseColor } from './utils'
 
-// feat(preset-mini): parse shadow with bracket
+// feat(preset-mini)!: use getComponent for variant parameter
 export type { ThemeAnimation, Theme }
 
 export interface DarkModeSelectors {

@@ -50,7 +50,7 @@ export default {
       111
     </view>
 
-    <view bg="[#33dddd]/50">
+    <view bg="[#eaeaaa]/50">
       222
     </view>
 

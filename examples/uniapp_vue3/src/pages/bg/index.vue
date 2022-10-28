@@ -6,8 +6,6 @@ export default {
 
 <template>
   <view text="white" class="p-3">
-    <view class="center h-200 rounded-md bg-[url(../../static/logo.png)]" />
-
     <view flex justify-center w-full>
       <view class="w-100 h-100 bg-cover mb-3" style="background-image: url(../../static/logo.png)" />
     </view>

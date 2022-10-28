@@ -1,7 +1,7 @@
 {
   "miniprogramRoot": "./dist",
-  "projectname": "taro_vue3",
-  "description": "taro_vue3",
+  "projectname": "taro_webpack4_vue3",
+  "description": "taro_webpack4_vue3",
   "appid": "touristappid",
   "setting": {
     "urlCheck": true,
