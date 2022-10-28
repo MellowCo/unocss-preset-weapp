@@ -728,6 +728,7 @@ export const presetMiniTargets: string[] = [
 
   'break-normal',
   'break-words',
+  'break-keep',
   'text-clip',
   'case-upper', // !
   'case-normal', // !

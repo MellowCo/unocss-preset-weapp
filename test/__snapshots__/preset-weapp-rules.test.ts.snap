@@ -793,6 +793,7 @@ div:hover .group--fl1r-div-cr1-hover-fr1r---fl1r-combinator-cr1-test-4-fr1r-{com
 .ws-revert{white-space:revert;}
 .break-normal{overflow-wrap:normal;word-break:normal;}
 .break-words{overflow-wrap:break-word;}
+.break-keep{word-break:keep-all;}
 .overflow-auto{overflow:auto;}
 .overflow-inherit{overflow:inherit;}
 .of-x-unset{overflow-x:unset;}
