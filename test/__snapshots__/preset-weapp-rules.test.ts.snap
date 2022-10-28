@@ -132,11 +132,8 @@ page,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .all--fl1r--dr1-target-fr1r---fl1r-combinator-cr1-test-2-fr1r- .target,
 .children--fl1r--dr1-target-fr1r---fl1r-combinator-cr1-test-2-fr1r->.target,
 .next--fl1r--dr1-target-fr1r---fl1r-combinator-cr1-test-2-fr1r-+.target{combinator:test-2;}
-.scope .group--fl1r--dr1-scope-fr1r---fl1r-combinator-cr1-test-3-fr1r-,
-.scope+.previous--fl1r--dr1-scope-fr1r---fl1r-combinator-cr1-test-3-fr1r-,
-.scope>.parent--fl1r--dr1-scope-fr1r---fl1r-combinator-cr1-test-3-fr1r-{combinator:test-3;}
-.sibling--fl1r-div-cr1-hover-fr1r---fl1r-combinator-cr1-test-4-fr1r-+div:hover,
-div:hover .group--fl1r-div-cr1-hover-fr1r---fl1r-combinator-cr1-test-4-fr1r-{combinator:test-4;}
+.all--fl1r--fl1r-data-hvr-fr1r--cr1-hover-fr1r--cr1--fl1r-color-cr1-red-fr1r- [data-hvr]:hover{color:red;}
+.sibling--fl1r-div-cr1-hover-fr1r---fl1r-combinator-cr1-test-4-fr1r-+div:hover{combinator:test-4;}
 .-er1-p-5px{padding:5px !important;}
 .-p-px{padding:-1px;}
 .first-cr1-p-2:first-child,
@@ -187,6 +184,7 @@ div:hover .group--fl1r-div-cr1-hover-fr1r---fl1r-combinator-cr1-test-4-fr1r-{com
 .all-cr1-m-auto *,
 .children-cr1-m-auto>*,
 .m-auto{margin:auto;}
+.all-cr1-m1-sr1-1 *{margin:100%;}
 .m--fl1r-3em-fr1r-{margin:3em;}
 .m-0{margin:0rpx;}
 .m-1-sr1-2{margin:50%;}
@@ -210,7 +208,8 @@ div:hover .group--fl1r-div-cr1-hover-fr1r---fl1r-combinator-cr1-test-4-fr1r-{com
 .mbs--fl1r--10-dr1-2-pr1--fr1r-{margin-block-start:-10.2%;}
 .mbs--rr1-height{margin-block-start:var(--height);}
 .mbs-unset{margin-block-start:unset;}
-.unocss .scope-unocss-cr1-block{display:block;}
+[data-any] .scope--fl1r--fl1r-data-any-fr1r--fr1r--cr1-inline{display:inline;}
+unocss .scope--fl1r-unocss-fr1r--cr1-block{display:block;}
 .contents{display:contents;}
 .display--rr1-var{display:var(--var);}
 .display-inherit{display:inherit;}
@@ -243,7 +242,7 @@ div:hover .group--fl1r-div-cr1-hover-fr1r---fl1r-combinator-cr1-test-4-fr1r-{com
 .hover-cr1-not-first-cr1-checked-cr1-bg-red-sr1-10:checked:not(:first-child):hover{background-color:rgba(248,113,113,0.1);}
 .marker-cr1-bg-violet-200::marker{--un-bg-opacity:1;background-color:rgba(221,214,254,var(--un-bg-opacity));}
 .peer:checked~.peer-checked-cr1-bg-blue-500{--un-bg-opacity:1;background-color:rgba(59,130,246,var(--un-bg-opacity));}
-.previous:checked+.previous-checked-cr1-bg-red-500{--un-bg-opacity:1;background-color:rgba(239,68,68,var(--un-bg-opacity));}
+.previous-sr1-label:checked+.previous-checked-sr1-label-cr1-bg-red-500{--un-bg-opacity:1;background-color:rgba(239,68,68,var(--un-bg-opacity));}
 .bg-opacity-45{--un-bg-opacity:0.45;}
 .all--fl1r-svg-fr1r--cr1-fill-red svg{--un-fill-opacity:1;fill:rgba(248,113,113,var(--un-fill-opacity));}
 .fill--fl1r--wr1-123-fr1r-{--un-fill-opacity:1;fill:rgba(17,34,51,var(--un-fill-opacity));}
@@ -407,6 +406,8 @@ div:hover .group--fl1r-div-cr1-hover-fr1r---fl1r-combinator-cr1-test-4-fr1r-{com
 .text-lg{font-size:36rpx;line-height:56rpx;}
 .text-size--rr1-variable{font-size:var(--variable);}
 .text-size-unset{font-size:unset;}
+.as-parent .group .group--fl1r--dr1-as-parent_\\\\&-fr1r--cr1-font-13{font-weight:13;}
+.as-parent .group-sr1-label .group--fl1r--dr1-as-parent_\\\\&-fr1r--sr1-label-cr1-font-18{font-weight:18;}
 .font-050,
 .font-50,
 .fw-050,
@@ -415,6 +416,14 @@ div:hover .group--fl1r-div-cr1-hover-fr1r---fl1r-combinator-cr1-test-4-fr1r-{com
 .fw-900{font-weight:900;}
 .font-inherit{font-weight:inherit;}
 .font-thin{font-weight:100;}
+.group-sr1-label:hover .group--fl1r--cr1-hover-fr1r--sr1-label-cr1-font-16{font-weight:16;}
+.group-sr1-label:hover .group-hover-sr1-label-cr1-font-15{font-weight:15;}
+.group-sr1-label.not-parent .group--fl1r--dr1-not-parent-fr1r--sr1-label-cr1-font-19{font-weight:19;}
+.group-sr1-label[data-attr] .group--fl1r--fl1r-data-attr-fr1r--fr1r--sr1-label-cr1-font-17{font-weight:17;}
+.group:hover .group--fl1r--cr1-hover-fr1r--cr1-font-11{font-weight:11;}
+.group:hover .group-hover-cr1-font-10{font-weight:10;}
+.group.not-parent .group--fl1r--dr1-not-parent-fr1r--cr1-font-14{font-weight:14;}
+.group[data-attr] .group--fl1r--fl1r-data-attr-fr1r--fr1r--cr1-font-12{font-weight:12;}
 .font-leading-2,
 .leading-2{line-height:16rpx;}
 .leading--rr1-variable,
@@ -932,7 +941,7 @@ div:hover .group--fl1r-div-cr1-hover-fr1r---fl1r-combinator-cr1-test-4-fr1r-{com
 .perspect-origin-center{-webkit-perspective-origin:center;perspective-origin:center;}
 .perspect-origin-top-right{-webkit-perspective-origin:top right;perspective-origin:top right;}
 .-translate-full{--un-translate-x:-100%;--un-translate-y:-100%;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
-.scope_class .scope-scope_class-cr1-translate-0{--un-translate-x:0rpx;--un-translate-y:0rpx;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
+.scope_class .scope--fl1r--dr1-scope\\\\\\\\_class-fr1r--cr1-translate-0{--un-translate-x:0rpx;--un-translate-y:0rpx;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
 .translate-full{--un-translate-x:100%;--un-translate-y:100%;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
 .translate-none{--un-translate-x:0;--un-translate-y:0;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
 .-translate-x-full{--un-translate-x:-100%;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
@@ -1000,10 +1009,10 @@ div:hover .group--fl1r-div-cr1-hover-fr1r---fl1r-combinator-cr1-test-4-fr1r-{com
 .layer-base-cr1-translate-0{--un-translate-x:0rpx;--un-translate-y:0rpx;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
 }
 @layer utility{
-.layer-utility-cr1-block{display:block;}
+.layer--fl1r-utility-fr1r--cr1-block{display:block;}
 }
 @media (--cssvar){
-.media-cssvar-cr1-block{display:block;}
+.media--fl1r--bl1r---cssvar-br1r--fr1r--cr1-block{display:block;}
 }
 @media (prefers-color-scheme: dark){
 .dark-cr1-text-xl{font-size:40rpx;line-height:56rpx;}
@@ -1050,6 +1059,8 @@ div:hover .group--fl1r-div-cr1-hover-fr1r---fl1r-combinator-cr1-test-4-fr1r-{com
 @media (min-width: 1536px){
 .at-2xl-cr1-m2{margin:16rpx;}
 }
+/* layer: uno css */
+.uno-layer--fl1r-uno_css-fr1r--cr1-block{display:block;}
 /* layer: uno_css */
 .uno-layer-uno_css-cr1-block{display:block;}"
 `;

@@ -1,7 +1,9 @@
 import type { VariantObject } from '@unocss/core'
-import { escapeRegExp } from '@unocss/core'
+import { escapeRegExp, escapeSelector, warnOnce } from '@unocss/core'
+
 import { restoreSelector } from 'unplugin-transform-class/utils'
 import type { PresetWeappOptions } from '..'
+import { handler as h, variantGetBracket } from '../utils'
 import type { Theme } from '../theme'
 
 const PseudoClasses: Record<string, string> = Object.fromEntries([
@@ -84,25 +86,69 @@ const sortValue = (pseudo: string) => {
 }
 
 const taggedPseudoClassMatcher = (tag: string, parent: string, combinator: string): VariantObject => {
-  const rawRe = new RegExp(`^(${escapeRegExp(parent)}:)(\\S+)${escapeRegExp(combinator)}\\1`)
-  const pseudoRE = new RegExp(`^${tag}-((?:(${PseudoClassFunctionsStr})-)?(${PseudoClassesStr}))[:-]`)
-  const pseudoColonRE = new RegExp(`^${tag}-((?:(${PseudoClassFunctionsStr})-)?(${PseudoClassesColonStr}))[:]`)
+  const rawRE = new RegExp(`^(${escapeRegExp(parent)}:)(\\S+)${escapeRegExp(combinator)}\\1`)
+  const pseudoRE = new RegExp(`^${tag}-(?:(?:(${PseudoClassFunctionsStr})-)?(${PseudoClassesStr}))(?:(/\\w+))?[:-]`)
+  const pseudoColonRE = new RegExp(`^${tag}-(?:(?:(${PseudoClassFunctionsStr})-)?(${PseudoClassesColonStr}))(?:(/\\w+))?[:]`)
+
+  const matchBracket = (input: string) => {
+    const body = variantGetBracket(tag, input, [])
+    if (!body)
+      return
+
+    const [match, rest] = body
+    const bracketValue = h.bracket(match)
+    if (bracketValue == null)
+      return
+
+    const label = rest.split(/[:-]/, 1)?.[0] ?? ''
+    const prefix = `${parent}${escapeSelector(label)}`
+    return [
+      label,
+      input.slice(input.length - (rest.length - label.length - 1)),
+      bracketValue.includes('&') ? bracketValue.replace(/&/g, prefix) : `${prefix}${bracketValue}`,
+    ]
+  }
+
+  const matchPseudo = (input: string) => {
+    const match = input.match(pseudoRE) || input.match(pseudoColonRE)
+    if (!match)
+      return
+
+    const [original, fn, pseudoKey] = match
+    const label = match[3] ?? ''
+    let pseudo = PseudoClasses[pseudoKey] || PseudoClassesColon[pseudoKey] || `:${pseudoKey}`
+    if (fn)
+      pseudo = `:${fn}(${pseudo})`
+
+    return [
+      label,
+      input.slice(original.length),
+      `${parent}${escapeSelector(label)}${pseudo}`,
+      sortValue(pseudoKey),
+    ]
+  }
+
   return {
     name: `pseudo:${tag}`,
-    match(input: string) {
-      const match = input.match(pseudoRE) || input.match(pseudoColonRE)
-      if (match) {
-        let pseudo = PseudoClasses[match[3]] || PseudoClassesColon[match[3]] || `:${match[3]}`
-        if (match[2])
-          pseudo = `:${match[2]}(${pseudo})`
-        return {
-          matcher: input.slice(match[0].length),
-          handle: (input, next) => next({
-            ...input,
-            prefix: `${parent}${pseudo}${combinator}${input.prefix}`.replace(rawRe, '$1$2:'),
-            sort: sortValue(match[3]),
-          }),
-        }
+    match(input) {
+      if (!input.startsWith(tag))
+        return
+
+      const result = matchBracket(input) || matchPseudo(input)
+      if (!result)
+        return
+
+      const [label, matcher, prefix, sort] = result as [string, string, string, number | undefined]
+      if (label !== '')
+        warnOnce('The labeled pseudo is experimental and may be changed in breaking ways at any time.')
+
+      return {
+        matcher,
+        handle: (input, next) => next({
+          ...input,
+          prefix: `${prefix}${combinator}${input.prefix}`.replace(rawRE, '$1$2:'),
+        }),
+        sort,
       }
     },
     multiPass: true,
@@ -116,7 +162,7 @@ const PseudoClassesAndElementsColonRE = new RegExp(`^(${PseudoClassesAndElements
 
 export const variantPseudoClassesAndElements: VariantObject<Theme> = {
   name: 'pseudo',
-  match: (input: string, content) => {
+  match(input: string, content) {
     input = restoreSelector(input, content.theme.transformRules)
 
     const match = input.match(PseudoClassesAndElementsRE) || input.match(PseudoClassesAndElementsColonRE)
@@ -151,7 +197,7 @@ const PseudoClassFunctionsRE = new RegExp(`^(${PseudoClassFunctionsStr})-(${Pseu
 const PseudoClassColonFunctionsRE = new RegExp(`^(${PseudoClassFunctionsStr})-(${PseudoClassesColonStr})[:]`)
 
 export const variantPseudoClassFunctions: VariantObject<Theme> = {
-  match: (input: string, content) => {
+  match(input: string, content) {
     input = restoreSelector(input, content.theme.transformRules)
     const match = input.match(PseudoClassFunctionsRE) || input.match(PseudoClassColonFunctionsRE)
 
@@ -181,7 +227,7 @@ export const variantTaggedPseudoClasses = (options: PresetWeappOptions = {}): Va
 
 const PartClassesRE = /(part-\[(.+)]:)(.+)/
 export const partClasses: VariantObject = {
-  match: (input: string) => {
+  match(input: string) {
     const match = input.match(PartClassesRE)
     if (match) {
       const part = `part(${match[2]})`
