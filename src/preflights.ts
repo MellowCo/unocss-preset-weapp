@@ -1,10 +1,11 @@
 import type { Preflight, PreflightContext } from '@unocss/core'
-import { entriesToCss } from '@unocss/core'
+import { entriesToCss, toArray } from '@unocss/core'
 import type { Theme } from './theme'
 
-const wxPrefix = 'page'
-const taroPrefix = '*'
-const uniappPrefix = 'uni-page-body'
+const wxPrefix = ['page,::before,::after']
+const taroPrefix = ['*,::before,::after']
+const uniappPrefix = ['uni-page-body,::before,::after']
+// const defaultPrefix = ['*,::before,::after', '::backdrop']
 
 export default function (isH5: boolean, platform: string): Preflight[] {
   return [
@@ -13,12 +14,17 @@ export default function (isH5: boolean, platform: string): Preflight[] {
       getCSS(ctx: PreflightContext<Theme>) {
         if (ctx.theme.preflightBase) {
           const css = entriesToCss(Object.entries(ctx.theme.preflightBase))
-          const preflights = `,::before,::after{${css}}::backdrop{${css}}`
+          let preflightRoot = ctx.theme.preflightRoot
 
-          if (isH5)
-            return `${platform === 'uniapp' ? uniappPrefix : taroPrefix}${preflights}`
-          else
-            return `${wxPrefix}${preflights}`
+          if (!preflightRoot) {
+            if (isH5)
+              preflightRoot = platform === 'uniapp' ? uniappPrefix : taroPrefix
+            else
+              preflightRoot = wxPrefix
+          }
+
+          const roots = toArray(preflightRoot)
+          return roots.map(root => `${root}{${css}}`).join('')
         }
       },
     },

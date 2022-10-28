@@ -1,3 +1,5 @@
+import type { Arrayable } from '@unocss/core'
+
 export interface ThemeAnimation {
   keyframes?: Record<string, string>
   durations?: Record<string, string>
@@ -60,6 +62,7 @@ export interface Theme {
   }
   // vars
   /** Used to generate CSS variables placeholder in preflight */
+  preflightRoot?: Arrayable<string>
   preflightBase?: Record<string, string | number>
 
   // 小程序转义class 自定义转换规则
