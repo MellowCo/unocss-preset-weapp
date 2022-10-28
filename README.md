@@ -223,7 +223,7 @@ export default defineConfig({
 | h-1_2<br/>h-1/2<br/>h-half | height: 50%      |
 | w-1_3<br/>w-1/3            | width: 33.33333% |
 | h-full                     | height: 100%     |
-| width-20                   | width: 20r       |
+| w-20                       | width: 20rpx     |
 | h-xs                       | height: 180rpx   |
 
 > 预设
