@@ -17,7 +17,6 @@ export default defineConfig({
     },
   ],
   transformers:[
-    // https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
     transformerClass()
   ]
 })
