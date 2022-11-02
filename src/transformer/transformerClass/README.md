@@ -11,6 +11,36 @@
 
 ---
 
+## 转换效果
+
+static class
+
+```html
+<view class="tracking-[2/5] bg-teal-200:55">
+  tracking-[2/5]
+</view>
+```
+
+setting rules
+
+```js
+const rules = {
+  '/': '-s-',
+  ':': '-c-',
+  '[': '-fl-',
+  ']': '-fr-',
+}
+```
+
+transfrom
+
+```html
+<view class="tracking--fl-2-s-5-fr- bg-teal-200-c-55">
+  tracking-[2/5]
+</view>
+```
+---
+
 ## 如何使用
 
 ### options
@@ -63,7 +93,7 @@ const myRules = {
   '%': '-pp-'
 }
 
-transformWeClass({
+transformerClass({
   transformRules: myRules
 })
 ```
