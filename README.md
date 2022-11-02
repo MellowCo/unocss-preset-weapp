@@ -6,7 +6,7 @@
 
 内置 `transformer` 用于兼容小程序
 
-*  [transformerClass](https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass) 转换转义类名，保持`原子化css`的规范去书写`class`
+*  [transformerClass](https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass) 转换转义类名，解决小程序不支持`\\`，`\:`，`\[`， `\$`，`\.`等转义类名，保持`原子化css`的规范去书写`class`
 *  [transformerAttributify](https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify)，用于支持 [attributify mode](https://github.com/unocss/unocss/tree/main/packages/preset-attributify#attributify-mode)
 ---
 
