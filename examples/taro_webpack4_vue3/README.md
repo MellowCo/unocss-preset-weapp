@@ -57,7 +57,7 @@ module.exports = function (merge) {
 
   * taro `webpack4` 和 `webpack5`  [h5根字体(rem)](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_webpack4_vue3#taro-h5%E5%85%BC%E5%AE%B9)大小不同，导致不同版本字体大小不同 [taro issues](https://github.com/NervJS/taro/issues/12361) 
 
-  * [h5兼容说明](https://github.com/MellowCo/unocss-preset-weapp/edit/main/examples/taro_webpack4_vue3/README.md#h5%E5%85%BC%E5%AE%B9)
+  * [h5兼容说明](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_webpack4_vue3#h5%E5%85%BC%E5%AE%B9)
 
 ```ts
 // unocss.config.ts
