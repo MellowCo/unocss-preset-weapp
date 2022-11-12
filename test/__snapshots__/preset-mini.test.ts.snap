@@ -9,12 +9,12 @@ exports[`preset-mini > custom var prefix 1`] = `
 
 exports[`preset-mini > dark customizing selector 1`] = `
 "/* layer: default */
-[data-mode=\\"dark\\"] .dark-c-bg-white{--un-bg-opacity:1;background-color:rgba(255,255,255,var(--un-bg-opacity));}
-[data-mode=\\"light\\"] .light-c-bg-black{--un-bg-opacity:1;background-color:rgba(0,0,0,var(--un-bg-opacity));}
-[data-mode=\\"dark\\"] .dark-c-hover-c-rounded:hover{border-radius:8rpx;}
-[data-mode=\\"dark\\"] .dark-c-text-lg{font-size:36rpx;line-height:56rpx;}
-[data-mode=\\"light\\"] .light-c-text-sm{font-size:28rpx;line-height:40rpx;}
-[data-mode=\\"light\\"] .light-c-disabled-c-w-full:disabled{width:100%;}"
+[data-mode=\\"dark\\"] .dark\\\\:bg-white{--un-bg-opacity:1;background-color:rgba(255,255,255,var(--un-bg-opacity));}
+[data-mode=\\"light\\"] .light\\\\:bg-black{--un-bg-opacity:1;background-color:rgba(0,0,0,var(--un-bg-opacity));}
+[data-mode=\\"dark\\"] .dark\\\\:hover\\\\:rounded:hover{border-radius:8rpx;}
+[data-mode=\\"dark\\"] .dark\\\\:text-lg{font-size:36rpx;line-height:56rpx;}
+[data-mode=\\"light\\"] .light\\\\:text-sm{font-size:28rpx;line-height:40rpx;}
+[data-mode=\\"light\\"] .light\\\\:disabled\\\\:w-full:disabled{width:100%;}"
 `;
 
 exports[`preset-mini > nested theme colors 1`] = `

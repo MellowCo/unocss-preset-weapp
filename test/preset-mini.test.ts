@@ -39,6 +39,7 @@ describe('preset-mini', () => {
             dark: '[data-mode="dark"]',
             light: '[data-mode="light"]',
           },
+          transform: false,
         }),
       ],
     })
