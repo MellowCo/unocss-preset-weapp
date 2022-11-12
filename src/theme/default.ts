@@ -6,6 +6,7 @@ import { height, maxHeight, maxWidth, width } from './size'
 import type { Theme } from './types'
 import { preflightBase } from './preflight'
 import { animation } from './animation'
+import { aria } from './aria'
 
 export const theme: Theme = {
   width,
@@ -42,4 +43,5 @@ export const theme: Theme = {
   ringWidth,
   preflightBase,
   animation,
+  aria,
 }

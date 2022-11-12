@@ -1131,6 +1131,16 @@ export const presetMiniTargets: string[] = [
   // variants - multiple parents
   'sm:lt-lg:p-10',
 
+  // variants - aria
+  'aria-[invalid=spelling]:underline-red-600',
+
+  // variants - data
+  'data-[inline]:inline',
+  'data-[invalid~=grammar]:underline-green-600',
+
+  // variants - aria (theme)
+  'aria-hidden:hidden',
+
   // safe-area
   'p-safe',
   'pt-safe',

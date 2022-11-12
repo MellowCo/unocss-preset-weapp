@@ -28,6 +28,9 @@ const uno = createGenerator({
       safe: 'max(env(safe-area-inset-left), env(safe-area-inset-right))',
     },
   },
+  data: {
+    dropdown: 'data-bs-toggle="dropdown"',
+  },
 })
 
 describe('preset-mini', () => {
