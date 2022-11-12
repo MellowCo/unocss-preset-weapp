@@ -1141,6 +1141,19 @@ export const presetMiniTargets: string[] = [
   // variants - aria (theme)
   'aria-hidden:hidden',
 
+  // variants - container parent
+  '@container',
+  '@container/label',
+  '@container-normal',
+  '@container/label-normal',
+
+  // variants - container query (@)
+  '@sm:text-red',
+  '@lg-text-red',
+  '@[10.5rem]-text-red',
+  '@xs/label:text-green',
+  '@[100px]/label:text-green',
+
   // safe-area
   'p-safe',
   'pt-safe',

@@ -1000,6 +1000,10 @@ unocss .scope--fl1r-unocss-fr1r--cr1-block{display:block;}
 .will-change-scroll{will-change:scroll-position;}
 .will-change-transform{will-change:transform;}
 .will-change-unset{will-change:unset;}
+.\\\\@container{container-type:inline-size;}
+.\\\\@container-normal{container-type:normal;}
+.\\\\@container-sr1-label{container-type:inline-size;container-name:label;}
+.\\\\@container-sr1-label-normal{container-type:normal;container-name:label;}
 .p-safe{padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);}
 .pt-safe{padding-top:env(safe-area-inset-top);}
 .pb-safe{padding-bottom:env(safe-area-inset-bottom);}
@@ -1009,6 +1013,21 @@ unocss .scope--fl1r-unocss-fr1r--cr1-block{display:block;}
 .bg-blend-luminosity{background-blend-mode:luminosity;}
 .bg-blend-normal{background-blend-mode:normal;}
 .bg-blend-unset{background-blend:unset;}
+@container (min-width: 10.5rem){
+.\\\\@-fl1r-10-dr1-5rem-fr1r--text-red{--un-text-opacity:1;color:rgba(248,113,113,var(--un-text-opacity));}
+}
+@container (min-width: 220rpx){
+.\\\\@sm-cr1-text-red{--un-text-opacity:1;color:rgba(248,113,113,var(--un-text-opacity));}
+}
+@container (min-width: 300rpx){
+.\\\\@lg-text-red{--un-text-opacity:1;color:rgba(248,113,113,var(--un-text-opacity));}
+}
+@container label (min-width: 100px){
+.\\\\@-fl1r-100px-fr1r--sr1-label-cr1-text-green{--un-text-opacity:1;color:rgba(74,222,128,var(--un-text-opacity));}
+}
+@container label (min-width: 180rpx){
+.\\\\@xs-sr1-label-cr1-text-green{--un-text-opacity:1;color:rgba(74,222,128,var(--un-text-opacity));}
+}
 @layer base{
 .layer-base-cr1-translate-0{--un-translate-x:0rpx;--un-translate-y:0rpx;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
 }

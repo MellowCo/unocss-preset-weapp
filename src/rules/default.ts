@@ -23,6 +23,7 @@ import { svgUtilities } from './svg'
 import { safeArea } from './safe-area'
 import { animations } from './animation'
 import { backgroundStyles } from './background'
+import { containerParent } from './container'
 
 export const rules: Rule[] = [
   animations,
@@ -80,6 +81,7 @@ export const rules: Rule[] = [
   transitions,
   transforms,
   willChange,
+  containerParent,
   safeArea,
 
   // should be the last

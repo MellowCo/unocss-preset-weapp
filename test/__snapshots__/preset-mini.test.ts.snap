@@ -1037,6 +1037,10 @@ unocss .scope-\\\\[unocss\\\\]\\\\:block{display:block;}
 .will-change-scroll{will-change:scroll-position;}
 .will-change-transform{will-change:transform;}
 .will-change-unset{will-change:unset;}
+.\\\\@container{container-type:inline-size;}
+.\\\\@container-normal{container-type:normal;}
+.\\\\@container\\\\/label{container-type:inline-size;container-name:label;}
+.\\\\@container\\\\/label-normal{container-type:normal;container-name:label;}
 .p-safe{padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);}
 .pt-safe{padding-top:env(safe-area-inset-top);}
 .pb-safe{padding-bottom:env(safe-area-inset-bottom);}
@@ -1046,6 +1050,21 @@ unocss .scope-\\\\[unocss\\\\]\\\\:block{display:block;}
 .bg-blend-luminosity{background-blend-mode:luminosity;}
 .bg-blend-normal{background-blend-mode:normal;}
 .bg-blend-unset{background-blend:unset;}
+@container (min-width: 10.5rem){
+.\\\\@\\\\[10\\\\.5rem\\\\]-text-red{--licl-text-opacity:1;color:rgba(248,113,113,var(--licl-text-opacity));}
+}
+@container (min-width: 220rpx){
+.\\\\@sm\\\\:text-red{--licl-text-opacity:1;color:rgba(248,113,113,var(--licl-text-opacity));}
+}
+@container (min-width: 300rpx){
+.\\\\@lg-text-red{--licl-text-opacity:1;color:rgba(248,113,113,var(--licl-text-opacity));}
+}
+@container label (min-width: 100px){
+.\\\\@\\\\[100px\\\\]\\\\/label\\\\:text-green{--licl-text-opacity:1;color:rgba(74,222,128,var(--licl-text-opacity));}
+}
+@container label (min-width: 180rpx){
+.\\\\@xs\\\\/label\\\\:text-green{--licl-text-opacity:1;color:rgba(74,222,128,var(--licl-text-opacity));}
+}
 @layer base{
 .layer-base\\\\:translate-0{--licl-translate-x:0rpx;--licl-translate-y:0rpx;transform:translateX(var(--licl-translate-x)) translateY(var(--licl-translate-y)) translateZ(var(--licl-translate-z)) rotate(var(--licl-rotate)) rotateX(var(--licl-rotate-x)) rotateY(var(--licl-rotate-y)) rotateZ(var(--licl-rotate-z)) skewX(var(--licl-skew-x)) skewY(var(--licl-skew-y)) scaleX(var(--licl-scale-x)) scaleY(var(--licl-scale-y)) scaleZ(var(--licl-scale-z));}
 }
