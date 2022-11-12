@@ -726,7 +726,7 @@ unocss .scope--fl1r-unocss-fr1r--cr1-block{display:block;}
 .w--fl1r-calc-bl1r-calc-bl1r-100px\\\\*10-br1r--4rem-br1r--fr1r-{width:calc(calc(100px * 10) - 4rem);}
 .w-1{width:1rpx;}
 .w-1-sr1-4{width:25%;}
-.w-1cqw{width:1cqw;}
+.w-1in{width:1in;}
 .w-21{width:21rpx;}
 .w-auto{width:auto;}
 .w-lg{width:300rpx;}
