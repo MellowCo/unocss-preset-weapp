@@ -24,10 +24,12 @@ import { safeArea } from './safe-area'
 import { animations } from './animation'
 import { backgroundStyles } from './background'
 import { containerParent } from './container'
+import { divides } from './divide'
 
 export const rules: Rule[] = [
   animations,
   backgroundStyles,
+  divides,
   cssVariables,
   cssProperty,
   paddings,

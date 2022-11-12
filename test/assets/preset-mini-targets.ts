@@ -75,6 +75,25 @@ export const presetMiniTargets: string[] = [
   'bg-[url(src/static/logo.png)]',
   'bg-[url(https://baidu.com/pic/logo.png)]',
 
+  // divide
+  'divide',
+  'divide-y-4',
+  'divide-x-4',
+  'divide-x-reverse',
+  'divide-block-4',
+  'divide-inline-4',
+  'divide-inline-reverse',
+  'divide-green-500',
+  'divide-opacity-50',
+  'divide-dashed',
+  'divide-dotted',
+  'divide-ridge',
+  'divide-transparent',
+  'divide-current',
+  'divide-none',
+  'divide-x-none',
+  'divide-inline-none',
+
   // bg gradient
   'from-current',
   'from-green-500',
