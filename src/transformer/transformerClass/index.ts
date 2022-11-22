@@ -6,20 +6,7 @@ import { createFilter } from '@rollup/pluginutils'
 interface Options {
   /**
    * 自定义转换规则
-   * @default
-   * {
-      '.': '-d-',
-      '/': '-s-',
-      ':': '-c-',
-      '%': '-p-',
-      '!': '-e-',
-      '#': '-w-',
-      '(': '-bl-',
-      ')': '-br-',
-      '[': '-fl-',
-      ']': '-fr-',
-      '$': '-r-',
-    }
+   * @default https://github.com/MellowCo/unplugin-transform-class#options
    */
   transformRules?: Record<string, string>
   /**
