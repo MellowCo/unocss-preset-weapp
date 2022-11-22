@@ -45,9 +45,6 @@ export default {
       to-tl
     </view>
 
-    <view class="center h-200 rounded-md bg-[url(../../static/logo.png)]">
-      to-tl
-    </view>
   </view>
 </template>
 

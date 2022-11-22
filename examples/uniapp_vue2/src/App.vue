@@ -13,10 +13,6 @@ export default {
 </script>
 
 <style>
-@import './uni.scss';
-</style>
-
-<style>
 .uno-start {
   --un: 0;
 }
@@ -24,4 +20,5 @@ export default {
 .uno-end {
   --un: 0;
 }
+
 </style>
