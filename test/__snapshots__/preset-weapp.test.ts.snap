@@ -677,6 +677,11 @@ unocss .scope--lfl-unocss-lfr--cl-block{display:block;}
 .grid-rows-minmax-100px{grid-template-rows:repeat(auto-fill,minmax(100px,1fr));}
 .grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr));}
 .grid-rows-3{grid-template-rows:repeat(3,minmax(0,1fr));}
+.grid-area--do-variable{grid-area:var(--variable);}
+.grid-area--lfl-content-lfr-{grid-area:content;}
+.grid-areas--do-variable{grid-template-areas:var(--variable);}
+.grid-areas--lfl-prepend_content_append-lfr-{grid-template-areas:\\"prepend content append\\";}
+.grid-areas--lfl-prepend_content_append-lfr---lfl-prepend_content_append-lfr-{grid-template-areas:\\"prepend content append\\" \\"prepend content append\\";}
 .gap--do-variable{grid-gap:var(--variable);gap:var(--variable);}
 .gap-4{grid-gap:32rpx;gap:32rpx;}
 .gap-inherit{grid-gap:inherit;gap:inherit;}
