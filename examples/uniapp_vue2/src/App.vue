@@ -13,6 +13,10 @@ export default {
 </script>
 
 <style>
+@import './uni.scss';
+</style>
+
+<style>
 .uno-start {
   --un: 0;
 }
