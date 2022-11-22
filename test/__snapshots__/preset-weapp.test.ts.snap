@@ -1025,6 +1025,9 @@ unocss .scope--lfl-unocss-lfr--cl-block{display:block;}
 .pb-safe{padding-bottom:env(safe-area-inset-bottom);}
 .pl-safe{padding-left:env(safe-area-inset-left);}
 .pr-safe{padding-right:env(safe-area-inset-right);}
+.contain--lfl-size_layout_paint-lfr-{contain:size layout paint;}
+.contain--lfl-size_layout-lfr-{contain:size layout;}
+.contain-layout{contain:layout;}
 .bg-blend-color-burn{background-blend-mode:color-burn;}
 .bg-blend-luminosity{background-blend-mode:luminosity;}
 .bg-blend-normal{background-blend-mode:normal;}

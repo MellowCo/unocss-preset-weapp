@@ -4,6 +4,7 @@ import type { Theme } from '../theme'
 import { globalKeywords, handler as h, makeGlobalStaticRules, positionMap } from '../utils'
 
 const cursorValues = ['auto', 'default', 'none', 'context-menu', 'help', 'pointer', 'progress', 'wait', 'cell', 'crosshair', 'text', 'vertical-text', 'alias', 'copy', 'move', 'no-drop', 'not-allowed', 'grab', 'grabbing', 'all-scroll', 'col-resize', 'row-resize', 'n-resize', 'e-resize', 's-resize', 'w-resize', 'ne-resize', 'nw-resize', 'se-resize', 'sw-resize', 'ew-resize', 'ns-resize', 'nesw-resize', 'nwse-resize', 'zoom-in', 'zoom-out']
+const containValues = ['none', 'strict', 'content', 'size', 'inline-size', 'layout', 'style', 'paint']
 
 export const varEmpty = 'var(--un-empty,/*!*/ /*!*/)'
 
@@ -30,6 +31,18 @@ export const appearances: Rule[] = [
 export const cursors: Rule[] = [
   [/^cursor-(.+)$/, ([, c]) => ({ cursor: h.bracket.cssvar.global(c) })],
   ...cursorValues.map((v): Rule => [`cursor-${v}`, { cursor: v }]),
+]
+
+export const contains: Rule[] = [
+  [/^contain-(.*)$/, ([, d]) => {
+    if (h.bracket(d) != null) {
+      return {
+        contain: h.bracket(d)!.split(' ').map(e => h.cssvar.fraction(e) ?? e).join(' '),
+      }
+    }
+
+    return containValues.includes(d) ? { contain: d } : undefined
+  }],
 ]
 
 export const pointerEvents: Rule[] = [
