@@ -49,12 +49,11 @@ export default defineConfig({
     },
   ],
 
-  // v0.1.14 unplugin-attributify-to-class 和 unplugin-transform-class 内置到 transformer 中
   transformers: [
-    // options 见 https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify
+    // https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify
     transformerAttributify(),
 
-    // options 见 https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
+    // https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
     transformerClass(),
   ]
 })
