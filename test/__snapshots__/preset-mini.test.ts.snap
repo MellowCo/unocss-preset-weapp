@@ -191,6 +191,7 @@ page,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .all-\\\\[\\\\[data-hvr\\\\]\\\\:hover\\\\]\\\\:\\\\[color\\\\:red\\\\] [data-hvr]:hover{color:red;}
 .sibling-\\\\[div\\\\:hover\\\\]-\\\\[combinator\\\\:test-4\\\\]+div:hover{combinator:test-4;}
 .-p-px{padding:-1px;}
+.\\\\!p-10{padding:80rpx !important;}
 .\\\\!p-5px{padding:5px !important;}
 .first\\\\:p-2:first-child,
 .has-hover\\\\:p-2:has(:hover),

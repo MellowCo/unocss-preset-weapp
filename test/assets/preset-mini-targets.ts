@@ -1027,6 +1027,7 @@ export const presetMiniTargets: string[] = [
   'sm:m1',
   'important:p-3',
   'sm:important:p-3',
+  '!p-10',
   'p3!',
   '-mt-safe',
   '-!mb-safe',

@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { navigateTo, pxTransform } from '@tarojs/taro'
-
-console.log(pxTransform(100), '111111')
+import { navigateTo } from '@tarojs/taro'
 
 const list = [
   { name: 'font', path: '/pages/font/index' },

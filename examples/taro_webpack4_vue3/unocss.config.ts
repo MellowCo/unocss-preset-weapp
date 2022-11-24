@@ -7,7 +7,7 @@ export default defineConfig({
     // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp({
       isH5: process.env.TARO_ENV === 'h5',
-      platform: 'taro'
+      platform: 'taro',
     }),
   ],
   shortcuts: [

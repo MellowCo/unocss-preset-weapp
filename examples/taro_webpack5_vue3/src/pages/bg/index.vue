@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <view text="white" class="p-3">
+  <view text="white" class="p-3 !px-4 important:p-10 -m-4">
     <view class="bg-local-logo" />
 
     <view flex justify-center w-full>
