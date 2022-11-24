@@ -10,15 +10,15 @@ specifiers:
   typescript: ^4.9.3
   unbuild: ^1.0.1
   unplugin-attributify-to-class: ^0.2.0
-  unplugin-transform-class: ^0.2.0
+  unplugin-transform-class: ^0.2.1
   vite: ^3.2.4
-  vitest: ^0.25.2
+  vitest: ^0.25.3
 
 dependencies:
   '@rollup/pluginutils': 5.0.2
   '@unocss/core': 0.46.5
   unplugin-attributify-to-class: 0.2.0
-  unplugin-transform-class: 0.2.0
+  unplugin-transform-class: 0.2.1
 
 devDependencies:
   '@antfu/eslint-config': 0.31.0_hsf322ms6xhhd4b5ne6lb74y4a
@@ -28,7 +28,7 @@ devDependencies:
   typescript: 4.9.3
   unbuild: 1.0.1
   vite: 3.2.4
-  vitest: 0.25.2
+  vitest: 0.25.3
 
 packages:
 
@@ -448,10 +448,10 @@ packages:
       type-detect: 4.0.8
     dev: true
 
-  /@meoc/utils/0.1.9:
-    resolution: {integrity: sha512-CIZDdbMHHs8qMllpEE6WMyVTMrjFMQmYcrX25WxN8h+7QZkMcTK5omU6PKjb5d4rSdbrIPVTkvrl1KUByveITA==}
+  /@meoc/utils/0.2.0:
+    resolution: {integrity: sha512-Cri7fXyHCMEcbbrbGiDb1Z4pJPD8x6GMpTuCfjxOVWytX8RuYZQVSMQbOT9wWa9vIL/twkYNY6IRJq6/mAZPzQ==}
     dependencies:
-      dayjs: 1.11.5
+      dayjs: 1.11.6
     dev: false
 
   /@mswjs/cookies/0.2.2:
@@ -845,7 +845,6 @@ packages:
     resolution: {integrity: sha512-7zFpHzhnqYKrkYdUjF1HI1bzd0VygEGX8lFk4k5zVMqHEoES+P+7TKI+EvLO9WVMJ8eekdO0aDEK044xTXwPPA==}
     engines: {node: '>=0.4.0'}
     hasBin: true
-    dev: true
 
   /ajv/6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
@@ -1216,8 +1215,8 @@ packages:
     hasBin: true
     dev: true
 
-  /dayjs/1.11.5:
-    resolution: {integrity: sha512-CAdX5Q3YW3Gclyo5Vpqkgpj8fSdLQcRuzfX6mC6Phy0nfJ0eGYOeS7m4mt2plDWLAtA4TqTakvbboHvUxfe4iA==}
+  /dayjs/1.11.6:
+    resolution: {integrity: sha512-zZbY5giJAinCG+7AGaw0wIhNZ6J8AhWuSXKvuc1KAyMiRsvGQWqh4L+MomvhdAYjN+lqvVCMq1I41e3YHvXkyQ==}
     dev: false
 
   /debug/2.6.9:
@@ -3742,7 +3741,7 @@ packages:
   /strip-literal/0.4.2:
     resolution: {integrity: sha512-pv48ybn4iE1O9RLgCAN0iU4Xv7RlBTiit6DKmMiErbs9x1wH6vXBs45tWc0H5wUIF6TLTrKweqkmYF/iraQKNw==}
     dependencies:
-      acorn: 8.8.0
+      acorn: 8.8.1
     dev: true
 
   /supports-color/5.5.0:
@@ -3943,17 +3942,17 @@ packages:
     dependencies:
       '@rollup/pluginutils': 5.0.2
       unplugin: 0.10.2
-      unplugin-transform-class: 0.2.0
+      unplugin-transform-class: 0.2.1
     transitivePeerDependencies:
       - rollup
     dev: false
 
-  /unplugin-transform-class/0.2.0:
-    resolution: {integrity: sha512-ReppJAAy4K9Iga66PGYci5S/Jodqm05WgiDoNpAfJn2bqE/X2mWwFIqNsHWWXsFGPDIzbaFHQvIGVIcHAixQrg==}
+  /unplugin-transform-class/0.2.1:
+    resolution: {integrity: sha512-T5Nc4OZDugtEDqdbS2am/XUPyJqU8nO9ZEHLFZIk8O8X2YRW6n9dakqRvsXJS1thlCEomt98wMOXwMUiMaSarw==}
     dependencies:
-      '@meoc/utils': 0.1.9
+      '@meoc/utils': 0.2.0
       '@rollup/pluginutils': 5.0.2
-      unplugin: 0.10.2
+      unplugin: 1.0.0
     transitivePeerDependencies:
       - rollup
     dev: false
@@ -3965,6 +3964,15 @@ packages:
       chokidar: 3.5.3
       webpack-sources: 3.2.3
       webpack-virtual-modules: 0.4.5
+    dev: false
+
+  /unplugin/1.0.0:
+    resolution: {integrity: sha512-H5UnBUxfhTXBXGo2AwKsl0UaLSHzSNDZNehPQSgdhVfO/t+XAS1Yoj3vmLrrlBrS9ZwtH5tejbX/TCp5DcyCKg==}
+    dependencies:
+      acorn: 8.8.1
+      chokidar: 3.5.3
+      webpack-sources: 3.2.3
+      webpack-virtual-modules: 0.4.6
     dev: false
 
   /untyped/1.0.0:
@@ -4084,8 +4092,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.25.2:
-    resolution: {integrity: sha512-qqkzfzglEFbQY7IGkgSJkdOhoqHjwAao/OrphnHboeYHC5JzsVFoLCaB2lnAy8krhj7sbrFTVRApzpkTOeuDWQ==}
+  /vitest/0.25.3:
+    resolution: {integrity: sha512-/UzHfXIKsELZhL7OaM2xFlRF8HRZgAHtPctacvNK8H4vOcbJJAMEgbWNGSAK7Y9b1NBe5SeM7VTuz2RsTHFJJA==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
@@ -4109,7 +4117,7 @@ packages:
       '@types/chai': 4.3.3
       '@types/chai-subset': 1.3.3
       '@types/node': 18.0.0
-      acorn: 8.8.0
+      acorn: 8.8.1
       acorn-walk: 8.2.0
       chai: 4.3.6
       debug: 4.3.4
@@ -4172,6 +4180,10 @@ packages:
 
   /webpack-virtual-modules/0.4.5:
     resolution: {integrity: sha512-8bWq0Iluiv9lVf9YaqWQ9+liNgXSHICm+rg544yRgGYaR8yXZTVBaHZkINZSB2yZSWo4b0F6MIxqJezVfOEAlg==}
+    dev: false
+
+  /webpack-virtual-modules/0.4.6:
+    resolution: {integrity: sha512-5tyDlKLqPfMqjT3Q9TAqf2YqjwmnUleZwzJi1A5qXnlBCdj2AtOJ6wAWdglTIDOPgOiOrXeBeFcsQ8+aGQ6QbA==}
     dev: false
 
   /whatwg-url/5.0.0:
