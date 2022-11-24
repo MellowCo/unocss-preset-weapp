@@ -1,13 +1,18 @@
-import type { Variant } from '@unocss/core'
+import type { Variant, VariantContext } from '@unocss/core'
+import { restoreSelector } from 'unplugin-transform-class/utils'
+import type { Theme } from '../theme'
 
 export const variantImportant: Variant = {
   name: 'important',
-  match(matcher) {
+  match(matcher, { theme }: VariantContext<Theme>) {
     let base: string | undefined
 
+    matcher = restoreSelector(matcher, theme?.transformRules)
     const match = matcher.match(/^(important[:-]|!)/)
+
     if (match)
       base = matcher.slice(match[0].length)
+
     else if (matcher.endsWith('!'))
       base = matcher.slice(0, -1)
 
