@@ -1,4 +1,8 @@
 // taro/packages/taro-api/src/tool.js
+
+import type { UtilObject } from '@unocss/core'
+import { cssRpxTransform, pxRE, rpxOrPxRE } from '.'
+
 // px -> rpx
 export function taroPxToRpx(size: any, designWidth: any, deviceRatio: any) {
   if (!(designWidth in deviceRatio))
@@ -34,7 +38,6 @@ export function taroPxToRemW5(size: any, designWidth: any, deviceRatio: any) {
   const rootValue = baseFontSize / deviceRatio[designWidth] * 2
 
   const pixels = parseFloat(size)
-
   return `${toFixed((pixels / rootValue), unitPrecision)}rem`
 }
 
@@ -42,4 +45,36 @@ function toFixed(number: number, precision: number) {
   const multiplier = 10 ** (precision + 1)
   const wholeNumber = Math.floor(number * multiplier)
   return Math.round(wholeNumber / 10) * 10 / multiplier
+}
+
+/**
+ * taro: h5 px rpx 转 rem
+ * @param css
+ */
+export function taroH5CssRemTransform(css: UtilObject, taroWebpack: string, designWidth: number, deviceRatio: Record<number, number>) {
+  // h5 px rpx 转 rem
+  cssRpxTransform(css,
+    (value) => {
+      return rpxOrPxRE.test(value)
+    },
+    (value) => {
+      const size = value.endsWith('rpx') ? taroRpxToPx(value.slice(0, -3), designWidth, deviceRatio) : value.slice(0, -2)
+
+      return taroWebpack === 'webpack4' ? taroPxToRemW4(size, designWidth) : taroPxToRemW5(size, designWidth, deviceRatio)
+    })
+}
+
+/**
+ * taro: 小程序 px 转 rpx
+ * @param css
+ */
+export function taroCssPxTransform(css: UtilObject, designWidth: number, deviceRatio: Record<number, number>) {
+  // h5 px rpx 转 rem
+  cssRpxTransform(css,
+    (value) => {
+      return pxRE.test(value)
+    },
+    (value) => {
+      return taroPxToRpx(value.slice(0, -2), designWidth, deviceRatio)
+    })
 }
