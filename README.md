@@ -1,6 +1,6 @@
 # unocss-preset-weapp
 
-[UnoCSS](https://github.com/unocss/unocss)小程序预设 [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp)
+[UnoCSS](https://github.com/unocss/unocss) 小程序预设 [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp)
 
 --- 
 
@@ -9,17 +9,6 @@
 *  [transformerClass](https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass) 转换转义类名，解决小程序不支持`\\`，`\:`，`\[`， `\$`，`\.`等转义类名，保持`原子化css`的规范去书写`class`
 *  [transformerAttributify](https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify)，用于支持 [attributify mode](https://github.com/unocss/unocss/tree/main/packages/preset-attributify#attributify-mode)
 ---
-
-升级变化
-* 在 `v0.1.14` 后，将 [unplugin-transform-class](https://github.com/MellowCo/unplugin-transform-class) 和 [unplugin-attributify-to-class](https://github.com/MellowCo/unplugin-attributify-to-class) 核心方法，提取到 `transformer` 中，
-* 如之前安装 `unplugin-transform-class` 和 `unplugin-attributify-to-class` 可以将其卸载，使用  `transformer` 代替即可
----
-
-重要的事情说三遍 说三遍 说三遍
-> @unocss/webpack 0.45.8 之后版本，windows 系统出现 unocss 失效的问题，[unocss issues](https://github.com/unocss/unocss/issues/1455)
-> 
-> 该问题在 [@unocss/webpack 0.45.29 中修复](https://github.com/unocss/unocss/releases/tag/v0.45.29)，请升级到最新版本
-
 
 ## 使用
 ### uniapp-vue2
@@ -34,7 +23,79 @@
 ### 原生微信小程序 wxml
 [使用配置与DEMO](https://github.com/MellowCo/unocss-wechat) 
 
-<img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031414239.png" alt="image-20220703141451188" style="zoom:50%;" />
+
+## PresetWeappOptions
+```ts
+export interface PresetWeappOptions extends PresetOptions {
+  /**
+   * 是否转换微信class
+   *
+   * @default true
+   */
+  transform?: boolean
+
+  /**
+   * 平台
+   * @default 'uniapp'
+   */
+  platform?: 'taro' | 'uniapp'
+
+  /**
+   * taro h5 rem 换算尺寸标准
+   * @default 750
+   * @link https://taro-docs.jd.com/taro/docs/size
+   */
+  designWidth?: number
+
+  /**
+   * taro 设计稿尺寸换算规则
+   * @default { 640: 2.34 / 2, 750: 1, 828: 1.81 / 2}
+   * @link https://taro-docs.jd.com/taro/docs/size
+   */
+  deviceRatio?: Record<number, number>
+
+  /**
+   * taro webpack 版本
+   * taro webpack4 和 webpack5 h5根字体大小，导致不同版本 rem 不一致
+   * 见下面issues
+   * @link https://github.com/NervJS/taro/issues/12361
+   * @default webpack4
+   */
+  taroWebpack?: 'webpack4' | 'webpack5'
+
+  /**
+   * 是否为h5
+   * @default false
+   */
+  isH5?: boolean
+
+  /**
+   * 自定义转换规则
+   * @default https://github.com/MellowCo/unplugin-transform-class#options
+   */
+  transformRules?: Record<string, string>
+
+  /**
+   * wh 是否使用 rpx 为默认单位
+   * @example
+   * ```
+   * whRpx: true
+   * w-10 -> width: 10rpx
+   * h-10 -> height: 10rpx
+   * ```
+   *
+   * @example
+   * ```
+   * whRpx: false
+   * w-10 -> width: 80rpx
+   * h-10 -> height: 80rpx
+   * ```
+   * @default true
+   */
+  whRpx?: boolean
+}
+```
+
 
 ---
 
