@@ -40,6 +40,53 @@
 
 ## 其他
 
+### 修改 w h 默认单位
+> unocss-preset-weapp，wh默认单位 `rpx`，例如
+
+```css
+.text-20 {
+  font-size: 20rpx;
+}
+
+.h-10 {
+  height: 10rpx;
+}
+
+.top-10 {
+  top: 10rpx;
+}
+```
+
+> 设置 `whRpx` 为 `false`，修改默认单位，按 `rem` 规则递增
+
+* unocss.config.ts
+```ts
+import presetWeapp from 'unocss-preset-weapp'
+export default defineConfig({
+  presets: [
+    presetWeapp({
+      whRpx: false,
+    }),
+  ],
+})
+```
+
+```css
+.text-20 {
+  font-size: 160rpx;
+}
+
+.h-10 {
+  height: 80rpx;
+}
+
+.top-10 {
+  top: 160rpx;
+}
+```
+
+
+
 ### 自定义转换规则
 > 如需更改默认的转换规则，可通过 `transformRules` 进行修改
 
