@@ -99,7 +99,7 @@ export const placements: Rule[] = [
 
 function handleInsetValue(v: string, { theme }: RuleContext<Theme>): string | number | undefined {
   v = restoreSelector(v, theme?.transformRules)
-  return theme.spacing?.[v] ?? h.bracket.cssvar.global.auto.fraction.rpx(v)
+  return theme.spacing?.[v] ?? (theme?.whRpx ? h.bracket.cssvar.global.auto.fraction.rpx(v) : h.bracket.cssvar.global.auto.fraction.remToRpx(v))
 }
 
 function handleInsetValues([, d, v]: string[], ctx: RuleContext): CSSEntries | undefined {

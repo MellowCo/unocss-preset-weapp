@@ -38,13 +38,16 @@ export const fonts: Rule<Theme>[] = [
         }
       }
 
-      return { 'font-size': h.bracketOfLength.rpx(s) }
+      if (theme.whRpx)
+        return { 'font-size': h.bracketOfLength.rpx(s) }
+      else
+        return { 'font-size': h.bracketOfLength.remToRpx(s) }
     },
     { autocomplete: 'text-$fontSize' },
   ],
   [/^text-size-(.+)$/, ([, s], { theme }) => {
     const themed = toArray(theme.fontSize?.[s])
-    const size = themed?.[0] ?? h.bracket.cssvar.global.rpx(s)
+    const size = themed?.[0] ?? (theme.whRpx ? h.bracket.cssvar.global.rpx(s) : h.bracket.cssvar.global.remToRpx(s))
     if (size != null)
       return { 'font-size': size }
   }, { autocomplete: 'text-size-$fontSize' }],

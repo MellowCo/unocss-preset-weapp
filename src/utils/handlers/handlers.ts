@@ -62,8 +62,9 @@ export function remToRpx(str: string) {
     return
   const [, n, unit] = match
   const num = parseFloat(n)
-  if (!Number.isNaN(num))
+
   // 32 = 2 * rem
+  if (!Number.isNaN(num))
     return unit ? `${round(num)}${unit}` : `${round(32 * num / 4)}rpx`
 }
 

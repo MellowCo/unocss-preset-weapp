@@ -103,6 +103,25 @@ export interface PresetWeappOptions extends PresetOptions {
    * @default https://github.com/MellowCo/unplugin-transform-class#options
    */
   transformRules?: Record<string, string>
+
+  /**
+   * wh 是否使用 rpx 为默认单位
+   * @example
+   * ```
+   * whRpx: true
+   * w-10 -> width: 10rpx
+   * h-10 -> height: 10rpx
+   * ```
+   *
+   * @example
+   * ```
+   * whRpx: false
+   * w-10 -> width: 80rpx
+   * h-10 -> height: 80rpx
+   * ```
+   * @default true
+   */
+  whRpx?: boolean
 }
 
 export const presetWeapp = (options: PresetWeappOptions = {}): Preset<Theme> => {
@@ -119,12 +138,14 @@ export const presetWeapp = (options: PresetWeappOptions = {}): Preset<Theme> => 
   options.platform = options.platform ?? 'uniapp'
   options.taroWebpack = options.taroWebpack ?? 'webpack4'
   options.transformRules = options.transformRules ?? defaultRules
+  options.whRpx = options.whRpx ?? true
 
   return {
     name: 'unocss-preset-weapp',
     theme: {
       ...theme,
       transformRules: options.transformRules,
+      whRpx: options.whRpx,
     },
     rules,
     variants: variants(options),

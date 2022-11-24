@@ -71,4 +71,7 @@ export interface Theme {
 
   // 小程序转义class 自定义转换规则
   transformRules?: Record<string, string>
+
+  // wh 是否使用 rpx 为默认单位
+  whRpx?: boolean
 }
