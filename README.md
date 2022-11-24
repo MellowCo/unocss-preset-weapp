@@ -2,6 +2,9 @@
 
 [UnoCSS](https://github.com/unocss/unocss) 小程序预设 [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp)
 
+
+[uniapp-vue3 demo 在线地址](https://stunning-malabi-abdf39.netlify.app/#/)
+
 --- 
 
 内置 `transformer` 用于兼容小程序
@@ -11,6 +14,7 @@
 ---
 
 ## 使用
+
 ### uniapp-vue2
 [使用配置与DEMO](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue2) 
 
