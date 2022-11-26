@@ -118,12 +118,34 @@ export const variantVariables: Variant = {
   multiPass: true,
 }
 
+const els = ['view', 'button', 'text', 'image', 'uni-view', 'uni-button', 'uni-text', 'uni-image', 'taro-view-core', 'taro-image-core', 'taro-text-core', 'taro-button-core']
+
 export const variantSpaceAndDivide: Variant = (matcher) => {
   if (/^space-?([xy])-?(-?.+)$/.test(matcher) || matcher.startsWith('divide-')) {
     return {
       matcher,
       selector: (input) => {
-        return `${input}>:not([hidden])~:not([hidden])`
+        /**
+         * [ WXSS 文件编译错误] ./app.wxss
+            error at token ":"
+              1780 | }
+              1781 |
+            > 1782 | .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+                  |             ^
+              1783 |   margin-left: calc(1rem * calc(1 - var(--un-space-x-reverse)));
+              1784 |   margin-right: calc(1rem * var(--un-space-x-reverse));
+              1785 |
+            at files://app.wxss#1782(env: Windows,mp,1.06.2209190; lib: 2.25.0)
+         */
+        // 小程序 不支持 :not([hidden])~:not([hidden])
+        // return `${input}>:not([hidden])~:not([hidden])`
+
+        // > uni-view + uni-view
+        const selectors = els.map((el) => {
+          return `${input}>${el}+${el}`
+        })
+
+        return selectors.join(',')
       },
     }
   }
