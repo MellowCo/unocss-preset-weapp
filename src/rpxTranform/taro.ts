@@ -54,9 +54,7 @@ function toFixed(number: number, precision: number) {
 export function taroH5CssRemTransform(css: UtilObject, taroWebpack: string, designWidth: number, deviceRatio: Record<number, number>) {
   // h5 px rpx 转 rem
   cssRpxTransform(css,
-    (value) => {
-      return rpxOrPxRE.test(value)
-    },
+    rpxOrPxRE,
     (value) => {
       const size = value.endsWith('rpx') ? taroRpxToPx(value.slice(0, -3), designWidth, deviceRatio) : value.slice(0, -2)
 
@@ -71,9 +69,7 @@ export function taroH5CssRemTransform(css: UtilObject, taroWebpack: string, desi
 export function taroCssPxTransform(css: UtilObject, designWidth: number, deviceRatio: Record<number, number>) {
   // h5 px rpx 转 rem
   cssRpxTransform(css,
-    (value) => {
-      return pxRE.test(value)
-    },
+    pxRE,
     (value) => {
       return taroPxToRpx(value.slice(0, -2), designWidth, deviceRatio)
     })

@@ -3,24 +3,25 @@ import type { UtilObject } from '@unocss/core'
 export * from './taro'
 export * from './uniapp'
 
-export const pxRE = /^-?[\.\d]+px$/
-export const rpxRE = /^-?[\.\d]+rpx$/
-export const rpxOrPxRE = /^-?[\.\d]+r?px$/
-export const importantStr = ' !important'
+export const pxRE = /-?[\.\d]+px/g
+export const rpxRE = /-?[\.\d]+rpx/g
+export const rpxOrPxRE = /-?[\.\d]+r?px/g
 
-export function cssRpxTransform(css: UtilObject, condition: (val: string) => boolean, transform: (val: string) => string) {
+export function cssRpxTransform(css: UtilObject, regex: RegExp, transform: (val: string) => string) {
   css.entries.forEach((i) => {
     let value = i[1]
 
-    if (value && typeof value === 'string' && value.includes('px')) {
-      const hasImportant = value.includes(importantStr)
+    if (value && typeof value === 'string') {
+      const matchs = Array.from(value.matchAll(regex))
 
-      // 处理末尾为 !important，padding: 10rpx !important;
-      if (hasImportant)
-        value = value.replace(importantStr, '')
+      if (matchs.length !== 0) {
+        matchs.forEach((m) => {
+          const size = m[0]
+          value = (value as string).replace(size, transform(size))
+        })
 
-      if (condition(value))
-        i[1] = hasImportant ? `${transform(value)}${importantStr}` : `${transform(value)}`
+        i[1] = value
+      }
     }
   })
 }
