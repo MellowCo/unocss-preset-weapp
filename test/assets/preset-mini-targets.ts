@@ -1188,6 +1188,22 @@ export const presetMiniTargets: string[] = [
   'pb-safe',
   'pl-safe',
   'pr-safe',
+
+  // shadow, spacing
+  'mix-blend-normal',
+  'mix-blend-hard-light',
+  'mix-blend-plus-lighter',
+  'mix-blend-revert',
+  'space-y-none',
+  'space-x-2',
+  'space-y-4',
+  'space-x-reverse',
+  'space-x-$space',
+  'space-inline-2',
+  'space-block-4',
+  'space-block-none',
+  'space-inline-reverse',
+  'space-inline-$space',
 ]
 
 export const presetMiniNonTargets = [
