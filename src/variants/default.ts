@@ -5,7 +5,7 @@ import { variantBreakpoints } from './breakpoints'
 import { variantCombinators } from './combinators'
 import { variantColorsMediaOrClass } from './dark'
 import { variantLanguageDirections } from './directions'
-import { variantCssLayer, variantInternalLayer, variantScope, variantSelector, variantVariables } from './misc'
+import { variantCssLayer, variantInternalLayer, variantScope, variantSelector, variantSpaceAndDivide, variantVariables } from './misc'
 import { variantNegative } from './negative'
 import { variantImportant } from './important'
 import { variantCustomMedia, variantPrint } from './media'
@@ -29,6 +29,7 @@ export const variants = (options: PresetWeappOptions): Variant<Theme>[] => [
   variantCustomMedia,
   variantBreakpoints,
   ...variantCombinators,
+  variantSpaceAndDivide,
 
   variantPseudoClassesAndElements,
   variantPseudoClassFunctions,

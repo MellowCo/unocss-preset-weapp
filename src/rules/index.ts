@@ -26,4 +26,3 @@ export * from './variables'
 export * from './decoration'
 export * from './safe-area'
 export * from './container'
-
