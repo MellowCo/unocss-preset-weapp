@@ -13,7 +13,10 @@ export default defineAppConfig({
     'pages/animation/index',
     'pages/rpxTranform/index',
     'pages/bg/index',
-    'pages/variants/index',
+    'pages/odd-even/index',
+    'pages/first-last/index',
+    'pages/divide/index',
+    'pages/space/index',
   ],
   window: {
     backgroundTextStyle: 'light',
