@@ -12,7 +12,10 @@ const list = [
   { name: 'attributify', path: '/pages/attributify-mode/index' },
   { name: 'animation', path: '/pages/animation/index' },
   { name: 'bg', path: '/pages/bg/index' },
-  { name: 'variants', path: '/pages/variants/index' },
+  { name: 'first-last', path: '/pages/first-last/index' },
+  { name: 'odd-even', path: '/pages/odd-even/index' },
+  { name: 'space-x', path: '/pages/space/index' },
+  { name: 'divide-x', path: '/pages/divide/index' },
 ]
 
 const to = (to: string) => {

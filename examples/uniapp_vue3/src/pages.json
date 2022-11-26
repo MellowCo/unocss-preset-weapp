@@ -74,9 +74,27 @@
       }
     },
     {
-      "path": "pages/variants/index",
+      "path": "pages/odd-even/index",
       "style": {
-        "navigationBarTitleText": "variants"
+        "navigationBarTitleText": "odd-even"
+      }
+    },
+    {
+      "path": "pages/first-last/index",
+      "style": {
+        "navigationBarTitleText": "first-last"
+      }
+    },
+    {
+      "path": "pages/divide/index",
+      "style": {
+        "navigationBarTitleText": "divide"
+      }
+    },
+    {
+      "path": "pages/space/index",
+      "style": {
+        "navigationBarTitleText": "space"
       }
     }
   ],
