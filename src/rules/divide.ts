@@ -21,7 +21,7 @@ export const divides: Rule[] = [
 ]
 
 function handlerDivide([, d, s]: string[], { theme }: RuleContext<Theme>): CSSEntries | undefined {
-  const v = theme.lineWidth?.[s || 'DEFAULT'] ?? h.bracket.cssvar.px(s || '1')
+  const v = theme.lineWidth?.[s || 'DEFAULT'] ?? h.bracket.cssvar.rpx(s || '1')
   if (v != null) {
     const results = directionMap[d].map((item): [string, string] => {
       const key = `border${item}-width`
