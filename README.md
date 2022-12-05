@@ -12,8 +12,6 @@
 
 [uniapp-vue3 demo 在线地址](https://playful-gumption-4bb42b.netlify.app)
 
-![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202211261423196.png)
-
 ## 使用
 
 ### uniapp-vue2
