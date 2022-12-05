@@ -1,16 +1,5 @@
 # uni-app-vue3
 
-## 注意事项
-> unocss@0.46.5, h5打包后 rpx 未转换成 rem
-
-> 原因 unocss@0.46.5, 打包时 [applyCssTransform](https://github.com/unocss/unocss/pull/1872) 被删除了，导致打包后 rpx 未转换成 rem
-
-解决方法: 先使用 `0.46.4` 版本
-
-```shell
-npm i unocss@0.46.4
-```
-
 ## 使用
 > 在[uni-app vue3中使用](https://ask.dcloud.net.cn/article/37834)中使用
 
