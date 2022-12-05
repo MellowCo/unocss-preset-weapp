@@ -145,7 +145,7 @@ export default defineConfig({
 }
 
 .top-10 {
-  top: 160rpx;
+  top: 80rpx;
 }
 ```
 
