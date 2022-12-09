@@ -2,10 +2,10 @@
 
 
 ## 注意事项
-`unocss@0.47.0` 后在 `uniapp` 上失效，目前的解决方案：先使用 0.46.5 版本
+`unocss@0.47.0` 后在 `uniapp 小程序` 上失效，目前的解决方案：先使用 0.46.4 版本
 
 ```shell
-npm install -D unocss@0.46.5
+npm install -D unocss@0.46.4
 ```
 
 
