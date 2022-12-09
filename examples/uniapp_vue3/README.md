@@ -1,5 +1,14 @@
 # uni-app-vue3
 
+
+## 注意事项
+`unocss@0.47.0` 后在 `uniapp` 上失效，目前的解决方案：先使用 0.46.5 版本
+
+```shell
+npm install -D unocss@0.46.5
+```
+
+
 ## 使用
 > 在[uni-app vue3中使用](https://ask.dcloud.net.cn/article/37834)中使用
 
