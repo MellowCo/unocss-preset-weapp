@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { } from '@dcloudio/uni-app'
 const list = [
-  { name: 'font', path: '/pages/font/index' },
+  { name: 'font11', path: '/pages/font/index' },
   { name: 'size', path: '/pages/size/index' },
   { name: 'shadow', path: '/pages/shadow/index' },
   { name: 'border', path: '/pages/border/index' },
