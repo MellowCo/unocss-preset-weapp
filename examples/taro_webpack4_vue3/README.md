@@ -7,6 +7,16 @@
 
 [taro_react](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_react) 
 
+## 说明
+
+* 默认生成 css 单位为 `rpx` ，`rpx` 在h5平台中，会自动转为 `rem`
+
+* 由于 taro 建议使用 px，针对 `taro` 加入小程序  `px` 转 `rpx`，h5 `px` 转 `rem` , 设置 `designWidth` ,`deviceRatio` <a href='#taro-px-to-rpx-rem'>转换说明</a>
+
+* taro `webpack4` 和 `webpack5`  [h5根字体(rem)](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_webpack4_vue3#taro-h5%E5%85%BC%E5%AE%B9)大小不同，导致不同版本字体大小不同 [taro issues](https://github.com/NervJS/taro/issues/12361) 
+
+* [h5兼容说明](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_webpack4_vue3#h5%E5%85%BC%E5%AE%B9)
+
 ## 使用
 [安装及使用 | Taro 文档 (jd.com)](https://taro-docs.jd.com/docs/GETTING-STARTED)
 
@@ -51,14 +61,6 @@ module.exports = function (merge) {
 ```
 
 * unocss.config.ts
-  * 默认生成 css 单位为 `rpx` ，`rpx` 在h5平台中，会自动转为 `rem`
-
-  * 由于 taro 建议使用 px，针对 `taro` 加入小程序  `px` 转 `rpx`，h5 `px` 转 `rem` , 设置 `designWidth` ,`deviceRatio` <a href='#taro-px-to-rpx-rem'>转换说明</a>
-
-  * taro `webpack4` 和 `webpack5`  [h5根字体(rem)](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_webpack4_vue3#taro-h5%E5%85%BC%E5%AE%B9)大小不同，导致不同版本字体大小不同 [taro issues](https://github.com/NervJS/taro/issues/12361) 
-
-  * [h5兼容说明](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_webpack4_vue3#h5%E5%85%BC%E5%AE%B9)
-
 ```ts
 // unocss.config.ts
 import presetWeapp from 'unocss-preset-weapp'
@@ -68,6 +70,7 @@ export default {
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp(
+      // 以下配置为 webpack4 平台
       // h5兼容设置，默认为 750 标准（designWidth: 750），webpack4 平台(taroWebpack: webpack4)
       // 只开发小程序可删除
       {
@@ -83,54 +86,14 @@ export default {
     },
   ],
 
-  // v0.1.14 unplugin-attributify-to-class 和 unplugin-transform-class 内置到 transformer 中
   transformers: [
-    // options 见https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify
+    // https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify
     // taro-react 不支持 Attributify Mode ，react不支持，react不支持，react不支持
     transformerAttributify(),
 
-    // options 见https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
+    // https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
     transformerClass(),
   ],
-}
-```
-
-* PresetWeappOptions
-```ts
-export interface PresetWeappOptions extends PresetOptions {
-  /**
-   * 平台
-   * @default 'uniapp'
-   */
-  platform?: 'taro' | 'uniapp'
-
-  /**
-   * taro h5 rem 换算尺寸标准
-   * @default 750
-   * @link https://taro-docs.jd.com/docs/size
-   */
-  designWidth?: number
-
-  /**
-   * taro 设计稿尺寸换算规则
-   * @default { 640: 2.34 / 2, 750: 1, 828: 1.81 / 2}
-   * @link https://taro-docs.jd.com/docs/size
-   */
-  deviceRatio?: { [key: number]: number }
-
-  /**
-   * taro webpack 版本
-   * taro webpack4 和 webpack5 h5根字体(rem)大小不同，导致不同版本字体大小不同
-   * @link https://github.com/NervJS/taro/issues/12361
-   * @default webpack4
-   */
-  taroWebpack?: 'webpack4' | 'webpack5'
-
-  /**
-   * 是否为h5 针对h5转为rem 小程序转为rpx
-   * @default false
-   */
-  isH5?: boolean
 }
 ```
 
