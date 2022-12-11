@@ -20,7 +20,7 @@ npm install -D unocss@0.46.4
 npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
 
 # 安装unocss
-pnpm add -D unocss@0.46.5 unocss-preset-weapp
+pnpm add -D unocss@0.46.4 unocss-preset-weapp
 ```
 
 * vite.config.ts
