@@ -44,10 +44,9 @@ export default defineConfig({
 > 添加unocss.config.js文件，搭配 [unocss vscode](https://marketplace.visualstudio.com/items?itemName=antfu.unocss) 插件，智能提示
 ```ts
 import presetWeapp from 'unocss-preset-weapp'
-import { defineConfig } from 'unocss'
 import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
 
-export default defineConfig({
+export default {
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp(),
@@ -66,7 +65,7 @@ export default defineConfig({
     // https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
     transformerClass(),
   ]
-})
+}
 ```
 
 * mian.ts

@@ -146,10 +146,16 @@ page,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .fw-_do_variable{font-weight:var(--variable);}
 .items-_do_size{align-items:var(--size);}
 .ws-_do_variable{white-space:var(--variable);}
+._lfl_--css-variable_cl_\\\\\\"wght\\\\\\"_400_lco__\\\\\\"opsz\\\\\\"_14_lfr_{--css-variable:\\"wght\\" 400, \\"opsz\\" 14;}
+._lfl_--escaped\\\\\\\\\\\\~variable\\\\\\\\_cl__cl_100_pes__lfr_{--escaped\\\\~variable\\\\::100%;}
 ._lfl_a_cl_b_lfr_{a:b;}
 ._lfl_background-image_cl_url_lbl_star_transparent_dl_gif_lbr__lco__url_lbl_cat_front_dl_png_lbr__lfr_{background-image:url(star_transparent.gif), url(cat_front.png);}
 ._lfl_content_cl_attr_lbl_attr_content_lbr__lfr_{content:attr(attr content);}
 ._lfl_content_cl_attr_lbl_attr\\\\\\\\_content_lbr__lfr_{content:attr(attr_content);}
+._lfl_font-family_cl_\\\\'Inter\\\\'_lco__sans-serif_lfr_{font-family:'Inter', sans-serif;}
+._lfl_font-family_cl_var_lbl_--font-family_lbr__lfr_{font-family:var(--font-family);}
+._lfl_font-feature-settings_cl_\\\\'cv02\\\\'_lco_\\\\'cv03\\\\'_lco_\\\\'cv04\\\\'_lco_\\\\'cv11\\\\'_lfr_{font-feature-settings:'cv02','cv03','cv04','cv11';}
+._lfl_font-variation-settings_cl_\\\\\\"wght\\\\\\"_400_lco__\\\\\\"opsz\\\\\\"_14_lfr_{font-variation-settings:\\"wght\\" 400, \\"opsz\\" 14;}
 ._lfl_margin_cl_logical_1rem_2rem_3rem_lfr_{margin:logical 1rem 2rem 3rem;}
 .all-_lfl__dl_target_lfr_-_lfl_combinator_cl_test-2_lfr_ .target,
 .children-_lfl__dl_target_lfr_-_lfl_combinator_cl_test-2_lfr_>.target,

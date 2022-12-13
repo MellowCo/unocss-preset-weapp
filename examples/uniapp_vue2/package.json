@@ -94,7 +94,7 @@
     "mini-types": "*",
     "miniprogram-api-typings": "*",
     "postcss-comment": "^2.0.0",
-    "unocss": "^0.46.5",
+    "unocss": "^0.47.6",
     "unocss-preset-weapp": "link:../../",
     "unocss-webpack-uniapp2": "^0.1.4",
     "vue-template-compiler": "^2.6.11"

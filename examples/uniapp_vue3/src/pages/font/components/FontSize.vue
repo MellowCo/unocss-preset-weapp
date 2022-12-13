@@ -44,4 +44,3 @@
     </view>
   </view>
 </template>
-

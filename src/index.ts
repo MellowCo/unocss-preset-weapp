@@ -11,7 +11,7 @@ import { taroCssPxTransform, taroH5CssRemTransform, uniAppVue2CssRpxTransform } 
 export { theme, colors } from './theme'
 export { parseColor } from './utils'
 
-// feat(preset-mini): add container query syntax
+// refactor(preset-mini): cleanup arbitrary property implementation
 export type { ThemeAnimation, Theme }
 
 export interface DarkModeSelectors {

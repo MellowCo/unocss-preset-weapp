@@ -43,4 +43,3 @@ export default {
     <TextShadow />
   </view>
 </template>
-
