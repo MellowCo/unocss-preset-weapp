@@ -231,4 +231,3 @@ function parseCssSpaceColorValues(componentString: string) {
     alpha,
   }
 }
-

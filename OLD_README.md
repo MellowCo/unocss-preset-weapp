@@ -1,7 +1,7 @@
 <!--
  * @Author: licl
  * @Date: 2022-09-17 20:28:29
- * @LastEditTime: 2022-09-17 20:28:30
+ * @LastEditTime: 2022-12-13 20:24:19
  * @LastEditors: licl
  * @Description: 
 -->
@@ -153,7 +153,6 @@ export default defineConfig({
     },
   },
 })
-
 ```
 
 * main.js
@@ -246,7 +245,6 @@ export default defineConfig({
     },
   },
 })
-
 ```
 
 * main.js
@@ -689,7 +687,6 @@ export default {
     },
   ],
 }
-
 ```
 
 ---
@@ -873,7 +870,6 @@ export default defineConfig({
     }),
   ],
 })
-
 ```
 
 

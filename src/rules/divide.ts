@@ -41,4 +41,3 @@ function handlerDivide([, d, s]: string[], { theme }: RuleContext<Theme>): CSSEn
     }
   }
 }
-
