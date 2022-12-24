@@ -1,7 +1,7 @@
 <template>
   <view class="p-2">
     <view class="text-2xl text-center my-3">
-      border-color
+      border-color11
     </view>
     <view class="flex flex-col items-center">
       <view class="w-half h-200 mb-3  bg-blue-100 center text-center border-transparent border-4">

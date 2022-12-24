@@ -1,7 +1,7 @@
 {
   "name": "unocss-preset-weapp",
   "version": "0.2.5",
-  "description": "the unocss preset for wechat miniprogram",
+  "description": "the unocss preset for wechat miniprogram (uniapp, taro)",
   "author": "MellowCo",
   "license": "MIT",
   "homepage": "https://github.com/MellowCo/unocss-prest-weapp",
@@ -15,8 +15,10 @@
   "keywords": [
     "unocss",
     "unocss-preset",
-    "weapp",
-    "uniapp"
+    "wechat",
+    "uniapp",
+    "taro",
+    "miniprogram"
   ],
   "sideEffects": false,
   "exports": {

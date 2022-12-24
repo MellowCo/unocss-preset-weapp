@@ -18,9 +18,10 @@ export default defineConfig({
     },
   ],
   transformers: [
-    // options https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify
+    // https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify
     transformerAttributify(),
-    // options https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
+
+    // https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
     transformerClass(),
   ],
 })

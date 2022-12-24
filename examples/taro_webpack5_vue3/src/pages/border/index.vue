@@ -13,4 +13,3 @@ import BorderColor from './components/BorderColor.vue'
     <BorderColor />
   </view>
 </template>
-

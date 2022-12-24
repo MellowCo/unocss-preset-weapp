@@ -1,6 +1,6 @@
 <template>
   <view class="p-2">
-    <view class="text-2xl text-center my-3">
+    <view lh-1.5 class="text-2xl text-center my-3 lh-2.5">
       font-size
     </view>
     <view class="text-xs">

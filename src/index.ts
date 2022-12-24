@@ -11,7 +11,7 @@ import { taroCssPxTransform, taroH5CssRemTransform, uniAppVue2CssRpxTransform } 
 export { theme, colors } from './theme'
 export { parseColor } from './utils'
 
-// refactor(preset-mini): cleanup arbitrary property implementation
+// feat(preset-mini)!: remove default border-styles on border-x utility
 export type { ThemeAnimation, Theme }
 
 export interface DarkModeSelectors {

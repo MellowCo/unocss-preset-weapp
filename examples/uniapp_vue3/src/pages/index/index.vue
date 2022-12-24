@@ -16,6 +16,7 @@ const list = [
   { name: 'odd-even', path: '/pages/odd-even/index' },
   { name: 'space-x', path: '/pages/space/index' },
   { name: 'divide-x', path: '/pages/divide/index' },
+  { name: 'apply', path: '/pages/apply/index' },
 ]
 
 const to = (to: string) => {

@@ -96,6 +96,12 @@
       "style": {
         "navigationBarTitleText": "space"
       }
+    },
+    {
+      "path": "pages/apply/index",
+      "style": {
+        "navigationBarTitleText": "apply"
+      }
     }
   ],
   "globalStyle": {

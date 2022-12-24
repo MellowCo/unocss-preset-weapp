@@ -21,4 +21,9 @@ export default {
   --un: 0;
 }
 
+view,:before,:after {
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb
+}
 </style>

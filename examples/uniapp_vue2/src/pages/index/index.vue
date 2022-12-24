@@ -43,4 +43,3 @@ export default {
     </view>
   </view>
 </template>
-

@@ -41,4 +41,3 @@ const to = (to: string) => {
     </view>
   </view>
 </template>
-

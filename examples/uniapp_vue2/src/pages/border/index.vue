@@ -21,4 +21,3 @@ export default {
     <BorderColor />
   </view>
 </template>
-
