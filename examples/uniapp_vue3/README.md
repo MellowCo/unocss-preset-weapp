@@ -2,11 +2,7 @@
 
 
 ## 注意事项
-`unocss@0.47.0` 后在 `uniapp 小程序` 上失效，目前的解决方案：先使用 0.46.4 版本
-
-```shell
-npm install -D unocss@0.46.4
-```
+如出现小程序样式失效问题，[请检查 unocss 和 uniapp 版本是否兼容](https://github.com/MellowCo/unocss-preset-weapp/issues/20)
 
 
 ## 使用
@@ -20,7 +16,7 @@ npm install -D unocss@0.46.4
 npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
 
 # 安装unocss
-pnpm add -D unocss@0.46.4 unocss-preset-weapp
+pnpm add -D unocss unocss-preset-weapp
 ```
 
 * vite.config.ts
