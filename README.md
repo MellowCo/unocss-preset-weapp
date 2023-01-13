@@ -246,6 +246,21 @@ transform
 
 [tm-ui-demo](https://github.com/MellowCo/unplugin-attributify-to-class/tree/master/examples/tm-ui-demo)
 
+---
+### 开发时，微信等浏览器白屏问题
+因为浏览器的兼容问题，不支持 `TopLevelAwait` 导致白屏
+![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202301130826739.png)
+
+> 目前 [unocss@0.48.4](https://github.com/unocss/unocss/releases/tag/v0.48.4) 版本新增 `hmrTopLevelAwait` 选项，可关闭 `TopLevelAwait` 以支持某些浏览器
+
+```ts
+// https://github.com/antfu/unocss
+Unocss({
+  hmrTopLevelAwait: false,
+})
+```
+
+
 ## css预设
 [UnoCSS 文档](https://uno.antfu.me/)
 
