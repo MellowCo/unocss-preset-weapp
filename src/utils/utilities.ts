@@ -48,6 +48,22 @@ function getThemeColor(theme: Theme, colors: string[]) {
 }
 
 /**
+ * Split utility shorthand delimited by / or :
+ */
+export function splitShorthand(body: string, type: string, theme: Theme) {
+  const split = restoreSelector(body, theme.transformRules).split(/(?:\/|\_|:)/) // 百分比 / 改为 _
+
+  if (split[0] === `[${type}`) {
+    return [
+      split.slice(0, 2).join(':'),
+      split[2],
+    ]
+  }
+
+  return split
+}
+
+/**
  * Parse color string into {@link ParsedColorValue} (if possible). Color value will first be matched to theme object before parsing.
  * See also color.tests.ts for more examples.
  *
@@ -62,16 +78,7 @@ function getThemeColor(theme: Theme, colors: string[]) {
  * @return {ParsedColorValue|undefined}  {@link ParsedColorValue} object if string is parseable.
  */
 export function parseColor(body: string, theme: Theme): ParsedColorValue | undefined {
-  const split = restoreSelector(body, theme.transformRules).split(/(?:\/|\_|:)/) // 百分比 / 改为 _
-
-  let main, opacity
-  if (split[0] === '[color') {
-    main = split.slice(0, 2).join(':')
-    opacity = split[2]
-  }
-  else {
-    [main, opacity] = split
-  }
+  const [main, opacity] = splitShorthand(body, 'color', theme)
 
   const colors = main
     .replace(/([a-z])([0-9])/g, '$1-$2')

@@ -421,14 +421,22 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .peer:not(:placeholder-shown)~.peer-not-placeholder-shown_cl11_text-3xl{font-size:60rpx;line-height:72rpx;}
 .peer:not(:placeholder-shown)~.peer-not-placeholder-shown_cl11_text-2xl{font-size:48rpx;line-height:64rpx;}
 .text-_lfl11_100px_lfr11_{font-size:100px;}
+.text-_lfl11_11px_lfr11__sl11_4{font-size:11px;line-height:32rpx;}
+.text-_lfl11_11rpx_lfr11__sl11_4{font-size:11rpx;line-height:32rpx;}
+.text-_lfl11_12px_lfr11__sl11__lfl11_13px_lfr11_{font-size:12px;line-height:13px;}
+.text-_lfl11_12rpx_lfr11__sl11__lfl11_13rpx_lfr11_{font-size:12rpx;line-height:13rpx;}
 .text-_lfl11_2em_lfr11_,
 .text-_lfl11_length_cl11_2em_lfr11_,
 .text-2em,
 .text-size-_lfl11_2em_lfr11_{font-size:2em;}
 .text-_lfl11_length_cl11_calc_lbl11_1em-1px_lbr11__lfr11_{font-size:calc(1em - 1px);}
 .text-_lfl11_length_cl11_var_lbl11_--size_lbr11__lfr11_{font-size:var(--size);}
+.text-_lfl11_length_cl11_var_lbl11_--size_lbr11__lfr11__cl11__do11_leading{font-size:var(--size);line-height:var(--leading);}
 .text-base{font-size:32rpx;line-height:48rpx;}
 .text-lg{font-size:36rpx;line-height:56rpx;}
+.text-sm_sl11__lfl11_10px_lfr11_{font-size:28rpx;line-height:10px;}
+.text-sm_sl11__lfl11_10rpx_lfr11_{font-size:28rpx;line-height:10rpx;}
+.text-sm_sl11_3{font-size:28rpx;line-height:24rpx;}
 .text-size-_do11_variable{font-size:var(--variable);}
 .text-size-unset{font-size:unset;}
 .as-parent .group .group-_lfl11__dl11_as-parent_\\\\&_lfr11__cl11_font-13{font-weight:13;}
