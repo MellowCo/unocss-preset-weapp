@@ -707,7 +707,8 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .position-inherit{position:inherit;}
 .static{position:static;}
 .h-_do_var{height:var(--var);}
-.h-_lfl_calc_lbl_1000px-4rem_lbr__lfr_{height:calc(1000px - 4rem);}
+.h-_lfl_calc_lbl_1000px-4rem_lbr__lfr_,
+.size-h-_lfl_calc_lbl_1000px-4rem_lbr__lfr_{height:calc(1000px - 4rem);}
 .h-1{height:1rpx;}
 .h-1_dl_000_pes_,
 .h1_sl_100{height:1%;}
@@ -747,10 +748,12 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .min-h-unset{min-height:unset;}
 .min-w-_do_var{min-width:var(--var);}
 .min-w-20{min-width:20rpx;}
-.min-w-full{min-width:100%;}
+.min-w-full,
+.size-min-w-full{min-width:100%;}
 .min-w-lg{min-width:300rpx;}
 .min-w-none{min-width:none;}
 .min-w-revert-layer{min-width:revert-layer;}
+.size-w-10{width:10rpx;}
 .w-_lfl_calc_lbl_calc_lbl_100px\\\\*10_lbr_-4rem_lbr__lfr_{width:calc(calc(100px * 10) - 4rem);}
 .w-1{width:1rpx;}
 .w-1_sl_4{width:25%;}
