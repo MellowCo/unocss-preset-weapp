@@ -41,6 +41,7 @@ export const rules: Rule[] = [
   borders,
   contentVisibility,
   contents,
+  contains,
   fonts,
   tabSizes,
   textIndents,
