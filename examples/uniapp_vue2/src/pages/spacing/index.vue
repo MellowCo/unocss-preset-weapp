@@ -115,6 +115,10 @@
         <text class="bg-green-100 m-2xl">
           m-2xl
         </text>
+
+        <text class="bg-green-100 ms-2xl">
+          ms
+        </text>
       </view>
     </view>
 

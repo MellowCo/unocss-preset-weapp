@@ -1629,9 +1629,9 @@
   dependencies:
     dayjs "^1.11.5"
 
-"@meoc/utils@^0.2.0":
+"@meoc/utils@^0.2.2":
   version "0.2.2"
-  resolved "https://registry.npmjs.org/@meoc/utils/-/utils-0.2.2.tgz#49f06fbc4739637d3192597d129b127aafb26237"
+  resolved "https://registry.yarnpkg.com/@meoc/utils/-/utils-0.2.2.tgz#49f06fbc4739637d3192597d129b127aafb26237"
   integrity sha512-kmBffnu4/vMVNA6TbaODqeC7es2CK8pKKuDTT++Nbe0N14fQuipBEwqzrFLsyVqYsDswCAllc8QHR5hpAPfN/w==
   dependencies:
     dayjs "^1.11.6"
@@ -2023,10 +2023,15 @@
   resolved "https://registry.npmmirror.com/@unocss/core/-/core-0.45.8.tgz#e9beebf6dfdd85ef7d0fef70fc68b4e38560979c"
   integrity sha512-Iskmc1FaxIUAw4HK1U3htvXxJ4YAtffn3+ygNKY8+bzuOqhIk84vbp7SnHV3b8X6IHl4/OYzNRlVFhJQYnWV7g==
 
-"@unocss/core@0.48.0", "@unocss/core@^0.48.0":
+"@unocss/core@0.48.0":
   version "0.48.0"
   resolved "https://registry.npmjs.org/@unocss/core/-/core-0.48.0.tgz#5ce9c97c0062e590a8db46a0b610fd5b3176e555"
   integrity sha512-WvAvChbJ65l97mHismyApeFVgNeGR4uSZl1BzVY+E/fRmyooE4QxiCm3g2akox6mQryzxvBvgSpP9aPzH676ZQ==
+
+"@unocss/core@^0.49.4":
+  version "0.49.4"
+  resolved "https://registry.yarnpkg.com/@unocss/core/-/core-0.49.4.tgz#9d0d2c4f88bea277846728262acebfdb1f0f9831"
+  integrity sha512-1RNV+KBgRo0uuaa5Etwc5cfxkdhJelIXRFz3LeXBOU4dIrTzBAMr352M+oZ/nnkbnAROGf3icTE0UcmSaCA2RQ==
 
 "@unocss/inspector@0.48.0":
   version "0.48.0"
@@ -10948,14 +10953,14 @@ unplugin-transform-class@^0.2.0:
     "@rollup/pluginutils" "^5.0.2"
     unplugin "0.10.2"
 
-unplugin-transform-class@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.npmjs.org/unplugin-transform-class/-/unplugin-transform-class-0.2.1.tgz#a8221f7826be1af02a03b042de0d97f0be46bdc3"
-  integrity sha512-T5Nc4OZDugtEDqdbS2am/XUPyJqU8nO9ZEHLFZIk8O8X2YRW6n9dakqRvsXJS1thlCEomt98wMOXwMUiMaSarw==
+unplugin-transform-class@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/unplugin-transform-class/-/unplugin-transform-class-0.3.0.tgz#a151fdc3b21ecf13cae01b5d41679216bf4d390a"
+  integrity sha512-RD3dxd6/o4ORIKYA1Riqm+a1JCJ+Jnu3INAsGYlH2Q7dysKFapk7+y9Q/H4Dlk8ZctxbkCvtNsnkSaHKYHR4BA==
   dependencies:
-    "@meoc/utils" "^0.2.0"
+    "@meoc/utils" "^0.2.2"
     "@rollup/pluginutils" "^5.0.2"
-    unplugin "1.0.0"
+    unplugin "1.0.1"
 
 unplugin@0.10.2, unplugin@^0.10.2:
   version "0.10.2"
@@ -10967,15 +10972,15 @@ unplugin@0.10.2, unplugin@^0.10.2:
     webpack-sources "^3.2.3"
     webpack-virtual-modules "^0.4.5"
 
-unplugin@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/unplugin/-/unplugin-1.0.0.tgz#8d12e0d116bf56313d42755094fc370e9c18da86"
-  integrity sha512-H5UnBUxfhTXBXGo2AwKsl0UaLSHzSNDZNehPQSgdhVfO/t+XAS1Yoj3vmLrrlBrS9ZwtH5tejbX/TCp5DcyCKg==
+unplugin@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/unplugin/-/unplugin-1.0.1.tgz#83b528b981cdcea1cad422a12cd02e695195ef3f"
+  integrity sha512-aqrHaVBWW1JVKBHmGo33T5TxeL0qWzfvjWokObHA9bYmN7eNDkwOxmLjhioHl9878qDFMAaT51XNroRyuz7WxA==
   dependencies:
     acorn "^8.8.1"
     chokidar "^3.5.3"
     webpack-sources "^3.2.3"
-    webpack-virtual-modules "^0.4.6"
+    webpack-virtual-modules "^0.5.0"
 
 unplugin@^0.9.3:
   version "0.9.3"
@@ -11405,10 +11410,10 @@ webpack-virtual-modules@^0.4.5:
   resolved "https://registry.npmjs.org/webpack-virtual-modules/-/webpack-virtual-modules-0.4.5.tgz#e476842dab5eafb7beb844aa2f747fc12ebbf6ec"
   integrity sha512-8bWq0Iluiv9lVf9YaqWQ9+liNgXSHICm+rg544yRgGYaR8yXZTVBaHZkINZSB2yZSWo4b0F6MIxqJezVfOEAlg==
 
-webpack-virtual-modules@^0.4.6:
-  version "0.4.6"
-  resolved "https://registry.npmjs.org/webpack-virtual-modules/-/webpack-virtual-modules-0.4.6.tgz#3e4008230731f1db078d9cb6f68baf8571182b45"
-  integrity sha512-5tyDlKLqPfMqjT3Q9TAqf2YqjwmnUleZwzJi1A5qXnlBCdj2AtOJ6wAWdglTIDOPgOiOrXeBeFcsQ8+aGQ6QbA==
+webpack-virtual-modules@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/webpack-virtual-modules/-/webpack-virtual-modules-0.5.0.tgz#362f14738a56dae107937ab98ea7062e8bdd3b6c"
+  integrity sha512-kyDivFZ7ZM0BVOUteVbDFhlRt7Ah/CSPwJdi8hBpkK7QLumUqdLtVfm/PX/hkcnrvr0i77fO5+TjZ94Pe+C9iw==
 
 webpack@^4.0.0, webpack@^4.29.5:
   version "4.46.0"
