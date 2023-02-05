@@ -89,7 +89,7 @@
     "@rollup/pluginutils": "^5.0.2",
     "@unocss/core": "^0.49.4",
     "unplugin-attributify-to-class": "^0.2.0",
-    "unplugin-transform-class": "^0.2.1"
+    "unplugin-transform-class": "^0.3.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "0.34.0",
