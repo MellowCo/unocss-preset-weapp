@@ -1,0 +1,25 @@
+// Vitest Snapshot v1
+
+exports[`prefix > multiple preset prefix 1`] = `
+"/* layer: default */
+.hover_cl_h-p4:hover{padding:32rpx;}
+.h-text-red{--un-text-opacity:1;color:rgba(248,113,113,var(--un-text-opacity));}
+.bar,
+.bar-bar,
+.bar-shortcut,
+.foo-bar,
+.x-shortcut{color:bar;}
+.bar-regex,
+.foo-regex,
+.regex{color:regex;}"
+`;
+
+exports[`prefix > preset prefix 1`] = `
+"/* layer: default */
+.h-divide-x>view+view,.h-divide-x>button+button,.h-divide-x>text+text,.h-divide-x>image+image,.h-divide-x>uni-view+uni-view,.h-divide-x>uni-button+uni-button,.h-divide-x>uni-text+uni-text,.h-divide-x>uni-image+uni-image,.h-divide-x>taro-view-core+taro-view-core,.h-divide-x>taro-image-core+taro-image-core,.h-divide-x>taro-text-core+taro-text-core,.h-divide-x>taro-button-core+taro-button-core{--un-divide-x-reverse:0;border-left-width:calc(1px * calc(1 - var(--un-divide-x-reverse)));border-right-width:calc(1px * var(--un-divide-x-reverse));border-left-style:solid;border-right-style:solid;}
+.hover_cl_h-p4:hover{padding:32rpx;}
+.h-text-red{--un-text-opacity:1;color:rgba(248,113,113,var(--un-text-opacity));}
+.h-space-x-4>view+view,.h-space-x-4>button+button,.h-space-x-4>text+text,.h-space-x-4>image+image,.h-space-x-4>uni-view+uni-view,.h-space-x-4>uni-button+uni-button,.h-space-x-4>uni-text+uni-text,.h-space-x-4>uni-image+uni-image,.h-space-x-4>taro-view-core+taro-view-core,.h-space-x-4>taro-image-core+taro-image-core,.h-space-x-4>taro-text-core+taro-text-core,.h-space-x-4>taro-button-core+taro-button-core{--un-space-x-reverse:0;margin-left:calc(32rpx * calc(1 - var(--un-space-x-reverse)));margin-right:calc(32rpx * var(--un-space-x-reverse));}
+.bar-bar,
+.bar-shortcut{color:bar;}"
+`;

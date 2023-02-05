@@ -54,7 +54,7 @@ export interface PresetWeappOptions extends PresetOptions {
    *
    * @default undefined
    */
-  prefix?: string
+  prefix?: string | string[]
 
   /**
    * 是否转换微信class

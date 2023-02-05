@@ -121,7 +121,10 @@ export const variantVariables: Variant = {
 const els = ['view', 'button', 'text', 'image', 'uni-view', 'uni-button', 'uni-text', 'uni-image', 'taro-view-core', 'taro-image-core', 'taro-text-core', 'taro-button-core']
 
 export const variantSpaceAndDivide: Variant = (matcher) => {
-  if (/^space-?([xy])-?(-?.+)$/.test(matcher) || matcher.startsWith('divide-')) {
+  if (matcher.startsWith('_'))
+    return
+
+  if (/space-?([xy])-?(-?.+)$/.test(matcher) || /divide-/.test(matcher)) {
     return {
       matcher,
       selector: (input) => {

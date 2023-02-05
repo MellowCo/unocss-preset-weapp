@@ -55,7 +55,7 @@ export interface Options {
   /**
    * @default 'un-'
    */
-  prefix?: string
+  prefix?: string | string[]
 
   /**
    * 仅匹配前缀属性

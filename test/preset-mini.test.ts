@@ -1,11 +1,11 @@
 import { createGenerator, escapeSelector } from '@unocss/core'
 import { describe, expect, test } from 'vitest'
-import presetMini from '../src'
+import presetWeapp from '../src/index'
 import { presetMiniNonTargets, presetMiniTargets } from './assets/preset-mini-targets'
 
 const uno = createGenerator({
   presets: [
-    presetMini({
+    presetWeapp({
       dark: 'media',
       variablePrefix: 'licl-',
       transform: false,
@@ -37,7 +37,7 @@ describe('preset-mini', () => {
   test('dark customizing selector', async () => {
     const uno = createGenerator({
       presets: [
-        presetMini({
+        presetWeapp({
           dark: {
             dark: '[data-mode="dark"]',
             light: '[data-mode="light"]',
@@ -79,7 +79,7 @@ describe('preset-mini', () => {
   test('custom var prefix', async () => {
     const uno = createGenerator({
       presets: [
-        presetMini({
+        presetWeapp({
           variablePrefix: 'hi-',
         }),
       ],
@@ -115,7 +115,7 @@ describe('preset-mini', () => {
   test('preflight root can be customized with string', async () => {
     const uno = createGenerator({
       presets: [
-        presetMini(),
+        presetWeapp(),
       ],
       theme: {
         preflightRoot: ':root',
@@ -128,7 +128,7 @@ describe('preset-mini', () => {
   test('preflight root can be customized with array', async () => {
     const uno = createGenerator({
       presets: [
-        presetMini(),
+        presetWeapp(),
       ],
       theme: {
         preflightRoot: ['.scope-1', '[data-scope-2]'],
@@ -141,7 +141,7 @@ describe('preset-mini', () => {
   test('preflight root can be disabled using empty array', async () => {
     const uno = createGenerator({
       presets: [
-        presetMini(),
+        presetWeapp(),
       ],
       theme: {
         preflightRoot: [],
