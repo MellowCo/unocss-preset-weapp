@@ -10,7 +10,7 @@
 *  [transformerAttributify](https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify)，用于支持 [attributify mode](https://github.com/unocss/unocss/tree/main/packages/preset-attributify#attributify-mode)
 ---
 
-[uniapp-vue3 demo 在线地址](https://playful-gumption-4bb42b.netlify.app)
+[uniapp-vue3 demo 在线地址](https://playful-gumption-4bb42b.netlify.app) [demo github](https://github.com/MellowCo/unocss-uniapp-demo)
 
 ## 使用
 
