@@ -1,12 +1,15 @@
 import type { VariantHandlerContext, VariantObject } from '@unocss/core'
 import { escapeRegExp } from '@unocss/core'
+import { defaultRules, restoreSelector } from 'unplugin-transform-class/utils'
 import { getBracket } from '../utils'
 
-export const variantMatcher = (name: string, handler: (input: VariantHandlerContext) => Record<string, any>): VariantObject => {
+export const variantMatcher = (name: string, handler: (input: VariantHandlerContext) => Record<string, any>, transformRules: Record<string, string> = defaultRules): VariantObject => {
   const re = new RegExp(`^${escapeRegExp(name)}[:-]`)
+
   return {
     name,
     match(input) {
+      input = restoreSelector(input, transformRules)
       const match = input.match(re)
       if (match) {
         return {
@@ -22,11 +25,12 @@ export const variantMatcher = (name: string, handler: (input: VariantHandlerCont
   }
 }
 
-export const variantParentMatcher = (name: string, parent: string): VariantObject => {
+export const variantParentMatcher = (name: string, parent: string, transformRules: Record<string, string> = defaultRules): VariantObject => {
   const re = new RegExp(`^${escapeRegExp(name)}[:-]`)
   return {
     name,
     match(input) {
+      input = restoreSelector(input, transformRules)
       const match = input.match(re)
       if (match) {
         return {

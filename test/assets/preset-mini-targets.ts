@@ -1090,6 +1090,7 @@ export const presetMiniTargets: string[] = [
   // variant dark/light
   'dark:not-odd:text-red',
   'dark:text-xl',
+  'dark:bg-red',
   'light:text-sm',
 
   // variants layer

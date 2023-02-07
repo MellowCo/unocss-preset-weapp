@@ -6,7 +6,6 @@ import { presetMiniTargets } from './assets/preset-mini-targets'
 const uno = createGenerator({
   presets: [
     presetWeapp({
-      dark: 'media',
       transformRules: {
         '.': '_dl11_',
         '/': '_sl11_',
