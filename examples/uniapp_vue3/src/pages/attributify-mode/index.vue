@@ -7,7 +7,7 @@ export default {
 </script>
 
 <template>
-  <view>
+  <view class="dark:bg-#000/30">
     <button
       text="sm green"
       p="y-2 x-4"
@@ -56,6 +56,10 @@ export default {
 
     <view bg="#2ecc71:50">
       333
+    </view>
+
+    <view bg-red pr-bg-blue text="#fff" pr-text="green">
+      prefixedOnly
     </view>
   </view>
 </template>

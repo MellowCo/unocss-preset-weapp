@@ -55,7 +55,7 @@
     "@dcloudio/uni-stacktracey": "3.0.0-alpha-3070020230117001",
     "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3070020230117001",
     "typescript": "^4.7.3",
-    "unocss": "0.48.0",
+    "unocss": "0.49.4",
     "unocss-preset-weapp": "link:../../",
     "vite": "^4.0.3"
   }
