@@ -9,7 +9,7 @@ specifiers:
   msw: ^0.49.2
   typescript: ^4.9.4
   unbuild: ^1.0.2
-  unplugin-attributify-to-class: ^0.2.0
+  unplugin-attributify-to-class: ^0.2.1
   unplugin-transform-class: ^0.3.0
   vite: ^3.2.5
   vitest: ^0.28.4
@@ -17,7 +17,7 @@ specifiers:
 dependencies:
   '@rollup/pluginutils': 5.0.2
   '@unocss/core': 0.49.4
-  unplugin-attributify-to-class: 0.2.0
+  unplugin-attributify-to-class: 0.2.1
   unplugin-transform-class: 0.3.0
 
 devDependencies:
@@ -458,12 +458,6 @@ packages:
       type-detect: 4.0.8
     dev: true
 
-  /@meoc/utils/0.2.0:
-    resolution: {integrity: sha512-Cri7fXyHCMEcbbrbGiDb1Z4pJPD8x6GMpTuCfjxOVWytX8RuYZQVSMQbOT9wWa9vIL/twkYNY6IRJq6/mAZPzQ==}
-    dependencies:
-      dayjs: 1.11.6
-    dev: false
-
   /@meoc/utils/0.2.2:
     resolution: {integrity: sha512-kmBffnu4/vMVNA6TbaODqeC7es2CK8pKKuDTT++Nbe0N14fQuipBEwqzrFLsyVqYsDswCAllc8QHR5hpAPfN/w==}
     dependencies:
@@ -884,12 +878,6 @@ packages:
     resolution: {integrity: sha512-k+iyHEuPgSw6SbuDpGQM+06HQUa04DZ3o+F6CSzXMvvI5KMvnaEqXe+YVe555R9nn6GPt404fos4wcgpw12SDA==}
     engines: {node: '>=0.4.0'}
     dev: true
-
-  /acorn/8.8.0:
-    resolution: {integrity: sha512-QOxyigPVrpZ2GXT+PFyZTl6TtOFc5egxHIP9IlQ+RbupQuX4RkT/Bee4/kQuC02Xkzg84JcT7oLYtDIQxp+v7w==}
-    engines: {node: '>=0.4.0'}
-    hasBin: true
-    dev: false
 
   /acorn/8.8.1:
     resolution: {integrity: sha512-7zFpHzhnqYKrkYdUjF1HI1bzd0VygEGX8lFk4k5zVMqHEoES+P+7TKI+EvLO9WVMJ8eekdO0aDEK044xTXwPPA==}
@@ -4261,22 +4249,12 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unplugin-attributify-to-class/0.2.0:
-    resolution: {integrity: sha512-vvF2jn17E2wl/Sf6htC3EZ9kyW3xaX4APz2fgyvyi620CyhFVJotUFj7xGEk02MXr36u7ylK3PHkgpJxS5lsvA==}
+  /unplugin-attributify-to-class/0.2.1:
+    resolution: {integrity: sha512-dhntMfHIgL9iSNK2ih/Za6CkygZF0w7+rknwdMIk3BJQGJbhAlGNUUXozYVpzBwQPrTjg/g/VdvYIj2Xn9vwvQ==}
     dependencies:
       '@rollup/pluginutils': 5.0.2
-      unplugin: 0.10.2
-      unplugin-transform-class: 0.2.1
-    transitivePeerDependencies:
-      - rollup
-    dev: false
-
-  /unplugin-transform-class/0.2.1:
-    resolution: {integrity: sha512-T5Nc4OZDugtEDqdbS2am/XUPyJqU8nO9ZEHLFZIk8O8X2YRW6n9dakqRvsXJS1thlCEomt98wMOXwMUiMaSarw==}
-    dependencies:
-      '@meoc/utils': 0.2.0
-      '@rollup/pluginutils': 5.0.2
-      unplugin: 1.0.0
+      unplugin: 1.0.1
+      unplugin-transform-class: 0.3.0
     transitivePeerDependencies:
       - rollup
     dev: false
@@ -4289,24 +4267,6 @@ packages:
       unplugin: 1.0.1
     transitivePeerDependencies:
       - rollup
-    dev: false
-
-  /unplugin/0.10.2:
-    resolution: {integrity: sha512-6rk7GUa4ICYjae5PrAllvcDeuT8pA9+j5J5EkxbMFaV+SalHhxZ7X2dohMzu6C3XzsMT+6jwR/+pwPNR3uK9MA==}
-    dependencies:
-      acorn: 8.8.0
-      chokidar: 3.5.3
-      webpack-sources: 3.2.3
-      webpack-virtual-modules: 0.4.5
-    dev: false
-
-  /unplugin/1.0.0:
-    resolution: {integrity: sha512-H5UnBUxfhTXBXGo2AwKsl0UaLSHzSNDZNehPQSgdhVfO/t+XAS1Yoj3vmLrrlBrS9ZwtH5tejbX/TCp5DcyCKg==}
-    dependencies:
-      acorn: 8.8.1
-      chokidar: 3.5.3
-      webpack-sources: 3.2.3
-      webpack-virtual-modules: 0.4.6
     dev: false
 
   /unplugin/1.0.1:
@@ -4552,14 +4512,6 @@ packages:
   /webpack-sources/3.2.3:
     resolution: {integrity: sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==}
     engines: {node: '>=10.13.0'}
-    dev: false
-
-  /webpack-virtual-modules/0.4.5:
-    resolution: {integrity: sha512-8bWq0Iluiv9lVf9YaqWQ9+liNgXSHICm+rg544yRgGYaR8yXZTVBaHZkINZSB2yZSWo4b0F6MIxqJezVfOEAlg==}
-    dev: false
-
-  /webpack-virtual-modules/0.4.6:
-    resolution: {integrity: sha512-5tyDlKLqPfMqjT3Q9TAqf2YqjwmnUleZwzJi1A5qXnlBCdj2AtOJ6wAWdglTIDOPgOiOrXeBeFcsQ8+aGQ6QbA==}
     dev: false
 
   /webpack-virtual-modules/0.5.0:
