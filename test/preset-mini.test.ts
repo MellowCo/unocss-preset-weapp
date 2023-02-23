@@ -150,4 +150,22 @@ describe('preset-mini', () => {
     const { css } = await uno.generate('')
     expect(css).eql('')
   })
+
+  test('the :active pseudo is sorted and separated after other pseudo', async () => {
+    const uno = createGenerator({
+      presets: [
+        presetWeapp(),
+      ],
+    })
+
+    const { css } = await uno.generate([
+      'hover:bg-blue-3',
+      'active:bg-blue-3',
+      'focus:bg-blue-3',
+    ].join(' '), {
+      preflights: false,
+    })
+
+    expect(css).toMatchSnapshot()
+  })
 })

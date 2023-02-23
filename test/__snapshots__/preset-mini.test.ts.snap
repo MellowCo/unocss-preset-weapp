@@ -1081,9 +1081,9 @@ unocss .scope-\\\\[unocss\\\\]\\\\:block{display:block;}
 .skew-y-10deg{--licl-skew-y:10deg;transform:translateX(var(--licl-translate-x)) translateY(var(--licl-translate-y)) translateZ(var(--licl-translate-z)) rotate(var(--licl-rotate)) rotateX(var(--licl-rotate-x)) rotateY(var(--licl-rotate-y)) rotateZ(var(--licl-rotate-z)) skewX(var(--licl-skew-x)) skewY(var(--licl-skew-y)) scaleX(var(--licl-scale-x)) scaleY(var(--licl-scale-y)) scaleZ(var(--licl-scale-z));}
 .skew-y-2grad{--licl-skew-y:2grad;transform:translateX(var(--licl-translate-x)) translateY(var(--licl-translate-y)) translateZ(var(--licl-translate-z)) rotate(var(--licl-rotate)) rotateX(var(--licl-rotate-x)) rotateY(var(--licl-rotate-y)) rotateZ(var(--licl-rotate-z)) skewX(var(--licl-skew-x)) skewY(var(--licl-skew-y)) scaleX(var(--licl-scale-x)) scaleY(var(--licl-scale-y)) scaleZ(var(--licl-scale-z));}
 .skew-y-3\\\\.14rad{--licl-skew-y:3.14rad;transform:translateX(var(--licl-translate-x)) translateY(var(--licl-translate-y)) translateZ(var(--licl-translate-z)) rotate(var(--licl-rotate)) rotateX(var(--licl-rotate-x)) rotateY(var(--licl-rotate-y)) rotateZ(var(--licl-rotate-z)) skewX(var(--licl-skew-x)) skewY(var(--licl-skew-y)) scaleX(var(--licl-scale-x)) scaleY(var(--licl-scale-y)) scaleZ(var(--licl-scale-z));}
-.hover\\\\:scale-4:hover,
-.active\\\\:scale-4:active{--licl-scale-x:0.04;--licl-scale-y:0.04;transform:translateX(var(--licl-translate-x)) translateY(var(--licl-translate-y)) translateZ(var(--licl-translate-z)) rotate(var(--licl-rotate)) rotateX(var(--licl-rotate-x)) rotateY(var(--licl-rotate-y)) rotateZ(var(--licl-rotate-z)) skewX(var(--licl-skew-x)) skewY(var(--licl-skew-y)) scaleX(var(--licl-scale-x)) scaleY(var(--licl-scale-y)) scaleZ(var(--licl-scale-z));}
+.hover\\\\:scale-4:hover{--licl-scale-x:0.04;--licl-scale-y:0.04;transform:translateX(var(--licl-translate-x)) translateY(var(--licl-translate-y)) translateZ(var(--licl-translate-z)) rotate(var(--licl-rotate)) rotateX(var(--licl-rotate-x)) rotateY(var(--licl-rotate-y)) rotateZ(var(--licl-rotate-z)) skewX(var(--licl-skew-x)) skewY(var(--licl-skew-y)) scaleX(var(--licl-scale-x)) scaleY(var(--licl-scale-y)) scaleZ(var(--licl-scale-z));}
 .scale-\\\\$variable{--licl-scale-x:var(--variable);--licl-scale-y:var(--variable);transform:translateX(var(--licl-translate-x)) translateY(var(--licl-translate-y)) translateZ(var(--licl-translate-z)) rotate(var(--licl-rotate)) rotateX(var(--licl-rotate-x)) rotateY(var(--licl-rotate-y)) rotateZ(var(--licl-rotate-z)) skewX(var(--licl-skew-x)) skewY(var(--licl-skew-y)) scaleX(var(--licl-scale-x)) scaleY(var(--licl-scale-y)) scaleZ(var(--licl-scale-z));}
+.active\\\\:scale-4:active{--licl-scale-x:0.04;--licl-scale-y:0.04;transform:translateX(var(--licl-translate-x)) translateY(var(--licl-translate-y)) translateZ(var(--licl-translate-z)) rotate(var(--licl-rotate)) rotateX(var(--licl-rotate-x)) rotateY(var(--licl-rotate-y)) rotateZ(var(--licl-rotate-z)) skewX(var(--licl-skew-x)) skewY(var(--licl-skew-y)) scaleX(var(--licl-scale-x)) scaleY(var(--licl-scale-y)) scaleZ(var(--licl-scale-z));}
 .-scale-x-full{--licl-scale-x:-100%;transform:translateX(var(--licl-translate-x)) translateY(var(--licl-translate-y)) translateZ(var(--licl-translate-z)) rotate(var(--licl-rotate)) rotateX(var(--licl-rotate-x)) rotateY(var(--licl-rotate-y)) rotateZ(var(--licl-rotate-z)) skewX(var(--licl-skew-x)) skewY(var(--licl-skew-y)) scaleX(var(--licl-scale-x)) scaleY(var(--licl-scale-y)) scaleZ(var(--licl-scale-z));}
 .scale-x-\\\\$variable{--licl-scale-x:var(--variable);transform:translateX(var(--licl-translate-x)) translateY(var(--licl-translate-y)) translateZ(var(--licl-translate-z)) rotate(var(--licl-rotate)) rotateX(var(--licl-rotate-x)) rotateY(var(--licl-rotate-y)) rotateZ(var(--licl-rotate-z)) skewX(var(--licl-skew-x)) skewY(var(--licl-skew-y)) scaleX(var(--licl-scale-x)) scaleY(var(--licl-scale-y)) scaleZ(var(--licl-scale-z));}
 .preserve-3d{transform-style:preserve-3d;}
@@ -1201,4 +1201,11 @@ unocss .scope-\\\\[unocss\\\\]\\\\:block{display:block;}
 .uno-layer-\\\\[uno_css\\\\]\\\\:block{display:block;}
 /* layer: uno_css */
 .uno-layer-uno_css\\\\:block{display:block;}"
+`;
+
+exports[`preset-mini > the :active pseudo is sorted and separated after other pseudo 1`] = `
+"/* layer: default */
+.focus_cl_bg-blue-3:focus,
+.hover_cl_bg-blue-3:hover{--un-bg-opacity:1;background-color:rgba(147,197,253,var(--un-bg-opacity));}
+.active_cl_bg-blue-3:active{--un-bg-opacity:1;background-color:rgba(147,197,253,var(--un-bg-opacity));}"
 `;
