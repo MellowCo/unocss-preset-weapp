@@ -11,7 +11,7 @@ import { taroCssPxTransform, taroH5CssRemTransform, uniAppVue2CssRpxTransform } 
 export { theme, colors } from './theme'
 export { parseColor } from './utils'
 
-// fix(preset-wind): apply space/divide properly
+// feat(preset-mini)!: improve the type of theme, requires TS 4.9
 export type { ThemeAnimation, Theme }
 
 export interface DarkModeSelectors {
