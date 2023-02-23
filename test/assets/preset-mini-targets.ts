@@ -1135,6 +1135,7 @@ export const presetMiniTargets: string[] = [
   'file:bg-violet-50',
   'hover:file:bg-violet-100',
   'backdrop:shadow-green',
+  'backdrop-element:shadow-green-100',
 
   // variants - pseudo classes
   'rtl:text-right',
