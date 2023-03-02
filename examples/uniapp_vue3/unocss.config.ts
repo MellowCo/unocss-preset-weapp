@@ -1,6 +1,5 @@
 import presetWeapp from 'unocss-preset-weapp'
 import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
-import { transformerDirectives } from 'unocss'
 
 export default {
   presets: [
@@ -14,9 +13,6 @@ export default {
     },
   ],
   transformers: [
-    // https://github.com/unocss/unocss/tree/main/packages/transformer-directives
-    transformerDirectives(),
-
     // https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify
     transformerAttributify(),
 
