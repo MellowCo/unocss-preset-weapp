@@ -1,6 +1,6 @@
 {
   "name": "unocss-preset-weapp",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "the unocss preset for wechat miniprogram (uniapp, taro)",
   "author": "MellowCo",
   "license": "MIT",
@@ -55,7 +55,7 @@
     "./transformer": {
       "types": "./dist/transformer.d.ts",
       "require": "./dist/transformer.cjs",
-      "import": "./dist/transformer.mjs"  
+      "import": "./dist/transformer.mjs"
     },
     "./*": "./*"
   },
