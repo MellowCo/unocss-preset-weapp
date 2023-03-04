@@ -1139,6 +1139,7 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .lt-lg_cl11_m2{margin:16rpx;}
 }
 @media (max-width: 639.9px){
+.\\\\<sm_cl11_m1,
 .lt-sm_cl11_m1{margin:8rpx;}
 }
 @media (max-width: 1023.9px){@media (min-width: 640px){
@@ -1150,6 +1151,7 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .sm_cl11_m1{margin:8rpx;}
 }
 @media (min-width: 640px) and (max-width: 767.9px){
+.\\\\~sm_cl11_m1,
 .at-sm_cl11_m1{margin:8rpx;}
 }
 @media (min-width: 768px){
