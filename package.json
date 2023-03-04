@@ -55,7 +55,7 @@
     "./transformer": {
       "types": "./dist/transformer.d.ts",
       "require": "./dist/transformer.cjs",
-      "import": "./dist/transformer.mjs"
+      "import": "./dist/transformer.mjs"  
     },
     "./*": "./*"
   },
@@ -87,18 +87,18 @@
   },
   "dependencies": {
     "@rollup/pluginutils": "^5.0.2",
-    "@unocss/core": "^0.50.0",
+    "@unocss/core": "^0.50.3",
     "unplugin-attributify-to-class": "^0.2.1",
     "unplugin-transform-class": "^0.3.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "0.34.0",
+    "@antfu/eslint-config": "0.35.3",
     "bumpp": "^9.0.0",
-    "eslint": "8.31.0",
-    "msw": "^0.49.2",
-    "typescript": "^4.9.4",
-    "unbuild": "^1.0.2",
-    "vite": "^3.2.5",
-    "vitest": "^0.28.5"
+    "eslint": "8.35.0",
+    "msw": "^1.1.0",
+    "typescript": "^4.9.5",
+    "unbuild": "^1.1.2",
+    "vite": "^4.1.4",
+    "vitest": "^0.29.2"
   }
 }
