@@ -14,7 +14,7 @@ export default {
       <view class="w-100 h-100 bg-cover mb-3 bg-[url(https://img.cdn.sugarat.top/mdImg/MTY2ODA4OTc3MjcyMg==unocss-icon-gray.svg)]" />
     </view>
 
-    <view class="center h-200 rounded-md bg-gradient-to-t from-#f39c12/60 via-#2ecc71:80 to-#9b59b6_70 mb-3">
+    <view class="center h-200 rounded-md bg-gradient-to-t from-#f39c22/60 via-#2ecc71:80 to-#9b59b6_70 mb-3">
       to-t
     </view>
 

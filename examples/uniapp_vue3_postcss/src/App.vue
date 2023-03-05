@@ -17,6 +17,4 @@ view,:before,:after {
   border-style: solid;
   border-color: #e5e7eb
 }
-
-@unocss all;
 </style>
