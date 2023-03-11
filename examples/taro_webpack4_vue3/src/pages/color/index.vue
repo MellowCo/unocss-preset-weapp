@@ -1,6 +1,6 @@
 <template>
   <view class="p-2 text-center">
-    <view class="bg-[#3498db] mb-1"> bg-[#3498db] </view>
+    <view class="bg-[#34eeee] mb-1"> bg-[#3498db] </view>
     <view class="bg-[#3498db]/80 mb-1"> bg-[#3498db]/80 </view>
 
     <view class="bg-[#3498db]:60 mb-1"> bg-[#3498db]:60 </view>
