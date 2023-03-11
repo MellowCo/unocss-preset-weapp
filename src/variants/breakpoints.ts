@@ -18,7 +18,7 @@ export const variantBreakpoints: Variant<Theme> = {
     = Object.entries(resolveBreakpoints(context) ?? {}).map(([point, size], idx) => [point, size, idx])
     for (const [point, size, idx] of variantEntries) {
       if (!regexCache[point])
-        regexCache[point] = new RegExp(`^((?:([al]t-|[<~]))?${point}(?:${context.generator.config.separators.join('|')}))`)
+        regexCache[point] = new RegExp(`^((?:([al]t-|[<~]))?${point}[:-])`)
 
       const match = matcher.match(regexCache[point])
       if (!match)
