@@ -25,7 +25,7 @@
 # 创建taro项目
 taro init taro_xxx
 # 安装unocss
-yarn add -D unocss @unocss/webpack unocss-preset-weapp
+yarn add -D unocss @unocss/webpack@0.46.5 unocss-preset-weapp
 ```
 
 * config/index.js
