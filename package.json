@@ -87,18 +87,18 @@
   },
   "dependencies": {
     "@rollup/pluginutils": "^5.0.2",
-    "@unocss/core": "^0.50.3",
+    "@unocss/core": "^0.50.6",
     "unplugin-attributify-to-class": "^0.2.1",
     "unplugin-transform-class": "^0.3.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "0.35.3",
+    "@antfu/eslint-config": "0.36.0",
     "bumpp": "^9.0.0",
-    "eslint": "8.35.0",
+    "eslint": "8.36.0",
     "msw": "^1.1.0",
     "typescript": "^4.9.5",
     "unbuild": "^1.1.2",
-    "vite": "^4.1.4",
-    "vitest": "^0.29.2"
+    "vite": "^4.2.0",
+    "vitest": "^0.29.3"
   }
 }
