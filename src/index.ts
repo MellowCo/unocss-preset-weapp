@@ -11,7 +11,7 @@ import { taroCssPxTransform, taroH5CssRemTransform, uniAppVue2CssRpxTransform } 
 export { theme, colors } from './theme'
 export { parseColor } from './utils'
 
-// feat(preset-mini)!: improve the type of theme, requires TS 4.9
+// don't extract non-quoted colon character
 export type { ThemeAnimation, Theme }
 
 export interface DarkModeSelectors {
