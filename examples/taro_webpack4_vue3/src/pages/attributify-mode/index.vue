@@ -49,6 +49,10 @@
     <view bg="#2ddd71:50">
       111
     </view>
+
+    <view text-[32px] bg-[#ccc] mt-2>
+      valueless
+    </view>
   </view>
 </template>
 

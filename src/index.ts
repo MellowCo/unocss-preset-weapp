@@ -11,7 +11,7 @@ import { taroCssPxTransform, taroH5CssRemTransform, uniAppVue2CssRpxTransform } 
 export { theme, colors } from './theme'
 export { parseColor } from './utils'
 
-// don't extract non-quoted colon character
+// support custom shadow color
 export type { ThemeAnimation, Theme }
 
 export interface DarkModeSelectors {

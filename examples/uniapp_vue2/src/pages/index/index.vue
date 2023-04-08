@@ -32,7 +32,7 @@ export default {
 </script>
 
 <template>
-  <view class="py-3">
+  <view class="py-3 left-60%">
     <view class="grid grid-cols-3 justify-items-center">
       <view
         v-for="(item, index) in list" :key="index" class="w-200 h-200 shadow-md center rounded-md"

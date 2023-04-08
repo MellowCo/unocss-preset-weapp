@@ -36,6 +36,10 @@
         shadow-inner
       </view>
 
+      <view class="h-200 mb3 bg-white center shadow-inner shadow-[#e45554]">
+        自定义阴影颜色
+      </view>
+
       <view class="h-200 mb3 bg-white center shadow-[0px_4px_4px_0px_rgba(237,_0,_0,_1)]">
         shadow-[0px_4px_4px_0px_rgba(237,_0,_0,_1)]
       </view>
