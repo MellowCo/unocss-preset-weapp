@@ -1,5 +1,5 @@
 import type { SourceCodeTransformer } from '@unocss/core'
-import { transformCode } from 'unplugin-transform-class/utils'
+import { getClass, transformCode } from 'unplugin-transform-class/utils'
 import type { FilterPattern } from '@rollup/pluginutils'
 import { createFilter } from '@rollup/pluginutils'
 
@@ -27,12 +27,26 @@ export default function transformerClass(options: Options = {}): SourceCodeTrans
     options.exclude || [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/],
   )
 
+  // vue template
+  const vueFilter = createFilter(
+    [/\.vue$/, /\.vue\?vue/],
+  )
+
   return {
     name: 'transformer-applet-class',
     idFilter,
     enforce: 'pre',
-    transform(code) {
-      const newCode = transformCode(code.toString(), options.transformRules)
+    transform(code, id) {
+      let newCode = transformCode(code.toString(), options.transformRules)
+
+      const classNames = getClass(code.toString())
+      const injectStr = Array.from(new Set(classNames.map(x => x[1]).filter(x => x).flatMap(x => x.split(' ')))).join(' ')
+
+      if (vueFilter(id))
+        newCode = newCode.replace('<template>', `<template>\n<!-- ${injectStr} -->\n`)
+      else
+        newCode = `/* ${injectStr} */\n${code}`
+
       code.overwrite(0, code.original.length, newCode)
     },
   }
