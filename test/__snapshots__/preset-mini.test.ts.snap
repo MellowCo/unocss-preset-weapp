@@ -207,9 +207,6 @@ page,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .p-2,
 .p2,
 .where-hover\\\\:p-2:where(:hover){padding:16rpx;}
-.group:focus .group-focus\\\\:p-4,
-.p-xy,
-.pxy{padding:32rpx;}
 .hover\\\\:\\\\!p-1:hover{padding:8rpx !important;}
 .hover\\\\:p-5:hover{padding:40rpx;}
 .important\\\\:p-3,
@@ -220,6 +217,9 @@ page,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .p-none{padding:0;}
 .p-unset{padding:unset;}
 .pa{padding:auto;}
+.group:focus .group-focus\\\\:p-4{padding:32rpx;}
+.p-xy,
+.pxy{padding:32rpx;}
 .\\\\!hover\\\\:px-10:hover{padding-left:80rpx !important;padding-right:80rpx !important;}
 .p-x,
 .px{padding-left:32rpx;padding-right:32rpx;}
@@ -588,8 +588,8 @@ unocss .scope-\\\\[unocss\\\\]\\\\:block{display:block;}
 .case-upper{text-transform:uppercase;}
 .case-normal{text-transform:none;}
 .case-inherit{text-transform:inherit;}
-.group:hover:focus .group-hover\\\\:group-focus\\\\:text-center,
 .parent:hover>.parent-hover\\\\:text-center{text-align:center;}
+.group:hover:focus .group-hover\\\\:group-focus\\\\:text-center{text-align:center;}
 .text-left,
 [dir=\\"ltr\\"] .ltr\\\\:text-left{text-align:left;}
 [dir=\\"rtl\\"] .rtl\\\\:text-right{text-align:right;}
@@ -1217,7 +1217,7 @@ unocss .scope-\\\\[unocss\\\\]\\\\:block{display:block;}
 
 exports[`preset-mini > the :active pseudo is sorted and separated after other pseudo 1`] = `
 "/* layer: default */
-.focus_cl_bg-blue-3:focus,
 .hover_cl_bg-blue-3:hover{--un-bg-opacity:1;background-color:rgba(147,197,253,var(--un-bg-opacity));}
+.focus_cl_bg-blue-3:focus{--un-bg-opacity:1;background-color:rgba(147,197,253,var(--un-bg-opacity));}
 .active_cl_bg-blue-3:active{--un-bg-opacity:1;background-color:rgba(147,197,253,var(--un-bg-opacity));}"
 `;

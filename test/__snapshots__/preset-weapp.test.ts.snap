@@ -173,9 +173,6 @@ page,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .p-2,
 .p2,
 .where-hover_cl_p-2:where(:hover){padding:16rpx;}
-.group:focus .group-focus_cl_p-4,
-.p-xy,
-.pxy{padding:32rpx;}
 .hover_cl__el_p-1:hover{padding:8rpx !important;}
 .hover_cl_p-5:hover{padding:40rpx;}
 .important_cl_p-3,
@@ -186,6 +183,9 @@ page,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .p-none{padding:0;}
 .p-unset{padding:unset;}
 .pa{padding:auto;}
+.group:focus .group-focus_cl_p-4{padding:32rpx;}
+.p-xy,
+.pxy{padding:32rpx;}
 ._el_hover_cl_px-10:hover{padding-left:80rpx !important;padding-right:80rpx !important;}
 .p-x,
 .px{padding-left:32rpx;padding-right:32rpx;}
@@ -556,8 +556,8 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .case-upper{text-transform:uppercase;}
 .case-normal{text-transform:none;}
 .case-inherit{text-transform:inherit;}
-.group:hover:focus .group-hover_cl_group-focus_cl_text-center,
 .parent:hover>.parent-hover_cl_text-center{text-align:center;}
+.group:hover:focus .group-hover_cl_group-focus_cl_text-center{text-align:center;}
 .text-left,
 [dir=\\"ltr\\"] .ltr_cl_text-left{text-align:left;}
 [dir=\\"rtl\\"] .rtl_cl_text-right{text-align:right;}

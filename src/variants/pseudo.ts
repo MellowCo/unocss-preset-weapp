@@ -82,9 +82,16 @@ const PseudoClassesColonStr = Object.entries(PseudoClassesColon).filter(([, pseu
 const PseudoClassFunctionsStr = PseudoClassFunctions.join('|')
 
 const pseudoModifier = (pseudo: string) => {
+  if (pseudo === 'focus') {
+    return {
+      sort: 10,
+      noMerge: true,
+    }
+  }
+
   if (pseudo === 'active') {
     return {
-      sort: 1,
+      sort: 20,
       noMerge: true,
     }
   }
