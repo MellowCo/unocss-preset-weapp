@@ -1,7 +1,7 @@
 import type { CSSEntries, Rule, RuleContext } from '@unocss/core'
 import { colorResolver, directionMap, handler as h } from '../utils'
 import type { Theme } from '../theme'
-import { borderStyles, handlerBorderStyle } from '../rules/border'
+import { borderStyles } from '../rules/border'
 
 export const divides: Rule[] = [
   // divides
@@ -30,13 +30,11 @@ function handlerDivide([, d, s]: string[], { theme }: RuleContext<Theme>): CSSEn
         : `calc(${v} * calc(1 - var(--un-divide-${d}-reverse)))`
       return [key, value]
     })
-    const borderStyle = handlerBorderStyle(['', d, 'solid'])
 
-    if (results && borderStyle) {
+    if (results) {
       return [
         [`--un-divide-${d}-reverse`, 0],
         ...results,
-        ...borderStyle,
       ]
     }
   }
