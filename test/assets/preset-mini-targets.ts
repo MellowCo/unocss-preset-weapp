@@ -96,6 +96,9 @@ export const presetMiniTargets: string[] = [
 
   // bg gradient
   'from-current',
+  'from-10%',
+  'via-20%',
+  'to-90%',
   'from-green-500',
   'from-green-500/50',
   'from-transparent',
