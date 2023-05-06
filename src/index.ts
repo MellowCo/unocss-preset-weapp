@@ -79,7 +79,7 @@ export interface PresetWeappOptions extends PresetOptions {
 
   /**
    * taro 设计稿尺寸换算规则
-   * @default { 640: 2.34 / 2, 750: 1, 828: 1.81 / 2}
+   * @default '{ 640: 2.34 / 2, 750: 1, 828: 1.81 / 2}'
    * @link https://taro-docs.jd.com/taro/docs/size
    */
   deviceRatio?: Record<number, number>
