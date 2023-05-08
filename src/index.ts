@@ -1,5 +1,6 @@
 import type { Preset, PresetOptions } from '@unocss/core'
 import { defaultRules, transformEscapESelector } from 'unplugin-transform-class/utils'
+import { extractorArbitraryVariants } from '@unocss/extractor-arbitrary-variants'
 import preflights from './preflights'
 import { rules } from './rules'
 import type { Theme, ThemeAnimation } from './theme'
@@ -85,7 +86,7 @@ export interface PresetWeappOptions extends PresetOptions {
 
   /**
    * taro 设计稿尺寸换算规则
-   * @default { 640: 2.34 / 2, 750: 1, 828: 1.81 / 2}
+   * @default '{ 640: 2.34 / 2, 750: 1, 828: 1.81 / 2}'
    * @link https://taro-docs.jd.com/taro/docs/size
    */
   deviceRatio?: Record<number, number>
@@ -129,6 +130,15 @@ export interface PresetWeappOptions extends PresetOptions {
    * @default true
    */
   whRpx?: boolean
+
+  /**
+   * Enable arbitrary variants, for example `<div class="[&>*]:m-1 [&[open]]:p-2"></div>`.
+   *
+   * Disable this might slightly improve the performance.
+   *
+   * @default true
+   */
+  arbitraryVariants?: boolean
 }
 
 export const presetWeapp = (options: PresetWeappOptions = {}): Preset<Theme> => {
@@ -188,6 +198,9 @@ export const presetWeapp = (options: PresetWeappOptions = {}): Preset<Theme> => 
     },
     preflights: options.preflight ? preflights(options.isH5, options.platform) : [],
     prefix: options.prefix,
+    extractorDefault: options.arbitraryVariants === false
+      ? undefined
+      : extractorArbitraryVariants,
   }
 }
 
