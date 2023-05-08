@@ -8,6 +8,8 @@ export default defineConfig({
     uni(),
 
     // https://github.com/unocss/unocss
-    Unocss(),
+    Unocss({
+      mode: 'vue-scoped',
+    }),
   ],
 })
