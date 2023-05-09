@@ -262,7 +262,7 @@ Unocss({
 
 
 ## css预设
-[UnoCSS 文档](https://uno.antfu.me/)
+[UnoCSS 文档](https://unocss.dev/) | [练习场](https://unocss.dev/interactive/)
 
 [Windi CSS文档](https://windicss.org/)
 
