@@ -102,6 +102,12 @@
       "style": {
         "navigationBarTitleText": "apply"
       }
+    },
+    {
+      "path": "pages/icon/index",
+      "style": {
+        "navigationBarTitleText": "icon"
+      }
     }
   ],
   "globalStyle": {

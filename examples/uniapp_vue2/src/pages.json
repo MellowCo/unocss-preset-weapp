@@ -96,6 +96,12 @@
       "style": {
         "navigationBarTitleText": "space"
       }
+    },
+    {
+      "path": "pages/icon/index",
+      "style": {
+        "navigationBarTitleText": "icon"
+      }
     }
   ],
   "globalStyle": {

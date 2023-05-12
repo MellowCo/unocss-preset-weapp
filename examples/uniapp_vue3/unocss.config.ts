@@ -1,10 +1,12 @@
 import presetWeapp from 'unocss-preset-weapp'
 import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
+import { presetIcons } from 'unocss'
 
 export default {
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp(),
+    presetIcons(),
   ],
   shortcuts: [
     {
@@ -17,6 +19,8 @@ export default {
     transformerAttributify(),
 
     // https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
-    transformerClass(),
+    transformerClass({
+      classTags: false,
+    }),
   ],
 }

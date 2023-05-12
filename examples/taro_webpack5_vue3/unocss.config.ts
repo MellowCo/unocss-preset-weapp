@@ -1,6 +1,6 @@
 import presetWeapp from 'unocss-preset-weapp'
 import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
-import { defineConfig } from 'unocss'
+import { defineConfig, presetIcons } from 'unocss'
 
 export default defineConfig({
   presets: [
@@ -12,6 +12,7 @@ export default defineConfig({
         taroWebpack: 'webpack5',
       },
     ),
+    presetIcons(),
   ],
   shortcuts: [
     {

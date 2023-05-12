@@ -29,35 +29,35 @@
     </view>
 
     <view class="text-gray-500_50">
-      text-gray-500_50
+      text-gray-500 50
     </view>
 
     <view class="text-gray-500:50">
-      text-gray-500:50
+      text-gray-500 50
     </view>
 
     <view class="text-gray-500/50">
-      text-gray-500/50
+      text-gray-500 50
     </view>
 
     <view class="text-red-500_50">
-      text-red-500_50
+      text-red-500 50
     </view>
 
     <view class="text-red-500:50">
-      text-red-500:50
+      text-red-500 50
     </view>
 
     <view class="text-red-500/50">
-      text-red-500/50
+      text-red-500 50
     </view>
 
     <view class="text-yellow-500_50">
-      text-yellow-500_50
+      text-yellow-500 50
     </view>
 
     <view class="text-yellow-500:50">
-      text-yellow-500:50
+      text-yellow-500 50
     </view>
 
     <view class="text-yellow-500/50">
