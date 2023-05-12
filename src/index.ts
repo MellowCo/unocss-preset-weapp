@@ -58,6 +58,13 @@ export interface PresetWeappOptions extends PresetOptions {
   prefix?: string | string[]
 
   /**
+   * Generate preflight
+   *
+   * @default true
+   */
+  preflight?: boolean
+
+  /**
    * 是否转换微信class
    *
    * @default true
@@ -137,6 +144,8 @@ export interface PresetWeappOptions extends PresetOptions {
 export const presetWeapp = (options: PresetWeappOptions = {}): Preset<Theme> => {
   options.dark = options.dark ?? 'class'
   options.attributifyPseudo = options.attributifyPseudo ?? false
+  options.preflight = options.preflight ?? true
+
   options.transform = options.transform ?? true
   options.isH5 = options.isH5 ?? false
   options.designWidth = options.designWidth ?? 750
@@ -187,7 +196,7 @@ export const presetWeapp = (options: PresetWeappOptions = {}): Preset<Theme> => 
       if (options.platform === 'uniapp' && options.isH5)
         uniAppVue2CssRpxTransform(css)
     },
-    preflights: preflights(options.isH5, options.platform),
+    preflights: options.preflight ? preflights(options.isH5, options.platform) : [],
     prefix: options.prefix,
     extractorDefault: options.arbitraryVariants === false
       ? undefined
