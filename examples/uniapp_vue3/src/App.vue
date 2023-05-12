@@ -17,36 +17,4 @@ view,:before,:after {
   border-style: solid;
   border-color: #e5e7eb
 }
-
-page,
-::before,
-::after {
-  --un-rotate: 0;
-  --un-rotate-x: 0;
-  --un-rotate-y: 0;
-  --un-rotate-z: 0;
-  --un-scale-x: 1;
-  --un-scale-y: 1;
-  --un-scale-z: 1;
-  --un-skew-x: 0;
-  --un-skew-y: 0;
-  --un-translate-x: 0;
-  --un-translate-y: 0;
-  --un-translate-z: 0;
-  --un-ring-offset-shadow: 0 0 rgba(0, 0, 0, 0);
-  --un-ring-shadow: 0 0 rgba(0, 0, 0, 0);
-  --un-shadow-inset: var(--un-empty,
-      /*!*/
-      /*!*/
-    );
-  --un-shadow: 0 0 rgba(0, 0, 0, 0);
-  --un-ring-inset: var(--un-empty,
-      /*!*/
-      /*!*/
-    );
-  --un-ring-offset-width: 0px;
-  --un-ring-offset-color: #fff;
-  --un-ring-width: 0px;
-  --un-ring-color: rgba(147, 197, 253, 0.5);
-}
 </style>

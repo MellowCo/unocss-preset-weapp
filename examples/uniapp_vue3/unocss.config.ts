@@ -19,8 +19,6 @@ export default {
     transformerAttributify(),
 
     // https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
-    transformerClass({
-      classTags: false,
-    }),
+    transformerClass(),
   ],
 }
