@@ -17,6 +17,7 @@ export default defineAppConfig({
     'pages/first-last/index',
     'pages/divide/index',
     'pages/space/index',
+    'pages/icon/index',
   ],
   window: {
     backgroundTextStyle: 'light',

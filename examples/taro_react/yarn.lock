@@ -10,7 +10,7 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@ampproject/remapping@^2.2.1":
+"@ampproject/remapping@^2.2.0", "@ampproject/remapping@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@ampproject/remapping/-/remapping-2.2.1.tgz#99e8e11851128b8702cd57c33684f1d0f260b630"
   integrity sha512-lFMjJTrFL3j7L9yBxwYfCq2k6qqwHyzuUl/XBnif78PWTJYyL/dfowQHWE3sp6U6ZzqWiiIZnpTMO96zhkjwtg==
@@ -1316,9 +1316,9 @@
     "@prefresh/core" "^1.3.3"
     "@prefresh/utils" "^1.1.2"
 
-"@rollup/pluginutils@^5.0.2":
+"@rollup/pluginutils@^5.0.1", "@rollup/pluginutils@^5.0.2":
   version "5.0.2"
-  resolved "https://registry.npmjs.org/@rollup/pluginutils/-/pluginutils-5.0.2.tgz#012b8f53c71e4f6f9cb317e311df1404f56e7a33"
+  resolved "https://registry.yarnpkg.com/@rollup/pluginutils/-/pluginutils-5.0.2.tgz#012b8f53c71e4f6f9cb317e311df1404f56e7a33"
   integrity sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==
   dependencies:
     "@types/estree" "^1.0.0"
@@ -1883,6 +1883,14 @@
     pathe "^1.1.0"
     perfect-debounce "^0.1.3"
 
+"@unocss/config@0.46.1":
+  version "0.46.1"
+  resolved "https://registry.yarnpkg.com/@unocss/config/-/config-0.46.1.tgz#3c266b5edde7853520bcc5e6ec3a0e4565363243"
+  integrity sha512-KFjXllxqXn7ddpzIlFNVnMEBVyLUpp4hfT0Smf17D2V91rsG0wduWpD2bildv9pTOnkGP64W+ftXOtH5I4WbSw==
+  dependencies:
+    "@unocss/core" "0.46.1"
+    unconfig "^0.3.7"
+
 "@unocss/config@0.51.8":
   version "0.51.8"
   resolved "https://registry.yarnpkg.com/@unocss/config/-/config-0.51.8.tgz#01835d403725a23631489ab5cca67d4936a3b651"
@@ -1890,6 +1898,11 @@
   dependencies:
     "@unocss/core" "0.51.8"
     unconfig "^0.3.7"
+
+"@unocss/core@0.46.1":
+  version "0.46.1"
+  resolved "https://registry.yarnpkg.com/@unocss/core/-/core-0.46.1.tgz#4a4c0c80b90db72bde003b1fc5288f0a17ffcb2b"
+  integrity sha512-WdwBHhBVH7unOqJMPOBZB1GvwRp/ZrPcyxnAA10eEVXDjR6yyC0GEwV0tFCvBpaw7HEAPuLwHtLo7e3n4vPTnQ==
 
 "@unocss/core@0.51.8", "@unocss/core@^0.51.8":
   version "0.51.8"
@@ -2049,19 +2062,17 @@
     fast-glob "^3.2.12"
     magic-string "^0.30.0"
 
-"@unocss/webpack@0.51.8":
-  version "0.51.8"
-  resolved "https://registry.yarnpkg.com/@unocss/webpack/-/webpack-0.51.8.tgz#f0c520c1558c2b0bf24a64dc7e635ffcfc5d0dd9"
-  integrity sha512-gyr4jKzzHrsYSu4R2vs23gxsCm2aE+H4PMYZ5930wOkvv6Za0RhNCIUULzzSjR5nH4DOjz+mo9lOyKPz56Xxwg==
+"@unocss/webpack@0.46.1":
+  version "0.46.1"
+  resolved "https://registry.yarnpkg.com/@unocss/webpack/-/webpack-0.46.1.tgz#42de245f9bc6534c57de4b708b90ad10b419bef5"
+  integrity sha512-tEPT+7SHDhldpwPeQntBQk0OTtfmsKbcYbDRLVK0kwuzwTJtBoaNRHDbKesvf8pdgZkmgIKUj+5YaQ4LuuOAeg==
   dependencies:
-    "@ampproject/remapping" "^2.2.1"
-    "@rollup/pluginutils" "^5.0.2"
-    "@unocss/config" "0.51.8"
-    "@unocss/core" "0.51.8"
-    chokidar "^3.5.3"
-    fast-glob "^3.2.12"
-    magic-string "^0.30.0"
-    unplugin "^1.3.1"
+    "@ampproject/remapping" "^2.2.0"
+    "@rollup/pluginutils" "^5.0.1"
+    "@unocss/config" "0.46.1"
+    "@unocss/core" "0.46.1"
+    magic-string "^0.26.7"
+    unplugin "^0.10.0"
     webpack-sources "^3.2.3"
 
 "@vue/babel-helper-vue-jsx-merge-props@^1.2.1":
@@ -2370,7 +2381,7 @@ acorn@^8.0.4, acorn@^8.2.4, acorn@^8.7.0, acorn@^8.7.1:
   resolved "https://registry.npmjs.org/acorn/-/acorn-8.7.1.tgz#0197122c843d1bf6d0a5e83220a788f278f63c30"
   integrity sha512-Xx54uLJQZ19lKygFXOWsscKUbsBZW0CPykPhVQdhIeIwrbPmJzqeASDInc8nKBnp/JT6igTs82qPXz069H8I/A==
 
-acorn@^8.8.2:
+acorn@^8.8.0, acorn@^8.8.2:
   version "8.8.2"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.8.2.tgz#1b2f25db02af965399b9776b0c2c391276d37c4a"
   integrity sha512-xjIYgE8HBrkpd/sJqOGNspf8uHG+NOHGOw6a/Urj8taM2EXfdNAH2oFcPeIFfsv3+kz/mJrS5VuMqbNLjCa2vw==
@@ -6441,6 +6452,13 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
+magic-string@^0.26.7:
+  version "0.26.7"
+  resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.26.7.tgz#caf7daf61b34e9982f8228c4527474dac8981d6f"
+  integrity sha512-hX9XH3ziStPoPhJxLq1syWuZMxbDvGNbVchfrdCtanC7D13888bMFow61x8axrx+GfHLtVeAx2kxL7tTGRl+Ow==
+  dependencies:
+    sourcemap-codec "^1.4.8"
+
 magic-string@^0.30.0:
   version "0.30.0"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.30.0.tgz#fd58a4748c5c4547338a424e90fa5dd17f4de529"
@@ -8830,6 +8848,11 @@ source-map@^0.7.3:
   resolved "https://registry.npmjs.org/source-map/-/source-map-0.7.4.tgz#a9bbe705c9d8846f4e08ff6765acf0f1b0898656"
   integrity sha512-l3BikUxvPOcn5E74dZiq5BGsTb5yEwhaTSzccU6t4sDOH8NWJCstKO5QT2CvtFoK6F0saL7p9xHAqHOlCPJygA==
 
+sourcemap-codec@^1.4.8:
+  version "1.4.8"
+  resolved "https://registry.yarnpkg.com/sourcemap-codec/-/sourcemap-codec-1.4.8.tgz#ea804bd94857402e6992d05a38ef1ae35a9ab4c4"
+  integrity sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==
+
 spdx-correct@^3.0.0:
   version "3.1.1"
   resolved "https://registry.npmjs.org/spdx-correct/-/spdx-correct-3.1.1.tgz#dece81ac9c1e6713e5f7d1b6f17d468fa53d89a9"
@@ -9667,6 +9690,16 @@ unplugin@1.3.1, unplugin@^1.3.1:
     webpack-sources "^3.2.3"
     webpack-virtual-modules "^0.5.0"
 
+unplugin@^0.10.0:
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/unplugin/-/unplugin-0.10.2.tgz#0f7089c3666f592cc448d746e39e7f41e9afb01a"
+  integrity sha512-6rk7GUa4ICYjae5PrAllvcDeuT8pA9+j5J5EkxbMFaV+SalHhxZ7X2dohMzu6C3XzsMT+6jwR/+pwPNR3uK9MA==
+  dependencies:
+    acorn "^8.8.0"
+    chokidar "^3.5.3"
+    webpack-sources "^3.2.3"
+    webpack-virtual-modules "^0.4.5"
+
 unset-value@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/unset-value/-/unset-value-1.0.0.tgz#8376873f7d2335179ffb1e6fc3a8ed0dfc8ab559"
@@ -9956,6 +9989,11 @@ webpack-sources@^3.2.3:
   version "3.2.3"
   resolved "https://registry.npmjs.org/webpack-sources/-/webpack-sources-3.2.3.tgz#2d4daab8451fd4b240cc27055ff6a0c2ccea0cde"
   integrity sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==
+
+webpack-virtual-modules@^0.4.5:
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/webpack-virtual-modules/-/webpack-virtual-modules-0.4.6.tgz#3e4008230731f1db078d9cb6f68baf8571182b45"
+  integrity sha512-5tyDlKLqPfMqjT3Q9TAqf2YqjwmnUleZwzJi1A5qXnlBCdj2AtOJ6wAWdglTIDOPgOiOrXeBeFcsQ8+aGQ6QbA==
 
 webpack-virtual-modules@^0.5.0:
   version "0.5.0"

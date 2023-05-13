@@ -57,6 +57,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",
+    "@iconify/json": "^2.2.64",
     "@tarojs/cli": "3.5.5",
     "@tarojs/webpack5-runner": "3.5.5",
     "@types/node": "^18.11.9",

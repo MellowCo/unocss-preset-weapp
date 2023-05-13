@@ -86,6 +86,7 @@
     "@dcloudio/vue-cli-plugin-uni-optimize": "2.0.1-36520221121002",
     "@dcloudio/webpack-uni-mp-loader": "2.0.1-36520221121002",
     "@dcloudio/webpack-uni-pages-loader": "2.0.1-36520221121002",
+    "@iconify/json": "^2.2.64",
     "@vue/cli-plugin-babel": "~4.5.17",
     "@vue/cli-service": "~4.5.17",
     "babel-plugin-import": "^1.11.0",
@@ -94,7 +95,7 @@
     "mini-types": "*",
     "miniprogram-api-typings": "*",
     "postcss-comment": "^2.0.0",
-    "unocss": "^0.50.7",
+    "unocss": "^0.51.12",
     "unocss-preset-weapp": "link:../../",
     "unocss-webpack-uniapp2": "^0.1.4",
     "vue-template-compiler": "^2.6.11"

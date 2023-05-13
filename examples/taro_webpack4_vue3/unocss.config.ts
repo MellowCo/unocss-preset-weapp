@@ -1,6 +1,6 @@
 import presetWeapp from 'unocss-preset-weapp'
-import { transformerClass , transformerAttributify } from 'unocss-preset-weapp/transformer';
-import { defineConfig } from 'unocss'
+import { transformerClass, transformerAttributify } from 'unocss-preset-weapp/transformer';
+import { defineConfig, presetIcons } from 'unocss'
 
 export default defineConfig({
   presets: [
@@ -9,6 +9,7 @@ export default defineConfig({
       isH5: process.env.TARO_ENV === 'h5',
       platform: 'taro',
     }),
+    presetIcons()
   ],
   shortcuts: [
     {
@@ -16,7 +17,7 @@ export default defineConfig({
       'center': 'flex justify-center items-center',
     },
   ],
-  transformers:[
+  transformers: [
     transformerAttributify(),
     transformerClass()
   ]

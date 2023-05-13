@@ -17,6 +17,7 @@ const list = [
   { name: 'space-x', path: '/pages/space/index' },
   { name: 'divide-x', path: '/pages/divide/index' },
   { name: 'apply', path: '/pages/apply/index' },
+  { name: 'icon', path: '/pages/icon/index' },
 ]
 
 const to = (to: string) => {

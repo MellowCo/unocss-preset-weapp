@@ -1,12 +1,12 @@
 import presetWeapp from 'unocss-preset-weapp'
-import { defaultAttributes, transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
+import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
+import { presetIcons } from 'unocss'
 
 export default {
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
-    presetWeapp({
-      preflight: false,
-    }),
+    presetWeapp(),
+    presetIcons(),
   ],
   shortcuts: [
     {
@@ -16,9 +16,7 @@ export default {
   ],
   transformers: [
     // https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify
-    transformerAttributify({
-      attributes: [...defaultAttributes, 'active:bg'],
-    }),
+    transformerAttributify(),
 
     // https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
     transformerClass(),
