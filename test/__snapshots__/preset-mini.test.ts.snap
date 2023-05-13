@@ -327,12 +327,12 @@ unocss .scope-\\\\[unocss\\\\]\\\\:block{display:block;}
 .bg-opacity-45{--licl-bg-opacity:0.45;}
 .all-\\\\[svg\\\\]\\\\:fill-red svg{--licl-fill-opacity:1;fill:rgba(248,113,113,var(--licl-fill-opacity));}
 .fill-\\\\[\\\\#123\\\\]{--licl-fill-opacity:1;fill:rgba(17,34,51,var(--licl-fill-opacity));}
-.fill-\\\\[1rem\\\\]{fill:1rem;}
 .fill-current{fill:currentColor;}
 .fill-green-400{--licl-fill-opacity:1;fill:rgba(74,222,128,var(--licl-fill-opacity));}
 .fill-opacity-\\\\$opacity-variable{--licl-fill-opacity:var(--opacity-variable);}
 .fill-opacity-80{--licl-fill-opacity:0.8;}
 .fill-none{fill:none;}
+.stroke-\\\\[1rem\\\\],
 .stroke-size-\\\\[1rem\\\\],
 .stroke-width-\\\\[1rem\\\\]{stroke-width:1rem;}
 .stroke-size-\\\\$variable,
@@ -351,7 +351,6 @@ unocss .scope-\\\\[unocss\\\\]\\\\:block{display:block;}
 .stroke-offset-1px{stroke-dashoffset:1px;}
 .stroke-offset-none{stroke-dashoffset:0;}
 .stroke-\\\\[\\\\#123\\\\]{--licl-stroke-opacity:1;stroke:rgba(17,34,51,var(--licl-stroke-opacity));}
-.stroke-\\\\[1rem\\\\]{stroke:1rem;}
 .stroke-current{stroke:currentColor;}
 .stroke-green-400{--licl-stroke-opacity:1;stroke:rgba(74,222,128,var(--licl-stroke-opacity));}
 .stroke-opacity-\\\\$opacity-variable{--licl-stroke-opacity:var(--opacity-variable);}
@@ -378,6 +377,8 @@ unocss .scope-\\\\[unocss\\\\]\\\\:block{display:block;}
 .border-width-\\\\$variable{border-width:var(--variable);}
 .border-size-none{border-width:0;}
 .border-size-unset{border-width:unset;}
+.border-width-\\\\[2em\\\\]{border-width:2em;}
+.border-width-\\\\[calc\\\\(1em-1px\\\\)\\\\]{border-width:calc(1em - 1px);}
 .border-width-3{border-width:3rpx;}
 .border-x-size-2{border-left-width:2rpx;border-right-width:2rpx;}
 .border-x-width-3{border-left-width:3rpx;border-right-width:3rpx;}
@@ -385,8 +386,6 @@ unocss .scope-\\\\[unocss\\\\]\\\\:block{display:block;}
 .border-t-width-3{border-top-width:3rpx;}
 .b-block-size-\\\\$variable{border-block-start-width:var(--variable);border-block-end-width:var(--variable);}
 .border-\\\\[\\\\#124\\\\]{--licl-border-opacity:1;border-color:rgba(17,34,68,var(--licl-border-opacity));}
-.border-\\\\[2em\\\\]{border-color:2em;}
-.border-\\\\[calc\\\\(1em-1px\\\\)\\\\]{border-color:calc(1em - 1px);}
 .border-\\\\[var\\\\(--color\\\\)\\\\],
 .border-\\\\$color{border-color:var(--color);}
 .border-black{--licl-border-opacity:1;border-color:rgba(0,0,0,var(--licl-border-opacity));}
