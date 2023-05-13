@@ -471,6 +471,8 @@ export const presetMiniTargets: string[] = [
   'flex-gap-y-1',
   'flex-gap-y-unset',
   'grid-gap-y-1',
+  'flex-items-center',
+  'flex-justify-center',
 
   // grid
   'grid-cols-$1',

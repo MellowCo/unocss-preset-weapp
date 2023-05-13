@@ -965,6 +965,7 @@ unocss .scope-\\\\[unocss\\\\]\\\\:block{display:block;}
 .order-first{order:-9999;}
 .order-none{order:0;}
 .justify-start{justify-content:flex-start;}
+.flex-justify-center,
 .justify-center{justify-content:center;}
 .justify-inherit{justify-content:inherit;}
 .justify-items-end{justify-items:end;}
@@ -984,6 +985,7 @@ unocss .scope-\\\\[unocss\\\\]\\\\:block{display:block;}
 .place-items-unset{place-items:unset;}
 .place-self-stretch{place-self:stretch;}
 .place-self-revert{place-self:revert;}
+.flex-items-center{align-items:center;}
 .inset-\\\\[5px\\\\]{inset:5px;}
 .inset-\\\\$variable{inset:var(--variable);}
 .inset-0,

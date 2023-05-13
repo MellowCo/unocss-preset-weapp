@@ -932,6 +932,7 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .order-first{order:-9999;}
 .order-none{order:0;}
 .justify-start{justify-content:flex-start;}
+.flex-justify-center,
 .justify-center{justify-content:center;}
 .justify-inherit{justify-content:inherit;}
 .justify-items-end{justify-items:end;}
@@ -951,6 +952,7 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .place-items-unset{place-items:unset;}
 .place-self-stretch{place-self:stretch;}
 .place-self-revert{place-self:revert;}
+.flex-items-center{align-items:center;}
 .inset-_do11_variable{inset:var(--variable);}
 .inset-_lfl11_5px_lfr11_{inset:5px;}
 .inset-0,
