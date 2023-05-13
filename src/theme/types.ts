@@ -8,6 +8,10 @@ export interface ThemeAnimation {
   counts?: Record<string, string | number>
 }
 
+export interface Colors {
+  [key: string]: Colors & { DEFAULT?: string } | string
+}
+
 export interface Theme {
   width?: Record<string, string>
   height?: Record<string, string>
