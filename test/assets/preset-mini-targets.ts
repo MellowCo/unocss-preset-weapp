@@ -940,6 +940,7 @@ export const presetMiniTargets: string[] = [
   // typography
   'font-mono',
   'font-[system-ui]',
+  'font-[550]',
   'font-$font-name',
   'text-4xl',
   'text-base',

@@ -478,6 +478,7 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .text-size-unset{font-size:unset;}
 .as-parent .group .group-_lfl__dl_as-parent_\\\\&_lfr__cl_font-13{font-weight:13;}
 .as-parent .group_sl_label .group-_lfl__dl_as-parent_\\\\&_lfr__sl_label_cl_font-18{font-weight:18;}
+.font-_lfl_550_lfr_{font-weight:550;}
 .font-050,
 .font-50,
 .fw-050,
@@ -1062,6 +1063,7 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .transform-rotate-y-1{--un-rotate:0;--un-rotate-y:1deg;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
 .rotate-z-_lfl_var_lbl_--spin_lbr__lfr_,
 .transform-rotate-z-_lfl_var_lbl_--spin_lbr__lfr_{--un-rotate:0;--un-rotate-z:var(--spin);transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
+.skew-10{--un-skew-x:10deg;--un-skew-y:10deg;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
 .skew-x-_do_variable{--un-skew-x:var(--variable);transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
 .skew-x-_lfl_var_lbl_--skew-x_lbr__lfr_{--un-skew-x:var(--skew-x);transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
 .skew-x-10,

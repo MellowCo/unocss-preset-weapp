@@ -510,6 +510,7 @@ unocss .scope-\\\\[unocss\\\\]\\\\:block{display:block;}
 .text-size-unset{font-size:unset;}
 .as-parent .group .group-\\\\[\\\\.as-parent_\\\\&\\\\]\\\\:font-13{font-weight:13;}
 .as-parent .group\\\\/label .group-\\\\[\\\\.as-parent_\\\\&\\\\]\\\\/label\\\\:font-18{font-weight:18;}
+.font-\\\\[550\\\\]{font-weight:550;}
 .font-050,
 .font-50,
 .fw-050,
@@ -1093,6 +1094,7 @@ unocss .scope-\\\\[unocss\\\\]\\\\:block{display:block;}
 .transform-rotate-y-1{--licl-rotate:0;--licl-rotate-y:1deg;transform:translateX(var(--licl-translate-x)) translateY(var(--licl-translate-y)) translateZ(var(--licl-translate-z)) rotate(var(--licl-rotate)) rotateX(var(--licl-rotate-x)) rotateY(var(--licl-rotate-y)) rotateZ(var(--licl-rotate-z)) skewX(var(--licl-skew-x)) skewY(var(--licl-skew-y)) scaleX(var(--licl-scale-x)) scaleY(var(--licl-scale-y)) scaleZ(var(--licl-scale-z));}
 .rotate-z-\\\\[var\\\\(--spin\\\\)\\\\],
 .transform-rotate-z-\\\\[var\\\\(--spin\\\\)\\\\]{--licl-rotate:0;--licl-rotate-z:var(--spin);transform:translateX(var(--licl-translate-x)) translateY(var(--licl-translate-y)) translateZ(var(--licl-translate-z)) rotate(var(--licl-rotate)) rotateX(var(--licl-rotate-x)) rotateY(var(--licl-rotate-y)) rotateZ(var(--licl-rotate-z)) skewX(var(--licl-skew-x)) skewY(var(--licl-skew-y)) scaleX(var(--licl-scale-x)) scaleY(var(--licl-scale-y)) scaleZ(var(--licl-scale-z));}
+.skew-10{--licl-skew-x:10deg;--licl-skew-y:10deg;transform:translateX(var(--licl-translate-x)) translateY(var(--licl-translate-y)) translateZ(var(--licl-translate-z)) rotate(var(--licl-rotate)) rotateX(var(--licl-rotate-x)) rotateY(var(--licl-rotate-y)) rotateZ(var(--licl-rotate-z)) skewX(var(--licl-skew-x)) skewY(var(--licl-skew-y)) scaleX(var(--licl-scale-x)) scaleY(var(--licl-scale-y)) scaleZ(var(--licl-scale-z));}
 .skew-x-\\\\[var\\\\(--skew-x\\\\)\\\\]{--licl-skew-x:var(--skew-x);transform:translateX(var(--licl-translate-x)) translateY(var(--licl-translate-y)) translateZ(var(--licl-translate-z)) rotate(var(--licl-rotate)) rotateX(var(--licl-rotate-x)) rotateY(var(--licl-rotate-y)) rotateZ(var(--licl-rotate-z)) skewX(var(--licl-skew-x)) skewY(var(--licl-skew-y)) scaleX(var(--licl-scale-x)) scaleY(var(--licl-scale-y)) scaleZ(var(--licl-scale-z));}
 .skew-x-\\\\$variable{--licl-skew-x:var(--variable);transform:translateX(var(--licl-translate-x)) translateY(var(--licl-translate-y)) translateZ(var(--licl-translate-z)) rotate(var(--licl-rotate)) rotateX(var(--licl-rotate-x)) rotateY(var(--licl-rotate-y)) rotateZ(var(--licl-rotate-z)) skewX(var(--licl-skew-x)) skewY(var(--licl-skew-y)) scaleX(var(--licl-scale-x)) scaleY(var(--licl-scale-y)) scaleZ(var(--licl-scale-z));}
 .skew-x-10,
