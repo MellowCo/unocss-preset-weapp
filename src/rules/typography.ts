@@ -76,12 +76,12 @@ export const fonts: Rule<Theme>[] = [
 
   // leadings
   [
-    /^(?:font-)?(?:leading|lh)-(.+)$/,
+    /^(?:font-)?(?:leading|lh|line-height)-(.+)$/,
     ([, s], { theme }) => {
       s = restoreSelector(s, theme.transformRules)
       return ({ 'line-height': handleLineHeight(s, theme) })
     },
-    { autocomplete: '(leading|lh)-$lineHeight' },
+    { autocomplete: '(leading|lh|line-height)-$lineHeight' },
   ],
 
   // synthesis

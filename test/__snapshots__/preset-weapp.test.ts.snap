@@ -499,7 +499,10 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .leading-_do_variable,
 .lh-_do_variable{line-height:var(--variable);}
 .leading-inherit{line-height:inherit;}
-.lh-_lfl_1_dl_5_lfr_{line-height:1.5;}
+.lh-_lfl_1_dl_5_lfr_,
+.line-height-_lfl_1_dl_5_lfr_{line-height:1.5;}
+.lh-16px,
+.line-height-16px{line-height:16px;}
 .font-synthesis-weight{font-synthesis:weight;}
 .font-synthesis-small-caps{font-synthesis:small-caps;}
 .font-synthesis-_do_synth{font-synthesis:var(--synth);}
