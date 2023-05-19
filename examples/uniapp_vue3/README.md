@@ -64,7 +64,7 @@ export default {
 }
 ```
 
-* mian.ts
+* main.ts
 
 ```ts
 import 'uno.css'
