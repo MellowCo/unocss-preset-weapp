@@ -88,19 +88,19 @@
   },
   "dependencies": {
     "@rollup/pluginutils": "^5.0.2",
-    "@unocss/core": "^0.51.8",
-    "@unocss/extractor-arbitrary-variants": "^0.51.8",
+    "@unocss/core": "^0.52.3",
+    "@unocss/extractor-arbitrary-variants": "^0.52.3",
     "unplugin-attributify-to-class": "^0.2.2",
     "unplugin-transform-class": "^0.3.1"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "0.36.0",
+    "@antfu/eslint-config": "^0.39.3",
     "bumpp": "^9.1.0",
-    "eslint": "8.38.0",
-    "msw": "^1.1.0",
-    "typescript": "^4.9.5",
-    "unbuild": "^1.1.2",
-    "vite": "^4.3.3",
-    "vitest": "^0.30.1"
+    "eslint": "^8.41.0",
+    "msw": "^1.2.1",
+    "typescript": "^5.0.4",
+    "unbuild": "^1.2.1",
+    "vite": "^4.3.8",
+    "vitest": "^0.31.1"
   }
 }
