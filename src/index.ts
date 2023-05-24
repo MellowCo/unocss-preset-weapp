@@ -141,7 +141,7 @@ export interface PresetWeappOptions extends PresetOptions {
   arbitraryVariants?: boolean
 }
 
-export const presetWeapp = (options: PresetWeappOptions = {}): Preset<Theme> => {
+export function presetWeapp(options: PresetWeappOptions = {}): Preset<Theme> {
   options.dark = options.dark ?? 'class'
   options.attributifyPseudo = options.attributifyPseudo ?? false
   options.preflight = options.preflight ?? true

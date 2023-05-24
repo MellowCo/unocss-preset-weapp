@@ -126,6 +126,7 @@ export interface PresetWeappOptions extends PresetOptions {
 * unocss.config.ts
 ```ts
 import presetWeapp from 'unocss-preset-weapp'
+
 export default defineConfig({
   presets: [
     presetWeapp({

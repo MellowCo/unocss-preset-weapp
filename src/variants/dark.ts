@@ -2,7 +2,7 @@ import type { Variant } from '@unocss/core'
 import type { PresetWeappOptions } from '..'
 import { variantMatcher, variantParentMatcher } from '../utils'
 
-export const variantColorsMediaOrClass = (options: PresetWeappOptions = {}): Variant[] => {
+export function variantColorsMediaOrClass(options: PresetWeappOptions = {}): Variant[] {
   const { transformRules } = options
 
   if (options?.dark === 'class' || typeof options.dark === 'object') {

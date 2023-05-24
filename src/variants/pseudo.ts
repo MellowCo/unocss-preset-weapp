@@ -81,7 +81,7 @@ const PseudoClassesStr = Object.entries(PseudoClasses).filter(([, pseudo]) => !p
 const PseudoClassesColonStr = Object.entries(PseudoClassesColon).filter(([, pseudo]) => !pseudo.startsWith('::')).map(([key]) => key).join('|')
 const PseudoClassFunctionsStr = PseudoClassFunctions.join('|')
 
-const pseudoModifier = (pseudo: string) => {
+function pseudoModifier(pseudo: string) {
   if (pseudo === 'focus') {
     return {
       sort: 10,
@@ -97,7 +97,7 @@ const pseudoModifier = (pseudo: string) => {
   }
 }
 
-const taggedPseudoClassMatcher = (tag: string, parent: string, combinator: string): VariantObject => {
+function taggedPseudoClassMatcher(tag: string, parent: string, combinator: string): VariantObject {
   const rawRE = new RegExp(`^(${escapeRegExp(parent)}:)(\\S+)${escapeRegExp(combinator)}\\1`)
   const pseudoRE = new RegExp(`^${tag}-(?:(?:(${PseudoClassFunctionsStr})-)?(${PseudoClassesStr}))(?:(/\\w+))?[:-]`)
   const pseudoColonRE = new RegExp(`^${tag}-(?:(?:(${PseudoClassFunctionsStr})-)?(${PseudoClassesColonStr}))(?:(/\\w+))?[:]`)
@@ -227,7 +227,7 @@ export const variantPseudoClassFunctions: VariantObject<Theme> = {
   autocomplete: `(${PseudoClassFunctionsStr})-(${PseudoClassesStr}|${PseudoClassesColonStr}):`,
 }
 
-export const variantTaggedPseudoClasses = (options: PresetWeappOptions = {}): VariantObject[] => {
+export function variantTaggedPseudoClasses(options: PresetWeappOptions = {}): VariantObject[] {
   const attributify = !!options?.attributifyPseudo
 
   return [

@@ -15,31 +15,33 @@ import { variantAria } from './aria'
 import { variantDataAttribute } from './data'
 import { variantContainerQuery } from './container'
 
-export const variants = (options: PresetWeappOptions): Variant<Theme>[] => [
-  variantAria,
-  variantDataAttribute,
-  variantCssLayer,
+export function variants(options: PresetWeappOptions): Variant<Theme>[] {
+  return [
+    variantAria,
+    variantDataAttribute,
+    variantCssLayer,
 
-  variantSelector,
-  variantInternalLayer,
-  variantNegative,
-  variantImportant,
-  variantSupports,
-  variantPrint,
-  variantCustomMedia,
-  variantBreakpoints,
-  ...variantCombinators,
-  variantSpaceAndDivide,
+    variantSelector,
+    variantInternalLayer,
+    variantNegative,
+    variantImportant,
+    variantSupports,
+    variantPrint,
+    variantCustomMedia,
+    variantBreakpoints,
+    ...variantCombinators,
+    variantSpaceAndDivide,
 
-  variantPseudoClassesAndElements,
-  variantPseudoClassFunctions,
-  ...variantTaggedPseudoClasses(options),
+    variantPseudoClassesAndElements,
+    variantPseudoClassFunctions,
+    ...variantTaggedPseudoClasses(options),
 
-  partClasses,
-  ...variantColorsMediaOrClass(options),
-  ...variantLanguageDirections,
-  variantScope,
+    partClasses,
+    ...variantColorsMediaOrClass(options),
+    ...variantLanguageDirections,
+    variantScope,
 
-  variantContainerQuery,
-  variantVariables,
-]
+    variantContainerQuery,
+    variantVariables,
+  ]
+}

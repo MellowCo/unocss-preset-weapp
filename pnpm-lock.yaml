@@ -21,6 +21,9 @@ devDependencies:
   '@antfu/eslint-config':
     specifier: ^0.39.3
     version: 0.39.3(eslint@8.41.0)(typescript@5.0.4)
+  '@antfu/ni':
+    specifier: ^0.21.3
+    version: 0.21.3
   bumpp:
     specifier: ^9.1.0
     version: 9.1.0

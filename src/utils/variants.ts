@@ -3,7 +3,7 @@ import { escapeRegExp } from '@unocss/core'
 import { defaultRules, restoreSelector } from 'unplugin-transform-class/utils'
 import { getBracket } from '../utils'
 
-export const variantMatcher = (name: string, handler: (input: VariantHandlerContext) => Record<string, any>, transformRules: Record<string, string> = defaultRules): VariantObject => {
+export function variantMatcher(name: string, handler: (input: VariantHandlerContext) => Record<string, any>, transformRules: Record<string, string> = defaultRules): VariantObject {
   const re = new RegExp(`^${escapeRegExp(name)}[:-]`)
 
   return {
@@ -25,7 +25,7 @@ export const variantMatcher = (name: string, handler: (input: VariantHandlerCont
   }
 }
 
-export const variantParentMatcher = (name: string, parent: string, transformRules: Record<string, string> = defaultRules): VariantObject => {
+export function variantParentMatcher(name: string, parent: string, transformRules: Record<string, string> = defaultRules): VariantObject {
   const re = new RegExp(`^${escapeRegExp(name)}[:-]`)
   return {
     name,
@@ -46,7 +46,7 @@ export const variantParentMatcher = (name: string, parent: string, transformRule
   }
 }
 
-export const variantGetBracket = (prefix: string, matcher: string, separators: string[]): string[] | undefined => {
+export function variantGetBracket(prefix: string, matcher: string, separators: string[]): string[] | undefined {
   if (matcher.startsWith(`${prefix}[`)) {
     const [match, rest] = getBracket(matcher.slice(prefix.length), '[', ']') ?? []
     if (match && rest) {
@@ -59,7 +59,7 @@ export const variantGetBracket = (prefix: string, matcher: string, separators: s
   }
 }
 
-export const variantGetParameter = (prefix: string, matcher: string, separators: string[]): string[] | undefined => {
+export function variantGetParameter(prefix: string, matcher: string, separators: string[]): string[] | undefined {
   if (matcher.startsWith(prefix)) {
     const body = variantGetBracket(prefix, matcher, separators)
     if (body) {

@@ -85,7 +85,8 @@
     "taro_vue3:h5": "nr build &&npm -C examples/taro_vue3 run dev:h5",
     "prepublishOnly": "nr build",
     "release": "bumpp",
-    "lint": "eslint --cache ."
+    "lint": "eslint --cache .",
+    "lint:fix": "nr lint --fix"
   },
   "dependencies": {
     "@rollup/pluginutils": "^5.0.2",
@@ -96,6 +97,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.3",
+    "@antfu/ni": "^0.21.3",
     "bumpp": "^9.1.0",
     "eslint": "^8.41.0",
     "msw": "^1.2.1",

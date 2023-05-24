@@ -3,14 +3,14 @@ import { restoreSelector } from 'unplugin-transform-class/utils'
 import { colorOpacityToString, colorToString, globalKeywords, handler as h, makeGlobalStaticRules, parseColor, positionMap } from '../utils'
 import type { Theme } from '../'
 
-const bgGradientToValue = (cssColor: CSSColorValue | undefined) => {
+function bgGradientToValue(cssColor: CSSColorValue | undefined) {
   if (cssColor)
     return colorToString(cssColor, 0)
 
   return 'rgba(255,255,255,0)'
 }
 
-const bgGradientColorValue = (mode: string, cssColor: CSSColorValue | undefined, color: string, alpha: any) => {
+function bgGradientColorValue(mode: string, cssColor: CSSColorValue | undefined, color: string, alpha: any) {
   if (cssColor) {
     if (alpha != null)
       return colorToString(cssColor, alpha)
