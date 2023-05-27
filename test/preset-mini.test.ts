@@ -13,16 +13,19 @@ const uno = createGenerator({
   ],
   theme: {
     colors: {
-      custom: {
+      'custom': {
         a: 'var(--custom)',
         b: 'rgba(var(--custom), %alpha)',
       },
-      a: {
+      'a': {
         b: {
           c: '#514543',
         },
         camelCase: '#234',
       },
+      'with-hyphen': '#123456',
+      'numbered-123': '#123',
+      'numbered321': '#321',
     },
     spacing: {
       safe: 'max(env(safe-area-inset-left), env(safe-area-inset-right))',
@@ -167,5 +170,17 @@ describe('preset-mini', () => {
     })
 
     expect(css).toMatchSnapshot()
+  })
+
+  test('non-nested theme colors with hyphens and/or numbers', async () => {
+    const { css, matched } = await uno.generate([
+      'text-with-hyphen',
+      'bg-with-hyphen',
+      'text-numbered-123',
+      'bg-numbered321',
+    ], { preflights: false })
+
+    expect(css).toMatchSnapshot()
+    expect(matched.size).toBe(4)
   })
 })
