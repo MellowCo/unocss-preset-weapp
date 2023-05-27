@@ -443,8 +443,8 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .content-_lfl_quoted_cl__el__lfr_{content:\\"!\\";}
 .content-_lfl_string_cl_attr_lbl_dashed-attr_lbr__lfr_{content:attr(dashed-attr);}
 .content-_lfl_string_cl_attr_lbl_underlined\\\\\\\\_attr_lbr__lfr_{content:attr(underlined_attr);}
-.content-empty,
-.content-none{content:\\"\\";}
+.content-empty{content:\\"\\";}
+.content-none{content:none;}
 .contain-_lfl_size_layout_lfr_{contain:size layout;}
 .contain-_lfl_size_layout_paint_lfr_{contain:size layout paint;}
 .contain-layout{contain:layout;}

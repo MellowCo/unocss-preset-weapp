@@ -485,8 +485,8 @@ unocss .scope-\\\\[unocss\\\\]\\\\:block{display:block;}
 .content-\\\\[string\\\\:attr\\\\(dashed-attr\\\\)\\\\]{content:attr(dashed-attr);}
 .content-\\\\[string\\\\:attr\\\\(underlined\\\\\\\\_attr\\\\)\\\\]{content:attr(underlined_attr);}
 .content-\\\\$unocss-var{content:var(--unocss-var);}
-.content-empty,
-.content-none{content:\\"\\";}
+.content-empty{content:\\"\\";}
+.content-none{content:none;}
 .contain-\\\\[size_layout_paint\\\\]{contain:size layout paint;}
 .contain-\\\\[size_layout\\\\]{contain:size layout;}
 .contain-layout{contain:layout;}

@@ -441,8 +441,8 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .content-_lfl11_quoted_cl11__el11__lfr11_{content:\\"!\\";}
 .content-_lfl11_string_cl11_attr_lbl11_dashed-attr_lbr11__lfr11_{content:attr(dashed-attr);}
 .content-_lfl11_string_cl11_attr_lbl11_underlined\\\\\\\\_attr_lbr11__lfr11_{content:attr(underlined_attr);}
-.content-empty,
-.content-none{content:\\"\\";}
+.content-empty{content:\\"\\";}
+.content-none{content:none;}
 .contain-_lfl11_size_layout_lfr11_{contain:size layout;}
 .contain-_lfl11_size_layout_paint_lfr11_{contain:size layout paint;}
 .contain-layout{contain:layout;}
