@@ -66,14 +66,16 @@ export const presetMiniTargets: string[] = [
   'bg-repeat-revert',
   'bg-right-bottom',
   'bg-scroll',
+  'bg-[url(https://test.unocss.png)]',
+  'bg-[length:--variable]',
+  'bg-[length:--variable]',
   'bg-[length:10_20rem]',
   'bg-[length:1/2_20rem]',
+  'bg-[position:--variable]',
   'bg-[position:10_20rem]',
   'bg-[position:1/2_20rem]',
   'bg-[position:bottom_left_10%]',
   'bg-[position:top_right_1/3]',
-  'bg-[url(src/static/logo.png)]',
-  'bg-[url(https://baidu.com/pic/logo.png)]',
 
   // divide
   'divide',
@@ -364,14 +366,17 @@ export const presetMiniTargets: string[] = [
   'text-red2',
   'text-opacity-[13.3333333%]',
   'text-opacity-$opacity-variable',
+  'text-[--variable]',
   'text-[var(--color)]',
   'text-[#124]',
   'text-[2em]',
   'text-[100px]',
   'text-[calc(1em-1px)]',
+  'text-[length:--variable]',
   'text-[length:var(--size)]',
   'text-[length:2em]',
   'text-[length:calc(1em-1px)]',
+  'text-[color:--variable]',
   'text-[color:var(--color)]',
   'text-[color:var(--color-x)]:[trick]',
   'text-sm/3',
@@ -397,6 +402,7 @@ export const presetMiniTargets: string[] = [
   'bg-teal-500/[55%]',
   'bg-hex-452233/40',
   'bg-opacity-45',
+  'bg-opacity-[--opacity-variable]',
   'bg-opacity-$opacity-variable',
 
   // color - ring
@@ -999,6 +1005,7 @@ export const presetMiniTargets: string[] = [
   'text-shadow-color-op-$opacity-variable',
 
   // variables
+  'bg-[--test-variable]',
   'bg-$test-variable',
   'border-$color',
   'border-t-$color',

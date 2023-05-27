@@ -218,7 +218,7 @@ export const objectPositions: Rule<Theme>[] = [
     if (positionMap[d])
       return { 'object-position': positionMap[d] }
     if (h.bracketOfPosition(d) != null)
-      return { 'object-position': h.bracketOfPosition(d)!.split(' ').map(e => h.position.fraction.auto.px.cssvar(e)).join(' ') }
+      return { 'object-position': h.bracketOfPosition(d)!.split(' ').map(e => h.position.fraction.auto.px.cssvar(e) ?? e).join(' ') }
   }, { autocomplete: `object-(${Object.keys(positionMap).join('|')})` }],
 
 ]

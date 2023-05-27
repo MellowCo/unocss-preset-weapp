@@ -7,7 +7,6 @@ exports[`transformerAttributify > transform 1`] = `
   text=\\"sm green\\"
   p=\\"y-2 x-4\\"
   m=\\"4\\"
-  my-attr=\\"y-1 x-2 sm\\"
  class=\\"text-sm text-green p-y-2 p-x-4 m-4\\">
 xx
 </view>
