@@ -90,8 +90,8 @@
   },
   "dependencies": {
     "@rollup/pluginutils": "^5.0.2",
-    "@unocss/core": "^0.52.3",
-    "@unocss/extractor-arbitrary-variants": "^0.52.3",
+    "@unocss/core": "^0.52.4",
+    "@unocss/extractor-arbitrary-variants": "^0.52.4",
     "unplugin-attributify-to-class": "^0.2.2",
     "unplugin-transform-class": "^0.3.1"
   },
@@ -104,7 +104,7 @@
     "taze": "^0.10.1",
     "typescript": "^5.0.4",
     "unbuild": "^1.2.1",
-    "vite": "^4.3.8",
+    "vite": "^4.3.9",
     "vitest": "^0.31.1"
   }
 }
