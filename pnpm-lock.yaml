@@ -14,8 +14,8 @@ dependencies:
     specifier: ^0.2.2
     version: 0.2.2(rollup@3.21.0)
   unplugin-transform-class:
-    specifier: ^0.3.1
-    version: 0.3.1(rollup@3.21.0)
+    specifier: ^0.4.0
+    version: 0.4.0(rollup@3.21.0)
 
 devDependencies:
   '@antfu/eslint-config':
@@ -30,6 +30,9 @@ devDependencies:
   eslint:
     specifier: ^8.41.0
     version: 8.41.0
+  magic-string:
+    specifier: ^0.30.0
+    version: 0.30.0
   msw:
     specifier: ^1.2.1
     version: 1.2.1(typescript@5.0.4)
@@ -690,6 +693,12 @@ packages:
 
   /@meoc/utils@0.2.3:
     resolution: {integrity: sha512-08K5Wl/1anjgv7mF8ZfSGAvRzjwOrLGffR4Ns92zwP/WDMEQ1CxvJwmxAFgZpjJCAtQFk2hnOtBP99pg91z0CQ==}
+    dependencies:
+      dayjs: 1.11.7
+    dev: false
+
+  /@meoc/utils@0.2.4:
+    resolution: {integrity: sha512-BzJZ0sBDPleIkghDPyPfz5VPnVF8QEe4FkBRmcHxUVMyz2eavVIA7tWq4w+0CwSZavu6xXWNxN2yT4PvaYjJkQ==}
     dependencies:
       dayjs: 1.11.7
     dev: false
@@ -4978,6 +4987,16 @@ packages:
     resolution: {integrity: sha512-IG3T22n1rZb/ShORtBsKfLAP/GHc1pu7haHQWBbg4UP5lAffyxC6dO9YH9dUA00VclSD1/pzKPauq7FMOHnNuw==}
     dependencies:
       '@meoc/utils': 0.2.3
+      '@rollup/pluginutils': 5.0.2(rollup@3.21.0)
+      unplugin: 1.3.1
+    transitivePeerDependencies:
+      - rollup
+    dev: false
+
+  /unplugin-transform-class@0.4.0(rollup@3.21.0):
+    resolution: {integrity: sha512-W3e6Z6VNdra/xmtZMRg0E8/DH8yldeWJ19W+JU5slBQZcb3q6S1OPMpGlcFyrlkHs3rKTF/Ne+3GjaQUy0im0g==}
+    dependencies:
+      '@meoc/utils': 0.2.4
       '@rollup/pluginutils': 5.0.2(rollup@3.21.0)
       unplugin: 1.3.1
     transitivePeerDependencies:

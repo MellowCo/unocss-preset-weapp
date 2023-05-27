@@ -18,7 +18,7 @@
       <view even:bg-red odd:bg-green>
         1
       </view>
-      <view even:bg-red odd:bg-green>
+      <view class="even:bg-red odd:bg-green">
         2
       </view>
       <view even:bg-red odd:bg-green>

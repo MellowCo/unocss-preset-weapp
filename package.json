@@ -93,13 +93,14 @@
     "@unocss/core": "^0.52.4",
     "@unocss/extractor-arbitrary-variants": "^0.52.4",
     "unplugin-attributify-to-class": "^0.2.2",
-    "unplugin-transform-class": "^0.3.1"
+    "unplugin-transform-class": "^0.4.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.3",
     "@antfu/ni": "^0.21.3",
     "bumpp": "^9.1.0",
     "eslint": "^8.41.0",
+    "magic-string": "^0.30.0",
     "msw": "^1.2.1",
     "taze": "^0.10.1",
     "typescript": "^5.0.4",
