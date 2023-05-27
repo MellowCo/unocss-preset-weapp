@@ -6,7 +6,7 @@ export default {
 
 <template>
   <view text="white" class="p-3 !px-4 important:p-10 -m-4">
-    <view class="bg-local-logo" />
+    <view class="bg-local-logo mx-auto" />
 
     <view flex justify-center w-full>
       <view class="w-100 h-100 bg-cover mb-3 bg-[url(https://img.cdn.sugarat.top/mdImg/MTY2ODA4OTc3MjcyMg==unocss-icon-gray.svg)]" />

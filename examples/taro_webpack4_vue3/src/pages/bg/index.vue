@@ -6,7 +6,7 @@ export default {
 
 <template>
   <view text="white" class="p-3">
-    <view class="bg-local-logo">
+    <view class="bg-local-logo mx-auto">
     </view>
 
     <view flex justify-center w-full>
