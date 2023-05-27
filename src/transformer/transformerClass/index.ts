@@ -54,7 +54,7 @@ export default function transformerClass(options: Options = { classTags: true })
         if (vueFilter(id))
           newCode = newCode.replace('<template>', `<template>\n<!-- ${injectStr} -->\n`)
         else
-          newCode = `/* ${injectStr} */\n${code}`
+          newCode = `/* ${injectStr} */\n${newCode}`
       }
 
       code.overwrite(0, code.original.length, newCode)
