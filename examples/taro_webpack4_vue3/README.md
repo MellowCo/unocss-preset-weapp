@@ -104,9 +104,9 @@ import 'uno.css'
 ```
 
 * index.html
-> `taro h5` 的基准文字不是 `16px` ，导致默认文字过大   
+> `taro h5` 的基准文字不是 `16px` ，默认字体较大
 
-> 在`index.html` 中设置body
+> 如需更改，可在`index.html` 中设置 `body` 中设置 `text-base`
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231650890.png" style="zoom: 67%;" />
 
@@ -116,7 +116,6 @@ import 'uno.css'
 </body>
 ```
 
-<img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231629548.png" style="zoom: 50%;" />
 
 ---
 
@@ -134,23 +133,24 @@ import 'uno.css'
 ---
 
 ### taro h5兼容
->  taro `webpack4` 和 `webpack5` h5根字体(rem)大小不同，导致不同版本字体大小不同 [taro issues](https://github.com/NervJS/taro/issues/12361)
+* taro `webpack4` 和 `webpack5` h5根字体(rem)大小不同，导致不同版本字体大小不同 [taro issues](https://github.com/NervJS/taro/issues/12361)
 
-> 需要针对不同版本，设置不同的 rem 策略
-
-* webpack5 375 根字体为 20.0178px
+> webpack5 375 根字体为 20.0178px
 
   ![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208242311419.png)
 
   
 
-* webpack4 375 根字体为 23.4583px
+> webpack4 375 根字体为 23.4583px
 
   ![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208242310456.png)
 
 
+---
 
 * unocss.config.ts
+
+> 添加平台区分，指定 rem 策略
 
 ```js
 import presetWeapp from 'unocss-preset-weapp'
@@ -171,15 +171,15 @@ export default {
 ---
 
 ### taro h5 基准字体
-* 添加兼容代码后，大小显示正常
+* 添加兼容代码后，`text-base` 大小显示正常
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231622120.png" alt="image-20220703141451188" style="zoom: 67%;" />
 
-* 但是`taro` h5的375基准的`rem`为`24px`，不是`16px`，导致默认字体很大，。。。。
+* 但是`taro` h5的375基准的`rem`为`24px`，不是`16px`，默认字体较大
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231625587.png" style="zoom:50%;" />
 
-> 在`index.html` 中设置body
+> 如需更改，可在`index.html` 中设置 `body` 中设置 `text-base`
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207231650890.png" style="zoom: 67%;" />
 
