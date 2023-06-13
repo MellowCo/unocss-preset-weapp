@@ -1109,6 +1109,9 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .pb-safe{padding-bottom:env(safe-area-inset-bottom);}
 .pl-safe{padding-left:env(safe-area-inset-left);}
 .pr-safe{padding-right:env(safe-area-inset-right);}
+.text-wrap{text-wrap:wrap;}
+.text-nowrap{text-wrap:nowrap;}
+.text-balance{text-wrap:balance;}
 .bg-blend-color-burn{background-blend-mode:color-burn;}
 .bg-blend-luminosity{background-blend-mode:luminosity;}
 .bg-blend-normal{background-blend-mode:normal;}
