@@ -85,7 +85,7 @@
     "taro_vue3:h5": "nr build &&npm -C examples/taro_vue3 run dev:h5",
     "prepublishOnly": "nr build",
     "release": "bumpp",
-    "lint": "eslint --cache .",
+    "lint": "eslint --cache . -f mo",
     "lint:fix": "nr lint --fix"
   },
   "dependencies": {
@@ -100,6 +100,7 @@
     "@antfu/ni": "^0.21.4",
     "bumpp": "^9.1.1",
     "eslint": "^8.42.0",
+    "eslint-formatter-mo": "^1.2.0",
     "magic-string": "^0.30.0",
     "msw": "^1.2.2",
     "taze": "^0.10.2",

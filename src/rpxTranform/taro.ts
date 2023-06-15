@@ -7,14 +7,14 @@ import { cssRpxTransform, pxRE, rpxOrPxRE } from '.'
 export function taroPxToRpx(size: any, designWidth: any, deviceRatio: any) {
   if (!(designWidth in deviceRatio))
     throw new Error(`deviceRatio 配置中不存在 ${designWidth} 的设置！`)
-  return `${parseInt(size, 10) * deviceRatio[designWidth]}rpx`
+  return `${Number.parseInt(size, 10) * deviceRatio[designWidth]}rpx`
 }
 
 // rpx -> px
 export function taroRpxToPx(size: any, designWidth: any, deviceRatio: any) {
   if (!(designWidth in deviceRatio))
     throw new Error(`deviceRatio 配置中不存在 ${designWidth} 的设置！`)
-  return parseInt(size, 10) / deviceRatio[designWidth]
+  return Number.parseInt(size, 10) / deviceRatio[designWidth]
 }
 
 // taro issues
@@ -25,7 +25,7 @@ export function taroRpxToPx(size: any, designWidth: any, deviceRatio: any) {
 // webpack4版本
 // taro/packages/taro-h5/src/api/taro.ts
 export function taroPxToRemW4(size: any, designWidth: any) {
-  return `${Math.ceil((((parseInt(size, 10) / 40) * 640) / designWidth) * 100000) / 100000}rem`
+  return `${Math.ceil((((Number.parseInt(size, 10) / 40) * 640) / designWidth) * 100000) / 100000}rem`
 }
 
 // webpack5
@@ -37,7 +37,7 @@ export function taroPxToRemW5(size: any, designWidth: any, deviceRatio: any) {
   const unitPrecision = 5
   const rootValue = baseFontSize / deviceRatio[designWidth] * 2
 
-  const pixels = parseFloat(size)
+  const pixels = Number.parseFloat(size)
   return `${toFixed((pixels / rootValue), unitPrecision)}rem`
 }
 

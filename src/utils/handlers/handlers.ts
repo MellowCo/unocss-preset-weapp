@@ -32,7 +32,7 @@ export function numberWithUnit(str: string) {
   if (!match)
     return
   const [, n, unit] = match
-  const num = parseFloat(n)
+  const num = Number.parseFloat(n)
   if (unit && !Number.isNaN(num))
     return `${round(num)}${unit}`
 }
@@ -49,7 +49,7 @@ export function rem(str: string) {
   if (!match)
     return
   const [, n, unit] = match
-  const num = parseFloat(n)
+  const num = Number.parseFloat(n)
   if (!Number.isNaN(num)) {
     if (num === 0)
       return '0'
@@ -64,7 +64,7 @@ export function remToRpx(str: string) {
   if (!match)
     return
   const [, n, unit] = match
-  const num = parseFloat(n)
+  const num = Number.parseFloat(n)
 
   // 32 = 2 * rem
   if (!Number.isNaN(num)) {
@@ -82,7 +82,7 @@ export function rpx(str: string) {
   if (!match)
     return
   const [, n, unit] = match
-  const num = parseFloat(n)
+  const num = Number.parseFloat(n)
   if (!Number.isNaN(num)) {
     if (num === 0)
       return '0'
@@ -97,7 +97,7 @@ export function px(str: string) {
   if (!match)
     return
   const [, n, unit] = match
-  const num = parseFloat(n)
+  const num = Number.parseFloat(n)
   if (!Number.isNaN(num)) {
     if (num === 0)
       return '0'
@@ -108,7 +108,7 @@ export function px(str: string) {
 export function number(str: string) {
   if (!numberRE.test(str))
     return
-  const num = parseFloat(str)
+  const num = Number.parseFloat(str)
   if (!Number.isNaN(num))
     return round(num)
 }
@@ -118,7 +118,7 @@ export function percent(str: string) {
     str = str.slice(0, -1)
   if (!numberRE.test(str))
     return
-  const num = parseFloat(str)
+  const num = Number.parseFloat(str)
   if (!Number.isNaN(num))
     return `${round(num / 100)}`
 }
@@ -129,7 +129,7 @@ export function fraction(str: string) {
   // 小程序百分比 / 改为 _
   const [left, right] = str.split(/[\/\_]/)
 
-  const num = parseFloat(left) / parseFloat(right)
+  const num = Number.parseFloat(left) / Number.parseFloat(right)
   if (!Number.isNaN(num)) {
     if (num === 0)
       return '0'
@@ -228,7 +228,7 @@ export function time(str: string) {
   if (!match)
     return
   const [, n, unit] = match
-  const num = parseFloat(n)
+  const num = Number.parseFloat(n)
   if (!Number.isNaN(num)) {
     if (num === 0 && !unit)
       return '0s'
@@ -241,7 +241,7 @@ export function degree(str: string) {
   if (!match)
     return
   const [, n, unit] = match
-  const num = parseFloat(n)
+  const num = Number.parseFloat(n)
   if (!Number.isNaN(num)) {
     if (num === 0)
       return '0'
