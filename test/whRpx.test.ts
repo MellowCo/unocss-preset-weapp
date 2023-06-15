@@ -37,12 +37,12 @@ describe('whRpx-test', () => {
   test('whRemToRpx', async () => {
     const code = selectors.join(' ')
     const { css } = await whRemToRpx.generate(code)
-    expect(css).toMatchSnapshot()
+    await expect(css).toMatchFileSnapshot('./assets/output/wh-rpx-false.css')
   })
 
   test('whRpx', async () => {
     const code = selectors.join(' ')
     const { css } = await whRpx.generate(code)
-    expect(css).toMatchSnapshot()
+    await expect(css).toMatchFileSnapshot('./assets/output/wh-rpx.css')
   })
 })

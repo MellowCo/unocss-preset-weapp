@@ -77,7 +77,6 @@ describe('transformerClass', () => {
   test('transform', async () => {
     const code = new MagicString(originalCode)
     await transformerClass().transform(code, 'app.vue', { uno, tokens: new Set() } as any)
-
-    expect(code.toString()).toMatchSnapshot()
+    await expect(code.toString()).toMatchFileSnapshot('./assets/output/transformer-class.vue')
   })
 })

@@ -22,6 +22,6 @@ describe('preset-weapp', () => {
   test('presetMiniTargets', async () => {
     const code = [...presetMiniTargets, ...presetWeappTargets].join(' ')
     const { css } = await uno.generate(code)
-    expect(css).toMatchSnapshot()
+    await expect(css).toMatchFileSnapshot('./assets/output/preset-weapp.css')
   })
 })

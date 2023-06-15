@@ -37,6 +37,6 @@ describe('preset-weapp-rules', () => {
   test('presetMiniTargets', async () => {
     const code = presetMiniTargets.join(' ')
     const { css } = await uno.generate(code)
-    expect(css).toMatchSnapshot()
+    await expect(css).toMatchFileSnapshot('./assets/output/preset-weapp-rules.css')
   })
 })

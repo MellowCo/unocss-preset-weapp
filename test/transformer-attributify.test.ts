@@ -40,7 +40,6 @@ describe('transformerAttributify', () => {
   test('transform', async () => {
     const code = new MagicString(originalCode)
     await transformerAttributify().transform(code, 'app.vue', { uno, tokens: new Set() } as any)
-
-    expect(code.toString()).toMatchSnapshot()
+    await expect(code.toString()).toMatchFileSnapshot('./assets/output/transformer-attributify.vue')
   })
 })
