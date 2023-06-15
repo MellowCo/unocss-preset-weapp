@@ -1,9 +1,0 @@
-{
-  "miniprogramRoot": "./",
-  "projectname": "taro_react",
-  "appid": "testAppId",
-  "setting": {
-    "es6": false,
-    "minified": false
-  }
-}
