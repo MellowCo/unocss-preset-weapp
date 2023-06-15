@@ -35,11 +35,11 @@ page,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .animate-normal{animation-direction:normal;}
 .animate-reverse{animation-direction:reverse;}
 .animate-count-2_dl11_4{animation-iteration-count:2.4;}
-.animate-iteration-2{animation-iteration-count:2;}
-.animate-iteration-count-_do11_variable{animation-iteration-count:count,$variable;}
-.animate-iteration-count-_lfl11_2_lco11_4_lco11_infinity_lfr11_{animation-iteration-count:count,[2,4,infinity];}
-.animate-iteration-count-2{animation-iteration-count:count,2;}
-.animate-iteration-count-2-4-infinity{animation-iteration-count:count,2,4,infinity;}
+.animate-iteration-2,
+.animate-iteration-count-2{animation-iteration-count:2;}
+.animate-iteration-count-_do11_variable{animation-iteration-count:var(--variable);}
+.animate-iteration-count-_lfl11_2_lco11_4_lco11_infinity_lfr11_,
+.animate-iteration-count-2-4-infinity{animation-iteration-count:2,4,infinity;}
 .animate-paused,
 .animate-play-paused{animation-play-state:paused;}
 .animate-play-state-running,
