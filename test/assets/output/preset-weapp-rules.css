@@ -938,6 +938,7 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .outline-revert-layer{outline-style:revert-layer;}
 .outline-unset{outline-style:unset;}
 .outline-none{outline:2px solid transparent;outline-offset:2px;}
+.focus-visible_cl11_outline-none:focus-visible{outline:2px solid transparent;outline-offset:2px;}
 .appearance-none{-webkit-appearance:none;appearance:none;}
 .order-_do11_variable{order:var(--variable);}
 .order-first{order:-9999;}
