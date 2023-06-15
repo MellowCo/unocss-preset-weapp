@@ -450,9 +450,6 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .contain-_lfl_size_layout_lfr_{contain:size layout;}
 .contain-_lfl_size_layout_paint_lfr_{contain:size layout paint;}
 .contain-layout{contain:layout;}
-.font-_do_font-name{font-family:var(--font-name);}
-.font-_lfl_system-ui_lfr_{font-family:system-ui;}
-.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;}
 .dark .dark_cl_text-xl{font-size:40rpx;line-height:56rpx;}
 .light .light_cl_text-sm{font-size:28rpx;line-height:40rpx;}
 .text-_lfl_100px_lfr_{font-size:100px;}
@@ -489,14 +486,12 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .group:hover .group-_lfl__cl_hover_lfr__cl_font-11{font-weight:11;}
 .group.not-parent .group-_lfl__dl_not-parent_lfr__cl_font-14{font-weight:14;}
 .group[data-attr] .group-_lfl__lfl_data-attr_lfr__lfr__cl_font-12{font-weight:12;}
-.font-_lfl_550_lfr_{font-weight:550;}
 .font-050,
 .font-50,
 .fw-050,
 .fw-50{font-weight:50;}
 .font-900,
 .fw-900{font-weight:900;}
-.font-inherit{font-weight:inherit;}
 .font-thin{font-weight:100;}
 .group_sl_label:hover .group-hover_sl_label_cl_font-15{font-weight:15;}
 .group:hover .group-hover_cl_font-10{font-weight:10;}
@@ -524,6 +519,11 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .word-spacing-2{word-spacing:16rpx;}
 .word-spacing-inherit{word-spacing:inherit;}
 .word-spacing-wide{word-spacing:0.025em;}
+.font-_do_font-name{font-family:var(--font-name);}
+.font-_lfl_550_lfr_{font-family:550;}
+.font-_lfl_system-ui_lfr_{font-family:system-ui;}
+.font-inherit{font-family:inherit;}
+.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;}
 .tab{-moz-tab-size:4;-o-tab-size:4;tab-size:4;}
 .tab-_do_tabprop{-moz-tab-size:var(--tabprop);-o-tab-size:var(--tabprop);tab-size:var(--tabprop);}
 .tab-6{-moz-tab-size:6;-o-tab-size:6;tab-size:6;}

@@ -22,13 +22,6 @@ function handleLineHeight(s: string, theme: Theme) {
 }
 
 export const fonts: Rule<Theme>[] = [
-  // family
-  [
-    /^font-(.+)$/,
-    ([, d], { theme }) => ({ 'font-family': theme.fontFamily?.[d] || h.bracket.cssvar.global(d) }),
-    { autocomplete: 'font-$fontFamily' },
-  ],
-
   // size
   [
     /^text-(.+)$/,
@@ -103,6 +96,13 @@ export const fonts: Rule<Theme>[] = [
     /^(?:font-)?word-spacing-(.+)$/,
     ([, s], { theme }) => ({ 'word-spacing': theme.wordSpacing?.[s] || h.bracket.cssvar.global.remToRpx(s) }),
     { autocomplete: 'word-spacing-$wordSpacing' },
+  ],
+
+  // family
+  [
+    /^font-(.+)$/,
+    ([, d], { theme }) => ({ 'font-family': theme.fontFamily?.[d] || h.bracket.cssvar.global(d) }),
+    { autocomplete: 'font-$fontFamily' },
   ],
 ]
 

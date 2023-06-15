@@ -450,9 +450,6 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .contain-\[size_layout_paint\]{contain:size layout paint;}
 .contain-\[size_layout\]{contain:size layout;}
 .contain-layout{contain:layout;}
-.font-\[system-ui\]{font-family:system-ui;}
-.font-\$font-name{font-family:var(--font-name);}
-.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;}
 .text-\[100px\]{font-size:100px;}
 .text-\[11px\]\/4{font-size:11px;line-height:32rpx;}
 .text-\[11rpx\]\/4{font-size:11rpx;line-height:32rpx;}
@@ -487,14 +484,12 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .group\/label:hover .group-\[\:hover\]\/label\:font-16{font-weight:16;}
 .group\/label.not-parent .group-\[\.not-parent\]\/label\:font-19{font-weight:19;}
 .group\/label[data-attr] .group-\[\[data-attr\]\]\/label\:font-17{font-weight:17;}
-.font-\[550\]{font-weight:550;}
 .font-050,
 .font-50,
 .fw-050,
 .fw-50{font-weight:50;}
 .font-900,
 .fw-900{font-weight:900;}
-.font-inherit{font-weight:inherit;}
 .font-thin{font-weight:100;}
 .group:hover .group-hover\:font-10{font-weight:10;}
 .group\/label:hover .group-hover\/label\:font-15{font-weight:15;}
@@ -522,6 +517,11 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .word-spacing-2{word-spacing:16rpx;}
 .word-spacing-inherit{word-spacing:inherit;}
 .word-spacing-wide{word-spacing:0.025em;}
+.font-\[550\]{font-family:550;}
+.font-\[system-ui\]{font-family:system-ui;}
+.font-\$font-name{font-family:var(--font-name);}
+.font-inherit{font-family:inherit;}
+.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;}
 .tab{-moz-tab-size:4;-o-tab-size:4;tab-size:4;}
 .tab-\$tabprop{-moz-tab-size:var(--tabprop);-o-tab-size:var(--tabprop);tab-size:var(--tabprop);}
 .tab-6{-moz-tab-size:6;-o-tab-size:6;tab-size:6;}

@@ -448,9 +448,6 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .contain-_lfl11_size_layout_lfr11_{contain:size layout;}
 .contain-_lfl11_size_layout_paint_lfr11_{contain:size layout paint;}
 .contain-layout{contain:layout;}
-.font-_do11_font-name{font-family:var(--font-name);}
-.font-_lfl11_system-ui_lfr11_{font-family:system-ui;}
-.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;}
 .dark .dark_cl11_text-xl{font-size:40rpx;line-height:56rpx;}
 .light .light_cl11_text-sm{font-size:28rpx;line-height:40rpx;}
 .text-_lfl11_100px_lfr11_{font-size:100px;}
@@ -487,14 +484,12 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .group:hover .group-_lfl11__cl11_hover_lfr11__cl11_font-11{font-weight:11;}
 .group.not-parent .group-_lfl11__dl11_not-parent_lfr11__cl11_font-14{font-weight:14;}
 .group[data-attr] .group-_lfl11__lfl11_data-attr_lfr11__lfr11__cl11_font-12{font-weight:12;}
-.font-_lfl11_550_lfr11_{font-weight:550;}
 .font-050,
 .font-50,
 .fw-050,
 .fw-50{font-weight:50;}
 .font-900,
 .fw-900{font-weight:900;}
-.font-inherit{font-weight:inherit;}
 .font-thin{font-weight:100;}
 .group_sl11_label:hover .group-hover_sl11_label_cl11_font-15{font-weight:15;}
 .group:hover .group-hover_cl11_font-10{font-weight:10;}
@@ -522,6 +517,11 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .word-spacing-2{word-spacing:16rpx;}
 .word-spacing-inherit{word-spacing:inherit;}
 .word-spacing-wide{word-spacing:0.025em;}
+.font-_do11_font-name{font-family:var(--font-name);}
+.font-_lfl11_550_lfr11_{font-family:550;}
+.font-_lfl11_system-ui_lfr11_{font-family:system-ui;}
+.font-inherit{font-family:inherit;}
+.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;}
 .tab{-moz-tab-size:4;-o-tab-size:4;tab-size:4;}
 .tab-_do11_tabprop{-moz-tab-size:var(--tabprop);-o-tab-size:var(--tabprop);tab-size:var(--tabprop);}
 .tab-6{-moz-tab-size:6;-o-tab-size:6;tab-size:6;}
