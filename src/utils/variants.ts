@@ -4,11 +4,14 @@ import { defaultRules, restoreSelector } from 'unplugin-transform-class/utils'
 import { getBracket } from '../utils'
 
 export function variantMatcher(name: string, handler: (input: VariantHandlerContext) => Record<string, any>, transformRules: Record<string, string> = defaultRules): VariantObject {
-  const re = new RegExp(`^${escapeRegExp(name)}[:-]`)
+  let re: RegExp
 
   return {
     name,
-    match(input) {
+    match(input, ctx) {
+      if (!re)
+        re = new RegExp(`^${escapeRegExp(name)}(?:${ctx.generator.config.separators.join('|')})`)
+
       input = restoreSelector(input, transformRules)
       const match = input.match(re)
       if (match) {
@@ -26,10 +29,13 @@ export function variantMatcher(name: string, handler: (input: VariantHandlerCont
 }
 
 export function variantParentMatcher(name: string, parent: string, transformRules: Record<string, string> = defaultRules): VariantObject {
-  const re = new RegExp(`^${escapeRegExp(name)}[:-]`)
+  let re: RegExp
   return {
     name,
-    match(input) {
+    match(input, ctx) {
+      if (!re)
+        re = new RegExp(`^${escapeRegExp(name)}(?:${ctx.generator.config.separators.join('|')})`)
+
       input = restoreSelector(input, transformRules)
       const match = input.match(re)
       if (match) {

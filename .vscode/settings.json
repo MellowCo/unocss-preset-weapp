@@ -8,5 +8,6 @@
     "unocss",
     "Weapp",
     "whitespaces"
-  ]
+  ],
+  "testing.automaticallyOpenPeekView": "never"
 }

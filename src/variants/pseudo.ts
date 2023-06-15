@@ -90,8 +90,10 @@ const PseudoClassFunctionsStr = PseudoClassFunctions.join('|')
 
 function taggedPseudoClassMatcher(tag: string, parent: string, combinator: string): VariantObject {
   const rawRE = new RegExp(`^(${escapeRegExp(parent)}:)(\\S+)${escapeRegExp(combinator)}\\1`)
-  const pseudoRE = new RegExp(`^${tag}-(?:(?:(${PseudoClassFunctionsStr})-)?(${PseudoClassesStr}))(?:(/\\w+))?[:-]`)
-  const pseudoColonRE = new RegExp(`^${tag}-(?:(?:(${PseudoClassFunctionsStr})-)?(${PseudoClassesColonStr}))(?:(/\\w+))?[:]`)
+
+  let splitRE: RegExp
+  let pseudoRE: RegExp
+  let pseudoColonRE: RegExp
 
   const matchBracket = (input: string) => {
     const body = variantGetBracket(`${tag}-`, input, [])
@@ -103,7 +105,7 @@ function taggedPseudoClassMatcher(tag: string, parent: string, combinator: strin
     if (bracketValue == null)
       return
 
-    const label = rest.split(/[:-]/, 1)?.[0] ?? ''
+    const label = rest.split(splitRE, 1)?.[0] ?? ''
     const prefix = `${parent}${escapeSelector(label)}`
     return [
       label,
@@ -133,7 +135,13 @@ function taggedPseudoClassMatcher(tag: string, parent: string, combinator: strin
 
   return {
     name: `pseudo:${tag}`,
-    match(input) {
+    match(input, ctx) {
+      if (!(splitRE && pseudoRE && pseudoColonRE)) {
+        splitRE = new RegExp(`(?:${ctx.generator.config.separators.join('|')})`)
+        pseudoRE = new RegExp(`^${tag}-(?:(?:(${PseudoClassFunctionsStr})-)?(${PseudoClassesStr}))(?:(/\\w+))?(?:${ctx.generator.config.separators.join('|')})`)
+        pseudoColonRE = new RegExp(`^${tag}-(?:(?:(${PseudoClassFunctionsStr})-)?(${PseudoClassesColonStr}))(?:(/\\w+))?(?:${ctx.generator.config.separators.filter(x => x !== '-').join('|')})`)
+      }
+
       if (!input.startsWith(tag))
         return
 
@@ -162,69 +170,78 @@ function taggedPseudoClassMatcher(tag: string, parent: string, combinator: strin
 const PseudoClassesAndElementsStr = Object.entries(PseudoClasses).map(([key]) => key).join('|')
 const PseudoClassesAndElementsColonStr = Object.entries(PseudoClassesColon).map(([key]) => key).join('|')
 
-const PseudoClassesAndElementsRE = new RegExp(`^(${PseudoClassesAndElementsStr})[:-]`)
-const PseudoClassesAndElementsColonRE = new RegExp(`^(${PseudoClassesAndElementsColonStr})[:]`)
-
-export const variantPseudoClassesAndElements: VariantObject<Theme> = {
-  name: 'pseudo',
-  match(input: string, content) {
-    input = restoreSelector(input, content.theme.transformRules)
-
-    const match = input.match(PseudoClassesAndElementsRE) || input.match(PseudoClassesAndElementsColonRE)
-    if (match) {
-      const pseudo = PseudoClasses[match[1]] || PseudoClassesColon[match[1]] || `:${match[1]}`
-
-      // order of pseudo classes
-      let index: number | undefined = PseudoClassesKeys.indexOf(match[1])
-      if (index === -1)
-        index = PseudoClassesColonKeys.indexOf(match[1])
-      if (index === -1)
-        index = undefined
-
-      return {
-        matcher: input.slice(match[0].length),
-        handle: (input, next) => {
-          const selectors = pseudo.startsWith('::')
-            ? {
-                pseudo: `${input.pseudo}${pseudo}`,
-              }
-            : {
-                selector: `${input.selector}${pseudo}`,
-              }
-
-          return next({
-            ...input,
-            ...selectors,
-            sort: index,
-            noMerge: true,
-          })
-        },
+export function variantPseudoClassesAndElements(): VariantObject<Theme> {
+  let PseudoClassesAndElementsRE: RegExp
+  let PseudoClassesAndElementsColonRE: RegExp
+  return {
+    name: 'pseudo',
+    match(input, ctx) {
+      if (!(PseudoClassesAndElementsRE && PseudoClassesAndElementsRE)) {
+        PseudoClassesAndElementsRE = new RegExp(`^(${PseudoClassesAndElementsStr})(?:${ctx.generator.config.separators.join('|')})`)
+        PseudoClassesAndElementsColonRE = new RegExp(`^(${PseudoClassesAndElementsColonStr})(?:${ctx.generator.config.separators.filter(x => x !== '-').join('|')})`)
       }
-    }
-  },
-  multiPass: true,
-  autocomplete: `(${PseudoClassesAndElementsStr}):`,
+
+      input = restoreSelector(input, ctx.theme.transformRules)
+      const match = input.match(PseudoClassesAndElementsRE) || input.match(PseudoClassesAndElementsColonRE)
+      if (match) {
+        const pseudo = PseudoClasses[match[1]] || PseudoClassesColon[match[1]] || `:${match[1]}`
+
+        // order of pseudo classes
+        let index: number | undefined = PseudoClassesKeys.indexOf(match[1])
+        if (index === -1)
+          index = PseudoClassesColonKeys.indexOf(match[1])
+        if (index === -1)
+          index = undefined
+
+        return {
+          matcher: input.slice(match[0].length),
+          handle: (input, next) => {
+            const selectors = pseudo.startsWith('::')
+              ? {
+                  pseudo: `${input.pseudo}${pseudo}`,
+                }
+              : {
+                  selector: `${input.selector}${pseudo}`,
+                }
+
+            return next({
+              ...input,
+              ...selectors,
+              sort: index,
+              noMerge: true,
+            })
+          },
+        }
+      }
+    },
+    multiPass: true,
+    autocomplete: `(${PseudoClassesAndElementsStr}|${PseudoClassesAndElementsColonStr}):`,
+  }
 }
 
-const PseudoClassFunctionsRE = new RegExp(`^(${PseudoClassFunctionsStr})-(${PseudoClassesStr})[:-]`)
-const PseudoClassColonFunctionsRE = new RegExp(`^(${PseudoClassFunctionsStr})-(${PseudoClassesColonStr})[:]`)
-
-export const variantPseudoClassFunctions: VariantObject<Theme> = {
-  match(input: string, content) {
-    input = restoreSelector(input, content.theme.transformRules)
-    const match = input.match(PseudoClassFunctionsRE) || input.match(PseudoClassColonFunctionsRE)
-
-    if (match) {
-      const fn = match[1]
-      const pseudo = PseudoClasses[match[2]] || PseudoClassesColon[match[2]] || `:${match[2]}`
-      return {
-        matcher: input.slice(match[0].length),
-        selector: s => `${s}:${fn}(${pseudo})`,
+export function variantPseudoClassFunctions(): VariantObject {
+  let PseudoClassFunctionsRE: RegExp
+  let PseudoClassColonFunctionsRE: RegExp
+  return {
+    match(input, ctx) {
+      if (!(PseudoClassFunctionsRE && PseudoClassColonFunctionsRE)) {
+        PseudoClassFunctionsRE = new RegExp(`^(${PseudoClassFunctionsStr})-(${PseudoClassesStr})(?:${ctx.generator.config.separators.join('|')})`)
+        PseudoClassColonFunctionsRE = new RegExp(`^(${PseudoClassFunctionsStr})-(${PseudoClassesColonStr})(?:${ctx.generator.config.separators.filter(x => x !== '-').join('|')})`)
       }
-    }
-  },
-  multiPass: true,
-  autocomplete: `(${PseudoClassFunctionsStr})-(${PseudoClassesStr}|${PseudoClassesColonStr}):`,
+
+      const match = input.match(PseudoClassFunctionsRE) || input.match(PseudoClassColonFunctionsRE)
+      if (match) {
+        const fn = match[1]
+        const pseudo = PseudoClasses[match[2]] || PseudoClassesColon[match[2]] || `:${match[2]}`
+        return {
+          matcher: input.slice(match[0].length),
+          selector: s => `${s}:${fn}(${pseudo})`,
+        }
+      }
+    },
+    multiPass: true,
+    autocomplete: `(${PseudoClassFunctionsStr})-(${PseudoClassesStr}|${PseudoClassesColonStr}):`,
+  }
 }
 
 export function variantTaggedPseudoClasses(options: PresetWeappOptions = {}): VariantObject[] {

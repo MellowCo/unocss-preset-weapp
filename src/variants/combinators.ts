@@ -1,16 +1,17 @@
 import type { Variant, VariantObject } from '@unocss/core'
-import { handler as h, variantGetBracket } from '../utils'
+import { h, variantGetBracket } from '../utils'
 
 function scopeMatcher(name: string, combinator: string): VariantObject {
   return {
     name: `combinator:${name}`,
-    match(matcher) {
+    match(matcher, ctx) {
       if (!matcher.startsWith(name))
         return
 
-      let body = variantGetBracket(`${name}-`, matcher, [':', '-'])
+      const separators = ctx.generator.config.separators
+      let body = variantGetBracket(`${name}-`, matcher, separators)
       if (!body) {
-        for (const separator of [':', '-']) {
+        for (const separator of separators) {
           if (matcher.startsWith(`${name}${separator}`)) {
             body = ['', matcher.slice(name.length + separator.length)]
             break
