@@ -56,7 +56,7 @@
     "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3070020230117001",
     "@iconify/json": "^2.2.70",
     "typescript": "^5.0.4",
-    "unocss": "^0.52.4",
+    "unocss": "^0.53.1",
     "unocss-preset-weapp": "link:../../",
     "vite": "^4.0.3"
   }
