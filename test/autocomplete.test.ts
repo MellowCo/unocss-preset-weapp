@@ -2,11 +2,15 @@ import { createGenerator } from '@unocss/core'
 import { describe, expect, it } from 'vitest'
 import { createAutocomplete, parseAutocomplete } from '@unocss/autocomplete'
 import presetWeapp from '../src/index'
+import { extractorAttributify } from '../src/transformer'
 
 describe('autocomplete', () => {
+  const { presetWeappAttributify } = extractorAttributify()
+
   const uno = createGenerator({
     presets: [
       presetWeapp(),
+      presetWeappAttributify(),
     ],
     shortcuts: [
       {
@@ -202,46 +206,6 @@ describe('autocomplete', () => {
         ]
       `)
   })
-
-  //   it('should support prefix', async () => {
-  //     const uno = createGenerator({
-  //       presets: [
-  //         presetWeapp({
-  //           prefix: 'li-',
-  //         }),
-  //       ],
-  //       transformers: [
-  //         transformerAttributify({
-  //           prefix: 'li-',
-  //         }),
-  //       ],
-  //     })
-  //     const ac = createAutocomplete(uno)
-  //     const fixture = `
-  // <div li-bg="blue-500">
-  //   <div li-border="~ b-
-  // </div>
-  //     `
-
-  //     const res = await ac.suggestInFile(fixture, 45)
-
-  //     console.log(res)
-
-  //     expect(res.suggestions.every(i => i[0].startsWith('border-'))).toBeTruthy()
-  //     expect(res.suggestions.some(i => i[1].startsWith('border-'))).toBeFalsy()
-
-  //     const replacement = res.resolveReplacement(res.suggestions[0][0])
-  //     expect(replacement).toMatchInlineSnapshot()
-
-//     expect(fixture.slice(0, replacement.start) + replacement.replacement + fixture.slice(replacement.end))
-//       .toMatchInlineSnapshot(`
-//         {
-//           "end": 46,
-//           "replacement": "b-0",
-//           "start": 44,
-//         }
-//       `)
-//   })
 })
 
 describe('use uno cache', () => {
@@ -268,7 +232,12 @@ describe('use uno cache', () => {
     ac.reset()
 
     expect(await ac.suggest('btn'))
-      .toMatchInlineSnapshot('[]')
+      .toMatchInlineSnapshot(`
+        [
+          "btn-green",
+          "btn-red",
+        ]
+      `)
     expect(await ac.suggest('m-1'))
       .toMatchInlineSnapshot(`
         [

@@ -1,23 +1,12 @@
-import type { SourceCodeTransformer } from '@unocss/core'
 import type { Options } from 'unplugin-attributify-to-class/types'
-import { extractorAttributify } from 'unplugin-attributify-to-class/utils'
-import { createFilter } from '@rollup/pluginutils'
+import transformer from './transformer'
+import { presetWeappAttributify as preset } from './autocomplete'
 
-export default function transformerWeAttributify(options: Options = {}): SourceCodeTransformer {
-  const idFilter = createFilter(
-    options.include || [/\.vue$/, /\.vue\?vue/],
-    options.exclude || [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/],
-  )
-
-  const extractor = extractorAttributify(options)
-
+export function extractorAttributify(options: Options = {}) {
   return {
-    name: 'transformer-applet-attributify',
-    idFilter,
-    enforce: 'pre',
-    transform(code) {
-      const newCode = extractor(code.toString())
-      code.overwrite(0, code.original.length, newCode)
-    },
+    transformerAttributify: () => transformer(options),
+    presetWeappAttributify: () => preset(options),
   }
 }
+
+export const transformerAttributify = transformer

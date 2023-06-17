@@ -1,11 +1,18 @@
 import presetWeapp from 'unocss-preset-weapp'
-import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
+import { extractorAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
 import { presetIcons } from 'unocss'
+
+const { presetWeappAttributify, transformerAttributify } = extractorAttributify({
+  prefix: 'li-',
+  prefixedOnly: true,
+})
 
 export default {
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp(),
+    // Attributify autocomplete
+    presetWeappAttributify(),
     presetIcons(),
   ],
   shortcuts: [

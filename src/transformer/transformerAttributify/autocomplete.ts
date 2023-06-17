@@ -1,5 +1,5 @@
-import type { AutoCompleteExtractor } from '@unocss/core'
-import type { PresetWeappOptions } from '../..'
+import type { AutoCompleteExtractor, Preset } from '@unocss/core'
+import type { PresetWeappOptions, Theme } from '../..'
 
 const variantsRE = /^(?!.*\[(?:[^:]+):(?:.+)\]$)((?:.+:)?!?)?(.*)$/
 const elementRE = /(<\w[\w:\.$-]*\s)((?:'[^>]*?'|"[^>]*?"|`[^>]*?`|\{[^>]*?\}|[^>]*?)*)/g
@@ -8,7 +8,7 @@ const splitterRE = /[\s'"`;>]+/
 
 export function autocompleteExtractorAttributify(options?: PresetWeappOptions): AutoCompleteExtractor {
   return {
-    name: 'attributify',
+    name: 'weapp-attributify',
     extract: ({ content, cursor }) => {
       const matchedElements = content.matchAll(elementRE)
       let attrs: string | undefined
@@ -100,6 +100,15 @@ export function autocompleteExtractorAttributify(options?: PresetWeappOptions): 
           }
         },
       }
+    },
+  }
+}
+
+export function presetWeappAttributify(options?: PresetWeappOptions): Preset<Theme> {
+  return {
+    name: 'unocss-preset-weapp-attributify',
+    autocomplete: {
+      extractors: [autocompleteExtractorAttributify(options)],
     },
   }
 }

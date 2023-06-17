@@ -41,7 +41,7 @@ export default function transformerClass(options: Options = { classTags: true })
   )
 
   return {
-    name: 'transformer-applet-class',
+    name: 'transformer-weapp-class',
     idFilter,
     enforce: 'pre',
     transform(code, id) {

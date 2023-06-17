@@ -8,7 +8,6 @@ import { theme } from './theme'
 import { variants } from './variants'
 
 import { taroCssPxTransform, taroH5CssRemTransform, uniAppVue2CssRpxTransform } from './rpxTranform'
-import { autocompleteExtractorAttributify } from './transformer/transformerAttributify/autocomplete'
 
 export { theme, colors } from './theme'
 export { parseColor } from './utils'
@@ -203,9 +202,6 @@ export function presetWeapp(options: PresetWeappOptions = {}): Preset<Theme> {
     extractorDefault: options.arbitraryVariants === false
       ? undefined
       : extractorArbitraryVariants,
-    autocomplete: {
-      extractors: [autocompleteExtractorAttributify(options)],
-    },
   }
 }
 
