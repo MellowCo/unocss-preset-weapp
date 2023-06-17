@@ -1,8 +1,6 @@
 import presetWeapp from 'unocss-preset-weapp'
-import { defineConfig, presetIcons } from 'unocss'
-import { extractorAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
-
-const { presetWeappAttributify, transformerAttributify } = extractorAttributify()
+import { defineConfig } from 'unocss'
+import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
 
 export default defineConfig({
   presets: [
@@ -12,9 +10,6 @@ export default defineConfig({
       platform: 'uniapp',
       isH5: process.env.UNI_PLATFORM === 'h5',
     }),
-    // attributify autocomplete
-    presetWeappAttributify(),
-    presetIcons(),
   ],
   shortcuts: [
     {
