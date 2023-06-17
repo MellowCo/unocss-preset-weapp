@@ -18,7 +18,6 @@ export default {
         { name: 'odd-even', path: '/pages/odd-even/index' },
         { name: 'space-x', path: '/pages/space/index' },
         { name: 'divide-x', path: '/pages/divide/index' },
-        { name: 'icon', path: '/pages/icon/index' },
       ],
     }
   },
