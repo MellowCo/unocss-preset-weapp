@@ -97,6 +97,24 @@ describe('preset-mini', () => {
     await expect(css).toMatchFileSnapshot('./assets/output/preset-mini-custom-var-prefix.css')
   })
 
+  test('empty prefix', async () => {
+    const uno = createGenerator({
+      presets: [
+        presetWeapp({
+          variablePrefix: '',
+        }),
+      ],
+    })
+
+    const { css } = await uno.generate([
+      'text-opacity-50',
+      'text-red',
+      'scale-100',
+    ].join(' '), { preflights: false })
+
+    await expect(css).toMatchFileSnapshot('./assets/output/preset-mini-empty-prefix.css')
+  })
+
   test('nested theme colors', async () => {
     const { css, matched } = await uno.generate([
       'text-a-b-c',

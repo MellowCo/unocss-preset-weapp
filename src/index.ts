@@ -145,6 +145,7 @@ export function presetWeapp(options: PresetWeappOptions = {}): Preset<Theme> {
   options.dark = options.dark ?? 'class'
   options.attributifyPseudo = options.attributifyPseudo ?? false
   options.preflight = options.preflight ?? true
+  options.variablePrefix = options.variablePrefix ?? 'un-'
 
   options.transform = options.transform ?? true
   options.isH5 = options.isH5 ?? false
@@ -175,8 +176,8 @@ export function presetWeapp(options: PresetWeappOptions = {}): Preset<Theme> {
         css.selector = transformEscapESelector(css.selector, options.transformRules)
 
       // 设置变量前缀
-      if (options.variablePrefix && options.variablePrefix !== 'un-')
-        VarPrefixPostprocessor(options.variablePrefix, css)
+      if (options.variablePrefix !== 'un-')
+        VarPrefixPostprocessor(options.variablePrefix!, css)
 
       // taro 处理 h5 和 小程序 px 和 rpx 转换
       if (options.platform === 'taro') {
