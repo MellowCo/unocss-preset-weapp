@@ -29,8 +29,10 @@ const selectors = [
   'h-2',
 
   // typography
+  'text-base',
   'text-20',
   'text-size-20',
+  'text-1/2',
 ]
 
 describe('whRpx-test', () => {

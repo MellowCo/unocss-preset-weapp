@@ -464,6 +464,7 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .text-_lfl11_length_cl11_calc_lbl11_1em-1px_lbr11__lfr11_{font-size:calc(1em - 1px);}
 .text-_lfl11_length_cl11_var_lbl11_--size_lbr11__lfr11_{font-size:var(--size);}
 .text-_lfl11_length_cl11_var_lbl11_--size_lbr11__lfr11__cl11__do11_leading{font-size:var(--size);line-height:var(--leading);}
+.text-1_sl11_2{font-size:8rpx;line-height:16rpx;}
 .text-4xl,
 .group:has(:placeholder-shown) .group-has-placeholder-shown_cl11_text-4xl,
 .group:where(:placeholder-shown) .group-where-placeholder-shown_cl11_text-4xl{font-size:72rpx;line-height:80rpx;}

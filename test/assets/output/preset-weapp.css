@@ -466,6 +466,7 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .text-_lfl_length_cl_calc_lbl_1em-1px_lbr__lfr_{font-size:calc(1em - 1px);}
 .text-_lfl_length_cl_var_lbl_--size_lbr__lfr_{font-size:var(--size);}
 .text-_lfl_length_cl_var_lbl_--size_lbr__lfr__cl__do_leading{font-size:var(--size);line-height:var(--leading);}
+.text-1_sl_2{font-size:8rpx;line-height:16rpx;}
 .text-4xl,
 .group:has(:placeholder-shown) .group-has-placeholder-shown_cl_text-4xl,
 .group:where(:placeholder-shown) .group-where-placeholder-shown_cl_text-4xl{font-size:72rpx;line-height:80rpx;}

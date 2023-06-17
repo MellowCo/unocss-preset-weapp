@@ -38,7 +38,7 @@ export const fonts: Rule<Theme>[] = [
         }
       }
 
-      const fontSize = h.bracketOfLength.rem(size)
+      const fontSize = h.bracketOfLength.remToRpx(size)
       if (lineHeight && fontSize) {
         return {
           'font-size': fontSize,

@@ -379,6 +379,7 @@ export const presetMiniTargets: string[] = [
   'text-[color:--variable]',
   'text-[color:var(--color)]',
   'text-[color:var(--color-x)]:[trick]',
+  'text-1/2',
   'text-sm/3',
   'text-sm/[10px]',
   'text-sm/[10rpx]',
@@ -1315,6 +1316,8 @@ export const presetMiniNonTargets = [
   '[https://en.wikipedia.org/wiki]',
   '[Baz::class]',
   '[foo:bar:baz]',
+  '[foo:{bar}]',
+  '[foo:\'bar\',"baz",`]',
   // escaped arbitrary css properties only allowed in css variables
   '[cant\~escape:me]',
 
