@@ -30,7 +30,7 @@ export interface Theme {
   verticalBreakpoints?: Record<string, string>
   colors?: Colors
   fontFamily?: Record<string, string>
-  fontSize?: Record<string, [string, string]>
+  fontSize?: Record<string, string | [string, string]>
   lineHeight?: Record<string, string>
   letterSpacing?: Record<string, string>
   wordSpacing?: Record<string, string>
@@ -67,6 +67,8 @@ export interface Theme {
   // container
   container?: {
     center?: boolean
+    padding?: string | Record<string, string>
+    maxWidth?: Record<string, string>
   }
   // vars
   /** Used to generate CSS variables placeholder in preflight */

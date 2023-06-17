@@ -126,11 +126,67 @@ describe('preset-mini', () => {
     expect(matched.size).toBe(3)
   })
 
+  test('non-nested theme colors with hyphens and/or numbers', async () => {
+    const { css, matched } = await uno.generate([
+      'text-with-hyphen',
+      'bg-with-hyphen',
+      'text-numbered-123',
+      'bg-numbered321',
+    ], { preflights: false })
+
+    expect(css).toMatchFileSnapshot('./assets/output/preset-mini-non-nested-theme-colors.css')
+    expect(matched.size).toBe(4)
+  })
+
   test('none targets', async () => {
     const { css, matched } = await uno.generate(new Set(presetMiniNonTargets), { minify: true, preflights: false })
 
     expect(css).toEqual('')
     expect([...matched]).toEqual([])
+  })
+
+  test('fontSize theme', async () => {
+    const uno = createGenerator({
+      presets: [
+        presetWeapp(),
+      ],
+      theme: {
+        fontSize: {
+          small: '1rem',
+          medium: ['2rem', '1.5em'],
+          xs: '2rem',
+          lg: ['3rem', '1.5em'],
+        },
+      },
+    })
+
+    const { css } = await uno.generate([
+      'text-small',
+      'text-medium',
+      'text-xs',
+      'text-lg',
+    ].join(' '), { preflights: false })
+
+    // @ts-expect-error types
+    expect(uno.config.theme.fontSize.lg).toEqual(['3rem', '1.5em'])
+    await expect(css).toMatchFileSnapshot('./assets/output/preset-mini-font-size-theme.css')
+  })
+
+  test('dark class', async () => {
+    const uno = createGenerator({
+      presets: [
+        presetWeapp(),
+      ],
+    })
+
+    const { css } = await uno.generate([
+      'dark:scope-[.hello]:text-1/2',
+      'scope-[[world]]:light:text-1/3',
+    ].join(' '), {
+      preflights: false,
+    })
+
+    await expect(css).toMatchFileSnapshot('./assets/output/preset-mini-dark-class.css')
   })
 
   test('the :active pseudo is sorted and separated after other pseudo', async () => {
@@ -149,17 +205,5 @@ describe('preset-mini', () => {
     })
 
     await expect(css).toMatchFileSnapshot('./assets/output/preset-mini-active-pseudo.css')
-  })
-
-  test('non-nested theme colors with hyphens and/or numbers', async () => {
-    const { css, matched } = await uno.generate([
-      'text-with-hyphen',
-      'bg-with-hyphen',
-      'text-numbered-123',
-      'bg-numbered321',
-    ], { preflights: false })
-
-    expect(css).toMatchFileSnapshot('./assets/output/preset-mini-non-nested-theme-colors.css')
-    expect(matched.size).toBe(4)
   })
 })
