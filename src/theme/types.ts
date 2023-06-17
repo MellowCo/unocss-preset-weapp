@@ -28,7 +28,7 @@ export interface Theme {
   borderRadius?: Record<string, string>
   breakpoints?: Record<string, string>
   verticalBreakpoints?: Record<string, string>
-  colors?: Record<string, string | Record<string, string>>
+  colors?: Colors
   fontFamily?: Record<string, string>
   fontSize?: Record<string, [string, string]>
   lineHeight?: Record<string, string>

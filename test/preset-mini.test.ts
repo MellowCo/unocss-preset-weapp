@@ -30,9 +30,9 @@ const uno = createGenerator({
     spacing: {
       safe: 'max(env(safe-area-inset-left), env(safe-area-inset-right))',
     },
-  },
-  data: {
-    dropdown: 'data-bs-toggle="dropdown"',
+    data: {
+      dropdown: 'data-bs-toggle="dropdown"',
+    },
   },
 })
 

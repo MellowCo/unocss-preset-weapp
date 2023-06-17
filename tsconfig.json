@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "es2018",
     "module": "esnext",
-    "lib": ["esnext", "dom"],
+    "lib": [
+      "esnext"
+    ],
     "moduleResolution": "node",
     "esModuleInterop": true,
     "strict": true,
@@ -12,5 +14,13 @@
     "skipLibCheck": true,
     "jsx": "preserve"
   },
-  "exclude": ["**/dist/**", "**/node_modules/**", "**/client/**", "**/playground/**", "**/examples/**", "**/interactive/**", "**/test/dts/**"]
+  "exclude": [
+    "**/dist/**",
+    "**/node_modules/**",
+    "**/client/**",
+    "**/playground/**",
+    "**/examples/**",
+    "**/interactive/**",
+    "**/test/dts/**"
+  ]
 }
