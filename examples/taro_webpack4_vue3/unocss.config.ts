@@ -11,6 +11,7 @@ export default defineConfig({
       isH5: process.env.TARO_ENV === 'h5',
       platform: 'taro',
     }),
+    // attributify autocomplete
     presetWeappAttributify(),
     presetIcons()
   ],

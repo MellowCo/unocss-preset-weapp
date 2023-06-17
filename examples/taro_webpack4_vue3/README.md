@@ -64,7 +64,9 @@ module.exports = function (merge) {
 ```ts
 // unocss.config.ts
 import presetWeapp from 'unocss-preset-weapp'
-import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
+import { extractorAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
+
+const { presetWeappAttributify, transformerAttributify } = extractorAttributify()
 
 export default {
   presets: [
@@ -76,8 +78,9 @@ export default {
       {
         isH5: process.env.TARO_ENV === 'h5',
         platform: 'taro',
-      }
-    ),
+      }),
+    // attributify autocomplete
+    presetWeappAttributify(),
   ],
   shortcuts: [
     {

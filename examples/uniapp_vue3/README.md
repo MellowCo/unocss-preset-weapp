@@ -40,12 +40,16 @@ export default defineConfig({
 > 添加unocss.config.js文件，搭配 [unocss vscode](https://marketplace.visualstudio.com/items?itemName=antfu.unocss) 插件，智能提示
 ```ts
 import presetWeapp from 'unocss-preset-weapp'
-import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
+import { extractorAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
+
+const { presetWeappAttributify, transformerAttributify } = extractorAttributify()
 
 export default {
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp(),
+    // attributify autocomplete
+    presetWeappAttributify(),
   ],
   shortcuts: [
     {

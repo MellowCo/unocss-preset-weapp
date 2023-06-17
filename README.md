@@ -156,11 +156,11 @@ export default defineConfig({
 
 ![](./assets/Snipaste_2023-06-17_19-53-21.png)
 
-> 使用 `extractorAttributify` 生成 `presetWeappAttributify`，`transformerAttributify`
+> 使用 extractorAttributify 生成 presetWeappAttributify ，transformerAttributify
 > 
-> `presetWeappAttributify` 用于vscode插件 `autocomplete` 提示
+> presetWeappAttributify 用于vscode插件 autocomplete 提示
 > 
-> `transformerAttributify` 用于支持 `attributify mode`
+> transformerAttributify 用于支持 attributify mode
 
 
 ```ts
@@ -199,7 +199,7 @@ export default {
 * unocss.config.js
 ```ts
 import presetWeapp from 'unocss-preset-weapp'
-import { defaultAttributes, defaultIgnoreNonValuedAttributes, transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
+import { extractorAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
 import { defineConfig } from 'unocss'
 
 const transformRules = {
@@ -217,18 +217,22 @@ const transformRules = {
   ',': '-r222-',
 }
 
+const { presetWeappAttributify, transformerAttributify } = extractorAttributify({
+  transformRules
+})
+
 export default defineConfig({
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp({
       transformRules,
     }),
+    // attributify autocomplete
+    presetWeappAttributify()
   ],
   transformers: [
     // options 见https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify
-    transformerAttributify({
-      transformRules,
-    }),
+    transformerAttributify(),
 
     // options 见https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
     transformerClass({
@@ -250,18 +254,29 @@ export default defineConfig({
 > `presetWeapp` 配置 `prefix`, `transformerAttributify` 配置 `classPrefix`
 
 ```ts
+import presetWeapp from 'unocss-preset-weapp'
+import { extractorAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
+import { defineConfig } from 'unocss'
+
+const prefix = 'li-'
+
+const { presetWeappAttributify, transformerAttributify } = extractorAttributify({
+  classPrefix: prefix
+})
+
 export default defineConfig({
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp({
-      prefix: 'li-',
+      prefix
     }),
+
+    // attributify autocomplete
+    presetWeappAttributify()
   ],
   transformers: [
     // options 见https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify
-    transformerAttributify({
-      classPrefix: 'li-'
-    }),
+    transformerAttributify(),
 
     // options 见https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
     transformerClass(),
