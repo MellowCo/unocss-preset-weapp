@@ -149,7 +149,48 @@ export default defineConfig({
   top: 80rpx;
 }
 ```
+### attributify autocomplete
 
+> 使 `transformerAttributify` 获取 vscode插件 `autocomplete`提示
+
+
+![](./assets/Snipaste_2023-06-17_19-53-21.png)
+
+> 使用 `extractorAttributify` 生成 `presetWeappAttributify`，`transformerAttributify`
+> 
+> `presetWeappAttributify` 用于vscode插件 `autocomplete` 提示
+> 
+> `transformerAttributify` 用于支持 `attributify mode`
+
+
+```ts
+import presetWeapp from 'unocss-preset-weapp'
+import { extractorAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
+
+const { presetWeappAttributify, transformerAttributify } = extractorAttributify()
+
+export default {
+  presets: [
+    // https://github.com/MellowCo/unocss-preset-weapp
+    presetWeapp(),
+    // attributify autocomplete
+    presetWeappAttributify(),
+  ],
+  shortcuts: [
+    {
+      'border-base': 'border border-gray-500_10',
+      'center': 'flex justify-center items-center',
+    },
+  ],
+  transformers: [
+    // https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify
+    transformerAttributify(),
+
+    // https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
+    transformerClass(),
+  ],
+}
+```
 
 
 ### 自定义转换规则

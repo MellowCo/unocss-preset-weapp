@@ -1,5 +1,4 @@
 <script>
-// text-white
 export default {
 
 }

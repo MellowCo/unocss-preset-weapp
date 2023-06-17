@@ -9,7 +9,7 @@ export default {
 <template>
   <view class="dark:bg-#000/30">
     <view
-      text="sm green"
+      text="b"
       p="y-2 x-4"
       m="4"
       my-attr="y-1 x-2 sm"
