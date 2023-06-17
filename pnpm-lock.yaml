@@ -31,6 +31,9 @@ devDependencies:
   '@types/node':
     specifier: ^20.3.1
     version: 20.3.1
+  '@unocss/autocomplete':
+    specifier: ^0.53.1
+    version: 0.53.1
   bumpp:
     specifier: ^9.1.1
     version: 9.1.1
@@ -1183,6 +1186,12 @@ packages:
     dependencies:
       '@typescript-eslint/types': 5.59.7
       eslint-visitor-keys: 3.4.1
+    dev: true
+
+  /@unocss/autocomplete@0.53.1:
+    resolution: {integrity: sha512-4Lqo368BkEdhTHmiUphfhk+iue32zKF8DjLYO/lnTdIXXscBWpU1EBpB3qVVXjPa3yDT+lv5EBNjKOt95zw1rw==}
+    dependencies:
+      lru-cache: 9.1.2
     dev: true
 
   /@unocss/core@0.53.1:
@@ -3472,8 +3481,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /lru-cache@9.1.1:
-    resolution: {integrity: sha512-65/Jky17UwSb0BuB9V+MyDpsOtXKmYwzhyl+cOa9XUiI4uV2Ouy/2voFP3+al0BjZbJgMBD8FojMpAf+Z+qn4A==}
+  /lru-cache@9.1.2:
+    resolution: {integrity: sha512-ERJq3FOzJTxBbFjZ7iDs+NiK4VI9Wz+RdrrAB8dio1oV+YvdPzUEE4QNiT2VD51DkIbCYRUUzCRkssXCHqSnKQ==}
     engines: {node: 14 || >=16.14}
     dev: true
 
@@ -4187,7 +4196,7 @@ packages:
     resolution: {integrity: sha512-qSDLy2aGFPm8i4rsbHd4MNyTcrzHFsLQykrtbuGRknZZCBBVXSv2tSCDN2Cg6Rt/GFRw8GoW9y9Ecw5rIPG1sg==}
     engines: {node: '>=16 || 14 >=14.17'}
     dependencies:
-      lru-cache: 9.1.1
+      lru-cache: 9.1.2
       minipass: 6.0.2
     dev: true
 
