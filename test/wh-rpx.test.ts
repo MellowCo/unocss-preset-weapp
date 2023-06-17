@@ -35,16 +35,16 @@ const selectors = [
   'text-1/2',
 ]
 
-describe('whRpx-test', () => {
-  test('whRemToRpx', async () => {
+describe('wh-rpx-test', () => {
+  test('wh-rpx false', async () => {
     const code = selectors.join(' ')
     const { css } = await whRemToRpx.generate(code)
-    await expect(css).toMatchFileSnapshot('./assets/output/wh-rpx-false.css')
+    await expect(css).toMatchFileSnapshot('./assets/output/wh-rpx/false.css')
   })
 
-  test('whRpx', async () => {
+  test('default', async () => {
     const code = selectors.join(' ')
     const { css } = await whRpx.generate(code)
-    await expect(css).toMatchFileSnapshot('./assets/output/wh-rpx.css')
+    await expect(css).toMatchFileSnapshot('./assets/output/wh-rpx/default.css')
   })
 })

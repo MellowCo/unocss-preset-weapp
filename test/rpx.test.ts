@@ -93,42 +93,42 @@ describe('rpx-tranform', () => {
   test('taroH5_750', async () => {
     const code = size.join(' ')
     const { css } = await taroH5_750_W4.generate(code)
-    await expect(css).toMatchFileSnapshot('./assets/output/taro-h5-750-webpack4.css')
+    await expect(css).toMatchFileSnapshot('./assets/output/rpx/taro-h5-750-webpack4.css')
   })
 
   test('taroWe_750_W4', async () => {
     const code = size.join(' ')
     const { css } = await taroWe_750_W4.generate(code)
-    await expect(css).toMatchFileSnapshot('./assets/output/taro-weapp-750-webpack4.css')
+    await expect(css).toMatchFileSnapshot('./assets/output/rpx/taro-weapp-750-webpack4.css')
   })
 
   test('taroH5_375_W4', async () => {
     const code = size.join(' ')
     const { css } = await taroH5_375_W4.generate(code)
-    await expect(css).toMatchFileSnapshot('./assets/output/taro-h5-375-webpack4.css')
+    await expect(css).toMatchFileSnapshot('./assets/output/rpx/taro-h5-375-webpack4.css')
   })
 
   test('taroWe_750_W5', async () => {
     const code = size.join(' ')
     const { css } = await taroWe_750_W5.generate(code)
-    await expect(css).toMatchFileSnapshot('./assets/output/taro-weapp-750-webpack5.css')
+    await expect(css).toMatchFileSnapshot('./assets/output/rpx/taro-weapp-750-webpack5.css')
   })
 
   test('taroH5_375_W5', async () => {
     const code = size.join(' ')
     const { css } = await taroH5_375_W5.generate(code)
-    await expect(css).toMatchFileSnapshot('./assets/output/taro-h5-375-webpack5.css')
+    await expect(css).toMatchFileSnapshot('./assets/output/rpx/taro-h5-375-webpack5.css')
   })
 
   test('taroWe_375', async () => {
     const code = size.join(' ')
     const { css } = await taroWe_375_W4.generate(code)
-    await expect(css).toMatchFileSnapshot('./assets/output/taro-weapp-375-webpack4.css')
+    await expect(css).toMatchFileSnapshot('./assets/output/rpx/taro-weapp-375-webpack4.css')
   })
 
   test('uniapp_750', async () => {
     const code = size.join(' ')
     const { css } = await uniapp_750.generate(code)
-    await expect(css).toMatchFileSnapshot('./assets/output/uniapp-750.css')
+    await expect(css).toMatchFileSnapshot('./assets/output/rpx/uniapp-750.css')
   })
 })

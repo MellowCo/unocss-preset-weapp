@@ -61,7 +61,7 @@ describe('preset-mini', () => {
       preflights: false,
     })
 
-    await expect(css).toMatchFileSnapshot('./assets/output/preset-mini-dark-customizing-selector.css')
+    await expect(css).toMatchFileSnapshot('./assets/output/preset-mini/dark-customizing-selector.css')
   })
 
   test('targets', async () => {
@@ -75,7 +75,7 @@ describe('preset-mini', () => {
         unmatched.push(i)
     }
     expect(unmatched).toEqual([])
-    await expect(css).toMatchFileSnapshot('./assets/output/preset-mini-targets.css')
+    await expect(css).toMatchFileSnapshot('./assets/output/preset-mini/targets.css')
     expect(css).toEqual(css2)
   })
 
@@ -94,7 +94,7 @@ describe('preset-mini', () => {
       'scale-100',
     ].join(' '), { preflights: false })
 
-    await expect(css).toMatchFileSnapshot('./assets/output/preset-mini-custom-var-prefix.css')
+    await expect(css).toMatchFileSnapshot('./assets/output/preset-mini/custom-var-prefix.css')
   })
 
   test('empty prefix', async () => {
@@ -112,7 +112,7 @@ describe('preset-mini', () => {
       'scale-100',
     ].join(' '), { preflights: false })
 
-    await expect(css).toMatchFileSnapshot('./assets/output/preset-mini-empty-prefix.css')
+    await expect(css).toMatchFileSnapshot('./assets/output/preset-mini/empty-prefix.css')
   })
 
   test('nested theme colors', async () => {
@@ -122,7 +122,7 @@ describe('preset-mini', () => {
       'bg-a-b-c',
     ], { preflights: false })
 
-    expect(css).toMatchFileSnapshot('./assets/output/preset-mini-nested-theme-colors.css')
+    expect(css).toMatchFileSnapshot('./assets/output/preset-mini/nested-theme-colors.css')
     expect(matched.size).toBe(3)
   })
 
@@ -134,7 +134,7 @@ describe('preset-mini', () => {
       'bg-numbered321',
     ], { preflights: false })
 
-    expect(css).toMatchFileSnapshot('./assets/output/preset-mini-non-nested-theme-colors.css')
+    expect(css).toMatchFileSnapshot('./assets/output/preset-mini/non-nested-theme-colors.css')
     expect(matched.size).toBe(4)
   })
 
@@ -169,7 +169,7 @@ describe('preset-mini', () => {
 
     // @ts-expect-error types
     expect(uno.config.theme.fontSize.lg).toEqual(['3rem', '1.5em'])
-    await expect(css).toMatchFileSnapshot('./assets/output/preset-mini-font-size-theme.css')
+    await expect(css).toMatchFileSnapshot('./assets/output/preset-mini/font-size-theme.css')
   })
 
   test('dark class', async () => {
@@ -186,7 +186,7 @@ describe('preset-mini', () => {
       preflights: false,
     })
 
-    await expect(css).toMatchFileSnapshot('./assets/output/preset-mini-dark-class.css')
+    await expect(css).toMatchFileSnapshot('./assets/output/preset-mini/dark-class.css')
   })
 
   test('the :active pseudo is sorted and separated after other pseudo', async () => {
@@ -204,7 +204,7 @@ describe('preset-mini', () => {
       preflights: false,
     })
 
-    await expect(css).toMatchFileSnapshot('./assets/output/preset-mini-active-pseudo.css')
+    await expect(css).toMatchFileSnapshot('./assets/output/preset-mini/active-pseudo.css')
   })
 
   test('css variable with `{` `}` will not generate css ', async () => {

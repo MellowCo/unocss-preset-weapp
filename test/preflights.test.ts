@@ -3,6 +3,16 @@ import { describe, expect, test } from 'vitest'
 import presetWeapp from '../src'
 
 describe('preflights', () => {
+  test('original preflight', async () => {
+    const uno = createGenerator({
+      presets: [
+        presetWeapp(),
+      ],
+    })
+    const { css } = await uno.generate('')
+    await expect(css).toMatchFileSnapshot('./assets/output/preflight/original.css')
+  })
+
   test('preflight root can be customized with string', async () => {
     const uno = createGenerator({
       presets: [
@@ -13,7 +23,7 @@ describe('preflights', () => {
       },
     })
     const { css } = await uno.generate('')
-    expect(css).toMatchSnapshot()
+    await expect(css).toMatchFileSnapshot('./assets/output/preflight/custom.css')
   })
 
   test('preflight root can be customized with array', async () => {
@@ -26,7 +36,7 @@ describe('preflights', () => {
       },
     })
     const { css } = await uno.generate('')
-    expect(css).toMatchSnapshot()
+    await expect(css).toMatchFileSnapshot('./assets/output/preflight/custom-array.css')
   })
 
   test('preflight root can be disabled using empty array', async () => {

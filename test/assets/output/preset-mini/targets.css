@@ -464,6 +464,7 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .text-\[length\:calc\(1em-1px\)\]{font-size:calc(1em - 1px);}
 .text-\[length\:var\(--size\)\]{font-size:var(--size);}
 .text-\[length\:var\(--size\)\]\:\$leading{font-size:var(--size);line-height:var(--leading);}
+.text-1\/2{font-size:8rpx;line-height:16rpx;}
 .text-4xl,
 .group:has(:placeholder-shown) .group-has-placeholder-shown\:text-4xl,
 .group:where(:placeholder-shown) .group-where-placeholder-shown\:text-4xl{font-size:72rpx;line-height:80rpx;}
