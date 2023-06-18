@@ -39,7 +39,9 @@ module.exports = {
 ```js
 import presetWeapp from 'unocss-preset-weapp'
 import { defineConfig } from 'unocss'
-import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
+import { extractorAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
+
+const { transformerAttributify, presetWeappAttributify } = extractorAttributify()
 
 export default defineConfig({
   presets: [
@@ -50,6 +52,9 @@ export default defineConfig({
       platform: 'uniapp',
       isH5: process.env.UNI_PLATFORM === 'h5',
     }),
+
+    // attributify autocomplete
+    presetWeappAttributify(),
   ],
   shortcuts: [
     {
@@ -66,7 +71,6 @@ export default defineConfig({
     transformerClass(),
   ],
 })
-
 ```
 
 * main.js
@@ -140,5 +144,4 @@ export default {
     }),
   ]
 }
-
 ```

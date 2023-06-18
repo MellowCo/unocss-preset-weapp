@@ -1,8 +1,9 @@
 import presetWeapp from 'unocss-preset-weapp'
-import { defineConfig } from 'unocss'
-import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
+import { extractorAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
 
-export default defineConfig({
+const { transformerAttributify, presetWeappAttributify } = extractorAttributify()
+
+export default {
   presets: [
     // https://github.com/MellowCo/unocss-preset-weapp
     presetWeapp({
@@ -10,6 +11,9 @@ export default defineConfig({
       platform: 'uniapp',
       isH5: process.env.UNI_PLATFORM === 'h5',
     }),
+
+    // attributify autocomplete
+    presetWeappAttributify(),
   ],
   shortcuts: [
     {
@@ -24,4 +28,4 @@ export default defineConfig({
     // https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
     transformerClass(),
   ],
-})
+}
