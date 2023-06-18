@@ -149,7 +149,7 @@ export default defineConfig({
   top: 80rpx;
 }
 ```
-### attributify autocomplete
+### attributify autocomplete (v0.53.1)
 
 > 使 `transformerAttributify` 获取 vscode插件 `autocomplete`提示
 

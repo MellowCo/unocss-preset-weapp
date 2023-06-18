@@ -1,9 +1,0 @@
-{
-  "miniprogramRoot": "./",
-  "projectname": "taro_vue2",
-  "appid": "testAppId",
-  "setting": {
-    "es6": false,
-    "minified": false
-  }
-}
