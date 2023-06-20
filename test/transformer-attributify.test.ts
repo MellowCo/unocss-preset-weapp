@@ -27,6 +27,10 @@ xx
 <view first:bg-red last:bg-green bg-blue mb-1>
   1
 </view>
+
+<view bg="cover active:red-400" text="base hover:blue-600/40">
+  1
+</view>
 </template>
 `
 

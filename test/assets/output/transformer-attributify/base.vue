@@ -20,4 +20,8 @@ xx
 <view first:bg-red last:bg-green bg-blue mb-1 class="first_cl_bg-red last_cl_bg-green bg-blue mb-1">
   1
 </view>
+
+<view bg="cover active:red-400" text="base hover:blue-600/40" class="bg-cover active_cl_bg-red-400 text-base hover_cl_text-blue-600_sl_40">
+  1
+</view>
 </template>

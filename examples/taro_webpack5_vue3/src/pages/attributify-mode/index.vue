@@ -57,6 +57,11 @@
     <view text-[32px] bg-[#ccc] mt-2>
       valueless
     </view>
+
+
+    <view bg="dark:#43efef/20 hover:blue-400:50 active:red">
+      p
+    </view>
   </view>
 </template>
 

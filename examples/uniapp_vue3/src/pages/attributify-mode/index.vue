@@ -62,6 +62,10 @@ export default {
     <view bg-red li-bg-blue text="#fff" li-text="green">
       prefixedOnly
     </view>
+
+    <view bg="dark:#43efef/20 hover:blue-400:50 active:red">
+      p
+    </view>
   </view>
 </template>
 
