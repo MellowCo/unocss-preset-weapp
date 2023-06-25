@@ -1293,6 +1293,12 @@ export const presetMiniTargets: string[] = [
   'space-block-none',
   'space-inline-reverse',
   'space-inline-$space',
+
+  // line clamp
+  'line-clamp-7',
+  'line-clamp-100',
+  'line-clamp-none',
+  'line-clamp-unset',
 ]
 
 export const presetMiniNonTargets = [

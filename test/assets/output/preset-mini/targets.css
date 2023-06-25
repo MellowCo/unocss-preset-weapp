@@ -1133,6 +1133,10 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .space-inline-\$space{--licl-space-inline-reverse:0;margin-inline-start:calc(var(--space) * calc(1 - var(--licl-space-inline-reverse)));margin-inline-end:calc(var(--space) * calc(1 - var(--licl-space-inline-reverse)));}
 .space-inline-2{--licl-space-inline-reverse:0;margin-inline-start:calc(16rpx * calc(1 - var(--licl-space-inline-reverse)));margin-inline-end:calc(16rpx * calc(1 - var(--licl-space-inline-reverse)));}
 .space-inline-reverse{--licl-space-inline-reverse:1;}
+.line-clamp-100{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:100;line-clamp:100;}
+.line-clamp-7{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:7;line-clamp:7;}
+.line-clamp-none{overflow:visible;display:block;-webkit-box-orient:horizontal;-webkit-line-clamp:none;line-clamp:none;}
+.line-clamp-unset{overflow:visible;display:block;-webkit-box-orient:horizontal;-webkit-line-clamp:unset;line-clamp:unset;}
 @container (min-width: 10.5rem){
 .\@\[10\.5rem\]-text-red{--licl-text-opacity:1;color:rgba(248,113,113,var(--licl-text-opacity));}
 }

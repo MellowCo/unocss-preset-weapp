@@ -46,7 +46,7 @@ exports[`autocomplete > should provide autocomplete 1`] = `
   "grow-": "grow-0 grow-1 grow-2 grow-3 grow-4 grow-5 grow-6 grow-8 grow-10 grow-12",
   "keyframes-": "keyframes-back-in-down keyframes-back-in-left keyframes-back-in-right keyframes-back-in-up keyframes-back-out-down keyframes-back-out-left keyframes-back-out-right keyframes-back-out-up keyframes-bounce keyframes-bounce-alt",
   "leading-": "leading-loose leading-none leading-normal leading-relaxed leading-snug leading-tight",
-  "line-clamp-": "",
+  "line-clamp-": "line-clamp-0 line-clamp-1 line-clamp-2 line-clamp-3 line-clamp-4 line-clamp-5 line-clamp-6 line-clamp-8 line-clamp-10 line-clamp-12",
   "m-": "m-0 m-1 m-2 m-3 m-4 m-5 m-6 m-8 m-10 m-12",
   "max-w-": "max-w-2xl max-w-3xl max-w-4xl max-w-5xl max-w-6xl max-w-7xl max-w-8xl max-w-9xl max-w-auto max-w-full",
   "mx-": "mx-0 mx-1 mx-2 mx-3 mx-4 mx-5 mx-6 mx-8 mx-10 mx-12",
