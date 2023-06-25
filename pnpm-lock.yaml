@@ -9,11 +9,11 @@ dependencies:
     specifier: ^5.0.2
     version: 5.0.2(rollup@3.21.0)
   '@unocss/core':
-    specifier: ^0.53.1
-    version: 0.53.1
+    specifier: ^0.53.3
+    version: 0.53.3
   '@unocss/extractor-arbitrary-variants':
-    specifier: ^0.53.1
-    version: 0.53.1
+    specifier: ^0.53.3
+    version: 0.53.3
   unplugin-attributify-to-class:
     specifier: ^0.2.3
     version: 0.2.3(rollup@3.21.0)
@@ -32,8 +32,8 @@ devDependencies:
     specifier: ^20.3.1
     version: 20.3.1
   '@unocss/autocomplete':
-    specifier: ^0.53.1
-    version: 0.53.1
+    specifier: ^0.53.3
+    version: 0.53.3
   bumpp:
     specifier: ^9.1.1
     version: 9.1.1
@@ -1182,20 +1182,20 @@ packages:
       eslint-visitor-keys: 3.4.1
     dev: true
 
-  /@unocss/autocomplete@0.53.1:
-    resolution: {integrity: sha512-4Lqo368BkEdhTHmiUphfhk+iue32zKF8DjLYO/lnTdIXXscBWpU1EBpB3qVVXjPa3yDT+lv5EBNjKOt95zw1rw==}
+  /@unocss/autocomplete@0.53.3:
+    resolution: {integrity: sha512-4xRlbTKUKUsr6nhNVO98Kij+eRxKSOH73b+GxhuhYaYvI69K8K5u/yab03F4DNG72lwg3qMoTSaXVu0sBanPSg==}
     dependencies:
-      lru-cache: 9.1.2
+      lru-cache: 10.0.0
     dev: true
 
-  /@unocss/core@0.53.1:
-    resolution: {integrity: sha512-6CUaOMeQyoPIgMuSboX9yGywiCumhoYTPk6uMFhgD3vZmIRCZMwN9RFDLB+s2+NOlnBU6aQsJLONcUapZb/49g==}
+  /@unocss/core@0.53.3:
+    resolution: {integrity: sha512-28xxgZZBaGeDUULoNrpmSP4ZtNn41b2NlBnOe2ta+TnA4F0R5v8bW0w8CxHoYGiHS8mbCq4Aw1ReNlqVhfar8Q==}
     dev: false
 
-  /@unocss/extractor-arbitrary-variants@0.53.1:
-    resolution: {integrity: sha512-8/+R8ctMwIpUQk5NMDgxCJInWqn7LjzmvgnT2x+LFkCA3F+etU9FNDMV5eg3feNdsHSWsJlKnPlS+cjGseSLiA==}
+  /@unocss/extractor-arbitrary-variants@0.53.3:
+    resolution: {integrity: sha512-EyCwebLU4WDDNlrN3BbN9mjCszyRAwn0kP2YVOsCcj6IJD0Y3AjzWPoToTPP6jSN4nRk0iZd/8TrN2sqUHrn4w==}
     dependencies:
-      '@unocss/core': 0.53.1
+      '@unocss/core': 0.53.3
     dev: false
 
   /@vitest/expect@0.32.2:
@@ -3460,6 +3460,11 @@ packages:
     dependencies:
       fault: 1.0.4
       highlight.js: 10.4.1
+    dev: true
+
+  /lru-cache@10.0.0:
+    resolution: {integrity: sha512-svTf/fzsKHffP42sujkO/Rjs37BCIsQVRCeNYIm9WN8rgT7ffoUnRtZCqU+6BqcSBdv8gwJeTz8knJpgACeQMw==}
+    engines: {node: 14 || >=16.14}
     dev: true
 
   /lru-cache@5.1.1:
