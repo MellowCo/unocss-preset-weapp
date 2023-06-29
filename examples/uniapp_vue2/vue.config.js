@@ -5,7 +5,7 @@ const UnoCSS = require('unocss-webpack-uniapp2').default
 module.exports = {
   configureWebpack: {
     plugins: [
-      // https://github.com/unocss/unocss
+      // https://github.com/MellowCo/unocss-webpack-uniapp2
       UnoCSS(),
     ],
   },
