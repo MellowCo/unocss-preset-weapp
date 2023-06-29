@@ -4,5 +4,7 @@
     <view class="i-mdi-alarm text-orange-400 text-xl" />
     <view class="i-logos-vue text-3xl" />
     <view class="i-carbon-sun " />
+
+    <view />
   </view>
 </template>

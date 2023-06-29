@@ -64,7 +64,7 @@
     "@types/webpack-env": "^1.13.6",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
-    "@unocss/webpack": "0.46.5",
+    "@unocss/webpack": "^0.53.4",
     "@vue/babel-plugin-jsx": "^1.0.6",
     "@vue/compiler-sfc": "^3.0.0",
     "babel-plugin-import": "^1.13.3",
