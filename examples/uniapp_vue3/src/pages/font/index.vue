@@ -25,6 +25,9 @@ import TextShadow from './components/TextShadow.vue'
     <TextIndent />
     <TextOpacity />
     <TextShadow />
+
+    <view text-lg fw300 m1 line-clamp-2>
+      The instant on-demand Atomic CSS engine.The instant on-demand Atomic CSS engine.The instant on-demand Atomic CSS engine.The instant on-demand Atomic CSS engine.The instant on-demand Atomic CSS engine.The instant on-demand Atomic CSS engine.The instant on-demand Atomic CSS engine.
+    </view>
   </view>
 </template>
-

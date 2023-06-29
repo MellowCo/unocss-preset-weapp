@@ -26,6 +26,7 @@ import { backgroundStyles } from './background'
 import { containerParent } from './container'
 import { divides } from './divide'
 import { lineClamps } from './line-clamp'
+import { filters } from './filters'
 
 export const rules: Rule[] = [
   animations,
@@ -106,4 +107,5 @@ export const rules: Rule[] = [
   writingOrientations,
   spaces,
   lineClamps,
+  filters,
 ].flat(1)
