@@ -7,6 +7,8 @@ import { presetWeapp } from '../src'
 
 const originalCode = `
 <template>
+<input type="text"  placeholder="What's your name?" />
+
 <view
   text="sm green"
   p="y-2 x-4"
@@ -31,6 +33,8 @@ xx
 <view bg="cover active:red-400" text="base hover:blue-600/40">
   1
 </view>
+
+
 </template>
 `
 

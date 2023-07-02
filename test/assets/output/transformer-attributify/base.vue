@@ -1,5 +1,7 @@
 
 <template>
+<input type="text"  placeholder="What's your name?" />
+
 <view
   text="sm green"
   p="y-2 x-4"
@@ -24,4 +26,6 @@ xx
 <view bg="cover active:red-400" text="base hover:blue-600/40" class="bg-cover active_cl_bg-red-400 text-base hover_cl_text-blue-600_sl_40">
   1
 </view>
+
+
 </template>
