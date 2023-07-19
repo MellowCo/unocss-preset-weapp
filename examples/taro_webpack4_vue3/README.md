@@ -3,8 +3,6 @@
 ## 配置与DEMO
 [taro_webpack5_vue3](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_webpack5_vue3) 
 
-[taro_webpack4_vue2](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_vue2) 
-
 [taro_react](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_webpack5_react) 
 
 ## 说明
