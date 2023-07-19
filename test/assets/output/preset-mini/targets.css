@@ -296,6 +296,8 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .bg-opacity-\[--opacity-variable\],
 .bg-opacity-\$opacity-variable{--licl-bg-opacity:var(--opacity-variable);}
 .bg-opacity-45{--licl-bg-opacity:0.45;}
+.color-scheme-dark{color-scheme:dark;}
+.color-scheme-light{color-scheme:light;}
 .all-\[svg\]\:fill-red svg{--licl-fill-opacity:1;fill:rgba(248,113,113,var(--licl-fill-opacity));}
 .fill-\[\#123\]{--licl-fill-opacity:1;fill:rgba(17,34,51,var(--licl-fill-opacity));}
 .fill-current{fill:currentColor;}

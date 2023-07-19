@@ -294,6 +294,8 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .bg-opacity-_do11_opacity-variable,
 .bg-opacity-_lfl11_--opacity-variable_lfr11_{--un-bg-opacity:var(--opacity-variable);}
 .bg-opacity-45{--un-bg-opacity:0.45;}
+.color-scheme-dark{color-scheme:dark;}
+.color-scheme-light{color-scheme:light;}
 .all-_lfl11_svg_lfr11__cl11_fill-red svg{--un-fill-opacity:1;fill:rgba(248,113,113,var(--un-fill-opacity));}
 .fill-_lfl11__wn11_123_lfr11_{--un-fill-opacity:1;fill:rgba(17,34,51,var(--un-fill-opacity));}
 .fill-current{fill:currentColor;}

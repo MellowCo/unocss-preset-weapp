@@ -41,7 +41,7 @@ export interface PresetWeappOptions extends PresetOptions {
   /**
    * @default false
    */
-  attributifyPseudo?: Boolean
+  attributifyPseudo?: boolean
 
   /**
    * Prefix for CSS variables.

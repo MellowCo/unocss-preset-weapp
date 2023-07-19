@@ -1008,6 +1008,10 @@ export const presetMiniTargets: string[] = [
   'text-shadow-color-op-30',
   'text-shadow-color-op-$opacity-variable',
 
+  // misc
+  'color-scheme-light',
+  'color-scheme-dark',
+
   // variables
   'bg-[--test-variable]',
   'bg-$test-variable',
