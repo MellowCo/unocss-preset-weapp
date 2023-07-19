@@ -12,7 +12,6 @@ function handleGap([, d = '', s]: string[], { theme }: RuleContext<Theme>) {
   const v = theme.spacing?.[s] ?? h.bracket.cssvar.global.remToRpx(s)
   if (v != null) {
     return {
-      [`grid-${directions[d]}gap`]: v,
       [`${directions[d]}gap`]: v,
     }
   }
