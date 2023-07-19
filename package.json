@@ -90,25 +90,25 @@
   },
   "dependencies": {
     "@rollup/pluginutils": "^5.0.2",
-    "@unocss/core": "^0.53.4",
-    "@unocss/extractor-arbitrary-variants": "^0.53.4",
+    "@unocss/core": "^0.53.5",
+    "@unocss/extractor-arbitrary-variants": "^0.53.5",
     "unplugin-attributify-to-class": "^0.2.4",
-    "unplugin-transform-class": "^0.4.0"
+    "unplugin-transform-class": "^0.4.1"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.39.6",
-    "@antfu/ni": "^0.21.4",
-    "@types/node": "^20.3.3",
-    "@unocss/autocomplete": "^0.53.4",
+    "@antfu/eslint-config": "^0.39.8",
+    "@antfu/ni": "^0.21.5",
+    "@types/node": "^20.4.2",
+    "@unocss/autocomplete": "^0.53.5",
     "bumpp": "^9.1.1",
-    "eslint": "^8.44.0",
+    "eslint": "^8.45.0",
     "eslint-formatter-mo": "^1.2.0",
-    "magic-string": "^0.30.0",
+    "magic-string": "^0.30.1",
     "msw": "^1.2.2",
     "taze": "^0.11.2",
     "typescript": "^5.1.6",
     "unbuild": "^1.2.1",
-    "vite": "^4.3.9",
-    "vitest": "^0.32.2"
+    "vite": "^4.4.4",
+    "vitest": "^0.33.0"
   }
 }
