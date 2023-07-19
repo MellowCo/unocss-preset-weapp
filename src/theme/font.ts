@@ -99,4 +99,17 @@ export const letterSpacing: Theme['letterSpacing'] = {
   widest: '0.1em',
 }
 
+export const fontWeight = {
+  thin: '100',
+  extralight: '200',
+  light: '300',
+  normal: '400',
+  medium: '500',
+  semibold: '600',
+  bold: '700',
+  extrabold: '800',
+  black: '900',
+  // int[0, 900] -> int
+} satisfies Theme['fontWeight']
+
 export const wordSpacing: Theme['wordSpacing'] = letterSpacing
