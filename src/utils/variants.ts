@@ -1,6 +1,6 @@
 import type { VariantHandlerContext, VariantObject } from '@unocss/core'
 import { escapeRegExp } from '@unocss/core'
-import { defaultRules, restoreSelector } from 'unplugin-transform-class/utils'
+import { cacheRestoreSelector, defaultRules } from 'unplugin-transform-class/utils'
 import { getBracket } from '../utils'
 
 export function variantMatcher(name: string, handler: (input: VariantHandlerContext) => Record<string, any>, transformRules: Record<string, string> = defaultRules): VariantObject {
@@ -12,7 +12,7 @@ export function variantMatcher(name: string, handler: (input: VariantHandlerCont
       if (!re)
         re = new RegExp(`^${escapeRegExp(name)}(?:${ctx.generator.config.separators.join('|')})`)
 
-      input = restoreSelector(input, transformRules)
+      input = cacheRestoreSelector(input, transformRules)
       const match = input.match(re)
       if (match) {
         return {
@@ -36,7 +36,7 @@ export function variantParentMatcher(name: string, parent: string, transformRule
       if (!re)
         re = new RegExp(`^${escapeRegExp(name)}(?:${ctx.generator.config.separators.join('|')})`)
 
-      input = restoreSelector(input, transformRules)
+      input = cacheRestoreSelector(input, transformRules)
       const match = input.match(re)
       if (match) {
         return {

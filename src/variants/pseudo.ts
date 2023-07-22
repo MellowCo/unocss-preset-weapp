@@ -1,7 +1,7 @@
 import type { VariantObject } from '@unocss/core'
 import { escapeRegExp, escapeSelector, warnOnce } from '@unocss/core'
 
-import { restoreSelector } from 'unplugin-transform-class/utils'
+import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 import type { PresetWeappOptions } from '..'
 import { getBracket, h, variantGetBracket } from '../utils'
 import type { Theme } from '../theme'
@@ -212,7 +212,7 @@ export function variantPseudoClassesAndElements(): VariantObject<Theme> {
         PseudoClassesAndElementsColonRE = new RegExp(`^(${PseudoClassesAndElementsColonStr})(?:${ctx.generator.config.separators.filter(x => x !== '-').join('|')})`)
       }
 
-      input = restoreSelector(input, ctx.theme.transformRules)
+      input = cacheRestoreSelector(input, ctx.theme.transformRules)
       const match = input.match(PseudoClassesAndElementsRE) || input.match(PseudoClassesAndElementsColonRE)
       if (match) {
         const pseudo = PseudoClasses[match[1]] || PseudoClassesColon[match[1]] || `:${match[1]}`

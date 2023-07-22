@@ -1,5 +1,5 @@
 import type { Preset, PresetOptions } from '@unocss/core'
-import { defaultRules, transformEscapESelector } from 'unplugin-transform-class/utils'
+import { cacheTransformEscapESelector, defaultRules } from 'unplugin-transform-class/utils'
 import { extractorArbitraryVariants } from '@unocss/extractor-arbitrary-variants'
 import preflights from './preflights'
 import { rules } from './rules'
@@ -173,7 +173,7 @@ export function presetWeapp(options: PresetWeappOptions = {}): Preset<Theme> {
     postprocess(css) {
       // 是否转义class
       if (options.transform)
-        css.selector = transformEscapESelector(css.selector, options.transformRules)
+        css.selector = cacheTransformEscapESelector(css.selector, options.transformRules)
 
       // 设置变量前缀
       if (options.variablePrefix !== 'un-')

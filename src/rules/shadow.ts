@@ -1,5 +1,5 @@
 import type { Rule } from '@unocss/core'
-import { restoreSelector } from 'unplugin-transform-class/utils'
+import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 import type { Theme } from '../theme'
 import { colorResolver, colorableShadows, handler as h, hasParseableColor } from '../utils'
 import { varEmpty } from './static'
@@ -15,7 +15,7 @@ export const boxShadows: Rule<Theme>[] = [
   [/^shadow(?:-(.+))?$/, (match, context) => {
     let [, d] = match
     const { theme } = context
-    d = restoreSelector(d, theme.transformRules)
+    d = cacheRestoreSelector(d, theme.transformRules)
 
     const v = theme.boxShadow?.[d || 'DEFAULT']
     const c = d ? h.bracket.cssvar(d) : undefined

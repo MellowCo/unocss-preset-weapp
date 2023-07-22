@@ -1,5 +1,5 @@
 import type { Rule } from '@unocss/core'
-import { restoreSelector } from 'unplugin-transform-class/utils'
+import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 import { globalKeywords, handler as h, makeGlobalStaticRules } from '../utils'
 import type { Theme } from '../'
 
@@ -15,7 +15,7 @@ export const animations: Rule<Theme>[] = [
   }, { autocomplete: ['animate-keyframes-$animation.keyframes', 'keyframes-$animation.keyframes'] }],
 
   [/^animate-(.+)$/, ([, name], { theme }) => {
-    name = restoreSelector(name, theme.transformRules)
+    name = cacheRestoreSelector(name, theme.transformRules)
     const kf = theme.animation?.keyframes?.[name]
 
     if (kf) {

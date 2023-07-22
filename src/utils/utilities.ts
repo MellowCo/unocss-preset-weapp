@@ -1,6 +1,6 @@
 import type { CSSEntries, CSSObject, DynamicMatcher, ParsedColorValue, RuleContext, StaticRule, VariantContext } from '@unocss/core'
 import { isString, toArray } from '@unocss/core'
-import { restoreSelector } from 'unplugin-transform-class/utils'
+import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 import type { Theme } from '../theme'
 import { colorOpacityToString, colorToString, parseCssColor } from './colors'
 import { handler as h } from './handlers'
@@ -15,7 +15,7 @@ export const CONTROL_MINI_NO_NEGATIVE = '$$mini-no-negative'
  */
 export function directionSize(propertyPrefix: string): DynamicMatcher {
   return ([_, direction, size]: string[], { theme }: RuleContext<Theme>): CSSEntries | undefined => {
-    size = restoreSelector(size, theme?.transformRules)
+    size = cacheRestoreSelector(size, theme?.transformRules)
     const v = theme.spacing?.[size || 'DEFAULT'] ?? h.bracket.cssvar.global.auto.fraction.remToRpx(size)
     if (v != null)
       return directionMap[direction].map(i => [`${propertyPrefix}${i}`, v])
@@ -51,7 +51,7 @@ function getThemeColor(theme: Theme, colors: string[]) {
  * Split utility shorthand delimited by / or :
  */
 export function splitShorthand(body: string, type: string, theme: Theme) {
-  const split = restoreSelector(body, theme.transformRules).split(/(?:\/|\_|:)/) // 百分比 / 改为 _
+  const split = cacheRestoreSelector(body, theme.transformRules).split(/(?:\/|\_|:)/) // 百分比 / 改为 _
 
   if (split[0] === `[${type}`) {
     return [

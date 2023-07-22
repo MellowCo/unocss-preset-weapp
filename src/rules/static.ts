@@ -1,5 +1,5 @@
 import type { Rule } from '@unocss/core'
-import { restoreSelector } from 'unplugin-transform-class/utils'
+import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 import type { Theme } from '../theme'
 import { globalKeywords, handler as h, makeGlobalStaticRules, positionMap } from '../utils'
 
@@ -77,7 +77,7 @@ export const whitespaces: Rule[] = [
 
 export const contentVisibility: Rule<Theme>[] = [
   [/^intrinsic-size-(.+)$/, ([, d], { theme }) => {
-    d = restoreSelector(d, theme?.transformRules)
+    d = cacheRestoreSelector(d, theme?.transformRules)
 
     return { 'contain-intrinsic-size': h.bracket.cssvar.global.fraction.rem(d) }
   },
@@ -220,7 +220,7 @@ export const objectPositions: Rule<Theme>[] = [
 
   // object position
   [/^object-(.+)$/, ([, d], { theme }) => {
-    d = restoreSelector(d, theme?.transformRules)
+    d = cacheRestoreSelector(d, theme?.transformRules)
 
     if (positionMap[d])
       return { 'object-position': positionMap[d] }

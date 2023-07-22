@@ -1,5 +1,5 @@
 import type { Rule } from '@unocss/core'
-import { restoreSelector } from 'unplugin-transform-class/utils'
+import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 import type { Theme } from '../theme'
 import { colorResolver, handler as h } from '../utils'
 
@@ -11,7 +11,7 @@ export const svgUtilities: Rule<Theme>[] = [
 
   // stroke size
   [/^stroke-(?:width-|size-)?(.+)$/, ([, s], { theme }) => {
-    s = restoreSelector(s, theme?.transformRules)
+    s = cacheRestoreSelector(s, theme?.transformRules)
 
     return { 'stroke-width': theme.lineWidth?.[s] ?? h.bracket.cssvar.fraction.px.number(s) }
   },

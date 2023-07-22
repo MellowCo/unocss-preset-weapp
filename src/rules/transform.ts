@@ -1,5 +1,5 @@
 import type { CSSValues, Rule, RuleContext } from '@unocss/core'
-import { restoreSelector } from 'unplugin-transform-class/utils'
+import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 import type { Theme } from '../theme'
 import { handler as h, makeGlobalStaticRules, positionMap, xyzMap } from '../utils'
 
@@ -102,7 +102,7 @@ export const transforms: Rule[] = [
 ]
 
 function handleTranslate([, d, b]: string[], { theme }: RuleContext<Theme>): CSSValues | undefined {
-  b = restoreSelector(b, theme?.transformRules)
+  b = cacheRestoreSelector(b, theme?.transformRules)
   const v = theme.spacing?.[b] ?? h.bracket.cssvar.fraction.remToRpx(b)
   if (v != null) {
     return [
@@ -113,7 +113,7 @@ function handleTranslate([, d, b]: string[], { theme }: RuleContext<Theme>): CSS
 }
 
 function handleScale([, d, b]: string[], { theme }: { theme: Theme }): CSSValues | undefined {
-  b = restoreSelector(b, theme?.transformRules)
+  b = cacheRestoreSelector(b, theme?.transformRules)
 
   const v = h.bracket.cssvar.fraction.percent(b)
   if (v != null) {

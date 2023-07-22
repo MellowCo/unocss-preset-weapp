@@ -1,5 +1,5 @@
 import type { CSSEntries, Rule, RuleContext, StaticRule } from '@unocss/core'
-import { restoreSelector } from 'unplugin-transform-class/utils'
+import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 import type { Theme } from '../theme'
 import { globalKeywords, handler as h, insetMap, makeGlobalStaticRules } from '../utils'
 
@@ -109,7 +109,7 @@ export const flexGridJustifiesAlignments = [...justifies, ...alignments]
   ])
 
 function handleInsetValue(v: string, { theme }: RuleContext<Theme>): string | number | undefined {
-  v = restoreSelector(v, theme?.transformRules)
+  v = cacheRestoreSelector(v, theme?.transformRules)
   return theme.spacing?.[v] ?? (theme?.whRpx ? h.bracket.cssvar.global.auto.fraction.rpx(v) : h.bracket.cssvar.global.auto.fraction.remToRpx(v))
 }
 

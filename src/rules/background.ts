@@ -1,5 +1,5 @@
 import type { CSSColorValue, Rule, RuleContext } from '@unocss/core'
-import { restoreSelector } from 'unplugin-transform-class/utils'
+import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 import { colorOpacityToString, colorToString, globalKeywords, handler as h, makeGlobalStaticRules, parseColor, positionMap } from '../utils'
 import type { Theme } from '../'
 
@@ -72,7 +72,7 @@ const bgLengthRE = /^\[length:.+\]$/
 const bgPositionRE = /^\[position:.+\]$/
 export const backgroundStyles: Rule<Theme>[] = [
   [/^bg-(.+)$/, ([, d], { theme }) => {
-    d = restoreSelector(d, theme?.transformRules)
+    d = cacheRestoreSelector(d, theme?.transformRules)
     if (bgUrlRE.test(d))
       return { '--un-url': h.bracket(d), 'background-image': 'var(--un-url)' }
     if (bgLengthRE.test(d) && h.bracketOfLength(d) != null)

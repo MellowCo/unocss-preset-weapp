@@ -1,6 +1,6 @@
 import type { Rule } from '@unocss/core'
 import { toArray } from '@unocss/core'
-import { restoreSelector } from 'unplugin-transform-class/utils'
+import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 import type { Theme } from '../theme'
 import { colorResolver, colorableShadows, handler as h, splitShorthand } from '../utils'
 
@@ -63,7 +63,7 @@ export const fonts: Rule<Theme>[] = [
   [
     /^(?:font-)?(?:leading|lh|line-height)-(.+)$/,
     ([, s], { theme }) => {
-      s = restoreSelector(s, theme.transformRules)
+      s = cacheRestoreSelector(s, theme.transformRules)
       return ({ 'line-height': handleLineHeight(s, theme) })
     },
     { autocomplete: '(leading|lh|line-height)-$lineHeight' },
@@ -113,7 +113,7 @@ export const tabSizes: Rule<Theme>[] = [
 
 export const textIndents: Rule<Theme>[] = [
   [/^indent(?:-(.+))?$/, ([, s], { theme }) => {
-    s = restoreSelector(s, theme?.transformRules)
+    s = cacheRestoreSelector(s, theme?.transformRules)
 
     return { 'text-indent': theme.textIndent?.[s || 'DEFAULT'] || h.bracket.cssvar.global.fraction.remToRpx(s) }
   },

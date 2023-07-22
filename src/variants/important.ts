@@ -1,5 +1,5 @@
 import type { VariantObject } from '@unocss/core'
-import { restoreSelector } from 'unplugin-transform-class/utils'
+import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 import type { Theme } from '../theme'
 
 export function variantImportant(): VariantObject<Theme> {
@@ -12,7 +12,7 @@ export function variantImportant(): VariantObject<Theme> {
         re = new RegExp(`^(important(?:${ctx.generator.config.separators.join('|')})|!)`)
 
       let base: string | undefined
-      matcher = restoreSelector(matcher, ctx.theme?.transformRules)
+      matcher = cacheRestoreSelector(matcher, ctx.theme?.transformRules)
       const match = matcher.match(re)
       if (match)
         base = matcher.slice(match[0].length)
