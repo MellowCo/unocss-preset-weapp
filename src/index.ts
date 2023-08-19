@@ -6,6 +6,7 @@ import { rules } from './rules'
 import type { Theme, ThemeAnimation } from './theme'
 import { theme } from './theme'
 import { variants } from './variants'
+import { shorthands } from './shorthands'
 
 import { taroCssPxTransform, taroH5CssRemTransform, uniAppVue2CssRpxTransform } from './rpxTranform'
 
@@ -202,6 +203,9 @@ export function presetWeapp(options: PresetWeappOptions = {}): Preset<Theme> {
     extractorDefault: options.arbitraryVariants === false
       ? undefined
       : extractorArbitraryVariants,
+    autocomplete: {
+      shorthands,
+    },
   }
 }
 
