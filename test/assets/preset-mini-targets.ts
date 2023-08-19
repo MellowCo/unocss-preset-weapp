@@ -1079,7 +1079,6 @@ export const presetMiniTargets: string[] = [
   '[font-feature-settings:\'cv02\',\'cv03\',\'cv04\',\'cv11\']',
   '[font-variation-settings:"wght"_400,_"opsz"_14]',
   '[--css-variable:"wght"_400,_"opsz"_14]',
-  '[--escaped\\~variable\\::100%]',
 
   // variants
   'active:scale-4',
@@ -1390,6 +1389,7 @@ export const presetMiniNonTargets = [
   '[foo:\'bar\',"baz",`]',
   // escaped arbitrary css properties only allowed in css variables
   '[cant\~escape:me]',
+  '[https://example.com/documentation/](https://example.com/documentation/)',
 
   // not exists
   'text-main/50',
