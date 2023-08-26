@@ -265,4 +265,42 @@ describe('preset-mini', () => {
 
     await expect(css).toMatchFileSnapshot('./assets/output/preset-mini/group-data.css')
   })
+
+  test('define breakpoints with other unit', async () => {
+    const uno = createGenerator({
+      presets: [
+        presetWeapp(),
+      ],
+      theme: {
+        breakpoints: {
+          md: '48rem',
+          lg: '64rem',
+          xl: '1000px',
+        },
+      },
+    })
+
+    const { css } = await uno.generate([
+      'md:text-xl',
+      '<lg:text-sm',
+      '~md:text-base',
+      '<xl:text-3xl',
+    ], { preflights: false })
+
+    expect(css).toMatchInlineSnapshot(`
+      "/* layer: default */
+      @media (max-width: 999.9px){
+      .\\\\<xl_cl_text-3xl{font-size:60rpx;line-height:72rpx;}
+      }
+      @media (max-width: calc(64rem - 0.1px)){
+      .\\\\<lg_cl_text-sm{font-size:28rpx;line-height:40rpx;}
+      }
+      @media (min-width: 48rem){
+      .md_cl_text-xl{font-size:40rpx;line-height:56rpx;}
+      }
+      @media (min-width: 48rem) and (max-width: calc(64rem - 0.1px)){
+      .\\\\~md_cl_text-base{font-size:32rpx;line-height:48rpx;}
+      }"
+    `)
+  })
 })

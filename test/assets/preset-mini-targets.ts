@@ -78,7 +78,9 @@ export const presetMiniTargets: string[] = [
   'bg-[position:top_right_1/3]',
 
   // divide
-  'divide',
+  'divide-x-0',
+  'divide-y-0',
+  'divide-x',
   'divide-y-4',
   'divide-x-4',
   'divide-x-reverse',
