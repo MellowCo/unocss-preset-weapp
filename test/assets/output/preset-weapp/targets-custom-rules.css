@@ -1236,7 +1236,8 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 }
 @media (max-width: 639.9px){
 .\<sm_cl11_m1,
-.lt-sm_cl11_m1{margin:8rpx;}
+.lt-sm_cl11_m1,
+.max-sm_cl11_m1{margin:8rpx;}
 }
 @media (max-width: 1023.9px){@media (min-width: 640px){
 .sm_cl11_lt-lg_cl11_p-10{padding:80rpx;}
