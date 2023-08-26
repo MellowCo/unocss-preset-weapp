@@ -16,7 +16,6 @@ import { margins, paddings, spaces } from './spacing'
 import { appearances, backgroundBlendModes, breaks, contains, contentVisibility, contents, cursors, displays, fontSmoothings, fontStyles, hyphens, isolations, mixBlendModes, objectPositions, pointerEvents, resizes, screenReadersAccess, textOverflows, textTransforms, textWraps, userSelects, whitespaces, writingModes, writingOrientations } from './static'
 import { transforms } from './transform'
 import { cssProperty, cssVariables } from './variables'
-import { questionMark } from './question-mark'
 import { textAligns, verticalAligns } from './align'
 import { appearance, outline, willChange } from './behaviors'
 import { textDecorations } from './decoration'
@@ -95,7 +94,7 @@ export const rules: Rule[] = [
   textWraps,
 
   // should be the last
-  questionMark,
+  // questionMark,
 
   // wind
   backgroundBlendModes,

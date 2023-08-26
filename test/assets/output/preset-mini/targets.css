@@ -9,6 +9,7 @@ page,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .keyframes-pulse{animation:pulse;}
 .animate-keyframes-pulse-alt,
 .keyframes-pulse-alt{animation:pulse-alt;}
+.animate-\[4s_linear_0s_infinite_alternate_bounce\]{animation:4s linear 0s infinite alternate bounce;}
 .animate-\[4s_linear_0s_infinite_alternate_move\\_eye\]{animation:4s linear 0s infinite alternate move_eye;}
 .animate-\$variable{animation:var(--variable);}
 .animate-pulse{animation:pulse 2s cubic-bezier(0.4,0,.6,1) infinite;}

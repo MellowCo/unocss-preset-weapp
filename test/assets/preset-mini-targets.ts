@@ -42,6 +42,7 @@ export const presetMiniTargets: string[] = [
   'animate-[4s_linear_0s_infinite_alternate_move\\_eye]',
   'animate-inherit',
   'animate-unset',
+  'animate-[4s_linear_0s_infinite_alternate_bounce]',
 
   // background
   'bg-auto',

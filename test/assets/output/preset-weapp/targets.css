@@ -10,6 +10,7 @@ page,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .animate-keyframes-pulse-alt,
 .keyframes-pulse-alt{animation:pulse-alt;}
 .animate-_do_variable{animation:var(--variable);}
+.animate-_lfl_4s_linear_0s_infinite_alternate_bounce_lfr_{animation:4s linear 0s infinite alternate bounce;}
 .animate-_lfl_4s_linear_0s_infinite_alternate_move\\_eye_lfr_{animation:4s linear 0s infinite alternate move_eye;}
 .animate-pulse{animation:pulse 2s cubic-bezier(0.4,0,.6,1) infinite;}
 .animate-pulse-alt{animation:pulse-alt 1s ease-in-out infinite;}
