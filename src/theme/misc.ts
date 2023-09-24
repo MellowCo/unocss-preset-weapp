@@ -80,3 +80,7 @@ export const ringWidth = {
   DEFAULT: '1px',
   none: '0',
 }
+
+export const zIndex = {
+  auto: 'auto',
+}

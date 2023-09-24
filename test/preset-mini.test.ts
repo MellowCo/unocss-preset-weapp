@@ -303,4 +303,22 @@ describe('preset-mini', () => {
       }"
     `)
   })
+
+  test('theme for zIndex', async () => {
+    const uno = createGenerator({
+      presets: [
+        presetWeapp(),
+      ],
+      theme: {
+        zIndex: {
+          header: '500',
+        },
+      },
+    })
+    expect((await uno.generate('z-header', { preflights: false })).css)
+      .toMatchInlineSnapshot(`
+        "/* layer: default */
+        .z-header{z-index:500;}"
+      `)
+  })
 })
