@@ -59,7 +59,7 @@ exports[`autocomplete > should provide autocomplete 1`] = `
   "scroll-m-": "",
   "shadow-": "shadow-amber shadow-black shadow-blue shadow-bluegray shadow-blueGray shadow-coolgray shadow-coolGray shadow-current shadow-cyan shadow-dark",
   "space-": "space-block space-block-reverse space-inline space-inline-reverse space-x space-x-reverse space-y space-y-reverse",
-  "text-r": "text-red text-revert text-revert-layer text-right text-rose",
+  "text-r": "text-red text-right text-rose",
   "text-red-": "text-red-1 text-red-2 text-red-3 text-red-4 text-red-5 text-red-6 text-red-7 text-red-8 text-red-9 text-red-50",
   "touch-": "",
   "transform-scale-": "transform-scale-0 transform-scale-10 transform-scale-20 transform-scale-30 transform-scale-40 transform-scale-50 transform-scale-60 transform-scale-70 transform-scale-80 transform-scale-90",
