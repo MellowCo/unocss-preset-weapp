@@ -662,7 +662,7 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .italic{font-style:italic;}
 .font-oblique,
 .oblique{font-style:oblique;}
-.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-smoothing:grayscale;}
+.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
 .backdrop\:shadow-green::backdrop{--licl-shadow-opacity:1;--licl-shadow-color:rgba(74,222,128,var(--licl-shadow-opacity));}
 .shadow{--licl-shadow:var(--licl-shadow-inset) 0 2rpx 6rpx 0 var(--licl-shadow-color, rgba(0,0,0,0.1)),var(--licl-shadow-inset) 0 2rpx 4rpx -2rpx var(--licl-shadow-color, rgba(0,0,0,0.1));box-shadow:var(--licl-ring-offset-shadow), var(--licl-ring-shadow), var(--licl-shadow);}
 .shadow-\[\#fff\]{--licl-shadow-opacity:1;--licl-shadow-color:rgba(255,255,255,var(--licl-shadow-opacity));}
