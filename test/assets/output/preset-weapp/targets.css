@@ -780,6 +780,8 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .grid-areas-_do_variable{grid-template-areas:var(--variable);}
 .grid-areas-_lfl_prepend_content_append_lfr_{grid-template-areas:"prepend content append";}
 .grid-areas-_lfl_prepend_content_append_lfr_-_lfl_prepend_content_append_lfr_{grid-template-areas:"prepend content append" "prepend content append";}
+.grid-rows-subgrid{grid-template-rows:subgrid;}
+.grid-cols-subgrid{grid-template-columns:subgrid;}
 .gap-_do_variable{gap:var(--variable);}
 .gap-4{gap:32rpx;}
 .gap-inherit{gap:inherit;}
