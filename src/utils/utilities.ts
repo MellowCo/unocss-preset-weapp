@@ -4,7 +4,7 @@ import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 import type { Theme } from '../theme'
 import { colorOpacityToString, colorToString, parseCssColor } from './colors'
 import { handler as h } from './handlers'
-import { directionMap, globalKeywords } from './mappings'
+import { cssMathFnRE, directionMap, globalKeywords } from './mappings'
 
 export const CONTROL_MINI_NO_NEGATIVE = '$$mini-no-negative'
 
@@ -343,4 +343,8 @@ export function getComponents(str: string, separators: string | string[], limit?
   }
   if (components.length > 0)
     return components
+}
+
+export function isCSSMathFn(value: string) {
+  return cssMathFnRE.test(value)
 }

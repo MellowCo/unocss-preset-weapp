@@ -370,6 +370,8 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .border-_do_color,
 .border-_lfl_var_lbl_--color_lbr__lfr_{border-color:var(--color);}
 .border-_lfl__wn_124_lfr_{--un-border-opacity:1;border-color:rgba(17,34,68,var(--un-border-opacity));}
+.border-_lfl_calc_lbl_10px\+1px_lbr__lfr_{border-width:calc(10px + 1px);}
+.border-_lfl_calc_lbl_var_lbl_--border-width_lbr_\*1px_lbr__lfr_{border-width:calc(var(--border-width) * 1px);}
 .border-black{--un-border-opacity:1;border-color:rgba(0,0,0,var(--un-border-opacity));}
 .border-black_sl_10{border-color:rgba(0,0,0,0.1);}
 .border-blue{--un-border-opacity:1;border-color:rgba(96,165,250,var(--un-border-opacity));}

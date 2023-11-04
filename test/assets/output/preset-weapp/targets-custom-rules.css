@@ -369,6 +369,8 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .border-_do11_color,
 .border-_lfl11_var_lbl11_--color_lbr11__lfr11_{border-color:var(--color);}
 .border-_lfl11__wn11_124_lfr11_{--un-border-opacity:1;border-color:rgba(17,34,68,var(--un-border-opacity));}
+.border-_lfl11_calc_lbl11_10px\+1px_lbr11__lfr11_{border-width:calc(10px + 1px);}
+.border-_lfl11_calc_lbl11_var_lbl11_--border-width_lbr11_\*1px_lbr11__lfr11_{border-width:calc(var(--border-width) * 1px);}
 .border-black{--un-border-opacity:1;border-color:rgba(0,0,0,var(--un-border-opacity));}
 .border-black_sl11_10{border-color:rgba(0,0,0,0.1);}
 .border-blue{--un-border-opacity:1;border-color:rgba(96,165,250,var(--un-border-opacity));}
