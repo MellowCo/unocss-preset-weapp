@@ -1223,6 +1223,10 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 @media (--cssvar){
 .media-_lfl11__lbl11_--cssvar_lbr11__lfr11__cl11_block{display:block;}
 }
+@media (hover) and (pointer: fine){
+.media-mouse_cl11_block{display:block;}
+.group:hover .group-hover_cl11_media-mouse_cl11_bg-red{--un-bg-opacity:1;background-color:rgba(248,113,113,var(--un-bg-opacity));}
+}
 @media print{
 .print_cl11_block{display:block;}
 .print_cl11_link_cl11__el11_underline:link{text-decoration-line:underline !important;}
