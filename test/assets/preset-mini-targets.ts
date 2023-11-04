@@ -752,6 +752,7 @@ export const presetMiniTargets: string[] = [
   'mt-$height',
   'my-auto',
   'my-revert-layer',
+  'my-[var(--hello-space-y)]',
   'm-none',
 
   // spacing - logical
@@ -1297,6 +1298,7 @@ export const presetMiniTargets: string[] = [
   'space-y-4',
   'space-x-reverse',
   'space-x-$space',
+  'space-x-[var(--space)]',
   'space-inline-2',
   'space-block-4',
   'space-block-none',

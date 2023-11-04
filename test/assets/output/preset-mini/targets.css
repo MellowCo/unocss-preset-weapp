@@ -237,6 +237,7 @@ page,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .m-xy,
 .mxy{margin:32rpx;}
 .mx-1{margin-left:8rpx;margin-right:8rpx;}
+.my-\[var\(--hello-space-y\)\]{margin-top:var(--hello-space-y);margin-bottom:var(--hello-space-y);}
 .my-auto{margin-top:auto;margin-bottom:auto;}
 .my-revert-layer{margin-top:revert-layer;margin-bottom:revert-layer;}
 .-\!mb-safe{margin-bottom:calc(max(env(safe-area-inset-left), env(safe-area-inset-right)) * -1) !important;}
@@ -1130,6 +1131,7 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .mix-blend-plus-lighter{mix-blend-mode:plus-lighter;}
 .mix-blend-normal{mix-blend-mode:normal;}
 .mix-blend-revert{mix-blend:revert;}
+.space-x-\[var\(--space\)\]>view+view,.space-x-\[var\(--space\)\]>button+button,.space-x-\[var\(--space\)\]>text+text,.space-x-\[var\(--space\)\]>image+image,.space-x-\[var\(--space\)\]>uni-view+uni-view,.space-x-\[var\(--space\)\]>uni-button+uni-button,.space-x-\[var\(--space\)\]>uni-text+uni-text,.space-x-\[var\(--space\)\]>uni-image+uni-image,.space-x-\[var\(--space\)\]>taro-view-core+taro-view-core,.space-x-\[var\(--space\)\]>taro-image-core+taro-image-core,.space-x-\[var\(--space\)\]>taro-text-core+taro-text-core,.space-x-\[var\(--space\)\]>taro-button-core+taro-button-core,
 .space-x-\$space>view+view,.space-x-\$space>button+button,.space-x-\$space>text+text,.space-x-\$space>image+image,.space-x-\$space>uni-view+uni-view,.space-x-\$space>uni-button+uni-button,.space-x-\$space>uni-text+uni-text,.space-x-\$space>uni-image+uni-image,.space-x-\$space>taro-view-core+taro-view-core,.space-x-\$space>taro-image-core+taro-image-core,.space-x-\$space>taro-text-core+taro-text-core,.space-x-\$space>taro-button-core+taro-button-core{--licl-space-x-reverse:0;margin-left:calc(var(--space) * calc(1 - var(--licl-space-x-reverse)));margin-right:calc(var(--space) * var(--licl-space-x-reverse));}
 .space-x-2>view+view,.space-x-2>button+button,.space-x-2>text+text,.space-x-2>image+image,.space-x-2>uni-view+uni-view,.space-x-2>uni-button+uni-button,.space-x-2>uni-text+uni-text,.space-x-2>uni-image+uni-image,.space-x-2>taro-view-core+taro-view-core,.space-x-2>taro-image-core+taro-image-core,.space-x-2>taro-text-core+taro-text-core,.space-x-2>taro-button-core+taro-button-core{--licl-space-x-reverse:0;margin-left:calc(16rpx * calc(1 - var(--licl-space-x-reverse)));margin-right:calc(16rpx * var(--licl-space-x-reverse));}
 .space-y-4>view+view,.space-y-4>button+button,.space-y-4>text+text,.space-y-4>image+image,.space-y-4>uni-view+uni-view,.space-y-4>uni-button+uni-button,.space-y-4>uni-text+uni-text,.space-y-4>uni-image+uni-image,.space-y-4>taro-view-core+taro-view-core,.space-y-4>taro-image-core+taro-image-core,.space-y-4>taro-text-core+taro-text-core,.space-y-4>taro-button-core+taro-button-core{--licl-space-y-reverse:0;margin-top:calc(32rpx * calc(1 - var(--licl-space-y-reverse)));margin-bottom:calc(32rpx * var(--licl-space-y-reverse));}
