@@ -151,9 +151,14 @@ page,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .fw-_do_variable{font-weight:var(--variable);}
 .items-_do_size{align-items:var(--size);}
 .ws-_do_variable{white-space:var(--variable);}
+._lfl_--css-spacing_cl_theme_lbl_spacing_dl_sm_lbr__lfr_{--css-spacing:28rpx;}
 ._lfl_--css-variable_cl_\"wght\"_400_lco__\"opsz\"_14_lfr_{--css-variable:"wght" 400, "opsz" 14;}
+._lfl_--css-variable-color_cl_theme_lbl_colors_dl_green_dl_500_lbr__lco_theme_lbl_colors_dl_blue_dl_500_lbr__lfr_{--css-variable-color:#22c55e,#3b82f6;}
+._lfl_--css-variable-color_cl_theme_lbl_colors_dl_red_dl_500_lbr__lfr_{--css-variable-color:#ef4444;}
+._lfl_--css-variable-color_cl_theme_lbl_colors_dl_red_dl_500_sl_50_pes__lbr__lfr_{--css-variable-color:rgb(239 68 68 / 50%);}
 ._lfl_a_cl_b_lfr_{a:b;}
 ._lfl_background-image_cl_url_lbl_star_transparent_dl_gif_lbr__lco__url_lbl_cat_front_dl_png_lbr__lfr_{background-image:url(star_transparent.gif), url(cat_front.png);}
+._lfl_color_cl_theme_lbl_colors_dl_blue_dl_300_sl_40_pes__lbr__lfr_{color:rgb(147 197 253 / 40%);}
 ._lfl_content_cl_attr_lbl_attr_content_lbr__lfr_{content:attr(attr content);}
 ._lfl_content_cl_attr_lbl_attr\\_content_lbr__lfr_{content:attr(attr_content);}
 ._lfl_font-family_cl_\'Inter\'_lco__sans-serif_lfr_{font-family:'Inter', sans-serif;}
@@ -161,6 +166,7 @@ page,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 ._lfl_font-feature-settings_cl_\'cv02\'_lco_\'cv03\'_lco_\'cv04\'_lco_\'cv11\'_lfr_{font-feature-settings:'cv02','cv03','cv04','cv11';}
 ._lfl_font-variation-settings_cl_\"wght\"_400_lco__\"opsz\"_14_lfr_{font-variation-settings:"wght" 400, "opsz" 14;}
 ._lfl_margin_cl_logical_1rem_2rem_3rem_lfr_{margin:logical 1rem 2rem 3rem;}
+._lfl_padding_cl_theme_lbl_spacing_dl_xl_lbr__lfr_{padding:48rpx;}
 .all-_lfl__dl_target_lfr_-_lfl_combinator_cl_test-2_lfr_ .target,
 .children-_lfl__dl_target_lfr_-_lfl_combinator_cl_test-2_lfr_>.target,
 .next-_lfl__dl_target_lfr_-_lfl_combinator_cl_test-2_lfr_+.target{combinator:test-2;}

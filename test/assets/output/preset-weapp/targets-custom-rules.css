@@ -151,9 +151,14 @@ page,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .fw-_do11_variable{font-weight:var(--variable);}
 .items-_do11_size{align-items:var(--size);}
 .ws-_do11_variable{white-space:var(--variable);}
+._lfl11_--css-spacing_cl11_theme_lbl11_spacing_dl11_sm_lbr11__lfr11_{--css-spacing:28rpx;}
 ._lfl11_--css-variable_cl11_\"wght\"_400_lco11__\"opsz\"_14_lfr11_{--css-variable:"wght" 400, "opsz" 14;}
+._lfl11_--css-variable-color_cl11_theme_lbl11_colors_dl11_green_dl11_500_lbr11__lco11_theme_lbl11_colors_dl11_blue_dl11_500_lbr11__lfr11_{--css-variable-color:#22c55e,#3b82f6;}
+._lfl11_--css-variable-color_cl11_theme_lbl11_colors_dl11_red_dl11_500_lbr11__lfr11_{--css-variable-color:#ef4444;}
+._lfl11_--css-variable-color_cl11_theme_lbl11_colors_dl11_red_dl11_500_sl11_50_pes11__lbr11__lfr11_{--css-variable-color:rgb(239 68 68 / 50%);}
 ._lfl11_a_cl11_b_lfr11_{a:b;}
 ._lfl11_background-image_cl11_url_lbl11_star_transparent_dl11_gif_lbr11__lco11__url_lbl11_cat_front_dl11_png_lbr11__lfr11_{background-image:url(star_transparent.gif), url(cat_front.png);}
+._lfl11_color_cl11_theme_lbl11_colors_dl11_blue_dl11_300_sl11_40_pes11__lbr11__lfr11_{color:rgb(147 197 253 / 40%);}
 ._lfl11_content_cl11_attr_lbl11_attr_content_lbr11__lfr11_{content:attr(attr content);}
 ._lfl11_content_cl11_attr_lbl11_attr\\_content_lbr11__lfr11_{content:attr(attr_content);}
 ._lfl11_font-family_cl11_\'Inter\'_lco11__sans-serif_lfr11_{font-family:'Inter', sans-serif;}
@@ -161,6 +166,7 @@ page,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 ._lfl11_font-feature-settings_cl11_\'cv02\'_lco11_\'cv03\'_lco11_\'cv04\'_lco11_\'cv11\'_lfr11_{font-feature-settings:'cv02','cv03','cv04','cv11';}
 ._lfl11_font-variation-settings_cl11_\"wght\"_400_lco11__\"opsz\"_14_lfr11_{font-variation-settings:"wght" 400, "opsz" 14;}
 ._lfl11_margin_cl11_logical_1rem_2rem_3rem_lfr11_{margin:logical 1rem 2rem 3rem;}
+._lfl11_padding_cl11_theme_lbl11_spacing_dl11_xl_lbr11__lfr11_{padding:48rpx;}
 .all-_lfl11__dl11_target_lfr11_-_lfl11_combinator_cl11_test-2_lfr11_ .target,
 .children-_lfl11__dl11_target_lfr11_-_lfl11_combinator_cl11_test-2_lfr11_>.target,
 .next-_lfl11__dl11_target_lfr11_-_lfl11_combinator_cl11_test-2_lfr11_+.target{combinator:test-2;}
