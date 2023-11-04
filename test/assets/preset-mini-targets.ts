@@ -430,6 +430,9 @@ export const presetMiniTargets: string[] = [
   'ring-offset-red2/5',
   'ring-offset-op-5',
   'ring-offset-op-$opacity-variable',
+  'ring-offset-0',
+  'ring-offset-0px',
+  'ring-offset-0rem',
 
   // decoration
   'decoration-none',

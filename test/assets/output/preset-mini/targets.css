@@ -699,6 +699,9 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .ring-size-px,
 .ring-width-px{--licl-ring-width:1px;}
 .ring-offset{--licl-ring-offset-width:1px;}
+.ring-offset-0,
+.ring-offset-0px{--licl-ring-offset-width:0px;}
+.ring-offset-0rem{--licl-ring-offset-width:0rem;}
 .ring-offset-4{--licl-ring-offset-width:4px;}
 .ring-offset-none{--licl-ring-offset-width:0;}
 .ring-offset-size-\$variable,

@@ -700,6 +700,9 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .ring-size-px,
 .ring-width-px{--un-ring-width:1px;}
 .ring-offset{--un-ring-offset-width:1px;}
+.ring-offset-0,
+.ring-offset-0px{--un-ring-offset-width:0px;}
+.ring-offset-0rem{--un-ring-offset-width:0rem;}
 .ring-offset-4{--un-ring-offset-width:4px;}
 .ring-offset-none{--un-ring-offset-width:0;}
 .ring-offset-size-_do11_variable,
