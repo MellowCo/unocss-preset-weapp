@@ -54,9 +54,9 @@
     "@dcloudio/uni-cli-shared": "3.0.0-alpha-3070020230117001",
     "@dcloudio/uni-stacktracey": "3.0.0-alpha-3070020230117001",
     "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3070020230117001",
-    "@iconify/json": "^2.2.70",
+    "@iconify/json": "^2.2.137",
     "typescript": "^5.0.4",
-    "unocss": "^0.55.7",
+    "unocss": "^0.57.2",
     "unocss-preset-weapp": "link:../../",
     "vite": "^4.0.3"
   }

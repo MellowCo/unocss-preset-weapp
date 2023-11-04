@@ -30,4 +30,3 @@
     </view>
   </view>
 </template>
-
