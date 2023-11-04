@@ -24,6 +24,8 @@ export function directionSize(propertyPrefix: string): DynamicMatcher {
 
 /**
  * Obtain color from theme by camel-casing colors.
+ * @param theme
+ * @param colors
  */
 function getThemeColor(theme: Theme, colors: string[]) {
   let obj: Theme['colors'] | string = theme.colors
@@ -49,6 +51,9 @@ function getThemeColor(theme: Theme, colors: string[]) {
 
 /**
  * Split utility shorthand delimited by / or :
+ * @param body
+ * @param type
+ * @param theme
  */
 export function splitShorthand(body: string, type: string, theme: Theme) {
   const split = cacheRestoreSelector(body, theme.transformRules).split(/(?:\/|\_|:)/) // 百分比 / 改为 _
@@ -169,7 +174,7 @@ export function parseColor(body: string, theme: Theme): ParsedColorValue | undef
  *
  * @param {string} property - Property for the css value to be created.
  * @param {string} varName - Base name for the opacity variable.
- * @param {function} [shouldPass] - Function to decide whether to pass the css.
+ * @param {Function} [shouldPass] - Function to decide whether to pass the css.
  * @return {@link DynamicMatcher} object.
  */
 export function colorResolver(property: string, varName: string, shouldPass?: (css: CSSObject) => boolean): DynamicMatcher {
@@ -220,26 +225,23 @@ export function hasParseableColor(color: string | undefined, theme: Theme) {
   return color != null && !!parseColor(color, theme)?.color
 }
 
-export function resolveBreakpoints({ theme, generator }: Readonly<VariantContext<Theme>>) {
+export function resolveBreakpoints({ theme, generator }: Readonly<VariantContext<Theme>>, key: 'breakpoints' | 'verticalBreakpoints' = 'breakpoints') {
   let breakpoints: Record<string, string> | undefined
   if (generator.userConfig && generator.userConfig.theme)
-    breakpoints = (generator.userConfig.theme as any).breakpoints
+    breakpoints = (generator.userConfig.theme as any)[key]
 
   if (!breakpoints)
-    breakpoints = theme.breakpoints
+    breakpoints = theme[key]
 
   return breakpoints
+    ? Object.entries(breakpoints)
+      .sort((a, b) => Number.parseInt(a[1].replace(/[a-z]+/gi, '')) - Number.parseInt(b[1].replace(/[a-z]+/gi, '')))
+      .map(([point, size]) => ({ point, size }))
+    : undefined
 }
 
-export function resolveVerticalBreakpoints({ theme, generator }: Readonly<VariantContext<Theme>>) {
-  let verticalBreakpoints: Record<string, string> | undefined
-  if (generator.userConfig && generator.userConfig.theme)
-    verticalBreakpoints = (generator.userConfig.theme as any).verticalBreakpoints
-
-  if (!verticalBreakpoints)
-    verticalBreakpoints = theme.verticalBreakpoints
-
-  return verticalBreakpoints
+export function resolveVerticalBreakpoints(context: Readonly<VariantContext<Theme>>) {
+  return resolveBreakpoints(context, 'verticalBreakpoints')
 }
 
 export function makeGlobalStaticRules(prefix: string, property?: string): StaticRule[] {
