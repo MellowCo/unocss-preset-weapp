@@ -48,6 +48,11 @@ page,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .animate-none{animation:none;}
 .animate-inherit{animation:inherit;}
 .animate-unset{animation:unset;}
+.bg-_lfl_10_pes__lfr_{background-position:10%;}
+.bg-_lfl_10px_lfr_{background-position:10px;}
+.bg-_lfl_10vw_lfr_{background-position:10vw;}
+.bg-_lfl_calc_lbl_10_pes_\+10px_lbr__lfr_{background-position:calc(10% + 10px);}
+.bg-_lfl_calc_lbl_10vw\+10px_lbr__lfr_{background-position:calc(10vw + 10px);}
 .bg-_lfl_length_cl_--variable_lfr_{background-size:var(--variable);}
 .bg-_lfl_length_cl_1_sl_2_20rem_lfr_{background-size:50% 20rem;}
 .bg-_lfl_length_cl_10_20rem_lfr_{background-size:10px 20rem;}

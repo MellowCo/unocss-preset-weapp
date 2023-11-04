@@ -1,8 +1,11 @@
 import type { Rule } from '@unocss/core'
-import { colorResolver, handler as h } from '../utils'
+import { colorResolver, handler as h, isSize } from '../utils'
 import { numberWithUnitRE } from '../utils/handlers/regex'
 
 /**
+ * @param root0
+ * @param root0."0"
+ * @param root0."1"
  * @example op10 op-30 opacity-100
  */
 export const opacity: Rule[] = [
@@ -10,6 +13,9 @@ export const opacity: Rule[] = [
 ]
 
 /**
+ * @param root0
+ * @param root0."0"
+ * @param root0."1"
  * @example c-red color-red5 text-red-300
  */
 export const textColors: Rule[] = [
@@ -20,7 +26,7 @@ export const textColors: Rule[] = [
 ]
 
 export const bgColors: Rule[] = [
-  [/^bg-(.+)$/, colorResolver('background-color', 'bg'), { autocomplete: 'bg-$colors' }],
+  [/^bg-(.+)$/, (...args) => isSize(args[0][1]) ? undefined : colorResolver('background-color', 'bg')(...args), { autocomplete: 'bg-$colors' }],
   [/^bg-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-bg-opacity': h.bracket.percent.cssvar(opacity) }), { autocomplete: 'bg-(op|opacity)-<percent>' }],
 ]
 

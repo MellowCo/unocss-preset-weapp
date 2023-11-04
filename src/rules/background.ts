@@ -1,6 +1,6 @@
 import type { CSSColorValue, Rule, RuleContext } from '@unocss/core'
 import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
-import { colorOpacityToString, colorToString, globalKeywords, handler as h, makeGlobalStaticRules, parseColor, positionMap } from '../utils'
+import { colorOpacityToString, colorToString, globalKeywords, handler as h, isSize, makeGlobalStaticRules, parseColor, positionMap } from '../utils'
 import type { Theme } from '../'
 
 function bgGradientToValue(cssColor: CSSColorValue | undefined) {
@@ -77,7 +77,7 @@ export const backgroundStyles: Rule<Theme>[] = [
       return { '--un-url': h.bracket(d), 'background-image': 'var(--un-url)' }
     if (bgLengthRE.test(d) && h.bracketOfLength(d) != null)
       return { 'background-size': h.bracketOfLength(d)!.split(' ').map(e => h.fraction.auto.px.cssvar(e) ?? e).join(' ') }
-    if (bgPositionRE.test(d) && h.bracketOfPosition(d) != null)
+    if ((isSize(d) || bgPositionRE.test(d)) && h.bracketOfPosition(d) != null)
       return { 'background-position': h.bracketOfPosition(d)!.split(' ').map(e => h.position.fraction.auto.px.cssvar(e) ?? e).join(' ') }
   }],
 

@@ -48,6 +48,11 @@ page,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .animate-none{animation:none;}
 .animate-inherit{animation:inherit;}
 .animate-unset{animation:unset;}
+.bg-\[10\%\]{background-position:10%;}
+.bg-\[10px\]{background-position:10px;}
+.bg-\[10vw\]{background-position:10vw;}
+.bg-\[calc\(10\%\+10px\)\]{background-position:calc(10% + 10px);}
+.bg-\[calc\(10vw\+10px\)\]{background-position:calc(10vw + 10px);}
 .bg-\[length\:--variable\]{background-size:var(--variable);}
 .bg-\[length\:1\/2_20rem\]{background-size:50% 20rem;}
 .bg-\[length\:10_20rem\]{background-size:10px 20rem;}

@@ -48,6 +48,11 @@ page,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-
 .animate-none{animation:none;}
 .animate-inherit{animation:inherit;}
 .animate-unset{animation:unset;}
+.bg-_lfl11_10_pes11__lfr11_{background-position:10%;}
+.bg-_lfl11_10px_lfr11_{background-position:10px;}
+.bg-_lfl11_10vw_lfr11_{background-position:10vw;}
+.bg-_lfl11_calc_lbl11_10_pes11_\+10px_lbr11__lfr11_{background-position:calc(10% + 10px);}
+.bg-_lfl11_calc_lbl11_10vw\+10px_lbr11__lfr11_{background-position:calc(10vw + 10px);}
 .bg-_lfl11_length_cl11_--variable_lfr11_{background-size:var(--variable);}
 .bg-_lfl11_length_cl11_1_sl11_2_20rem_lfr11_{background-size:50% 20rem;}
 .bg-_lfl11_length_cl11_10_20rem_lfr11_{background-size:10px 20rem;}
