@@ -55,6 +55,7 @@
     "@dcloudio/uni-stacktracey": "3.0.0-alpha-3070020230117001",
     "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3070020230117001",
     "@iconify/json": "^2.2.137",
+    "@unocss/transformer-directives": "^0.57.2",
     "typescript": "^5.0.4",
     "unocss": "^0.57.2",
     "unocss-preset-weapp": "link:../../",

@@ -11,8 +11,8 @@
 </template>
 
 <style scoped>
-/* .bg-to-t {
-  @apply center h-200 rounded-md bg-gradient-to-t from-#f39c12/60 via-#2ecc71:80 to-#9b59b6_70 mb-3;
+.bg-to-t {
+  @apply center w-500 h-200 rounded-md bg-gradient-to-t from-#f39c12/60 via-#2ecc71:80 to-#9b59b6_70 mb-3;
 }
 
 .bg-unocss{
@@ -21,5 +21,5 @@
 
 .bg-to-r{
   --at-apply: center h-200 rounded-md bg-gradient-to-r from-#f39c12/60 via-#2ecc71:80 to-#9b59b6_70 mb-3
-} */
+}
 </style>

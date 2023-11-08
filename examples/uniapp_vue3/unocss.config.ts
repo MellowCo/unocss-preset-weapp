@@ -1,6 +1,7 @@
 import presetWeapp from 'unocss-preset-weapp'
 import { extractorAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
 import { presetIcons } from 'unocss'
+import transformerDirectives from '@unocss/transformer-directives'
 
 const { presetWeappAttributify, transformerAttributify } = extractorAttributify()
 
@@ -19,6 +20,10 @@ export default {
     },
   ],
   transformers: [
+    transformerDirectives({
+      enforce: 'pre',
+    }),
+
     // https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify
     transformerAttributify(),
 
