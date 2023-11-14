@@ -93,7 +93,7 @@
     "@unocss/core": "^0.57.4",
     "@unocss/extractor-arbitrary-variants": "^0.57.4",
     "@unocss/rule-utils": "^0.57.4",
-    "unplugin-attributify-to-class": "^0.2.4",
+    "unplugin-attributify-to-class": "^0.2.5",
     "unplugin-transform-class": "^0.5.1"
   },
   "devDependencies": {

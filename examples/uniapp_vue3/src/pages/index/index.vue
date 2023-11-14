@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { } from '@dcloudio/uni-app'
+import { ref } from 'vue'
+
 const list = [
   { name: 'font', path: '/pages/font/index' },
   { name: 'size', path: '/pages/size/index' },
@@ -20,11 +21,13 @@ const list = [
   { name: 'icon', path: '/pages/icon/index' },
 ]
 
-const to = (to: string) => {
+function to(to: string) {
   uni.navigateTo({
     url: to,
   })
 }
+
+const loading = ref(false)
 </script>
 
 <template>
@@ -36,6 +39,13 @@ const to = (to: string) => {
       >
         {{ item.name }}
       </view>
+    </view>
+
+    <view>
+      <view v-if="loading">
+        loading
+      </view>
+      <slot v-else />
     </view>
   </view>
 </template>

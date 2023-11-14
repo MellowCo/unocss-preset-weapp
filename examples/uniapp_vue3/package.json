@@ -59,9 +59,9 @@
     "vite": "4.1.4",
     "vue-tsc": "^1.0.24",
     "@iconify/json": "^2.2.137",
-    "@unocss/transformer-directives": "^0.57.2",
+    "@unocss/transformer-directives": "^0.57.4",
     "@vue/runtime-core": "^3.2.45",
-    "unocss": "^0.57.2",
+    "unocss": "^0.57.4",
     "unocss-preset-weapp": "link:../../"
   }
 }
