@@ -140,6 +140,12 @@ export interface PresetWeappOptions extends PresetOptions {
    * @default true
    */
   arbitraryVariants?: boolean
+
+  /**
+   * 是否转换 px 单位
+   * @default true
+   */
+  transformPx?: boolean
 }
 
 export function presetWeapp(options: PresetWeappOptions = {}): Preset<Theme> {
@@ -186,11 +192,11 @@ export function presetWeapp(options: PresetWeappOptions = {}): Preset<Theme> {
 
         if (options.isH5) {
           // h5 px rpx 转 rem
-          taroH5CssRemTransform(css, taroWebpack!, designWidth!, deviceRatio!)
+          taroH5CssRemTransform(css, taroWebpack!, designWidth!, deviceRatio!, options.transformPx ?? true)
         }
         else {
           // 小程序 taro 处理 px 为 rpx
-          taroCssPxTransform(css, designWidth!, deviceRatio!)
+          taroCssPxTransform(css, designWidth!, deviceRatio!, options.transformPx ?? true)
         }
       }
 
