@@ -351,6 +351,8 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .stroke-join-clip{stroke-linejoin:miter-clip;}
 .stroke-join-auto{stroke-linejoin:miter;}
 .stroke-none{stroke:none;}
+.peer[data-state=closed]~.peer-data-_lfl_state_eqe_closed_lfr__cl_border-3,
+.border-width-3{border-width:3rpx;}
 .b-2,
 .border-size-2{border-width:2rpx;}
 .border{border-width:1px;}
@@ -370,7 +372,6 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .border-size-unset{border-width:unset;}
 .border-width-_lfl_2em_lfr_{border-width:2em;}
 .border-width-_lfl_calc_lbl_1em-1px_lbr__lfr_{border-width:calc(1em - 1px);}
-.border-width-3{border-width:3rpx;}
 .border-x-size-2{border-left-width:2rpx;border-right-width:2rpx;}
 .border-x-width-3{border-left-width:3rpx;border-right-width:3rpx;}
 .border-s-width-_do_variable{border-inline-start-width:var(--variable);}
@@ -589,6 +590,7 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .group:hover .group-_lfl__cl_hover_lfr__cl_font-11{font-weight:11;}
 .group.not-parent .group-_lfl__dl_not-parent_lfr__cl_font-14{font-weight:14;}
 .group[data-attr] .group-_lfl__lfl_data-attr_lfr__lfr__cl_font-12{font-weight:12;}
+.group[data-state=open] .group-data-_lfl_state_eqe_open_lfr__cl_font-bold{font-weight:700;}
 .font-050,
 .font-50,
 .fw-050,

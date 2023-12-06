@@ -350,6 +350,8 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .stroke-join-clip{stroke-linejoin:miter-clip;}
 .stroke-join-auto{stroke-linejoin:miter;}
 .stroke-none{stroke:none;}
+.peer[data-state=closed]~.peer-data-_lfl11_state_eqe11_closed_lfr11__cl11_border-3,
+.border-width-3{border-width:3rpx;}
 .b-2,
 .border-size-2{border-width:2rpx;}
 .border{border-width:1px;}
@@ -369,7 +371,6 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .border-size-unset{border-width:unset;}
 .border-width-_lfl11_2em_lfr11_{border-width:2em;}
 .border-width-_lfl11_calc_lbl11_1em-1px_lbr11__lfr11_{border-width:calc(1em - 1px);}
-.border-width-3{border-width:3rpx;}
 .border-x-size-2{border-left-width:2rpx;border-right-width:2rpx;}
 .border-x-width-3{border-left-width:3rpx;border-right-width:3rpx;}
 .border-s-width-_do11_variable{border-inline-start-width:var(--variable);}
@@ -587,6 +588,7 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .group:hover .group-_lfl11__cl11_hover_lfr11__cl11_font-11{font-weight:11;}
 .group.not-parent .group-_lfl11__dl11_not-parent_lfr11__cl11_font-14{font-weight:14;}
 .group[data-attr] .group-_lfl11__lfl11_data-attr_lfr11__lfr11__cl11_font-12{font-weight:12;}
+.group[data-state=open] .group-data-_lfl11_state_eqe11_open_lfr11__cl11_font-bold{font-weight:700;}
 .font-050,
 .font-50,
 .fw-050,

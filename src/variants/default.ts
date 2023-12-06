@@ -12,7 +12,7 @@ import { variantCustomMedia, variantPrint } from './media'
 import { variantSupports } from './supports'
 import { variantPartClasses, variantPseudoClassFunctions, variantPseudoClassesAndElements, variantTaggedPseudoClasses } from './pseudo'
 import { variantAria } from './aria'
-import { variantDataAttribute, variantGroupDataAttribute } from './data'
+import { variantDataAttribute, variantTaggedDataAttributes } from './data'
 import { variantContainerQuery } from './container'
 
 export function variants(options: PresetWeappOptions): Variant<Theme>[] {
@@ -43,6 +43,6 @@ export function variants(options: PresetWeappOptions): Variant<Theme>[] {
 
     variantContainerQuery,
     variantVariables,
-    variantGroupDataAttribute,
+    ...variantTaggedDataAttributes,
   ]
 }

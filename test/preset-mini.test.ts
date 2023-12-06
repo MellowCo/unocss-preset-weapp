@@ -251,25 +251,6 @@ describe('preset-mini', () => {
     expect(css).toBe('')
   })
 
-  test('group data variant', async () => {
-    const uno = createGenerator({
-      presets: [
-        presetWeapp(),
-      ],
-    })
-
-    const { css } = await uno.generate([
-      'group-data-[state=open]:rotate-180',
-      'group-data-[state=open]:text-black',
-      'data-[state=open]:text-red',
-      'group-hover:font-bold',
-    ].join(' '), {
-      preflights: false,
-    })
-
-    await expect(css).toMatchFileSnapshot('./assets/output/preset-mini/group-data.css')
-  })
-
   test('define breakpoints with other unit', async () => {
     const uno = createGenerator({
       presets: [
