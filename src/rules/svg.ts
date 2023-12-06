@@ -1,7 +1,7 @@
-import type { Rule } from '@unocss/core'
+import type { CSSObject, Rule, RuleContext } from '@unocss/core'
 import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 import type { Theme } from '../theme'
-import { colorResolver, handler as h } from '../utils'
+import { colorResolver, handler as h, isCSSMathFn } from '../utils'
 
 export const svgUtilities: Rule<Theme>[] = [
   // fills
@@ -10,11 +10,7 @@ export const svgUtilities: Rule<Theme>[] = [
   ['fill-none', { fill: 'none' }],
 
   // stroke size
-  [/^stroke-(?:width-|size-)?(.+)$/, ([, s], { theme }) => {
-    s = cacheRestoreSelector(s, theme?.transformRules)
-
-    return { 'stroke-width': theme.lineWidth?.[s] ?? h.bracket.cssvar.fraction.px.number(s) }
-  },
+  [/^stroke-(?:width-|size-)?(.+)$/, handleWidth,
     { autocomplete: ['stroke-width-$lineWidth', 'stroke-size-$lineWidth'] }],
 
   // stroke dash
@@ -40,3 +36,14 @@ export const svgUtilities: Rule<Theme>[] = [
   // none
   ['stroke-none', { stroke: 'none' }],
 ]
+
+function handleWidth([, b]: string[], { theme }: RuleContext<Theme>): CSSObject {
+  b = cacheRestoreSelector(b, theme?.transformRules)
+  return { 'stroke-width': theme.lineWidth?.[b] ?? h.bracket.cssvar.fraction.px.number(b) }
+}
+
+function handleColorOrWidth(match: RegExpMatchArray, ctx: RuleContext<Theme>): CSSObject | undefined {
+  if (isCSSMathFn(h.bracket(match[1])))
+    return handleWidth(match, ctx)
+  return colorResolver('stroke', 'stroke', 'borderColor')(match, ctx) as CSSObject | undefined
+}

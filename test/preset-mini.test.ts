@@ -71,8 +71,12 @@ describe('preset-mini', () => {
 
     const unmatched = []
     for (const i of presetMiniTargets) {
-      if (!css.includes(escapeSelector(i)))
+
+      if (!css.includes(escapeSelector(i))) {
+        console.log(i, '=====i=======');
         unmatched.push(i)
+      }
+
     }
     expect(unmatched).toEqual([])
     await expect(css).toMatchFileSnapshot('./assets/output/preset-mini/targets.css')

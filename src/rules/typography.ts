@@ -1,62 +1,27 @@
-import type { CSSObject, Rule } from '@unocss/core'
+import type { CSSObject, Rule, RuleContext } from '@unocss/core'
 import { toArray } from '@unocss/core'
 import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 import type { Theme } from '../theme'
-import { colorResolver, colorableShadows, handler as h, splitShorthand } from '../utils'
-
-function handleThemeByKey(s: string, theme: Theme, key: 'lineHeight' | 'letterSpacing') {
-  return theme[key]?.[s] || h.bracket.cssvar.global.remToRpx(s)
-}
+import { colorResolver, colorableShadows, globalKeywords, handler as h, isCSSMathFn, splitShorthand } from '../utils'
 
 export const fonts: Rule<Theme>[] = [
   // size
   [
-    /^text-(.+)$/,
-    ([, s = 'base'], { theme }) => {
-      const split = splitShorthand(s, 'length', theme)
-      if (!split)
-        return
-
-      const [size, leading] = split
-      const sizePairs = toArray(theme.fontSize?.[size]) as [string, string | CSSObject, string?]
-      const lineHeight = leading ? handleThemeByKey(leading, theme, 'lineHeight') : undefined
-
-      if (sizePairs?.[0]) {
-        const [fontSize, height, letterSpacing] = sizePairs
-        if (typeof height === 'object') {
-          return {
-            'font-size': fontSize,
-            ...height,
-          }
-        }
-        return {
-          'font-size': fontSize,
-          'line-height': lineHeight ?? height ?? '1',
-          'letter-spacing': letterSpacing ? handleThemeByKey(letterSpacing, theme, 'letterSpacing') : undefined,
-        }
-      }
-
-      const fontSize = h.bracketOfLength.remToRpx(size)
-      if (lineHeight && fontSize) {
-        return {
-          'font-size': fontSize,
-          'line-height': lineHeight,
-        }
-      }
-
-      if (theme.whRpx)
-        return { 'font-size': h.bracketOfLength.rpx(s) }
-      else
-        return { 'font-size': h.bracketOfLength.remToRpx(s) }
-    },
-    { autocomplete: 'text-$fontSize' },
+    /^text-(.+)$/, handleText, { autocomplete: 'text-$fontSize' },
   ],
-  [/^(?:text|font)-size-(.+)$/, ([, s], { theme }) => {
-    const themed = toArray(theme.fontSize?.[s]) as [string, string | CSSObject]
-    const size = themed?.[0] ?? (theme.whRpx ? h.bracket.cssvar.global.rpx(s) : h.bracket.cssvar.global.remToRpx(s))
-    if (size != null)
-      return { 'font-size': size }
-  }, { autocomplete: 'text-size-$fontSize' }],
+  [/^(?:text|font)-size-(.+)$/, handleSize, { autocomplete: 'text-size-$fontSize' }],
+
+  // text colors
+  [/^text-(?:color-)?(.+)$/, handlerColorOrSize, { autocomplete: 'text-$colors' }],
+
+  // colors
+  [/^(?:color|c)-(.+)$/, colorResolver('color', 'text', 'textColor'), { autocomplete: '(color|c)-$colors' }],
+
+  // style
+  [/^(?:text|color|c)-(.+)$/, ([, v]) => globalKeywords.includes(v) ? { color: v } : undefined, { autocomplete: `(text|color|c)-(${globalKeywords.join('|')})` }],
+
+  // opacity
+  [/^(?:text|color|c)-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-text-opacity': h.bracket.percent.cssvar(opacity) }), { autocomplete: '(text|color|c)-(op|opacity)-<percent>' }],
 
   // weights
   [
@@ -156,3 +121,58 @@ export const textShadows: Rule<Theme>[] = [
   [/^text-shadow-color-(.+)$/, colorResolver('--un-text-shadow-color', 'text-shadow', 'shadowColor'), { autocomplete: 'text-shadow-color-$colors' }],
   [/^text-shadow-color-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-text-shadow-opacity': h.bracket.percent.cssvar(opacity) }), { autocomplete: 'text-shadow-color-(op|opacity)-<percent>' }],
 ]
+
+function handleThemeByKey(s: string, theme: Theme, key: 'lineHeight' | 'letterSpacing') {
+  return theme[key]?.[s] || h.bracket.cssvar.global.remToRpx(s)
+}
+
+function handleSize([, s]: string[], { theme }: RuleContext<Theme>): CSSObject | undefined {
+  const themed = toArray(theme.fontSize?.[s]) as [string, string | CSSObject]
+  const size = themed?.[0] ?? (theme.whRpx ? h.bracket.cssvar.global.rpx(s) : h.bracket.cssvar.global.remToRpx(s))
+  if (size != null)
+    return { 'font-size': size }
+}
+
+function handlerColorOrSize(match: RegExpMatchArray, ctx: RuleContext<Theme>): CSSObject | undefined {
+  if (isCSSMathFn(h.bracket(match[1])))
+    return handleSize(match, ctx)
+  return colorResolver('color', 'text', 'textColor')(match, ctx) as CSSObject | undefined
+}
+
+function handleText([, s = 'base']: string[], { theme }: RuleContext<Theme>): CSSObject | undefined {
+  const split = splitShorthand(s, 'length', theme)
+  if (!split)
+    return
+
+  const [size, leading] = split
+  const sizePairs = toArray(theme.fontSize?.[size]) as [string, string | CSSObject, string?]
+  const lineHeight = leading ? handleThemeByKey(leading, theme, 'lineHeight') : undefined
+
+  if (sizePairs?.[0]) {
+    const [fontSize, height, letterSpacing] = sizePairs
+    if (typeof height === 'object') {
+      return {
+        'font-size': fontSize,
+        ...height,
+      }
+    }
+    return {
+      'font-size': fontSize,
+      'line-height': lineHeight ?? height ?? '1',
+      'letter-spacing': letterSpacing ? handleThemeByKey(letterSpacing, theme, 'letterSpacing') : undefined,
+    }
+  }
+
+  const fontSize = h.bracketOfLength.remToRpx(size)
+  if (lineHeight && fontSize) {
+    return {
+      'font-size': fontSize,
+      'line-height': lineHeight,
+    }
+  }
+
+  if (theme.whRpx)
+    return { 'font-size': h.bracketOfLength.rpx(s) }
+  else
+    return { 'font-size': h.bracketOfLength.remToRpx(s) }
+}

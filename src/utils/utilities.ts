@@ -355,8 +355,8 @@ export function getComponents(str: string, separators: string | string[], limit?
     return components
 }
 
-export function isCSSMathFn(value: string) {
-  return cssMathFnRE.test(value)
+export function isCSSMathFn(value: string | undefined) {
+  return value != null && cssMathFnRE.test(value)
 }
 
 export function isSize(str: string) {
