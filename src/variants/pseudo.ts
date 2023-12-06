@@ -231,11 +231,11 @@ export function variantPseudoClassesAndElements(): VariantObject<Theme> {
           handle: (input, next) => {
             const selectors = pseudo.startsWith('::')
               ? {
-                  pseudo: `${input.pseudo}${pseudo}`,
-                }
+                pseudo: `${input.pseudo}${pseudo}`,
+              }
               : {
-                  selector: `${input.selector}${pseudo}`,
-                }
+                selector: `${input.selector}${pseudo}`,
+              }
 
             return next({
               ...input,
@@ -284,11 +284,15 @@ export function variantPseudoClassFunctions(): VariantObject {
 export function variantTaggedPseudoClasses(options: PresetWeappOptions = {}): VariantObject[] {
   const attributify = !!options?.attributifyPseudo
 
+  let firstPrefix = options?.prefix ?? ''
+  firstPrefix = (Array.isArray(firstPrefix) ? firstPrefix : [firstPrefix]).filter(Boolean)[0] ?? ''
+  const tagWithPrefix = (tag: string, combinator: string) => taggedPseudoClassMatcher(tag, attributify ? `[${firstPrefix}${tag}=""]` : `.${firstPrefix}${tag}`, combinator)
+
   return [
-    taggedPseudoClassMatcher('group', attributify ? '[group=""]' : '.group', ' '),
-    taggedPseudoClassMatcher('peer', attributify ? '[peer=""]' : '.peer', '~'),
-    taggedPseudoClassMatcher('parent', attributify ? '[parent=""]' : '.parent', '>'),
-    taggedPseudoClassMatcher('previous', attributify ? '[previous=""]' : '.previous', '+'),
+    tagWithPrefix('group', ' '),
+    tagWithPrefix('peer', '~'),
+    tagWithPrefix('parent', '>'),
+    tagWithPrefix('previous', '+'),
   ]
 }
 
