@@ -124,7 +124,7 @@ export const textIndents: Rule<Theme>[] = [
 
     return { 'text-indent': theme.textIndent?.[s || 'DEFAULT'] || h.bracket.cssvar.global.fraction.remToRpx(s) }
   },
-  { autocomplete: 'indent-$textIndent' }],
+    { autocomplete: 'indent-$textIndent' }],
 ]
 
 export const textStrokes: Rule<Theme>[] = [
@@ -132,7 +132,7 @@ export const textStrokes: Rule<Theme>[] = [
   [/^text-stroke(?:-(.+))?$/, ([, s], { theme }) => ({ '-webkit-text-stroke-width': theme.textStrokeWidth?.[s || 'DEFAULT'] || h.bracket.cssvar.px(s) }), { autocomplete: 'text-stroke-$textStrokeWidth' }],
 
   // colors
-  [/^text-stroke-(.+)$/, colorResolver('-webkit-text-stroke-color', 'text-stroke'), { autocomplete: 'text-stroke-$colors' }],
+  [/^text-stroke-(.+)$/, colorResolver('-webkit-text-stroke-color', 'text-stroke', 'borderColor'), { autocomplete: 'text-stroke-$colors' }],
   [/^text-stroke-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-text-stroke-opacity': h.bracket.percent.cssvar(opacity) }), { autocomplete: 'text-stroke-(op|opacity)-<percent>' }],
 ]
 
@@ -149,6 +149,6 @@ export const textShadows: Rule<Theme>[] = [
   }, { autocomplete: 'text-shadow-$textShadow' }],
 
   // colors
-  [/^text-shadow-color-(.+)$/, colorResolver('--un-text-shadow-color', 'text-shadow'), { autocomplete: 'text-shadow-color-$colors' }],
+  [/^text-shadow-color-(.+)$/, colorResolver('--un-text-shadow-color', 'text-shadow', 'shadowColor'), { autocomplete: 'text-shadow-color-$colors' }],
   [/^text-shadow-color-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-text-shadow-opacity': h.bracket.percent.cssvar(opacity) }), { autocomplete: 'text-shadow-color-(op|opacity)-<percent>' }],
 ]

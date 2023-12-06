@@ -51,7 +51,7 @@ export const borders: Rule[] = [
 
 function borderColorResolver(direction: string) {
   return ([, body]: string[], theme: Theme): CSSObject | undefined => {
-    const data = parseColor(body, theme)
+    const data = parseColor(body, theme, 'borderColor')
 
     if (!data)
       return
@@ -72,7 +72,7 @@ function borderColorResolver(direction: string) {
       }
       else {
         return {
-        // Separate this return since if `direction` is an empty string, the first key will be overwritten by the second.
+          // Separate this return since if `direction` is an empty string, the first key will be overwritten by the second.
           '--un-border-opacity': colorOpacityToString(cssColor),
           [`--un-border${direction}-opacity`]: 'var(--un-border-opacity)',
           [`border${direction}-color`]: colorToString(cssColor, `var(--un-border${direction}-opacity)`),
@@ -104,7 +104,7 @@ function handlerBorderSize([, a = '', b]: string[], { theme }: RuleContext<Theme
 }
 
 function handlerBorderColor([, a = '', c]: string[], { theme }: RuleContext<Theme>): CSSObject | undefined {
-  if (a in directionMap && hasParseableColor(c, theme)) {
+  if (a in directionMap && hasParseableColor(c, theme, 'borderColor')) {
     return Object.assign(
       {},
       ...directionMap[a].map(i => borderColorResolver(i)(['', c], theme)),
