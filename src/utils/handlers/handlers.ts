@@ -1,6 +1,7 @@
 import { escapeSelector } from '@unocss/core'
 import { globalKeywords } from '../mappings'
-import { numberRE, numberWithUnitRE, unitOnlyRE } from './regex'
+import { bracketTypeRe, numberRE, numberWithUnitRE, unitOnlyRE } from './regex'
+
 
 // Not all, but covers most high frequency attributes
 const cssProps = [
@@ -135,7 +136,6 @@ export function fraction(str: string) {
     return `${round(num * 100)}%`
   }
 }
-const bracketTypeRe = /^\[(color|length|position|quoted|string):/i
 function bracketWithType(str: string, requiredType?: string) {
   if (str && str.startsWith('[') && str.endsWith(']')) {
     let base: string | undefined

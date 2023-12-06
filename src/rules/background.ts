@@ -67,20 +67,7 @@ function bgGradientPositionResolver() {
   }
 }
 
-const bgUrlRE = /^\[url\(.+\)\]$/
-const bgLengthRE = /^\[length:.+\]$/
-const bgPositionRE = /^\[position:.+\]$/
 export const backgroundStyles: Rule<Theme>[] = [
-  [/^bg-(.+)$/, ([, d], { theme }) => {
-    d = cacheRestoreSelector(d, theme?.transformRules)
-    if (bgUrlRE.test(d))
-      return { '--un-url': h.bracket(d), 'background-image': 'var(--un-url)' }
-    if (bgLengthRE.test(d) && h.bracketOfLength(d) != null)
-      return { 'background-size': h.bracketOfLength(d)!.split(' ').map(e => h.fraction.auto.px.cssvar(e) ?? e).join(' ') }
-    if ((isSize(d) || bgPositionRE.test(d)) && h.bracketOfPosition(d) != null)
-      return { 'background-position': h.bracketOfPosition(d)!.split(' ').map(e => h.position.fraction.auto.px.cssvar(e) ?? e).join(' ') }
-  }],
-
   // gradients
   [/^bg-gradient-(.+)$/, ([, d]) => ({ '--un-gradient': h.bracket(d) }), {
     autocomplete: ['bg-gradient', 'bg-gradient-(from|to|via)', 'bg-gradient-(from|to|via)-$colors', 'bg-gradient-(from|to|via)-(op|opacity)', 'bg-gradient-(from|to|via)-(op|opacity)-<percent>'],

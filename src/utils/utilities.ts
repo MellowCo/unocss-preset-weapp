@@ -3,9 +3,11 @@ import { isString, toArray } from '@unocss/core'
 import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 import type { Theme } from '../theme'
 import { colorOpacityToString, colorToString, parseCssColor } from './colors'
+import { getStringComponent } from '@unocss/rule-utils'
+
 import { handler as h } from './handlers'
 import { cssMathFnRE, directionMap, globalKeywords } from './mappings'
-import { numberWithUnitRE } from './handlers/regex'
+import { numberWithUnitRE, bracketTypeRe } from './handlers/regex'
 
 export const CONTROL_MINI_NO_NEGATIVE = '$$mini-no-negative'
 
@@ -61,16 +63,15 @@ function getThemeColor(theme: Theme, colors: string[], key?: ThemeColorKeys) {
  * @param theme
  */
 export function splitShorthand(body: string, type: string, theme: Theme) {
-  const split = cacheRestoreSelector(body, theme.transformRules).split(/(?:\/|\_|:)/) // 百分比 / 改为 _
 
-  if (split[0] === `[${type}`) {
-    return [
-      split.slice(0, 2).join(':'),
-      split[2],
-    ]
+  const [front, rest] = getStringComponent(cacheRestoreSelector(body, theme.transformRules), '[', ']', ['/', ':', '_']) ?? []
+
+  if (front != null) {
+    const match = (front.match(bracketTypeRe) ?? [])[1]
+
+    if (match == null || match === type)
+      return [front, rest]
   }
-
-  return split
 }
 
 /**
@@ -88,7 +89,11 @@ export function splitShorthand(body: string, type: string, theme: Theme) {
  * @return {ParsedColorValue|undefined}  {@link ParsedColorValue} object if string is parseable.
  */
 export function parseColor(body: string, theme: Theme, key?: ThemeColorKeys): ParsedColorValue | undefined {
-  const [main, opacity] = splitShorthand(body, 'color', theme)
+  const split = splitShorthand(body, 'color', theme)
+  if (!split)
+    return
+
+  const [main, opacity] = split
 
   const colors = main
     .replace(/([a-z])([0-9])/g, '$1-$2')
