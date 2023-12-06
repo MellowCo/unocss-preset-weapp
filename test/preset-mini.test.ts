@@ -71,12 +71,8 @@ describe('preset-mini', () => {
 
     const unmatched = []
     for (const i of presetMiniTargets) {
-
-      if (!css.includes(escapeSelector(i))) {
-        console.log(i, '=====i=======');
+      if (!css.includes(escapeSelector(i)))
         unmatched.push(i)
-      }
-
     }
     expect(unmatched).toEqual([])
     await expect(css).toMatchFileSnapshot('./assets/output/preset-mini/targets.css')
@@ -334,7 +330,6 @@ describe('preset-mini', () => {
         .text-sm{font-size:28rpx;line-height:40rpx;}"
       `)
   })
-
 
   it('override colors differently', async () => {
     const uno = createGenerator({

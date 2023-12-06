@@ -2,7 +2,6 @@ import { escapeSelector } from '@unocss/core'
 import { globalKeywords } from '../mappings'
 import { bracketTypeRe, numberRE, numberWithUnitRE, unitOnlyRE } from './regex'
 
-
 // Not all, but covers most high frequency attributes
 const cssProps = [
   // basic props

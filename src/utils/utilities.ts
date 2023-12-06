@@ -1,13 +1,13 @@
 import type { CSSEntries, CSSObject, DynamicMatcher, ParsedColorValue, RuleContext, StaticRule, VariantContext } from '@unocss/core'
 import { isString, toArray } from '@unocss/core'
 import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
+import { getStringComponent } from '@unocss/rule-utils'
 import type { Theme } from '../theme'
 import { colorOpacityToString, colorToString, parseCssColor } from './colors'
-import { getStringComponent } from '@unocss/rule-utils'
 
 import { handler as h } from './handlers'
 import { cssMathFnRE, directionMap, globalKeywords } from './mappings'
-import { numberWithUnitRE, bracketTypeRe } from './handlers/regex'
+import { bracketTypeRe, numberWithUnitRE } from './handlers/regex'
 
 export const CONTROL_MINI_NO_NEGATIVE = '$$mini-no-negative'
 
@@ -51,6 +51,9 @@ function getThemeColorForKey(theme: Theme, colors: string[], key: ThemeColorKeys
 
 /**
  * Obtain color from theme by camel-casing colors.
+ * @param theme
+ * @param colors
+ * @param key
  */
 function getThemeColor(theme: Theme, colors: string[], key?: ThemeColorKeys) {
   return getThemeColorForKey(theme, colors, key) || getThemeColorForKey(theme, colors, 'colors')
@@ -63,7 +66,6 @@ function getThemeColor(theme: Theme, colors: string[], key?: ThemeColorKeys) {
  * @param theme
  */
 export function splitShorthand(body: string, type: string, theme: Theme) {
-
   const [front, rest] = getStringComponent(cacheRestoreSelector(body, theme.transformRules), '[', ']', ['/', ':', '_']) ?? []
 
   if (front != null) {
@@ -80,6 +82,7 @@ export function splitShorthand(body: string, type: string, theme: Theme) {
  *
  * @example Parseable strings:
  * 'red' // From theme, if 'red' is available
+ * @param key
  * 'red-100' // From theme, plus scale
  * 'red-100_20' // From theme, plus scale/opacity
  * '[rgb(100,2,3)]/[var(--op)]' // Bracket with rgb color and bracket with opacity
@@ -184,6 +187,7 @@ export function parseColor(body: string, theme: Theme, key?: ThemeColorKeys): Pa
  *
  * @param {string} property - Property for the css value to be created.
  * @param {string} varName - Base name for the opacity variable.
+ * @param key
  * @param {Function} [shouldPass] - Function to decide whether to pass the css.
  * @return {@link DynamicMatcher} object.
  */

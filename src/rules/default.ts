@@ -2,7 +2,7 @@ import type { Rule } from '@unocss/core'
 import { transitions } from './transition'
 import { borders } from './border'
 
-import { bgColors, colorScheme, opacity, } from './color'
+import { bgColors, colorScheme, opacity } from './color'
 import { flex } from './flex'
 import { fonts, tabSizes, textIndents, textShadows, textStrokes } from './typography'
 import { gaps } from './gap'

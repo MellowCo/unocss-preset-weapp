@@ -231,11 +231,11 @@ export function variantPseudoClassesAndElements(): VariantObject<Theme> {
           handle: (input, next) => {
             const selectors = pseudo.startsWith('::')
               ? {
-                pseudo: `${input.pseudo}${pseudo}`,
-              }
+                  pseudo: `${input.pseudo}${pseudo}`,
+                }
               : {
-                selector: `${input.selector}${pseudo}`,
-              }
+                  selector: `${input.selector}${pseudo}`,
+                }
 
             return next({
               ...input,

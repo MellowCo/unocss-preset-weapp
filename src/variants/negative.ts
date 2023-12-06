@@ -1,7 +1,6 @@
 import type { Variant } from '@unocss/core'
-import { CONTROL_MINI_NO_NEGATIVE, cssMathFnRE } from '../utils'
 import { getStringComponent } from '@unocss/rule-utils'
-
+import { CONTROL_MINI_NO_NEGATIVE, cssMathFnRE } from '../utils'
 
 const anchoredNumberRE = /^-?[0-9.]+(?:[a-z]+|%)?$/
 const numberRE = /-?[0-9.]+(?:[a-z]+|%)?/

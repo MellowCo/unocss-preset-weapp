@@ -115,4 +115,3 @@ export const globalKeywords = [
 ]
 
 export const cssMathFnRE = /^(calc|clamp|min|max)\s*\((.+)\)(.*)/
-

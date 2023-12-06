@@ -29,7 +29,6 @@ export const rings: Rule<Theme>[] = [
   // size
   [/^ring-(?:width-|size-)(.+)$/, handleWidth, { autocomplete: 'ring-(width|size)-$lineWidth' }],
 
-
   // offset size
   ['ring-offset', { '--un-ring-offset-width': '1px' }],
   [/^ring-offset-(?:width-|size-)?(.+)$/, ([, d], { theme }) => ({ '--un-ring-offset-width': theme.lineWidth?.[d] ?? h.bracket.cssvar.px(d) }), { autocomplete: 'ring-offset-(width|size)-$lineWidth' }],
@@ -45,7 +44,6 @@ export const rings: Rule<Theme>[] = [
   // style
   ['ring-inset', { '--un-ring-inset': 'inset' }],
 ]
-
 
 function handleWidth([, b]: string[], { theme }: RuleContext<Theme>): CSSObject {
   return { '--un-ring-width': theme.ringWidth?.[b] ?? h.bracket.cssvar.px(b) }

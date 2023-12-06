@@ -24,7 +24,6 @@ export const textDecorations: Rule<Theme>[] = [
   ['decoration-none', { 'text-decoration': 'none' }],
 ]
 
-
 function handleWidth([, b]: string[], { theme }: RuleContext<Theme>): CSSObject {
   return { 'text-decoration-thickness': theme.lineWidth?.[b] ?? h.bracket.cssvar.global.px(b) }
 }

@@ -1,4 +1,4 @@
-import { definePreset, type Preset, type PresetOptions } from '@unocss/core'
+import { type PresetOptions, definePreset } from '@unocss/core'
 import { cacheTransformEscapESelector, defaultRules } from 'unplugin-transform-class/utils'
 import { extractorArbitraryVariants } from '@unocss/extractor-arbitrary-variants'
 import preflights from './preflights'

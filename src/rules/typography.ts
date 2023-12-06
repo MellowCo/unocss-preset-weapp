@@ -93,7 +93,7 @@ export const textIndents: Rule<Theme>[] = [
 
     return { 'text-indent': theme.textIndent?.[s || 'DEFAULT'] || h.bracket.cssvar.global.fraction.remToRpx(s) }
   },
-    { autocomplete: 'indent-$textIndent' }],
+  { autocomplete: 'indent-$textIndent' }],
 ]
 
 export const textStrokes: Rule<Theme>[] = [

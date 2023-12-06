@@ -33,7 +33,7 @@ function taggedData(tagName: string): Variant {
           }
         }
       }
-    }
+    },
   }
 }
 

@@ -1,7 +1,7 @@
 import type { Rule } from '@unocss/core'
-import { colorResolver, handler as h, isSize } from '../utils'
 import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
-import { Theme } from '../theme'
+import { colorResolver, handler as h, isSize } from '../utils'
+import type { Theme } from '../theme'
 
 /**
  * @param root0
@@ -12,7 +12,6 @@ import { Theme } from '../theme'
 export const opacity: Rule[] = [
   [/^op(?:acity)?-?(.+)$/, ([, d]) => ({ opacity: h.bracket.percent.cssvar(d) })],
 ]
-
 
 const bgUrlRE = /^\[url\(.+\)\]$/
 const bgLengthRE = /^\[length:.+\]$/

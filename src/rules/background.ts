@@ -1,6 +1,5 @@
 import type { CSSColorValue, Rule, RuleContext } from '@unocss/core'
-import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
-import { colorOpacityToString, colorToString, globalKeywords, handler as h, isSize, makeGlobalStaticRules, parseColor, positionMap } from '../utils'
+import { colorOpacityToString, colorToString, globalKeywords, handler as h, makeGlobalStaticRules, parseColor, positionMap } from '../utils'
 import type { Theme } from '../'
 
 function bgGradientToValue(cssColor: CSSColorValue | undefined) {
