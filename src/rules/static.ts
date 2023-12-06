@@ -81,7 +81,7 @@ export const contentVisibility: Rule<Theme>[] = [
 
     return { 'contain-intrinsic-size': h.bracket.cssvar.global.fraction.rem(d) }
   },
-  { autocomplete: 'intrinsic-size-<num>' },
+    { autocomplete: 'intrinsic-size-<num>' },
   ],
   ['content-visibility-visible', { 'content-visibility': 'visible' }],
   ['content-visibility-hidden', { 'content-visibility': 'hidden' }],
@@ -107,6 +107,7 @@ export const textWraps: Rule[] = [
   ['text-wrap', { 'text-wrap': 'wrap' }],
   ['text-nowrap', { 'text-wrap': 'nowrap' }],
   ['text-balance', { 'text-wrap': 'balance' }],
+  ['text-pretty', { 'text-wrap': 'pretty' }],
 ]
 
 export const textOverflows: Rule[] = [

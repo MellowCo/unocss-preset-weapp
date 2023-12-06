@@ -1141,6 +1141,7 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .text-wrap{text-wrap:wrap;}
 .text-nowrap{text-wrap:nowrap;}
 .text-balance{text-wrap:balance;}
+.text-pretty{text-wrap:pretty;}
 .bg-blend-color-burn{background-blend-mode:color-burn;}
 .bg-blend-luminosity{background-blend-mode:luminosity;}
 .bg-blend-normal{background-blend-mode:normal;}
