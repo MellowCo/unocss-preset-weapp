@@ -3,7 +3,7 @@
     <view class="bg-[#3498db] mb-1">
       bg-[#3498db]
     </view>
-    <view class="bg-[#3498db]/80 mb-1">
+    <view class="bg-[#349]/30 mb-1">
       bg-[#3498db] 80
     </view>
 
@@ -11,7 +11,7 @@
       bg-[#3498db] 60
     </view>
 
-    <view class="bg-[#3498db]_40 mb-1">
+    <view class="bg-[#3498db]_80 mb-1">
       bg-[#3498db] 40
     </view>
 
