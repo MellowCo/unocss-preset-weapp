@@ -1,4 +1,4 @@
-import type { Preset, PresetOptions } from '@unocss/core'
+import { definePreset, type Preset, type PresetOptions } from '@unocss/core'
 import { cacheTransformEscapESelector, defaultRules } from 'unplugin-transform-class/utils'
 import { extractorArbitraryVariants } from '@unocss/extractor-arbitrary-variants'
 import preflights from './preflights'
@@ -142,7 +142,7 @@ export interface PresetWeappOptions extends PresetOptions {
   arbitraryVariants?: boolean
 }
 
-export function presetWeapp(options: PresetWeappOptions = {}): Preset<Theme> {
+export const presetWeapp = definePreset((options: PresetWeappOptions = {}) => {
   options.dark = options.dark ?? 'class'
   options.attributifyPseudo = options.attributifyPseudo ?? false
   options.preflight = options.preflight ?? true
@@ -207,7 +207,7 @@ export function presetWeapp(options: PresetWeappOptions = {}): Preset<Theme> {
       shorthands,
     },
   }
-}
+})
 
 function VarPrefixPostprocessor(prefix: string, obj: any) {
   obj.entries.forEach((i: any) => {
