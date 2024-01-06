@@ -196,16 +196,27 @@ export default {
 ### 自定义转换规则
 > 如需更改默认的转换规则，可通过 `transformRules` 进行修改
 
+[默认转换规则](https://github.com/MellowCo/unplugin-transform-class#usage)
+
 * unocss.config.js
 ```ts
 import presetWeapp from 'unocss-preset-weapp'
-import { extractorAttributify, transformerClass, defaultAttributes } from 'unocss-preset-weapp/transformer'
+import { extractorAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
 import { defineConfig } from 'unocss'
 
 const transformRules = {
-  ...defaultAttributes,
   '.': '-d111-',
-  '/': '-s111-'
+  '/': '-s111-',
+  ':': '-c111-',
+  '%': '-p111-',
+  '!': '-e111-',
+  '#': '-w111-',
+  '(': '-b111l-',
+  ')': '-b111r-',
+  '[': '-f111l-',
+  ']': '-f111r-',
+  '$': '-r111-',
+  ',': '-r222-',
 }
 
 const { presetWeappAttributify, transformerAttributify } = extractorAttributify({
