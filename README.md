@@ -199,22 +199,13 @@ export default {
 * unocss.config.js
 ```ts
 import presetWeapp from 'unocss-preset-weapp'
-import { extractorAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
+import { extractorAttributify, transformerClass, defaultAttributes } from 'unocss-preset-weapp/transformer'
 import { defineConfig } from 'unocss'
 
 const transformRules = {
+  ...defaultAttributes,
   '.': '-d111-',
-  '/': '-s111-',
-  ':': '-c111-',
-  '%': '-p111-',
-  '!': '-e111-',
-  '#': '-w111-',
-  '(': '-b111l-',
-  ')': '-b111r-',
-  '[': '-f111l-',
-  ']': '-f111r-',
-  '$': '-r111-',
-  ',': '-r222-',
+  '/': '-s111-'
 }
 
 const { presetWeappAttributify, transformerAttributify } = extractorAttributify({
