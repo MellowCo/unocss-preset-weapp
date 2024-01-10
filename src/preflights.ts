@@ -2,7 +2,7 @@ import type { Preflight, PreflightContext } from '@unocss/core'
 import { entriesToCss, toArray } from '@unocss/core'
 import type { Theme } from './theme'
 
-const wxPrefix = ['page,::before,::after']
+const wxPrefix = ['page,root-portal-content,::before,::after']
 const taroPrefix = ['*,::before,::after']
 const uniappPrefix = ['uni-page-body,::before,::after']
 // const defaultPrefix = ['*,::before,::after', '::backdrop']
