@@ -806,6 +806,11 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .pos-unset{position:unset;}
 .position-inherit{position:inherit;}
 .static{position:static;}
+.size-_lfl11_calc_lbl11_1000px-4rem_lbr11__lfr11_{width:calc(1000px - 4rem);height:calc(1000px - 4rem);}
+.size-_lfl11_var_lbl11_--something_lbr11__lfr11_{width:var(--something);height:var(--something);}
+.size-10{width:10rpx;height:10rpx;}
+.size-max-10{max-width:10rpx;max-height:10rpx;}
+.size-min-10{min-width:10rpx;min-height:10rpx;}
 .h-_do11_var{height:var(--var);}
 .h-_lfl11_calc_lbl11_1000px-4rem_lbr11__lfr11_,
 .size-h-_lfl11_calc_lbl11_1000px-4rem_lbr11__lfr11_{height:calc(1000px - 4rem);}

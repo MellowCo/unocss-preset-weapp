@@ -805,6 +805,11 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .pos-unset{position:unset;}
 .position-inherit{position:inherit;}
 .static{position:static;}
+.size-\[calc\(1000px-4rem\)\]{width:calc(1000px - 4rem);height:calc(1000px - 4rem);}
+.size-\[var\(--something\)\]{width:var(--something);height:var(--something);}
+.size-10{width:10rpx;height:10rpx;}
+.size-max-10{max-width:10rpx;max-height:10rpx;}
+.size-min-10{min-width:10rpx;min-height:10rpx;}
 .h-\[calc\(1000px-4rem\)\],
 .size-h-\[calc\(1000px-4rem\)\]{height:calc(1000px - 4rem);}
 .h-\$var{height:var(--var);}
