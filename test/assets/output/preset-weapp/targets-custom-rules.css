@@ -529,6 +529,7 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .c-_do11_color-variable,
 .c-_do11_color-variable_sl11__do11_opacity-variable,
 .c-_do11_color-variable_sl11_10{color:var(--color-variable);}
+.c-_do11_color-variable_lco11_red{color:var(--color-variable, red);}
 .c-_lfl11__wn11_157_lfr11_,
 .c-_wn11_157,
 .c-hex-157{--un-text-opacity:1;color:rgba(17,85,119,var(--un-text-opacity));}

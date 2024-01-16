@@ -217,8 +217,10 @@ export function bracketOfPosition(str: string) {
 }
 
 export function cssvar(str: string) {
-  if (str.match(/^\$[^\s'"`;{}]/))
-    return `var(--${escapeSelector(str.slice(1))})`
+  if (/^\$[^\s'"`;{}]/.test(str)) {
+    const [name, defaultValue] = str.slice(1).split(',')
+    return `var(--${escapeSelector(name)}${defaultValue ? `, ${defaultValue}` : ''})`
+  }
 }
 
 export function time(str: string) {

@@ -556,6 +556,7 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .c-\$color-variable,
 .c-\$color-variable\/\$opacity-variable,
 .c-\$color-variable\/10{color:var(--color-variable);}
+.c-\$color-variable\,red{color:var(--color-variable, red);}
 .color-\$red{color:var(--red);}
 .color-blue,
 .color-blue-400{--licl-text-opacity:1;color:rgba(96,165,250,var(--licl-text-opacity));}
