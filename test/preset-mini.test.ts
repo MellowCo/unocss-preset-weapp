@@ -271,16 +271,16 @@ describe('preset-mini', () => {
     expect(css).toMatchInlineSnapshot(`
       "/* layer: default */
       @media (max-width: 999.9px){
-      .\\\\<xl_cl_text-3xl{font-size:60rpx;line-height:72rpx;}
+      .\\<xl_cl_text-3xl{font-size:60rpx;line-height:72rpx;}
       }
       @media (max-width: calc(64rem - 0.1px)){
-      .\\\\<lg_cl_text-sm{font-size:28rpx;line-height:40rpx;}
+      .\\<lg_cl_text-sm{font-size:28rpx;line-height:40rpx;}
       }
       @media (min-width: 48rem){
       .md_cl_text-xl{font-size:40rpx;line-height:56rpx;}
       }
       @media (min-width: 48rem) and (max-width: calc(64rem - 0.1px)){
-      .\\\\~md_cl_text-base{font-size:32rpx;line-height:48rpx;}
+      .\\~md_cl_text-base{font-size:32rpx;line-height:48rpx;}
       }"
     `)
   })
