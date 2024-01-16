@@ -19,10 +19,8 @@ export const outline: Rule<Theme>[] = [
 ]
 
 export const appearance: Rule[] = [
-  ['appearance-none', {
-    '-webkit-appearance': 'none',
-    'appearance': 'none',
-  }],
+  ['appearance-auto', { '-webkit-appearance': 'auto', 'appearance': 'auto' }],
+  ['appearance-none', { '-webkit-appearance': 'none', 'appearance': 'none' }],
 ]
 
 function willChangeProperty(prop: string): string | undefined {

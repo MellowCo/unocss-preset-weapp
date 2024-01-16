@@ -987,6 +987,7 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .outline-unset{outline-style:unset;}
 .outline-none{outline:2px solid transparent;outline-offset:2px;}
 .focus-visible_cl_outline-none:focus-visible{outline:2px solid transparent;outline-offset:2px;}
+.appearance-auto{-webkit-appearance:auto;appearance:auto;}
 .appearance-none{-webkit-appearance:none;appearance:none;}
 .order-_do_variable{order:var(--variable);}
 .order-first{order:-9999;}
