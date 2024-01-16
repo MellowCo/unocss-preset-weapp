@@ -1162,6 +1162,15 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .text-nowrap{text-wrap:nowrap;}
 .text-balance{text-wrap:balance;}
 .text-pretty{text-wrap:pretty;}
+.min-h-dvh{min-height:100dvh;}
+.min-h-svh{min-height:100svh;}
+.min-h-lvh{min-height:100lvh;}
+.h-dvh{height:100dvh;}
+.h-svh{height:100svh;}
+.h-lvh{height:100lvh;}
+.max-h-dvh{max-height:100dvh;}
+.max-h-svh{max-height:100svh;}
+.max-h-lvh{max-height:100lvh;}
 .bg-blend-color-burn{background-blend-mode:color-burn;}
 .bg-blend-luminosity{background-blend-mode:luminosity;}
 .bg-blend-normal{background-blend-mode:normal;}

@@ -1425,6 +1425,17 @@ export const presetMiniTargets: string[] = [
   'saturate-120',
   'sepia',
   'sepia-80',
+
+  // dynamic viewport height
+  'h-svh',
+  'h-dvh',
+  'h-lvh',
+  'min-h-dvh',
+  'min-h-lvh',
+  'min-h-svh',
+  'max-h-dvh',
+  'max-h-svh',
+  'max-h-lvh',
 ]
 
 export const presetMiniNonTargets = [
