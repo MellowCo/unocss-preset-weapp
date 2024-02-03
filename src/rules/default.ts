@@ -13,7 +13,7 @@ import { rings } from './ring'
 import { boxShadows } from './shadow'
 import { aspectRatio, sizes } from './size'
 import { margins, paddings, spaces } from './spacing'
-import { appearances, backgroundBlendModes, breaks, contains, contentVisibility, contents, cursors, displays, fontSmoothings, fontStyles, hyphens, isolations, mixBlendModes, objectPositions, pointerEvents, resizes, screenReadersAccess, textOverflows, textTransforms, textWraps, userSelects, whitespaces, writingModes, writingOrientations } from './static'
+import { appearances, backgroundBlendModes, breaks, contains, contentVisibility, contents, cursors, displays, dynamicViewportHeight, fontSmoothings, fontStyles, hyphens, isolations, mixBlendModes, objectPositions, pointerEvents, resizes, screenReadersAccess, textOverflows, textTransforms, textWraps, userSelects, whitespaces, writingModes, writingOrientations } from './static'
 import { transforms } from './transform'
 import { cssProperty, cssVariables } from './variables'
 import { textAligns, verticalAligns } from './align'
@@ -91,6 +91,7 @@ export const rules: Rule[] = [
   safeArea,
   contains,
   textWraps,
+  dynamicViewportHeight,
 
   // should be the last
   // questionMark,

@@ -196,6 +196,7 @@ export const presetMiniTargets: string[] = [
   'outline-size-[var(--width)]',
   'outline-offset-[var(--offset)]',
   'appearance-none',
+  'appearance-auto',
   'will-change-margin,padding',
   'will-change-padding,margin',
   'will-change-transform',
@@ -351,6 +352,7 @@ export const presetMiniTargets: string[] = [
   'c-$color-variable',
   'c-$color-variable/10',
   'c-$color-variable/$opacity-variable',
+  'c-$color-variable,red',
   'op-10',
   'opacity-0',
   'opacity-$opa',
@@ -507,10 +509,14 @@ export const presetMiniTargets: string[] = [
   'gap-inherit',
   'gap-4',
   'gap-x-1',
+  'gap-col-1',
   'gap2',
   'flex-gap-y-1',
+  'flex-gap-row-1',
   'flex-gap-y-unset',
+  'flex-gap-row-unset',
   'grid-gap-y-1',
+  'grid-gap-row-1',
   'flex-items-center',
   'flex-justify-center',
 
@@ -717,6 +723,11 @@ export const presetMiniTargets: string[] = [
   'size-w-10',
   'size-h-[calc(1000px-4rem)]',
   'size-min-w-full',
+  'size-10',
+  'size-[calc(1000px-4rem)]',
+  'size-[var(--something)]',
+  'size-min-10',
+  'size-max-10',
 
   // size - logical
   'block-auto',
@@ -1195,6 +1206,7 @@ export const presetMiniTargets: string[] = [
   '!m-$c-m',
   '!p-5px',
   '-gap-y-5',
+  '-gap-row-5',
   '-mb-px',
   '-mt--5cm',
   '-p-px',
@@ -1413,6 +1425,17 @@ export const presetMiniTargets: string[] = [
   'saturate-120',
   'sepia',
   'sepia-80',
+
+  // dynamic viewport height
+  'h-svh',
+  'h-dvh',
+  'h-lvh',
+  'min-h-dvh',
+  'min-h-lvh',
+  'min-h-svh',
+  'max-h-dvh',
+  'max-h-svh',
+  'max-h-lvh',
 ]
 
 export const presetMiniNonTargets = [

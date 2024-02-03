@@ -105,7 +105,11 @@ export interface PresetWeappOptions extends PresetOptions {
 ## 其他
 
 ### 修改 w h 默认单位
-> unocss-preset-weapp，wh默认单位 `rpx`，例如
+> 仅针对 width height postion 起作用
+
+> padding margin 可通过 [配置rules](https://github.com/MellowCo/unocss-preset-weapp/issues/116) 覆盖
+
+> unocss-preset-weapp，`whRpx` 默认为 `true`，wh默认单位 `rpx`，例如
 
 ```css
 .text-20 {
@@ -195,6 +199,8 @@ export default {
 
 ### 自定义转换规则
 > 如需更改或添加默认的转换规则，可通过 `transformRules` 进行修改
+
+[默认转换规则](https://github.com/MellowCo/unplugin-transform-class#usage)
 
 * unocss.config.js
 ```ts
