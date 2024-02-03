@@ -1,6 +1,7 @@
 import { createGenerator } from '@unocss/core'
 import { describe, expect, test } from 'vitest'
 import presetWeapp from '../src/index'
+import { defaultRules } from '../src/transformer'
 import { presetMiniTargets } from './assets/preset-mini-targets'
 import { presetWeappTargets } from './assets/preset-weapp-targets'
 
@@ -30,6 +31,7 @@ describe('preset-weapp', () => {
       presets: [
         presetWeapp({
           transformRules: {
+            ...defaultRules,
             '.': '_dl11_',
             '/': '_sl11_',
             ':': '_cl11_',

@@ -194,15 +194,16 @@ export default {
 
 
 ### 自定义转换规则
-> 如需更改默认的转换规则，可通过 `transformRules` 进行修改
+> 如需更改或添加默认的转换规则，可通过 `transformRules` 进行修改
 
 * unocss.config.js
 ```ts
 import presetWeapp from 'unocss-preset-weapp'
-import { extractorAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
+import { defaultRules, extractorAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
 import { defineConfig } from 'unocss'
 
 const transformRules = {
+  ...defaultRules,
   '.': '-d111-',
   '/': '-s111-',
   ':': '-c111-',
