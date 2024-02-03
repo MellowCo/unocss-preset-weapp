@@ -94,7 +94,7 @@
     "@unocss/extractor-arbitrary-variants": "^0.58.4",
     "@unocss/rule-utils": "^0.58.4",
     "unplugin-attributify-to-class": "^0.2.5",
-    "unplugin-transform-class": "^0.5.1"
+    "unplugin-transform-class": "^0.5.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "0.41.3",

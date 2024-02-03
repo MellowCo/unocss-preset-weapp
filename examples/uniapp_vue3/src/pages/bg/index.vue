@@ -6,6 +6,9 @@ export default {
 
 <template>
   <view text="white base" class="p-3">
+    <view class="bg-[--l-tab-bar-bg-color] [--l-tab-bar-bg-color:theme(backgroundColor.container)] w-100 h-100" />
+    <view :class="{ 'bg-[--l-tab-bar-bg-color:theme(backgroundColor.container)] w-100 h-100': 1 === 1 }" />
+
     <view flex justify-center w-full class="!px-4 important:p-10 -m-4">
       <view class="w-100 h-100 bg-cover mb-3" style="background-image: url(../../static/logo.png)" />
     </view>

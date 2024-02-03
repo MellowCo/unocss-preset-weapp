@@ -21,8 +21,8 @@ dependencies:
     specifier: ^0.2.5
     version: 0.2.5(rollup@3.28.1)
   unplugin-transform-class:
-    specifier: ^0.5.1
-    version: 0.5.1(rollup@3.28.1)
+    specifier: ^0.5.2
+    version: 0.5.2(rollup@3.28.1)
 
 devDependencies:
   '@antfu/eslint-config':
@@ -1137,10 +1137,10 @@ packages:
       type-detect: 4.0.8
     dev: true
 
-  /@meoc/utils@0.2.5:
-    resolution: {integrity: sha512-xRL8RKHjKj+IwTfWmyQFNngL2CuayGC3/d4kDuXNe0Iv1/VLs0cekrKZP1jDD79M3Eti4/lD9zhZYMBAOFIMDg==}
+  /@meoc/utils@0.2.8:
+    resolution: {integrity: sha512-SogV9QQpK05CVO3Gz071fRFH/PbbXxCP566VYOs/ux62RTuTbfAVeT8jkiYfzBpg+ImqpKkkK6o6tcbGM0rESQ==}
     dependencies:
-      dayjs: 1.11.9
+      dayjs: 1.11.10
     dev: false
 
   /@mswjs/cookies@0.2.2:
@@ -1935,6 +1935,7 @@ packages:
     resolution: {integrity: sha512-jaVNAFBHNLXspO543WnNNPZFRtavh3skAkITqD0/2aeMkKZTN+254PyhwxFYrk3vQ1xfY+2wbesJMs/JC8/PwQ==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+    dev: true
 
   /agent-base@6.0.2:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
@@ -2472,8 +2473,8 @@ packages:
     hasBin: true
     dev: true
 
-  /dayjs@1.11.9:
-    resolution: {integrity: sha512-QvzAURSbQ0pKdIye2txOzNaHmxtUBXerpY0FJsFXUMKbIZeFm5ht1LS/jFsrncjnmtv8HsG0W2g6c0zUjZWmpA==}
+  /dayjs@1.11.10:
+    resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
     dev: false
 
   /debug@3.2.7:
@@ -5727,15 +5728,15 @@ packages:
     dependencies:
       '@rollup/pluginutils': 5.1.0(rollup@3.28.1)
       unplugin: 1.5.0
-      unplugin-transform-class: 0.5.1(rollup@3.28.1)
+      unplugin-transform-class: 0.5.2(rollup@3.28.1)
     transitivePeerDependencies:
       - rollup
     dev: false
 
-  /unplugin-transform-class@0.5.1(rollup@3.28.1):
-    resolution: {integrity: sha512-v3TvmVFsosuq6GXyelcr1lPsgDVcAQiWE7NA6JezVjUUdiSjDvnZYQf8x6hCm1+Ouh5dg3QvCZ57o8la/svDNA==}
+  /unplugin-transform-class@0.5.2(rollup@3.28.1):
+    resolution: {integrity: sha512-xRDtfHWfYCSBKiZOHeepS9YGhpj+SIWnirJfuCdPxRasYbcuFKMZZYh7+UoDMUKX3821S5q+08rB69gYMllSSw==}
     dependencies:
-      '@meoc/utils': 0.2.5
+      '@meoc/utils': 0.2.8
       '@rollup/pluginutils': 5.1.0(rollup@3.28.1)
       unplugin: 1.4.0
     transitivePeerDependencies:
@@ -5745,7 +5746,7 @@ packages:
   /unplugin@1.4.0:
     resolution: {integrity: sha512-5x4eIEL6WgbzqGtF9UV8VEC/ehKptPXDS6L2b0mv4FRMkJxRtjaJfOWDd6a8+kYbqsjklix7yWP0N3SUepjXcg==}
     dependencies:
-      acorn: 8.9.0
+      acorn: 8.10.0
       chokidar: 3.5.3
       webpack-sources: 3.2.3
       webpack-virtual-modules: 0.5.0

@@ -1,5 +1,7 @@
 
       <view class="bg-_lfl_url_lbl_https_cl__sl__sl_img_dl_cdn_dl_sugarat_dl_top_sl_mdImg_sl_MTY2ODA4OTc3MjcyMg_eqe__eqe_unocss-icon-gray_dl_svg_lbr__lfr_" />
+      <view class="bg-_lfl_--l-tab-bar-bg-color_lco_theme_lbl_backgroundColor_dl_container_lbr__lfr_" />
+      <view :class="{'bg-_lfl_--l-tab-bar-bg-color_lco_theme_lbl_backgroundColor_dl_container_lbr__lfr_': true}" />
 
       <view class="center h-200 rounded-md bg-gradient-to-t from-_wn_f39c22_sl_60 via-_wn_2ecc71_cl_80 to-_wn_9b59b6_70 mb-3">
         to-t
