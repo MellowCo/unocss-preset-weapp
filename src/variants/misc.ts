@@ -1,4 +1,5 @@
 import type { Variant } from '@unocss/core'
+import { hasThemeFn, transformThemeFn } from '@unocss/rule-utils'
 import { getBracket, h, variantGetBracket, variantGetParameter } from '../utils'
 
 export const variantSelector: Variant = {
@@ -152,4 +153,23 @@ export const variantSpaceAndDivide: Variant = (matcher) => {
       },
     }
   }
+}
+
+export const themeVariables: Variant = {
+  name: 'theme-variables',
+  match(matcher, ctx) {
+    if (!hasThemeFn(matcher))
+      return
+
+    return {
+      matcher,
+      handle(input, next) {
+        return next({
+          ...input,
+          //  entries: [ [ '--css-spacing', '28rpx' ] ],
+          entries: JSON.parse(transformThemeFn(JSON.stringify(input.entries), ctx.theme)),
+        })
+      },
+    }
+  },
 }

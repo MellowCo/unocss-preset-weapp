@@ -269,6 +269,7 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .disabled\:op50:disabled{opacity:0.5;}
 .placeholder-opacity-60::placeholder{opacity:0.6;}
 .\[\&\[data-active\=\"true\"\]\]\:bg-red[data-active="true"]{--licl-bg-opacity:1;background-color:rgba(248,113,113,var(--licl-bg-opacity));}
+.bg-\[--css-bg\,theme\(spacing\.sm\)\]{background-color:var(--css-bg,28rpx);}
 .bg-\[--test-variable\],
 .bg-\$test-variable{background-color:var(--test-variable);}
 .bg-\[\#153\]\/10,
@@ -512,6 +513,7 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .text-\[color\:var\(--color-x\)\]\:\[trick\]{color:var(--color-x);}
 .text-\[color\:var\(--color\)\],
 .text-\[var\(--color\)\]{color:var(--color);}
+.text-\[theme\(spacing\.sm\)\]{color:28rpx;}
 .text-black\/10{color:rgba(0,0,0,0.1);}
 .text-red-100,
 .text-red100{--licl-text-opacity:1;color:rgba(254,226,226,var(--licl-text-opacity));}
@@ -553,6 +555,7 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .c-\[\#44557733\]\/10,
 .c-\#44557733\/10,
 .c-hex-44557733\/10{color:rgba(68,85,119,0.1);}
+.c-\[theme\(colors\.red\.500\/50\%\)\]{color:rgb(239 68 68 / 50%);}
 .c-\$color-variable,
 .c-\$color-variable\/\$opacity-variable,
 .c-\$color-variable\/10{color:var(--color-variable);}
