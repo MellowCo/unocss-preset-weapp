@@ -28,4 +28,9 @@ export default {
     // https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
     transformerClass(),
   ],
+  theme: {
+    color: {
+      bg: 'rgba(22, 33, 255, 1)',
+    },
+  },
 }

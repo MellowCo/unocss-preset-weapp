@@ -1,8 +1,8 @@
 import presetWeapp from 'unocss-preset-weapp'
 import { extractorAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
 import { presetIcons } from 'unocss'
-import transformerDirectives from '@unocss/transformer-directives'
-import transformerVariantGroup from '@unocss/transformer-variant-group'
+
+// import transformerDirectives from '@unocss/transformer-directives'
 
 const { presetWeappAttributify, transformerAttributify } = extractorAttributify()
 
@@ -21,11 +21,9 @@ export default {
     },
   ],
   transformers: [
-    transformerDirectives({
-      enforce: 'pre',
-    }),
-
-    transformerVariantGroup(),
+    // transformerDirectives({
+    //   enforce: 'pre',
+    // }),
 
     // https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerAttributify
     transformerAttributify(),
@@ -34,13 +32,8 @@ export default {
     transformerClass(),
   ],
   theme: {
-    colors: {
-      'gray-color-3': 'var(--l-gray-color-3, #e7e7e7)',
-      'font-white-1': 'var(--l-font-white-1, rgba(255, 255, 255, 1))',
+    color: {
+      bg: 'rgba(22, 33, 255, 1)',
     },
-    backgroundColor: {
-      container: 'var(--l-bg-color-container, var(--l-font-white-1, rgba(22, 33, 255, 1)))', // 色彩 - 容器
-    },
-    borderColor: 'var(--l-border-color, var(--l-gray-color-3, #e7e7e7))', // 边框色
   },
 }

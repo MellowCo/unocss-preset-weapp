@@ -8,6 +8,10 @@
   <view class="bg-to-r">
     apply bg-to-r
   </view>
+
+  <view class="bg-directives w-300 h-100">
+    apply bg-to-r
+  </view>
 </template>
 
 <style scoped>
@@ -21,5 +25,9 @@
 
 .bg-to-r{
   --at-apply: center h-200 rounded-md bg-gradient-to-r from-#f39c12/60 via-#2ecc71:80 to-#9b59b6_70 mb-3
+}
+
+.bg-directives{
+  background-color: theme(color.bg);
 }
 </style>
