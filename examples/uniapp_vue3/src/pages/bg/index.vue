@@ -6,10 +6,18 @@ export default {
 
 <template>
   <view text="white base" class="p-3">
-    <view class="bg-[--l-tab-bar-bg-color] [--l-tab-bar-bg-color:theme(color.bg)] w-100 h-100" />
+    <view class="bg-[--l-tab-bar-bg-color] [--l-tab-bar-bg-color:theme(color.blue)] w-100 h-100" />
+    <view :class="{ 'mt-2 bg-[--l-tab-bar-bg-color,theme(color.blue)] w-100 h-100': 1 === 1 }" />
 
-    <view class="mt-2 bg-[--l-tab-bar-bg-color,theme(color.bg)] w-100 h-100" />
-    <view :class="{ 'mt-2 bg-[--l-tab-bar-bg-color,theme(color.bg)] w-100 h-100': 1 === 1 }" />
+    <view class="mt-2 bg-[--l-tab-bar-bg-color,theme(color.blue)] w-100 h-100" />
+    <view class="mt-2 bg-[theme(color.red)] w-100 h-100" />
+    <view class="mt-2 bg-[theme(color.sun)] w-100 h-100" />
+    <view class="mt-2 bg-[theme(color.green)] w-100 h-100" />
+
+    <view class="mt-2 border-1 border-solid border-[theme(border.blue)] w-100 h-100" />
+    <view class="mt-2 border-1 border-solid border-[theme(border.red)] w-100 h-100" />
+    <view class="mt-2 border-1 border-solid border-[theme(border.sun)] w-100 h-100" />
+    <view class="mt-2 border-1 border-solid border-[theme(border.green)] w-100 h-100" />
 
     <view flex justify-center w-full class="!px-4 important:p-10 -m-4">
       <view class="w-100 h-100 bg-cover mb-3" style="background-image: url(../../static/logo.png)" />

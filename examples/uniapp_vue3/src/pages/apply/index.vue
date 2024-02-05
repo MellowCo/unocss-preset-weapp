@@ -28,6 +28,6 @@
 }
 
 .bg-directives{
-  background-color: theme(color.bg);
+  background-color: theme(color.blue);
 }
 </style>

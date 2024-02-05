@@ -33,7 +33,16 @@ export default {
   ],
   theme: {
     color: {
-      bg: 'rgba(22, 33, 255, 1)',
+      blue: 'rgba(22, 33, 255, 1)',
+      red: '#e74c3c',
+      sun: '#f1c40f',
+      green: '#16a085',
+    },
+    border: {
+      blue: 'rgba(22, 33, 255, 1)',
+      red: '#e74c3c',
+      sun: '#f1c40f',
+      green: '#16a085',
     },
   },
 }
