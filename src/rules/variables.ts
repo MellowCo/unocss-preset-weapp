@@ -1,5 +1,4 @@
 import type { Rule } from '@unocss/core'
-import { hasThemeFn, transformThemeFn } from '@unocss/rule-utils'
 import { h } from '../utils'
 
 const variablesAbbrMap: Record<string, string> = {
