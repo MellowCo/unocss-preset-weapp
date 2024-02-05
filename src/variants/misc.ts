@@ -155,7 +155,7 @@ export const variantSpaceAndDivide: Variant = (matcher) => {
   }
 }
 
-export const themeVariables: Variant = {
+export const variantTheme: Variant = {
   name: 'theme-variables',
   match(matcher, ctx) {
     if (!hasThemeFn(matcher))
@@ -168,6 +168,7 @@ export const themeVariables: Variant = {
           ...input,
           //  entries: [ [ '--css-spacing', '28rpx' ] ],
           entries: JSON.parse(transformThemeFn(JSON.stringify(input.entries), ctx.theme)),
+          sort: 9,
         })
       },
     }
