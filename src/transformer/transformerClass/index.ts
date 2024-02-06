@@ -29,10 +29,21 @@ interface Options {
   classTags?: boolean
 }
 
-export default function transformerClass(options: Options = { classTags: true }): SourceCodeTransformer {
+const defaultOptions = {
+  classTags: true,
+  include: [/\.[jt]sx?$/, /\.vue$/, /\.vue\?vue/],
+  exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/],
+}
+
+export default function transformerClass(options: Options = {}): SourceCodeTransformer {
+  options = {
+    ...defaultOptions,
+    ...options,
+  }
+
   const idFilter = createFilter(
-    options.include || [/\.[jt]sx?$/, /\.vue$/, /\.vue\?vue/],
-    options.exclude || [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/],
+    options.include,
+    options.exclude,
   )
 
   // vue template
