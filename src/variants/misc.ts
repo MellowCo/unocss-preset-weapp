@@ -1,6 +1,8 @@
 import type { Variant } from '@unocss/core'
 import { hasThemeFn, transformThemeFn } from '@unocss/rule-utils'
+import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 import { getBracket, h, variantGetBracket, variantGetParameter } from '../utils'
+import type { Theme } from '../theme'
 
 export const variantSelector: Variant = {
   name: 'selector',
@@ -155,10 +157,12 @@ export const variantSpaceAndDivide: Variant = (matcher) => {
   }
 }
 
-export const variantTheme: Variant = {
+export const variantTheme: Variant<Theme> = {
   name: 'theme-variables',
   match(matcher, ctx) {
-    if (!hasThemeFn(matcher))
+    const newMatcher = cacheRestoreSelector(matcher, ctx.theme.transformRules)
+
+    if (!hasThemeFn(newMatcher))
       return
 
     return {
