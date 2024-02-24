@@ -6,6 +6,20 @@ export default {
 
 <template>
   <view text="white base" class="p-3">
+    <view class="left-[calc(-1*var(--td-badge-basic-height)+1rpx)]">
+      test
+    </view>
+
+    <view
+      :class="[
+        1 === 1 ? 'left-[calc(-1*var(--td-badge-basic-height)+1rpx)] left' : 'xxx',
+        2 === 2 ? 'right-[calc(-1*var(--td-badge-basic-height)+1rpx)] left' : 'bbb',
+        3 === 3 && 'top-[calc(-1*var(--td-badge-basic-height)+1rpx)] left',
+      ] "
+    >
+      test
+    </view>
+
     <view class="bg-[--l-tab-bar-bg-color] [--l-tab-bar-bg-color:theme(color.blue)] w-100 h-100" />
     <view :class="{ 'mt-2 bg-[--l-tab-bar-bg-color,theme(color.blue)] w-100 h-100': 1 === 1 }" />
 
