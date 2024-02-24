@@ -28,7 +28,7 @@ export const bgColors: Rule<Theme>[] = [
     if ((isSize(d) || bgPositionRE.test(d)) && h.bracketOfPosition(d) != null)
       return { 'background-position': h.bracketOfPosition(d)!.split(' ').map(e => h.position.fraction.auto.px.cssvar(e) ?? e).join(' ') }
     return colorResolver('background-color', 'bg', 'backgroundColor')(params, body)
-  }],
+  }, { autocomplete: 'bg-$colors' }],
   [/^bg-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-bg-opacity': h.bracket.percent.cssvar(opacity) }), { autocomplete: 'bg-(op|opacity)-<percent>' }],
 ]
 
