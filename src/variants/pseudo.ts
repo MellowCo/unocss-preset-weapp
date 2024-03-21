@@ -46,6 +46,7 @@ const PseudoClasses: Record<string, string> = Object.fromEntries([
   'active',
   'enabled',
   'disabled',
+  'popover-open',
 
   // tree-structural
   'root',

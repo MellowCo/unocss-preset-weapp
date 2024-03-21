@@ -631,6 +631,9 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .word-spacing-2{word-spacing:16rpx;}
 .word-spacing-inherit{word-spacing:inherit;}
 .word-spacing-wide{word-spacing:0.025em;}
+.font-stretch-normal{font-stretch:normal;}
+.font-stretch-_lfl_ultra-expanded_lfr_{font-stretch:ultra-expanded;}
+.font-stretch-1_sl_2{font-stretch:50%;}
 .font-_do_font-name{font-family:var(--font-name);}
 .font-_lfl_550_lfr_{font-family:550;}
 .font-_lfl_system-ui_lfr_{font-family:system-ui;}

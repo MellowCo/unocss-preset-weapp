@@ -629,6 +629,9 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .word-spacing-2{word-spacing:16rpx;}
 .word-spacing-inherit{word-spacing:inherit;}
 .word-spacing-wide{word-spacing:0.025em;}
+.font-stretch-normal{font-stretch:normal;}
+.font-stretch-_lfl11_ultra-expanded_lfr11_{font-stretch:ultra-expanded;}
+.font-stretch-1_sl11_2{font-stretch:50%;}
 .font-_do11_font-name{font-family:var(--font-name);}
 .font-_lfl11_550_lfr11_{font-family:550;}
 .font-_lfl11_system-ui_lfr11_{font-family:system-ui;}
