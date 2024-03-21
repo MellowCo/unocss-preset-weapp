@@ -278,9 +278,12 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .bg-_lfl_calc_lbl_10_pes__plus_10px_lbr__lfr_{background-position:calc(10% + 10px);}
 .bg-_lfl_calc_lbl_10vw_plus_10px_lbr__lfr_{background-position:calc(10vw + 10px);}
 .bg-_lfl_conic-gradient_lbl_red_lco_blue_lbr__lfr_{background-image:conic-gradient(red,blue);}
-.bg-_lfl_length_cl_--variable_lfr_{background-size:var(--variable);}
-.bg-_lfl_length_cl_1_sl_2_20rem_lfr_{background-size:50% 20rem;}
-.bg-_lfl_length_cl_10_20rem_lfr_{background-size:10px 20rem;}
+.bg-_lfl_length_cl_--variable_lfr_,
+.bg-_lfl_size_cl_--variable_lfr_{background-size:var(--variable);}
+.bg-_lfl_length_cl_1_sl_2_20rem_lfr_,
+.bg-_lfl_size_cl_1_sl_2_20rem_lfr_{background-size:50% 20rem;}
+.bg-_lfl_length_cl_10_20rem_lfr_,
+.bg-_lfl_size_cl_10_20rem_lfr_{background-size:10px 20rem;}
 .bg-_lfl_linear-gradient_lbl_45deg_lco__wn_0072ff_lco__wn_00d2e8_lco__wn_04fd8f_lco__wn_70fd6c_lbr__lfr_{background-image:linear-gradient(45deg,#0072ff,#00d2e8,#04fd8f,#70fd6c);}
 .bg-_lfl_position_cl_--variable_lfr_{background-position:var(--variable);}
 .bg-_lfl_position_cl_1_sl_2_20rem_lfr_{background-position:50% 20rem;}
