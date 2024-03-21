@@ -1,7 +1,7 @@
 import type { CSSEntries, CSSObject, DynamicMatcher, ParsedColorValue, RuleContext, StaticRule, VariantContext } from '@unocss/core'
 import { isString, toArray } from '@unocss/core'
 import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
-import { getStringComponent } from '@unocss/rule-utils'
+import { getStringComponent, getStringComponents } from '@unocss/rule-utils'
 import type { Theme } from '../theme'
 import { colorOpacityToString, colorToString, parseCssColor } from './colors'
 
@@ -113,9 +113,9 @@ export function parseColor(body: string, theme: Theme, key?: ThemeColorKeys): Pa
   if (h.numberWithUnit(bracketOrMain))
     return
 
-  if (bracketOrMain.match(/^#[\da-fA-F]+/g))
+  if (/^#[\da-fA-F]+$/.test(bracketOrMain))
     color = bracketOrMain
-  else if (bracketOrMain.match(/^hex-[\da-fA-F]+/g))
+  else if (/^hex-[\da-fA-F]+$/.test(bracketOrMain))
     color = `#${bracketOrMain.slice(4)}`
   else if (main.startsWith('$'))
     color = h.cssvar(main)
@@ -236,14 +236,32 @@ export function colorableShadows(shadows: string | string[], colorVar: string) {
   shadows = toArray(shadows)
   for (let i = 0; i < shadows.length; i++) {
     // shadow values are between 3 to 6 terms including color
-    const components = getComponents(shadows[i], ' ', 6)
+    const components = getStringComponents(shadows[i], ' ', 6)
     if (!components || components.length < 3)
       return shadows
-    const color = parseCssColor(components.pop())
-    if (color == null)
-      return shadows
-    colored.push(`${components.join(' ')} var(${colorVar}, ${colorToString(color)})`)
+
+    let isInset = false
+    const pos = components.indexOf('inset')
+    if (pos !== -1) {
+      components.splice(pos, 1)
+      isInset = true
+    }
+
+    let colorVarValue = ''
+    if (parseCssColor(components.at(0))) {
+      const color = parseCssColor(components.shift())
+      if (color)
+        colorVarValue = `, ${colorToString(color)}`
+    }
+    else if (parseCssColor(components.at(-1))) {
+      const color = parseCssColor(components.pop())
+      if (color)
+        colorVarValue = `, ${colorToString(color)}`
+    }
+
+    colored.push(`${isInset ? 'inset ' : ''}${components.join(' ')} var(${colorVar}${colorVarValue})`)
   }
+
   return colored
 }
 

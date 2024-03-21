@@ -372,7 +372,7 @@ describe('preset-mini', () => {
     expect((await uno.generate('shadow-[0_2px_10px] shadow-blackA7', { preflights: false })).css)
       .toMatchInlineSnapshot(`
         "/* layer: default */
-        .shadow-_lfl_0_2px_10px_lfr_{--un-shadow:0 2px 10px;box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
+        .shadow-_lfl_0_2px_10px_lfr_{--un-shadow:0 2px 10px var(--un-shadow-color);box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
         .shadow-blackA7{--un-shadow-opacity:0.169;--un-shadow-color:hsla(0,0%,0%,var(--un-shadow-opacity));}"
       `)
   })
