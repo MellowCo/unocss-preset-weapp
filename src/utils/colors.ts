@@ -29,9 +29,6 @@ export function parseCssColor(str = ''): CSSColorValue | undefined {
   if (components.length === 0)
     return
 
-  if (['rgba', 'hsla'].includes(type) && alpha == null)
-    return
-
   if (cssColorFunctions.includes(type) && ![1, 3].includes(components.length))
     return
 
@@ -55,10 +52,8 @@ export function colorToString(color: CSSColorValue | string, alphaOverride?: str
   let { alpha, type } = color
   alpha = alphaOverride ?? alpha
   type = type.toLowerCase()
-
-  // Comma separated functions
-  if (['hsla', 'hsl', 'rgba', 'rgb'].includes(type))
-    return `${type.replace('a', '')}a(${components.join(',')}${alpha == null ? '' : `,${alpha}`})`
+  if (['hsla', 'rgba'].includes(type))
+    return `${type}(${components.join(', ')}${alpha == null ? '' : `, ${alpha}`})`
 
   alpha = alpha == null ? '' : ` / ${alpha}`
   if (cssColorFunctions.includes(type))

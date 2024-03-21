@@ -73,12 +73,12 @@ export const textStrokeWidth: Theme['textStrokeWidth'] = {
 }
 
 export const textShadow: Theme['textShadow'] = {
-  DEFAULT: ['0 0 2rpx rgba(0,0,0,0.2)', '0 0 2rpx rgba(1,0,5,0.1)'],
-  none: '0 0 rgba(0,0,0,0)',
-  sm: '2rpx 2rpx 6rpx rgba(36,37,47,0.25)',
-  md: ['0 2rpx 4rpx rgba(30,29,39,0.19)', '2rpx 4rpx 8rpx rgba(54,64,147,0.18)'],
-  lg: ['6rpx 6rpx 12rpx rgba(0,0,0,0.26)', '0 0 10rpx rgba(15,3,86,0.22)'],
-  xl: ['2rpx 2rpx 6rpx rgba(0,0,0,0.29)', '4rpx 8rpx 14rpx rgba(73,64,125,0.35)'],
+  DEFAULT: ['0 0 1px rgb(0 0 0 / 0.2)', '0 0 1px rgb(1 0 5 / 0.1)'],
+  none: '0 0 rgb(0 0 0 / 0)',
+  sm: '1px 1px 3px rgb(36 37 47 / 0.25)',
+  md: ['0 1px 2px rgb(30 29 39 / 0.19)', '1px 2px 4px rgb(54 64 147 / 0.18)'],
+  lg: ['3px 3px 6px rgb(0 0 0 / 0.26)', '0 0 5px rgb(15 3 86 / 0.22)'],
+  xl: ['1px 1px 3px rgb(0 0 0 / 0.29)', '2px 4px 7px rgb(73 64 125 / 0.35)'],
 }
 
 export const lineHeight: Theme['lineHeight'] = {

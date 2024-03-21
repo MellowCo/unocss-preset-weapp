@@ -353,8 +353,8 @@ describe('preset-mini', () => {
     expect((await uno.generate('bg-blue-400 text-blue-400', { preflights: false })).css)
       .toMatchInlineSnapshot(`
         "/* layer: default */
-        .bg-blue-400{--un-bg-opacity:1;background-color:rgba(0,0,400,var(--un-bg-opacity));}
-        .text-blue-400{--un-text-opacity:1;color:rgba(0,0,400,var(--un-text-opacity));}"
+        .bg-blue-400{--un-bg-opacity:1;background-color:rgb(0 0 400 / var(--un-bg-opacity));}
+        .text-blue-400{--un-text-opacity:1;color:rgb(0 0 400 / var(--un-text-opacity));}"
       `)
   })
 
@@ -373,7 +373,7 @@ describe('preset-mini', () => {
       .toMatchInlineSnapshot(`
         "/* layer: default */
         .shadow-_lfl_0_2px_10px_lfr_{--un-shadow:0 2px 10px var(--un-shadow-color);box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
-        .shadow-blackA7{--un-shadow-opacity:0.169;--un-shadow-color:hsla(0,0%,0%,var(--un-shadow-opacity));}"
+        .shadow-blackA7{--un-shadow-opacity:0.169;--un-shadow-color:hsla(0, 0%, 0%, var(--un-shadow-opacity));}"
       `)
   })
 

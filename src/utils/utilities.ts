@@ -85,7 +85,7 @@ export function splitShorthand(body: string, type: string, theme: Theme) {
  * @param key
  * 'red-100' // From theme, plus scale
  * 'red-100_20' // From theme, plus scale/opacity
- * '[rgb(100,2,3)]/[var(--op)]' // Bracket with rgb color and bracket with opacity
+ * '[rgb(100 2 3)]/[var(--op)]' // Bracket with rgb color and bracket with opacity
  *
  * @param {string} body - Color string to be parsed.
  * @param {Theme} theme - {@link Theme} object.
@@ -175,15 +175,15 @@ export function parseColor(body: string, theme: Theme, key?: ThemeColorKeys): Pa
  *
  * @example Resolving 'red-100' from theme:
  * colorResolver('background-color', 'background')('', 'red-100')
- * return { '--un-background-opacity': '1', 'background-color': 'rgba(254,226,226,var(--un-background-opacity))' }
+ * return { '--un-background-opacity': '1', 'background-color': 'rgb(254 226 226 / var(--un-background-opacity))' }
  *
  * @example Resolving 'red-100_20' from theme:
  * colorResolver('background-color', 'background')('', 'red-100/20')
- * return { 'background-color': 'rgba(204,251,241,0.22)' }
+ * return { 'background-color': 'rgb(204 251 241 / 0.22)' }
  *
  * @example Resolving 'hex-124':
  * colorResolver('color', 'text')('', 'hex-124')
- * return { '--un-text-opacity': '1', 'color': 'rgba(17,34,68,var(--un-text-opacity))' }
+ * return { '--un-text-opacity': '1', 'color': 'rgb(17 34 68 / var(--un-text-opacity))' }
  *
  * @param {string} property - Property for the css value to be created.
  * @param {string} varName - Base name for the opacity variable.

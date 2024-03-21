@@ -6,7 +6,7 @@ function bgGradientToValue(cssColor: CSSColorValue | undefined) {
   if (cssColor)
     return colorToString(cssColor, 0)
 
-  return 'rgba(255,255,255,0)'
+  return 'rgb(255 255 255 / 0)'
 }
 
 function bgGradientColorValue(mode: string, cssColor: CSSColorValue | undefined, color: string, alpha: any) {
@@ -79,7 +79,7 @@ export const backgroundStyles: Rule<Theme>[] = [
 
   // images
   [/^bg-gradient-((?:repeating-)?(?:linear|radial|conic))$/, ([, s]) => ({
-    'background-image': `${s}-gradient(var(--un-gradient, var(--un-gradient-stops, rgba(255, 255, 255, 0))))`,
+    'background-image': `${s}-gradient(var(--un-gradient, var(--un-gradient-stops, rgb(255 255 255 / 0))))`,
   }), { autocomplete: ['bg-gradient-repeating', 'bg-gradient-(linear|radial|conic)', 'bg-gradient-repeating-(linear|radial|conic)'] }],
   // ignore any center position
   [/^bg-gradient-to-([rltb]{1,2})$/, ([, d]) => {

@@ -1,5 +1,5 @@
 /* layer: default */
-.bg-numbered321{--licl-bg-opacity:1;background-color:rgba(51,34,17,var(--licl-bg-opacity));}
-.bg-with-hyphen{--licl-bg-opacity:1;background-color:rgba(18,52,86,var(--licl-bg-opacity));}
-.text-numbered-123{--licl-text-opacity:1;color:rgba(17,34,51,var(--licl-text-opacity));}
-.text-with-hyphen{--licl-text-opacity:1;color:rgba(18,52,86,var(--licl-text-opacity));}
+.bg-numbered321{--licl-bg-opacity:1;background-color:rgb(51 34 17 / var(--licl-bg-opacity));}
+.bg-with-hyphen{--licl-bg-opacity:1;background-color:rgb(18 52 86 / var(--licl-bg-opacity));}
+.text-numbered-123{--licl-text-opacity:1;color:rgb(17 34 51 / var(--licl-text-opacity));}
+.text-with-hyphen{--licl-text-opacity:1;color:rgb(18 52 86 / var(--licl-text-opacity));}
