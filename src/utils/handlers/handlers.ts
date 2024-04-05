@@ -43,6 +43,8 @@ export function auto(str: string) {
 }
 
 export function rem(str: string) {
+  if (!str)
+    return
   if (str.match(unitOnlyRE))
     return `1${str}`
   const match = str.match(numberWithUnitRE)
@@ -123,6 +125,8 @@ export function percent(str: string) {
 }
 
 export function fraction(str: string) {
+  if (!str)
+    return
   if (str === 'full')
     return '100%'
   // 小程序百分比 / 改为 _
