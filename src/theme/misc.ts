@@ -77,7 +77,7 @@ export const easing = {
 }
 
 export const ringWidth = {
-  DEFAULT: '1px',
+  DEFAULT: '3px',
   none: '0',
 }
 

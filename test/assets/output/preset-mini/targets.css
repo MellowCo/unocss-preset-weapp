@@ -713,10 +713,10 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .shadow-op-\$opacity-variable{--licl-shadow-opacity:var(--opacity-variable);}
 .shadow-op-50{--licl-shadow-opacity:0.5;}
 .shadow-inset{--licl-shadow-inset:inset;}
-.ring,
-.ring-px{--licl-ring-width:1px;--licl-ring-offset-shadow:var(--licl-ring-inset) 0 0 0 var(--licl-ring-offset-width) var(--licl-ring-offset-color);--licl-ring-shadow:var(--licl-ring-inset) 0 0 0 calc(var(--licl-ring-width) + var(--licl-ring-offset-width)) var(--licl-ring-color);box-shadow:var(--licl-ring-offset-shadow), var(--licl-ring-shadow), var(--licl-shadow);}
+.ring{--licl-ring-width:3px;--licl-ring-offset-shadow:var(--licl-ring-inset) 0 0 0 var(--licl-ring-offset-width) var(--licl-ring-offset-color);--licl-ring-shadow:var(--licl-ring-inset) 0 0 0 calc(var(--licl-ring-width) + var(--licl-ring-offset-width)) var(--licl-ring-color);box-shadow:var(--licl-ring-offset-shadow), var(--licl-ring-shadow), var(--licl-shadow);}
 .ring-10{--licl-ring-width:10px;--licl-ring-offset-shadow:var(--licl-ring-inset) 0 0 0 var(--licl-ring-offset-width) var(--licl-ring-offset-color);--licl-ring-shadow:var(--licl-ring-inset) 0 0 0 calc(var(--licl-ring-width) + var(--licl-ring-offset-width)) var(--licl-ring-color);box-shadow:var(--licl-ring-offset-shadow), var(--licl-ring-shadow), var(--licl-shadow);}
 .ring-none{--licl-ring-width:0;--licl-ring-offset-shadow:var(--licl-ring-inset) 0 0 0 var(--licl-ring-offset-width) var(--licl-ring-offset-color);--licl-ring-shadow:var(--licl-ring-inset) 0 0 0 calc(var(--licl-ring-width) + var(--licl-ring-offset-width)) var(--licl-ring-color);box-shadow:var(--licl-ring-offset-shadow), var(--licl-ring-shadow), var(--licl-shadow);}
+.ring-px{--licl-ring-width:1px;--licl-ring-offset-shadow:var(--licl-ring-inset) 0 0 0 var(--licl-ring-offset-width) var(--licl-ring-offset-color);--licl-ring-shadow:var(--licl-ring-inset) 0 0 0 calc(var(--licl-ring-width) + var(--licl-ring-offset-width)) var(--licl-ring-color);box-shadow:var(--licl-ring-offset-shadow), var(--licl-ring-shadow), var(--licl-shadow);}
 .ring-size-px,
 .ring-width-px{--licl-ring-width:1px;}
 .ring-offset{--licl-ring-offset-width:1px;}
