@@ -132,7 +132,7 @@ export function parseColor(body: string, theme: Theme, key?: ThemeColorKeys): Pa
   if (!color) {
     let colorData
     const [scale] = colors.slice(-1)
-    if (scale.match(/^\d+$/)) {
+    if (/^\d+$/.test(scale)) {
       no = scale
       colorData = getThemeColor(theme, colors.slice(0, -1))
       if (!colorData || typeof colorData === 'string')

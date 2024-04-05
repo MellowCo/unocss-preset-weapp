@@ -45,7 +45,7 @@ export function auto(str: string) {
 export function rem(str: string) {
   if (!str)
     return
-  if (str.match(unitOnlyRE))
+  if (unitOnlyRE.test(str))
     return `1${str}`
   const match = str.match(numberWithUnitRE)
   if (!match)
@@ -60,7 +60,7 @@ export function rem(str: string) {
 }
 
 export function remToRpx(str: string) {
-  if (str.match(unitOnlyRE))
+  if (unitOnlyRE.test(str))
     return `1${str}`
   const match = str.match(numberWithUnitRE)
   if (!match)
@@ -78,7 +78,7 @@ export function remToRpx(str: string) {
 
 // 小程序 rpx
 export function rpx(str: string) {
-  if (str.match(unitOnlyRE))
+  if (unitOnlyRE.test(str))
     return `${unitOnlyMap[str]}${str}`
   const match = str.match(numberWithUnitRE)
   if (!match)
@@ -93,7 +93,7 @@ export function rpx(str: string) {
 }
 
 export function px(str: string) {
-  if (str.match(unitOnlyRE))
+  if (unitOnlyRE.test(str))
     return `${unitOnlyMap[str]}${str}`
   const match = str.match(numberWithUnitRE)
   if (!match)
