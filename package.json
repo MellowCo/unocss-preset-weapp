@@ -1,6 +1,6 @@
 {
   "name": "unocss-preset-weapp",
-  "version": "0.58.8",
+  "version": "0.59.0",
   "packageManager": "pnpm@8.6.2",
   "description": "the unocss preset for wechat miniprogram (uniapp, taro)",
   "author": "MellowCo",
@@ -90,17 +90,17 @@
   },
   "dependencies": {
     "@rollup/pluginutils": "^5.1.0",
-    "@unocss/core": "^0.58.9",
-    "@unocss/extractor-arbitrary-variants": "^0.58.9",
-    "@unocss/rule-utils": "^0.58.9",
+    "@unocss/core": "^0.59.0",
+    "@unocss/extractor-arbitrary-variants": "^0.59.0",
+    "@unocss/rule-utils": "^0.59.0",
     "unplugin-attributify-to-class": "^0.2.5",
     "unplugin-transform-class": "^0.5.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "0.41.3",
     "@antfu/ni": "^0.21.12",
-    "@types/node": "^20.12.4",
-    "@unocss/autocomplete": "^0.58.9",
+    "@types/node": "^20.12.5",
+    "@unocss/autocomplete": "^0.59.0",
     "bumpp": "^9.4.0",
     "eslint": "^8.57.0",
     "eslint-formatter-mo": "^1.2.0",
