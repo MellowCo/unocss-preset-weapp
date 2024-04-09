@@ -3,6 +3,10 @@ import type { Rule } from '@unocss/core'
 /**
  * Used for debugging, only avaliable in development mode.
  *
+ * @param _
+ * @param root0
+ * @param root0.constructCSS
+ * @param root0.generator
  * @example `?` / `where`
  */
 export const questionMark: Rule[] = [

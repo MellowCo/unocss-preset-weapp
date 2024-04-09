@@ -50,6 +50,9 @@ function toFixed(number: number, precision: number) {
 /**
  * taro: h5 px rpx 转 rem
  * @param css
+ * @param taroWebpack
+ * @param designWidth
+ * @param deviceRatio
  */
 export function taroH5CssRemTransform(css: UtilObject, taroWebpack: string, designWidth: number, deviceRatio: Record<number, number>) {
   // h5 px rpx 转 rem
@@ -65,6 +68,8 @@ export function taroH5CssRemTransform(css: UtilObject, taroWebpack: string, desi
 /**
  * taro: 小程序 px 转 rpx
  * @param css
+ * @param designWidth
+ * @param deviceRatio
  */
 export function taroCssPxTransform(css: UtilObject, designWidth: number, deviceRatio: Record<number, number>) {
   // h5 px rpx 转 rem

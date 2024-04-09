@@ -106,15 +106,15 @@ export interface Options {
   exclude?: FilterPattern
 
   /**
-    * 需要转换的目标
-    * @default [/\.vue$/,  /\.vue\?vue/]
-    */
+   * 需要转换的目标
+   * @default [/\.vue$/,  /\.vue\?vue/]
+   */
   include?: FilterPattern
 
   /**
-    * 为生成的class选择器添加前缀
-    * @default ''
-    */
+   * 为生成的class选择器添加前缀
+   * @default ''
+   */
   classPrefix?: string
 }
 ```
