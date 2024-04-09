@@ -106,7 +106,7 @@ function handleTranslate([, d, b]: string[], { theme }: RuleContext<Theme>): CSS
   const v = theme.spacing?.[b] ?? h.bracket.cssvar.fraction.remToRpx(b)
   if (v != null) {
     return [
-      ...transformXYZ(d, v, 'scale'),
+      ...transformXYZ(d, v, 'translate'),
       ['transform', transformCpu],
     ]
   }
@@ -118,7 +118,7 @@ function handleScale([, d, b]: string[], { theme }: { theme: Theme }): CSSValues
   const v = h.bracket.cssvar.fraction.percent(b)
   if (v != null) {
     return [
-      ...xyzMap[d].map((i): [string, string] => [`--un-scale${i}`, v]),
+      ...transformXYZ(d, v, 'scale'),
       ['transform', transformCpu],
     ]
   }
