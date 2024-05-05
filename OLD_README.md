@@ -1,10 +1,3 @@
-<!--
- * @Author: licl
- * @Date: 2022-09-17 20:28:29
- * @LastEditTime: 2023-03-05 08:20:50
- * @LastEditors: licl
- * @Description:
--->
 # unocss-preset-weapp
 
 [![Version](https://img.shields.io/npm/v/unocss-preset-weapp.svg?style=flat-square&logo=npm)
