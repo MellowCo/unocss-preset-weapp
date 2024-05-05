@@ -1,13 +1,16 @@
 import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
-import Unocss from 'unocss/vite'
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [
-    uni(),
+export default defineConfig(async ()=>{
+  const UnoCss = await import('unocss/vite').then(i => i.default)
 
-    // https://github.com/unocss/unocss
-    Unocss(),
-  ],
+  return {
+    plugins: [
+      uni(),
+  
+      // https://github.com/unocss/unocss
+      UnoCss(),
+    ],
+  }
 })

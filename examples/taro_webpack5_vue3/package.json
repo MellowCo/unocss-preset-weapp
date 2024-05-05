@@ -58,7 +58,7 @@
 	},
 	"devDependencies": {
 		"@babel/core": "^7.8.0",
-		"@iconify/json": "^2.2.70",
+		"@iconify/json": "^2.2.206",
 		"@tarojs/cli": "3.6.19",
 		"@tarojs/webpack5-runner": "3.6.19",
 		"@types/node": "^18.11.9",
@@ -80,6 +80,6 @@
 		"unocss": "^0.58.9",
 		"unocss-preset-weapp": "link:../../",
 		"vue-loader": "^17.0.0",
-		"webpack": "5.69.0"
+		"webpack": "5.91.0"
 	}
 }
