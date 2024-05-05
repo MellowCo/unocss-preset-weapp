@@ -52,8 +52,7 @@ export const sizes: Rule<Theme>[] = [
       '(w|h)-full',
       '(max|min)-(w|h)-full',
     ],
-  },
-  ],
+  }],
   [/^(?:size-)?(min-|max-)?(h)-screen-(.+)$/, ([, m, h, p], context) => ({ [getPropName(m, h)]: handleBreakpoint(context, p, 'verticalBreakpoints') })],
   [/^(?:size-)?(min-|max-)?(w)-screen-(.+)$/, ([, m, w, p], context) => ({ [getPropName(m, w)]: handleBreakpoint(context, p) }), {
     autocomplete: [

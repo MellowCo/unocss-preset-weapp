@@ -7,7 +7,9 @@ import { colorResolver, colorableShadows, globalKeywords, handler as h, isCSSMat
 export const fonts: Rule<Theme>[] = [
   // size
   [
-    /^text-(.+)$/, handleText, { autocomplete: 'text-$fontSize' },
+    /^text-(.+)$/,
+    handleText,
+    { autocomplete: 'text-$fontSize' },
   ],
   [/^(?:text|font)-size-(.+)$/, handleSize, { autocomplete: 'text-size-$fontSize' }],
 
@@ -108,8 +110,7 @@ export const textIndents: Rule<Theme>[] = [
     s = cacheRestoreSelector(s, theme?.transformRules)
 
     return { 'text-indent': theme.textIndent?.[s || 'DEFAULT'] || h.bracket.cssvar.global.fraction.remToRpx(s) }
-  },
-  { autocomplete: 'indent-$textIndent' }],
+  }, { autocomplete: 'indent-$textIndent' }],
 ]
 
 export const textStrokes: Rule<Theme>[] = [

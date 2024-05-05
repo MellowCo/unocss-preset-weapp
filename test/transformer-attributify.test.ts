@@ -1,5 +1,5 @@
 import { createGenerator } from '@unocss/core'
-import { describe, expect, test } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import MagicString from 'magic-string'
 
 import { transformerAttributify } from '../src/transformer'
@@ -45,7 +45,7 @@ describe('transformerAttributify', () => {
     ],
   })
 
-  test('base transformer attributify', async () => {
+  it('base transformer attributify', async () => {
     const code = new MagicString(originalCode)
     await transformerAttributify().transform(code, 'app.vue', { uno, tokens: new Set() } as any)
     await expect(code.toString()).toMatchFileSnapshot('./assets/output/transformer-attributify/base.vue')

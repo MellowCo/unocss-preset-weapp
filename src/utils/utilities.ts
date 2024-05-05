@@ -82,14 +82,13 @@ export function splitShorthand(body: string, type: string, theme: Theme) {
  *
  * @example Parseable strings:
  * 'red' // From theme, if 'red' is available
- * @param key
  * 'red-100' // From theme, plus scale
- * 'red-100_20' // From theme, plus scale/opacity
+ * 'red-100/20' // From theme, plus scale/opacity
  * '[rgb(100 2 3)]/[var(--op)]' // Bracket with rgb color and bracket with opacity
  *
- * @param {string} body - Color string to be parsed.
- * @param {Theme} theme - {@link Theme} object.
- * @return {ParsedColorValue|undefined}  {@link ParsedColorValue} object if string is parseable.
+ * @param body - Color string to be parsed.
+ * @param theme - {@link Theme} object.
+ * @return object if string is parseable.
  */
 export function parseColor(body: string, theme: Theme, key?: ThemeColorKeys): ParsedColorValue | undefined {
   const split = splitShorthand(body, 'color', theme)

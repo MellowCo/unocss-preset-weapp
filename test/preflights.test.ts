@@ -1,9 +1,9 @@
 import { createGenerator } from '@unocss/core'
-import { describe, expect, test } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import presetWeapp from '../src'
 
 describe('preflights', () => {
-  test('original preflight', async () => {
+  it('original preflight', async () => {
     const uno = createGenerator({
       presets: [
         presetWeapp(),
@@ -13,7 +13,7 @@ describe('preflights', () => {
     await expect(css).toMatchFileSnapshot('./assets/output/preflight/original.css')
   })
 
-  test('preflight root can be customized with string', async () => {
+  it('preflight root can be customized with string', async () => {
     const uno = createGenerator({
       presets: [
         presetWeapp(),
@@ -26,7 +26,7 @@ describe('preflights', () => {
     await expect(css).toMatchFileSnapshot('./assets/output/preflight/custom.css')
   })
 
-  test('preflight root can be customized with array', async () => {
+  it('preflight root can be customized with array', async () => {
     const uno = createGenerator({
       presets: [
         presetWeapp(),
@@ -39,7 +39,7 @@ describe('preflights', () => {
     await expect(css).toMatchFileSnapshot('./assets/output/preflight/custom-array.css')
   })
 
-  test('preflight root can be disabled using empty array', async () => {
+  it('preflight root can be disabled using empty array', async () => {
     const uno = createGenerator({
       presets: [
         presetWeapp(),

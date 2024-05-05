@@ -1,5 +1,5 @@
 import { createGenerator } from '@unocss/core'
-import { describe, expect, test } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import MagicString from 'magic-string'
 
 import { transformerClass } from '../src/transformer'
@@ -12,7 +12,7 @@ describe('transformerClass', () => {
     ],
   })
 
-  test('base transform vue', async () => {
+  it('base transform vue', async () => {
     const originalCode = `
       <view class="bg-[url(https://img.cdn.sugarat.top/mdImg/MTY2ODA4OTc3MjcyMg==unocss-icon-gray.svg)]" />
       <view class="bg-[--l-tab-bar-bg-color,theme(backgroundColor.container)]" />
@@ -72,7 +72,7 @@ describe('transformerClass', () => {
     await expect(code.toString()).toMatchFileSnapshot('./assets/output/transformer-class/base.vue')
   })
 
-  test('base transform react', async () => {
+  it('base transform react', async () => {
     const originalCode = `
     export default function(){
       const day = 10

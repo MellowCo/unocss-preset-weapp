@@ -56,13 +56,11 @@ function toFixed(number: number, precision: number) {
  */
 export function taroH5CssRemTransform(css: UtilObject, taroWebpack: string, designWidth: number, deviceRatio: Record<number, number>) {
   // h5 px rpx 转 rem
-  cssRpxTransform(css,
-    rpxOrPxRE,
-    (value) => {
-      const size = value.endsWith('rpx') ? taroRpxToPx(value.slice(0, -3), designWidth, deviceRatio) : value.slice(0, -2)
+  cssRpxTransform(css, rpxOrPxRE, (value) => {
+    const size = value.endsWith('rpx') ? taroRpxToPx(value.slice(0, -3), designWidth, deviceRatio) : value.slice(0, -2)
 
-      return taroWebpack === 'webpack4' ? taroPxToRemW4(size, designWidth) : taroPxToRemW5(size, designWidth, deviceRatio)
-    })
+    return taroWebpack === 'webpack4' ? taroPxToRemW4(size, designWidth) : taroPxToRemW5(size, designWidth, deviceRatio)
+  })
 }
 
 /**
@@ -73,9 +71,7 @@ export function taroH5CssRemTransform(css: UtilObject, taroWebpack: string, desi
  */
 export function taroCssPxTransform(css: UtilObject, designWidth: number, deviceRatio: Record<number, number>) {
   // h5 px rpx 转 rem
-  cssRpxTransform(css,
-    pxRE,
-    (value) => {
-      return taroPxToRpx(value.slice(0, -2), designWidth, deviceRatio)
-    })
+  cssRpxTransform(css, pxRE, (value) => {
+    return taroPxToRpx(value.slice(0, -2), designWidth, deviceRatio)
+  })
 }

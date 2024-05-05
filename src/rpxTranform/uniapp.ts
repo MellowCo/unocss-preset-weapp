@@ -15,9 +15,7 @@ export function uniAppRpxTransform(size: string) {
  * @param css
  */
 export function uniAppVue2CssRpxTransform(css: UtilObject) {
-  cssRpxTransform(css,
-    rpxRE,
-    (value) => {
-      return uniAppRpxTransform(value.slice(0, -3))
-    })
+  cssRpxTransform(css, rpxRE, (value) => {
+    return uniAppRpxTransform(value.slice(0, -3))
+  })
 }

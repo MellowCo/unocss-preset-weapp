@@ -9,7 +9,7 @@
 
 ---
 ## 为什么要使用 transformerAttributify
-使用 `@unocss/preset-attributify` 
+使用 `@unocss/preset-attributify`
 ```html
 <button
   bg="blue-400">
@@ -24,7 +24,7 @@
 }
 ```
 
-小程序不支持属性选择器 [bg~="blue-400"] ，[微信文档](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/wxml-wxss.html#%E7%BB%84%E4%BB%B6%E6%A0%B7%E5%BC%8F)   
+小程序不支持属性选择器 [bg~="blue-400"] ，[微信文档](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/wxml-wxss.html#%E7%BB%84%E4%BB%B6%E6%A0%B7%E5%BC%8F)
 
 ---
 
@@ -120,9 +120,9 @@ export interface Options {
 ```
 
 ### Attributify Mode
-相关介绍见 [attributify-mode](https://github.com/unocss/unocss/tree/main/packages/preset-attributify#attributify-mode)   
+相关介绍见 [attributify-mode](https://github.com/unocss/unocss/tree/main/packages/preset-attributify#attributify-mode)
 ```html
-<button 
+<button
   text="sm white"
   font="mono light"
   p="y-2 x-4"
@@ -131,14 +131,14 @@ export interface Options {
   Button
 </button>
 ```
-默认转换的属性列表为 ['bg', 'flex', 'grid', 'border', 'text', 'font', 'class', 'className', 'p', 'm', 'animate']  
+默认转换的属性列表为 ['bg', 'flex', 'grid', 'border', 'text', 'font', 'class', 'className', 'p', 'm', 'animate']
 ```html
-<button 
+<button
   text="sm white"
   font="mono light"
   p="y-2 x-4"
   my-attr="y-1 x-2 sm"
-  class="text-sm text-white font-mono font-light p-y-2 p-x-4" 
+  class="text-sm text-white font-mono font-light p-y-2 p-x-4"
 >
   Button
 </button>
@@ -155,7 +155,7 @@ transformerAttributify({
 ```
 
 ```html
-<button 
+<button
   text="sm white"
   font="mono light"
   p="y-2 x-4"
@@ -164,7 +164,6 @@ transformerAttributify({
   Button
 </button>
 ```
-
 
 ### 前缀自参照
 对于 `flex`、`grid`、`border` 等具有与前缀相同的实用程序，将提供一个特殊的 `~` 值
@@ -198,9 +197,9 @@ transformerAttributify({
 ```
 转换后，会将 `my-prop` `is-top` 提取到 `class`中
 ```html
-<button 
+<button
   m-2 rounded text-teal-400 my-prop is-top
-  class="m-2 rounded text-teal-400 my-prop is-top" 
+  class="m-2 rounded text-teal-400 my-prop is-top"
 />
 ```
 
@@ -217,17 +216,17 @@ transformerAttributify({
 ```
 
 ```html
-<button 
+<button
   m-2 rounded text-teal-400 my-prop is-top
-  class="m-2 rounded text-teal-400" 
+  class="m-2 rounded text-teal-400"
 />
 ```
 
 ### Properties Conflicts
-如果属性模式的名称与元素或组件的属性冲突，可以针对属性模式添加 `prefix`   
+如果属性模式的名称与元素或组件的属性冲突，可以针对属性模式添加 `prefix`
 ```html
-<a 
-  text="red" 
+<a
+  text="red"
   un-text="blue"
 >
   This conflicts with links' `text` prop
@@ -247,15 +246,14 @@ transformerAttributify({
 ```
 
 ```html
-<a 
-  text="red" 
-  un-text="blue" 
+<a
+  text="red"
+  un-text="blue"
   class="text-blue"
 >
   This conflicts with links' text prop
 </a>
 ```
-
 
 ### transformEscape
 > 针对 `uniappp vue2` `taro` `webpack插件`， `bg="[#333]"` 编译后变成 `bg-  333`，导致样式无法正常显示
@@ -295,9 +293,9 @@ transformerAttributify({
 ```html
 <button bg-green bg-red text="center left"></button>
 
-<button 
-  bg-green bg-red 
-  text="center left" 
+<button
+  bg-green bg-red
+  text="center left"
   class="bg-green bg-red text-center text-left"
 ></button>
 ```
@@ -314,10 +312,9 @@ transformerAttributify({
 
 转换后，会在生成的class中，添加前缀，bg-green => class="li-bg-green"
 ```html
-<button 
-  bg-green bg-red 
-  text="center left" 
+<button
+  bg-green bg-red
+  text="center left"
   class="li-bg-green li-bg-red li-text-center li-text-left"
 ></button>
 ```
-

@@ -128,16 +128,14 @@ function handleInsetValues([, d, v]: string[], ctx: RuleContext): CSSEntries | u
 }
 
 export const insets: Rule[] = [
-  [/^(?:position-|pos-)?inset-(.+)$/, ([, v], ctx) => ({ inset: handleInsetValue(v, ctx) }),
-    {
-      autocomplete: [
-        '(position|pos)-inset-<directions>-$spacing',
-        '(position|pos)-inset-(block|inline)-$spacing',
-        '(position|pos)-inset-(bs|be|is|ie)-$spacing',
-        '(position|pos)-(top|left|right|bottom)-$spacing',
-      ],
-    },
-  ],
+  [/^(?:position-|pos-)?inset-(.+)$/, ([, v], ctx) => ({ inset: handleInsetValue(v, ctx) }), {
+    autocomplete: [
+      '(position|pos)-inset-<directions>-$spacing',
+      '(position|pos)-inset-(block|inline)-$spacing',
+      '(position|pos)-inset-(bs|be|is|ie)-$spacing',
+      '(position|pos)-(top|left|right|bottom)-$spacing',
+    ],
+  }],
   [/^(?:position-|pos-)?(start|end)-(.+)$/, handleInsetValues],
   [/^(?:position-|pos-)?inset-([xy])-(.+)$/, handleInsetValues],
   [/^(?:position-|pos-)?inset-([rltbse])-(.+)$/, handleInsetValues],

@@ -15,17 +15,16 @@
 ## 使用
 
 ### uniapp-vue2
-[使用配置与DEMO](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue2) 
+[使用配置与DEMO](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue2)
 
 ### uniapp-vue3
-[使用配置与DEMO](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue3) 
+[使用配置与DEMO](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue3)
 
 ### taro for react vue2 vue3
-[使用配置与DEMO](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_webpack4_vue3) 
+[使用配置与DEMO](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_webpack4_vue3)
 
 ### 原生微信小程序 wxml
-[使用配置与DEMO](https://github.com/MellowCo/unocss-wechat) 
-
+[使用配置与DEMO](https://github.com/MellowCo/unocss-wechat)
 
 ## PresetWeappOptions
 ```ts
@@ -99,7 +98,6 @@ export interface PresetWeappOptions extends PresetOptions {
 }
 ```
 
-
 ---
 
 ## 其他
@@ -157,15 +155,13 @@ export default defineConfig({
 
 > 使 `transformerAttributify` 获取 vscode插件 `autocomplete`提示
 
-
 ![](./assets/Snipaste_2023-06-17_19-53-21.png)
 
 > 使用 extractorAttributify 生成 presetWeappAttributify ，transformerAttributify
-> 
+>
 > presetWeappAttributify 用于vscode插件 autocomplete 提示
-> 
+>
 > transformerAttributify 用于支持 attributify mode
-
 
 ```ts
 import presetWeapp from 'unocss-preset-weapp'
@@ -195,7 +191,6 @@ export default {
   ],
 }
 ```
-
 
 ### 自定义转换规则
 > 如需更改或添加默认的转换规则，可通过 `transformRules` 进行修改
@@ -248,7 +243,6 @@ export default defineConfig({
   ],
 })
 ```
-
 
 ---
 ### 原子化 css 冲突问题
@@ -305,7 +299,6 @@ transform
 </view>
 ```
 
-
 ![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208311149877.png)
 
 [tm-ui-demo](https://github.com/MellowCo/unplugin-attributify-to-class/tree/master/examples/tm-ui-demo)
@@ -324,7 +317,6 @@ Unocss({
 })
 ```
 
-
 ## css预设
 [UnoCSS 文档](https://unocss.dev/) | [交互式文档](https://unocss.dev/interactive/) | [练习场](https://unocss.dev/play/)
 
@@ -342,7 +334,6 @@ Unocss({
 ```
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202208281630260.png" style="zoom: 50%;" />
-
 
 ### animation (v0.1.9)
 参考 [windicss-animation](https://cn.windicss.org/utilities/animations/animation.html) [@windicss/plugin-animations](https://cn.windicss.org/plugins/community/animations.html)
@@ -467,8 +458,6 @@ export const borderRadius = {
 }
 ```
 
-
-
 ---
 
 ### border-color
@@ -478,8 +467,6 @@ export const borderRadius = {
 | border-red-100<br/>border-red-1                         | --un-border-opacity:1;  border-color:rgba(254,226,226,var(--un-border-opacity)) |
 | border-opacity-20<br/>border-op-20<br/>                 | --un-border-opacity:0.2                                      |
 | border-black_10<br/>border-black/10<br/>border-black:10 | border-color:rgba(0,0,0,0.1)                                 |
-
-
 
 ---
 ### color
@@ -493,8 +480,6 @@ export const borderRadius = {
 | text-red-100<br/>text-red100<br/>text-red1                   | --un-text-opacity:1;color:rgba(254,226,226,var(--un-text-opacity)) |
 | text-red-100_20<br/>text-red-100/20<br/>text-red-100:20      | color:rgba(254,226,226,0.2)                                  |
 
-
-
 ### bg
 
 | class                                                        | Properties                                                   |
@@ -503,7 +488,6 @@ export const borderRadius = {
 | bg-red-100<br/>bg-red1<br/>bg-red100                         | --un-bg-opacity:1;background-color:rgba(254,226,226,var(--un-bg-opacity)) |
 | bg-teal-100_55<br/>bg-teal-100/55<br/>bg-teal-100:55         | background-color:rgba(204,251,241,0.55)                      |
 | bg-opacity-45                                                | --un-bg-opacity:0.45                                         |
-
 
 ### typography
 
@@ -522,9 +506,7 @@ export const borderRadius = {
 | word-spacing-2                           | word-spacing:16rpx                                           |
 | tracking-2                               | letter-spacing:16rpx                                         |
 
-
-
-> fontSize预设 `text-base`   
+> fontSize预设 `text-base`
 
 ```ts
 export const fontSize: Theme['fontSize'] = {
@@ -546,7 +528,6 @@ export const fontSize: Theme['fontSize'] = {
 ```
 text-100 => font-size:100rpx
 ```
-
 
 > textIndent 预设 `indent-lg`
 ```js
@@ -571,20 +552,20 @@ export const textIndent: Theme['textIndent'] = {
 所以计算为 `2*0.5*1rem = 2*0.5*16px = 16rpx`
 
 ```css
-indent-2    
-text-indent: 0.5rem 
+indent-2
+text-indent: 0.5rem
 text-indent: 16rpx
 
-tracking-2    
-letter-spacing: 0.5rem  
+tracking-2
+letter-spacing: 0.5rem
 letter-spacing:16rpx
 
-word-spacing-2   
-word-spacing: 0.5rem  
+word-spacing-2
+word-spacing: 0.5rem
 word-spacing:16rpx
 
-leadings-2  
-line-height: 0.5rem  
+leadings-2
+line-height: 0.5rem
 line-height:16rpx
 ```
 
@@ -639,8 +620,6 @@ export const boxShadow = {
 ```html
 <view class="shadow-[0px_4px_4px_0px_rgba(237,_0,_0,_1)]"></view>
 ```
-
-
 
 ### flex gap
 

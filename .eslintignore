@@ -1,7 +1,0 @@
-*.global.js
-build
-node_modules
-interactive
-examples
-defaultConfig.ts
-*.json

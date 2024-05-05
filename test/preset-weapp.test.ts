@@ -1,12 +1,12 @@
 import { createGenerator } from '@unocss/core'
-import { describe, expect, test } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import presetWeapp from '../src/index'
 import { defaultRules } from '../src/transformer'
 import { presetMiniTargets } from './assets/preset-mini-targets'
 import { presetWeappTargets } from './assets/preset-weapp-targets'
 
 describe('preset-weapp', () => {
-  test('targets', async () => {
+  it('targets', async () => {
     const uno = createGenerator({
       presets: [
         presetWeapp(),
@@ -26,7 +26,7 @@ describe('preset-weapp', () => {
     await expect(css).toMatchFileSnapshot('./assets/output/preset-weapp/targets.css')
   })
 
-  test('rules targets', async () => {
+  it('rules targets', async () => {
     const uno = createGenerator({
       presets: [
         presetWeapp({

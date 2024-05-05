@@ -26,8 +26,7 @@ export const flex: Rule<Theme>[] = [
   [/^(?:flex-)?basis-(.+)$/, ([, d], { theme }) => {
     d = cacheRestoreSelector(d, theme?.transformRules)
     return { 'flex-basis': theme.spacing?.[d] ?? h.bracket.cssvar.auto.fraction.remToRpx(d) }
-  },
-  { autocomplete: ['flex-basis-$spacing', 'basis-$spacing'] }],
+  }, { autocomplete: ['flex-basis-$spacing', 'basis-$spacing'] }],
 
   // directions
   ['flex-row', { 'flex-direction': 'row' }],

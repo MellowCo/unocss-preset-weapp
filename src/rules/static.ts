@@ -80,9 +80,7 @@ export const contentVisibility: Rule<Theme>[] = [
     d = cacheRestoreSelector(d, theme?.transformRules)
 
     return { 'contain-intrinsic-size': h.bracket.cssvar.global.fraction.rem(d) }
-  },
-  { autocomplete: 'intrinsic-size-<num>' },
-  ],
+  }, { autocomplete: 'intrinsic-size-<num>' }],
   ['content-visibility-visible', { 'content-visibility': 'visible' }],
   ['content-visibility-hidden', { 'content-visibility': 'hidden' }],
   ['content-visibility-auto', { 'content-visibility': 'auto' }],
@@ -176,7 +174,8 @@ export const writingOrientations: Rule[] = [
 
 export const screenReadersAccess: Rule[] = [
   [
-    'sr-only', {
+    'sr-only',
+    {
       'position': 'absolute',
       'width': '1px',
       'height': '1px',

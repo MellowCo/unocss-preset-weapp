@@ -20,15 +20,12 @@ const verticalAlignAlias: Record<string, string> = {
 }
 
 export const verticalAligns: Rule[] = [
-  [/^(?:vertical|align|v)-([-\w]+%?)$/,
-    ([, v]) => ({ 'vertical-align': verticalAlignAlias[v] ?? h.numberWithUnit(v) }),
-    {
-      autocomplete: [
+  [/^(?:vertical|align|v)-([-\w]+%?)$/, ([, v]) => ({ 'vertical-align': verticalAlignAlias[v] ?? h.numberWithUnit(v) }), {
+    autocomplete: [
       `(vertical|align|v)-(${Object.keys(verticalAlignAlias).join('|')})`,
       '(vertical|align|v)-<percentage>',
-      ],
-    },
-  ],
+    ],
+  }],
 ]
 
 export const textAligns: Rule[] = ['center', 'left', 'right', 'justify', 'start', 'end']

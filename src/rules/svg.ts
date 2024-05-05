@@ -10,15 +10,14 @@ export const svgUtilities: Rule<Theme>[] = [
   ['fill-none', { fill: 'none' }],
 
   // stroke size
-  [/^stroke-(?:width-|size-)?(.+)$/, handleWidth,
-    { autocomplete: ['stroke-width-$lineWidth', 'stroke-size-$lineWidth'] }],
+  [/^stroke-(?:width-|size-)?(.+)$/, handleWidth, { autocomplete: ['stroke-width-$lineWidth', 'stroke-size-$lineWidth'] }],
 
   // stroke dash
   [/^stroke-dash-(.+)$/, ([, s]) => ({ 'stroke-dasharray': h.bracket.cssvar.number(s) }), { autocomplete: 'stroke-dash-<num>' }],
   [/^stroke-offset-(.+)$/, ([, s], { theme }) => ({ 'stroke-dashoffset': theme.lineWidth?.[s] ?? h.bracket.cssvar.px.numberWithUnit(s) }), { autocomplete: 'stroke-offset-$lineWidth' }],
 
   // stroke colors
-  [/^stroke-(.+)$/, colorResolver('stroke', 'stroke', 'borderColor'), { autocomplete: 'stroke-$colors' }],
+  [/^stroke-(.+)$/, handleColorOrWidth, { autocomplete: 'stroke-$colors' }],
   [/^stroke-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-stroke-opacity': h.bracket.percent.cssvar(opacity) }), { autocomplete: 'stroke-(op|opacity)-<percent>' }],
 
   // line cap

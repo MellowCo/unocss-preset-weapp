@@ -1,5 +1,5 @@
 import { createGenerator } from '@unocss/core'
-import { describe, expect, test } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { presetWeapp } from '../src'
 
 const whRemToRpx = createGenerator({
@@ -36,13 +36,13 @@ const selectors = [
 ]
 
 describe('wh-rpx-test', () => {
-  test('wh-rpx false', async () => {
+  it('wh-rpx false', async () => {
     const code = selectors.join(' ')
     const { css } = await whRemToRpx.generate(code)
     await expect(css).toMatchFileSnapshot('./assets/output/wh-rpx/false.css')
   })
 
-  test('default', async () => {
+  it('default', async () => {
     const code = selectors.join(' ')
     const { css } = await whRpx.generate(code)
     await expect(css).toMatchFileSnapshot('./assets/output/wh-rpx/default.css')
