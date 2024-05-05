@@ -20,8 +20,15 @@ export function directionSize(propertyPrefix: string): DynamicMatcher {
   return ([_, direction, size]: string[], { theme }: RuleContext<Theme>): CSSEntries | undefined => {
     size = cacheRestoreSelector(size, theme?.transformRules)
     const v = theme.spacing?.[size || 'DEFAULT'] ?? h.bracket.cssvar.global.auto.fraction.remToRpx(size)
-    if (v != null)
+    if (v != null) {
       return directionMap[direction].map(i => [`${propertyPrefix}${i}`, v])
+    }
+    else if (size.startsWith('-')) {
+      // --custom-spacing-value
+      const v = theme.spacing?.[size.slice(1)]
+      if (v != null)
+        return directionMap[direction].map(i => [`${propertyPrefix}${i}`, `calc(${v} * -1)`])
+    }
   }
 }
 

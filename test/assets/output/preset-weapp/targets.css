@@ -220,15 +220,20 @@ page,root-portal-content,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rot
 ._lfl_\&_lfl_readonly_lfr__lfl_disabled_lfr__lfr__cl_m-15[readonly][disabled]{margin:120rpx;}
 ._lfl_\&\>_star__lfr__cl_m-11>*{margin:88rpx;}
 .-m-lg{margin:-40rpx;}
+.-m-md{margin:-36rpx;}
 .all_cl_m-auto *,
 .children_cl_m-auto>*,
 .m-auto{margin:auto;}
 .all_cl_m1_sl_1 *{margin:100%;}
 .m-_lfl_3em_lfr_{margin:3em;}
+.m--lg{margin:calc(40rpx * -1);}
+.m--md{margin:calc(36rpx * -1);}
 .m-0,
 .m-none{margin:0;}
 .m-1_sl_2{margin:50%;}
 .m-inherit{margin:inherit;}
+.m-lg{margin:40rpx;}
+.m-md{margin:36rpx;}
 *[open]:readonly ._lfl__star__lfl_open_lfr__cl_readonly_\&_lfr__cl__lfl_\&_lfl_open_lfr__cl_disabled_lfr__cl_m-17[open]:disabled{margin:136rpx;}
 *>._lfl__star_\>\&_lfr__cl_m-12{margin:96rpx;}
 .m-xy,

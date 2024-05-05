@@ -220,15 +220,20 @@ page,root-portal-content,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rot
 ._lfl11_\&_lfl11_readonly_lfr11__lfl11_disabled_lfr11__lfr11__cl11_m-15[readonly][disabled]{margin:120rpx;}
 ._lfl11_\&\>_star__lfr11__cl11_m-11>*{margin:88rpx;}
 .-m-lg{margin:-40rpx;}
+.-m-md{margin:-36rpx;}
 .all_cl11_m-auto *,
 .children_cl11_m-auto>*,
 .m-auto{margin:auto;}
 .all_cl11_m1_sl11_1 *{margin:100%;}
 .m-_lfl11_3em_lfr11_{margin:3em;}
+.m--lg{margin:calc(40rpx * -1);}
+.m--md{margin:calc(36rpx * -1);}
 .m-0,
 .m-none{margin:0;}
 .m-1_sl11_2{margin:50%;}
 .m-inherit{margin:inherit;}
+.m-lg{margin:40rpx;}
+.m-md{margin:36rpx;}
 *[open]:readonly ._lfl11__star__lfl11_open_lfr11__cl11_readonly_\&_lfr11__cl11__lfl11_\&_lfl11_open_lfr11__cl11_disabled_lfr11__cl11_m-17[open]:disabled{margin:136rpx;}
 *>._lfl11__star_\>\&_lfr11__cl11_m-12{margin:96rpx;}
 .m-xy,
