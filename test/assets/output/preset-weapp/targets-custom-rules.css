@@ -165,11 +165,13 @@ page,root-portal-content,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rot
 ._lfl11_padding_cl11_theme_lbl11_spacing_dl11_xl_lbr11__lfr11_{padding:48rpx;}
 ._el11_p-10{padding:80rpx !important;}
 ._el11_p-5px{padding:5px !important;}
-.-p-px{padding:-1px;}
+._star__cl11_p-2 > *,
+._star_-p-2 > *,
 .has-hover_cl11_p-2:has(:hover),
 .p-2,
 .p2,
 .where-hover_cl11_p-2:where(:hover){padding:16rpx;}
+.-p-px{padding:-1px;}
 .important_cl11_p-3,
 .p3_el11_{padding:24rpx !important;}
 .is-hover_cl11_p-4px:is(:hover),

@@ -166,6 +166,8 @@ page,root-portal-content,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rot
 .-p-px{padding:-1px;}
 .\!p-10{padding:80rpx !important;}
 .\!p-5px{padding:5px !important;}
+.\*-p-2 > *,
+.\*\:p-2 > *,
 .has-hover\:p-2:has(:hover),
 .p-2,
 .p2,

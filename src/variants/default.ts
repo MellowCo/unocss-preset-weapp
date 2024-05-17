@@ -14,6 +14,7 @@ import { variantPartClasses, variantPseudoClassFunctions, variantPseudoClassesAn
 import { variantAria } from './aria'
 import { variantDataAttribute, variantTaggedDataAttributes } from './data'
 import { variantContainerQuery } from './container'
+import { variantChildren } from './children'
 
 export function variants(options: PresetWeappOptions): Variant<Theme>[] {
   return [
@@ -40,6 +41,7 @@ export function variants(options: PresetWeappOptions): Variant<Theme>[] {
     ...variantColorsMediaOrClass(options),
     ...variantLanguageDirections,
     variantScope,
+    ...variantChildren,
 
     variantContainerQuery,
     variantVariables,
