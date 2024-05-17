@@ -593,7 +593,7 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .out-of-range_cl_color-pink-100:out-of-range{--un-text-opacity:1;color:rgb(252 231 243 / var(--un-text-opacity));}
 .placeholder_cl_color-transparent::placeholder{color:transparent;}
 .placeholder-color-red-1::placeholder{--un-text-opacity:1;color:rgb(254 226 226 / var(--un-text-opacity));}
-.selection_cl_color-_lfl_var_lbl_--select-color_lbr__lfr_::selection{color:var(--select-color);}
+.selection_cl_color-_lfl_var_lbl_--select-color_lbr__lfr_ ::selection{color:var(--select-color);}
 .text-opacity-_do_opacity-variable{--un-text-opacity:var(--opacity-variable);}
 .text-opacity-_lfl_13_dl_3333333_pes__lfr_{--un-text-opacity:13.3333333%;}
 .placeholder-color-opacity-60::placeholder{--un-text-opacity:0.6;}

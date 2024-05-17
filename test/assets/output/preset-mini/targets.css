@@ -590,7 +590,7 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .out-of-range\:color-pink-100:out-of-range{--licl-text-opacity:1;color:rgb(252 231 243 / var(--licl-text-opacity));}
 .placeholder-color-red-1::placeholder{--licl-text-opacity:1;color:rgb(254 226 226 / var(--licl-text-opacity));}
 .placeholder\:color-transparent::placeholder{color:transparent;}
-.selection\:color-\[var\(--select-color\)\]::selection{color:var(--select-color);}
+.selection\:color-\[var\(--select-color\)\] ::selection{color:var(--select-color);}
 .text-opacity-\[13\.3333333\%\]{--licl-text-opacity:13.3333333%;}
 .text-opacity-\$opacity-variable{--licl-text-opacity:var(--opacity-variable);}
 .placeholder-color-opacity-60::placeholder{--licl-text-opacity:0.6;}
