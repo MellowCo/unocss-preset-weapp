@@ -65,7 +65,7 @@ const cssProps = [
 ]
 
 function round(n: number) {
-  return n.toFixed(10).replace(/\.0+$/, '').replace(/(\.\d+?)0+$/, '$1')
+  return +n.toFixed(10)
 }
 
 export function numberWithUnit(str: string) {
@@ -171,7 +171,7 @@ export function fraction(str: string) {
   if (str === 'full')
     return '100%'
   // 小程序百分比 / 改为 _
-  const [left, right] = str.split(/[\/\_]/)
+  const [left, right] = str.split(/[/_]/)
 
   const num = Number.parseFloat(left) / Number.parseFloat(right)
   if (!Number.isNaN(num)) {
@@ -239,7 +239,7 @@ function bracketWithType(str: string, requiredType?: string) {
             vars.push(g1)
             return match.replace(g1, '--un-calc')
           })
-          .replace(/(-?\d*\.?\d(?!\b-\d.+[,)](?![^+\-/*])\D)(?:%|[a-z]+)?|\))([+\-/*])/g, '$1 $2 ')
+          .replace(/(-?\d*\.?\d(?!-\d.+[,)](?![^+\-/*])\D)(?:%|[a-z]+)?|\))([+\-/*])/g, '$1 $2 ')
           .replace(/--un-calc/g, () => vars.shift()!)
       })
   }

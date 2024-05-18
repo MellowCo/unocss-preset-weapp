@@ -297,7 +297,7 @@ export function variantTaggedPseudoClasses(options: PresetWeappOptions = {}): Va
   ]
 }
 
-const PartClassesRE = /(part-\[(.+)]:)(.+)/
+const PartClassesRE = /(part-\[(.+)\]:)(.+)/
 export const variantPartClasses: VariantObject = {
   match(input: string) {
     const match = input.match(PartClassesRE)

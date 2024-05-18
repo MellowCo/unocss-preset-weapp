@@ -105,7 +105,7 @@ export function parseColor(body: string, theme: Theme, key?: ThemeColorKeys): Pa
   const [main, opacity] = split
 
   const colors = main
-    .replace(/([a-z])([0-9])/g, '$1-$2')
+    .replace(/([a-z])(\d)/g, '$1-$2')
     .split(/-/g)
   const [name] = colors
 
@@ -119,7 +119,7 @@ export function parseColor(body: string, theme: Theme, key?: ThemeColorKeys): Pa
   if (h.numberWithUnit(bracketOrMain))
     return
 
-  if (/^#[\da-fA-F]+$/.test(bracketOrMain))
+  if (/^#[\da-f]+$/i.test(bracketOrMain))
     color = bracketOrMain
   else if (/^hex-[\da-fA-F]+$/.test(bracketOrMain))
     color = `#${bracketOrMain.slice(4)}`

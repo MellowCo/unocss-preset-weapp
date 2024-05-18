@@ -14,9 +14,9 @@ export const opacity: Rule[] = [
 ]
 
 const bgUrlRE = /^\[url\(.+\)\]$/
-const bgLengthRE = /^\[(length|size):.+\]$/
+const bgLengthRE = /^\[(?:length|size):.+\]$/
 const bgPositionRE = /^\[position:.+\]$/
-const bgGradientRE = /^\[(linear|conic|radial)-gradient\(.+\)\]$/
+const bgGradientRE = /^\[(?:linear|conic|radial)-gradient\(.+\)\]$/
 export const bgColors: Rule<Theme>[] = [
   [/^bg-(.+)$/, (params, body) => {
     let [, d] = params

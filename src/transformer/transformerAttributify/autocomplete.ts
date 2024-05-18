@@ -1,9 +1,11 @@
 import type { AutoCompleteExtractor, Preset } from '@unocss/core'
 import type { PresetWeappOptions, Theme } from '../..'
 
-const variantsRE = /^(?!.*\[(?:[^:]+):(?:.+)\]$)((?:.+:)?!?)?(.*)$/
-const elementRE = /(<\w[\w:\.$-]*\s)((?:'[^>]*?'|"[^>]*?"|`[^>]*?`|\{[^>]*?\}|[^>]*?)*)/g
-const valuedAttributeRE = /([?]|(?!\d|-{2}|-\d)[a-zA-Z0-9\u00A0-\uFFFF-_:%-]+)(?:=("[^"]*|'[^']*))?/g
+// eslint-disable-next-line regexp/no-super-linear-backtracking
+const variantsRE = /^(?!.*\[[^:]+:.+\]$)((?:.+:)?!?)(.*)$/
+// eslint-disable-next-line regexp/no-super-linear-backtracking, regexp/no-dupe-disjunctions
+const elementRE = /(<\w[\w:.$-]*\s)((?:'[^>']*'|"[^>"]*"|`[^>`]*`|\{[^>}]*\}|[^>]*?)*)/g
+const valuedAttributeRE = /(\?|(?!\d|-{2}|-\d)[\w\u00A0-\uFFFF-:%]+)(?:=("[^"]*|'[^']*))?/g
 const splitterRE = /[\s'"`;>]+/
 
 export function autocompleteExtractorAttributify(options?: PresetWeappOptions): AutoCompleteExtractor {
