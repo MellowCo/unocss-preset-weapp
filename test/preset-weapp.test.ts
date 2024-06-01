@@ -2,28 +2,37 @@ import { createGenerator } from '@unocss/core'
 import { describe, expect, it } from 'vitest'
 import presetWeapp from '../src/index'
 import { defaultRules } from '../src/transformer'
-import { presetMiniTargets } from './assets/preset-mini-targets'
+import { presetMiniTargets, targets2 } from './assets/preset-mini-targets'
 import { presetWeappTargets } from './assets/preset-weapp-targets'
+
+const uno = createGenerator({
+  presets: [
+    presetWeapp(),
+  ],
+  theme: {
+    colors: {
+      custom: {
+        a: 'var(--custom)',
+        b: 'rgba(var(--custom), %alpha)',
+      },
+    },
+  },
+})
 
 describe('preset-weapp', () => {
   it('targets', async () => {
-    const uno = createGenerator({
-      presets: [
-        presetWeapp(),
-      ],
-      theme: {
-        colors: {
-          custom: {
-            a: 'var(--custom)',
-            b: 'rgba(var(--custom), %alpha)',
-          },
-        },
-      },
-    })
-
     const code = [...presetMiniTargets, ...presetWeappTargets].join(' ')
     const { css } = await uno.generate(code)
     await expect(css).toMatchFileSnapshot('./assets/output/preset-weapp/targets.css')
+  })
+
+  it('targets 2', async () => {
+    const code = targets2.join(' ')
+    const { css } = await uno.generate(code, { preflights: false })
+    const { css: css2 } = await uno.generate(code, { preflights: false })
+
+    await expect(css).toMatchFileSnapshot('./assets/output/preset-weapp/targets-2.css')
+    expect(css).toEqual(css2)
   })
 
   it('rules targets', async () => {

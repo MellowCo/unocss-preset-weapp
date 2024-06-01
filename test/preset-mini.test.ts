@@ -1,7 +1,7 @@
 import { createGenerator, escapeSelector } from '@unocss/core'
 import { describe, expect, it } from 'vitest'
 import presetWeapp from '../src/index'
-import { presetMiniNonTargets, presetMiniTargets } from './assets/preset-mini-targets'
+import { presetMiniNonTargets, presetMiniTargets, targets2 } from './assets/preset-mini-targets'
 
 const uno = createGenerator({
   presets: [
@@ -78,6 +78,15 @@ describe('preset-mini', () => {
     }
     expect(unmatched).toEqual([])
     await expect(css).toMatchFileSnapshot('./assets/output/preset-mini/targets.css')
+    expect(css).toEqual(css2)
+  })
+
+  it('targets 2', async () => {
+    const code = targets2.join(' ')
+    const { css } = await uno.generate(code, { preflights: false })
+    const { css: css2 } = await uno.generate(code, { preflights: false })
+
+    await expect(css).toMatchFileSnapshot('./assets/output/preset-mini/targets-2.css')
     expect(css).toEqual(css2)
   })
 

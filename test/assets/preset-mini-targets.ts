@@ -1508,3 +1508,13 @@ export const presetMiniNonTargets = [
 
   'display-a',
 ]
+
+export const targets2 = [
+  // mini - variants selector
+  'selector-[section]:c-gray-400',
+  'selector-[.cls.multi]:c-gray-400',
+  'md:selector-[aside]:shadow-xl',
+  'dark:selector-[.body\\_main]:bg-white',
+  'max-[500px]:bg-red-100',
+  'dark:min-[300px]:bg-red-100',
+]
