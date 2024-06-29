@@ -11,7 +11,7 @@ import { variantImportant } from './important'
 import { variantCustomMedia, variantPrint } from './media'
 import { variantSupports } from './supports'
 import { variantPartClasses, variantPseudoClassFunctions, variantPseudoClassesAndElements, variantTaggedPseudoClasses } from './pseudo'
-import { variantAria } from './aria'
+import { variantAria, variantTaggedAriaAttributes } from './aria'
 import { variantDataAttribute, variantTaggedDataAttributes } from './data'
 import { variantContainerQuery } from './container'
 import { variantChildren } from './children'
@@ -46,6 +46,7 @@ export function variants(options: PresetWeappOptions): Variant<Theme>[] {
     variantContainerQuery,
     variantVariables,
     ...variantTaggedDataAttributes,
+    ...variantTaggedAriaAttributes,
 
     variantTheme,
   ]
