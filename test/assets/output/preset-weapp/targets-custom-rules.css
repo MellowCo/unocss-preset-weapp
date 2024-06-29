@@ -777,6 +777,7 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .shrink-0{flex-shrink:0;}
 .shrink-_do11_variable{flex-shrink:var(--variable);}
 .shrink-10{flex-shrink:10;}
+._el11_flex-grow-0{flex-grow:0 !important;}
 .flex-grow,
 .grow{flex-grow:1;}
 .flex-grow-0,

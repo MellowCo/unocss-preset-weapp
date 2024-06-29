@@ -24,7 +24,7 @@ export function variantImportant(): VariantObject<Theme> {
           matcher: base,
           body: (body) => {
             body.forEach((v) => {
-              if (v[1])
+              if (v[1] != null)
                 v[1] += ' !important'
             })
             return body
