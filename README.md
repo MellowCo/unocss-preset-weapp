@@ -531,7 +531,7 @@ text-100 => font-size:100rpx
 
 > textIndent 预设 `indent-lg`
 ```js
-export const textIndent: Theme['textIndent'] = {
+export const textIndent = {
   'DEFAULT': '48rpx',
   'xs': '16rpx',
   'sm': '32rpx',
