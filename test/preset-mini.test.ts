@@ -365,7 +365,7 @@ describe('preset-mini', () => {
       .toMatchInlineSnapshot(`
         "/* layer: default */
         .bg-blue-400{--un-bg-opacity:1;background-color:rgb(0 0 400 / var(--un-bg-opacity));}
-        .text-blue-400{--un-text-opacity:1;color:rgb(0 0 400 / var(--un-text-opacity));}"
+        .text-blue-400{--un-text-opacity:1;color:rgb(0 0 700 / var(--un-text-opacity));}"
       `)
   })
 

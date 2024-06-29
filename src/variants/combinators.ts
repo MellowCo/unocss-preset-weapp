@@ -1,5 +1,6 @@
 import type { Variant, VariantObject } from '@unocss/core'
-import { h, variantGetBracket } from '../utils'
+import { variantGetBracket } from '@unocss/rule-utils'
+import { h } from '../utils'
 
 function scopeMatcher(name: string, combinator: string): VariantObject {
   return {

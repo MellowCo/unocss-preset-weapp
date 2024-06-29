@@ -2,8 +2,9 @@ import type { VariantObject } from '@unocss/core'
 import { escapeRegExp, escapeSelector, warnOnce } from '@unocss/core'
 
 import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
+import { getBracket, variantGetBracket } from '@unocss/rule-utils'
 import type { PresetWeappOptions } from '..'
-import { getBracket, h, variantGetBracket } from '../utils'
+import { h } from '../utils'
 import type { Theme } from '../theme'
 
 const PseudoClasses: Record<string, string> = Object.fromEntries([
