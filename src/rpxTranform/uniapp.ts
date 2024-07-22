@@ -2,7 +2,7 @@ import type { UtilObject } from '@unocss/core'
 import { cssRpxTransform, rpxRE } from '.'
 
 /**
- * uniapp postcss rpx 转换规则
+ * uniapp vue2 postcss rpx 转换规则
  * pkg: @dcloudio/vue-cli-plugin-uni/packages/postcss 37行
  * @param size
  */
