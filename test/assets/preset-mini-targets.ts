@@ -1031,6 +1031,10 @@ export const presetMiniTargets: string[] = [
   'ease-out',
   'transition-ease-in',
 
+  // transition - behavior - discrete/normal
+  'transition-discrete',
+  'transition-normal',
+
   // typography
   'font-mono',
   'font-[system-ui]',
@@ -1155,6 +1159,10 @@ export const presetMiniTargets: string[] = [
   'tracking-$variable',
   'word-spacing-$variable',
   'ws-$variable',
+
+  // variants - starting style
+  'starting:opacity-0',
+  'starting:popover-open:opacity-0',
 
   // variables - property
   '[a:b]',
