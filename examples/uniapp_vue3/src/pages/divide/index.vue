@@ -1,5 +1,5 @@
 <template>
-  <view class="p-2 pb-5 space-y-5">
+  <view class="p-2 space-y-5 pb-5">
     <!-- start: divide-x  -->
     <view class="text-xl font-bold">
       divide-x
@@ -55,4 +55,3 @@
     <!-- end  -->
   </view>
 </template>
-

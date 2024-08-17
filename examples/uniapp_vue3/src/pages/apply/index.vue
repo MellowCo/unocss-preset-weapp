@@ -19,15 +19,15 @@
   @apply center w-500 h-200 rounded-md bg-gradient-to-t from-#f39c12/60 via-#2ecc71:80 to-#9b59b6_70 mb-3;
 }
 
-.bg-unocss{
+.bg-unocss {
   @apply w-100 h-100 bg-cover mb-3 bg-[url(https://img.cdn.sugarat.top/mdImg/MTY2ODA4OTc3MjcyMg==unocss-icon-gray.svg)] m-auto;
 }
 
-.bg-to-r{
+.bg-to-r {
   --at-apply: center h-200 rounded-md bg-gradient-to-r from-#f39c12/60 via-#2ecc71:80 to-#9b59b6_70 mb-3
 }
 
-.bg-directives{
+.bg-directives {
   background-color: theme(color.blue);
 }
 </style>
