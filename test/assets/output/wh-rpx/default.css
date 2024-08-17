@@ -1,14 +1,14 @@
 /* layer: preflights */
 page,root-portal-content,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-ring-offset-shadow:0 0 rgb(0 0 0 / 0);--un-ring-shadow:0 0 rgb(0 0 0 / 0);--un-shadow-inset:var(--un-empty,/*!*/ /*!*/);--un-shadow:0 0 rgb(0 0 0 / 0);--un-ring-inset:var(--un-empty,/*!*/ /*!*/);--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgb(147 197 253 / 0.5);}
 /* layer: default */
-.text-1_sl_2{font-size:8rpx;line-height:16rpx;}
-.text-20,
-.text-size-20{font-size:20rpx;}
-.text-base{font-size:32rpx;line-height:48rpx;}
-.h-10{height:10rpx;}
-.h-2{height:2rpx;}
-.w-10{width:10rpx;}
 .bottom-5{bottom:5rpx;}
 .left-3{left:3rpx;}
 .right-8{right:8rpx;}
 .top-10{top:10rpx;}
+.h-10{height:10rpx;}
+.h-2{height:2rpx;}
+.w-10{width:10rpx;}
+.text-1_sl_2{font-size:8rpx;line-height:16rpx;}
+.text-20,
+.text-size-20{font-size:20rpx;}
+.text-base{font-size:32rpx;line-height:48rpx;}
