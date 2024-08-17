@@ -1254,8 +1254,15 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .property-padding_lco_margin{transition-property:padding,margin;}
 .property-all,
 .transition-property-all{transition-property:all;}
+.property-background-color{transition-property:background-color;}
+.property-border-color{transition-property:border-color;}
+.property-color{transition-property:color;}
+.property-fill{transition-property:fill;}
 .property-margin_lco_padding{transition-property:margin,padding;}
 .property-none{transition-property:none;}
+.property-outline-color{transition-property:outline-color;}
+.property-stroke{transition-property:stroke;}
+.property-text-decoration-color{transition-property:text-decoration-color;}
 .property-unset{transition-property:unset;}
 .transition-property-_lfl_border_lfr_{transition-property:border;}
 .transition-property-width{transition-property:width;}
