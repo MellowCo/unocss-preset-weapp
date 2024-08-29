@@ -19,8 +19,31 @@ npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
 pnpm add -D unocss unocss-preset-weapp
 ```
 
-* vite.config.ts
 
+* unocss 0.59.* 之后版本  vite.config.ts
+> Error [ERR_REQUIRE_ESM]: require() of ES Module,  https://github.com/dcloudio/uni-app/issues/4815  https://github.com/unocss/unocss/issues/3776
+
+```ts
+import { defineConfig } from 'vite'
+import uni from '@dcloudio/vite-plugin-uni'
+
+// https://vitejs.dev/config/
+export default defineConfig(async ()=>{
+  const UnoCss = await import('unocss/vite').then(i => i.default)
+
+  return {
+    plugins: [
+      uni(),
+  
+      // https://github.com/unocss/unocss
+      UnoCss(),
+    ],
+  }
+})
+```
+
+
+* unocss 0.59.* 之前版本  vite.config.ts
 ```ts
 import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
