@@ -1,6 +1,6 @@
 import type { Rule } from '@unocss/core'
-import { globalKeywords } from '../utils/mappings'
 import { h } from '../utils/handlers'
+import { globalKeywords } from '../utils/mappings'
 
 const verticalAlignAlias: Record<string, string> = {
   'mid': 'middle',

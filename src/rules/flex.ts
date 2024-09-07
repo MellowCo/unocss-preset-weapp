@@ -1,7 +1,7 @@
-import type { Rule } from '@unocss/core'
 import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
-import type { Theme } from '../theme'
+import type { Rule } from '@unocss/core'
 import { handler as h } from '../utils'
+import type { Theme } from '../theme'
 
 export const flex: Rule<Theme>[] = [
   // display

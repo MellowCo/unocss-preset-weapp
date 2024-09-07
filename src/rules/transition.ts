@@ -1,6 +1,6 @@
 import type { Rule } from '@unocss/core'
-import type { Theme } from '../theme'
 import { globalKeywords, h, makeGlobalStaticRules } from '../utils'
+import type { Theme } from '../theme'
 
 function resolveTransitionProperty(prop: string, theme: Theme): string | undefined {
   let p: string | undefined

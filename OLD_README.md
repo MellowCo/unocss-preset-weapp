@@ -79,8 +79,8 @@ yarn add -D unocss @unocss/webpack@0.45.8 unplugin-transform-class unocss-preset
 // 请使用 @unocss/webpack 0.45.8
 // 0.45.8 之前和之后版本 会出现无法及时生成`css`代码，导致打包时没有`css`代码
 const UnoCSS = require('@unocss/webpack').default
-const transformWeClass = require('unplugin-transform-class/webpack')
 const { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } = require('unplugin-attributify-to-class/webpack')
+const transformWeClass = require('unplugin-transform-class/webpack')
 
 module.exports = {
   configureWebpack: {
@@ -103,8 +103,8 @@ module.exports = {
 * [h5兼容说明](https://github.com/MellowCo/unocss-preset-weapp#h5%E5%85%BC%E5%AE%B9)
 
 ```js
-import presetWeapp from 'unocss-preset-weapp'
 import { defineConfig } from 'unocss'
+import presetWeapp from 'unocss-preset-weapp'
 
 export default defineConfig({
   presets: [
@@ -167,8 +167,8 @@ yarn add -D unocss unocss-webpack-uniapp2 unplugin-transform-class unocss-preset
 // 解决 App平台 v3 模式暂不支持在 js 文件中引用"uno.css" 请改在 style 内引用
 const UnoCSS = require('unocss-webpack-uniapp2').default
 
-const transformWeClass = require('unplugin-transform-class/webpack')
 const { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } = require('unplugin-attributify-to-class/webpack')
+const transformWeClass = require('unplugin-transform-class/webpack')
 
 module.exports = {
   configureWebpack: {
@@ -192,8 +192,8 @@ module.exports = {
 * [h5兼容说明](https://github.com/MellowCo/unocss-preset-weapp#h5%E5%85%BC%E5%AE%B9)
 
 ```js
-import presetWeapp from 'unocss-preset-weapp'
 import { defineConfig } from 'unocss'
+import presetWeapp from 'unocss-preset-weapp'
 
 export default defineConfig({
   presets: [
@@ -292,8 +292,8 @@ yarn add -D unocss @unocss/webpack@0.45.8 unplugin-transform-class unocss-preset
 ```js
 // 导入unocss
 import UnoCSS from 'unocss/webpack'
-import transformWeClass from 'unplugin-transform-class/webpack'
 import { defaultAttributes, defaultIgnoreNonValuedAttributes, presetAttributifyWechat } from 'unplugin-attributify-to-class/webpack'
+import transformWeClass from 'unplugin-transform-class/webpack'
 
 const config = {
   mini: {
@@ -486,11 +486,11 @@ pnpm add -D unocss unplugin-transform-class unocss-preset-weapp unplugin-attribu
 * vite.config.ts
 
 ```ts
-import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 import Unocss from 'unocss/vite'
-import transformWeClass from 'unplugin-transform-class/vite'
 import { presetAttributifyWechat } from 'unplugin-attributify-to-class/vite'
+import transformWeClass from 'unplugin-transform-class/vite'
+import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -523,8 +523,8 @@ export default defineConfig({
 * unocss.config.ts
 > 添加unocss.config.js文件，搭配 [unocss vscode](https://marketplace.visualstudio.com/items?itemName=antfu.unocss) 插件，智能提示
 ```ts
-import presetWeapp from 'unocss-preset-weapp'
 import { defineConfig } from 'unocss'
+import presetWeapp from 'unocss-preset-weapp'
 
 export default defineConfig({
   presets: [

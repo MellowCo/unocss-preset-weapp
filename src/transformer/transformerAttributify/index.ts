@@ -1,6 +1,6 @@
 import type { Options } from 'unplugin-attributify-to-class/types'
-import transformer from './transformer'
 import { presetWeappAttributify as preset } from './autocomplete'
+import transformer from './transformer'
 
 export function extractorAttributify(options: Options = {}) {
   return {

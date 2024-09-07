@@ -1,9 +1,9 @@
-import type { CSSEntries, CSSObject, Rule, RuleContext } from '@unocss/core'
-import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
-import type { CSSColorValue } from '@unocss/rule-utils'
 import { colorOpacityToString, colorToString } from '@unocss/rule-utils'
-import type { Theme } from '../theme'
+import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
+import type { CSSEntries, CSSObject, Rule, RuleContext } from '@unocss/core'
+import type { CSSColorValue } from '@unocss/rule-utils'
 import { cornerMap, directionMap, globalKeywords, handler as h, hasParseableColor, isCSSMathFn, parseColor } from '../utils'
+import type { Theme } from '../theme'
 
 export const borderStyles = ['solid', 'dashed', 'dotted', 'double', 'hidden', 'none', 'groove', 'ridge', 'inset', 'outset', ...globalKeywords]
 

@@ -1,5 +1,5 @@
-import type { Rule } from '@unocss/core'
 import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
+import type { Rule } from '@unocss/core'
 import { colorResolver, handler as h, isSize } from '../utils'
 import type { Theme } from '../theme'
 

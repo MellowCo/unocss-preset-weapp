@@ -1,9 +1,9 @@
 import { createGenerator } from '@unocss/core'
-import { describe, expect, it } from 'vitest'
 import MagicString from 'magic-string'
+import { describe, expect, it } from 'vitest'
 
-import { transformerAttributify } from '../src/transformer'
 import { presetWeapp } from '../src'
+import { transformerAttributify } from '../src/transformer'
 
 const originalCode = `
 <template>

@@ -1,5 +1,5 @@
-import type { Rule } from '@unocss/core'
 import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
+import type { Rule } from '@unocss/core'
 import { globalKeywords, handler as h, makeGlobalStaticRules } from '../utils'
 import type { Theme } from '../'
 

@@ -199,9 +199,9 @@ export default {
 
 * unocss.config.js
 ```ts
+import { defineConfig } from 'unocss'
 import presetWeapp from 'unocss-preset-weapp'
 import { defaultRules, extractorAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
-import { defineConfig } from 'unocss'
 
 const transformRules = {
   ...defaultRules,
@@ -255,9 +255,9 @@ export default defineConfig({
 > `presetWeapp` 配置 `prefix`, `transformerAttributify` 配置 `classPrefix`
 
 ```ts
+import { defineConfig } from 'unocss'
 import presetWeapp from 'unocss-preset-weapp'
 import { extractorAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
-import { defineConfig } from 'unocss'
 
 const prefix = 'li-'
 
@@ -343,8 +343,8 @@ Unocss({
 * unocss.config.js 自定义动画
 
 ```js
-import presetWeapp from 'unocss-preset-weapp'
 import { defineConfig } from 'unocss'
+import presetWeapp from 'unocss-preset-weapp'
 
 export default defineConfig({
   presets: [

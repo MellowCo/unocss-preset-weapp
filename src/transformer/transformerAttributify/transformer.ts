@@ -1,7 +1,7 @@
+import { createFilter } from '@rollup/pluginutils'
+import { extractorAttributify } from 'unplugin-attributify-to-class/utils'
 import type { SourceCodeTransformer } from '@unocss/core'
 import type { Options } from 'unplugin-attributify-to-class/types'
-import { extractorAttributify } from 'unplugin-attributify-to-class/utils'
-import { createFilter } from '@rollup/pluginutils'
 
 export default function (options: Options = {}): SourceCodeTransformer {
   const idFilter = createFilter(

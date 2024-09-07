@@ -1,5 +1,5 @@
-import type { VariantObject } from '@unocss/core'
 import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
+import type { VariantObject } from '@unocss/core'
 import type { Theme } from '../theme'
 
 export function variantImportant(): VariantObject<Theme> {

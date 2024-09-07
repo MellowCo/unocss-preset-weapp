@@ -1,6 +1,6 @@
+import { createAutocomplete, parseAutocomplete } from '@unocss/autocomplete'
 import { createGenerator } from '@unocss/core'
 import { describe, expect, it } from 'vitest'
-import { createAutocomplete, parseAutocomplete } from '@unocss/autocomplete'
 import presetWeapp from '../src/index'
 import { extractorAttributify } from '../src/transformer'
 
@@ -50,7 +50,8 @@ describe('autocomplete', () => {
       .toMatchInlineSnapshot('"m-1"')
 
     expect((await ac.suggest('invalid'))[0])
-      .not.toBe('invalid')
+      .not
+      .toBe('invalid')
   })
 
   it('should provide autocomplete', async () => {

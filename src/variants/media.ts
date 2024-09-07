@@ -1,7 +1,7 @@
-import type { VariantContext, VariantObject } from '@unocss/core'
 import { variantGetParameter } from '@unocss/rule-utils'
-import type { Theme } from '../theme'
+import type { VariantContext, VariantObject } from '@unocss/core'
 import { h, variantParentMatcher } from '../utils'
+import type { Theme } from '../theme'
 
 export const variantPrint: VariantObject = variantParentMatcher('print', '@media print')
 

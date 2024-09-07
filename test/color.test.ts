@@ -1,8 +1,8 @@
-import type { RuleContext } from '@unocss/core'
 import { createGenerator } from '@unocss/core'
-import { describe, expect, it } from 'vitest'
 import { colorToString, hex2rgba, parseCssColor } from '@unocss/rule-utils'
-import { colorResolver, colorableShadows } from '../src/utils'
+import { describe, expect, it } from 'vitest'
+import type { RuleContext } from '@unocss/core'
+import { colorableShadows, colorResolver } from '../src/utils'
 
 describe('color utils', () => {
   it('convert hex to rgb', () => {

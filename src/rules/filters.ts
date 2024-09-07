@@ -1,7 +1,7 @@
 import type { CSSValues, Rule, RuleContext } from '@unocss/core'
-import type { Theme } from '../theme'
-import { colorResolver, colorableShadows, globalKeywords, h } from '../utils'
 import { varEmpty } from '../rules'
+import { colorableShadows, colorResolver, globalKeywords, h } from '../utils'
+import type { Theme } from '../theme'
 
 export const filterBase = {
   '--un-blur': varEmpty,

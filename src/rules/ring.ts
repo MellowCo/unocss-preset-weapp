@@ -1,7 +1,7 @@
 import type { CSSObject, Rule, RuleContext } from '@unocss/core'
-import type { Theme } from '../theme'
 import { colorResolver, handler as h, isCSSMathFn } from '../utils'
 import { varEmpty } from './static'
+import type { Theme } from '../theme'
 
 export const ringBase = {
   '--un-ring-inset': varEmpty,

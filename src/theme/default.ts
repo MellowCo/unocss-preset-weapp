@@ -1,13 +1,13 @@
-import { colors } from './colors'
-import { fontFamily, fontSize, fontWeight, letterSpacing, lineHeight, textIndent, textShadow, textStrokeWidth, wordSpacing } from './font'
-import { borderRadius, boxShadow, breakpoints, duration, lineWidth, media, ringWidth, spacing, verticalBreakpoints, zIndex } from './misc'
-import { blur, dropShadow } from './filters'
-import { containers, height, maxHeight, maxWidth, width } from './size'
-import type { Theme } from './types'
-import { preflightBase } from './preflight'
 import { animation } from './animation'
 import { aria } from './aria'
+import { colors } from './colors'
+import { blur, dropShadow } from './filters'
+import { fontFamily, fontSize, fontWeight, letterSpacing, lineHeight, textIndent, textShadow, textStrokeWidth, wordSpacing } from './font'
+import { borderRadius, boxShadow, breakpoints, duration, lineWidth, media, ringWidth, spacing, verticalBreakpoints, zIndex } from './misc'
+import { preflightBase } from './preflight'
+import { containers, height, maxHeight, maxWidth, width } from './size'
 import { easing, transitionProperty } from './transition'
+import type { Theme } from './types'
 
 export const theme: Theme = {
   width,

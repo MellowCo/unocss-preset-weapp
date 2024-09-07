@@ -1,8 +1,8 @@
-import type { Rule } from '@unocss/core'
 import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
-import type { Theme } from '../theme'
-import { colorResolver, colorableShadows, handler as h, hasParseableColor } from '../utils'
+import type { Rule } from '@unocss/core'
+import { colorableShadows, colorResolver, handler as h, hasParseableColor } from '../utils'
 import { varEmpty } from './static'
+import type { Theme } from '../theme'
 
 export const boxShadowsBase = {
   '--un-ring-offset-shadow': '0 0 rgb(0 0 0 / 0)',

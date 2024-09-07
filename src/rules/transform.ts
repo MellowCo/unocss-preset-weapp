@@ -1,7 +1,7 @@
-import type { CSSValues, Rule, RuleContext } from '@unocss/core'
 import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
-import type { Theme } from '../theme'
+import type { CSSValues, Rule, RuleContext } from '@unocss/core'
 import { handler as h, makeGlobalStaticRules, positionMap, transformXYZ } from '../utils'
+import type { Theme } from '../theme'
 
 const transformValues = [
   'translate',

@@ -1,7 +1,7 @@
-import type { VariantContext, VariantObject } from '@unocss/core'
 import { variantGetParameter } from '@unocss/rule-utils'
-import type { Theme } from '../theme'
+import type { VariantContext, VariantObject } from '@unocss/core'
 import { h } from '../utils'
+import type { Theme } from '../theme'
 
 export const variantSupports: VariantObject = {
   name: 'supports',

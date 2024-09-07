@@ -1,20 +1,20 @@
-import { type PresetOptions, definePreset } from '@unocss/core'
-import { cacheTransformEscapESelector, defaultRules } from 'unplugin-transform-class/utils'
+import { definePreset, type PresetOptions } from '@unocss/core'
 import { extractorArbitraryVariants } from '@unocss/extractor-arbitrary-variants'
+import { cacheTransformEscapESelector, defaultRules } from 'unplugin-transform-class/utils'
 import preflights from './preflights'
+import { taroCssPxTransform, taroH5CssRemTransform, uniAppVue2CssRpxTransform } from './rpxTranform'
 import { rules } from './rules'
-import type { Theme, ThemeAnimation } from './theme'
+import { shorthands } from './shorthands'
 import { theme } from './theme'
 import { variants } from './variants'
-import { shorthands } from './shorthands'
 
-import { taroCssPxTransform, taroH5CssRemTransform, uniAppVue2CssRpxTransform } from './rpxTranform'
+import type { Theme, ThemeAnimation } from './theme'
 
-export { theme, colors } from './theme'
+export { colors, theme } from './theme'
 export { parseColor } from './utils'
 
 // support custom shadow color
-export type { ThemeAnimation, Theme }
+export type { Theme, ThemeAnimation }
 
 export interface DarkModeSelectors {
   /**

@@ -1,6 +1,6 @@
 import type { CSSObject, Rule, RuleContext } from '@unocss/core'
-import type { Theme } from '../theme'
 import { colorResolver, globalKeywords, handler as h, isCSSMathFn } from '../utils'
+import type { Theme } from '../theme'
 
 const decorationStyles = ['solid', 'double', 'dotted', 'dashed', 'wavy', ...globalKeywords]
 
