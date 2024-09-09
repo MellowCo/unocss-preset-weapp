@@ -1,6 +1,6 @@
 import type { CSSValues, Rule, RuleContext } from '@unocss/core'
-import { varEmpty } from '../rules'
 import { colorableShadows, colorResolver, globalKeywords, h } from '../utils'
+import { varEmpty } from './constant'
 import type { Theme } from '../theme'
 
 export const filterBase = {

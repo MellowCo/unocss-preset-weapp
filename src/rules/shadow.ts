@@ -1,7 +1,7 @@
 import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 import type { Rule } from '@unocss/core'
 import { colorableShadows, colorResolver, handler as h, hasParseableColor } from '../utils'
-import { varEmpty } from './static'
+import { varEmpty } from './constant'
 import type { Theme } from '../theme'
 
 export const boxShadowsBase = {
