@@ -649,6 +649,8 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .bg-_lfl_calc_lbl_10_pes__plus_10px_lbr__lfr_{background-position:calc(10% + 10px);}
 .bg-_lfl_calc_lbl_10vw_plus_10px_lbr__lfr_{background-position:calc(10vw + 10px);}
 .bg-_lfl_conic-gradient_lbl_red_lco_blue_lbr__lfr_{background-image:conic-gradient(red,blue);}
+.bg-_lfl_image_cl__do_variable_lfr_{background-image:var(--variable);}
+.bg-_lfl_image_cl_https_cl__sl__sl_test_dl_unocss_dl_png_lfr_{background-image:url(https://test.unocss.png);}
 .bg-_lfl_length_cl_--variable_lfr_,
 .bg-_lfl_size_cl_--variable_lfr_{background-size:var(--variable);}
 .bg-_lfl_length_cl_1_sl_2_20rem_lfr_,

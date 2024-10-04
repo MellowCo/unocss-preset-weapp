@@ -647,6 +647,8 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .bg-_lfl11_calc_lbl11_10_pes11__plus_10px_lbr11__lfr11_{background-position:calc(10% + 10px);}
 .bg-_lfl11_calc_lbl11_10vw_plus_10px_lbr11__lfr11_{background-position:calc(10vw + 10px);}
 .bg-_lfl11_conic-gradient_lbl11_red_lco11_blue_lbr11__lfr11_{background-image:conic-gradient(red,blue);}
+.bg-_lfl11_image_cl11__do11_variable_lfr11_{background-image:var(--variable);}
+.bg-_lfl11_image_cl11_https_cl11__sl11__sl11_test_dl11_unocss_dl11_png_lfr11_{background-image:url(https://test.unocss.png);}
 .bg-_lfl11_length_cl11_--variable_lfr11_,
 .bg-_lfl11_size_cl11_--variable_lfr11_{background-size:var(--variable);}
 .bg-_lfl11_length_cl11_1_sl11_2_20rem_lfr11_,
