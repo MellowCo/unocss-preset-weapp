@@ -995,6 +995,7 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .group-aria_sl11_label.not-parent .group-aria-_lfl11__dl11_not-parent_lfr11__sl11_label_cl11_font-19{font-weight:19;}
 .group_sl11_label[data-attr] .group-_lfl11__lfl11_data-attr_lfr11__lfr11__sl11_label_cl11_font-17,
 .group-aria_sl11_label[data-attr] .group-aria-_lfl11__lfl11_data-attr_lfr11__lfr11__sl11_label_cl11_font-17{font-weight:17;}
+.group_sl11_named[data-state=open] .group-data-_lfl11_state_eqe11_open_lfr11__sl11_named_cl11_font-medium{font-weight:500;}
 .group-aria:hover .group-aria-_lfl11__cl11_hover_lfr11__cl11_font-11,
 .group:hover .group-_lfl11__cl11_hover_lfr11__cl11_font-11{font-weight:11;}
 .group-aria.not-parent .group-aria-_lfl11__dl11_not-parent_lfr11__cl11_font-14,

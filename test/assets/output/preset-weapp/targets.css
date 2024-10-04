@@ -998,6 +998,7 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .group-aria_sl_label.not-parent .group-aria-_lfl__dl_not-parent_lfr__sl_label_cl_font-19{font-weight:19;}
 .group_sl_label[data-attr] .group-_lfl__lfl_data-attr_lfr__lfr__sl_label_cl_font-17,
 .group-aria_sl_label[data-attr] .group-aria-_lfl__lfl_data-attr_lfr__lfr__sl_label_cl_font-17{font-weight:17;}
+.group_sl_named[data-state=open] .group-data-_lfl_state_eqe_open_lfr__sl_named_cl_font-medium{font-weight:500;}
 .group-aria:hover .group-aria-_lfl__cl_hover_lfr__cl_font-11,
 .group:hover .group-_lfl__cl_hover_lfr__cl_font-11{font-weight:11;}
 .group-aria.not-parent .group-aria-_lfl__dl_not-parent_lfr__cl_font-14,
