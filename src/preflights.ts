@@ -1,6 +1,6 @@
-import { entriesToCss, toArray } from '@unocss/core'
 import type { Preflight, PreflightContext } from '@unocss/core'
 import type { Theme } from './theme'
+import { entriesToCss, toArray } from '@unocss/core'
 
 const wxPrefix = ['page,root-portal-content,::before,::after']
 const taroPrefix = ['*,::before,::after']

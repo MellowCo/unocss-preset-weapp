@@ -1,4 +1,6 @@
 import type { Variant } from '@unocss/core'
+import type { PresetWeappOptions } from '..'
+import type { Theme } from '../theme'
 import { variantAria, variantTaggedAriaAttributes } from './aria'
 import { variantBreakpoints } from './breakpoints'
 import { variantChildren } from './children'
@@ -14,8 +16,6 @@ import { variantNegative } from './negative'
 import { variantPartClasses, variantPseudoClassesAndElements, variantPseudoClassFunctions, variantTaggedPseudoClasses } from './pseudo'
 import { variantStartingStyle } from './startingstyle'
 import { variantSupports } from './supports'
-import type { PresetWeappOptions } from '..'
-import type { Theme } from '../theme'
 
 export function variants(options: PresetWeappOptions): Variant<Theme>[] {
   return [

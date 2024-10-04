@@ -1,7 +1,7 @@
-import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 import type { CSSObject, Rule, RuleContext } from '@unocss/core'
-import { colorResolver, handler as h, isCSSMathFn } from '../utils'
 import type { Theme } from '../theme'
+import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
+import { colorResolver, handler as h, isCSSMathFn } from '../utils'
 
 export const svgUtilities: Rule<Theme>[] = [
   // fills

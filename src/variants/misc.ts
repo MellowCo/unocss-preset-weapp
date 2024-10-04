@@ -1,8 +1,8 @@
+import type { Variant } from '@unocss/core'
+import type { Theme } from '../theme'
 import { getBracket, hasThemeFn, transformThemeFn, variantGetBracket, variantGetParameter } from '@unocss/rule-utils'
 import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
-import type { Variant } from '@unocss/core'
 import { h } from '../utils'
-import type { Theme } from '../theme'
 
 export const variantSelector: Variant = {
   name: 'selector',

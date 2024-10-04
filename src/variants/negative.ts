@@ -1,5 +1,5 @@
-import { getStringComponent } from '@unocss/rule-utils'
 import type { Variant } from '@unocss/core'
+import { getStringComponent } from '@unocss/rule-utils'
 import { CONTROL_MINI_NO_NEGATIVE, cssMathFnRE, cssVarFnRE } from '../utils'
 
 const anchoredNumberRE = /^-?[0-9.]+(?:[a-z]+|%)?$/

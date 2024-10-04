@@ -1,3 +1,4 @@
+import type { Theme } from './types'
 import { animation } from './animation'
 import { aria } from './aria'
 import { colors } from './colors'
@@ -7,7 +8,6 @@ import { borderRadius, boxShadow, breakpoints, duration, lineWidth, media, ringW
 import { preflightBase } from './preflight'
 import { containers, height, maxHeight, maxWidth, width } from './size'
 import { easing, transitionProperty } from './transition'
-import type { Theme } from './types'
 
 export const theme: Theme = {
   width,

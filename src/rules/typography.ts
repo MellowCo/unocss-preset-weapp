@@ -1,8 +1,8 @@
+import type { CSSObject, Rule, RuleContext } from '@unocss/core'
+import type { Theme } from '../theme'
 import { toArray } from '@unocss/core'
 import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
-import type { CSSObject, Rule, RuleContext } from '@unocss/core'
 import { colorableShadows, colorResolver, globalKeywords, handler as h, isCSSMathFn, splitShorthand } from '../utils'
-import type { Theme } from '../theme'
 
 export const fonts: Rule<Theme>[] = [
   // size

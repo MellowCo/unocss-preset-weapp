@@ -1,6 +1,6 @@
 import type { CSSObject, Rule, RuleContext } from '@unocss/core'
-import { colorResolver, globalKeywords, handler as h, isCSSMathFn } from '../utils'
 import type { Theme } from '../theme'
+import { colorResolver, globalKeywords, handler as h, isCSSMathFn } from '../utils'
 
 export const outline: Rule<Theme>[] = [
   // size

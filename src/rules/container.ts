@@ -1,5 +1,5 @@
-import { warnOnce } from '@unocss/core'
 import type { Rule } from '@unocss/core'
+import { warnOnce } from '@unocss/core'
 
 export const containerParent: Rule[] = [
   [/^@container(?:\/(\w+))?(?:-(normal))?$/, ([, l, v]) => {

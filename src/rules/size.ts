@@ -1,7 +1,7 @@
-import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 import type { Rule, RuleContext } from '@unocss/core'
-import { handler as h, resolveBreakpoints } from '../utils'
 import type { Theme } from '../theme'
+import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
+import { handler as h, resolveBreakpoints } from '../utils'
 
 const sizeMapping: Record<string, string> = {
   h: 'height',

@@ -1,6 +1,6 @@
-import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 import type { VariantObject } from '@unocss/core'
 import type { Theme } from '../theme'
+import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 
 export function variantImportant(): VariantObject<Theme> {
   let re: RegExp

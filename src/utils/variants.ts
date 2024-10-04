@@ -1,6 +1,6 @@
+import type { VariantHandlerContext, VariantObject } from '@unocss/core'
 import { escapeRegExp } from '@unocss/core'
 import { cacheRestoreSelector, defaultRules } from 'unplugin-transform-class/utils'
-import type { VariantHandlerContext, VariantObject } from '@unocss/core'
 
 export function variantMatcher(name: string, handler: (input: VariantHandlerContext) => Record<string, any>, transformRules: Record<string, string> = defaultRules): VariantObject {
   let re: RegExp

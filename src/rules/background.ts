@@ -1,8 +1,8 @@
-import { colorOpacityToString, colorToString } from '@unocss/rule-utils'
 import type { Rule, RuleContext } from '@unocss/core'
 import type { CSSColorValue } from '@unocss/rule-utils'
-import { globalKeywords, handler as h, makeGlobalStaticRules, parseColor, positionMap } from '../utils'
 import type { Theme } from '../'
+import { colorOpacityToString, colorToString } from '@unocss/rule-utils'
+import { globalKeywords, handler as h, makeGlobalStaticRules, parseColor, positionMap } from '../utils'
 
 function bgGradientToValue(cssColor: CSSColorValue | undefined) {
   if (cssColor)

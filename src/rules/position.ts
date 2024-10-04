@@ -1,7 +1,7 @@
-import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 import type { CSSEntries, Rule, RuleContext, StaticRule } from '@unocss/core'
-import { globalKeywords, handler as h, insetMap, makeGlobalStaticRules } from '../utils'
 import type { Theme } from '../theme'
+import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
+import { globalKeywords, handler as h, insetMap, makeGlobalStaticRules } from '../utils'
 
 export const positions: Rule[] = [
   [/^(?:position-|pos-)?(relative|absolute|fixed|sticky)$/, ([, v]) => ({ position: v }), {

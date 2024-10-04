@@ -1,7 +1,7 @@
-import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 import type { Rule } from '@unocss/core'
-import { globalKeywords, handler as h, makeGlobalStaticRules } from '../utils'
 import type { Theme } from '../'
+import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
+import { globalKeywords, handler as h, makeGlobalStaticRules } from '../utils'
 
 export const animations: Rule<Theme>[] = [
   [/^(?:animate-)?keyframes-(.+)$/, ([, name], { theme }) => {

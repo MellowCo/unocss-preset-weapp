@@ -1,6 +1,6 @@
 import type { CSSEntries, Rule, RuleContext } from '@unocss/core'
-import { directionMap, directionSize, handler as h } from '../utils'
 import type { Theme } from '../theme'
+import { directionMap, directionSize, handler as h } from '../utils'
 
 export const paddings: Rule[] = [
   [/^pa?()-?(.+)$/, directionSize('padding'), { autocomplete: ['(m|p)<num>', '(m|p)-<num>'] }],

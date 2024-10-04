@@ -1,6 +1,6 @@
 import type { Rule, RuleContext } from '@unocss/core'
-import { handler as h } from '../utils'
 import type { Theme } from '../theme'
+import { handler as h } from '../utils'
 
 const directions: Record<string, string> = {
   '': '',

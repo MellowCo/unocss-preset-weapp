@@ -1,3 +1,4 @@
+import type { Theme, ThemeAnimation } from './theme'
 import { definePreset, type PresetOptions } from '@unocss/core'
 import { extractorArbitraryVariants } from '@unocss/extractor-arbitrary-variants'
 import { cacheTransformEscapESelector, defaultRules } from 'unplugin-transform-class/utils'
@@ -6,9 +7,8 @@ import { taroCssPxTransform, taroH5CssRemTransform, uniAppVue2CssRpxTransform } 
 import { rules } from './rules'
 import { shorthands } from './shorthands'
 import { theme } from './theme'
-import { variants } from './variants'
 
-import type { Theme, ThemeAnimation } from './theme'
+import { variants } from './variants'
 
 export { colors, theme } from './theme'
 export { parseColor } from './utils'

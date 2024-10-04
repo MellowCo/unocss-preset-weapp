@@ -1,6 +1,6 @@
 import type { Variant } from '@unocss/core'
-import { variantMatcher, variantParentMatcher } from '../utils'
 import type { PresetWeappOptions } from '..'
+import { variantMatcher, variantParentMatcher } from '../utils'
 
 export function variantColorsMediaOrClass(options: PresetWeappOptions = {}): Variant[] {
   const { transformRules } = options
