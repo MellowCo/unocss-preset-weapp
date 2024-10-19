@@ -2,7 +2,7 @@ import type { VariantObject } from '@unocss/core'
 import type { PresetWeappOptions } from '..'
 
 import type { Theme } from '../theme'
-import { escapeRegExp, escapeSelector, warnOnce } from '@unocss/core'
+import { escapeRegExp, escapeSelector } from '@unocss/core'
 import { getBracket, variantGetBracket } from '@unocss/rule-utils'
 import { cacheRestoreSelector } from 'unplugin-transform-class/utils'
 import { h } from '../utils'
@@ -178,10 +178,7 @@ function taggedPseudoClassMatcher(tag: string, parent: string, combinator: strin
       if (!result)
         return
 
-      const [label, matcher, prefix, pseudoName = ''] = result
-
-      if (label !== '')
-        warnOnce('The labeled variant is experimental and may not follow semver.')
+      const [_label, matcher, prefix, pseudoName = ''] = result
 
       return {
         matcher,
