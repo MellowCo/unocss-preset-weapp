@@ -1,3 +1,5 @@
+import type { Theme } from '../../theme'
+
 export const baseSize = {
   'xs': '180rpx',
   'sm': '220rpx',
@@ -40,4 +42,4 @@ export const maxHeight = {
   screen: '100vh',
 }
 
-export const containers = Object.fromEntries(Object.entries(baseSize).map(([k, v]) => [k, `(min-width: ${v})`]))
+export const containers = { ...baseSize } satisfies Theme['containers']

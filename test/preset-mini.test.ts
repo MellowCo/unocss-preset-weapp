@@ -438,4 +438,31 @@ describe('preset-mini', () => {
         .border-opacity-50{--un-border-opacity:0.5;}"
       `)
   })
+
+  it('`containers` key of theme', async () => {
+    const uno = createGenerator({
+      presets: [
+        presetWeapp(),
+      ],
+      theme: {
+        containers: {
+          tablet: '352px',
+          desktop: '768px',
+        },
+      },
+    })
+    const { css } = await uno.generate([
+      '@tablet:text-sm',
+      '@desktop/name:text-lg',
+    ], { preflights: false })
+    expect(css).toMatchInlineSnapshot(`
+      "/* layer: default */
+      @container (min-width: 352px){
+      .\\@tablet_cl_text-sm{font-size:28rpx;line-height:40rpx;}
+      }
+      @container name (min-width: 768px){
+      .\\@desktop_sl_name_cl_text-lg{font-size:36rpx;line-height:56rpx;}
+      }"
+    `)
+  })
 })
