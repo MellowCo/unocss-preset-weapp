@@ -1,4 +1,4 @@
-import type { Theme } from '../../theme'
+import type { Theme } from '../'
 
 export const baseSize = {
   'xs': '180rpx',
