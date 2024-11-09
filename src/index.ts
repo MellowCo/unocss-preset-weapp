@@ -202,7 +202,7 @@ export const presetWeapp = definePreset((options: PresetWeappOptions = {}) => {
     prefix: options.prefix,
     extractorDefault: options.arbitraryVariants === false
       ? undefined
-      : extractorArbitraryVariants,
+      : extractorArbitraryVariants(),
     autocomplete: {
       shorthands,
     },

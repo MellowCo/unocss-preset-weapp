@@ -92,9 +92,9 @@
   },
   "dependencies": {
     "@rollup/pluginutils": "^5.1.2",
-    "@unocss/core": "^0.63.4",
-    "@unocss/extractor-arbitrary-variants": "^0.63.4",
-    "@unocss/rule-utils": "^0.63.4",
+    "@unocss/core": "^0.64.0",
+    "@unocss/extractor-arbitrary-variants": "^0.64.0",
+    "@unocss/rule-utils": "^0.64.0",
     "unplugin-attributify-to-class": "^0.2.5",
     "unplugin-transform-class": "^0.5.3"
   },
@@ -102,7 +102,7 @@
     "@antfu/eslint-config": "3.8.0",
     "@antfu/ni": "^0.23.0",
     "@types/node": "^22.7.6",
-    "@unocss/autocomplete": "^0.63.4",
+    "@unocss/autocomplete": "^0.64.0",
     "bumpp": "^9.7.1",
     "eslint": "^9.13.0",
     "eslint-formatter-mo": "^1.2.0",
