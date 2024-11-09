@@ -734,18 +734,18 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .bg-gradient-linear{background-image:linear-gradient(var(--un-gradient, var(--un-gradient-stops, rgb(255 255 255 / 0))));}
 .bg-gradient-radial{background-image:radial-gradient(var(--un-gradient, var(--un-gradient-stops, rgb(255 255 255 / 0))));}
 .bg-gradient-repeating-conic{background-image:repeating-conic-gradient(var(--un-gradient, var(--un-gradient-stops, rgb(255 255 255 / 0))));}
-.bg-gradient-to-t{--un-gradient-shape:to top;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);background-image:linear-gradient(var(--un-gradient));}
-.bg-gradient-to-tl{--un-gradient-shape:to top left;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);background-image:linear-gradient(var(--un-gradient));}
+.bg-gradient-to-t{--un-gradient-shape:to top in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);background-image:linear-gradient(var(--un-gradient));}
+.bg-gradient-to-tl{--un-gradient-shape:to top left in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);background-image:linear-gradient(var(--un-gradient));}
 .bg-gradient-shape-_lfl_70deg_lfr_,
-.shape-_lfl_70deg_lfr_{--un-gradient-shape:70deg;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}
-.bg-gradient-shape-_lfl_circle_at_70_pes__lfr_{--un-gradient-shape:circle at 70%;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}
-.bg-gradient-shape-_lfl_closest-side_lfr_{--un-gradient-shape:closest-side;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}
-.bg-gradient-shape-_lfl_from_40deg_lfr_{--un-gradient-shape:from 40deg;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}
-.bg-gradient-shape-t{--un-gradient-shape:to top;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}
+.shape-_lfl_70deg_lfr_{--un-gradient-shape:70deg in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}
+.bg-gradient-shape-_lfl_circle_at_70_pes__lfr_{--un-gradient-shape:circle at 70% in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}
+.bg-gradient-shape-_lfl_closest-side_lfr_{--un-gradient-shape:closest-side in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}
+.bg-gradient-shape-_lfl_from_40deg_lfr_{--un-gradient-shape:from 40deg in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}
+.bg-gradient-shape-t{--un-gradient-shape:to top in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}
 .bg-gradient-shape-tl,
-.shape-tl{--un-gradient-shape:to top left;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}
-.shape-_lfl_farthest-corner_at_0_0_lfr_{--un-gradient-shape:farthest-corner at 0 0;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}
-.shape-_lfl_from_3_dl_1416rad_at_10_pes__50_pes__lfr_{--un-gradient-shape:from 3.1416rad at 10% 50%;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}
+.shape-tl{--un-gradient-shape:to top left in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}
+.shape-_lfl_farthest-corner_at_0_0_lfr_{--un-gradient-shape:farthest-corner at 0 0 in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}
+.shape-_lfl_from_3_dl_1416rad_at_10_pes__50_pes__lfr_{--un-gradient-shape:from 3.1416rad at 10% 50% in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}
 .bg-none{background-image:none;}
 .bg-auto{background-size:auto;}
 .bg-cover{background-size:cover;}
