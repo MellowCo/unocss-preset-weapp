@@ -733,18 +733,18 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .bg-gradient-linear{background-image:linear-gradient(var(--licl-gradient, var(--licl-gradient-stops, rgb(255 255 255 / 0))));}
 .bg-gradient-radial{background-image:radial-gradient(var(--licl-gradient, var(--licl-gradient-stops, rgb(255 255 255 / 0))));}
 .bg-gradient-repeating-conic{background-image:repeating-conic-gradient(var(--licl-gradient, var(--licl-gradient-stops, rgb(255 255 255 / 0))));}
-.bg-gradient-to-t{--licl-gradient-shape:to top in oklch;--licl-gradient:var(--licl-gradient-shape), var(--licl-gradient-stops);background-image:linear-gradient(var(--licl-gradient));}
-.bg-gradient-to-tl{--licl-gradient-shape:to top left in oklch;--licl-gradient:var(--licl-gradient-shape), var(--licl-gradient-stops);background-image:linear-gradient(var(--licl-gradient));}
+.bg-gradient-to-t{--licl-gradient-shape:to top;--licl-gradient:var(--licl-gradient-shape), var(--licl-gradient-stops);background-image:linear-gradient(var(--licl-gradient));}
+.bg-gradient-to-tl{--licl-gradient-shape:to top left;--licl-gradient:var(--licl-gradient-shape), var(--licl-gradient-stops);background-image:linear-gradient(var(--licl-gradient));}
 .bg-gradient-shape-\[70deg\],
-.shape-\[70deg\]{--licl-gradient-shape:70deg in oklch;--licl-gradient:var(--licl-gradient-shape), var(--licl-gradient-stops);}
-.bg-gradient-shape-\[circle_at_70\%\]{--licl-gradient-shape:circle at 70% in oklch;--licl-gradient:var(--licl-gradient-shape), var(--licl-gradient-stops);}
-.bg-gradient-shape-\[closest-side\]{--licl-gradient-shape:closest-side in oklch;--licl-gradient:var(--licl-gradient-shape), var(--licl-gradient-stops);}
-.bg-gradient-shape-\[from_40deg\]{--licl-gradient-shape:from 40deg in oklch;--licl-gradient:var(--licl-gradient-shape), var(--licl-gradient-stops);}
-.bg-gradient-shape-t{--licl-gradient-shape:to top in oklch;--licl-gradient:var(--licl-gradient-shape), var(--licl-gradient-stops);}
+.shape-\[70deg\]{--licl-gradient-shape:70deg;--licl-gradient:var(--licl-gradient-shape), var(--licl-gradient-stops);}
+.bg-gradient-shape-\[circle_at_70\%\]{--licl-gradient-shape:circle at 70%;--licl-gradient:var(--licl-gradient-shape), var(--licl-gradient-stops);}
+.bg-gradient-shape-\[closest-side\]{--licl-gradient-shape:closest-side;--licl-gradient:var(--licl-gradient-shape), var(--licl-gradient-stops);}
+.bg-gradient-shape-\[from_40deg\]{--licl-gradient-shape:from 40deg;--licl-gradient:var(--licl-gradient-shape), var(--licl-gradient-stops);}
+.bg-gradient-shape-t{--licl-gradient-shape:to top;--licl-gradient:var(--licl-gradient-shape), var(--licl-gradient-stops);}
 .bg-gradient-shape-tl,
-.shape-tl{--licl-gradient-shape:to top left in oklch;--licl-gradient:var(--licl-gradient-shape), var(--licl-gradient-stops);}
-.shape-\[farthest-corner_at_0_0\]{--licl-gradient-shape:farthest-corner at 0 0 in oklch;--licl-gradient:var(--licl-gradient-shape), var(--licl-gradient-stops);}
-.shape-\[from_3\.1416rad_at_10\%_50\%\]{--licl-gradient-shape:from 3.1416rad at 10% 50% in oklch;--licl-gradient:var(--licl-gradient-shape), var(--licl-gradient-stops);}
+.shape-tl{--licl-gradient-shape:to top left;--licl-gradient:var(--licl-gradient-shape), var(--licl-gradient-stops);}
+.shape-\[farthest-corner_at_0_0\]{--licl-gradient-shape:farthest-corner at 0 0;--licl-gradient:var(--licl-gradient-shape), var(--licl-gradient-stops);}
+.shape-\[from_3\.1416rad_at_10\%_50\%\]{--licl-gradient-shape:from 3.1416rad at 10% 50%;--licl-gradient:var(--licl-gradient-shape), var(--licl-gradient-stops);}
 .bg-none{background-image:none;}
 .bg-auto{background-size:auto;}
 .bg-cover{background-size:cover;}
