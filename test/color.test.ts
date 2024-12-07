@@ -1,5 +1,5 @@
 import type { RuleContext } from '@unocss/core'
-import { createGenerator } from '@unocss/core'
+import { createGenerator, symbols } from '@unocss/core'
 import { colorToString, hex2rgba, parseCssColor } from '@unocss/rule-utils'
 import { describe, expect, it } from 'vitest'
 import { colorableShadows, colorResolver } from '../src/utils'
@@ -137,7 +137,7 @@ describe('color utils', () => {
     // invalid
   })
 
-  it('parses color token', () => {
+  it('parses color token', async () => {
     const context: RuleContext = {
       theme: {
         colors: {
@@ -148,10 +148,11 @@ describe('color utils', () => {
       },
       rawSelector: '',
       currentSelector: '',
-      generator: createGenerator(),
+      generator: await createGenerator(),
       variantHandlers: [],
       variantMatch: ['', '', [], new Set()],
       constructCSS: () => '',
+      symbols,
     }
 
     const fn = (body: string) => colorResolver('prop', 'v')(['', body], context)

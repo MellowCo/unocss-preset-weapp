@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest'
 import presetWeapp from '../src/index'
 import { presetMiniNonTargets, presetMiniTargets, targets2 } from './assets/preset-mini-targets'
 
-const uno = createGenerator({
+const uno = await createGenerator({
   presets: [
     presetWeapp({
       dark: 'media',
@@ -40,7 +40,7 @@ const uno = createGenerator({
 
 describe('preset-mini', () => {
   it('dark customizing selector', async () => {
-    const uno = createGenerator({
+    const uno = await createGenerator({
       presets: [
         presetWeapp({
           dark: {
@@ -91,7 +91,7 @@ describe('preset-mini', () => {
   })
 
   it('custom var prefix', async () => {
-    const uno = createGenerator({
+    const uno = await createGenerator({
       presets: [
         presetWeapp({
           variablePrefix: 'hi-',
@@ -109,7 +109,7 @@ describe('preset-mini', () => {
   })
 
   it('empty prefix', async () => {
-    const uno = createGenerator({
+    const uno = await createGenerator({
       presets: [
         presetWeapp({
           variablePrefix: '',
@@ -157,7 +157,7 @@ describe('preset-mini', () => {
   })
 
   it('fontSize theme', async () => {
-    const uno = createGenerator({
+    const uno = await createGenerator({
       presets: [
         presetWeapp(),
       ],
@@ -184,7 +184,7 @@ describe('preset-mini', () => {
   })
 
   it('fontWeight theme', async () => {
-    const uno = createGenerator({
+    const uno = await createGenerator({
       presets: [
         presetWeapp(),
       ],
@@ -207,7 +207,7 @@ describe('preset-mini', () => {
   })
 
   it('dark class', async () => {
-    const uno = createGenerator({
+    const uno = await createGenerator({
       presets: [
         presetWeapp(),
       ],
@@ -224,7 +224,7 @@ describe('preset-mini', () => {
   })
 
   it('the :active pseudo is sorted and separated after other pseudo', async () => {
-    const uno = createGenerator({
+    const uno = await createGenerator({
       presets: [
         presetWeapp(),
       ],
@@ -242,7 +242,7 @@ describe('preset-mini', () => {
   })
 
   it('css variable with `{` `}` will not generate css ', async () => {
-    const uno = createGenerator({
+    const uno = await createGenerator({
       presets: [
         presetWeapp(),
       ],
@@ -259,7 +259,7 @@ describe('preset-mini', () => {
   })
 
   it('define breakpoints with other unit', async () => {
-    const uno = createGenerator({
+    const uno = await createGenerator({
       presets: [
         presetWeapp(),
       ],
@@ -297,7 +297,7 @@ describe('preset-mini', () => {
   })
 
   it('theme for zIndex', async () => {
-    const uno = createGenerator({
+    const uno = await createGenerator({
       presets: [
         presetWeapp(),
       ],
@@ -315,7 +315,7 @@ describe('preset-mini', () => {
   })
 
   it('theme font-size with letter-space', async () => {
-    const uno = createGenerator({
+    const uno = await createGenerator({
       presets: [
         presetWeapp(),
       ],
@@ -343,7 +343,7 @@ describe('preset-mini', () => {
   })
 
   it('override colors differently', async () => {
-    const uno = createGenerator({
+    const uno = await createGenerator({
       presets: [
         presetWeapp(),
       ],
@@ -370,7 +370,7 @@ describe('preset-mini', () => {
   })
 
   it('account custom color for shadow theme', async () => {
-    const uno = createGenerator({
+    const uno = await createGenerator({
       presets: [
         presetWeapp(),
       ],
@@ -401,7 +401,7 @@ describe('preset-mini', () => {
   })
 
   it('support new color notation using css variables for compatibility', async () => {
-    const uno = createGenerator({
+    const uno = await createGenerator({
       presets: [
         presetWeapp(),
       ],
@@ -440,7 +440,7 @@ describe('preset-mini', () => {
   })
 
   it('`containers` key of theme', async () => {
-    const uno = createGenerator({
+    const uno = await createGenerator({
       presets: [
         presetWeapp(),
       ],

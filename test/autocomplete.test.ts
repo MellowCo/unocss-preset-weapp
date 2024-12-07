@@ -4,10 +4,10 @@ import { describe, expect, it } from 'vitest'
 import presetWeapp from '../src/index'
 import { extractorAttributify } from '../src/transformer'
 
-describe('autocomplete', () => {
+describe('autocomplete', async () => {
   const { presetWeappAttributify } = extractorAttributify()
 
-  const uno = createGenerator({
+  const uno = await createGenerator({
     presets: [
       presetWeapp(),
       presetWeappAttributify(),
@@ -120,7 +120,7 @@ describe('autocomplete', () => {
   })
 
   it('should not suggest blocked rules', async () => {
-    const uno = createGenerator({
+    const uno = await createGenerator({
       presets: [
         presetWeapp(),
       ],
@@ -167,10 +167,10 @@ describe('autocomplete', () => {
   it('should support extractors', async () => {
     const res = await ac.suggestInFile(fixture, 40)
 
-    expect(res.suggestions.every(i => i[0].startsWith('border-'))).toBeTruthy()
-    expect(res.suggestions.some(i => i[1].startsWith('border-'))).toBeFalsy()
+    expect(res?.suggestions.every(i => i[0].startsWith('border-'))).toBeTruthy()
+    expect(res?.suggestions.some(i => i[1].startsWith('border-'))).toBeFalsy()
 
-    const replacement = res.resolveReplacement(res.suggestions[0][0])
+    const replacement = res?.resolveReplacement(res?.suggestions[0][0])
     expect(replacement).toMatchInlineSnapshot(`
       {
         "end": 40,
@@ -179,7 +179,7 @@ describe('autocomplete', () => {
       }
     `)
 
-    expect(fixture.slice(0, replacement.start) + replacement.replacement + fixture.slice(replacement.end))
+    expect(fixture.slice(0, replacement?.start) + replacement?.replacement + fixture.slice(replacement?.end))
       .toMatchInlineSnapshot(`
         "
         <div bg="blue-500">
@@ -215,8 +215,8 @@ describe('autocomplete', () => {
   })
 })
 
-describe('use uno cache', () => {
-  const uno = createGenerator({
+describe('use uno cache', async () => {
+  const uno = await createGenerator({
     presets: [
       presetWeapp(),
     ],

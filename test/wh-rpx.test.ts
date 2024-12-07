@@ -2,7 +2,7 @@ import { createGenerator } from '@unocss/core'
 import { describe, expect, it } from 'vitest'
 import { presetWeapp } from '../src'
 
-const whRemToRpx = createGenerator({
+const whRemToRpx = await createGenerator({
   presets: [
     presetWeapp({
       whRpx: false,
@@ -10,7 +10,7 @@ const whRemToRpx = createGenerator({
   ],
 })
 
-const whRpx = createGenerator({
+const whRpx = await createGenerator({
   presets: [
     presetWeapp(),
   ],

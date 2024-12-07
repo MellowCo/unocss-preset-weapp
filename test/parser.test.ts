@@ -3,7 +3,7 @@ import { expect, it } from 'vitest'
 import presetWeapp from '../src/index'
 
 it('split string with custom separator', async () => {
-  const uno = createGenerator({
+  const uno = await createGenerator({
     presets: [
       presetWeapp(),
     ],
@@ -22,7 +22,7 @@ it('split string with custom separator', async () => {
 })
 
 it('unable to generate token variant with explicit separator without dash', async () => {
-  const uno = createGenerator({
+  const uno = await createGenerator({
     presets: [
       presetWeapp(),
     ],

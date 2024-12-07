@@ -3,7 +3,7 @@ import { expect, it } from 'vitest'
 import presetWeapp from '../src/index'
 
 it('debug', async () => {
-  const uno = createGenerator({
+  const uno = await createGenerator({
     presets: [
       presetWeapp(),
     ],

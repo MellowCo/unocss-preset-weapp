@@ -4,7 +4,7 @@ import presetWeapp from '../src'
 
 describe('preflights', () => {
   it('original preflight', async () => {
-    const uno = createGenerator({
+    const uno = await createGenerator({
       presets: [
         presetWeapp(),
       ],
@@ -14,7 +14,7 @@ describe('preflights', () => {
   })
 
   it('preflight root can be customized with string', async () => {
-    const uno = createGenerator({
+    const uno = await createGenerator({
       presets: [
         presetWeapp(),
       ],
@@ -27,7 +27,7 @@ describe('preflights', () => {
   })
 
   it('preflight root can be customized with array', async () => {
-    const uno = createGenerator({
+    const uno = await createGenerator({
       presets: [
         presetWeapp(),
       ],
@@ -40,7 +40,7 @@ describe('preflights', () => {
   })
 
   it('preflight root can be disabled using empty array', async () => {
-    const uno = createGenerator({
+    const uno = await createGenerator({
       presets: [
         presetWeapp(),
       ],

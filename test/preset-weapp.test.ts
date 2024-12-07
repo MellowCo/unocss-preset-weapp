@@ -5,7 +5,7 @@ import { defaultRules } from '../src/transformer'
 import { presetMiniTargets, targets2 } from './assets/preset-mini-targets'
 import { presetWeappTargets } from './assets/preset-weapp-targets'
 
-const uno = createGenerator({
+const uno = await createGenerator({
   presets: [
     presetWeapp(),
   ],
@@ -36,7 +36,7 @@ describe('preset-weapp', () => {
   })
 
   it('rules targets', async () => {
-    const uno = createGenerator({
+    const uno = await createGenerator({
       presets: [
         presetWeapp({
           transformRules: {

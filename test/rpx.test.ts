@@ -2,7 +2,7 @@ import { createGenerator } from '@unocss/core'
 import { describe, expect, it } from 'vitest'
 import presetWeapp from '../src'
 
-const taroH5_750_W4 = createGenerator({
+const taroH5_750_W4 = await createGenerator({
   presets: [
     presetWeapp({
       isH5: true,
@@ -11,7 +11,7 @@ const taroH5_750_W4 = createGenerator({
   ],
 })
 
-const taroWe_750_W4 = createGenerator({
+const taroWe_750_W4 = await createGenerator({
   presets: [
     presetWeapp({
       isH5: false,
@@ -20,7 +20,7 @@ const taroWe_750_W4 = createGenerator({
   ],
 })
 
-const taroH5_375_W4 = createGenerator({
+const taroH5_375_W4 = await createGenerator({
   presets: [
     presetWeapp({
       isH5: true,
@@ -33,7 +33,7 @@ const taroH5_375_W4 = createGenerator({
   ],
 })
 
-const taroWe_750_W5 = createGenerator({
+const taroWe_750_W5 = await createGenerator({
   presets: [
     presetWeapp({
       isH5: false,
@@ -43,7 +43,7 @@ const taroWe_750_W5 = createGenerator({
   ],
 })
 
-const taroH5_375_W5 = createGenerator({
+const taroH5_375_W5 = await createGenerator({
   presets: [
     presetWeapp({
       isH5: true,
@@ -57,7 +57,7 @@ const taroH5_375_W5 = createGenerator({
   ],
 })
 
-const taroWe_375_W4 = createGenerator({
+const taroWe_375_W4 = await createGenerator({
   presets: [
     presetWeapp({
       isH5: false,
@@ -70,7 +70,7 @@ const taroWe_375_W4 = createGenerator({
   ],
 })
 
-const uniapp_750 = createGenerator({
+const uniapp_750 = await createGenerator({
   presets: [
     presetWeapp({
       isH5: true,
