@@ -12,6 +12,8 @@ export const ringBase = {
   '--un-shadow': '0 0 rgb(0 0 0 / 0)',
 }
 
+const preflightKeys = Object.keys(ringBase)
+
 export const rings: Rule<Theme>[] = [
   // size
   [/^ring(?:-(.+))?$/, ([, d], { theme }) => {
@@ -24,7 +26,7 @@ export const rings: Rule<Theme>[] = [
         'box-shadow': 'var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow)',
       }
     }
-  }, { autocomplete: 'ring-$ringWidth' }],
+  }, { custom: { preflightKeys }, autocomplete: 'ring-$ringWidth' }],
 
   // size
   [/^ring-(?:width-|size-)(.+)$/, handleWidth, { autocomplete: 'ring-(width|size)-$lineWidth' }],

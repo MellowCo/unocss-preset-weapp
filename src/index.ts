@@ -63,7 +63,7 @@ export interface PresetWeappOptions extends PresetOptions {
    *
    * @default true
    */
-  preflight?: boolean
+  preflight?: boolean | 'on-demand'
 
   /**
    * 是否转换微信class
@@ -198,7 +198,7 @@ export const presetWeapp = definePreset((options: PresetWeappOptions = {}) => {
       if (options.platform === 'uniapp' && options.isH5)
         uniAppVue2CssRpxTransform(css)
     },
-    preflights: options.preflight ? preflights(options.isH5, options.platform) : [],
+    preflights: preflights(options),
     prefix: options.prefix,
     extractorDefault: options.arbitraryVariants === false
       ? undefined
