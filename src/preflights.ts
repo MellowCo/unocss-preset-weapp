@@ -1,4 +1,4 @@
-import type { Preflight, PreflightContext } from '@unocss/core'
+import type { Preflight } from '@unocss/core'
 import type { PresetWeappOptions } from '.'
 import type { Theme } from './theme'
 import { entriesToCss, toArray } from '@unocss/core'
