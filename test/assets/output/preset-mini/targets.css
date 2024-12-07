@@ -678,6 +678,8 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .bg-teal-400\/\[\.55\]{background-color:rgb(45 212 191 / .55);}
 .bg-teal-500\/\[55\%\]{background-color:rgb(20 184 166 / 55%);}
 .first-letter\:bg-green-400::first-letter{--licl-bg-opacity:1;background-color:rgb(74 222 128 / var(--licl-bg-opacity));}
+.marker\:bg-violet-200 *::marker,
+.marker\:bg-violet-200::marker{--licl-bg-opacity:1;background-color:rgb(221 214 254 / var(--licl-bg-opacity));}
 .first-line\:bg-green-400::first-line{--licl-bg-opacity:1;background-color:rgb(74 222 128 / var(--licl-bg-opacity));}
 .peer-aria:checked~.peer-aria-checked\:bg-blue-500,
 .peer:checked~.peer-checked\:bg-blue-500{--licl-bg-opacity:1;background-color:rgb(59 130 246 / var(--licl-bg-opacity));}
@@ -686,11 +688,10 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .bg-\[--css-bg\,theme\(spacing\.sm\)\]{background-color:var(--css-bg,28rpx);}
 .focus-within\:has-first\:checked\:bg-gray\/20:checked:has(:first-child):focus-within{background-color:rgb(156 163 175 / 0.2);}
 .focus-within\:where-first\:checked\:bg-gray\/20:checked:where(:first-child):focus-within{background-color:rgb(156 163 175 / 0.2);}
-.hover\:file\:bg-violet-100:hover::file-selector-button{--licl-bg-opacity:1;background-color:rgb(237 233 254 / var(--licl-bg-opacity));}
+.hover\:file\:bg-violet-100::file-selector-button:hover{--licl-bg-opacity:1;background-color:rgb(237 233 254 / var(--licl-bg-opacity));}
 .hover\:is-first\:checked\:bg-true-gray\/10:checked:is(:first-child):hover{background-color:rgb(163 163 163 / 0.1);}
 .hover\:not-first\:checked\:bg-red\/10:checked:not(:first-child):hover{background-color:rgb(248 113 113 / 0.1);}
 .hover\:not-first\:checked\:bg-true-gray\/10:checked:not(:first-child):hover{background-color:rgb(163 163 163 / 0.1);}
-.marker\:bg-violet-200::marker{--licl-bg-opacity:1;background-color:rgb(221 214 254 / var(--licl-bg-opacity));}
 .file\:bg-violet-50::file-selector-button{--licl-bg-opacity:1;background-color:rgb(245 243 255 / var(--licl-bg-opacity));}
 .bg-opacity-\[--opacity-variable\],
 .bg-opacity-\$opacity-variable{--licl-bg-opacity:var(--opacity-variable);}
@@ -973,6 +974,8 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .color-blue-gray\/10,
 .color-bluegray-400\/10,
 .color-bluegray\/10{color:rgb(148 163 184 / 0.1);}
+.selection\:color-\[var\(--select-color\)\] *::selection,
+.selection\:color-\[var\(--select-color\)\]::selection{color:var(--select-color);}
 .open\:color-pink-100[open]{--licl-text-opacity:1;color:rgb(252 231 243 / var(--licl-text-opacity));}
 .c-\[theme\(colors\.red\.500\/50\%\)\]{color:rgb(239 68 68 / 50%);}
 .placeholder-shown-color-transparent:placeholder-shown{color:transparent;}
@@ -980,7 +983,6 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .out-of-range\:color-pink-100:out-of-range{--licl-text-opacity:1;color:rgb(252 231 243 / var(--licl-text-opacity));}
 .placeholder-color-red-1::placeholder{--licl-text-opacity:1;color:rgb(254 226 226 / var(--licl-text-opacity));}
 .placeholder\:color-transparent::placeholder{color:transparent;}
-.selection\:color-\[var\(--select-color\)\] ::selection{color:var(--select-color);}
 .text-opacity-\[13\.3333333\%\]{--licl-text-opacity:13.3333333%;}
 .text-opacity-\$opacity-variable{--licl-text-opacity:var(--opacity-variable);}
 .placeholder-color-opacity-60::placeholder{--licl-text-opacity:0.6;}

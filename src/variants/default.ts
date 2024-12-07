@@ -35,7 +35,7 @@ export function variants(options: PresetWeappOptions): Variant<Theme>[] {
     ...variantCombinators,
     variantSpaceAndDivide,
 
-    variantPseudoClassesAndElements(),
+    ...variantPseudoClassesAndElements(),
     variantPseudoClassFunctions(),
     ...variantTaggedPseudoClasses(options),
 
