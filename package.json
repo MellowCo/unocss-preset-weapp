@@ -99,19 +99,19 @@
     "unplugin-transform-class": "^0.5.3"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "3.11.2",
+    "@antfu/eslint-config": "3.12.0",
     "@antfu/ni": "^0.23.1",
-    "@types/node": "^22.10.1",
+    "@types/node": "^22.10.2",
     "@unocss/autocomplete": "^0.65.1",
-    "bumpp": "^9.8.1",
-    "eslint": "^9.16.0",
+    "bumpp": "^9.9.1",
+    "eslint": "^9.17.0",
     "eslint-formatter-mo": "^1.2.0",
-    "magic-string": "^0.30.14",
+    "magic-string": "^0.30.15",
     "msw": "1.0.1",
     "std-env": "^3.8.0",
     "taze": "^0.18.0",
     "typescript": "^5.7.2",
-    "unbuild": "^2.0.0",
+    "unbuild": "^3.0.1",
     "vite": "^6.0.3",
     "vitest": "^2.1.8"
   }
