@@ -91,28 +91,28 @@
     "lint:fix": "nr lint --fix"
   },
   "dependencies": {
-    "@rollup/pluginutils": "^5.1.3",
-    "@unocss/core": "^0.65.1",
-    "@unocss/extractor-arbitrary-variants": "^0.65.1",
-    "@unocss/rule-utils": "^0.65.1",
+    "@rollup/pluginutils": "^5.1.4",
+    "@unocss/core": "^65.4.2",
+    "@unocss/extractor-arbitrary-variants": "^65.4.2",
+    "@unocss/rule-utils": "^65.4.2",
     "unplugin-attributify-to-class": "^0.2.5",
     "unplugin-transform-class": "^0.5.3"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "3.12.0",
-    "@antfu/ni": "^0.23.1",
-    "@types/node": "^22.10.2",
-    "@unocss/autocomplete": "^0.65.1",
-    "bumpp": "^9.9.1",
-    "eslint": "^9.17.0",
-    "eslint-formatter-mo": "^1.2.0",
-    "magic-string": "^0.30.15",
+    "@antfu/eslint-config": "3.14.0",
+    "@antfu/ni": "^23.2.0",
+    "@types/node": "^22.10.7",
+    "@unocss/autocomplete": "^65.4.2",
+    "bumpp": "^9.10.1",
+    "eslint": "^9.18.0",
+    "eslint-formatter-mo": "^2.0.1",
+    "magic-string": "^0.30.17",
     "msw": "1.0.1",
     "std-env": "^3.8.0",
-    "taze": "^0.18.0",
-    "typescript": "^5.7.2",
-    "unbuild": "^3.0.1",
-    "vite": "^6.0.3",
-    "vitest": "^2.1.8"
+    "taze": "^18.2.0",
+    "typescript": "^5.7.3",
+    "unbuild": "^3.3.1",
+    "vite": "^6.0.7",
+    "vitest": "^3.0.2"
   }
 }
