@@ -19,10 +19,8 @@ type SizeProps = 'width' | 'height' | 'maxWidth' | 'maxHeight' | 'minWidth' | 'm
 function getSizeValue(minmax: string, hw: string, theme: Theme, prop: string) {
   prop = cacheRestoreSelector(prop, theme?.transformRules)
 
-  const str = getPropName(minmax, hw)
-    .replace(/-(\w)/g, (_, p) => p.toUpperCase()) as SizeProps
-
-  const v = theme[str]?.[prop]
+  const key = getPropName(minmax, hw).replace(/-(\w)/g, (_, p) => p.toUpperCase()) as SizeProps
+  const v = theme[key]?.[prop]
 
   if (v != null)
     return v

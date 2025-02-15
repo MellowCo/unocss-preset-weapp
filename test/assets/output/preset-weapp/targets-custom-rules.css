@@ -270,6 +270,7 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .block-8_sl11_7{block-size:114.2857142857%;}
 .block-auto{block-size:auto;}
 .block-lg{block-size:300rpx;}
+.block-screen{block-size:100vb;}
 .block-unset{block-size:unset;}
 .inline-_lfl11_calc_lbl11_calc_lbl11_100px_star_10_lbr11_-4rem_lbr11__lfr11_{inline-size:calc(calc(100px * 10) - 4rem);}
 .inline-1{inline-size:1rpx;}
@@ -278,6 +279,7 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .inline-auto{inline-size:auto;}
 .inline-inherit{inline-size:inherit;}
 .inline-lg{inline-size:300rpx;}
+.inline-screen{inline-size:100vi;}
 .max-block-_lfl11_1px_lfr11_{max-block-size:1px;}
 .max-block-revert{max-block-size:revert;}
 .max-inline-_do11_var{max-inline-size:var(--var);}
