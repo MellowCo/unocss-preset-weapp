@@ -1,5 +1,6 @@
+import type { PresetOptions } from '@unocss/core'
 import type { Theme, ThemeAnimation } from './theme'
-import { definePreset, type PresetOptions } from '@unocss/core'
+import { definePreset } from '@unocss/core'
 import { extractorArbitraryVariants } from '@unocss/extractor-arbitrary-variants'
 import { cacheTransformEscapESelector, defaultRules } from 'unplugin-transform-class/utils'
 import preflights from './preflights'
