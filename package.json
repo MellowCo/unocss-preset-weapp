@@ -92,27 +92,27 @@
   },
   "dependencies": {
     "@rollup/pluginutils": "^5.1.4",
-    "@unocss/core": "^65.4.2",
-    "@unocss/extractor-arbitrary-variants": "^65.4.2",
-    "@unocss/rule-utils": "^65.4.2",
+    "@unocss/core": "^65.4.3",
+    "@unocss/extractor-arbitrary-variants": "^65.4.3",
+    "@unocss/rule-utils": "^65.4.3",
     "unplugin-attributify-to-class": "^0.2.5",
     "unplugin-transform-class": "^0.5.3"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "3.14.0",
-    "@antfu/ni": "^23.2.0",
-    "@types/node": "^22.10.7",
-    "@unocss/autocomplete": "^65.4.2",
-    "bumpp": "^9.10.1",
-    "eslint": "^9.18.0",
-    "eslint-formatter-mo": "^2.0.1",
+    "@antfu/eslint-config": "4.2.0",
+    "@antfu/ni": "^23.3.1",
+    "@types/node": "^22.13.4",
+    "@unocss/autocomplete": "^65.4.3",
+    "bumpp": "^10.0.3",
+    "eslint": "^9.20.1",
+    "eslint-formatter-mo": "^2.2.0",
     "magic-string": "^0.30.17",
     "msw": "1.0.1",
     "std-env": "^3.8.0",
-    "taze": "^18.2.0",
+    "taze": "^18.5.0",
     "typescript": "^5.7.3",
     "unbuild": "^3.3.1",
-    "vite": "^6.0.7",
-    "vitest": "^3.0.2"
+    "vite": "^6.1.0",
+    "vitest": "^3.0.5"
   }
 }
