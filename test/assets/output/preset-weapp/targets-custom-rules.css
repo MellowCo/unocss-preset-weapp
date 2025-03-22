@@ -1302,10 +1302,14 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .after_cl11_content-_lfl11_quoted_cl11_unocss_lfr11_::after{content:"unocss";}
 .content-empty{content:"";}
 .content-none{content:none;}
-.\@container{container-type:inline-size;}
-.\@container_sl11_label{container-type:inline-size;container-name:label;}
+.\@container,
+.\@container-inline-size{container-type:inline-size;}
+.\@container_sl11_label,
+.\@container_sl11_label-inline-size{container-type:inline-size;container-name:label;}
 .\@container_sl11_label-normal{container-type:normal;container-name:label;}
+.\@container_sl11_label-size{container-type:size;container-name:label;}
 .\@container-normal{container-type:normal;}
+.\@container-size{container-type:size;}
 .min-h-dvh{min-height:100dvh;}
 .min-h-svh{min-height:100svh;}
 .min-h-lvh{min-height:100lvh;}
