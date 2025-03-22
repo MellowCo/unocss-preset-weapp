@@ -1,5 +1,11 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`multiple handlers for single variant 1`] = `
+"/* layer: default */
+.prefix1 .pre\\:foo,
+.prefix2 .pre\\:foo{name:bar;}"
+`;
+
 exports[`split string with custom separator 1`] = `
 "/* layer: default */
 .hover__bg-green-500:hover{--un-bg-opacity:1;background-color:rgb(34 197 94 / var(--un-bg-opacity));}

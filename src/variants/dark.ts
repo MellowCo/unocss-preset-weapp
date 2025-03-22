@@ -1,5 +1,6 @@
 import type { Variant } from '@unocss/core'
 import type { PresetWeappOptions } from '..'
+import { toArray } from '@unocss/core'
 import { variantMatcher, variantParentMatcher } from '../utils'
 
 export function variantColorsMediaOrClass(options: PresetWeappOptions = {}): Variant[] {
@@ -10,8 +11,9 @@ export function variantColorsMediaOrClass(options: PresetWeappOptions = {}): Var
       ? {}
       : options.dark
     return [
-      variantMatcher('dark', input => ({ prefix: `${dark} $$ ${input.prefix}` }), transformRules),
-      variantMatcher('light', input => ({ prefix: `${light} $$ ${input.prefix}` }), transformRules),
+
+      variantMatcher('dark', toArray(dark).map(dark => input => ({ prefix: `${dark} $$ ${input.prefix}` })), transformRules),
+      variantMatcher('light', toArray(light).map(light => input => ({ prefix: `${light} $$ ${input.prefix}` })), transformRules),
     ]
   }
 

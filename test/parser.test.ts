@@ -1,6 +1,7 @@
 import { createGenerator } from '@unocss/core'
 import { expect, it } from 'vitest'
 import presetWeapp from '../src/index'
+import { variantMatcher } from '../src/utils'
 
 it('split string with custom separator', async () => {
   const uno = await createGenerator({
@@ -35,5 +36,25 @@ it('unable to generate token variant with explicit separator without dash', asyn
   ]
 
   const { css } = await uno.generate(cssTargets.join(' '), { preflights: false })
+  expect(css).toMatchSnapshot()
+})
+
+it('multiple handlers for single variant', async () => {
+  const uno = await createGenerator({
+    rules: [
+      ['foo', { name: 'bar' }],
+    ],
+    variants: [
+      variantMatcher('pre', [
+        () => ({ prefix: '.prefix1 ' }),
+        () => ({ prefix: '.prefix2 ' }),
+      ]),
+    ],
+  })
+
+  const { css } = await uno.generate([
+    'pre:foo',
+  ].join(' '), { preflights: false })
+
   expect(css).toMatchSnapshot()
 })

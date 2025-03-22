@@ -23,14 +23,14 @@ export interface DarkModeSelectors {
    *
    * @default '.light'
    */
-  light?: string
+  light?: string | string[]
 
   /**
    * Selector for dark variant.
    *
    * @default '.dark'
    */
-  dark?: string
+  dark?: string | string[]
 }
 
 export interface PresetWeappOptions extends PresetOptions {
