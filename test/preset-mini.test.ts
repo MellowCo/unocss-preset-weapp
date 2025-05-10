@@ -1,6 +1,7 @@
 import { createGenerator, escapeSelector } from '@unocss/core'
 import { describe, expect, it } from 'vitest'
 import presetWeapp from '../src/index'
+import { variantTaggedPseudoClasses } from '../src/variants'
 import { presetMiniNonTargets, presetMiniTargets, targets2 } from './assets/preset-mini-targets'
 
 const uno = await createGenerator({
@@ -463,6 +464,36 @@ describe('preset-mini', () => {
       @container name (min-width: 768px){
       .\\@desktop_sl_name_cl_text-lg{font-size:36rpx;line-height:56rpx;}
       }"
+    `)
+  })
+
+  it('nested named groups containing hyphens', async () => {
+    const uno = await createGenerator({
+      variants: [
+        ...variantTaggedPseudoClasses(),
+      ],
+      rules: [
+        [/^foo-(\d)$/, ([_, a]) => ({ text: `foo-${a}` })],
+      ],
+    })
+
+    const result = await uno.generate([
+      'group-hover/named:foo-1',
+      'group-hover/named-group:foo-2',
+    ])
+
+    expect(result.matched)
+      .toMatchInlineSnapshot(`
+        Set {
+          "group-hover/named:foo-1",
+          "group-hover/named-group:foo-2",
+        }
+      `)
+
+    expect(result.css).toMatchInlineSnapshot(`
+      "/* layer: default */
+      .group\\/named-group:hover .group-hover\\/named-group\\:foo-2{text:foo-2;}
+      .group\\/named:hover .group-hover\\/named\\:foo-1{text:foo-1;}"
     `)
   })
 })
