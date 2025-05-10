@@ -23,6 +23,12 @@
 ### taro for react vue2 vue3
 [使用配置与DEMO](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_webpack4_vue3)
 
+### taro4
+
+[vite](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro4_vite_vue3)
+
+[webpack5](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro4_webpack5_vue3)
+
 ### 原生微信小程序 wxml
 [使用配置与DEMO](https://github.com/MellowCo/unocss-wechat)
 
