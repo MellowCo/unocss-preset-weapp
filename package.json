@@ -1,6 +1,6 @@
 {
   "name": "unocss-preset-weapp",
-  "version": "66.0.0",
+  "version": "66.0.1",
   "type": "module",
   "packageManager": "pnpm@9.14.2",
   "description": "the unocss preset for wechat miniprogram (uniapp, taro)",
