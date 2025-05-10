@@ -21,7 +21,7 @@ import { safeArea } from './safe-area'
 import { boxShadows } from './shadow'
 import { aspectRatio, sizes } from './size'
 import { margins, paddings, spaces } from './spacing'
-import { appearances, backgroundBlendModes, breaks, contains, contents, contentVisibility, cursors, displays, dynamicViewportHeight, fontSmoothings, fontStyles, hyphens, isolations, mixBlendModes, objectPositions, pointerEvents, resizes, screenReadersAccess, textOverflows, textTransforms, textWraps, userSelects, whitespaces, writingModes, writingOrientations } from './static'
+import { appearances, backgroundBlendModes, breaks, contains, contents, contentVisibility, cursors, displays, dynamicViewportHeight, fieldSizing, fontSmoothings, fontStyles, hyphens, isolations, mixBlendModes, objectPositions, pointerEvents, resizes, screenReadersAccess, textOverflows, textTransforms, textWraps, userSelects, whitespaces, writingModes, writingOrientations } from './static'
 import { svgUtilities } from './svg'
 import { transforms } from './transform'
 import { transitions } from './transition'
@@ -102,5 +102,6 @@ export const rules: Rule[] = [
   contents,
   containerParent,
   dynamicViewportHeight,
+  fieldSizing,
 
 ].flat(1)

@@ -1324,6 +1324,8 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .max-h-dvh{max-height:100dvh;}
 .max-h-svh{max-height:100svh;}
 .max-h-lvh{max-height:100lvh;}
+.field-sizing-fixed{field-sizing:fixed;}
+.field-sizing-content{field-sizing:content;}
 @layer base{
 .layer-base\:translate-0{--licl-translate-x:0;--licl-translate-y:0;transform:translateX(var(--licl-translate-x)) translateY(var(--licl-translate-y)) translateZ(var(--licl-translate-z)) rotate(var(--licl-rotate)) rotateX(var(--licl-rotate-x)) rotateY(var(--licl-rotate-y)) rotateZ(var(--licl-rotate-z)) skewX(var(--licl-skew-x)) skewY(var(--licl-skew-y)) scaleX(var(--licl-scale-x)) scaleY(var(--licl-scale-y)) scaleZ(var(--licl-scale-z));}
 }

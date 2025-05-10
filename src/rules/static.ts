@@ -148,6 +148,11 @@ export const fontSmoothings: Rule[] = [
   }],
 ]
 
+export const fieldSizing: Rule[] = [
+  ['field-sizing-fixed', { 'field-sizing': 'fixed' }],
+  ['field-sizing-content', { 'field-sizing': 'content' }],
+]
+
 export const hyphens: Rule[] = [
   ...['manual', 'auto', 'none', ...globalKeywords].map(keyword => [`hyphens-${keyword}`, {
     '-webkit-hyphens': keyword,
