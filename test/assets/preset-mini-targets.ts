@@ -1399,6 +1399,14 @@ export const presetMiniTargets: string[] = [
 
   // variants - aria (theme)
   'aria-hidden:hidden',
+  'aria-busy:text-green-600',
+  'aria-busy:aria-pressed:text-green-600',
+  'aria-busy:data-[bar]:text-green-600',
+
+  // variants - data (theme)
+  'data-dropdown:ring-green',
+  'data-[foo=x]:text-green-600',
+  'data-[foo=x]:data-[bar=y]:text-green-600',
 
   // variants - container parent
   '@container',
@@ -1515,6 +1523,8 @@ export const presetMiniTargets: string[] = [
   'max-h-dvh',
   'max-h-svh',
   'max-h-lvh',
+  'data-[foo=x]:text-green-600',
+  'data-[foo=x]:data-[bar=y]:text-green-600',
 ]
 
 export const presetMiniNonTargets = [

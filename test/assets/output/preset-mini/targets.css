@@ -908,6 +908,11 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .font-size-1\.5rem{font-size:1.5rem;}
 .text-size-1em{font-size:1em;}
 .text-size-unset{font-size:unset;}
+.aria-busy\:aria-pressed\:text-green-600[aria-pressed="true"][aria-busy="true"],
+.aria-busy\:data-\[bar\]\:text-green-600[data-bar][aria-busy="true"],
+.aria-busy\:text-green-600[aria-busy="true"],
+.data-\[foo\=x\]\:data-\[bar\=y\]\:text-green-600[data-bar=y][data-foo=x],
+.data-\[foo\=x\]\:text-green-600[data-foo=x]{--licl-text-opacity:1;color:rgb(22 163 74 / var(--licl-text-opacity));}
 .text-\[--variable\],
 .text-\[color\:--variable\],
 .text-\$variable{color:var(--variable);}
@@ -1169,6 +1174,7 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .ring-offset-none{--licl-ring-offset-width:0;}
 .ring-offset-size-\$variable,
 .ring-offset-width-\$variable{--licl-ring-offset-width:var(--variable);}
+.data-dropdown\:ring-green[data-data-bs-toggle="dropdown"]{--licl-ring-opacity:1;--licl-ring-color:rgb(74 222 128 / var(--licl-ring-opacity));}
 .ring-red2{--licl-ring-opacity:1;--licl-ring-color:rgb(254 202 202 / var(--licl-ring-opacity));}
 .ring-red2\/5{--licl-ring-color:rgb(254 202 202 / 0.05);}
 .ring-op-\$opacity-variable{--licl-ring-opacity:var(--opacity-variable);}
