@@ -1,0 +1,82 @@
+{
+  "name": "taro4_vite_vue3",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "templateInfo": {
+    "name": "default",
+    "typescript": true,
+    "css": "Less",
+    "framework": "Vue3"
+  },
+  "scripts": {
+    "build:weapp": "taro build --type weapp",
+    "build:swan": "taro build --type swan",
+    "build:alipay": "taro build --type alipay",
+    "build:tt": "taro build --type tt",
+    "build:h5": "taro build --type h5",
+    "build:rn": "taro build --type rn",
+    "build:qq": "taro build --type qq",
+    "build:jd": "taro build --type jd",
+    "build:harmony-hybrid": "taro build --type harmony-hybrid",
+    "dev:weapp": "npm run build:weapp -- --watch",
+    "dev:swan": "npm run build:swan -- --watch",
+    "dev:alipay": "npm run build:alipay -- --watch",
+    "dev:tt": "npm run build:tt -- --watch",
+    "dev:h5": "npm run build:h5 -- --watch",
+    "dev:rn": "npm run build:rn -- --watch",
+    "dev:qq": "npm run build:qq -- --watch",
+    "dev:jd": "npm run build:jd -- --watch",
+    "dev:harmony-hybrid": "npm run build:harmony-hybrid -- --watch"
+  },
+  "browserslist": {
+    "development": [
+      "defaults and fully supports es6-module",
+      "maintained node versions"
+    ],
+    "production": [
+      "last 3 versions",
+      "Android >= 4.1",
+      "ios >= 8"
+    ]
+  },
+  "author": "",
+  "dependencies": {
+    "@babel/runtime": "^7.24.4",
+    "@tarojs/components": "4.0.13",
+    "@tarojs/helper": "4.0.13",
+    "@tarojs/plugin-framework-vue3": "4.0.13",
+    "@tarojs/plugin-platform-alipay": "4.0.13",
+    "@tarojs/plugin-platform-h5": "4.0.13",
+    "@tarojs/plugin-platform-harmony-hybrid": "4.0.13",
+    "@tarojs/plugin-platform-jd": "4.0.13",
+    "@tarojs/plugin-platform-qq": "4.0.13",
+    "@tarojs/plugin-platform-swan": "4.0.13",
+    "@tarojs/plugin-platform-tt": "4.0.13",
+    "@tarojs/plugin-platform-weapp": "4.0.13",
+    "@tarojs/runtime": "4.0.13",
+    "@tarojs/shared": "4.0.13",
+    "@tarojs/taro": "4.0.13",
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.4",
+    "@babel/plugin-transform-class-properties": "7.25.9",
+    "@tarojs/cli": "4.0.13",
+    "@tarojs/vite-runner": "4.0.13",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "babel-preset-taro": "4.0.13",
+    "eslint": "^8.57.0",
+    "eslint-config-taro": "4.0.13",
+    "eslint-plugin-vue": "^9.17.0",
+    "less": "^4.2.0",
+    "postcss": "^8.4.38",
+    "stylelint": "^16.4.0",
+    "terser": "^5.30.4",
+    "typescript": "^5.4.5",
+    "unocss": "0.58.9",
+    "unocss-preset-weapp": "0.58.8",
+    "vite": "^4.2.0"
+  }
+}

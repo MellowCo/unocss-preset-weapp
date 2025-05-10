@@ -7,6 +7,7 @@ export default defineConfig(async ()=>{
 
   return {
     plugins: [
+
       uni(),
   
       // https://github.com/unocss/unocss

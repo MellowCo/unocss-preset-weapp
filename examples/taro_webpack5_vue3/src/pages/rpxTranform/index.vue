@@ -34,21 +34,21 @@
 
 
 <style>
-.px-tranform{
+.px-tranform {
   font-size: 16px;
   width: 100px;
   height: 200px;
   background-color: red;
 }
 
-.PX-tranform{
+.PX-tranform {
   font-size: 16PX;
   width: 100PX;
   height: 100PX;
   background-color: red;
 }
 
-.rpx-tranform{
+.rpx-tranform {
   font-size: 32rpx;
   width: 200rpx;
   height: 200rpx;

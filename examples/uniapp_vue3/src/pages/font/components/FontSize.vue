@@ -44,3 +44,10 @@
     </view>
   </view>
 </template>
+
+
+<style>
+.text-2xl {
+  font-size: 24px;
+}
+</style>

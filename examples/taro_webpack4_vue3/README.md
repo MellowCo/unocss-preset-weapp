@@ -19,11 +19,15 @@
 [安装及使用 | Taro 文档 (jd.com)](https://taro-docs.jd.com/docs/GETTING-STARTED)
 
 
+
+\> unocss 0.59.* 之后版本使用 esm 模块, 目前 taro 还不支持, 所以需要安装 0.58.* 版本，原因见[taro issue](https://github.com/NervJS/taro/issues/15487)
+
+
 ```shell
 # 创建taro项目
 taro init taro_xxx
 # 安装unocss
-yarn add -D unocss @unocss/webpack unocss-preset-weapp
+yarn add -D unocss@0.58.9 @unocss/webpack@0.58.9 unocss-preset-weapp@0.58.8
 ```
 
 * config/index.js

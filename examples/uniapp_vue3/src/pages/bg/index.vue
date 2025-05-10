@@ -1,12 +1,13 @@
-<script>
-  export default {
+<script setup>
+import xxClass from './components/xxClass.vue';
 
-  }
 </script>
 
 <template>
   <view text="white base" class="p-3">
-    <view class="left-[calc(-1*var(--td-badge-basic-height)+1rpx)]">
+    <xxClass aaClass="bg-#333" bbclass="text-#2ecc71:80"></xxClass>
+
+    <view class="left-[calc(-1*var(--td-badge-basic-height)+1rpx)]" >
       test
     </view>
 
