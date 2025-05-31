@@ -936,6 +936,7 @@ unocss .scope-\[unocss\]\:block{display:block;}
 .next\:checked\:children\:text-slate-600>*:checked+*{--licl-text-opacity:1;color:rgb(71 85 105 / var(--licl-text-opacity));}
 .next\:checked\:text-slate-200:checked+*{--licl-text-opacity:1;color:rgb(226 232 240 / var(--licl-text-opacity));}
 .text-\[theme\(spacing\.sm\)\]{color:28rpx;}
+.nth-\[2\]\:text-yellow:nth-child(2){--licl-text-opacity:1;color:rgb(250 204 21 / var(--licl-text-opacity));}
 .c-\[\#157\],
 .c-\#157,
 .c-hex-157{--licl-text-opacity:1;color:rgb(17 85 119 / var(--licl-text-opacity));}

@@ -937,6 +937,7 @@ unocss .scope-_lfl11_unocss_lfr11__cl11_block{display:block;}
 .next_cl11_checked_cl11_children_cl11_text-slate-600>*:checked+*{--un-text-opacity:1;color:rgb(71 85 105 / var(--un-text-opacity));}
 .next_cl11_checked_cl11_text-slate-200:checked+*{--un-text-opacity:1;color:rgb(226 232 240 / var(--un-text-opacity));}
 .text-_lfl11_theme_lbl11_spacing_dl11_sm_lbr11__lfr11_{color:28rpx;}
+.nth-_lfl11_2_lfr11__cl11_text-yellow:nth-child(2){--un-text-opacity:1;color:rgb(250 204 21 / var(--un-text-opacity));}
 .c-_do11_color-variable,
 .c-_do11_color-variable_sl11__do11_opacity-variable,
 .c-_do11_color-variable_sl11_10{color:var(--color-variable);}
