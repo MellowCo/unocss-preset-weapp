@@ -94,21 +94,21 @@
   },
   "dependencies": {
     "@rollup/pluginutils": "^5.1.4",
-    "@unocss/core": "^66.1.1",
-    "@unocss/extractor-arbitrary-variants": "^66.1.1",
-    "@unocss/rule-utils": "^66.1.1",
+    "@unocss/core": "^66.1.3",
+    "@unocss/extractor-arbitrary-variants": "^66.1.3",
+    "@unocss/rule-utils": "^66.1.3",
     "unplugin-attributify-to-class": "^0.2.5",
     "unplugin-transform-class": "^0.6.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "4.12.1",
-    "@antfu/ni": "^24.3.0",
-    "@types/node": "^22.15.17",
-    "@unocss/autocomplete": "^66.1.1",
-    "@vitest/coverage-v8": "3.1.3",
-    "@vitest/ui": "3.1.3",
-    "bumpp": "^10.1.0",
-    "eslint": "^9.26.0",
+    "@antfu/eslint-config": "4.13.2",
+    "@antfu/ni": "^24.4.0",
+    "@types/node": "^22.15.29",
+    "@unocss/autocomplete": "^66.1.3",
+    "@vitest/coverage-v8": "3.1.4",
+    "@vitest/ui": "3.1.4",
+    "bumpp": "^10.1.1",
+    "eslint": "^9.28.0",
     "eslint-formatter-mo": "^2.3.0",
     "magic-string": "^0.30.17",
     "msw": "1.0.1",
@@ -117,6 +117,6 @@
     "typescript": "^5.8.3",
     "unbuild": "^3.5.0",
     "vite": "^6.3.5",
-    "vitest": "^3.1.3"
+    "vitest": "^3.1.4"
   }
 }
