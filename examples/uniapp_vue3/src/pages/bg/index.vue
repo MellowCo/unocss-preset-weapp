@@ -1,22 +1,23 @@
-<script>
-export default {
+<script setup>
+  import xxClass from './components/xxClass.vue';
 
-}
+
 </script>
 
 <template>
   <view text="white base" class="p-3">
+
+    <xxClass aaClass="bg-#333" bbclass="text-#2ecc71:80"></xxClass>
+
     <view class="left-[calc(-1*var(--td-badge-basic-height)+1rpx)]">
       test
     </view>
 
-    <view
-      :class="[
-        1 === 1 ? 'left-[calc(-1*var(--td-badge-basic-height)+1rpx)] left' : 'xxx',
-        2 === 2 ? 'right-[calc(-1*var(--td-badge-basic-height)+1rpx)] left' : 'bbb',
-        3 === 3 && 'top-[calc(-1*var(--td-badge-basic-height)+1rpx)] left',
-      ] "
-    >
+    <view :class="[
+      1 === 1 ? 'left-[calc(-1*var(--td-badge-basic-height)+1rpx)] left' : 'xxx',
+      2 === 2 ? 'right-[calc(-1*var(--td-badge-basic-height)+1rpx)] left' : 'bbb',
+      3 === 3 && 'top-[calc(-1*var(--td-badge-basic-height)+1rpx)] left',
+    ]">
       test
     </view>
 
@@ -38,11 +39,13 @@ export default {
     </view>
 
     <view flex justify-center w-full>
-      <view class="w-100 h-100 bg-cover mb-3 bg-[url(https://img.cdn.sugarat.top/mdImg/MTY2ODA4OTc3MjcyMg==unocss-icon-gray.svg)]" />
+      <view
+        class="w-100 h-100 bg-cover mb-3 bg-[url(https://img.cdn.sugarat.top/mdImg/MTY2ODA4OTc3MjcyMg==unocss-icon-gray.svg)]" />
     </view>
 
     <view flex justify-center w-full>
-      <view class="w-100 h-100 blur-sm bg-cover mb-3 bg-[url(https://img.cdn.sugarat.top/mdImg/MTY2ODA4OTc3MjcyMg==unocss-icon-gray.svg)]" />
+      <view
+        class="w-100 h-100 blur-sm bg-cover mb-3 bg-[url(https://img.cdn.sugarat.top/mdImg/MTY2ODA4OTc3MjcyMg==unocss-icon-gray.svg)]" />
     </view>
 
     <view class="center h-200 rounded-md bg-gradient-to-t from-#5673ef/60 via-#2ecc71:80 to-#9b59b6_70 mb-3">
@@ -80,9 +83,9 @@ export default {
 </template>
 
 <style>
-.bg-local-logo {
-  background-image: var(--logo);
+  .bg-local-logo {
+    background-image: var(--logo);
 
-  --logo: url(../../static/logo.png);
-}
+    --logo: url(../../static/logo.png);
+  }
 </style>
