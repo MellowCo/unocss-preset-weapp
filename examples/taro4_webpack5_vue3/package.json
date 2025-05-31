@@ -83,7 +83,7 @@
     "tsconfig-paths-webpack-plugin": "^4.1.0",
     "typescript": "^5.4.5",
     "unocss": "0.58.9",
-    "unocss-preset-weapp": "0.58.8",
+    "unocss-preset-weapp": "0.58.9",
     "vue-loader": "^17.4.2",
     "webpack": "5.91.0"
   }
