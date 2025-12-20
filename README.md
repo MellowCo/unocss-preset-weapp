@@ -635,3 +635,5 @@ export const boxShadow = {
 | flex-basis-2   | flex-basis:16rpx                        |
 | gap-4          | grid-gap:32rpx;gap:32rpx                |
 | gap-x-2        | grid-column-gap:16rpx;column-gap:16rpx; |
+
+<!-- https://github.com/unocss/unocss/commit/57ab9cfc35f557a7f1058cb6972f7ee983a9e1c8 -->

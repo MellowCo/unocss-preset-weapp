@@ -415,28 +415,29 @@ describe('preset-mini', () => {
 
     expect((await uno.generate('bg-primary bg-opacity-50 text-primary text-opacity-50', { preflights: false })).css)
       .toMatchInlineSnapshot(`
-      "/* layer: default */
-      .bg-primary{--un-bg-opacity:1;background-color:var(--base-primary, oklch(var(--primary) / var(--un-bg-opacity)));}
-      .bg-opacity-50{--un-bg-opacity:0.5;}
-      .text-primary{--un-text-opacity:1;color:var(--base-primary, oklch(var(--primary) / var(--un-text-opacity)));}
-      .text-opacity-50{--un-text-opacity:0.5;}"
-    `)
+        "/* layer: default */
+        .bg-primary{--un-bg-opacity:1;background-color:var(--base-primary, oklch(var(--primary) / var(--un-bg-opacity)));}
+        .bg-opacity-50{--un-bg-opacity:0.5;}
+        .text-primary{--un-text-opacity:1;color:var(--base-primary, oklch(var(--primary) / var(--un-text-opacity)));}
+        .text-opacity-50{--un-text-opacity:0.5;}"
+      `)
 
     expect((await uno.generate('bg-primary/50 ring-5 ring-primary ring-opacity-50', { preflights: false })).css)
+      .toMatchInlineSnapshot(`
+        "/* layer: default */
+        .bg-primary_sl_50{background-color:var(--base-primary, oklch(var(--primary) / 50%));}
+        .ring-5{--un-ring-width:5px;--un-ring-offset-shadow:var(--un-ring-inset) 0 0 0 var(--un-ring-offset-width) var(--un-ring-offset-color);--un-ring-shadow:var(--un-ring-inset) 0 0 0 calc(var(--un-ring-width) + var(--un-ring-offset-width)) var(--un-ring-color);box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
+        .ring-primary{--un-ring-opacity:1;--un-ring-color:var(--base-primary, oklch(var(--primary) / var(--un-ring-opacity)));}
+        .ring-opacity-50{--un-ring-opacity:50%;}"
+      `)
+
+    expect((await uno.generate('border-5 border-primary border-opacity-50', { preflights: false })).css)
       .toMatchInlineSnapshot(`
         "/* layer: default */
         .bg-primary_sl_50{background-color:var(--base-primary, oklch(var(--primary) / 0.5));}
         .ring-5{--un-ring-width:5px;--un-ring-offset-shadow:var(--un-ring-inset) 0 0 0 var(--un-ring-offset-width) var(--un-ring-offset-color);--un-ring-shadow:var(--un-ring-inset) 0 0 0 calc(var(--un-ring-width) + var(--un-ring-offset-width)) var(--un-ring-color);box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
         .ring-primary{--un-ring-opacity:1;--un-ring-color:var(--base-primary, oklch(var(--primary) / var(--un-ring-opacity)));}
         .ring-opacity-50{--un-ring-opacity:0.5;}"
-      `)
-
-    expect((await uno.generate('border-5 border-primary border-opacity-50', { preflights: false })).css)
-      .toMatchInlineSnapshot(`
-        "/* layer: default */
-        .border-5{border-width:5rpx;}
-        .border-primary{--un-border-opacity:1;border-color:var(--base-primary, oklch(var(--primary) / var(--un-border-opacity)));}
-        .border-opacity-50{--un-border-opacity:0.5;}"
       `)
   })
 
@@ -457,14 +458,11 @@ describe('preset-mini', () => {
       '@desktop/name:text-lg',
     ], { preflights: false })
     expect(css).toMatchInlineSnapshot(`
-      "/* layer: default */
-      @container (min-width: 352px){
-      .\\@tablet_cl_text-sm{font-size:28rpx;line-height:40rpx;}
-      }
-      @container name (min-width: 768px){
-      .\\@desktop_sl_name_cl_text-lg{font-size:36rpx;line-height:56rpx;}
-      }"
-    `)
+        "/* layer: default */
+        .border-5{border-width:5rpx;}
+        .border-primary{--un-border-opacity:1;border-color:var(--base-primary, oklch(var(--primary) / var(--un-border-opacity)));}
+        .border-opacity-50{--un-border-opacity:0.5;}"
+      `)
   })
 
   it('nested named groups containing hyphens', async () => {
@@ -484,16 +482,20 @@ describe('preset-mini', () => {
 
     expect(result.matched)
       .toMatchInlineSnapshot(`
+      "/* layer: default */
+      @container (min-width: 352px){
+      .\\@tablet_cl_text-sm{font-size:28rpx;line-height:40rpx;}
+      }
+      @container name (min-width: 768px){
+      .\\@desktop_sl_name_cl_text-lg{font-size:36rpx;line-height:56rpx;}
+      }"
+    `)
+
+    expect(result.css).toMatchInlineSnapshot(`
         Set {
           "group-hover/named:foo-1",
           "group-hover/named-group:foo-2",
         }
       `)
-
-    expect(result.css).toMatchInlineSnapshot(`
-      "/* layer: default */
-      .group\\/named-group:hover .group-hover\\/named-group\\:foo-2{text:foo-2;}
-      .group\\/named:hover .group-hover\\/named\\:foo-1{text:foo-1;}"
-    `)
   })
 })

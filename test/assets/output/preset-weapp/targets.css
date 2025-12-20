@@ -871,6 +871,9 @@ unocss .scope-_lfl_unocss_lfr__cl_block{display:block;}
 .text-nowrap{text-wrap:nowrap;}
 .text-balance{text-wrap:balance;}
 .text-pretty{text-wrap:pretty;}
+.align-_do_variable,
+.align-_lfl_--variable_lfr_,
+.align-_lfl_var_lbl_--variable_lbr__lfr_{vertical-align:var(--variable);}
 .align-revert{vertical-align:revert;}
 .align-start,
 .v-top{vertical-align:top;}
