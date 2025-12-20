@@ -159,13 +159,13 @@ export function number(str: string) {
 }
 
 export function percent(str: string) {
-  if (str.endsWith('%'))
+  if (str.endsWith('%')) {
     str = str.slice(0, -1)
-  if (!numberRE.test(str))
-    return
-  const num = Number.parseFloat(str)
-  if (!Number.isNaN(num))
-    return `${round(num / 100)}`
+  }
+  const num = number(str)
+  if (num != null) {
+    return `${num}%`
+  }
 }
 
 export function fraction(str: string) {
